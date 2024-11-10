@@ -16,6 +16,7 @@ BetterSMT
 -Config to show fps counter (off by default)
 -Config to show ping (off by default)
 -Save game button in pause menu
+-Config to change employee income increase at checkout
 
 Credits
 -Ika [Helped with Transpiling]

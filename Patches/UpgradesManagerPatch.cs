@@ -49,26 +49,26 @@ public class UpgradesManagerPatch
             case 10:
                 __instance.GetComponent<GameData>().extraCustomersPerk += BetterSMT.CustomersPerPerk.Value;
                 break;
-            case 11:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 12:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 13:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 14:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 15:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
+            //case 11:
+            //    NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+            //    NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+            //    break;
+            //case 12:
+            //    NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+            //    NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+            //    break;
+            //case 13:
+            //    NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+            //    NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+            //    break;
+            //case 14:
+            //    NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+            //    NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+            //    break;
+            //case 15:
+            //    NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+            //    NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+            //    break;
             case 16:
                 NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk1.Value;
                 Debug.Log("ProductCheckoutWait after perk 1: " + NPC_Manager.Instance.productCheckoutWait);
