@@ -23,6 +23,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk2;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk3;
+    public static ConfigEntry<float> EmployeExtraCheckoutMoney;
     public static ConfigEntry<bool> OneHitThief;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<bool> FasterCheckout;
@@ -121,6 +122,15 @@ public class BetterSMT : BaseUnityPlugin
                 new AcceptableValueRange<float>(0.01f, 0.25f)
             )
         );
+
+        EmployeExtraCheckoutMoney = base.Config.Bind(
+            "Perks",
+            "Employe Increased Income While Checking Customer Out Perk",
+            0.1f,
+            new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
+                new AcceptableValueRange<float>(0.05f, 0.25f)
+                )
+            );
 
         EmployeeCheckoutPerPerk2 = base.Config.Bind(
             "Perks",
