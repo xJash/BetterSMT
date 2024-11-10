@@ -35,6 +35,10 @@ public class UpgradesManagerPatch
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
                 break;
+            case 6:
+                NPC_Manager.Instance.extraCheckoutMoney += BetterSMT.EmployeExtraCheckoutMoney.Value;
+                NPC_Manager.Instance.UpdateEmployeeStats();
+                break;
             case 7:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
