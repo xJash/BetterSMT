@@ -1,3 +1,6 @@
+## 1.6.5
+- Fixed an error caused with commas being replaced by periods introduced with custom currency functions
+
 ## v1.6.4
 - Added double pricing module (Credit to Moudiz)
 - Created basis for custom currencies
