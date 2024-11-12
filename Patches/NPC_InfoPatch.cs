@@ -46,10 +46,4 @@ public class NPC_InfoPatch
 
         return false;
     }
-
-    //    [HarmonyPatch("CreateNPCCharacter"), HarmonyPostfix]
-    //    static void CreateNPCCharacterPatch(NPC_Info __instance)
-    //    {
-    //        __instance.isAThief = true;
-    //    }
 }

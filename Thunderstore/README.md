@@ -22,9 +22,11 @@ BetterSMT
 - - Left Ctrl + Q - Switch between .05 and .10 rounding
 - - Left Ctrl + Left Shift + Q - Toggle rounding on and off
 
-# Credits
-- Ika [Helped with Transpiling]
-- TeamCrisis [Most of the ideas in this mod]
+Credits
+-Ika [Helped with Transpiling]
+-TeamCrisis [Most of the ideas in this mod]
+-Tech [Original Mod Developer]
+-Moudiz [Idea and code for double price module]
 
-# Other
-- I have not given anyone permission to take anything from this mod
+Other
+-I have not given anyone permission to take anything from this mod

@@ -11,12 +11,16 @@ BetterSMT
 -Top right Product info now works for boxes
 -Config for faster checkout (Customers place items on to checkout instantly)
 -Config to change employee restock time per perk
--Config to change employee checkout time per perk
+-Config to change employee checkout time per perk(Temporarily disabled)
 -Config to change customers per perk
 -Config to show fps counter (off by default)
 -Config to show ping (off by default)
 -Save game button in pause menu
 -Config to change employee income increase at checkout
+-Double pricing module tanks to @Moudiz
+- - To toggle the mod you can press 'Q' (Key bind won't register if you have other buttons active so it won't work while moving for example). You can change this to be something else via the configs file.
+- - Left Ctrl + Q - Switch between .05 and .10 rounding
+- - Left Ctrl + Left Shift + Q - Toggle rounding on and off
 
 Credits
 -Ika [Helped with Transpiling]
