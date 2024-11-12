@@ -29,7 +29,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> FasterCheckout;
     public static ConfigEntry<bool> ShowFPS;
     public static ConfigEntry<bool> ShowPing;
-    public static ConfigEntry<bool> ReplaceCurrencyWithNew;
+    // public static ConfigEntry<bool> ReplaceCurrencyWithNew;
     private const string MyGUID = "SupermarketTogether.plugins.DoublePrices";
     private const string PluginName = "double-prices";
     private const string VersionString = "1.1.0";
@@ -197,7 +197,7 @@ public class BetterSMT : BaseUnityPlugin
     }
     public static string ReplaceCommas(string text)
     {
-        if (!ReplaceCurrencyWithNew.Value) return text;
+        if (!ReplaceCommasWithPeriods.Value) return text;
         text = text.Replace("$", string.Empty);
         text = text.Replace(char.Parse(","), char.Parse("."));
         if (!text.Contains("."))
