@@ -21,7 +21,7 @@ internal class NotificationHandler
                     Notification += "Double Price: " + (BetterSMT.doublePrice ? "ON" : "OFF");
                     break;
                 case "roundDownSwitch":
-                    Notification += "Roudning to nearest " + (BetterSMT.NearestTen.Value ? "ten" : "five") + (!BetterSMT.roundDown.Value ? "\r\n(Currently disabled)" : "");
+                    Notification += "Rounding to nearest " + (BetterSMT.NearestTen.Value ? "ten" : "five") + (!BetterSMT.roundDown.Value ? "\r\n(Currently disabled)" : "");
                     break;
                 case "roundDownToggle":
                     Notification += "Rounding has been " + (BetterSMT.roundDown.Value ? "enabled" : "disabled");

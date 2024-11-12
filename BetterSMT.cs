@@ -29,6 +29,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> FasterCheckout;
     public static ConfigEntry<bool> ShowFPS;
     public static ConfigEntry<bool> ShowPing;
+    public static ConfigEntry<bool> ReplaceCurrencyWithNew;
     private const string MyGUID = "SupermarketTogether.plugins.DoublePrices";
     private const string PluginName = "double-prices";
     private const string VersionString = "1.1.0";
@@ -123,32 +124,32 @@ public class BetterSMT : BaseUnityPlugin
             )
         );
 
-        EmployeExtraCheckoutMoney = base.Config.Bind(
-            "Perks",
-            "Employe Increased Income While Checking Customer Out Perk",
-            0.1f,
-            new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
-                new AcceptableValueRange<float>(0.05f, 0.25f)
-                )
-            );
-
-        EmployeeCheckoutPerPerk2 = base.Config.Bind(
-            "Perks",
-            "Employee Checkout Time Reduction Perk 2",
-            .2f,
-            new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
-                new AcceptableValueRange<float>(0.01f, 0.25f)
-            )
-        );
-
-        EmployeeCheckoutPerPerk3 = base.Config.Bind(
-            "Perks",
-            "Employee Checkout Time Reduction Perk 3",
-            .15f,
-            new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
-                new AcceptableValueRange<float>(0.01f, 0.25f)
-            )
-        );
+        //EmployeExtraCheckoutMoney = base.Config.Bind(
+        //    "Perks",
+        //    "Employe Increased Income While Checking Customer Out Perk",
+        //    0.1f,
+        //    new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
+        //        new AcceptableValueRange<float>(0.05f, 0.25f)
+        //        )
+        //    );
+        //
+        //EmployeeCheckoutPerPerk2 = base.Config.Bind(
+        //    "Perks",
+        //    "Employee Checkout Time Reduction Perk 2",
+        //    .2f,
+        //    new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
+        //        new AcceptableValueRange<float>(0.01f, 0.25f)
+        //    )
+        //);
+        //
+        //EmployeeCheckoutPerPerk3 = base.Config.Bind(
+        //    "Perks",
+        //    "Employee Checkout Time Reduction Perk 3",
+        //    .15f,
+        //    new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
+        //        new AcceptableValueRange<float>(0.01f, 0.25f)
+        //    )
+        //);
 
         CustomersPerPerk = base.Config.Bind(
             "Perks",
@@ -196,7 +197,7 @@ public class BetterSMT : BaseUnityPlugin
     }
     public static string ReplaceCommas(string text)
     {
-        if (!ReplaceCommasWithPeriods.Value) return text;
+        if (!ReplaceCurrencyWithNew.Value) return text;
         text = text.Replace("$", string.Empty);
         text = text.Replace(char.Parse(","), char.Parse("."));
         if (!text.Contains("."))
@@ -205,6 +206,18 @@ public class BetterSMT : BaseUnityPlugin
         }
         return "$" + text;
     }
+
+    //public static string ReplaceCurrency(string text)
+    //{
+    //    if (!ReplaceCurrencyWithNew.Value) return text;
+    //    text = text.Replace("$", string.Empty);
+    //    text = text.Replace(char.Parse(","), char.Parse("."));
+    //    if (!text.Contains("."))
+    //    {
+    //        text += ".00";
+    //    }
+    //    return "$" + text;
+    //}
 
     public static void CreateCanvasNotification(string text)
     {

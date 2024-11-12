@@ -24,20 +24,7 @@ public class GameDataPatch
     {
         ShowCounters();
         UpdateEscapeMenu();
-        //__instance.StartCoroutine(OpenDoorsCoroutine());
     }
-
-    //[HarmonyPatch("LightsOffControl"), HarmonyPostfix]
-    //static void LightsOffControlPatch(GameData __instance)
-    //{
-    //    __instance.StartCoroutine(OpenDoorsCoroutine());
-    //}
-
-    //private static IEnumerator OpenDoorsCoroutine()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //    OpenDoors();
-    //}
 
     private static void UpdateEscapeMenu()
     {
@@ -117,39 +104,4 @@ public class GameDataPatch
             FPSDisplay.SetActive(true);
         }
     }
-    //public static void OpenDoors()
-    //{
-    //    GameObject doors = GameObject.Find("Level_Supermarket/Doors");
-    //    if (doors == null)
-    //    {
-    //        BetterSMT.Logger.LogWarning("OpenDoors No Doors object");
-    //        return;
-    //    }
-
-    //    // FIRST
-    //    Transform firstSet = doors.transform.GetChild(0);
-    //    if (firstSet != null)
-    //    {
-    //        firstSet.GetChild(0).localRotation = Quaternion.Euler(0, 270, 0);
-    //        firstSet.GetChild(1).localRotation = Quaternion.Euler(0, 90, 0);
-    //    }
-
-
-    //    // SECOND
-    //    Transform secondSet = doors.transform.GetChild(1);
-    //    if (secondSet != null)
-    //    {
-    //        secondSet.GetChild(0).localRotation = Quaternion.Euler(0, 270, 0);
-    //        secondSet.GetChild(1).localRotation = Quaternion.Euler(0, 90, 0);
-    //    }
-
-
-    //    // THIRD
-    //    Transform thirdSet = doors.transform.GetChild(2);
-    //    if (thirdSet != null)
-    //    {
-    //        thirdSet.GetChild(0).localRotation = Quaternion.Euler(0, 270, 0);
-    //        thirdSet.GetChild(1).localRotation = Quaternion.Euler(0, 90, 0);
-    //    }
-    //}
 }

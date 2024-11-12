@@ -1,3 +1,12 @@
+## v1.6.4
+- Added double pricing module (Credit to Moudiz)
+- Created basis for custom currencies
+- Further fixed highlighting
+- Fixed issues with thieve's dropped loot not always being picked up
+- Added option to increase or lower income from employee perk on checkout
+- Streamlined some older code and removed unused code
+- Corrected some misc spelling errors
+
 ## v1.6.3
 - Fixed some issues with highlighting (Credit to Damntry)
 
