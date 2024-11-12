@@ -163,20 +163,20 @@ public class BetterSMT : BaseUnityPlugin
         OneHitThief = base.Config.Bind(
             "Thiefs",
             "Thiefs Drop Everything On Hit",
-            true
+            false
         );
 
         FasterCheckout = base.Config.Bind(
             "Customers",
             "Faster Checkout",
-            true,
+            false,
             new ConfigDescription("Customers place all items instantly on to the checkout")
         );
 
         ReplaceCommasWithPeriods = base.Config.Bind(
             "Other",
             "Replace Commas with Periods",
-            true
+            false
         );
 
         ShowFPS = base.Config.Bind(
