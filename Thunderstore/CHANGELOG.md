@@ -1,4 +1,7 @@
-## 1.6.5
+## v1.7.0
+- Added ability to manually adjust the cost of lights, employee's, and rent.
+
+## v1.6.5
 - Fixed an error caused with commas being replaced by periods introduced with custom currency functions
 
 ## v1.6.4
