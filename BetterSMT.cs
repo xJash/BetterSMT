@@ -24,6 +24,11 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<float> EmployeeCheckoutPerPerk2;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk3;
     public static ConfigEntry<float> EmployeExtraCheckoutMoney;
+    public static ConfigEntry<float> LightCostMod;
+    public static ConfigEntry<float> RentCostMod;
+    public static ConfigEntry<float> EmployeeCostMod;
+    public static ConfigEntry<float> ThiefStealAmount;
+    public static ConfigEntry<float> ThiefAmount;
     public static ConfigEntry<bool> OneHitThief;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<bool> FasterCheckout;
@@ -115,6 +120,60 @@ public class BetterSMT : BaseUnityPlugin
             )
         );
 
+        LightCostMod = base.Config.Bind(
+            "Immersion",
+            "Adjust the cost of Lights at the end of the day",
+            10f,
+            new ConfigDescription("Adjust the cost of lights at the end of the day (Higher = more expensive)",
+                new AcceptableValueRange<float>(0.1f, 50f)
+            )
+        );
+
+        //ThiefStealAmount = base.Config.Bind(
+        //    "Misc",
+        //    "Adjust the amount of items a thief steals",
+        //    10f,
+        //    new ConfigDescription("Adjust the amount of items a thief steals",
+        //        new AcceptableValueRange<float>(0.1f, 50f)
+        //    )
+        //);
+        //
+        //ThiefAmount = base.Config.Bind(
+        //    "Misc",
+        //    "Adjust the amount of thieves your store will get",
+        //    1f,
+        //    new ConfigDescription("Adjust the amount of thieves your store will get",
+        //        new AcceptableValueRange<float>(0f, 100f)
+        //    )
+        //);
+
+        EmployeeCostMod = base.Config.Bind(
+            "Immersion",
+            "Adjust the cost of Employee at the end of the day",
+            10f,
+            new ConfigDescription("Adjust the cost of Employee at the end of the day (Higher = more expensive)",
+                new AcceptableValueRange<float>(0.1f, 50f)
+            )
+        ); 
+
+        RentCostMod = base.Config.Bind(
+            "Immersion",
+            "Adjust the cost of Rent at the end of the day",
+            10f,
+            new ConfigDescription("Adjust the cost of Rent at the end of the day (Higher = more expensive)",
+                new AcceptableValueRange<float>(0.1f, 50f)
+            )
+        );
+
+        EmployeExtraCheckoutMoney = base.Config.Bind(
+            "Perks",
+            "Employe Increased Income While Checking Customer Out Perk",
+            0.1f,
+            new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
+                new AcceptableValueRange<float>(0.05f, 0.25f)
+                )
+            );
+
         EmployeeCheckoutPerPerk1 = base.Config.Bind(
             "Perks",
             "Employee Checkout Time Reduction Perk 1",
@@ -123,33 +182,24 @@ public class BetterSMT : BaseUnityPlugin
                 new AcceptableValueRange<float>(0.01f, 0.25f)
             )
         );
-
-        //EmployeExtraCheckoutMoney = base.Config.Bind(
-        //    "Perks",
-        //    "Employe Increased Income While Checking Customer Out Perk",
-        //    0.1f,
-        //    new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
-        //        new AcceptableValueRange<float>(0.05f, 0.25f)
-        //        )
-        //    );
-        //
-        //EmployeeCheckoutPerPerk2 = base.Config.Bind(
-        //    "Perks",
-        //    "Employee Checkout Time Reduction Perk 2",
-        //    .2f,
-        //    new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
-        //        new AcceptableValueRange<float>(0.01f, 0.25f)
-        //    )
-        //);
-        //
-        //EmployeeCheckoutPerPerk3 = base.Config.Bind(
-        //    "Perks",
-        //    "Employee Checkout Time Reduction Perk 3",
-        //    .15f,
-        //    new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
-        //        new AcceptableValueRange<float>(0.01f, 0.25f)
-        //    )
-        //);
+        
+        EmployeeCheckoutPerPerk2 = base.Config.Bind(
+            "Perks",
+            "Employee Checkout Time Reduction Perk 2",
+            .2f,
+            new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
+                new AcceptableValueRange<float>(0.01f, 0.25f)
+            )
+        );
+        
+        EmployeeCheckoutPerPerk3 = base.Config.Bind(
+            "Perks",
+            "Employee Checkout Time Reduction Perk 3",
+            .15f,
+            new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
+                new AcceptableValueRange<float>(0.01f, 0.25f)
+            )
+        );
 
         CustomersPerPerk = base.Config.Bind(
             "Perks",

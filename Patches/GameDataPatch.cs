@@ -2,6 +2,7 @@
 using HighlightPlus;
 using HutongGames.PlayMaker.Actions;
 using System.Collections;
+using System.ComponentModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -10,20 +11,23 @@ using UnityEngine.UI;
 
 namespace BetterSMT.Patches;
 
-[HarmonyPatch(typeof(GameData))]
+[HarmonyPatch(typeof(GameData), "WorkingDayControl")]
 public class GameDataPatch
 {
-    //[HarmonyPatch("OnStartClient"), HarmonyPrefix]
-    //static void OnStartClientPrePatch(GameData __instance)
-    //{
-    //    __instance.gameFranchisePoints += 150;
-    //}
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     static void OnStartClientPatch(GameData __instance)
     {
         ShowCounters();
         UpdateEscapeMenu();
+    }
+
+    [HarmonyPatch("WorkingDayControl"), HarmonyPostfix]
+    static void WorkingDayControlPatch(GameData __instance)
+    {
+        WorkingDayLightControlPatch((__instance));
+        WorkingDayEmployeeControlPatch((__instance));
+        WorkingDayRentControlPatch((__instance));
     }
 
     private static void UpdateEscapeMenu()
@@ -102,6 +106,48 @@ public class GameDataPatch
                 return;
             }
             FPSDisplay.SetActive(true);
+        }
+    }
+
+    public static void WorkingDayLightControlPatch(GameData __instance)
+    {
+        UpgradesManager component = __instance.GetComponent<UpgradesManager>();
+        if (component != null)
+        {
+            float actualLightCost = BetterSMT.LightCostMod.Value + (float)component.spaceBought + (float)component.storageBought;
+            __instance.lightCost = actualLightCost;
+        }
+        else
+        {
+            __instance.lightCost = 10f + (float)component.spaceBought + (float)component.storageBought;
+        }
+    }
+
+    public static void WorkingDayRentControlPatch(GameData __instance)
+    {
+        UpgradesManager component = __instance.GetComponent<UpgradesManager>();
+        if (component != null)
+        {
+            float actualRentCost = BetterSMT.RentCostMod.Value + (float)(component.spaceBought * 5) + (float)(component.storageBought * 10);
+            __instance.rentCost = actualRentCost;
+        }
+        else
+        {
+            __instance.rentCost = 10f + (float)(component.spaceBought * 5) + (float)(component.storageBought * 10);
+        }
+    }
+
+    public static void WorkingDayEmployeeControlPatch(GameData __instance)
+    {
+        UpgradesManager component = __instance.GetComponent<UpgradesManager>();
+        if (component != null)
+        {
+            float actualEmployeeCost = BetterSMT.EmployeeCostMod.Value + (float)(NPC_Manager.Instance.maxEmployees * 60);
+            __instance.employeesCost = actualEmployeeCost;
+        }
+        else
+        {
+            __instance.employeesCost = (float)(NPC_Manager.Instance.maxEmployees * 60);
         }
     }
 }
