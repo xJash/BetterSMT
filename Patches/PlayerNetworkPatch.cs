@@ -180,7 +180,9 @@ public class PlayerNetworkPatch
         for (int i = 0; i < shelvesOBJ.transform.childCount; i++)
         {
             Transform child = shelvesOBJ.transform.GetChild(i);
-            int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
+            var container = child.gameObject.GetComponent<Data_Container>();
+            if (container == null) continue;
+            int[] productInfoArray = container.productInfoArray;
             int num = productInfoArray.Length / 2;
             bool highlightShelf = false;
             for (int j = 0; j < num; j++)
@@ -188,7 +190,9 @@ public class PlayerNetworkPatch
                 int num2 = productInfoArray[j * 2];
 
                 bool highlightLabel = num2 == productID;
-                Transform label = child.Find("Labels").transform.GetChild(j);
+                Transform labels = child.Find("Labels");
+                if (labels == null || labels.childCount <= j) continue;
+                Transform label = labels.GetChild(j);
                 if (highlightLabel) highlightShelf = true;
                 HighlightShelf(label, highlightLabel, Color.yellow);
             }
@@ -207,7 +211,9 @@ public class PlayerNetworkPatch
                 int num2 = productInfoArray[j * 2];
 
                 bool highlightBox = num2 == productID;
-                Transform box = child.Find("BoxContainer").transform.GetChild(j);
+                Transform boxs = child.Find("BoxContainer");
+                if (boxs == null || boxs.childCount <= j) continue;
+                Transform box = boxs.GetChild(j);
                 HighlightShelf(box, highlightBox, Color.yellow);
             }
         }
@@ -224,7 +230,9 @@ public class PlayerNetworkPatch
             int num = productInfoArray.Length / 2;
             for (int j = 0; j < num; j++)
             {
-                Transform label = child.Find("Labels").transform.GetChild(j);
+                Transform labels = child.Find("Labels");
+                if (labels == null || labels.childCount <= j) continue;
+                Transform label = labels.GetChild(j);
                 HighlightShelf(label, false);
             }
             HighlightShelf(child, false);
@@ -261,14 +269,12 @@ public class PlayerNetworkPatch
         highlightEffect.outlineContourStyle = ContourStyle.AroundObjectShape;
         highlightEffect.outlineIndependent = true;
 
-        // MAINTAIN SETTINGS FROM BUILDER HIGHLIGHT:
         highlightEffect.outline = value ? 1f : 0f;
         highlightEffect.glow = value ? 0f : 1f;
 
         highlightEffect.enabled = true;
         highlightEffect.SetHighlighted(value);
 
-        // WAS HAVING ISSUES WITH SOMETHING THIS MIGHT NOT BE NEEDED ANYMORE:
         highlightEffect.Refresh();
         highlightEffect.highlighted = value;
         highlightEffect._highlighted = value;
