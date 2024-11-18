@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using HighlightPlus;
 using HutongGames.PlayMaker.Actions;
+using Mirror;
 using System.Collections;
 using System.ComponentModel;
 using System.Linq;
@@ -28,6 +29,18 @@ public class GameDataPatch
         WorkingDayLightControlPatch((__instance));
         WorkingDayEmployeeControlPatch((__instance));
         WorkingDayRentControlPatch((__instance));
+    }
+
+    [HarmonyPatch("TrashManager"), HarmonyPostfix]
+    static void TrashManagerPatch(GameData __instance)
+    {
+        nextTimeToSpawnTrashPatch((__instance));
+    }
+    
+    [HarmonyPatch("UserCode_CmdOpenSupermarket"), HarmonyPostfix]
+    static void UserCode_CmdOpenSupermarketPatch(GameData __instance)
+    {
+        maxCustomersNPCsPatch((__instance));
     }
 
     private static void UpdateEscapeMenu()
@@ -120,6 +133,34 @@ public class GameDataPatch
         else
         {
             __instance.lightCost = 10f + (float)component.spaceBought + (float)component.storageBought;
+        }
+    }
+
+    public static void maxCustomersNPCsPatch(GameData __instance)
+    {
+        if (__instance.GetComponent<NetworkSpawner>().levelPropsOBJ.transform.GetChild(2).childCount == 0)
+        {
+            __instance.RpcNoCheckoutsMessage();
+            return;
+        }
+        if (!__instance.isSupermarketOpen || __instance.timeOfDay > 23f || __instance.timeOfDay < 8f)
+        {
+            __instance.NetworkisSupermarketOpen = true;
+            __instance.timeFactor = 1f;
+            __instance.maxProductsCustomersToBuy = 5 + __instance.gameDay / 2 + NetworkServer.connections.Count + __instance.difficulty;
+            __instance.maxProductsCustomersToBuy = Mathf.Clamp(__instance.maxProductsCustomersToBuy, 5, 25 + NetworkServer.connections.Count + __instance.difficulty);
+            __instance.maxCustomersNPCs = 3 + __instance.gameDay + (NetworkServer.connections.Count - 1) * 4 + __instance.extraCustomersPerk + __instance.difficulty * 2;
+            __instance.maxCustomersNPCs = Mathf.Clamp(__instance.maxCustomersNPCs, 160, 700 + NetworkServer.connections.Count);
+            __instance.RpcOpenSupermarket();
+        }
+    }
+    
+    public static void nextTimeToSpawnTrashPatch(GameData __instance)
+    {
+        if (BetterSMT.DisableTrash.Value == true)
+        {
+            __instance.nextTimeToSpawnTrash = 99999f;
+            return;
         }
     }
 

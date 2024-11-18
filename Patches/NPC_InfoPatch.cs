@@ -13,6 +13,21 @@ public class NPC_InfoPatch
         __instance.productItemPlaceWait = BetterSMT.FasterCheckout.Value ? 0f : 0.5f;
     }
 
+    [HarmonyPatch(typeof(NPC_Info))]
+    public class DisableThievesPatch()
+    {
+        [HarmonyPatch("CreateNPCCharacter")]
+        [HarmonyPostfix]
+        private static void makeNPCsThieves(ref bool ___isAThief)
+        {
+            ___isAThief = BetterSMT.AllNPCAreThieves.Value
+                ? true
+                : BetterSMT.DisableAllThieves.Value
+                    ? false
+                    : ___isAThief; 
+        }
+    }
+
     [HarmonyPatch("AuxiliarAnimationPlay"), HarmonyPrefix]
     static bool AuxiliarAnimationPlayPatch(NPC_Info __instance, ref int animationIndex)
     {

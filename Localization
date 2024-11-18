@@ -1,0 +1,951 @@
+<options>
+    <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
+
+    <option id="title0" dialogue="New Store"></option>
+    <option id="title1" dialogue="Load Store"></option>
+    <option id="title2" dialogue="Join Store"></option>
+    <option id="title3" dialogue="Options"></option>
+    <option id="title4" dialogue="Exit"></option>
+
+    <option id="newstore0" dialogue="Choose a name for your store"></option>
+    <option id="newstore1" dialogue="Private"></option>
+    <option id="newstore2" dialogue="Only Friends"></option>
+    <option id="newstore3" dialogue="Public"></option>
+    <option id="newstore4" dialogue="Create"></option>
+    <option id="newstore5" dialogue="Store name must have more than 2 characters and do not have invalid characters"></option>
+    <option id="newstore6" dialogue="You can inflate difficulty artificially if desired"></option>
+    <option id="newstore7" dialogue="Difficulty: "></option>
+    
+    <option id="yes" dialogue="Yes"></option>
+    <option id="no" dialogue="No"></option>
+    <option id="back" dialogue="Back"></option>
+    <option id="save" dialogue="Apply"></option>
+    <option id="entertext" dialogue="Enter text..."></option>
+    
+    <option id="join" dialogue="Join"></option>
+    <option id="invalidcode" dialogue="Invalid code or host has locked the lobby"></option>
+    <option id="joinfriends" dialogue="Join friends with code"></option>
+    <option id="copycode" dialogue="Copy code..."></option>
+
+    <option id="loading" dialogue="Loading"></option>  
+
+    <option id="options0" dialogue="Graphics"></option>
+    <option id="options1" dialogue="Resolution"></option>
+    <option id="options2" dialogue="Fullscreen"></option>
+    <option id="options3" dialogue="Vsync"></option>
+    <option id="options4" dialogue="Antialiasing"></option>
+    <option id="options5" dialogue="Brightness"></option>
+    <option id="options6" dialogue="Quality"></option>
+    <option id="options6a" dialogue="Performant"></option>
+    <option id="options6b" dialogue="Balanced"></option>
+    <option id="options6c" dialogue="High Fidelity"></option>
+
+    <option id="options7" dialogue="Controls"></option>
+    <option id="options8" dialogue="X Sensitivity"></option>
+    <option id="options9" dialogue="Y Sensitivity"></option>
+    <option id="options10" dialogue="Zoom Sensitivity"></option>
+    <option id="options11" dialogue="Invert X Axis"></option>
+    <option id="options12" dialogue="Invert Y Axis"></option>
+    <option id="options12a" dialogue="Customize Controls"></option>
+
+    <option id="options13" dialogue="Audio"></option>
+    <option id="options14" dialogue="Master Vol."></option>
+    <option id="options15" dialogue="Music Vol."></option>
+    <option id="options16" dialogue="SFX Vol."></option>
+    <option id="options17" dialogue="UI Vol."></option>
+    <option id="options17a" dialogue="Voice Vol."></option>
+
+    <option id="options18" dialogue="Main Menu"></option>
+    <option id="options19" dialogue="Quit Game"></option>
+
+    <option id="options20" dialogue="Return to main menu?"></option>
+    <option id="options21" dialogue="Quit game?"></option>
+
+    <option id="options22" dialogue="Copy join code to clipboard"></option>
+    <option id="options23" dialogue="Join friends with code"></option>
+    <option id="options24" dialogue="Copy code..."></option>
+
+    <option id="rw0" dialogue="Move Forward"></option>
+    <option id="rw1" dialogue="Move Forward+"></option>
+    <option id="rw2" dialogue="Move Forward-"></option>
+    <option id="rw3" dialogue="Move Horizontal"></option>
+    <option id="rw4" dialogue="Move Horizontal+"></option>
+    <option id="rw5" dialogue="Move Horizontal-"></option>
+    <option id="rw6" dialogue="Mouse Vertical"></option>
+    <option id="rw7" dialogue="Mouse Vertical+"></option>
+    <option id="rw8" dialogue="Mouse Vertical-"></option>
+    <option id="rw9" dialogue="Mouse Horizontal"></option>
+    <option id="rw10" dialogue="Mouse Horizontal+"></option>
+    <option id="rw11" dialogue="Mouse Horizontal-"></option>
+
+    <option id="rw12" dialogue="Main Action"></option>
+    <option id="rw13" dialogue="Secondary Action"></option>
+    <option id="rw14" dialogue="Build"></option>
+    <option id="rw15" dialogue="Drop Item"></option>
+    <option id="rw16" dialogue="Jump"></option>
+    <option id="rw17" dialogue="Sprint"></option>
+    <option id="rw18" dialogue="Open Builder"></option>
+    <option id="rw19" dialogue="Menu Next"></option>
+    <option id="rw20" dialogue="Menu Previous"></option>
+    <option id="rw21" dialogue="Chat"></option>
+    <option id="rw22" dialogue="Voice Chat"></option>
+    <option id="rw23" dialogue="Escape Menu"></option>
+    <option id="rw24" dialogue="Crouch"></option>
+
+    <option id="rw25" dialogue="Builder Tab Next"></option>
+    <option id="rw26" dialogue="Builder Tab Prev"></option>
+    <option id="rw27" dialogue="Dance 1"></option>
+    <option id="rw28" dialogue="Dance 2"></option>
+    <option id="rw29" dialogue="Dance 3"></option>
+    <option id="rw30" dialogue="Dance 4"></option>
+    <option id="rw31" dialogue="Dance 5"></option>
+    <option id="rw32" dialogue="Dance 6"></option>
+    <option id="rw33" dialogue="Dance 7"></option>
+    <option id="rw34" dialogue="Dance 8"></option>
+    <option id="rw35" dialogue="Dance 9"></option>
+    <option id="rw36" dialogue="Numpad 0"></option>
+    <option id="rw37" dialogue="Numpad 1"></option>
+    <option id="rw38" dialogue="Numpad 2"></option>
+    <option id="rw39" dialogue="Numpad 3"></option>
+    <option id="rw40" dialogue="Numpad 4"></option>
+    <option id="rw41" dialogue="Numpad 5"></option>
+    <option id="rw42" dialogue="Numpad 6"></option>
+    <option id="rw43" dialogue="Numpad 7"></option>
+    <option id="rw44" dialogue="Numpad 8"></option>
+    <option id="rw45" dialogue="Numpad 9"></option>
+    <option id="rw46" dialogue="Numpad Delete"></option>
+    <option id="rw47" dialogue="Numpad Period"></option>
+    <option id="rw48" dialogue="Numpad Accept"></option>
+
+    <option id="rw49" dialogue="Build Snapping"></option>
+
+    <!-- ///////////////////////////////////Text///////////////////////////////////// -->
+
+    <option id="employees" dialogue="Employees: "></option>
+    <option id="employeesassignment" dialogue="Employees Assignment"></option>
+    <option id="cashiers" dialogue="Cashiers"></option>
+    <option id="restock" dialogue="Restock"></option>
+    <option id="storage" dialogue="Storage"></option>
+    <option id="security" dialogue="Security"></option>
+    <option id="mblackboard" dialogue="Manager Blackboard"></option>
+    <option id="productorder" dialogue="Product Order"></option>
+    <option id="supermarket" dialogue="Supermarket"></option>
+    <option id="cosmetics" dialogue="Cosmetics Order"></option>
+    <option id="stream" dialogue="Set TV Video/Stream"></option>
+    <option id="pinshelves" dialogue="Products in shelves"></option>
+    <option id="pinstorage" dialogue="Products in storages"></option>
+    <option id="pinboxes" dialogue="Products in boxes"></option>
+    <option id="shoplist" dialogue="Shopping List"></option>
+    <option id="buy" dialogue="Buy"></option>
+    <option id="supermarketname" dialogue="Supermarket Name"></option>
+    <option id="supermarketcolor" dialogue="Supermarket Color"></option>
+    <option id="changename" dialogue="Change Name"></option>
+    <option id="changecolor" dialogue="Change Color"></option>
+    <option id="franchisepointsavailable" dialogue="Franchise Points Available"></option>
+    <option id="unlocks" dialogue="Unlocks"></option>
+    <option id="requires" dialogue="Requires"></option>
+    <option id="connectionlost" dialogue="Host connection lost"></option>
+    <option id="buyshopspace" dialogue="BUY SHOP SPACE"></option>
+    <option id="buystoragespace" dialogue="BUY STORAGE SPACE"></option>
+    <option id="addons" dialogue="Addons"></option>
+    
+
+    <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
+
+    <option id="tutorial0" dialogue="Welcome to Supermarket Together!"></option>
+    <option id="tutorial1" dialogue="While the store is closed time passes way more slowly.
+            
+The first step is to place some furniture. Press [TAB] to open the builder"></option>
+    <option id="tutorial2" dialogue="Buy 2 product shelves, a checkout and a storage shelf.
+
+Note the storage shelf can only be placed in the annex empty room connected to the manager room."></option>
+    <option id="tutorial3" dialogue="Good job!
+            
+We have a franchise point available: points are earned by owning a successful business.
+
+Go to the manager room and acquire the first perk in the perk's blackboard."></option>
+    <option id="tutorial4" dialogue="Great. You have just acquired the first pack of products.
+
+It's important to remember that once you've acquired a product franchise, customers will expect those products to be in the store or they will complain about existences.
+
+Now go to the manager blackboard, click in it and then click in products order."></option>
+    <option id="tutorial5" dialogue="Good. Now click in Basic Products I."></option>
+    <option id="tutorial6" dialogue="Let's buy a box of each basic product.
+
+Click on the plus symbol of each product to add it to the shopping list, once you have one of each there, click buy."></option>
+    <option id="tutorial7" dialogue="Great. Now go outside and look for the purchased boxes. Click on one to hold it."></option>
+    <option id="tutorial8" dialogue="Go to a product shelf and click [LMB] on one of its rows to fill it with products.
+
+[RMB] will return items from the shelf to the box.
+
+You can also press [F] to drop items where you want to.
+
+Place all products in the store's shelves."></option>
+    <option id="tutorial9" dialogue="Products are placed but initially labeled at cost price which means no benefit.
+
+Go to the manager room and take one of the pricing devices."></option>
+    <option id="tutorial10" dialogue="Aim at a shelf and the product pricing information will appear on the device' screen.
+
+If your prices surpasses more than double of the product's base price customers will have an increasing chance of not buying it so use this rule as a scale.
+
+P.e. if a product has cost 1 dollar and you set your price higher than 2 dollars customers may not buy it. Try to set a price to all six different products.
+
+CONTROLS
+[Mouse Wheel] Add or subtract in increments of 0.01.
+[Mouse Wheel + E] Add or subtract in increments of 0.2.
+[LMB] Accept price.
+[Numpad] Can also be used.
+[F] Drop items"></option>
+    
+    <option id="tutorial11" dialogue="Your store is now ready to open. To allow customers in press the green button located in the manager's room. But first read the important info below:
+
+- Every Thursday market inflation increases on some products and you will have to review prices.
+
+- You can drop empty boxes in the container just outside OR carry them to the farthest container across the street and earn some money back by recycling it. Money can be increased with a perk.
+
+- At day 8, thieves and trash will have a chance to spawn. The solution to both is the broom: hit the thieves and they will drop one stole product per hit.
+
+- Each checkout can have a queue of 8 customers, they won't become impatient but extra customers that do not detect a free checkout queue, will become thieves and leave without paying.
+
+- You can check lights and other decoration by pressing X or Z by default while using the Builder.
+
+- The more players, the more difficulty. (Try hitting players with the broom)"></option>
+    
+
+    <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
+
+    <option id="builder0" dialogue="Build / Move / Delete"></option>
+    <option id="builder1" dialogue="Rotate Left"></option>
+    <option id="builder2" dialogue="Rotate Right"></option>
+    <option id="builder3" dialogue="Navigate Menu Up"></option>
+    <option id="builder4" dialogue="Navigate Menu Down"></option>
+
+    <option id="checkout0" dialogue="[LMB] Add money"></option>
+    <option id="checkout1" dialogue="[RMB] Remove money"></option>
+    
+    <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
+
+    <option id="day" dialogue="Day "></option>
+    
+    <option id="weekday1" dialogue="MON"></option>
+    <option id="weekday2" dialogue="TUE"></option>
+    <option id="weekday3" dialogue="WED"></option>
+    <option id="weekday4" dialogue="THU"></option>
+    <option id="weekday5" dialogue="FRI"></option>
+    <option id="weekday6" dialogue="SAT"></option>
+    <option id="weekday0" dialogue="SUN"></option>
+
+    <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
+
+    <option id="endofworkingday" dialogue="End of working day: "></option>
+    <option id="totalcustomers" dialogue="Total Customers: "></option>
+    <option id="notfoundproducts" dialogue="Not found products: "></option>
+    <option id="tooexpensiveproducts" dialogue="Too expensive products: "></option>
+    <option id="timesrobbed" dialogue="Times robbed: "></option>
+    <option id="complaintsfilth" dialogue="Complaints about filth: "></option>    
+    <option id="franchiselevel" dialogue="Franchise Level: "></option>
+    <option id="franchiseexperience" dialogue="Franchise experience: "></option>
+    <option id="income" dialogue="Income "></option>
+    <option id="moneylostbecauserobbing" dialogue="Money lost because robbers: "></option>
+    <option id="boughtproductscost" dialogue="Bought products cost: "></option>
+    <option id="rentcost" dialogue="Rent cost: "></option>
+    <option id="electricitycost" dialogue="Electricity cost: "></option>
+    <option id="employeeswages" dialogue="Employees wages: "></option>
+    <option id="othercosts" dialogue="Other costs: "></option>
+    <option id="daybalance" dialogue="Day Balance: "></option>
+
+    <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
+
+    <option id="messagei0" dialogue="Supermarket Opened"></option>
+    <option id="messagei1" dialogue="Franchise Level Up: Point Awarded"></option>
+    <option id="messagei2" dialogue="Perk Acquired"></option>
+    <option id="messagei3" dialogue="Supermarket Expansion Acquired"></option>
+    <option id="messagei4" dialogue="Storage Expansion Acquired"></option>
+    
+    <option id="message0" dialogue="Wrong container type for this product"></option>
+    <option id="message1" dialogue="Can't add more products to this shelf"></option>
+    <option id="message2" dialogue="Can't mix products in the same shelf"></option>
+    <option id="message3" dialogue="No franchise points available"></option>
+    <option id="message4" dialogue="Previous franchise nodes not acquired"></option>
+    <option id="message5" dialogue="No products in shopping list"></option>
+    <option id="message6" dialogue="Not enough funds"></option>
+    <option id="message7" dialogue="Already holding something"></option>
+    <option id="message8" dialogue="No more products in the box"></option>
+    <option id="message9" dialogue="No more supermarket space to acquire"></option>
+    <option id="message9a" dialogue="No more storage space to acquire"></option>
+    <option id="message10" dialogue="Can't return less money than the required change"></option>
+    <option id="message11" dialogue="Box has products inside"></option>
+    <option id="message12" dialogue="No more space in box"></option>
+    <option id="message13" dialogue="Can't mix products in the same box"></option>
+    <option id="message14" dialogue="Need a broom for this"></option>
+    <option id="message15" dialogue="Only allowed when store is closed"></option>
+    <option id="message16" dialogue="Only allowed when no more customers"></option>
+    <option id="message17" dialogue="Remove all products from container before deleting"></option>
+    <option id="message18" dialogue="Store needs at least one manned checkout"></option>
+
+    <option id="network0" dialogue="Host connection lost"></option>
+
+    <!-- ///////////////////////////////////NPCMessages///////////////////////////////////// -->
+
+    <option id="NPCmessage0" dialogue="I haven't found this: "></option>
+    <option id="NPCmessage1" dialogue="This is too expensive: "></option>
+    <option id="NPCmessage2" dialogue="Haven't found what I was looking for"></option>
+    <option id="NPCmessage3" dialogue="No checkouts available? Bye!"></option>
+    <option id="NPCmessage4" dialogue="Bye suckers!"></option>
+    <option id="NPCmessage5" dialogue="This supermarket is so filthy!"></option>
+    
+    <option id="NPCemployee0" dialogue="I'll attend this cashier."></option>
+
+    <option id="NPCmessagehit0" dialogue="Ow!"></option>
+    <option id="NPCmessagehit1" dialogue="Jeez"></option>
+    <option id="NPCmessagehit2" dialogue="Stick that broom up your arse"></option>
+    <option id="NPCmessagehit3" dialogue="Policeeeeeee!"></option>
+    <option id="NPCmessagehit4" dialogue="Eeeeeek!"></option>
+    <option id="NPCmessagehit5" dialogue="Aaaaaaaah!"></option>
+    <option id="NPCmessagehit6" dialogue="This is abuse!"></option>
+    <option id="NPCmessagehit7" dialogue="Gaah!"></option>
+    <option id="NPCmessagehit8" dialogue="Hit me harder baby"></option>
+    <option id="NPCmessagehit9" dialogue="OwO"></option>
+
+    <option id="NPCmessagehitemployee0" dialogue="Bad boss"></option>
+    <option id="NPCmessagehitemployee1" dialogue="This is abuse"></option>
+    <option id="NPCmessagehitemployee2" dialogue="D:"></option>
+    <option id="NPCmessagehitemployee3" dialogue="Call the strike!"></option>
+
+    <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
+
+    <option id="builder" dialogue="Builder"></option>
+    <option id="buildable0" dialogue="Placement Mode"></option>
+    <option id="buildable1" dialogue="Product Shelf"></option>
+    <option id="buildable2" dialogue="Basic Fridge"></option>
+    <option id="buildable3" dialogue="Double Fridge"></option>
+    <option id="buildable4" dialogue="Freezer"></option>
+    <option id="buildable5" dialogue="Storage Shelf"></option>
+    <option id="buildable6" dialogue="Checkout (Right)"></option>
+    <option id="buildable7" dialogue="Checkout (Left)"></option>
+    <option id="buildable8" dialogue="Standing Freezer"></option>
+    <option id="buildable9" dialogue="Product Counter A"></option>
+    <option id="buildable10" dialogue="Storage Shelf (Unlabeled)"></option>
+    <option id="buildable11" dialogue="Produce Shelf A"></option>
+    <option id="buildable12" dialogue="Self-checkout"></option>
+    <option id="buildable13" dialogue="Produce Shelf B"></option>
+    <option id="buildable14" dialogue="Product Shelf (Half)"></option>
+
+    <option id="buildable0a" dialogue="Delete Mode"></option>
+    <option id="tabtitle0" dialogue="Builder"></option>
+    <option id="tabtitle1" dialogue="Decoration"></option>
+    <option id="tabtitle2" dialogue="Devices"></option>
+    <option id="tabtitle3" dialogue="Lights"></option>
+    <option id="tabtitle4" dialogue="Seasonal: Halloween"></option>
+    <option id="tabtitle5" dialogue="Employee Restroom"></option>
+    <option id="tabtitle6" dialogue="DLC"></option>
+    <option id="tabtitle7" dialogue="Seasonal: Christmas"></option>
+    
+    <option id="decorat1" dialogue="Neon Lamp A"></option>
+    <option id="decorat2" dialogue="Potted Plant A"></option>
+    <option id="decorat3" dialogue="TV"></option>
+    <option id="decorat4" dialogue="Ceiling Sign"></option>
+    <option id="decorat5" dialogue="Crowd Barrier"></option>
+    <option id="decorat6" dialogue="Anti-theft Door"></option>
+    <option id="decorat7" dialogue="Potted Spruce A"></option>
+    <option id="decorat8" dialogue="Potted Bamboo A"></option>
+    <option id="decorat9" dialogue="Ceiling Vent"></option>
+    <option id="decorat10" dialogue="Central Pricing Machine"></option>
+
+    <option id="decorat11" dialogue="Tombstone A"></option>
+    <option id="decorat12" dialogue="Tombstone B"></option>
+    <option id="decorat13" dialogue="Tombstone C"></option>
+    <option id="decorat14" dialogue="Tombstone D"></option>
+    <option id="decorat15" dialogue="Tombstone E"></option>
+    <option id="decorat16" dialogue="Tombstone F"></option>
+    <option id="decorat17" dialogue="Pumpkin A"></option>
+    <option id="decorat18" dialogue="Pumpkin B"></option>
+    <option id="decorat19" dialogue="Pumpkin C"></option>
+
+    <option id="decorat20" dialogue="The Pumpkinman"></option>
+    <option id="decorat21" dialogue="Spooky Ghost"></option>
+    <option id="decorat22" dialogue="Shiny Flower A"></option>
+    <option id="decorat23" dialogue="Shiny Flower B"></option>
+    <option id="decorat24" dialogue="Mini Transport Vehicle"></option>
+    <option id="decorat25" dialogue="Neon Lamp B"></option>
+    <option id="decorat26" dialogue="Neon Lamp C"></option>
+    <option id="decorat27" dialogue="Neon Lamp D"></option>
+    <option id="decorat28" dialogue="Neon Lamp E"></option>
+    <option id="decorat29" dialogue="Hanging Lamp A"></option>
+
+    <option id="decorat30" dialogue="Hanging Lamp B"></option>
+    <option id="decorat31" dialogue="Hanging Lamp C"></option>
+    <option id="decorat32" dialogue="Hanging Lamp D"></option>
+    <option id="decorat33" dialogue="Hanging Lamp E"></option>
+    <option id="decorat34" dialogue="Hanging Lamp F"></option>
+    <option id="decorat35" dialogue="Hanging Lamp G"></option>
+    <option id="decorat36" dialogue="Hanging Lamp H"></option>
+    <option id="decorat37" dialogue="Hanging Lamp I"></option>
+    <option id="decorat38" dialogue="Hanging Lamp J"></option>
+    <option id="decorat39" dialogue="Hanging Lamp K"></option>
+
+    <option id="decorat40" dialogue="Hanging Lamp L"></option>
+    <option id="decorat41" dialogue="Hanging Lamp M"></option>
+
+    
+
+    <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
+
+    <option id="skill01" dialogue="Employee I"></option>
+    <option id="skill02" dialogue="Employee II"></option>
+    <option id="skill03" dialogue="Employee III"></option>
+    <option id="skill04" dialogue="Employee IV"></option>
+    <option id="skill05" dialogue="Employee V"></option>
+    <option id="skill0a" dialogue="Allows hiring an extra employee"></option>
+    <option id="skill1" dialogue="Free morning coffee"></option>
+    <option id="skill1a" dialogue="Employees move +20% faster"></option>
+    <option id="skill2" dialogue="Marketing courses I"></option>
+    <option id="skill2a" dialogue="Employees generate +10% money in checkouts"></option>
+    <option id="skill3" dialogue="Formation courses"></option>
+    <option id="skill3a" dialogue="Employees move 20% faster"></option>
+    <option id="skill4" dialogue="Recycling courses"></option>
+    <option id="skill4a" dialogue="Recycling boxes award four times as much"></option>
+    <option id="skill5" dialogue="Air Conditioning"></option>
+    <option id="skill5a" dialogue="Attracts more customers per day"></option>
+    <option id="skill6" dialogue="Wifi connection"></option>
+    
+    <option id="skill11" dialogue="Employee VI"></option>
+    <option id="skill12" dialogue="Employee VII"></option>
+    <option id="skill13" dialogue="Employee VIII"></option>
+    <option id="skill14" dialogue="Employee IX"></option>
+    <option id="skill15" dialogue="Employee X"></option>
+    <option id="skill16" dialogue="Cashier Formation I"></option>
+    <option id="skill16a" dialogue="Employees will handle products in checkout faster"></option>
+    <option id="skill17" dialogue="Cashier Formation II"></option>
+    <option id="skill18" dialogue="Cashier Formation III"></option>
+    <option id="skill19" dialogue="Restock Formation I"></option>
+    <option id="skill19a" dialogue="Employees will place products faster"></option>
+    <option id="skill20" dialogue="Restock Formation II"></option>
+    <option id="skill21" dialogue="Even more coffee"></option>
+    <option id="skill22" dialogue="Free Energy Drinks I"></option>
+    <option id="skill23" dialogue="Free Energy Drinks II"></option>
+    <option id="skill24" dialogue="Recycling courses II"></option>
+    <option id="skill24a" dialogue="Employees will recycle boxes"></option>
+
+    <!-- ///////////////////////////////////Products///////////////////////////////////// -->
+
+    <option id="productRelated0" dialogue="Price per unit"></option>
+
+    <option id="productGroup0" dialogue="Basic Products"></option>
+    <option id="productGroup1" dialogue="Dairy Products"></option>
+    <option id="productGroup2" dialogue="Soda Drinks"></option>
+    <option id="productGroup3" dialogue="Frozen Foods"></option>
+    <option id="productGroup4" dialogue="Hygiene"></option>
+    <option id="productGroup5" dialogue="Cleaning Products"></option>
+    <option id="productGroup6" dialogue="Sweets and Snacks"></option>
+    <option id="productGroup7" dialogue="Meat"></option>
+    <option id="productGroup8" dialogue="Preserves"></option>
+    <option id="productGroup9" dialogue="Infusions"></option>
+    <option id="productGroup10" dialogue="Seafood"></option>
+    <option id="productGroup11" dialogue="Books"></option>
+    <option id="productGroup12" dialogue="Alcoholic Drinks"></option>
+    <option id="productGroup13" dialogue="Pharmacy"></option>
+    <option id="productGroup14" dialogue="Produce"></option>
+    <option id="productGroup15" dialogue="Child Care"></option>
+    
+    <option id="productCategory0" dialogue="Basic Products I"></option>
+    <option id="productCategory1" dialogue="Basic Products II"></option>
+    <option id="productCategory2" dialogue="Basic Products III"></option>
+    <option id="productCategory3" dialogue="Basic Products IV"></option>
+    <option id="productCategory4" dialogue="Basic Products V"></option>
+    <option id="productCategory5" dialogue="Basic Products VI"></option>
+    <option id="productCategory6" dialogue="Dairy Products I"></option>
+    <option id="productCategory7" dialogue="Dairy Products II"></option>
+    <option id="productCategory8" dialogue="Soda Drinks I"></option>
+    <option id="productCategory9" dialogue="Frozen Foods I"></option>
+    <option id="productCategory10" dialogue="Frozen Foods II"></option>
+    <option id="productCategory11" dialogue="Hygiene I"></option>
+    <option id="productCategory12" dialogue="Hygiene II"></option>
+    <option id="productCategory13" dialogue="Hygiene III"></option>
+    <option id="productCategory14" dialogue="Cleaning Products I"></option>
+    <option id="productCategory15" dialogue="Cleaning Products II"></option>
+    <option id="productCategory16" dialogue="Sweets And Snacks I"></option>
+    <option id="productCategory17" dialogue="Sweets And Snacks II"></option>
+    <option id="productCategory18" dialogue="Sweets And Snacks III"></option>
+    <option id="productCategory19" dialogue="Sweets And Snacks IV"></option>
+    <option id="productCategory20" dialogue="Meat I"></option>
+    <option id="productCategory21" dialogue="Preserves I"></option>
+    <option id="productCategory22" dialogue="Infusions I"></option>
+    <option id="productCategory23" dialogue="Seafood I"></option>
+    <option id="productCategory24" dialogue="Books Pack I"></option>
+    <option id="productCategory25" dialogue="Books Pack II"></option>
+    <option id="productCategory26" dialogue="Alcoholic Drinks I"></option>
+    <option id="productCategory27" dialogue="Alcoholic Drinks II"></option>
+    <option id="productCategory28" dialogue="Alcoholic Drinks III"></option>
+    <option id="productCategory29" dialogue="Pharmacy I"></option>
+    <option id="productCategory30" dialogue="Pharmacy II"></option>
+    <option id="productCategory31" dialogue="Produce I"></option>
+    <option id="productCategory32" dialogue="Produce II"></option>
+    <option id="productCategory33" dialogue="Produce III"></option>
+    <option id="productCategory34" dialogue="Produce IV"></option>
+    <option id="productCategory35" dialogue="Child Care I"></option>
+    <option id="productCategory36" dialogue="Child Care II"></option>
+    
+    
+    <option id="product0" dialogue="Pasta Penne"></option>
+    <option id="product1" dialogue="Water Bottle"></option>
+    <option id="product2" dialogue="Honey Cereals"></option>
+    <option id="product3" dialogue="Rice"></option>
+    <option id="product4" dialogue="Salt"></option>
+    <option id="product5" dialogue="Sugar"></option>
+    <option id="product6" dialogue="Margarine"></option>
+    <option id="product7" dialogue="Flour"></option>
+    <option id="product8" dialogue="Apple Juice"></option>
+    <option id="product9" dialogue="Olive Oil"></option>
+
+    <option id="product10" dialogue="Ketchup"></option>
+    <option id="product11" dialogue="Sliced Bread"></option>
+    <option id="product12" dialogue="Pepper"></option>
+    <option id="product13" dialogue="Orange Juice"></option>
+    <option id="product14" dialogue="Barbaque Sauce"></option>
+    <option id="product15" dialogue="Mustard Sauce"></option>
+    <option id="product16" dialogue="Spaghetti Box"></option>
+    <option id="product17" dialogue="Tuna Pate"></option>
+    <option id="product18" dialogue="Fiber Cereals"></option>
+    <option id="product19" dialogue="Supreme Flour"></option>
+
+    <option id="product20" dialogue="Black Coffee"></option>
+    <option id="product21" dialogue="Egg Box"></option>
+    <option id="product22" dialogue="Houmous"></option>
+    <option id="product23" dialogue="White Flour"></option>
+    <option id="product24" dialogue="Cane Sugar Box"></option>
+    <option id="product25" dialogue="Sugar"></option>
+    <option id="product26" dialogue="Macarroni"></option>
+    <option id="product27" dialogue="Ecologic Sugar"></option>
+    <option id="product28" dialogue="Brown Sugar"></option>
+    <option id="product29" dialogue="Sunflower Oil"></option>
+
+    <option id="product30" dialogue="Mash Potatoes"></option>
+    <option id="product31" dialogue="Potatoe Bag"></option>
+    <option id="product32" dialogue="Espresso Coffee"></option>
+    <option id="product33" dialogue="Basmati Rice"></option>
+    <option id="product34" dialogue="Long Grain Rice"></option>
+    <option id="product35" dialogue="Coffee"></option>
+    <option id="product36" dialogue="Supreme Pasta"></option>
+    <option id="product37" dialogue="Chocolate Cereals"></option>
+    <option id="product38" dialogue="Premium Water"></option>
+    <option id="product39" dialogue="Spring Water"></option>
+
+    <option id="product40" dialogue="Powdered Sugar"></option>
+    <option id="product41" dialogue="Sugar - Big Box"></option>
+    <option id="product42" dialogue="Brown Sugar - Big Box"></option>
+    <option id="product43" dialogue="Emmental Cheese"></option>
+    <option id="product44" dialogue="Gruyere Cheese"></option>
+    <option id="product45" dialogue="Skimmed Cheese"></option>
+    <option id="product46" dialogue="Fruit Yoghurt"></option>
+    <option id="product47" dialogue="Vanilla Yoghurt"></option>
+    <option id="product48" dialogue="Milk Brick"></option>
+    <option id="product49" dialogue="Butter"></option>
+
+    <option id="product50" dialogue="Parmigiano Cheese"></option>
+    <option id="product51" dialogue="Reggiano Cheese"></option>
+    <option id="product52" dialogue="Mozzarella Cheese"></option>
+    <option id="product53" dialogue="Skimmed Yoghurt"></option>
+    <option id="product54" dialogue="Cola Pack"></option>
+    <option id="product55" dialogue="Soda Pack"></option>
+    <option id="product56" dialogue="Decaf Soda Pack"></option>
+    <option id="product57" dialogue="Soda Bottle"></option>
+    <option id="product58" dialogue="Cola Bottle"></option>
+    <option id="product59" dialogue="Sugar Free Soda Bottle"></option>
+
+    <option id="product60" dialogue="Premium Soda"></option>
+    <option id="product61" dialogue="Pizza Barbaque"></option>
+    <option id="product62" dialogue="Fondue"></option>
+    <option id="product63" dialogue="Crocanti Ham"></option>
+    <option id="product64" dialogue="Ham Cheese Crepe"></option>
+    <option id="product65" dialogue="French Fries"></option>
+    <option id="product66" dialogue="Crispy Potatoe Pos"></option>
+    <option id="product67" dialogue="Green Beans"></option>
+    <option id="product68" dialogue="Four Cheese Pizza"></option>
+    <option id="product69" dialogue="Four Seasons Pizza"></option>
+
+    <option id="product70" dialogue="Vegetable Mix"></option>
+    <option id="product71" dialogue="Chicken Mix"></option>
+    <option id="product72" dialogue="Bolognaise Lasagna"></option>
+    <option id="product73" dialogue="Vegetable Lasagna"></option>
+    <option id="product74" dialogue="Toothpaste"></option>
+    <option id="product75" dialogue="Toilet Paper"></option>
+    <option id="product76" dialogue="Hand Soap"></option>
+    <option id="product77" dialogue="Avocado Shampoo"></option>
+    <option id="product78" dialogue="Egg Shampoo"></option>
+    <option id="product79" dialogue="Bath Gel"></option>
+
+    <option id="product80" dialogue="Toilet Paper"></option>
+    <option id="product81" dialogue="Mango Soap"></option>
+    <option id="product82" dialogue="Extra Soft Shampoo"></option>
+    <option id="product83" dialogue="Jojoba Honey Shampoo"></option>
+    <option id="product84" dialogue="Argan Oil Shampoo"></option>
+    <option id="product85" dialogue="Paper Towel"></option>
+    <option id="product86" dialogue="Double Side Toilet Paper"></option>
+    <option id="product87" dialogue="Lemon Soap"></option>
+    <option id="product88" dialogue="Premium Bath Gel"></option>
+    <option id="product89" dialogue="Shampoo For Babies"></option>
+
+    <option id="product90" dialogue="Detergent"></option>
+    <option id="product91" dialogue="Stain Remover"></option>
+    <option id="product92" dialogue="Glass Cleaner"></option>
+    <option id="product93" dialogue="Detergent Tables"></option>
+    <option id="product94" dialogue="Dishwasher"></option>
+    <option id="product95" dialogue="Bleach"></option>
+    <option id="product96" dialogue="Bleach - Big Bottle"></option>
+    <option id="product97" dialogue="Softener"></option>
+    <option id="product98" dialogue="Premium Detergent"></option>
+    <option id="product99" dialogue="Insecticide"></option>
+
+    <option id="product100" dialogue="Cleaning Cloths"></option>
+    <option id="product101" dialogue="Premium Capsules"></option>
+    <option id="product102" dialogue="Premium Bleach"></option>
+    <option id="product103" dialogue="Ammonia"></option>
+    <option id="product104" dialogue="Cookie Jar"></option>
+    <option id="product105" dialogue="Maxi Cone"></option>
+    <option id="product106" dialogue="Chocolate Spread"></option>
+    <option id="product107" dialogue="Chocolate Powder"></option>
+    <option id="product108" dialogue="Chips"></option>
+    <option id="product109" dialogue="Sweet Bonbek"></option>
+
+    <option id="product110" dialogue="Peach Jam"></option>
+    <option id="product111" dialogue="Ice Cream Box"></option>
+    <option id="product112" dialogue="Chocolate Box"></option>
+    <option id="product113" dialogue="Chocolate Biscuit"></option>
+    <option id="product114" dialogue="Vanilate Biscuit"></option>
+    <option id="product115" dialogue="Madeleine"></option>
+    <option id="product116" dialogue="Strawberry Jam"></option>
+    <option id="product117" dialogue="Peanut Butter"></option>
+    <option id="product118" dialogue="Chipos"></option>
+    <option id="product119" dialogue="Marshmallow"></option>
+
+    <option id="product120" dialogue="Lemon Biscuit"></option>
+    <option id="product121" dialogue="Hazelnut Biscuit"></option>
+    <option id="product122" dialogue="Premium Ice Cream"></option>
+    <option id="product123" dialogue="Honey"></option>
+    <option id="product124" dialogue="Premium Chocolate Box"></option>
+    <option id="product125" dialogue="Foditos"></option>
+    <option id="product126" dialogue="Premium Cake"></option>
+    <option id="product127" dialogue="Chopped Beef"></option>
+    <option id="product128" dialogue="Pure Beef"></option>
+    <option id="product129" dialogue="Veal"></option>
+
+    <option id="product130" dialogue="Chicken Wings"></option>
+    <option id="product131" dialogue="Chicken"></option>
+    <option id="product132" dialogue="Parma Ham"></option>
+    <option id="product133" dialogue="Sliced Ham"></option>
+    <option id="product134" dialogue="Peas - Big"></option>
+    <option id="product135" dialogue="Tuna - Big"></option>
+    <option id="product136" dialogue="Red Beans"></option>
+    <option id="product137" dialogue="Cat Food"></option>
+    <option id="product138" dialogue="Cat Food"></option>
+    <option id="product139" dialogue="Dog Food"></option>
+
+    <option id="product140" dialogue="Green Tea"></option>
+    <option id="product141" dialogue="Lemon Tea"></option>
+    <option id="product142" dialogue="Black Tea"></option>
+    <option id="product143" dialogue="Peppermint"></option>
+    <option id="product144" dialogue="Mint"></option>
+    <option id="product145" dialogue="Valerian"></option>
+    <option id="product146" dialogue="Big Sushi"></option>
+    <option id="product147" dialogue="Small Sushi"></option>
+    <option id="product148" dialogue="Smoked Salmon"></option>
+    <option id="product149" dialogue="Crab Sticks"></option>
+
+    <option id="product150" dialogue="Book - Electromagnetic"></option>
+    <option id="product151" dialogue="Book - Surprise"></option>
+    <option id="product152" dialogue="Book - ABC"></option>
+    <option id="product153" dialogue="Book - Mother And Child"></option>
+    <option id="product154" dialogue="Book - Colors"></option>
+    <option id="product155" dialogue="Book - Piticha"></option>
+    <option id="product156" dialogue="Book - OnceUpon"></option>
+    <option id="product157" dialogue="Book - Krok"></option>
+    <option id="product158" dialogue="Book - Adventures"></option>
+    <option id="product159" dialogue="Book - Donnine"></option>
+
+    <option id="product160" dialogue="Book - Vintage"></option>
+    <option id="product161" dialogue="Book - I Wont Share"></option>
+    <option id="product162" dialogue="Beer Pack"></option>
+    <option id="product163" dialogue="Beer Pack"></option>
+    <option id="product164" dialogue="Beer Pack"></option>
+    <option id="product165" dialogue="Beer Barrel"></option>
+    <option id="product166" dialogue="Beer Barrel"></option>
+    <option id="product167" dialogue="Vodka"></option>
+    <option id="product168" dialogue="Red Wine"></option>
+    <option id="product169" dialogue="Rose Wine"></option>
+
+    <option id="product170" dialogue="White Wine"></option>
+    <option id="product171" dialogue="Beer Barrel"></option>
+    <option id="product172" dialogue="Premium Vodka"></option>
+    <option id="product173" dialogue="Japanese Whisky"></option>
+    <option id="product174" dialogue="Premium Whisky"></option>
+    <option id="product175" dialogue="Premium Whisky"></option>
+    <option id="product176" dialogue="Hydrogen Peroxide"></option>
+    <option id="product177" dialogue="Disinfectant"></option>
+    <option id="product178" dialogue="Ibuprofen"></option>
+    <option id="product179" dialogue="Paracetamol"></option>
+    
+    <option id="product180" dialogue="Adhesive Bandages"></option>
+    <option id="product181" dialogue="Laxative"></option>
+    <option id="product182" dialogue="Antihistamine"></option>
+    <option id="product183" dialogue="Zinc Supplement"></option>
+    <option id="product184" dialogue="Antioxidant"></option>
+    <option id="product185" dialogue="Fish Oil"></option>
+    <option id="product186" dialogue="Algae Pills"></option>
+    <option id="product187" dialogue="Vitamins"></option>
+    <option id="product188" dialogue="Melatonin"></option>
+    <option id="product189" dialogue="Sunscreen"></option>
+    
+    <option id="product190" dialogue="Stretch Cream"></option>
+    <option id="product191" dialogue="Red Apple Tray"></option>
+    <option id="product192" dialogue="Green Apple Tray"></option>
+    <option id="product193" dialogue="Clementine Tray"></option>
+    <option id="product194" dialogue="Orange Tray"></option>
+    <option id="product195" dialogue="Pear Tray"></option>
+    <option id="product196" dialogue="Lemon Tray"></option>
+    <option id="product197" dialogue="Mango Tray"></option>
+    <option id="product198" dialogue="Avocado Tray"></option>
+    <option id="product199" dialogue="Kiwi Tray"></option>
+
+    <option id="product200" dialogue="Papaya Tray"></option>
+    <option id="product201" dialogue="Strawberry Tray"></option>
+    <option id="product202" dialogue="Cherry Tray"></option>
+    <option id="product203" dialogue="Artichoke Tray"></option>
+    <option id="product204" dialogue="Zucchini Tray"></option>
+    <option id="product205" dialogue="Carrot Tray"></option>
+    <option id="product206" dialogue="Tomato Tray"></option>
+    <option id="product207" dialogue="Potato Tray"></option>
+    <option id="product208" dialogue="Onion Tray"></option>
+    <option id="product209" dialogue="Banana Pack"></option>
+
+    <option id="product210" dialogue="Melon"></option>
+    <option id="product211" dialogue="Pineapple"></option>
+    <option id="product212" dialogue="Pumpkin"></option>
+    <option id="product213" dialogue="Watermelon"></option>
+    <option id="product214" dialogue="Baby Food: Vegetables"></option>
+    <option id="product215" dialogue="Baby Food: Fish"></option>
+    <option id="product216" dialogue="Baby Food: Fruits"></option>
+    <option id="product217" dialogue="Baby Food: Meat"></option>
+    <option id="product218" dialogue="Nutritive Milk Mix"></option>
+    <option id="product219" dialogue="Nutritive Milk Powder"></option>
+
+    <option id="product220" dialogue="Ecologic Diapers"></option>
+    <option id="product221" dialogue="Basic Diapers"></option>
+    <option id="product222" dialogue="Toddler Diapers"></option>
+    <option id="product223" dialogue="Premium Diapers"></option>
+    <option id="product224" dialogue="Aloe Baby Wipes "></option>
+    <option id="product225" dialogue="Basic Baby Wipes"></option>
+    <option id="product226" dialogue="Baby Powder"></option>
+
+    <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
+    <option id="paintmat0" dialogue="Store Tiles A"></option>
+    <option id="paintmat1" dialogue="Store Tiles B"></option>
+    <option id="paintmat2" dialogue="Store Bricks"></option>
+    <option id="paintmat3" dialogue="Store Plaster"></option>
+    <option id="paintmat4" dialogue="Store Concrete"></option>
+    <option id="paintmat5" dialogue="Lacquered Wood"></option>
+    <option id="paintmat6" dialogue="Wood Planks"></option>
+    <option id="paintmat7" dialogue="Planed Wood"></option>
+    <option id="paintmat8" dialogue="Unplaned Wood (knotted)"></option>
+    <option id="paintmat9" dialogue="Unplaned Wood"></option>
+
+    <option id="paintmat10" dialogue="Painted Wood"></option>
+    <option id="paintmat11" dialogue="Basic Tiles A"></option>
+    <option id="paintmat12" dialogue="Basic Tiles B"></option>
+    <option id="paintmat13" dialogue="Basic Tiles C"></option>
+    <option id="paintmat14" dialogue="Basic Tiles D"></option>
+    <option id="paintmat15" dialogue="Granite Tiles A"></option>
+    <option id="paintmat16" dialogue="Granite Tiles B"></option>
+    <option id="paintmat17" dialogue="Granite Tiles C"></option>
+    <option id="paintmat18" dialogue="Granite Tiles D"></option>
+    <option id="paintmat19" dialogue="Marble Tiles A"></option>
+
+    <option id="paintmat20" dialogue="Marble Tiles B"></option>
+    <option id="paintmat21" dialogue="Marble Tiles C"></option>
+    <option id="paintmat22" dialogue="Raw Marble"></option>
+    <option id="paintmat23" dialogue="Painted Metal"></option>
+    <option id="paintmat24" dialogue="Basic Brick"></option>
+    <option id="paintmat25" dialogue="Brick Pattern A"></option>
+    <option id="paintmat26" dialogue="Brick Pattern B"></option>
+    <option id="paintmat27" dialogue="Brick Pattern C"></option>
+    <option id="paintmat28" dialogue="Basic Aluminum"></option>
+    <option id="paintmat29" dialogue="Brushed Aluminum A"></option>
+
+    <option id="paintmat30" dialogue="Brushed Aluminum B"></option>
+    <option id="paintmat31" dialogue="Casted Aluminum"></option>
+    <option id="paintmat32" dialogue="Matt Aluminum"></option>
+    <option id="paintmat33" dialogue="Noisy Aluminum"></option>
+    <option id="paintmat34" dialogue="Oxidized Aluminum"></option>
+    <option id="paintmat35" dialogue="Brushed Copper"></option>
+    <option id="paintmat36" dialogue="Gold Panels"></option>
+    <option id="paintmat37" dialogue="Copper Pattern A"></option>
+    <option id="paintmat38" dialogue="Copper Pattern B"></option>
+    <option id="paintmat39" dialogue="Copper Pattern C"></option>
+
+    <option id="paintmat40" dialogue="Aluminum Pattern A"></option>
+    <option id="paintmat41" dialogue="Aluminum Pattern B"></option>
+    <option id="paintmat42" dialogue="Aluminum Pattern C"></option>
+    <option id="paintmat43" dialogue="Aluminum Pattern D"></option>
+    <option id="paintmat44" dialogue="Aluminum Pattern E"></option>
+    <option id="paintmat45" dialogue="Aluminum Pattern F"></option>
+    <option id="paintmat46" dialogue="Aluminum Pattern G"></option>
+    <option id="paintmat47" dialogue="Aluminum Pattern H"></option>
+    <option id="paintmat48" dialogue="Aluminum Pattern I"></option>
+    <option id="paintmat49" dialogue="Aluminum Pattern J"></option>
+
+    <option id="paintmat50" dialogue="Brass Pattern A"></option>
+    <option id="paintmat51" dialogue="Brass Pattern B"></option>
+    <option id="paintmat52" dialogue="Brass Pattern C"></option>
+    <option id="paintmat53" dialogue="Brass Pattern D"></option>
+    <option id="paintmat54" dialogue="Brass Pattern E"></option>
+    <option id="paintmat55" dialogue="Brass Pattern F"></option>
+    <option id="paintmat56" dialogue="Brass Pattern G"></option>
+    <option id="paintmat57" dialogue="Copper Panels"></option>
+    <option id="paintmat58" dialogue="Misc. Pattern A"></option>
+    <option id="paintmat59" dialogue="Misc. Pattern B"></option>
+
+    <option id="paintmat60" dialogue="Misc. Pattern C"></option>
+    <option id="paintmat61" dialogue="Misc. Pattern D"></option>
+    <option id="paintmat62" dialogue="Misc. Pattern E"></option>
+    <option id="paintmat63" dialogue="Misc. Pattern F"></option>
+    <option id="paintmat64" dialogue="Misc. Pattern G"></option>
+    <option id="paintmat65" dialogue="Misc. Pattern H"></option>
+    <option id="paintmat66" dialogue="Misc. Pattern I"></option>
+    <option id="paintmat67" dialogue="Misc. Pattern J"></option>
+    <option id="paintmat68" dialogue="Misc. Pattern K"></option>
+    <option id="paintmat69" dialogue="Misc. Pattern L"></option>
+
+    <option id="paintmat70" dialogue="Organic: Grass"></option>
+    <option id="paintmat71" dialogue="Organic: Leaves"></option>
+    <option id="paintmat72" dialogue="Organic: Stone A"></option>
+    <option id="paintmat73" dialogue="Organic: Stone B"></option>
+
+    <option id="paintmat74" dialogue="Halloween: Pattern A"></option>
+    <option id="paintmat75" dialogue="Halloween: Pattern B"></option>
+    <option id="paintmat76" dialogue="Halloween: Pattern C"></option>
+    <option id="paintmat77" dialogue="Halloween: Pattern D"></option>
+    <option id="paintmat78" dialogue="Halloween: Pattern E"></option>
+    <option id="paintmat79" dialogue="Halloween: Pattern F"></option>
+
+    <option id="paintmat80" dialogue="Halloween: Pattern G"></option>
+    <option id="paintmat81" dialogue="Halloween: Pattern H"></option>
+    <option id="paintmat82" dialogue="Halloween: Pattern I"></option>
+    <option id="paintmat83" dialogue="Halloween: Pattern J"></option>
+    <option id="paintmat84" dialogue="Halloween: Pattern K"></option>
+    <option id="paintmat85" dialogue="Halloween: Pattern L"></option>
+    <option id="paintmat86" dialogue="Halloween: Pattern M"></option>
+    <option id="paintmat87" dialogue="Halloween: Pumpkins"></option>
+    <option id="paintmat88" dialogue="Halloween: Skeletons"></option>
+    <option id="paintmat89" dialogue="Halloween: Cobwebs"></option>
+
+    
+    <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
+    <option id="skinshats" dialogue="Skins and Hats"></option>
+    <option id="character" dialogue="Character"></option>
+    <option id="hat" dialogue="Hat"></option>
+    <option id="coolpeople" dialogue="Only cool people allowed"></option>
+
+    <option id="mprice" dialogue="Market Price"></option>
+    <option id="yprice" dialogue="Your Price"></option>
+
+    <option id="mgiven" dialogue="Money given"></option>
+    <option id="mreturn" dialogue="Money to return"></option>
+    <option id="camount" dialogue="Current amount"></option>
+    <option id="addmoney" dialogue="[LMB] Add money"></option>
+    <option id="removemoney" dialogue="[RMB] Remove money"></option>
+
+    <option id="coopplayerfunds" dialogue="Extra funds added for coop player"></option>
+
+    <option id="alreadyopen" dialogue="Store is already opened"></option>
+    <option id="alreadyclose" dialogue="Store is already closed"></option>
+
+    <option id="newoptions1" dialogue="FOV"></option>
+    <option id="newoptions2" dialogue="TV Vol."></option>
+
+    <option id="poseskey" dialogue="Dances Key Assignment"></option>
+    
+    <option id="lic12" dialogue="In this terminal you will be able to hook Youtube and Twitch to your TVs once the license is approved."></option>
+
+    <option id="cosmetics1" dialogue="The cosmetics DLC has been approved!"></option>
+    <option id="cosmetics2" dialogue="7 new characters, over 70 hats, 35 dances and poses and a web browser to slack while your boss isn't looking.
+
+It will also include new decorations and hooking videos to your TVs. The first update to paint your store is already available!"></option>
+
+    <option id="continue" dialogue="Continue"></option>
+    <option id="backups" dialogue="Backups"></option>
+    <option id="nobackups" dialogue="No Backups"></option>
+    <option id="backupswarning" dialogue="Warning: loading a backup will override the current file's day."></option>
+    <option id="deleteoff" dialogue="Delete Mode Off"></option>
+    <option id="deleteon" dialogue="Delete Mode On"></option>
+
+    <option id="kick" dialogue="Kick"></option>
+    <option id="punish" dialogue="Punish"></option>
+    <option id="permi" dialogue="Permissions"></option>
+
+    <option id="nplayer" dialogue="New player connected: "></option>
+
+    <option id="disclaimer1" dialogue="If you are having joining problems remember to update to latest patch!"></option>
+
+    <option id="tvcontrol" dialogue="TVs Control"></option>
+    <option id="tvhook0" dialogue="Off"></option>
+    <option id="tvhook1" dialogue="Placeholder Videos"></option>
+    <option id="tvhook2" dialogue="URL Video"></option>
+    <option id="tvhook3" dialogue="Browser"></option>
+    <option id="tvhook4" dialogue="Twitch/YT Video"></option>
+    <option id="tvdisclaimer" dialogue="Streaming visualization still pending. 
+Thank you for your patience."></option>
+
+    <option id="lobby0" dialogue="Lobby is now: "></option>
+    <option id="lobby1" dialogue="open"></option>
+    <option id="lobby2" dialogue="closed "></option>
+    <option id="lobby3" dialogue="Open Lobby"></option>
+    <option id="lobby4" dialogue="Close Lobby"></option>
+    <option id="lobby5" dialogue="Closing a lobby will prevent anyone from joining.
+Useful if you only expect a certain number of players and don't want anyone without code to join via Steam Friends."></option>
+
+    <option id="newoptions3" dialogue="Allow Videos"></option>
+
+    <option id="checkoutlane" dialogue="Checkout lane closed
+Please use next"></option>
+    <option id="checkoutlane1" dialogue="Close checkout lane"></option>
+
+    <option id="paintablestablet0" dialogue="Select Material, then color, then apply selection"></option>
+    <option id="paintablestablet1" dialogue="Return to material selection"></option>
+    <option id="paintablestablet2" dialogue="Previous/next material or color"></option>
+    <option id="paintablestablet3" dialogue="Store customization being implemented. 
+This wall allows to preview the paintables tablet without money cost.
+In some materials you can select color variances."></option>
+
+    <option id="newoptions4" dialogue="High Latency"></option>
+    <option id="newoptions5" dialogue="General"></option>
+    <option id="titledisclaimer1" dialogue="Missing products when joining a game and restocking? Activate the new High Latency mode in options"></option>
+
+    <option id="managerboardnew1" dialogue="Buy Empty Box"></option>
+    <option id="employeeboardnew1" dialogue="Interrupt box recycling"></option>
+
+    <option id="tabletdisclaimer1" dialogue="This tablet has been deprecated and merged in the main builder.
+Use X and Z by default to access the new tabs."></option>
+
+    <option id="pcat" dialogue="You petted the cat. Come back later"></option>
+
+    <option id="snapping0" dialogue="Next Snap Mode"></option>
+    <option id="snapping1" dialogue="Snap Mode"></option>
+    <option id="snapping2" dialogue="None"></option>
+    <option id="snapping3" dialogue="Grid: Center"></option>
+    <option id="snapping4" dialogue="Grid: Backside"></option>
+    <option id="snapping5" dialogue="Furniture"></option>
+
+    <option id="checkoutwarning" dialogue="Your store needs at least a manned checkout"></option>
+
+    <option id="newoptions6" dialogue="Always Run"></option>
+    <option id="newoptions7" dialogue="Browser"></option>
+    <option id="newoptions7a" dialogue="None"></option>
+    <option id="newoptions7b" dialogue="Normal"></option>
+    <option id="newoptions7c" dialogue="Linux Supported"></option>
+    <option id="newoptions8" dialogue="Kaching Vol."></option>
+    <option id="newoptions9" dialogue="Confine Cursor"></option>
+    <option id="newoptions10" dialogue="Crosshair Size"></option>
+    <option id="newoptions11" dialogue="Crosshair Color"></option>
+    <option id="newoptions12" dialogue="Night Dim"></option>
+    
+  </options>
