@@ -27,31 +27,24 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<float> LightCostMod;
     public static ConfigEntry<float> RentCostMod;
     public static ConfigEntry<float> EmployeeCostMod;
-    public static ConfigEntry<float> ThiefStealAmount;
-    public static ConfigEntry<float> ThiefAmount;
     public static ConfigEntry<bool> OneHitThief;
+    public static ConfigEntry<bool> StartWithEmployee;
+    public static ConfigEntry<int> StartEmployeeAmount;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<bool> FasterCheckout;
     public static ConfigEntry<bool> ShowFPS;
+    public static ConfigEntry<bool> DisableAllThieves;
+    public static ConfigEntry<bool> AllNPCAreThieves;
     public static ConfigEntry<bool> ShowPing;
-    // public static ConfigEntry<bool> ReplaceCurrencyWithNew;
-    private const string MyGUID = "SupermarketTogether.plugins.DoublePrices";
-    private const string PluginName = "double-prices";
-    private const string VersionString = "1.1.0";
-    // Config entry key strings
-    // These will appear in the config file created by BepInEx and can also be used
-    // by the OnSettingsChange event to determine which setting has changed.
+    public static ConfigEntry<bool> DisableTrash;
+
+
     public static string KeyboardShortcutDoublePriceKey = "Double price toggle";
     public static string KeyboardShortcutRoundDownSwitchKey = "Round down switch";
     public static string KeyboardShortcutRoundDownToggleKey = "Round down toggle";
-
     public static string roundDownKey = "Round down";
     public static string NearestFiveKey = "Round down to nearest 0.05";
     public static string NearestTenKey = "Round down to nearest 0.10";
-    // Configuration entries. Static, so can be accessed directly elsewhere in code via
-    // e.g.
-    // float myFloat = fuck_coolPlugin.FloatExample.Value;
-    // TODO Change this code or remove the code if not required.
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownToggle;
@@ -59,28 +52,19 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
 
-    private static readonly Harmony Harmony = new Harmony(MyGUID);
-    public static ManualLogSource Log = new ManualLogSource(PluginName);
-
     public static bool doublePrice = true;
-
     public static bool notify = false;
     public static string notificationType;
+
     private void Awake()
     {
-        // Double Price setting
-
         KeyboardShortcutDoublePrice = Config.Bind("General",
         KeyboardShortcutDoublePriceKey,
             new KeyboardShortcut(KeyCode.Q));
 
-        // Round down settings
-
         roundDown = Config.Bind("Round Down", roundDownKey, false);
         NearestFive = Config.Bind("Round Down", NearestFiveKey, true);
         NearestTen = Config.Bind("Round Down", NearestTenKey, false);
-
-        // Round down shortcuts settings
 
         KeyboardShortcutRoundDownSwitch = Config.Bind("Round Down Shortucts",
         KeyboardShortcutRoundDownSwitchKey,
@@ -94,28 +78,28 @@ public class BetterSMT : BaseUnityPlugin
         Logger = base.Logger;
 
         EmployeesPerPerk = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employees Per Perk",
             1,
-            new ConfigDescription("Adjust the amount of employees you gain per perk",
+            new ConfigDescription("Adjust the amount of employees you gain per perk (Higher number = more employees)",
                 new AcceptableValueRange<int>(0, 5)
             )
         );
 
         EmployeeSpeedPerPerk = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employee Speed Per Perk",
             .2f,
-            new ConfigDescription("Adjust the amount of speed employees gain per perk",
-                new AcceptableValueRange<float>(.2f, 1f)
+            new ConfigDescription("Adjust the amount of speed employees gain per perk (Higher = faster)",
+                new AcceptableValueRange<float>(.2f, 3f)
             )
         );
 
         EmployeeRestockPerPerk = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employee Restock Time Reduction Per Perk",
             0.05f,
-            new ConfigDescription("Adjust the amount of time it takes for employees to restock per perk",
+            new ConfigDescription("Adjust the amount of time it takes for employees to restock per perk (Lower = faster)",
                 new AcceptableValueRange<float>(0.01f, 0.1f)
             )
         );
@@ -129,23 +113,26 @@ public class BetterSMT : BaseUnityPlugin
             )
         );
 
-        //ThiefStealAmount = base.Config.Bind(
-        //    "Misc",
-        //    "Adjust the amount of items a thief steals",
-        //    10f,
-        //    new ConfigDescription("Adjust the amount of items a thief steals",
-        //        new AcceptableValueRange<float>(0.1f, 50f)
-        //    )
-        //);
-        //
-        //ThiefAmount = base.Config.Bind(
-        //    "Misc",
-        //    "Adjust the amount of thieves your store will get",
-        //    1f,
-        //    new ConfigDescription("Adjust the amount of thieves your store will get",
-        //        new AcceptableValueRange<float>(0f, 100f)
-        //    )
-        //);
+        AllNPCAreThieves = base.Config.Bind(
+            "Thieves",
+            "All Thieves",
+            false,
+             new ConfigDescription("Causes every NPC to be a thief")
+        );
+
+        DisableTrash = base.Config.Bind(
+            "Trash",
+            "Disables all trash from spawning",
+            false,
+             new ConfigDescription("Disables trash from spawning")
+        );
+
+        DisableAllThieves = base.Config.Bind(
+            "Thieves",
+            "Disable Thieves",
+            false,
+             new ConfigDescription("Prevent thieves from spawning (Does not stop checkout-related thieves)")
+        );
 
         EmployeeCostMod = base.Config.Bind(
             "Immersion",
@@ -166,16 +153,16 @@ public class BetterSMT : BaseUnityPlugin
         );
 
         EmployeExtraCheckoutMoney = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employe Increased Income While Checking Customer Out Perk",
             0.1f,
-            new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more )",
-                new AcceptableValueRange<float>(0.05f, 0.25f)
+            new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more income)",
+                new AcceptableValueRange<float>(0f, 0.25f)
                 )
             );
 
         EmployeeCheckoutPerPerk1 = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employee Checkout Time Reduction Perk 1",
             .15f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 1) (Lower = slower)",
@@ -184,7 +171,7 @@ public class BetterSMT : BaseUnityPlugin
         );
         
         EmployeeCheckoutPerPerk2 = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employee Checkout Time Reduction Perk 2",
             .2f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
@@ -193,7 +180,7 @@ public class BetterSMT : BaseUnityPlugin
         );
         
         EmployeeCheckoutPerPerk3 = base.Config.Bind(
-            "Perks",
+            "Employees",
             "Employee Checkout Time Reduction Perk 3",
             .15f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
@@ -202,19 +189,36 @@ public class BetterSMT : BaseUnityPlugin
         );
 
         CustomersPerPerk = base.Config.Bind(
-            "Perks",
+            "Customers",
             "Extra Customers per perk",
             1,
-            new ConfigDescription("Adjust the amount of customers you gain per perk",
-                new AcceptableValueRange<int>(0, 10)
+            new ConfigDescription("Adjust the amount of customers you gain per perk (Higher number = more customers)",
+                new AcceptableValueRange<int>(1, 10)
             )
         );
 
         OneHitThief = base.Config.Bind(
-            "Thiefs",
+            "Thieves",
             "Thiefs Drop Everything On Hit",
-            false
+            false,
+             new ConfigDescription("Thiefs Drop Everything On Hit")
         );
+
+        //StartEmployeeAmount = base.Config.Bind(
+        //    "Immersion",
+        //    "Extra employees to start with",
+        //    0,
+        //    new ConfigDescription("Adjust the amount of employee's you start the game with",
+        //        new AcceptableValueRange<int>(0, 5)
+        //    )
+        //);
+        //
+        //StartWithEmployee = base.Config.Bind(
+        //    "Immersion",
+        //    "Start employee",
+        //    false,
+        //    new ConfigDescription("Start the game with 1 extra employee")
+        //);
 
         FasterCheckout = base.Config.Bind(
             "Customers",
@@ -291,10 +295,6 @@ public class BetterSMT : BaseUnityPlugin
 
     }
 
-    /// <summary>
-    /// Code executed every frame. See below for an example use case
-    /// to detect keypress via custom configuration.
-    /// </summary>
     private void Update()
     {
         if (KeyboardShortcutDoublePrice.Value.IsDown())
@@ -330,7 +330,6 @@ public class BetterSMT : BaseUnityPlugin
     {
         SettingChangedEventArgs settingChangedEventArgs = e as SettingChangedEventArgs;
 
-        // Check if null and return
         if (settingChangedEventArgs == null)
         {
             return;

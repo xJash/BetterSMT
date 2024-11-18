@@ -1,10 +1,17 @@
-## v1.7.0
+## v1.8.0
 - Added ability to manually adjust the cost of lights, employee's, and rent.
+- Added config for enabling and disabling trash
+- Added option to disable spawning of thieves
+- Added option to turn every customer into a thief
+- Added config to increase amount of customer's spawned through in-game perk
+- Reorganized configuration file
+- Fixed a minor issue with highlighting of some boxes
+- [Highly suggest removing old config file and re-generating]
 
-## v1.6.5
+## v1.7.1
 - Fixed an error caused with commas being replaced by periods introduced with custom currency functions
 
-## v1.6.4
+## v1.7.0
 - Added double pricing module (Credit to Moudiz)
 - Created basis for custom currencies
 - Further fixed highlighting

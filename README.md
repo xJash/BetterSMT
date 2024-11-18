@@ -15,6 +15,11 @@ BetterSMT
 -Config to change customers per perk
 -Config to show fps counter (off by default)
 -Config to show ping (off by default)
+-Config to change how much extra cash perk employee's get
+-Config to adjust amount of trash spawns
+-Toggle for all NPC's to be thieves
+-Toggle for no NPC's to be thieves
+-Modifiers to change how much light's, rent, and employee's bills (end of day stats) cost
 -Save game button in pause menu
 -Config to change employee income increase at checkout
 -Double pricing module tanks to @Moudiz

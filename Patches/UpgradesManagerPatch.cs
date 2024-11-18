@@ -6,6 +6,7 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(UpgradesManager))]
 public class UpgradesManagerPatch
 {
+
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
 	{
@@ -72,6 +73,18 @@ public class UpgradesManagerPatch
             case 15:
                 NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
+            case 16:
+                NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk1.Value;
+                Debug.Log("ProductCheckoutWait after perk 1: " + NPC_Manager.Instance.productCheckoutWait);
+                break;
+            case 17:
+                NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk2.Value;
+                Debug.Log("ProductCheckoutWait after perk 2: " + NPC_Manager.Instance.productCheckoutWait);
+                break;
+            case 18:
+                NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk3.Value;
+                Debug.Log("ProductCheckoutWait after perk 3: " + NPC_Manager.Instance.productCheckoutWait);
                 break;
             case 19:
                 NPC_Manager.Instance.employeeItemPlaceWait -= BetterSMT.EmployeeRestockPerPerk.Value;
