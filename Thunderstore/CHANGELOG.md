@@ -1,3 +1,8 @@
+## v1.8.1
+- Added the option to delete buildings while the store is open
+- Added the option to delete buildings while their is customers in the store
+- Added the option to delete buildings that currently have product on them 
+
 ## v1.8.0
 - Added ability to manually adjust the cost of lights, employee's, and rent.
 - Added config for enabling and disabling trash

@@ -37,7 +37,8 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> AllNPCAreThieves;
     public static ConfigEntry<bool> ShowPing;
     public static ConfigEntry<bool> DisableTrash;
-
+    public static ConfigEntry<bool> AlwaysDeleteMode;
+    public static ConfigEntry<bool> DeleteProduct;
 
     public static string KeyboardShortcutDoublePriceKey = "Double price toggle";
     public static string KeyboardShortcutRoundDownSwitchKey = "Round down switch";
@@ -195,6 +196,20 @@ public class BetterSMT : BaseUnityPlugin
             new ConfigDescription("Adjust the amount of customers you gain per perk (Higher number = more customers)",
                 new AcceptableValueRange<int>(1, 10)
             )
+        );
+
+        AlwaysDeleteMode = base.Config.Bind(
+            "Building",
+            "Always access to delete",
+            false,
+             new ConfigDescription("Delete shelves and others while customers are in store and store is open")
+        );
+
+        DeleteProduct = base.Config.Bind(
+            "Building",
+            "Delete shelves with product",
+            false,
+             new ConfigDescription("***WARNING*** THIS WILL ALLOW YOU TO DELETE SHELVES WITH PRODUCT. THIS WILL NOT REFUND MONEY.")
         );
 
         OneHitThief = base.Config.Bind(
