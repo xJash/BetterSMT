@@ -15,6 +15,8 @@ BetterSMT
 -Config to change customers per perk
 -Config to show fps counter (off by default)
 -Config to show ping (off by default)
+-Config to delete buildings while store is open
+-Config to delete buildings that have product on them
 -Config to change how much extra cash perk employee's get
 -Config to adjust amount of trash spawns
 -Toggle for all NPC's to be thieves
