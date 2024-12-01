@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System.Linq;
 
 namespace BetterSMT.Patches;
 

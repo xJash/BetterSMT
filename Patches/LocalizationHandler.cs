@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace DoublePrices.Patches
+namespace BetterSMT.Patches
 {
 
     [HarmonyPatch(typeof(LocalizationManager))]
@@ -8,11 +8,11 @@ namespace DoublePrices.Patches
     {
         [HarmonyPatch(nameof(LocalizationManager.GetLocalizationString))]
         [HarmonyPrefix]
-        public static bool noLocalization_Prefix(ref string key, ref string __result)
+        public static bool NoLocalization_Prefix(ref string key, ref string __result)
         {
             if (key[0] == '`')
             {
-                __result = key.Substring(1);
+                __result = key[1..];
                 return false;
             }
             return true;

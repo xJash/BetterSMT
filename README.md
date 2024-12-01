@@ -22,9 +22,11 @@ BetterSMT
 - Toggle for all NPC's to be thieves
 - Toggle for no NPC's to be thieves
 - Modifiers to change how much light's, rent, and employee's bills (end of day stats) cost
-- Save game button in pause menu
+- Save game button in pause menu (This does not save your progress through the day- only things like stock, structures, reorganization)
+- Option to spawn a broom, pricing gun, and DLC tablet in your hand (and to remove it)
 - Config to change employee income increase at checkout
-- Double pricing module tanks to @Moudiz
+- Option to instantly change product's price at start of day (Thanks to idea/partial code to @Trevor)
+- Double pricing module thanks to @Moudiz
 - - To toggle the mod you can press 'Q' (Key bind won't register if you have other buttons active so it won't work while moving for example). You can change this to be something else via the configs file.
 - - Left Ctrl + Q - Switch between .05 and .10 rounding
 - - Left Ctrl + Left Shift + Q - Toggle rounding on and off

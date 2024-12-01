@@ -1,10 +1,10 @@
-﻿using AsmResolver.Collections;
-using HarmonyLib;
+﻿using HarmonyLib;
 using HighlightPlus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using TMPro;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
@@ -13,6 +13,14 @@ namespace BetterSMT.Patches;
 public class PlayerNetworkPatch
 {
     static PlayerNetwork pNetwork = null;
+
+    [HarmonyPatch(typeof(PlayerNetwork), nameof(PlayerNetwork.OnStartClient))]
+    [HarmonyPrefix]
+    private static bool OptimizePricesOnSpawn()
+    {
+        OptimizeProductPrices();
+        return true;
+    }
 
     [HarmonyPatch("Start"), HarmonyPrefix]
     static void StartPatch(PlayerNetwork __instance)
@@ -25,10 +33,95 @@ public class PlayerNetworkPatch
     {
         if (__instance.marketPriceTMP) __instance.marketPriceTMP.text = BetterSMT.ReplaceCommas(__instance.marketPriceTMP.text);
         if (__instance.yourPriceTMP) __instance.yourPriceTMP.text = BetterSMT.ReplaceCommas(__instance.yourPriceTMP.text);
+
+        if (BetterSMT.PricingGunToggle.Value == true)
+        {
+            if (BetterSMT.PricingGunHotkey.Value.IsDown())
+            {
+                __instance.CmdChangeEquippedItem(2);
+            }
+        }
+        if (BetterSMT.BroomToggle.Value == true)
+        {
+            if (BetterSMT.BroomHotkey.Value.IsDown())
+            {
+                __instance.CmdChangeEquippedItem(5);
+            }
+        }
+
+        if (BetterSMT.DLCTabletToggle.Value == true)
+        {
+            if (BetterSMT.DLCTabletHotkey.Value.IsDown())
+            {
+                __instance.CmdChangeEquippedItem(3);
+            }
+        }
+
+        if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                __instance.CmdChangeEquippedItem(0);//dlc
+            }
+        }
     }
 
+    [HarmonyPatch("Update")]
+    [HarmonyPostfix]
+    public static void DoublePrice_Postfix(ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP)
+    {
+        if (BetterSMT.doublePrice && ___marketPriceTMP != null)
+        {
+            if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
+                System.Globalization.NumberStyles.Float,
+                System.Globalization.CultureInfo.InvariantCulture,
+                out float market))
+            {
+                ___pPrice = market * 2;
+
+                if (BetterSMT.roundDown.Value)
+                    if (BetterSMT.NearestTen.Value)
+                        ___pPrice = (float)(Math.Floor(___pPrice * 10) / 10);
+                    else
+                        ___pPrice = (float)(Math.Floor(___pPrice * 20) / 20);
+
+                ___yourPriceTMP.text = "$" + ___pPrice;
+            }
+        }
+    }
+    public static void OptimizeProductPrices()
+    {
+        if (BetterSMT.AutoAdjustPriceDaily.Value == true)
+        {
+            GameObject[] products = ProductListing.Instance.productPrefabs;
+            ProductListing productListing = ProductListing.Instance;
+            var basePriceList = new System.Collections.Generic.List<float>();
+
+            for (int i = 0; i < products.Length; i++)
+            {
+                if (i < products.Length)
+                {
+                    Data_Product product = products[i].GetComponent<Data_Product>();
+                    basePriceList.Add(product.basePricePerUnit);
+                }
+            }
+
+            float[] basePrices = [.. basePriceList];
+            float[] inflationMultiplier = productListing.tierInflation;
+            float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
+            float[] newPrices = new float[basePrices.Length];
+
+            for (int i = 0; i < basePrices.Length; i++)
+            {
+                Data_Product productToUpdate = products[i].GetComponent<Data_Product>();
+                float calculatedPrice = basePrices[i] * inflationMultiplier[productToUpdate.productTier] * priceMultiplier;
+                float newPrice = Mathf.Floor(calculatedPrice * 100) / 100;
+                productListing.CmdUpdateProductPrice(i, newPrice);
+            }
+        }
+    }
     [HarmonyPatch("PriceSetFromNumpad"), HarmonyPrefix]
-    static void PriceSetFromNumpadPrePatch(PlayerNetwork __instance, ref int productID)
+    static void PriceSetFromNumpadPrePatch(ref int productID)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -56,7 +149,7 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("ChangeEquipment"), HarmonyPostfix]
-    static void ChangeEquipmentPatch(PlayerNetwork __instance, int newEquippedItem)
+    static void ChangeEquipmentPatch(int newEquippedItem)
     {
         if (newEquippedItem == 0)
         {
@@ -65,7 +158,7 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
-    private static void UpdateBoxContentsPatch(PlayerNetwork __instance, int productIndex)
+    private static void UpdateBoxContentsPatch(int productIndex)
     {
         HighlightShelvesByProduct(productIndex);
     }
@@ -82,10 +175,10 @@ public class PlayerNetworkPatch
         newInstructions.RemoveRange(index, 42);
 
         object nextOperand = newInstructions[index].operand;
-        newInstructions.InsertRange(index, new CodeInstruction[] {
+        newInstructions.InsertRange(index, [
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlayerNetworkPatch), nameof(PlayerNetworkPatch.GetProductFromRaycast))).MoveLabelsFrom(newInstructions[index]),
-            new CodeInstruction(OpCodes.Stloc_S, nextOperand)
-        });
+            new(OpCodes.Stloc_S, nextOperand)
+        ]);
 
         int jumpBackIndex = newInstructions.FindIndex(i => i.opcode == OpCodes.Ldfld && i.operand == (object)AccessTools.Field(typeof(Data_Container), nameof(Data_Container.productInfoArray))) + 6;
         Label jumpBack = generator.DefineLabel();
@@ -99,7 +192,7 @@ public class PlayerNetworkPatch
                 new CodeMatch(OpCodes.Stfld, AccessTools.Field(typeof(PlayerNetwork), nameof(PlayerNetwork.oldProductID)))
             ).Pos;
 
-        int component2Loc = ((LocalBuilder)newInstructions[newInstructions.FindLastIndex(i => i.Calls(AccessTools.Method(typeof(UnityEngine.Component), nameof(UnityEngine.Component.GetComponent), generics: new Type[] { typeof(Data_Container) }))) + 1].operand).LocalIndex;
+        int component2Loc = (newInstructions[newInstructions.FindLastIndex(i => i.Calls(AccessTools.Method(typeof(UnityEngine.Component), nameof(UnityEngine.Component.GetComponent), generics: [typeof(Data_Container)]))) + 1].operand as LocalBuilder).LocalIndex;
         int num3Loc = ((LocalBuilder)newInstructions[jumpBackIndex].operand).LocalIndex;
 
         newInstructions.InsertRange(index, [
@@ -132,7 +225,6 @@ public class PlayerNetworkPatch
     public static int GetProductFromRaycast()
     {
         int productID = -1;
-        int quantity = 0; // WIP IGNORE
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo3, 4f, pNetwork.interactableMask))
         {
             if (hitInfo3.transform.gameObject.name == "SubContainer")
@@ -143,7 +235,6 @@ public class PlayerNetworkPatch
                 if (component != null && component.containerClass < 20)
                 {
                     productID = component.productInfoArray[siblingIndex * 2];
-                    quantity = component.productInfoArray[siblingIndex * 2 + 1];
                 }
             }
         }
@@ -258,11 +349,7 @@ public class PlayerNetworkPatch
 
     public static void HighlightShelf(Transform t, bool value, Color? color = null)
     {
-        HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>();
-        if (highlightEffect == null)
-        {
-            highlightEffect = t.gameObject.AddComponent<HighlightEffect>();
-        }
+        HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
         if (color != null) highlightEffect.outlineColor = (Color)color;
         highlightEffect.outlineQuality = HighlightPlus.QualityLevel.High;
         highlightEffect.outlineVisibility = Visibility.AlwaysOnTop;

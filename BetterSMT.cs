@@ -5,19 +5,21 @@ using HarmonyLib;
 using BepInEx.Configuration;
 using TMPro;
 using UnityEngine;
+using BetterSMT.Patches;
 
 namespace BetterSMT;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
 public class BetterSMT : BaseUnityPlugin
 {
-    private readonly Harmony harmony = new Harmony(PluginInfo.PLUGIN_GUID);
+    private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
 
     public static BetterSMT Instance;
     internal new static ManualLogSource Logger { get; private set; } = null!;
 
     public static ConfigEntry<int> EmployeesPerPerk;
     public static ConfigEntry<int> CustomersPerPerk;
+    public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
     public static ConfigEntry<float> EmployeeRestockPerPerk;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
@@ -28,8 +30,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<float> RentCostMod;
     public static ConfigEntry<float> EmployeeCostMod;
     public static ConfigEntry<bool> OneHitThief;
-    public static ConfigEntry<bool> StartWithEmployee;
-    public static ConfigEntry<int> StartEmployeeAmount;
+    public static ConfigEntry<bool> SelfCheckoutTheft;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<bool> FasterCheckout;
     public static ConfigEntry<bool> ShowFPS;
@@ -39,16 +40,18 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> DisableTrash;
     public static ConfigEntry<bool> AlwaysDeleteMode;
     public static ConfigEntry<bool> DeleteProduct;
-
-    public static string KeyboardShortcutDoublePriceKey = "Double price toggle";
-    public static string KeyboardShortcutRoundDownSwitchKey = "Round down switch";
-    public static string KeyboardShortcutRoundDownToggleKey = "Round down toggle";
-    public static string roundDownKey = "Round down";
-    public static string NearestFiveKey = "Round down to nearest 0.05";
-    public static string NearestTenKey = "Round down to nearest 0.10";
+    public static ConfigEntry<bool> AutoAdjustPriceDaily;
+    public static ConfigEntry<float> AutoAdjustPriceDailyValue;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownToggle;
+    public static ConfigEntry<KeyboardShortcut> PricingGunHotkey;
+    public static ConfigEntry<bool> PricingGunToggle;
+    public static ConfigEntry<KeyboardShortcut> BroomHotkey;
+    public static ConfigEntry<bool> BroomToggle;
+    public static ConfigEntry<KeyboardShortcut> DLCTabletHotkey;
+    public static ConfigEntry<bool> DLCTabletToggle;
+    public static ConfigEntry<KeyboardShortcut> EmptyHandsHotkey;
     public static ConfigEntry<bool> roundDown;
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
@@ -59,21 +62,91 @@ public class BetterSMT : BaseUnityPlugin
 
     private void Awake()
     {
-        KeyboardShortcutDoublePrice = Config.Bind("General",
-        KeyboardShortcutDoublePriceKey,
-            new KeyboardShortcut(KeyCode.Q));
+        PricingGunToggle = Config.Bind(
+            "Utility",
+            "Pricing Gun Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Pricing Gun")
+        );
 
-        roundDown = Config.Bind("Round Down", roundDownKey, false);
-        NearestFive = Config.Bind("Round Down", NearestFiveKey, true);
-        NearestTen = Config.Bind("Round Down", NearestTenKey, false);
+        PricingGunHotkey = Config.Bind(
+            "Utility",
+            "Pricing Gun Hotkey",
+            new KeyboardShortcut(KeyCode.T),
+            new ConfigDescription("Hotkey to spawn a Pricing Gun in your hands.")
+        );
+        BroomToggle = Config.Bind(
+            "Utility",
+            "Broom Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Broom")
+        );
+        BroomHotkey = Config.Bind(
+            "Utility",
+            "Broom Hotkey",
+            new KeyboardShortcut(KeyCode.Y),
+            new ConfigDescription("Hotkey to spawn a Broom in your hands.")
+        );
+        DLCTabletToggle = Config.Bind(
+            "Utility",
+            "DLC Tablet Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate DLC Tablet")
+        );
+        DLCTabletHotkey = Config.Bind(
+            "Utility",
+            "DLC Tablet Hotkey",
+            new KeyboardShortcut(KeyCode.U),
+            new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands.")
+        );
+        EmptyHandsHotkey = Config.Bind(
+            "Utility",
+            "Empty Hands Hotkey",
+            new KeyboardShortcut(KeyCode.R),
+            new ConfigDescription("Hotkey to remove active item in your hand.")
+        );
 
-        KeyboardShortcutRoundDownSwitch = Config.Bind("Round Down Shortucts",
-        KeyboardShortcutRoundDownSwitchKey,
-        new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl));
+        KeyboardShortcutDoublePrice = Config.Bind(
+            "Double Price",
+            "Enable Double Price module",
+            new KeyboardShortcut(KeyCode.Q),
+            new ConfigDescription("Hotkey to enable and disable double price module")
+        );
 
-        KeyboardShortcutRoundDownToggle = Config.Bind("Round Down Shortucts",
-        KeyboardShortcutRoundDownToggleKey,
-        new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl, KeyCode.LeftShift));
+        roundDown = Config.Bind(
+            "Double Price",
+            "Enable rounding down",
+            false,
+            new ConfigDescription("Enables rounding down to prevent 'Too Expensive'")
+        );
+
+        NearestFive = Config.Bind(
+            "Double Price",
+            "Enable rounding down to nearest 0.05",
+            true,
+            new ConfigDescription("Enable rounding down to the nearest fifth")
+        );
+
+        NearestTen = Config.Bind(
+            "Double Price",
+            "Enable rounding down to nearest 0.10",
+            false,
+            new ConfigDescription("Enable rounding down to the nearest tenth")
+         );
+
+        KeyboardShortcutRoundDownSwitch = Config.Bind(
+            "Double Price",
+            "Round Down Shortcuts",
+            new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl),
+            new ConfigDescription("Hotkey to round down the double price")
+            );
+
+        KeyboardShortcutRoundDownToggle = Config.Bind(
+            "Double Price",
+            "Round Down Hotkey",
+            new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl, KeyCode.LeftShift),
+            new ConfigDescription("Hotkey to round down to setting set")
+        );
 
         Instance = this;
         Logger = base.Logger;
@@ -84,6 +157,15 @@ public class BetterSMT : BaseUnityPlugin
             1,
             new ConfigDescription("Adjust the amount of employees you gain per perk (Higher number = more employees)",
                 new AcceptableValueRange<int>(0, 5)
+            )
+        );
+
+        SelfCheckoutLimit = base.Config.Bind(
+            "Self-Checkout",
+            "Product limit on self checkout",
+            18,
+            new ConfigDescription("Limits the amount of item's a customer can have before using the self checkout",
+                new AcceptableValueRange<int>(0, 250)
             )
         );
 
@@ -121,11 +203,34 @@ public class BetterSMT : BaseUnityPlugin
              new ConfigDescription("Causes every NPC to be a thief")
         );
 
+        AutoAdjustPriceDaily = base.Config.Bind(
+            "QoL",
+            "Auto Adjust Prices Daily",
+            false,
+             new ConfigDescription("Enables or disables automatically doubling the price of products daily")
+        );
+
+        AutoAdjustPriceDailyValue = base.Config.Bind(
+            "QoL",
+            "Adjust the amount prices are automatically set to every day",
+            2f,
+            new ConfigDescription("Adjusts the amount prices are set to be multiplied by daily. Value of 2x is 2$ * 2 = 4$. Value of 1.99x is 2$*1.99=3.98",
+                new AcceptableValueRange<float>(1f, 2f)
+            )
+        );
+
+        SelfCheckoutTheft = base.Config.Bind(
+            "Self-Checkout",
+            "Self-Checkout Theft",
+            true,
+             new ConfigDescription("Enables or disables default game's theft from self checkout")
+        );
+
         DisableTrash = base.Config.Bind(
             "Trash",
-            "Disables all trash from spawning",
+            "Despawns trash",
             false,
-             new ConfigDescription("Disables trash from spawning")
+             new ConfigDescription("Despawns all trash at the end of the day")
         );
 
         DisableAllThieves = base.Config.Bind(
@@ -170,7 +275,7 @@ public class BetterSMT : BaseUnityPlugin
                 new AcceptableValueRange<float>(0.01f, 0.25f)
             )
         );
-        
+
         EmployeeCheckoutPerPerk2 = base.Config.Bind(
             "Employees",
             "Employee Checkout Time Reduction Perk 2",
@@ -219,22 +324,6 @@ public class BetterSMT : BaseUnityPlugin
              new ConfigDescription("Thiefs Drop Everything On Hit")
         );
 
-        //StartEmployeeAmount = base.Config.Bind(
-        //    "Immersion",
-        //    "Extra employees to start with",
-        //    0,
-        //    new ConfigDescription("Adjust the amount of employee's you start the game with",
-        //        new AcceptableValueRange<int>(0, 5)
-        //    )
-        //);
-        //
-        //StartWithEmployee = base.Config.Bind(
-        //    "Immersion",
-        //    "Start employee",
-        //    false,
-        //    new ConfigDescription("Start the game with 1 extra employee")
-        //);
-
         FasterCheckout = base.Config.Bind(
             "Customers",
             "Faster Checkout",
@@ -276,38 +365,19 @@ public class BetterSMT : BaseUnityPlugin
         return "$" + text;
     }
 
-    //public static string ReplaceCurrency(string text)
-    //{
-    //    if (!ReplaceCurrencyWithNew.Value) return text;
-    //    text = text.Replace("$", string.Empty);
-    //    text = text.Replace(char.Parse(","), char.Parse("."));
-    //    if (!text.Contains("."))
-    //    {
-    //        text += ".00";
-    //    }
-    //    return "$" + text;
-    //}
+
 
     public static void CreateCanvasNotification(string text)
     {
-        //if (!GameCanvas.Instance.inCooldown)
-        //{
             GameObject obj = Object.Instantiate(GameCanvas.Instance.notificationPrefab, GameCanvas.Instance.notificationParentTransform);
             obj.GetComponent<TextMeshProUGUI>().text = text;
             obj.SetActive(value: true);
-            //GameCanvas.Instance.StartCoroutine(GameCanvas.Instance.NotificationCooldown());
-        //}
     }
     public static void CreateImportantNotification(string text)
     {
-        //if (!GameCanvas.Instance.inCooldown)
-        //{
             GameObject obj = Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
             obj.GetComponent<TextMeshProUGUI>().text = text;
             obj.SetActive(value: true);
-            //GameCanvas.Instance.StartCoroutine(GameCanvas.Instance.NotificationCooldown());
-        //}
-
     }
 
     private void Update()
@@ -343,21 +413,11 @@ public class BetterSMT : BaseUnityPlugin
 
     private void ConfigSettingChanged(object sender, System.EventArgs e)
     {
-        SettingChangedEventArgs settingChangedEventArgs = e as SettingChangedEventArgs;
-
-        if (settingChangedEventArgs == null)
-        {
-            return;
-        }
-
-        // Turn off nearest 10 if both true
-        if (settingChangedEventArgs.ChangedSetting.Definition.Key == NearestFiveKey || settingChangedEventArgs.ChangedSetting.Definition.Key == NearestTenKey)
+        if (NearestFive.Value)
         {
             if (NearestTen.Value && NearestFive.Value)
                 NearestTen.Value = false;
         }
     }
-    
-
 }
 
