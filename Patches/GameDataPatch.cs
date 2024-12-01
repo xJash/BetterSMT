@@ -1,9 +1,6 @@
 ﻿using HarmonyLib;
-using HighlightPlus;
-using HutongGames.PlayMaker.Actions;
 using Mirror;
 using System.Collections;
-using System.ComponentModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -15,9 +12,15 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(GameData), "WorkingDayControl")]
 public class GameDataPatch
 {
+    [HarmonyPatch(typeof(GameData), nameof(GameData.ServerCalculateNewInflation))]
+    [HarmonyPostfix]
+    private static void OptimizePricesDaily()
+    {
+        OptimizeProductPrices();
+    }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
-    static void OnStartClientPatch(GameData __instance)
+    static void OnStartClientPatch()
     {
         ShowCounters();
         UpdateEscapeMenu();
@@ -34,15 +37,45 @@ public class GameDataPatch
     [HarmonyPatch("TrashManager"), HarmonyPostfix]
     static void TrashManagerPatch(GameData __instance)
     {
-        nextTimeToSpawnTrashPatch((__instance));
+        NextTimeToSpawnTrashPatch((__instance));
     }
-    
+
     [HarmonyPatch("UserCode_CmdOpenSupermarket"), HarmonyPostfix]
     static void UserCode_CmdOpenSupermarketPatch(GameData __instance)
     {
-        maxCustomersNPCsPatch((__instance));
+        MaxCustomersNPCsPatch((__instance));
     }
+    public static void OptimizeProductPrices()
+    {
+        if (BetterSMT.AutoAdjustPriceDaily.Value == true)
+        {
+            GameObject[] products = ProductListing.Instance.productPrefabs;
+            ProductListing productListing = ProductListing.Instance;
+            var basePriceList = new System.Collections.Generic.List<float>();
 
+            for (int i = 0; i < products.Length; i++)
+            {
+                if (i < products.Length)
+                {
+                    Data_Product product = products[i].GetComponent<Data_Product>();
+                    basePriceList.Add(product.basePricePerUnit);
+                }
+            }
+
+            float[] basePrices = [.. basePriceList];
+            float[] inflationMultiplier = productListing.tierInflation;
+            float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
+            float[] newPrices = new float[basePrices.Length];
+
+            for (int i = 0; i < basePrices.Length; i++)
+            {
+                Data_Product productToUpdate = products[i].GetComponent<Data_Product>();
+                float calculatedPrice = basePrices[i] * inflationMultiplier[productToUpdate.productTier] * priceMultiplier;
+                float newPrice = Mathf.Floor(calculatedPrice * 100) / 100;
+                productListing.CmdUpdateProductPrice(i, newPrice);
+            }
+        }
+    }
     private static void UpdateEscapeMenu()
     {
         GameObject EscapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
@@ -136,7 +169,7 @@ public class GameDataPatch
         }
     }
 
-    public static void maxCustomersNPCsPatch(GameData __instance)
+    public static void MaxCustomersNPCsPatch(GameData __instance)
     {
         if (__instance.GetComponent<NetworkSpawner>().levelPropsOBJ.transform.GetChild(2).childCount == 0)
         {
@@ -154,8 +187,8 @@ public class GameDataPatch
             __instance.RpcOpenSupermarket();
         }
     }
-    
-    public static void nextTimeToSpawnTrashPatch(GameData __instance)
+
+    public static void NextTimeToSpawnTrashPatch(GameData __instance)
     {
         if (BetterSMT.DisableTrash.Value == true)
         {

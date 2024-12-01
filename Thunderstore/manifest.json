@@ -1,8 +1,8 @@
 {
   "name": "BetterSMT",
-  "version_number": "1.8.1",
+  "version_number": "1.8.2",
   "website_url": "",
-  "description": "Fixes & Tweaks",
+  "description": "Fixes, Tweaks, and a ton of quality of life features!",
   "dependencies": [
     "BepInEx-BepInExPack-5.4.2100"
   ]

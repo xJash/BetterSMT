@@ -9,33 +9,33 @@ public class UpgradesManagerPatch
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
-	{
+    {
         if (__instance == null)
         {
             Debug.LogError("UpgradesManager instance is null in ManageExtraPerksPatch.");
         }
         switch (perkIndex)
-		{
-			case 0:
-				NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-				NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-				break;
-			case 1:
-				NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-				NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-				break;
-			case 2:
-				NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-				NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-				break;
-			case 3:
-				NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-				NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-				break;
-			case 4:
-				NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-				NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-				break;
+        {
+            case 0:
+                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
+            case 1:
+                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
+            case 2:
+                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
+            case 3:
+                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
+            case 4:
+                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
+                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
+                break;
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
@@ -76,15 +76,12 @@ public class UpgradesManagerPatch
                 break;
             case 16:
                 NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk1.Value;
-                Debug.Log("ProductCheckoutWait after perk 1: " + NPC_Manager.Instance.productCheckoutWait);
                 break;
             case 17:
                 NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk2.Value;
-                Debug.Log("ProductCheckoutWait after perk 2: " + NPC_Manager.Instance.productCheckoutWait);
                 break;
             case 18:
                 NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk3.Value;
-                Debug.Log("ProductCheckoutWait after perk 3: " + NPC_Manager.Instance.productCheckoutWait);
                 break;
             case 19:
                 NPC_Manager.Instance.employeeItemPlaceWait -= BetterSMT.EmployeeRestockPerPerk.Value;
@@ -107,7 +104,7 @@ public class UpgradesManagerPatch
                 NPC_Manager.Instance.UpdateEmployeeStats();
                 break;
             default:
-				return true;
+                return true;
         }
 
         GameObject obj = __instance.UIPerksParent.transform.GetChild(perkIndex).gameObject;
@@ -116,5 +113,5 @@ public class UpgradesManagerPatch
         obj.transform.Find("Highlight2").gameObject.SetActive(value: true);
 
         return false;
-	}
+    }
 }

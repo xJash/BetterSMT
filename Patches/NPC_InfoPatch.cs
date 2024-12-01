@@ -18,13 +18,11 @@ public class NPC_InfoPatch
     {
         [HarmonyPatch("CreateNPCCharacter")]
         [HarmonyPostfix]
-        private static void makeNPCsThieves(ref bool ___isAThief)
+        private static void MakeNPCsThieves(ref bool ___isAThief)
         {
             ___isAThief = BetterSMT.AllNPCAreThieves.Value
-                ? true
-                : BetterSMT.DisableAllThieves.Value
-                    ? false
-                    : ___isAThief; 
+            || (!BetterSMT.DisableAllThieves.Value
+            && ___isAThief);
         }
     }
 

@@ -5,18 +5,10 @@
     <AssemblyName>BetterSMT</AssemblyName>
     <Product>BetterSMT</Product>
     <Description>BetterSMT</Description>
-    <Version>1.8.1</Version>
+    <Version>1.8.2</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="dnSpy Dump.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="dnSpy Dump.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
