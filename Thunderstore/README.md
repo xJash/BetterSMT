@@ -26,7 +26,8 @@ BetterSMT
 - Option to spawn a broom, pricing gun, and DLC tablet in your hand (and to remove it)
 - Config to change employee income increase at checkout
 - Option to instantly change product's price at start of day (Thanks to idea/partial code to @Trevor)
-- Double pricing module tanks to @Moudiz
+- Added the ability to remove pillars within the store
+- Double pricing module thanks to @Moudiz
 - - To toggle the mod you can press 'Q' (Key bind won't register if you have other buttons active so it won't work while moving for example). You can change this to be something else via the configs file.
 - - Left Ctrl + Q - Switch between .05 and .10 rounding
 - - Left Ctrl + Left Shift + Q - Toggle rounding on and off
@@ -36,6 +37,7 @@ Credits
 - TeamCrisis [Most of the ideas in this mod]
 - Tech [Original Mod Developer]
 - Moudiz [Idea and code for double price module]
+- Tyler [Credit and partial code for price changes automatically at start of day]
 
 Other
 -I have not given anyone permission to take anything from this mod

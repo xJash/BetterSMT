@@ -1,3 +1,11 @@
+## v1.8.3
+- Added ability to remove most of the pillar's within the store
+- - Currently have some jankiness on top of walls where ceiling meets in certain spots when enabled
+- - Extended loading time caused by this when enabled
+- - Camera actions are odd while standing in a spot a pillar used to be  when enabled
+- Added functionality of spawning pricing gun/borom/dlc tablet while typing
+- Changed default keybinding on Pricing Gun to Y, Broom to U, and DLC Tablet to I.
+-
 ## v1.8.2
 - Added option to automatically double the price of every product at the start of the day (Credit to Trevor)
 - Added current fix for "ant circle of death" only enabled with max employee's is higher then 10

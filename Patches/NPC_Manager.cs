@@ -30,7 +30,8 @@ namespace BetterSMT.Patches
                 return -1;
             }
 
-            float time = Mathf.Clamp((float)(18 / npcInfo.productsIDCarrying.Count), 0f, 1f);
+            float v = Mathf.Clamp((float)(18 / npcInfo.productsIDCarrying.Count), 0f, 1f);
+            float time = v;
 
             for (int i = 0; i < __instance.selfCheckoutOBJ.transform.childCount; i++)
             {

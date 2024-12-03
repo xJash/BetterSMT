@@ -65,7 +65,8 @@ public class GameDataPatch
             float[] basePrices = [.. basePriceList];
             float[] inflationMultiplier = productListing.tierInflation;
             float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-            float[] newPrices = new float[basePrices.Length];
+            float[] floats = new float[basePrices.Length];
+            float[] newPrices = floats;
 
             for (int i = 0; i < basePrices.Length; i++)
             {
