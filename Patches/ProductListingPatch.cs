@@ -6,7 +6,7 @@ namespace BetterSMT.Patches;
 public class ProductListingPatch
 {
     [HarmonyPatch("ConvertFloatToTextPrice"), HarmonyPostfix]
-    static void ConvertFloatToTextPricePatch(ref string __result)
+    private static void ConvertFloatToTextPricePatch(ref string __result)
     {
         __result = BetterSMT.ReplaceCommas(__result);
     }

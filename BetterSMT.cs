@@ -1,12 +1,9 @@
 using BepInEx;
-using BepInEx.Logging;
-using BetterSMT;
-using HarmonyLib;
 using BepInEx.Configuration;
+using BepInEx.Logging;
+using HarmonyLib;
 using TMPro;
 using UnityEngine;
-using BetterSMT.Patches;
-using UnityEngine.SceneManagement;
 
 namespace BetterSMT;
 
@@ -14,9 +11,9 @@ namespace BetterSMT;
 public class BetterSMT : BaseUnityPlugin
 {
     private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
-    
+
     public static BetterSMT Instance;
-    internal new static ManualLogSource Logger { get; private set; } = null!;
+    internal static new ManualLogSource Logger { get; private set; } = null!;
 
     public static ConfigEntry<int> EmployeesPerPerk;
     public static ConfigEntry<int> CustomersPerPerk;
@@ -259,7 +256,7 @@ public class BetterSMT : BaseUnityPlugin
             new ConfigDescription("Adjust the cost of Employee at the end of the day (Higher = more expensive)",
                 new AcceptableValueRange<float>(0.1f, 50f)
             )
-        ); 
+        );
 
         RentCostMod = base.Config.Bind(
             "Immersion",
@@ -296,7 +293,7 @@ public class BetterSMT : BaseUnityPlugin
                 new AcceptableValueRange<float>(0.01f, 0.25f)
             )
         );
-        
+
         EmployeeCheckoutPerPerk3 = base.Config.Bind(
             "Employees",
             "Employee Checkout Time Reduction Perk 3",
@@ -366,7 +363,11 @@ public class BetterSMT : BaseUnityPlugin
     }
     public static string ReplaceCommas(string text)
     {
-        if (!ReplaceCommasWithPeriods.Value) return text;
+        if (!ReplaceCommasWithPeriods.Value)
+        {
+            return text;
+        }
+
         text = text.Replace("$", string.Empty);
         text = text.Replace(char.Parse(","), char.Parse("."));
         if (!text.Contains("."))
@@ -378,15 +379,15 @@ public class BetterSMT : BaseUnityPlugin
 
     public static void CreateCanvasNotification(string text)
     {
-            GameObject obj = Object.Instantiate(GameCanvas.Instance.notificationPrefab, GameCanvas.Instance.notificationParentTransform);
-            obj.GetComponent<TextMeshProUGUI>().text = text;
-            obj.SetActive(value: true);
+        GameObject obj = Object.Instantiate(GameCanvas.Instance.notificationPrefab, GameCanvas.Instance.notificationParentTransform);
+        obj.GetComponent<TextMeshProUGUI>().text = text;
+        obj.SetActive(value: true);
     }
     public static void CreateImportantNotification(string text)
     {
-            GameObject obj = Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
-            obj.GetComponent<TextMeshProUGUI>().text = text;
-            obj.SetActive(value: true);
+        GameObject obj = Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
+        obj.GetComponent<TextMeshProUGUI>().text = text;
+        obj.SetActive(value: true);
     }
 
     private void Update()
@@ -425,7 +426,9 @@ public class BetterSMT : BaseUnityPlugin
         if (NearestFive.Value)
         {
             if (NearestTen.Value && NearestFive.Value)
+            {
                 NearestTen.Value = false;
+            }
         }
     }
 }

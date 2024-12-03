@@ -8,7 +8,7 @@ public class UpgradesManagerPatch
 {
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
-    static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
+    private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
     {
         if (__instance == null)
         {
