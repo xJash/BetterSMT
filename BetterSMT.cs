@@ -6,6 +6,7 @@ using BepInEx.Configuration;
 using TMPro;
 using UnityEngine;
 using BetterSMT.Patches;
+using UnityEngine.SceneManagement;
 
 namespace BetterSMT;
 
@@ -13,7 +14,7 @@ namespace BetterSMT;
 public class BetterSMT : BaseUnityPlugin
 {
     private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
-
+    
     public static BetterSMT Instance;
     internal new static ManualLogSource Logger { get; private set; } = null!;
 
@@ -55,6 +56,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> roundDown;
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
+    public static ConfigEntry<bool> RemovePillars;
 
     public static bool doublePrice = true;
     public static bool notify = false;
@@ -62,6 +64,16 @@ public class BetterSMT : BaseUnityPlugin
 
     private void Awake()
     {
+
+        RemovePillars = Config.Bind(
+            "Utility",
+            "Removes Pillars & Beams",
+            false,
+            new ConfigDescription("Removes most of the pillars & beams from the main portion of the store. **Be warned** camera UI does glitch out when standing where " +
+                "a pillar would usually go. Aswell increases the load time considerably for now. For an idea what this does, check this link: https://i.imgur.com/OBeBj5i.jpeg")
+        );
+
+
         PricingGunToggle = Config.Bind(
             "Utility",
             "Pricing Gun Toggle",
@@ -72,7 +84,7 @@ public class BetterSMT : BaseUnityPlugin
         PricingGunHotkey = Config.Bind(
             "Utility",
             "Pricing Gun Hotkey",
-            new KeyboardShortcut(KeyCode.T),
+            new KeyboardShortcut(KeyCode.Y),
             new ConfigDescription("Hotkey to spawn a Pricing Gun in your hands.")
         );
         BroomToggle = Config.Bind(
@@ -84,7 +96,7 @@ public class BetterSMT : BaseUnityPlugin
         BroomHotkey = Config.Bind(
             "Utility",
             "Broom Hotkey",
-            new KeyboardShortcut(KeyCode.Y),
+            new KeyboardShortcut(KeyCode.U),
             new ConfigDescription("Hotkey to spawn a Broom in your hands.")
         );
         DLCTabletToggle = Config.Bind(
@@ -96,7 +108,7 @@ public class BetterSMT : BaseUnityPlugin
         DLCTabletHotkey = Config.Bind(
             "Utility",
             "DLC Tablet Hotkey",
-            new KeyboardShortcut(KeyCode.U),
+            new KeyboardShortcut(KeyCode.I),
             new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands.")
         );
         EmptyHandsHotkey = Config.Bind(
@@ -350,7 +362,6 @@ public class BetterSMT : BaseUnityPlugin
         );
 
         harmony.PatchAll();
-
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
     }
     public static string ReplaceCommas(string text)
@@ -364,8 +375,6 @@ public class BetterSMT : BaseUnityPlugin
         }
         return "$" + text;
     }
-
-
 
     public static void CreateCanvasNotification(string text)
     {

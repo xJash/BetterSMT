@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using HighlightPlus;
+using HutongGames.PlayMaker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,35 +34,41 @@ public class PlayerNetworkPatch
     {
         if (__instance.marketPriceTMP) __instance.marketPriceTMP.text = BetterSMT.ReplaceCommas(__instance.marketPriceTMP.text);
         if (__instance.yourPriceTMP) __instance.yourPriceTMP.text = BetterSMT.ReplaceCommas(__instance.yourPriceTMP.text);
-
-        if (BetterSMT.PricingGunToggle.Value == true)
+        if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false)
         {
-            if (BetterSMT.PricingGunHotkey.Value.IsDown())
-            {
-                __instance.CmdChangeEquippedItem(2);
-            }
+            
         }
-        if (BetterSMT.BroomToggle.Value == true)
+        else
         {
-            if (BetterSMT.BroomHotkey.Value.IsDown())
+            if (BetterSMT.PricingGunToggle.Value == true)
             {
-                __instance.CmdChangeEquippedItem(5);
+                if (BetterSMT.PricingGunHotkey.Value.IsDown())
+                {
+                    __instance.CmdChangeEquippedItem(2);
+                }
             }
-        }
-
-        if (BetterSMT.DLCTabletToggle.Value == true)
-        {
-            if (BetterSMT.DLCTabletHotkey.Value.IsDown())
+            if (BetterSMT.BroomToggle.Value == true)
             {
-                __instance.CmdChangeEquippedItem(3);
+                if (BetterSMT.BroomHotkey.Value.IsDown())
+                {
+                    __instance.CmdChangeEquippedItem(5);
+                }
             }
-        }
 
-        if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (BetterSMT.DLCTabletToggle.Value == true)
             {
-                __instance.CmdChangeEquippedItem(0);//dlc
+                if (BetterSMT.DLCTabletHotkey.Value.IsDown())
+                {
+                    __instance.CmdChangeEquippedItem(3);
+                }
+            }
+
+            if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true)
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    __instance.CmdChangeEquippedItem(0);
+                }
             }
         }
     }
