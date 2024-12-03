@@ -140,22 +140,25 @@ public class PlayerNetworkPatch
     [HarmonyPatch("PriceSetFromNumpad"), HarmonyPrefix]
     private static void PriceSetFromNumpadPrePatch(ref int productID)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (BetterSMT.OrderingPriceGun.Value == true)
         {
-            Data_Product data = ProductListing.Instance.productPrefabs[productID].GetComponent<Data_Product>();
-            float tinflactionFactor = ProductListing.Instance.GetComponent<ProductListing>().tierInflation[data.productTier];
-            int maxItemsPerBox = data.maxItemsPerBox;
-            float basePricePerUnit = data.basePricePerUnit;
-            basePricePerUnit *= tinflactionFactor;
-            basePricePerUnit = Mathf.Round(basePricePerUnit * 100f) / 100f;
-            float num = basePricePerUnit * maxItemsPerBox;
-            num = Mathf.Round(num * 100f) / 100f;
+            if (BetterSMT.DLCTabletHotkey.Value.IsDown())
+            {
+                Data_Product data = ProductListing.Instance.productPrefabs[productID].GetComponent<Data_Product>();
+                float tinflactionFactor = ProductListing.Instance.GetComponent<ProductListing>().tierInflation[data.productTier];
+                int maxItemsPerBox = data.maxItemsPerBox;
+                float basePricePerUnit = data.basePricePerUnit;
+                basePricePerUnit *= tinflactionFactor;
+                basePricePerUnit = Mathf.Round(basePricePerUnit * 100f) / 100f;
+                float num = basePricePerUnit * maxItemsPerBox;
+                num = Mathf.Round(num * 100f) / 100f;
 
-            GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, num);
-            string key = "product" + productID;
-            string localizationString = LocalizationManager.instance.GetLocalizationString(key);
+                GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, num);
+                string key = "product" + productID;
+                string localizationString = LocalizationManager.instance.GetLocalizationString(key);
 
-            BetterSMT.CreateCanvasNotification($"Added {localizationString}[{data.productBrand}] to shopping list");
+                BetterSMT.CreateCanvasNotification($"Added {localizationString}[{data.productBrand}] to shopping list");
+            }
         }
     }
 

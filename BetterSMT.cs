@@ -54,13 +54,26 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
     public static ConfigEntry<bool> RemovePillars;
-
+    public static ConfigEntry<bool> OrderingPriceGun;
+    public static ConfigEntry<KeyboardShortcut> OrderingPriceGunHotkey;
     public static bool doublePrice = true;
     public static bool notify = false;
     public static string notificationType;
 
     private void Awake()
     {
+        OrderingPriceGun = Config.Bind(
+            "Utility",
+            "Enable or disable ordering from price gun",
+            false,
+            new ConfigDescription("Enables the hotkey to order product using the price gun")
+        );
+        OrderingPriceGunHotkey = Config.Bind(
+            "Utility",
+            "Pricing Gun Order Hotkey",
+            new KeyboardShortcut(KeyCode.E),
+            new ConfigDescription("Hotkey to order the product the price gun is looking at.")
+        );
 
         RemovePillars = Config.Bind(
             "Utility",
