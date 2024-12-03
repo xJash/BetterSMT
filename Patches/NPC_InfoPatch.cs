@@ -8,7 +8,7 @@ namespace BetterSMT.Patches;
 public class NPC_InfoPatch
 {
     [HarmonyPatch("PlaceProducts"), HarmonyPrefix]
-    static void PlaceProductsPatch(NPC_Info __instance)
+    private static void PlaceProductsPatch(NPC_Info __instance)
     {
         __instance.productItemPlaceWait = BetterSMT.FasterCheckout.Value ? 0f : 0.5f;
     }
@@ -27,13 +27,16 @@ public class NPC_InfoPatch
     }
 
     [HarmonyPatch("AuxiliarAnimationPlay"), HarmonyPrefix]
-    static bool AuxiliarAnimationPlayPatch(NPC_Info __instance, ref int animationIndex)
+    private static bool AuxiliarAnimationPlayPatch(NPC_Info __instance, ref int animationIndex)
     {
-        if (!BetterSMT.OneHitThief.Value) return true;
+        if (!BetterSMT.OneHitThief.Value)
+        {
+            return true;
+        }
 
         if (!__instance.beingPushed)
         {
-            __instance.StartCoroutine(__instance.StopSpeed());
+            _ = __instance.StartCoroutine(__instance.StopSpeed());
         }
         if (__instance.isAThief && __instance.productsIDCarrying.Count > 0)
         {

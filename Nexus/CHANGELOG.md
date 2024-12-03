@@ -5,7 +5,7 @@
 - - Camera actions are odd while standing in a spot a pillar used to be  when enabled
 - Added functionality of spawning pricing gun/borom/dlc tablet while typing
 - Changed default keybinding on Pricing Gun to Y, Broom to U, and DLC Tablet to I.
--
+
 ## v1.8.2
 - Added option to automatically double the price of every product at the start of the day (Credit to Trevor)
 - Added current fix for "ant circle of death" only enabled with max employee's is higher then 10

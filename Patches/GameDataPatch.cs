@@ -20,30 +20,30 @@ public class GameDataPatch
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
-    static void OnStartClientPatch()
+    private static void OnStartClientPatch()
     {
         ShowCounters();
         UpdateEscapeMenu();
     }
 
     [HarmonyPatch("WorkingDayControl"), HarmonyPostfix]
-    static void WorkingDayControlPatch(GameData __instance)
+    private static void WorkingDayControlPatch(GameData __instance)
     {
-        WorkingDayLightControlPatch((__instance));
-        WorkingDayEmployeeControlPatch((__instance));
-        WorkingDayRentControlPatch((__instance));
+        WorkingDayLightControlPatch(__instance);
+        WorkingDayEmployeeControlPatch(__instance);
+        WorkingDayRentControlPatch(__instance);
     }
 
     [HarmonyPatch("TrashManager"), HarmonyPostfix]
-    static void TrashManagerPatch(GameData __instance)
+    private static void TrashManagerPatch(GameData __instance)
     {
-        NextTimeToSpawnTrashPatch((__instance));
+        NextTimeToSpawnTrashPatch(__instance);
     }
 
     [HarmonyPatch("UserCode_CmdOpenSupermarket"), HarmonyPostfix]
-    static void UserCode_CmdOpenSupermarketPatch(GameData __instance)
+    private static void UserCode_CmdOpenSupermarketPatch(GameData __instance)
     {
-        MaxCustomersNPCsPatch((__instance));
+        MaxCustomersNPCsPatch(__instance);
     }
     public static void OptimizeProductPrices()
     {
@@ -51,7 +51,7 @@ public class GameDataPatch
         {
             GameObject[] products = ProductListing.Instance.productPrefabs;
             ProductListing productListing = ProductListing.Instance;
-            var basePriceList = new System.Collections.Generic.List<float>();
+            System.Collections.Generic.List<float> basePriceList = [];
 
             for (int i = 0; i < products.Length; i++)
             {
@@ -65,8 +65,6 @@ public class GameDataPatch
             float[] basePrices = [.. basePriceList];
             float[] inflationMultiplier = productListing.tierInflation;
             float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-            float[] floats = new float[basePrices.Length];
-            float[] newPrices = floats;
 
             for (int i = 0; i < basePrices.Length; i++)
             {
@@ -102,10 +100,13 @@ public class GameDataPatch
         Button ButtonComp = SaveButton.GetComponent<Button>();
         ButtonComp.onClick.AddListener(() =>
         {
-            GameData.Instance.StartCoroutine(SaveGame());
+            _ = GameData.Instance.StartCoroutine(SaveGame());
         });
 
-        if (!GameData.Instance.isServer) SaveButton.SetActive(false);
+        if (!GameData.Instance.isServer)
+        {
+            SaveButton.SetActive(false);
+        }
     }
 
     public static IEnumerator SaveGame()
@@ -161,12 +162,12 @@ public class GameDataPatch
         UpgradesManager component = __instance.GetComponent<UpgradesManager>();
         if (component != null)
         {
-            float actualLightCost = BetterSMT.LightCostMod.Value + (float)component.spaceBought + (float)component.storageBought;
+            float actualLightCost = BetterSMT.LightCostMod.Value + component.spaceBought + component.storageBought;
             __instance.lightCost = actualLightCost;
         }
         else
         {
-            __instance.lightCost = 10f + (float)component.spaceBought + (float)component.storageBought;
+            __instance.lightCost = 10f + component.spaceBought + component.storageBought;
         }
     }
 
@@ -181,9 +182,9 @@ public class GameDataPatch
         {
             __instance.NetworkisSupermarketOpen = true;
             __instance.timeFactor = 1f;
-            __instance.maxProductsCustomersToBuy = 5 + __instance.gameDay / 2 + NetworkServer.connections.Count + __instance.difficulty;
+            __instance.maxProductsCustomersToBuy = 5 + (__instance.gameDay / 2) + NetworkServer.connections.Count + __instance.difficulty;
             __instance.maxProductsCustomersToBuy = Mathf.Clamp(__instance.maxProductsCustomersToBuy, 5, 25 + NetworkServer.connections.Count + __instance.difficulty);
-            __instance.maxCustomersNPCs = 3 + __instance.gameDay + (NetworkServer.connections.Count - 1) * 4 + __instance.extraCustomersPerk + __instance.difficulty * 2;
+            __instance.maxCustomersNPCs = 3 + __instance.gameDay + ((NetworkServer.connections.Count - 1) * 4) + __instance.extraCustomersPerk + (__instance.difficulty * 2);
             __instance.maxCustomersNPCs = Mathf.Clamp(__instance.maxCustomersNPCs, 160, 700 + NetworkServer.connections.Count);
             __instance.RpcOpenSupermarket();
         }
@@ -203,12 +204,12 @@ public class GameDataPatch
         UpgradesManager component = __instance.GetComponent<UpgradesManager>();
         if (component != null)
         {
-            float actualRentCost = BetterSMT.RentCostMod.Value + (float)(component.spaceBought * 5) + (float)(component.storageBought * 10);
+            float actualRentCost = BetterSMT.RentCostMod.Value + component.spaceBought * 5 + component.storageBought * 10;
             __instance.rentCost = actualRentCost;
         }
         else
         {
-            __instance.rentCost = 10f + (float)(component.spaceBought * 5) + (float)(component.storageBought * 10);
+            __instance.rentCost = 10f + component.spaceBought * 5 + component.storageBought * 10;
         }
     }
 
@@ -217,12 +218,12 @@ public class GameDataPatch
         UpgradesManager component = __instance.GetComponent<UpgradesManager>();
         if (component != null)
         {
-            float actualEmployeeCost = BetterSMT.EmployeeCostMod.Value + (float)(NPC_Manager.Instance.maxEmployees * 60);
+            float actualEmployeeCost = BetterSMT.EmployeeCostMod.Value + NPC_Manager.Instance.maxEmployees * 60;
             __instance.employeesCost = actualEmployeeCost;
         }
         else
         {
-            __instance.employeesCost = (float)(NPC_Manager.Instance.maxEmployees * 60);
+            __instance.employeesCost = NPC_Manager.Instance.maxEmployees * 60;
         }
     }
 }

@@ -5,19 +5,19 @@ using UnityEngine;
 
 namespace BetterSMT.Patches;
 
-[HarmonyPatch(typeof(Builder_Main), "WorkingDayControl")]
+[HarmonyPatch(typeof(Builder_Main))]
 public class Builder_MainPatch
 {
 
     [HarmonyPatch("DeleteBehaviour"), HarmonyPostfix]
-    static void DeleteBehaviourPatch(Builder_Main __instance)
+    private static void DeleteBehaviourPatch(Builder_Main __instance)
     {
-        DeleteWheneverPatch((__instance));
+        DeleteWheneverPatch(__instance);
     }
 
     public static void DeleteWheneverPatch(Builder_Main __instance)
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo, 4f, __instance.lMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 4f, __instance.lMask))
         {
             if (hitInfo.transform.gameObject.CompareTag("Movable"))
             {
@@ -61,7 +61,7 @@ public class Builder_MainPatch
                     }
                     if ((bool)hitInfo.transform.GetComponent<NetworkIdentity>())
                     {
-                        float fundsToAdd = (float)hitInfo.transform.GetComponent<Data_Container>().cost * 0.9f;
+                        float fundsToAdd = hitInfo.transform.GetComponent<Data_Container>().cost * 0.9f;
                         GameData.Instance.CmdAlterFundsWithoutExperience(fundsToAdd);
                         GameData.Instance.GetComponent<NetworkSpawner>().CmdDestroyBox(hitInfo.transform.gameObject);
                     }
@@ -77,7 +77,7 @@ public class Builder_MainPatch
         {
             __instance.hEffect2.highlighted = false;
         }
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo2, 4f, __instance.lMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo2, 4f, __instance.lMask))
         {
             if (hitInfo2.transform.gameObject.CompareTag("Decoration"))
             {

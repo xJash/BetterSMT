@@ -13,7 +13,7 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(PlayerNetwork))]
 public class PlayerNetworkPatch
 {
-    static PlayerNetwork pNetwork = null;
+    private static PlayerNetwork pNetwork = null;
 
     [HarmonyPatch(typeof(PlayerNetwork), nameof(PlayerNetwork.OnStartClient))]
     [HarmonyPrefix]
@@ -24,19 +24,30 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("Start"), HarmonyPrefix]
-    static void StartPatch(PlayerNetwork __instance)
+    private static void StartPatch(PlayerNetwork __instance)
     {
-        if (__instance.isLocalPlayer) pNetwork = __instance;
+        if (__instance.isLocalPlayer)
+        {
+            pNetwork = __instance;
+        }
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
-    static void UpdatePatch(PlayerNetwork __instance)
+    private static void UpdatePatch(PlayerNetwork __instance)
     {
-        if (__instance.marketPriceTMP) __instance.marketPriceTMP.text = BetterSMT.ReplaceCommas(__instance.marketPriceTMP.text);
-        if (__instance.yourPriceTMP) __instance.yourPriceTMP.text = BetterSMT.ReplaceCommas(__instance.yourPriceTMP.text);
+        if (__instance.marketPriceTMP)
+        {
+            __instance.marketPriceTMP.text = BetterSMT.ReplaceCommas(__instance.marketPriceTMP.text);
+        }
+
+        if (__instance.yourPriceTMP)
+        {
+            __instance.yourPriceTMP.text = BetterSMT.ReplaceCommas(__instance.yourPriceTMP.text);
+        }
+
         if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false)
         {
-            
+
         }
         else
         {
@@ -87,10 +98,9 @@ public class PlayerNetworkPatch
                 ___pPrice = market * 2;
 
                 if (BetterSMT.roundDown.Value)
-                    if (BetterSMT.NearestTen.Value)
-                        ___pPrice = (float)(Math.Floor(___pPrice * 10) / 10);
-                    else
-                        ___pPrice = (float)(Math.Floor(___pPrice * 20) / 20);
+                {
+                    ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
+                }
 
                 ___yourPriceTMP.text = "$" + ___pPrice;
             }
@@ -102,7 +112,7 @@ public class PlayerNetworkPatch
         {
             GameObject[] products = ProductListing.Instance.productPrefabs;
             ProductListing productListing = ProductListing.Instance;
-            var basePriceList = new System.Collections.Generic.List<float>();
+            List<float> basePriceList = [];
 
             for (int i = 0; i < products.Length; i++)
             {
@@ -116,7 +126,7 @@ public class PlayerNetworkPatch
             float[] basePrices = [.. basePriceList];
             float[] inflationMultiplier = productListing.tierInflation;
             float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-            float[] newPrices = new float[basePrices.Length];
+            _ = new float[basePrices.Length];
 
             for (int i = 0; i < basePrices.Length; i++)
             {
@@ -128,7 +138,7 @@ public class PlayerNetworkPatch
         }
     }
     [HarmonyPatch("PriceSetFromNumpad"), HarmonyPrefix]
-    static void PriceSetFromNumpadPrePatch(ref int productID)
+    private static void PriceSetFromNumpadPrePatch(ref int productID)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -138,7 +148,7 @@ public class PlayerNetworkPatch
             float basePricePerUnit = data.basePricePerUnit;
             basePricePerUnit *= tinflactionFactor;
             basePricePerUnit = Mathf.Round(basePricePerUnit * 100f) / 100f;
-            float num = basePricePerUnit * (float)maxItemsPerBox;
+            float num = basePricePerUnit * maxItemsPerBox;
             num = Mathf.Round(num * 100f) / 100f;
 
             GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, num);
@@ -150,13 +160,13 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("PriceSetFromNumpad"), HarmonyPostfix]
-    static void PriceSetFromNumpadPostPatch(PlayerNetwork __instance)
+    private static void PriceSetFromNumpadPostPatch(PlayerNetwork __instance)
     {
         __instance.yourPriceTMP.text = BetterSMT.ReplaceCommas(__instance.yourPriceTMP.text);
     }
 
     [HarmonyPatch("ChangeEquipment"), HarmonyPostfix]
-    static void ChangeEquipmentPatch(int newEquippedItem)
+    private static void ChangeEquipmentPatch(int newEquippedItem)
     {
         if (newEquippedItem == 0)
         {
@@ -178,7 +188,7 @@ public class PlayerNetworkPatch
         // TOP RIGHT CANVAS PRODUCT
         int index = newInstructions.FindIndex(instruction => instruction.opcode == OpCodes.Ldloca_S && instruction.operand is LocalBuilder { LocalIndex: 0 }) - 6;
 
-        newInstructions[index + 42].MoveLabelsFrom(newInstructions[index]);
+        _ = newInstructions[index + 42].MoveLabelsFrom(newInstructions[index]);
         newInstructions.RemoveRange(index, 42);
 
         object nextOperand = newInstructions[index].operand;
@@ -189,7 +199,7 @@ public class PlayerNetworkPatch
 
         int jumpBackIndex = newInstructions.FindIndex(i => i.opcode == OpCodes.Ldfld && i.operand == (object)AccessTools.Field(typeof(Data_Container), nameof(Data_Container.productInfoArray))) + 6;
         Label jumpBack = generator.DefineLabel();
-        newInstructions[jumpBackIndex].WithLabels(jumpBack);
+        _ = newInstructions[jumpBackIndex].WithLabels(jumpBack);
 
         index = new CodeMatcher(newInstructions).MatchForward
             (
@@ -232,12 +242,16 @@ public class PlayerNetworkPatch
     public static int GetProductFromRaycast()
     {
         int productID = -1;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo3, 4f, pNetwork.interactableMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo3, 4f, pNetwork.interactableMask))
         {
             if (hitInfo3.transform.gameObject.name == "SubContainer")
             {
                 int siblingIndex = hitInfo3.transform.GetSiblingIndex();
-                if (!hitInfo3.transform?.parent?.transform?.parent) return productID;
+                if (!hitInfo3.transform?.parent?.transform?.parent)
+                {
+                    return productID;
+                }
+
                 Data_Container component = hitInfo3.transform.parent.transform.parent.GetComponent<Data_Container>();
                 if (component != null && component.containerClass < 20)
                 {
@@ -245,9 +259,9 @@ public class PlayerNetworkPatch
                 }
             }
         }
-        else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo, 4f, pNetwork.lMask))
+        else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 4f, pNetwork.lMask))
         {
-            if ((hitInfo.transform.gameObject.tag == "Interactable" && hitInfo.transform.GetComponent<BoxData>()))
+            if (hitInfo.transform.gameObject.tag == "Interactable" && hitInfo.transform.GetComponent<BoxData>())
             {
                 BoxData boxData = hitInfo.transform.GetComponent<BoxData>();
                 if (boxData != null)
@@ -258,7 +272,11 @@ public class PlayerNetworkPatch
             else
             {
                 int siblingIndex = hitInfo.transform.GetSiblingIndex();
-                if (!hitInfo.transform?.parent?.transform?.parent) return productID;
+                if (!hitInfo.transform?.parent?.transform?.parent)
+                {
+                    return productID;
+                }
+
                 Data_Container component = hitInfo.transform.parent.transform.parent.GetComponent<Data_Container>();
                 if (component != null && component.containerClass == 69) // STORAGE SHELF
                 {
@@ -278,8 +296,12 @@ public class PlayerNetworkPatch
         for (int i = 0; i < shelvesOBJ.transform.childCount; i++)
         {
             Transform child = shelvesOBJ.transform.GetChild(i);
-            var container = child.gameObject.GetComponent<Data_Container>();
-            if (container == null) continue;
+            Data_Container container = child.gameObject.GetComponent<Data_Container>();
+            if (container == null)
+            {
+                continue;
+            }
+
             int[] productInfoArray = container.productInfoArray;
             int num = productInfoArray.Length / 2;
             bool highlightShelf = false;
@@ -289,9 +311,17 @@ public class PlayerNetworkPatch
 
                 bool highlightLabel = num2 == productID;
                 Transform labels = child.Find("Labels");
-                if (labels == null || labels.childCount <= j) continue;
+                if (labels == null || labels.childCount <= j)
+                {
+                    continue;
+                }
+
                 Transform label = labels.GetChild(j);
-                if (highlightLabel) highlightShelf = true;
+                if (highlightLabel)
+                {
+                    highlightShelf = true;
+                }
+
                 HighlightShelf(label, highlightLabel, Color.yellow);
             }
             HighlightShelf(child, highlightShelf, Color.red);
@@ -310,7 +340,11 @@ public class PlayerNetworkPatch
 
                 bool highlightBox = num2 == productID;
                 Transform boxs = child.Find("BoxContainer");
-                if (boxs == null || boxs.childCount <= j) continue;
+                if (boxs == null || boxs.childCount <= j)
+                {
+                    continue;
+                }
+
                 Transform box = boxs.GetChild(j);
                 HighlightShelf(box, highlightBox, Color.yellow);
             }
@@ -329,7 +363,11 @@ public class PlayerNetworkPatch
             for (int j = 0; j < num; j++)
             {
                 Transform labels = child.Find("Labels");
-                if (labels == null || labels.childCount <= j) continue;
+                if (labels == null || labels.childCount <= j)
+                {
+                    continue;
+                }
+
                 Transform label = labels.GetChild(j);
                 HighlightShelf(label, false);
             }
@@ -346,9 +384,17 @@ public class PlayerNetworkPatch
             for (int j = 0; j < num; j++)
             {
                 Transform boxContainer = child.Find("BoxContainer");
-                if (boxContainer == null) continue;
+                if (boxContainer == null)
+                {
+                    continue;
+                }
+
                 Transform box = boxContainer.GetChild(j);
-                if (box == null) continue;
+                if (box == null)
+                {
+                    continue;
+                }
+
                 HighlightShelf(box, false);
             }
         }
@@ -357,7 +403,11 @@ public class PlayerNetworkPatch
     public static void HighlightShelf(Transform t, bool value, Color? color = null)
     {
         HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
-        if (color != null) highlightEffect.outlineColor = (Color)color;
+        if (color != null)
+        {
+            highlightEffect.outlineColor = (Color)color;
+        }
+
         highlightEffect.outlineQuality = HighlightPlus.QualityLevel.High;
         highlightEffect.outlineVisibility = Visibility.AlwaysOnTop;
         highlightEffect.outlineContourStyle = ContourStyle.AroundObjectShape;

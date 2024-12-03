@@ -8,15 +8,15 @@ namespace BetterSMT.Patches
     public class NPC_ManagerPatch
     {
         [HarmonyPatch("GetAvailableSelfCheckout"), HarmonyPostfix]
-        static void GetAvailableSelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance)
+        private static void GetAvailableSelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance)
         {
-            SelfCheckoutPatch(npcInfo, __instance);
+            _ = SelfCheckoutPatch(npcInfo, __instance);
         }
 
         [HarmonyPatch("SpawnEmployee"), HarmonyPostfix]
-        static void SetNPCRadiusPatch(NPC_Manager __instance)
+        private static void SetNPCRadiusPatch(NPC_Manager __instance)
         {
-            DisableCollisions((__instance));
+            DisableCollisions(__instance);
         }
 
         public static int SelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance)
@@ -30,14 +30,12 @@ namespace BetterSMT.Patches
                 return -1;
             }
 
-            float v = Mathf.Clamp((float)(18 / npcInfo.productsIDCarrying.Count), 0f, 1f);
-            float time = v;
-
+            _ = Mathf.Clamp(18 / npcInfo.productsIDCarrying.Count, 0f, 1f);
             for (int i = 0; i < __instance.selfCheckoutOBJ.transform.childCount; i++)
             {
-                var station = __instance.selfCheckoutOBJ.transform.GetChild(i);
+                Transform station = __instance.selfCheckoutOBJ.transform.GetChild(i);
 
-                var dataContainer = station.GetComponent<Data_Container>();
+                Data_Container dataContainer = station.GetComponent<Data_Container>();
                 if (dataContainer.checkoutQueue[0])
                 {
                     continue;
@@ -45,7 +43,7 @@ namespace BetterSMT.Patches
 
                 if (BetterSMT.SelfCheckoutTheft.Value)
                 {
-                    if (npcInfo.productsIDCarrying.Count > 6 && UnityEngine.Random.value < 0.02f + (float)GameData.Instance.difficulty * 0.005f)
+                    if (npcInfo.productsIDCarrying.Count > 6 && UnityEngine.Random.value < 0.02f + (GameData.Instance.difficulty * 0.005f))
                     {
                         int index = UnityEngine.Random.Range(0, npcInfo.productsIDCarrying.Count);
                         npcInfo.productsIDCarrying.RemoveAt(index);
