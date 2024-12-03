@@ -5,6 +5,7 @@
 - - Camera actions are odd while standing in a spot a pillar used to be  when enabled
 - Added functionality of spawning pricing gun/borom/dlc tablet while typing
 - Changed default keybinding on Pricing Gun to Y, Broom to U, and DLC Tablet to I.
+- Added ability to enable/disable ordering from price gun, aswell as changing the hotkey for it
 
 ## v1.8.2
 - Added option to automatically double the price of every product at the start of the day (Credit to Trevor)
