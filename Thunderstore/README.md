@@ -24,13 +24,15 @@ Customization & Configurations
 - Trash spawn rate adjustments.
 - Show FPS counter (off by default).
 - Show ping (off by default).
-- 
+- Adjust the amount of products that fit inside of a box
+- - This also increases its cost on the market accordingly.
+
 Building & Store Management
 - Delete buildings while the store is open.
 - Delete buildings that contain products.
 - Remove pillars within the store.
 - Spawn essential tools (broom, pricing gun, and DLC tablet) in your hand.
-- 
+
 Pricing & Checkout
 - Instantly change product prices at the start of the day (thanks to @Trevor for the idea/partial code).
 - Double pricing module (thanks to @Moudiz):
