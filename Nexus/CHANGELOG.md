@@ -1,11 +1,13 @@
+## v1.8.4
+- Added the option to multiply the amount of product that fits in a box. This also increases the cost to purchase.
+- Fixed the loading issues when removing pillars
+
 ## v1.8.3
 - Added ability to remove most of the pillar's within the store
-- - Currently have some jankiness on top of walls where ceiling meets in certain spots when enabled
-- - Extended loading time caused by this when enabled
-- - Camera actions are odd while standing in a spot a pillar used to be  when enabled
 - Added functionality of spawning pricing gun/borom/dlc tablet while typing
 - Changed default keybinding on Pricing Gun to Y, Broom to U, and DLC Tablet to I.
 - Added ability to enable/disable ordering from price gun, aswell as changing the hotkey for it
+- Additional fuck-coding and memory usage cleanup
 
 ## v1.8.2
 - Added option to automatically double the price of every product at the start of the day (Credit to Trevor)

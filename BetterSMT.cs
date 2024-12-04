@@ -15,31 +15,50 @@ public class BetterSMT : BaseUnityPlugin
     public static BetterSMT Instance;
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
+    // === Employee-related settings ===
     public static ConfigEntry<int> EmployeesPerPerk;
     public static ConfigEntry<int> CustomersPerPerk;
-    public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
     public static ConfigEntry<float> EmployeeRestockPerPerk;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk2;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk3;
     public static ConfigEntry<float> EmployeExtraCheckoutMoney;
+
+    // === Cost Modifiers ===
     public static ConfigEntry<float> LightCostMod;
     public static ConfigEntry<float> RentCostMod;
     public static ConfigEntry<float> EmployeeCostMod;
+
+    // === Thieves & Crime-related settings ===
     public static ConfigEntry<bool> OneHitThief;
     public static ConfigEntry<bool> SelfCheckoutTheft;
-    public static ConfigEntry<bool> ReplaceCommasWithPeriods;
-    public static ConfigEntry<bool> FasterCheckout;
-    public static ConfigEntry<bool> ShowFPS;
     public static ConfigEntry<bool> DisableAllThieves;
     public static ConfigEntry<bool> AllNPCAreThieves;
+
+    // === Gameplay-related settings ===
+    public static ConfigEntry<bool> FasterCheckout;
+    public static ConfigEntry<bool> ShowFPS;
     public static ConfigEntry<bool> ShowPing;
     public static ConfigEntry<bool> DisableTrash;
     public static ConfigEntry<bool> AlwaysDeleteMode;
     public static ConfigEntry<bool> DeleteProduct;
     public static ConfigEntry<bool> AutoAdjustPriceDaily;
     public static ConfigEntry<float> AutoAdjustPriceDailyValue;
+    public static ConfigEntry<bool> DisableBoxCollision;   
+
+    // === Price Adjustments ===
+    public static ConfigEntry<bool> ReplaceCommasWithPeriods;
+    public static ConfigEntry<bool> roundDown;
+    public static ConfigEntry<bool> NearestFive;
+    public static ConfigEntry<bool> NearestTen;
+    public static ConfigEntry<bool> RemovePillars;
+    public static ConfigEntry<bool> OrderingPriceGun;
+    public static ConfigEntry<KeyboardShortcut> OrderingPriceGunHotkey;
+    public static bool doublePrice = true;
+    public static ConfigEntry<bool> OrderingPriceGunToggle;
+
+    // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownToggle;
@@ -50,24 +69,39 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<KeyboardShortcut> DLCTabletHotkey;
     public static ConfigEntry<bool> DLCTabletToggle;
     public static ConfigEntry<KeyboardShortcut> EmptyHandsHotkey;
-    public static ConfigEntry<bool> roundDown;
-    public static ConfigEntry<bool> NearestFive;
-    public static ConfigEntry<bool> NearestTen;
-    public static ConfigEntry<bool> RemovePillars;
-    public static ConfigEntry<bool> OrderingPriceGun;
-    public static ConfigEntry<KeyboardShortcut> OrderingPriceGunHotkey;
-    public static bool doublePrice = true;
+
+    // === Notification & Miscellaneous ===
     public static bool notify = false;
     public static string notificationType;
+    public static ConfigEntry<int> SelfCheckoutLimit;
+    public static ConfigEntry<int> MaxBoxAmountModifier;
 
     private void Awake()
     {
+
+        MaxBoxAmountModifier = base.Config.Bind(
+            "QoL",
+            "Raise Product Amount per Box",
+            1,
+            new ConfigDescription("Multiples the amount of product in a box. Default 30 in a box times 5 would make the box have 150. This also increases its cost on the market accordingly.",
+                new AcceptableValueRange<int>(1, 10)
+            )
+        );
+
+        DisableBoxCollision = Config.Bind(
+            "Utility",
+            "Enable or disable box collision",
+            false,
+            new ConfigDescription("Enables or disables box collision")
+        );
+
         OrderingPriceGun = Config.Bind(
             "Utility",
             "Enable or disable ordering from price gun",
             false,
             new ConfigDescription("Enables the hotkey to order product using the price gun")
         );
+
         OrderingPriceGunHotkey = Config.Bind(
             "Utility",
             "Pricing Gun Order Hotkey",
@@ -83,7 +117,6 @@ public class BetterSMT : BaseUnityPlugin
                 "a pillar would usually go. Aswell increases the load time considerably for now. For an idea what this does, check this link: https://i.imgur.com/OBeBj5i.jpeg")
         );
 
-
         PricingGunToggle = Config.Bind(
             "Utility",
             "Pricing Gun Toggle",
@@ -97,30 +130,35 @@ public class BetterSMT : BaseUnityPlugin
             new KeyboardShortcut(KeyCode.Y),
             new ConfigDescription("Hotkey to spawn a Pricing Gun in your hands.")
         );
+
         BroomToggle = Config.Bind(
             "Utility",
             "Broom Toggle",
             false,
             new ConfigDescription("Enables the hotkey to activate Broom")
         );
+
         BroomHotkey = Config.Bind(
             "Utility",
             "Broom Hotkey",
             new KeyboardShortcut(KeyCode.U),
             new ConfigDescription("Hotkey to spawn a Broom in your hands.")
         );
+
         DLCTabletToggle = Config.Bind(
             "Utility",
             "DLC Tablet Toggle",
             false,
             new ConfigDescription("Enables the hotkey to activate DLC Tablet")
         );
+
         DLCTabletHotkey = Config.Bind(
             "Utility",
             "DLC Tablet Hotkey",
             new KeyboardShortcut(KeyCode.I),
             new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands.")
         );
+
         EmptyHandsHotkey = Config.Bind(
             "Utility",
             "Empty Hands Hotkey",
@@ -169,9 +207,6 @@ public class BetterSMT : BaseUnityPlugin
             new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl, KeyCode.LeftShift),
             new ConfigDescription("Hotkey to round down to setting set")
         );
-
-        Instance = this;
-        Logger = base.Logger;
 
         EmployeesPerPerk = base.Config.Bind(
             "Employees",
@@ -371,6 +406,8 @@ public class BetterSMT : BaseUnityPlugin
             false
         );
 
+        Instance = this;
+        Logger = base.Logger;
         harmony.PatchAll();
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
     }
