@@ -33,7 +33,7 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
-    private static void UpdatePatch(PlayerNetwork __instance)
+    private static void UpdatePatch(PlayerNetwork __instance, ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP)
     {
         if (__instance.marketPriceTMP)
         {
@@ -47,7 +47,7 @@ public class PlayerNetworkPatch
 
         if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false)
         {
-
+            return;
         }
         else
         {
@@ -82,12 +82,7 @@ public class PlayerNetworkPatch
                 }
             }
         }
-    }
 
-    [HarmonyPatch("Update")]
-    [HarmonyPostfix]
-    public static void DoublePrice_Postfix(ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP)
-    {
         if (BetterSMT.doublePrice && ___marketPriceTMP != null)
         {
             if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
@@ -106,6 +101,7 @@ public class PlayerNetworkPatch
             }
         }
     }
+
     public static void OptimizeProductPrices()
     {
         if (BetterSMT.AutoAdjustPriceDaily.Value == true)
