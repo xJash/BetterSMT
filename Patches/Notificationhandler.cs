@@ -4,19 +4,15 @@ namespace BetterSMT.Patches;
 
 
 [HarmonyPatch(typeof(GameCanvas))]
-internal class NotificationHandler
-{
+internal class NotificationHandler {
     [HarmonyPatch("Update")]
     [HarmonyPostfix]
-    public static void NotificationHandler_Postfix(GameCanvas __instance, ref bool ___inCooldown)
-    {
-        if (BetterSMT.notify)
-        {
+    public static void NotificationHandler_Postfix(GameCanvas __instance, ref bool ___inCooldown) {
+        if (BetterSMT.notify) {
             ___inCooldown = false;
             BetterSMT.notify = false;
             string Notification = "`";
-            switch (BetterSMT.notificationType)
-            {
+            switch (BetterSMT.notificationType) {
                 case "priceToggle":
                     Notification += "Double Price: " + (BetterSMT.doublePrice ? "ON" : "OFF");
                     break;
