@@ -1,5 +1,7 @@
+## v1.8.5
+- Fixed pricing gun not ordering when pressing E
+
 ## v1.8.4
-- Added the option to multiply the amount of product that fits in a box. This also increases the cost to purchase.
 - Fixed the loading issues when removing pillars
 
 ## v1.8.3
