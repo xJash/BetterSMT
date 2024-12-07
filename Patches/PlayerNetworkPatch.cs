@@ -138,7 +138,7 @@ public class PlayerNetworkPatch
     {
         if (BetterSMT.OrderingPriceGun.Value == true)
         {
-            if (BetterSMT.DLCTabletHotkey.Value.IsDown())
+            if (BetterSMT.OrderingPriceGunHotkey.Value.IsDown())
             {
                 Data_Product data = ProductListing.Instance.productPrefabs[productID].GetComponent<Data_Product>();
                 float tinflactionFactor = ProductListing.Instance.GetComponent<ProductListing>().tierInflation[data.productTier];
