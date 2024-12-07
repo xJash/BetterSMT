@@ -79,21 +79,21 @@ public class BetterSMT : BaseUnityPlugin
     private void Awake()
     {
 
-        MaxBoxAmountModifier = base.Config.Bind(
-            "QoL",
-            "Raise Product Amount per Box",
-            1,
-            new ConfigDescription("Multiples the amount of product in a box. Default 30 in a box times 5 would make the box have 150. This also increases its cost on the market accordingly.",
-                new AcceptableValueRange<int>(1, 10)
-            )
-        );
-
-        DisableBoxCollision = Config.Bind(
-            "Utility",
-            "Enable or disable box collision",
-            false,
-            new ConfigDescription("Enables or disables box collision")
-        );
+        //MaxBoxAmountModifier = base.Config.Bind(
+        //    "QoL",
+        //    "Raise Product Amount per Box",
+        //    1,
+        //    new ConfigDescription("Multiples the amount of product in a box. Default 30 in a box times 5 would make the box have 150. This also increases its cost on the market accordingly.",
+        //        new AcceptableValueRange<int>(1, 10)
+        //    )
+        //);
+        //
+        //DisableBoxCollision = Config.Bind(
+        //    "Utility",
+        //    "Enable or disable box collision",
+        //    false,
+        //    new ConfigDescription("Enables or disables box collision")
+        //);
 
         OrderingPriceGun = Config.Bind(
             "Utility",
