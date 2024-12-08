@@ -64,19 +64,20 @@ public class PlayerNetworkPatch {
                 }
             }
         }
+        if (BetterSMT.ToggleDoublePrice.Value == true) {
+            if (BetterSMT.doublePrice && ___marketPriceTMP != null) {
+                if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
+                    System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    out float market)) {
+                    ___pPrice = market * 2;
 
-        if (BetterSMT.doublePrice && ___marketPriceTMP != null) {
-            if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
-                System.Globalization.NumberStyles.Float,
-                System.Globalization.CultureInfo.InvariantCulture,
-                out float market)) {
-                ___pPrice = market * 2;
+                    if (BetterSMT.roundDown.Value) {
+                        ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
+                    }
 
-                if (BetterSMT.roundDown.Value) {
-                    ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
+                    ___yourPriceTMP.text = "$" + ___pPrice;
                 }
-
-                ___yourPriceTMP.text = "$" + ___pPrice;
             }
         }
     }

@@ -45,7 +45,7 @@ namespace BetterSMT.Patches {
         }
 
         internal static void DisableCollisions(NPC_Manager __instance) {
-            if (BetterSMT.EmployeesPerPerk.Value >= 1) {
+            if (BetterSMT.EmployeesPerPerk.Value >= 2) {
                 foreach (NavMeshAgent agent in __instance.employeeParentOBJ.GetComponentsInChildren<NavMeshAgent>()) {
                     agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
                 }

@@ -39,8 +39,7 @@ public class ProductListingPatch {
     [HarmonyPatch("OnStartClient")]
     public class Patch_ProductMaxItems {
         private static void Postfix(ProductListing __instance) {
-            List<string> productNames =
-            [
+            List<string> productNames = [
                 "0_Pasta", "1_WaterBottle", "2_HoneyCereals", "3_Rice", "4_Salt", "5_Sugar", "6_Margarine", "7_Flour", "8_AppleJuice", "9_Oil", "10_Ketchup",
                 "11_SliceBread", "12_Pepper", "13_OrangeJuice", "14_BarbaqueSauce", "15_MustardSauce", "16_SpaghettiBox", "17_TunaPate", "18_FiberCereals", "19_FlourSupremeQuality", "20_BlackCoffee",
                 "21_EggBox", "22_Houmous", "23_WhiteFlour", "24_CaneSugarBox", "25_Sugar", "26_Macarroni", "27_SugarEcologic", "28_BrownSugar", "29_OliveOil", "30_MashPotatoes",
@@ -70,7 +69,7 @@ public class ProductListingPatch {
                 if (productNames.Contains(prefab.name)) {
                     Data_Product dataProduct = prefab.GetComponent<Data_Product>();
                     if (dataProduct != null) {
-                        dataProduct.maxItemsPerBox *= 10;
+                        dataProduct.maxItemsPerBox *= 100;
                     }
                 }
             }
