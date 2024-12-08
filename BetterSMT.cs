@@ -57,6 +57,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<KeyboardShortcut> OrderingPriceGunHotkey;
     public static bool doublePrice = true;
     public static ConfigEntry<bool> OrderingPriceGunToggle;
+    public static ConfigEntry<bool> ToggleDoublePrice;
 
     // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
@@ -78,6 +79,13 @@ public class BetterSMT : BaseUnityPlugin
 
     private void Awake()
     {
+
+        ToggleDoublePrice = Config.Bind(
+            "Double Price",
+            "Enable or disable double price module",
+            false,
+            new ConfigDescription("Enables or disables the price gun automatically having 2x the market price")
+        );
 
         //MaxBoxAmountModifier = base.Config.Bind(
         //    "QoL",
@@ -442,32 +450,26 @@ public class BetterSMT : BaseUnityPlugin
 
     private void Update()
     {
-        if (KeyboardShortcutDoublePrice.Value.IsDown())
-        {
-            doublePrice = !doublePrice;
-            notificationType = "priceToggle";
-            notify = true;
-        }
-        else if (KeyboardShortcutRoundDownSwitch.Value.IsDown())
-        {
-            if (NearestTen.Value)
-            {
-                NearestTen.Value = false;
-                NearestFive.Value = true;
+        if (ToggleDoublePrice.Value == true) {
+            if (KeyboardShortcutDoublePrice.Value.IsDown()) {
+                doublePrice = !doublePrice;
+                notificationType = "priceToggle";
+                notify = true;
+            } else if (KeyboardShortcutRoundDownSwitch.Value.IsDown()) {
+                if (NearestTen.Value) {
+                    NearestTen.Value = false;
+                    NearestFive.Value = true;
+                } else {
+                    NearestTen.Value = true;
+                    NearestFive.Value = false;
+                }
+                notificationType = "roundDownSwitch";
+                notify = true;
+            } else if (KeyboardShortcutRoundDownToggle.Value.IsDown()) {
+                roundDown.Value = !roundDown.Value;
+                notificationType = "roundDownToggle";
+                notify = true;
             }
-            else
-            {
-                NearestTen.Value = true;
-                NearestFive.Value = false;
-            }
-            notificationType = "roundDownSwitch";
-            notify = true;
-        }
-        else if (KeyboardShortcutRoundDownToggle.Value.IsDown())
-        {
-            roundDown.Value = !roundDown.Value;
-            notificationType = "roundDownToggle";
-            notify = true;
         }
     }
 
