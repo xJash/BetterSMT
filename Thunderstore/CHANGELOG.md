@@ -1,3 +1,17 @@
+## v1.9.0
+- Removed employee radius patch due to implementation into base game
+- Removed options for raising max amount of materials in a box
+- Removed box collision
+- Fixed max amount of employees
+- Added feature to adjust level of employee's that spawn aswell as their stats
+- Due to new employee update, raising employee cap is no longer required and I have removed raising Max Employee options.
+- Fixed Save Game option
+- Fixed Double Price Module option
+- Fixed automatic double pricing daily option
+- Fixed highlighting in top right corner
+- Fixed deleting pillars
+- Fixed deleting structures while the store is open
+
 ## v1.8.5
 - Fixed pricing gun not ordering when pressing E
 

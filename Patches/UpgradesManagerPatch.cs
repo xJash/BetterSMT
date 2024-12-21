@@ -4,38 +4,14 @@ using UnityEngine;
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(UpgradesManager))]
-public class UpgradesManagerPatch
-{
+public class UpgradesManagerPatch {
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
-    private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
-    {
-        if (__instance == null)
-        {
+    private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
+        if (__instance == null) {
             Debug.LogError("UpgradesManager instance is null in ManageExtraPerksPatch.");
         }
-        switch (perkIndex)
-        {
-            case 0:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 1:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 2:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 3:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 4:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
+        switch (perkIndex) {
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
@@ -53,26 +29,6 @@ public class UpgradesManagerPatch
                 break;
             case 10:
                 __instance.GetComponent<GameData>().extraCustomersPerk += BetterSMT.CustomersPerPerk.Value;
-                break;
-            case 11:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 12:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 13:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 14:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
-                break;
-            case 15:
-                NPC_Manager.Instance.maxEmployees += BetterSMT.EmployeesPerPerk.Value;
-                NPC_Manager.Instance.UpdateEmployeesNumberInBlackboard();
                 break;
             case 16:
                 NPC_Manager.Instance.productCheckoutWait -= BetterSMT.EmployeeCheckoutPerPerk1.Value;
