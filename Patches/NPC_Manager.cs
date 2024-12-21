@@ -10,11 +10,6 @@ namespace BetterSMT.Patches {
             _ = SelfCheckoutPatch(npcInfo, __instance);
         }
 
-        [HarmonyPatch("SpawnEmployee"), HarmonyPostfix]
-        private static void SetNPCRadiusPatch(NPC_Manager __instance) {
-            DisableCollisions(__instance);
-        }
-
         public static int SelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance) {
             if (npcInfo.productsIDCarrying.Count > BetterSMT.SelfCheckoutLimit.Value) {
                 return -1;
@@ -42,14 +37,6 @@ namespace BetterSMT.Patches {
                 return i;
             }
             return -1;
-        }
-
-        internal static void DisableCollisions(NPC_Manager __instance) {
-            if (BetterSMT.EmployeesPerPerk.Value >= 2) {
-                foreach (NavMeshAgent agent in __instance.employeeParentOBJ.GetComponentsInChildren<NavMeshAgent>()) {
-                    agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
-                }
-            }
         }
     }
 }

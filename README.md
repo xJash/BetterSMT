@@ -7,7 +7,6 @@ Scanner & Product Management
 Customization & Configurations
 - Replace commas with periods in formatting.
 - Adjust employee- related perks:
-- - Number of employees per perk.
 - - Employee speed per perk.
 - - Employee restock time per perk.
 - - Employee checkout time per perk (temporarily disabled).
@@ -24,20 +23,20 @@ Customization & Configurations
 - Trash spawn rate adjustments.
 - Show FPS counter (off by default).
 - Show ping (off by default).
-- 
+
 Building & Store Management
 - Delete buildings while the store is open.
 - Delete buildings that contain products.
 - Remove pillars within the store.
 - Spawn essential tools (broom, pricing gun, and DLC tablet) in your hand.
-- 
+
 Pricing & Checkout
 - Instantly change product prices at the start of the day (thanks to @Trevor for the idea/partial code).
 - Double pricing module (thanks to @Moudiz):
 - - Toggle with Q (configurable in the config file).
 - - Left Ctrl + Q: Switch between 0.05 and 0.10 rounding.
 - - Left Ctrl + Left Shift + Q: Toggle rounding on/off.
-	- 
+
 Miscellaneous
 - Save game button in the pause menu:
 - - Saves stock, structures, and reorganization, but not in- day progress.

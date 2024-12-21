@@ -16,8 +16,8 @@ public class BetterSMT : BaseUnityPlugin
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
     // === Employee-related settings ===
-    public static ConfigEntry<int> EmployeesPerPerk;
     public static ConfigEntry<int> CustomersPerPerk;
+    public static ConfigEntry<int> EmployeesLevel;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
     public static ConfigEntry<float> EmployeeRestockPerPerk;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
@@ -75,7 +75,6 @@ public class BetterSMT : BaseUnityPlugin
     public static bool notify = false;
     public static string notificationType;
     public static ConfigEntry<int> SelfCheckoutLimit;
-    public static ConfigEntry<int> MaxBoxAmountModifier;
 
     private void Awake()
     {
@@ -86,22 +85,6 @@ public class BetterSMT : BaseUnityPlugin
             false,
             new ConfigDescription("Enables or disables the price gun automatically having 2x the market price")
         );
-
-        //MaxBoxAmountModifier = base.Config.Bind(
-        //    "QoL",
-        //    "Raise Product Amount per Box",
-        //    1,
-        //    new ConfigDescription("Multiples the amount of product in a box. Default 30 in a box times 5 would make the box have 150. This also increases its cost on the market accordingly.",
-        //        new AcceptableValueRange<int>(1, 10)
-        //    )
-        //);
-        //
-        //DisableBoxCollision = Config.Bind(
-        //    "Utility",
-        //    "Enable or disable box collision",
-        //    false,
-        //    new ConfigDescription("Enables or disables box collision")
-        //);
 
         OrderingPriceGun = Config.Bind(
             "Utility",
@@ -216,12 +199,12 @@ public class BetterSMT : BaseUnityPlugin
             new ConfigDescription("Hotkey to round down to setting set")
         );
 
-        EmployeesPerPerk = base.Config.Bind(
+        EmployeesLevel = base.Config.Bind(
             "Employees",
-            "Employees Per Perk",
-            1,
-            new ConfigDescription("Adjust the amount of employees you gain per perk (Higher number = more employees)",
-                new AcceptableValueRange<int>(0, 5)
+            "Employees Level",
+            0,
+            new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 11 sets them all to max)",
+                new AcceptableValueRange<int>(0,11)
             )
         );
 
