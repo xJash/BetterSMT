@@ -244,54 +244,56 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelvesByProduct(int productID) {
-        GameObject shelvesOBJ = GameObject.Find("Level_SupermarketProps/Shelves");
+        if (BetterSMT.Highlighting.Value == true) {
+            GameObject shelvesOBJ = GameObject.Find("Level_SupermarketProps/Shelves");
 
-        for (int i = 0; i < shelvesOBJ.transform.childCount; i++) {
-            Transform child = shelvesOBJ.transform.GetChild(i);
-            Data_Container container = child.gameObject.GetComponent<Data_Container>();
-            if (container == null) {
-                continue;
-            }
-
-            int[] productInfoArray = container.productInfoArray;
-            int num = productInfoArray.Length / 2;
-            bool highlightShelf = false;
-            for (int j = 0; j < num; j++) {
-                int num2 = productInfoArray[j * 2];
-
-                bool highlightLabel = num2 == productID;
-                Transform labels = child.Find("Labels");
-                if (labels == null || labels.childCount <= j) {
+            for (int i = 0; i < shelvesOBJ.transform.childCount; i++) {
+                Transform child = shelvesOBJ.transform.GetChild(i);
+                Data_Container container = child.gameObject.GetComponent<Data_Container>();
+                if (container == null) {
                     continue;
                 }
 
-                Transform label = labels.GetChild(j);
-                if (highlightLabel) {
-                    highlightShelf = true;
-                }
+                int[] productInfoArray = container.productInfoArray;
+                int num = productInfoArray.Length / 2;
+                bool highlightShelf = false;
+                for (int j = 0; j < num; j++) {
+                    int num2 = productInfoArray[j * 2];
 
-                HighlightShelf(label, highlightLabel, Color.yellow);
+                    bool highlightLabel = num2 == productID;
+                    Transform labels = child.Find("Labels");
+                    if (labels == null || labels.childCount <= j) {
+                        continue;
+                    }
+
+                    Transform label = labels.GetChild(j);
+                    if (highlightLabel) {
+                        highlightShelf = true;
+                    }
+
+                    HighlightShelf(label, highlightLabel, Color.yellow);
+                }
+                HighlightShelf(child, highlightShelf, Color.red);
             }
-            HighlightShelf(child, highlightShelf, Color.red);
-        }
 
-        GameObject storageShelvesOBJ = GameObject.Find("Level_SupermarketProps/StorageShelves");
+            GameObject storageShelvesOBJ = GameObject.Find("Level_SupermarketProps/StorageShelves");
 
-        for (int i = 0; i < storageShelvesOBJ.transform.childCount; i++) {
-            Transform child = storageShelvesOBJ.transform.GetChild(i);
-            int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
-            int num = productInfoArray.Length / 2;
-            for (int j = 0; j < num; j++) {
-                int num2 = productInfoArray[j * 2];
+            for (int i = 0; i < storageShelvesOBJ.transform.childCount; i++) {
+                Transform child = storageShelvesOBJ.transform.GetChild(i);
+                int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
+                int num = productInfoArray.Length / 2;
+                for (int j = 0; j < num; j++) {
+                    int num2 = productInfoArray[j * 2];
 
-                bool highlightBox = num2 == productID;
-                Transform boxs = child.Find("BoxContainer");
-                if (boxs == null || boxs.childCount <= j) {
-                    continue;
+                    bool highlightBox = num2 == productID;
+                    Transform boxs = child.Find("BoxContainer");
+                    if (boxs == null || boxs.childCount <= j) {
+                        continue;
+                    }
+
+                    Transform box = boxs.GetChild(j);
+                    HighlightShelf(box, highlightBox, Color.yellow);
                 }
-
-                Transform box = boxs.GetChild(j);
-                HighlightShelf(box, highlightBox, Color.yellow);
             }
         }
     }

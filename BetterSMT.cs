@@ -8,8 +8,7 @@ using UnityEngine;
 namespace BetterSMT;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-public class BetterSMT : BaseUnityPlugin
-{
+public class BetterSMT : BaseUnityPlugin {
     private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
 
     public static BetterSMT Instance;
@@ -18,6 +17,7 @@ public class BetterSMT : BaseUnityPlugin
     // === Employee-related settings ===
     public static ConfigEntry<int> CustomersPerPerk;
     public static ConfigEntry<int> EmployeesLevel;
+    public static ConfigEntry<bool> EmployeesEnabled;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
     public static ConfigEntry<float> EmployeeRestockPerPerk;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
@@ -45,7 +45,7 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> DeleteProduct;
     public static ConfigEntry<bool> AutoAdjustPriceDaily;
     public static ConfigEntry<float> AutoAdjustPriceDailyValue;
-    public static ConfigEntry<bool> DisableBoxCollision;   
+    public static ConfigEntry<bool> DisableBoxCollision;
 
     // === Price Adjustments ===
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
@@ -59,6 +59,8 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> OrderingPriceGunToggle;
     public static ConfigEntry<bool> ToggleDoublePrice;
 
+    // === Random Shit ===
+    public static ConfigEntry<bool> Highlighting;
     // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
@@ -76,14 +78,21 @@ public class BetterSMT : BaseUnityPlugin
     public static string notificationType;
     public static ConfigEntry<int> SelfCheckoutLimit;
 
-    private void Awake()
-    {
+    private void Awake() {
 
         ToggleDoublePrice = Config.Bind(
             "Double Price",
             "Enable or disable double price module",
             false,
             new ConfigDescription("Enables or disables the price gun automatically having 2x the market price")
+        );
+
+
+        Highlighting = Config.Bind(
+            "Misc",
+            "Enable or disable highlighting",
+            false,
+            new ConfigDescription("Enables or disables highlighting of product and storage shelves when holding a box")
         );
 
         OrderingPriceGun = Config.Bind(
@@ -204,8 +213,15 @@ public class BetterSMT : BaseUnityPlugin
             "Employees Level",
             0,
             new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 11 sets them all to max)",
-                new AcceptableValueRange<int>(0,11)
+                new AcceptableValueRange<int>(0, 11)
             )
+        );
+
+        EmployeesEnabled = base.Config.Bind(
+            "Employees",
+            "Employees Level Toggle",
+            false,
+             new ConfigDescription("Enables modifying employee levels")
         );
 
         SelfCheckoutLimit = base.Config.Bind(
@@ -402,37 +418,31 @@ public class BetterSMT : BaseUnityPlugin
         harmony.PatchAll();
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
     }
-    public static string ReplaceCommas(string text)
-    {
-        if (!ReplaceCommasWithPeriods.Value)
-        {
+    public static string ReplaceCommas(string text) {
+        if (!ReplaceCommasWithPeriods.Value) {
             return text;
         }
 
         text = text.Replace("$", string.Empty);
         text = text.Replace(char.Parse(","), char.Parse("."));
-        if (!text.Contains("."))
-        {
+        if (!text.Contains(".")) {
             text += ".00";
         }
         return "$" + text;
     }
 
-    public static void CreateCanvasNotification(string text)
-    {
+    public static void CreateCanvasNotification(string text) {
         GameObject obj = Object.Instantiate(GameCanvas.Instance.notificationPrefab, GameCanvas.Instance.notificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
-    public static void CreateImportantNotification(string text)
-    {
+    public static void CreateImportantNotification(string text) {
         GameObject obj = Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (ToggleDoublePrice.Value == true) {
             if (KeyboardShortcutDoublePrice.Value.IsDown()) {
                 doublePrice = !doublePrice;
@@ -456,12 +466,9 @@ public class BetterSMT : BaseUnityPlugin
         }
     }
 
-    private void ConfigSettingChanged(object sender, System.EventArgs e)
-    {
-        if (NearestFive.Value)
-        {
-            if (NearestTen.Value && NearestFive.Value)
-            {
+    private void ConfigSettingChanged(object sender, System.EventArgs e) {
+        if (NearestFive.Value) {
+            if (NearestTen.Value && NearestFive.Value) {
                 NearestTen.Value = false;
             }
         }

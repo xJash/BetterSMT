@@ -62,9 +62,9 @@ public class ProductListingPatch {
     //            "191_RedAppleTray", "192_GreenAppleTray", "193_ClementineTray", "194_OrangeTray", "195_PearTray", "196_LemonTray", "197_MangoTray", "198_AvocadoTray", "199_KiwiTray", "200_PapayaTray",
     //            "201_StrawberryTray", "202_CherryTray", "203_ArtichokeTray", "204_ZucchiniTray", "205_CarrotTray", "206_TomatoTray", "207_PotatoTray", "208_OnionTray", "209_BananaPack",
     //            "210_Melon", "211_Pineapple", "212_Pumpkin", "213_Watermelon", "214_BabyFoodVegetables", "215_BabyFoodFish", "216_BabyFoodFruit", "217_BabyFoodMeat", "218_BabyMilkLiquid", "219_BabyMilkPowder", "220_EcoDiapers",
-    //            "221_BasicDiapers", "222_ToddlerDiapers", "223_PremiumDiapers", "224_CleaningWipes", "225_BathWipes", "226_BabyPowder", "227_OrangeSoda", "228_PineappleSoda", "229_TropicalSoda", "230_GreenTea", "231_RedTea", "232_LemonTea", 
-    //            "233_ColdBrewCoffee", "234_BlueBerryEnergyDrink", "235_GuavaEnergyDrink", "236_LimaEnergyDrink", "237_FruitPunchEnergyDrink", "238_MangoEnergyDrink", "239_ColaEnergyDrink", "240_ZeroEnergyDrink", "241_IceCreamBasicStrawberry", 
-    //            "242_IceCreamBasicOrange", "243_IceCreamCoffee", "244_IceCreamStracciatella", "245_IceCreamStrawberryMeringue", "246_IceCream_Caramel", "247_IceCreamStrawberryPremium", "248_IceCreamStrawberryCheesecake", 
+    //            "221_BasicDiapers", "222_ToddlerDiapers", "223_PremiumDiapers", "224_CleaningWipes", "225_BathWipes", "226_BabyPowder", "227_OrangeSoda", "228_PineappleSoda", "229_TropicalSoda", "230_GreenTea", "231_RedTea", "232_LemonTea",
+    //            "233_ColdBrewCoffee", "234_BlueBerryEnergyDrink", "235_GuavaEnergyDrink", "236_LimaEnergyDrink", "237_FruitPunchEnergyDrink", "238_MangoEnergyDrink", "239_ColaEnergyDrink", "240_ZeroEnergyDrink", "241_IceCreamBasicStrawberry",
+    //            "242_IceCreamBasicOrange", "243_IceCreamCoffee", "244_IceCreamStracciatella", "245_IceCreamStrawberryMeringue", "246_IceCream_Caramel", "247_IceCreamStrawberryPremium", "248_IceCreamStrawberryCheesecake",
     //            "249_IceCreamCaramelPremium", "250_IceCreamPinkStrawberries", "251_IceCreamAlcoholic", "252_Chickpeas", "253_MeatBalls", "254_Lentils", "255_TomatoSoup", "256_CannedCorn", "257_CannedPeas"
     //        ];
     //
@@ -72,7 +72,7 @@ public class ProductListingPatch {
     //            if (productNames.Contains(prefab.name)) {
     //                Data_Product dataProduct = prefab.GetComponent<Data_Product>();
     //                if (dataProduct != null) {
-    //                    dataProduct.maxItemsPerBox *= 10;
+    //                    dataProduct.maxItemsPerBox *= 25;
     //                }
     //            }
     //        }

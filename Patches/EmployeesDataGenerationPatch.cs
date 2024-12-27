@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(EmployeesDataGeneration))]
@@ -35,13 +34,13 @@ namespace BetterSMT.Patches {
                     num6 = Random.Range(1, 11);
                     num7 = Random.Range(1, 11);
                 }
-                if (BetterSMT.EmployeesLevel.Value >= 1) {
+                if (BetterSMT.EmployeesEnabled.Value == true) {
                     num4 = BetterSMT.EmployeesLevel.Value;
                     num5 = BetterSMT.EmployeesLevel.Value;
                     num6 = BetterSMT.EmployeesLevel.Value;
                     num7 = BetterSMT.EmployeesLevel.Value;
                 }
-                int value = (num4 + num5 + num6 + num7) * Random.Range(3, 6) + Random.Range(-2, 3) * 10;
+                int value = ((num4 + num5 + num6 + num7) * Random.Range(3, 6)) + (Random.Range(-2, 3) * 10);
                 value = Mathf.Clamp(value, 30, 1000);
                 string text = num3 + "|" + value + "|" + num4 + "|" + num5 + "|" + num6 + "|" + num7;
                 __instance.managerComponent.todaysEmployeesData[i] = text;

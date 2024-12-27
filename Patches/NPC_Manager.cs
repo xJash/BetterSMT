@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(NPC_Manager))]

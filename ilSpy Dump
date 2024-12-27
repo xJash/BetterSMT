@@ -6014,6 +6014,11 @@ public class EmployeesDataGeneration : MonoBehaviour
 	public GameObject assignmentUIPrefab;
 
 	[Space(10f)]
+	public GameObject savePLayoutsParent;
+
+	public GameObject loadPLayoutsParent;
+
+	[Space(10f)]
 	public TextMeshProUGUI maxEmployeesField;
 
 	public TextMeshProUGUI hiredEmployeesField;
@@ -6027,6 +6032,8 @@ public class EmployeesDataGeneration : MonoBehaviour
 	public Sprite[] hatSprites;
 
 	public string[] priorityHashes;
+
+	public Color[] priorityColors;
 
 	private NPC_Manager managerComponent;
 
@@ -6290,6 +6297,7 @@ public class EmployeesDataGeneration : MonoBehaviour
 		if (assignmentParentOBJ.transform.childCount > 0 && (bool)assignmentParentOBJ.transform.GetChild(index))
 		{
 			assignmentParentOBJ.transform.GetChild(index).transform.Find("HatImage").GetComponent<Image>().sprite = hatSprites[newHatIndex];
+			assignmentParentOBJ.transform.GetChild(index).transform.Find("HatImage/HatID").GetComponent<TextMeshProUGUI>().text = newHatIndex.ToString();
 		}
 	}
 
@@ -6304,7 +6312,27 @@ public class EmployeesDataGeneration : MonoBehaviour
 		{
 			string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[whichPriority]);
 			assignmentParentOBJ.transform.GetChild(index).transform.Find("PriorityBCK/ShowPrioritiesButton/CurrentPriorityText").GetComponent<TextMeshProUGUI>().text = localizationString;
+			assignmentParentOBJ.transform.GetChild(index).transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[whichPriority];
 			assignmentParentOBJ.transform.GetChild(index).transform.Find("PriorityButtons").gameObject.SetActive(value: false);
+		}
+	}
+
+	public void ChangeAllEmployeePriorities(int whichPriority)
+	{
+		NPC_Manager.Instance.CmdChangeAllEmployeePriorities(whichPriority);
+	}
+
+	public void UpdateAllEmployeePriorities(int whichPriority)
+	{
+		if (assignmentParentOBJ.transform.childCount > 0)
+		{
+			string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[whichPriority]);
+			for (int i = 0; i < assignmentParentOBJ.transform.childCount; i++)
+			{
+				assignmentParentOBJ.transform.GetChild(i).transform.Find("PriorityBCK/ShowPrioritiesButton/CurrentPriorityText").GetComponent<TextMeshProUGUI>().text = localizationString;
+				assignmentParentOBJ.transform.GetChild(i).transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[whichPriority];
+				assignmentParentOBJ.transform.GetChild(i).transform.Find("PriorityButtons").gameObject.SetActive(value: false);
+			}
 		}
 	}
 
@@ -6385,6 +6413,7 @@ public class EmployeesDataGeneration : MonoBehaviour
 			int num15 = NPC_Manager.Instance.priorityArray[j];
 			string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[num15]);
 			gameObject.transform.Find("PriorityBCK/ShowPrioritiesButton/CurrentPriorityText").GetComponent<TextMeshProUGUI>().text = localizationString;
+			gameObject.transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[num15];
 			gameObject.transform.Find("PriorityButtons/NoTask_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Cashier_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Restocker_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
@@ -6397,6 +6426,7 @@ public class EmployeesDataGeneration : MonoBehaviour
 				{
 					int hatID = NPC_Manager.Instance.employeesArray[j].GetComponent<NPC_Info>().hatID;
 					gameObject.transform.Find("HatImage").GetComponent<Image>().sprite = hatSprites[hatID];
+					gameObject.transform.Find("HatImage/HatID").GetComponent<TextMeshProUGUI>().text = hatID.ToString();
 				}
 				gameObject.transform.Find("HatImage/HatButton_>").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 				gameObject.transform.Find("HatImage/HatButton_<").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
@@ -6413,6 +6443,94 @@ public class EmployeesDataGeneration : MonoBehaviour
 			return true;
 		}
 		return false;
+	}
+
+	public void SetSaveAndLoadPriorityButtons()
+	{
+		string filePath = Application.persistentDataPath + "/clayouts.es3";
+		string localizationString = LocalizationManager.instance.GetLocalizationString("emptyposi");
+		if (!ES3.FileExists(filePath))
+		{
+			for (int i = 0; i < savePLayoutsParent.transform.childCount; i++)
+			{
+				savePLayoutsParent.transform.GetChild(i).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = localizationString;
+				loadPLayoutsParent.transform.GetChild(i).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = localizationString;
+			}
+			return;
+		}
+		for (int j = 0; j < savePLayoutsParent.transform.childCount; j++)
+		{
+			string key = "Layout" + j;
+			string text = localizationString;
+			if (ES3.KeyExists(key, filePath))
+			{
+				int[] array = ES3.Load<int[]>(key, filePath);
+				int[] array2 = new int[5];
+				for (int k = 0; k < array.Length; k++)
+				{
+					if (!(managerComponent.hiredEmployeesData[k] == ""))
+					{
+						int num = array[k];
+						if (num < array2.Length && num > -1)
+						{
+							array2[num]++;
+						}
+					}
+				}
+				text = array2[0] + "-" + array2[1] + "-" + array2[2] + "-" + array2[3] + "-" + array2[4];
+			}
+			savePLayoutsParent.transform.GetChild(j).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+			loadPLayoutsParent.transform.GetChild(j).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+		}
+	}
+
+	public void SaveTaskLayouts(int whichLayoutIndex)
+	{
+		bool flag = false;
+		string[] hiredEmployeesData = managerComponent.hiredEmployeesData;
+		for (int i = 0; i < hiredEmployeesData.Length; i++)
+		{
+			if (hiredEmployeesData[i] != "")
+			{
+				flag = true;
+				break;
+			}
+		}
+		if (flag)
+		{
+			string filePath = Application.persistentDataPath + "/clayouts.es3";
+			int[] priorityArray = managerComponent.priorityArray;
+			ES3.Save("Layout" + whichLayoutIndex, priorityArray, filePath);
+			SetSaveAndLoadPriorityButtons();
+		}
+	}
+
+	public void LoadTaskLayout(int whichLayoutIndex)
+	{
+		string filePath = Application.persistentDataPath + "/clayouts.es3";
+		if (ES3.FileExists(filePath))
+		{
+			string key = "Layout" + whichLayoutIndex;
+			if (ES3.KeyExists(key, filePath))
+			{
+				int[] loadedPrioritiesArray = ES3.Load<int[]>(key, filePath);
+				managerComponent.CmdLoadPrioritiesLayout(loadedPrioritiesArray);
+			}
+		}
+	}
+
+	public void SetTaskLayout(int[] loadedPrioritiesArray)
+	{
+		if (assignmentParentOBJ.transform.childCount > 0)
+		{
+			for (int i = 0; i < assignmentParentOBJ.transform.childCount && i < loadedPrioritiesArray.Length; i++)
+			{
+				int num = loadedPrioritiesArray[i];
+				string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[num]);
+				assignmentParentOBJ.transform.GetChild(i).transform.Find("PriorityBCK/ShowPrioritiesButton/CurrentPriorityText").GetComponent<TextMeshProUGUI>().text = localizationString;
+				assignmentParentOBJ.transform.GetChild(i).transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[num];
+			}
+		}
 	}
 }
 
@@ -9504,6 +9622,8 @@ public class ManagerBlackboard : NetworkBehaviour
 
 	public Transform boxParent;
 
+	public LayerMask boxSpawnLayerMask;
+
 	[Space(10f)]
 	public TextMeshProUGUI totalChargeOBJ;
 
@@ -9954,12 +10074,19 @@ public class ManagerBlackboard : NetworkBehaviour
 	private IEnumerator ServerCargoSpawner()
 	{
 		isSpawning = true;
+		Vector3 halfExtents = new Vector3(0.3f, 0.3f, 0.45f);
+		WaitForSeconds waitTime1 = new WaitForSeconds(0.5f);
+		WaitForSeconds waitTime2 = new WaitForSeconds(0.2f);
 		while (idsToSpawn.Count > 0)
 		{
-			yield return new WaitForSeconds(0.5f);
+			Vector3 spawnPosition = merchandiseSpawnpoint.transform.position + new Vector3(Random.Range(-2f, 2f), 0f, Random.Range(-2f, 2f));
+			if (Physics.BoxCast(spawnPosition + new Vector3(0f, 5f, 0f), halfExtents, -Vector3.up, Quaternion.identity, 7.5f, boxSpawnLayerMask))
+			{
+				yield return waitTime1;
+			}
+			yield return waitTime1;
 			int num = idsToSpawn[0];
-			Vector3 vector = new Vector3(Random.Range(-2f, 2f), 0f, Random.Range(-2f, 2f));
-			GameObject gameObject = Object.Instantiate(boxPrefab, merchandiseSpawnpoint.transform.position + vector, Quaternion.identity);
+			GameObject gameObject = Object.Instantiate(boxPrefab, spawnPosition, Quaternion.identity);
 			gameObject.GetComponent<BoxData>().NetworkproductID = num;
 			int maxItemsPerBox = GetComponent<ProductListing>().productPrefabs[num].GetComponent<Data_Product>().maxItemsPerBox;
 			gameObject.GetComponent<BoxData>().NetworknumberOfProducts = maxItemsPerBox;
@@ -9971,7 +10098,7 @@ public class ManagerBlackboard : NetworkBehaviour
 			RpcParentBoxOnClient(gameObject);
 			idsToSpawn.RemoveAt(0);
 		}
-		yield return new WaitForSeconds(0.1f);
+		yield return waitTime2;
 		isSpawning = false;
 	}
 
@@ -13176,9 +13303,9 @@ public class NPC_Info : NetworkBehaviour
 
 	private void SetNPCName()
 	{
+		base.transform.Find("NameCanvas").gameObject.SetActive(value: true);
 		base.transform.Find("NameCanvas/NPCName").GetComponent<TextMeshProUGUI>().text = NPCName;
 		base.transform.Find("NameCanvas/NPCName").GetComponent<TextMeshProUGUI>().isOverlay = true;
-		base.transform.Find("NameCanvas").gameObject.SetActive(value: true);
 	}
 
 	private void ChangeEmployeeHat(int oldHatIndex, int newHatIndex)
@@ -13826,6 +13953,7 @@ public class NPC_Manager : NetworkBehaviour
 	{
 		if (!base.isServer)
 		{
+			CmdRequestHappinessLevel();
 			StartCoroutine(RequestRecycleStatus());
 		}
 		if (base.isServer && !alreadySetRerolls)
@@ -14055,6 +14183,24 @@ public class NPC_Manager : NetworkBehaviour
 				currentHappinessLevel += item.GetComponent<BuildableInfo>().employeeHappiness;
 			}
 		}
+		RpcRequestHappinessLevel(currentHappinessLevel);
+	}
+
+	[Command(requiresAuthority = false)]
+	private void CmdRequestHappinessLevel()
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		SendCommandInternal("System.Void NPC_Manager::CmdRequestHappinessLevel()", -1117082196, writer, 0, requiresAuthority: false);
+		NetworkWriterPool.Return(writer);
+	}
+
+	[ClientRpc]
+	private void RpcRequestHappinessLevel(float happinessLevel)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		writer.WriteFloat(happinessLevel);
+		SendRPCInternal("System.Void NPC_Manager::RpcRequestHappinessLevel(System.Single)", 841705234, writer, 0, includeOwner: true);
+		NetworkWriterPool.Return(writer);
 	}
 
 	private void SpawnEmployeeByIndex(int index)
@@ -14173,6 +14319,42 @@ public class NPC_Manager : NetworkBehaviour
 		writer.WriteInt(index);
 		writer.WriteInt(currentPriorityValue);
 		SendRPCInternal("System.Void NPC_Manager::RpcChangeEmployeePriority(System.Int32,System.Int32)", 1943642655, writer, 0, includeOwner: true);
+		NetworkWriterPool.Return(writer);
+	}
+
+	[Command(requiresAuthority = false)]
+	public void CmdChangeAllEmployeePriorities(int whichPriority)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		writer.WriteInt(whichPriority);
+		SendCommandInternal("System.Void NPC_Manager::CmdChangeAllEmployeePriorities(System.Int32)", -1487051270, writer, 0, requiresAuthority: false);
+		NetworkWriterPool.Return(writer);
+	}
+
+	[ClientRpc]
+	private void RpcChangeAllEmployeePriorities(int currentPriorityValue)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		writer.WriteInt(currentPriorityValue);
+		SendRPCInternal("System.Void NPC_Manager::RpcChangeAllEmployeePriorities(System.Int32)", 12948923, writer, 0, includeOwner: true);
+		NetworkWriterPool.Return(writer);
+	}
+
+	[Command(requiresAuthority = false)]
+	public void CmdLoadPrioritiesLayout(int[] loadedPrioritiesArray)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		GeneratedNetworkCode._Write_System.Int32[](writer, loadedPrioritiesArray);
+		SendCommandInternal("System.Void NPC_Manager::CmdLoadPrioritiesLayout(System.Int32[])", 1971113061, writer, 0, requiresAuthority: false);
+		NetworkWriterPool.Return(writer);
+	}
+
+	[ClientRpc]
+	private void RpcLoadPrioritiesLayout(int[] loadedPrioritiesArray)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		GeneratedNetworkCode._Write_System.Int32[](writer, loadedPrioritiesArray);
+		SendRPCInternal("System.Void NPC_Manager::RpcLoadPrioritiesLayout(System.Int32[])", -139425442, writer, 0, includeOwner: true);
 		NetworkWriterPool.Return(writer);
 	}
 
@@ -16139,6 +16321,43 @@ public class NPC_Manager : NetworkBehaviour
 		}
 	}
 
+	protected void UserCode_CmdRequestHappinessLevel()
+	{
+		RpcRequestHappinessLevel(currentHappinessLevel);
+	}
+
+	protected static void InvokeUserCode_CmdRequestHappinessLevel(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkServer.active)
+		{
+			Debug.LogError("Command CmdRequestHappinessLevel called on client.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_CmdRequestHappinessLevel();
+		}
+	}
+
+	protected void UserCode_RpcRequestHappinessLevel__Single(float happinessLevel)
+	{
+		if (!base.isServer)
+		{
+			currentHappinessLevel = happinessLevel;
+		}
+	}
+
+	protected static void InvokeUserCode_RpcRequestHappinessLevel__Single(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkClient.active)
+		{
+			Debug.LogError("RPC RpcRequestHappinessLevel called on server.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_RpcRequestHappinessLevel__Single(reader.ReadFloat());
+		}
+	}
+
 	protected void UserCode_CmdChangeEmployeeHat__Int32__Int32(int employeeIndex, int quantity)
 	{
 		if ((bool)employeesArray[employeeIndex])
@@ -16210,7 +16429,10 @@ public class NPC_Manager : NetworkBehaviour
 
 	protected void UserCode_RpcChangeEmployeePriority__Int32__Int32(int index, int currentPriorityValue)
 	{
-		priorityArray[index] = currentPriorityValue;
+		if (!base.isServer)
+		{
+			priorityArray[index] = currentPriorityValue;
+		}
 		GetComponent<EmployeesDataGeneration>().UpdateEmployeePriority(index, currentPriorityValue);
 	}
 
@@ -16226,6 +16448,115 @@ public class NPC_Manager : NetworkBehaviour
 		}
 	}
 
+	protected void UserCode_CmdChangeAllEmployeePriorities__Int32(int whichPriority)
+	{
+		if (numberOfHiredEmployees == 0)
+		{
+			return;
+		}
+		for (int i = 0; i < employeesArray.Length; i++)
+		{
+			if ((bool)employeesArray[i])
+			{
+				priorityArray[i] = whichPriority;
+			}
+		}
+		AssignEmployeesPriorities();
+		RpcChangeAllEmployeePriorities(whichPriority);
+	}
+
+	protected static void InvokeUserCode_CmdChangeAllEmployeePriorities__Int32(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkServer.active)
+		{
+			Debug.LogError("Command CmdChangeAllEmployeePriorities called on client.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_CmdChangeAllEmployeePriorities__Int32(reader.ReadInt());
+		}
+	}
+
+	protected void UserCode_RpcChangeAllEmployeePriorities__Int32(int currentPriorityValue)
+	{
+		if (!base.isServer)
+		{
+			for (int i = 0; i < priorityArray.Length; i++)
+			{
+				priorityArray[i] = currentPriorityValue;
+			}
+		}
+		GetComponent<EmployeesDataGeneration>().UpdateAllEmployeePriorities(currentPriorityValue);
+	}
+
+	protected static void InvokeUserCode_RpcChangeAllEmployeePriorities__Int32(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkClient.active)
+		{
+			Debug.LogError("RPC RpcChangeAllEmployeePriorities called on server.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_RpcChangeAllEmployeePriorities__Int32(reader.ReadInt());
+		}
+	}
+
+	protected void UserCode_CmdLoadPrioritiesLayout__Int32[](int[] loadedPrioritiesArray)
+	{
+		if (numberOfHiredEmployees == 0)
+		{
+			return;
+		}
+		for (int i = 0; i < loadedPrioritiesArray.Length; i++)
+		{
+			if (i < priorityArray.Length)
+			{
+				priorityArray[i] = loadedPrioritiesArray[i];
+			}
+		}
+		AssignEmployeesPriorities();
+		RpcLoadPrioritiesLayout(loadedPrioritiesArray);
+	}
+
+	protected static void InvokeUserCode_CmdLoadPrioritiesLayout__Int32[](NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkServer.active)
+		{
+			Debug.LogError("Command CmdLoadPrioritiesLayout called on client.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_CmdLoadPrioritiesLayout__Int32[](GeneratedNetworkCode._Read_System.Int32[](reader));
+		}
+	}
+
+	protected void UserCode_RpcLoadPrioritiesLayout__Int32[](int[] loadedPrioritiesArray)
+	{
+		if (!base.isServer)
+		{
+			for (int i = 0; i < loadedPrioritiesArray.Length; i++)
+			{
+				if (i < priorityArray.Length)
+				{
+					priorityArray[i] = loadedPrioritiesArray[i];
+				}
+			}
+		}
+		GetComponent<EmployeesDataGeneration>().SetTaskLayout(loadedPrioritiesArray);
+	}
+
+	protected static void InvokeUserCode_RpcLoadPrioritiesLayout__Int32[](NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkClient.active)
+		{
+			Debug.LogError("RPC RpcLoadPrioritiesLayout called on server.");
+		}
+		else
+		{
+			((NPC_Manager)obj).UserCode_RpcLoadPrioritiesLayout__Int32[](GeneratedNetworkCode._Read_System.Int32[](reader));
+		}
+	}
+
 	static NPC_Manager()
 	{
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdUpdateRecycleStatus()", InvokeUserCode_CmdUpdateRecycleStatus, requiresAuthority: false);
@@ -16233,15 +16564,21 @@ public class NPC_Manager : NetworkBehaviour
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdRerollCall()", InvokeUserCode_CmdRerollCall, requiresAuthority: false);
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdHireEmployeeData(System.Int32,System.String)", InvokeUserCode_CmdHireEmployeeData__Int32__String, requiresAuthority: false);
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdDismissEmployeeData(System.Int32)", InvokeUserCode_CmdDismissEmployeeData__Int32, requiresAuthority: false);
+		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdRequestHappinessLevel()", InvokeUserCode_CmdRequestHappinessLevel, requiresAuthority: false);
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdChangeEmployeeHat(System.Int32,System.Int32)", InvokeUserCode_CmdChangeEmployeeHat__Int32__Int32, requiresAuthority: false);
 		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdChangeEmployeePriority(System.Int32,System.Int32)", InvokeUserCode_CmdChangeEmployeePriority__Int32__Int32, requiresAuthority: false);
+		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdChangeAllEmployeePriorities(System.Int32)", InvokeUserCode_CmdChangeAllEmployeePriorities__Int32, requiresAuthority: false);
+		RemoteProcedureCalls.RegisterCommand(typeof(NPC_Manager), "System.Void NPC_Manager::CmdLoadPrioritiesLayout(System.Int32[])", InvokeUserCode_CmdLoadPrioritiesLayout__Int32[], requiresAuthority: false);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcUpdateRecycleStatus(System.Boolean)", InvokeUserCode_RpcUpdateRecycleStatus__Boolean);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcRerollCall(System.Boolean)", InvokeUserCode_RpcRerollCall__Boolean);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcUpdateTodayEmployeesOnClients(System.Int32,System.String)", InvokeUserCode_RpcUpdateTodayEmployeesOnClients__Int32__String);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcClientHire(System.Int32,System.Int32,System.String)", InvokeUserCode_RpcClientHire__Int32__Int32__String);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcClientDismiss(System.Int32)", InvokeUserCode_RpcClientDismiss__Int32);
+		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcRequestHappinessLevel(System.Single)", InvokeUserCode_RpcRequestHappinessLevel__Single);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcChangeEmployeeHat(System.Int32,System.Int32)", InvokeUserCode_RpcChangeEmployeeHat__Int32__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcChangeEmployeePriority(System.Int32,System.Int32)", InvokeUserCode_RpcChangeEmployeePriority__Int32__Int32);
+		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcChangeAllEmployeePriorities(System.Int32)", InvokeUserCode_RpcChangeAllEmployeePriorities__Int32);
+		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Manager), "System.Void NPC_Manager::RpcLoadPrioritiesLayout(System.Int32[])", InvokeUserCode_RpcLoadPrioritiesLayout__Int32[]);
 	}
 
 	public override void SerializeSyncVars(NetworkWriter writer, bool forceAll)
