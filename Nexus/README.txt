@@ -4,6 +4,7 @@ Scanner & Product Management
 - Shelves containing the product in your hand are highlighted.
 - Top- right product info now supports boxes.
 
+
 Customization & Configurations
 - Replace commas with periods in formatting.
 - Adjust employee- related perks:
@@ -44,6 +45,8 @@ Miscellaneous
 - Save game button in the pause menu:
 - - Saves stock, structures, and reorganization, but not in- day progress.
 - Ability to change employee income increases per perk.
+- Ability to have Too Expensive and Missing Products announced in chat
+- Ability to enter and leave third person
 
 Credits
 - Ika [Helped with Transpiling]
