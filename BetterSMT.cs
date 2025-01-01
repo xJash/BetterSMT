@@ -61,6 +61,8 @@ public class BetterSMT : BaseUnityPlugin {
 
     // === Random Shit ===
     public static ConfigEntry<bool> Highlighting;
+    public static ConfigEntry<bool> ThirdPersonToggle;
+    public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
     // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
@@ -77,8 +79,40 @@ public class BetterSMT : BaseUnityPlugin {
     public static bool notify = false;
     public static string notificationType;
     public static ConfigEntry<int> SelfCheckoutLimit;
+    public static ConfigEntry<bool> TooExpensive;
+    public static ConfigEntry<bool> MissingProduct;
 
     private void Awake() {
+
+        MissingProduct = Config.Bind(
+            "Notifications",
+            "Enable or disable notification Missing Product",
+            false,
+            new ConfigDescription("Enables or disables the notification for missing products")
+        );
+
+        TooExpensive = Config.Bind(
+            "Notifications",
+            "Enable or disable notification Too Expensive",
+            false,
+            new ConfigDescription("Enables or disables the notification for too expensive products")
+        );
+
+
+        ThirdPersonHotkey = Config.Bind(
+            "Third Person",
+            "Third Person Hotkey",
+            new KeyboardShortcut(KeyCode.G),
+            new ConfigDescription("Hotkey to enter and leave third person/first person.")
+        );
+
+
+        ThirdPersonToggle = Config.Bind(
+            "Third Person",
+            "Enable or disable third person",
+            false,
+            new ConfigDescription("Enables or disables the hotkey to enter and leave third person/first person")
+        );
 
         ToggleDoublePrice = Config.Bind(
             "Double Price",
