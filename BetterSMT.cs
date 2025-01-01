@@ -397,7 +397,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Extra Customers per perk",
             1,
             new ConfigDescription("Adjust the amount of customers you gain per perk (Higher number = more customers)",
-                new AcceptableValueRange<int>(1, 10)
+                new AcceptableValueRange<int>(1, 100)
             )
         );
 
