@@ -1,3 +1,17 @@
+## v1.9.1
+- Added option to disable/enable shelf highlighting
+- Added option to enter and leave third/first person view. Third person is currently semi-buggy. Some of these happen intermintently, to fix them enter first person and re-enter third person.
+- - Cant pickup broom, dlc tablet, pricing gun
+- - Cant price things
+- - Cant interact with register
+- - Cant place down most structures
+- - Cant hit employee, robber, or customer with broom
+- - Cant emote
+- - Managers board distance is weird
+- - DLC distance is weird
+- - Browser isnt working
+- Added option for missing products and too expensive products to be entered into chat.
+
 ## v1.9.0
 - Removed employee radius patch due to implementation into base game
 - Removed options for raising max amount of materials in a box
