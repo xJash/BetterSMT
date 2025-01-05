@@ -1,4 +1,3 @@
-
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
 
@@ -417,6 +416,10 @@
     <option id="decorat68" dialogue="ç«è½¦"></option>
     <option id="decorat69" dialogue="çº³è´¾æ‹‰æ¨¡æ‹Ÿå™¨"></option>
     <option id="decorat70" dialogue="å‡³å­"></option>
+
+    <option id="decorat71" dialogue="é›ªäºº"></option>
+    <option id="decorat72" dialogue="æ‹æ–ç³–"></option>
+    <option id="decorat73" dialogue="åœ£è¯žç¤¼ç‰©"></option>
     
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -459,6 +462,12 @@
     <option id="skill25a" dialogue="å®¢æˆ·å°†æ›´å¤šåœ°ä½¿ç”¨è‡ªåŠ©ç»“è´¦"></option>
     <option id="skill26" dialogue="å‘˜å·¥ XI"></option>
     <option id="skill27" dialogue="å‘˜å·¥ XII"></option>
+    <option id="skill28" dialogue="å›žæ”¶å®¹å™¨"></option>
+    <option id="skill28a" dialogue="æœ€è¿‘çš„åžƒåœ¾ç®±å°†è¢«æ›¿æ¢ä¸ºå›žæ”¶å®¹å™¨ã€‚"></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="å®šä»·æœºè½¯ä»¶å·²å¾—åˆ°æ”¹è¿›ï¼ŒçŽ°åœ¨å¯ä»¥è®¾ç½®è‡ªåŠ¨å®šä»·çš„æ–¹å¼"></option>
+    <option id="skill30" dialogue="Tic-tac é€Ÿåº¦å¾ˆå¿«"></option>
+    <option id="skill30a" dialogue="å½“å•†åº—åœ¨å¤œé—´å…³é—­æ—¶ï¼Œç»ç†å¯ä»¥åŠ å¿«æ—¶é—´"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
     <option id="productRelated0" dialogue="æ¯å•ä½ä»·æ ¼"></option>
@@ -916,6 +925,12 @@
     <option id="paintmat97" dialogue="åœ£è¯žèŠ‚ H"></option>
     <option id="paintmat98" dialogue="åœ£è¯žèŠ‚ I"></option>
     <option id="paintmat99" dialogue="åœ£è¯žèŠ‚ J"></option>
+    <option id="paintmat100" dialogue="é›ª"></option>
+    
+    <option id="paintmat101" dialogue="å†° A"></option>
+    <option id="paintmat102" dialogue="å†° B"></option>
+    <option id="paintmat103" dialogue="å†° C"></option>
+    <option id="paintmat104" dialogue="å†° D"></option>
 
 
     <option id="skinshats" dialogue="çš®è‚¤å’Œå¸½å­"></option>
@@ -942,9 +957,9 @@
     <option id="lic12" dialogue="è®¸å¯è¯èŽ·å¾—æ‰¹å‡†åŽï¼Œæ‚¨å°†èƒ½å¤Ÿåœ¨æ­¤ç»ˆç«¯ä¸­å°† Youtube å’Œ Twitch è¿žæŽ¥åˆ°ç”µè§†ä¸Šã€‚"></option>
 
     <option id="cosmetics1" dialogue="åŒ–å¦†å“ DLC å·²èŽ·æ‰¹å‡†ï¼"></option>
-    <option id="cosmetics2" dialogue="7 ä¸ªæ–°è§’è‰²ã€70 å¤šé¡¶å¸½å­ã€35 ç§èˆžè¹ˆå’Œå§¿åŠ¿ä»¥åŠä¸€ä¸ªå¯åœ¨è€æ¿ä¸æ³¨æ„æ—¶å·æ‡’çš„ç½‘ç»œæµè§ˆå™¨ã€‚
+    <option id="cosmetics2" dialogue="9 ä¸ªæ–°è§’è‰²ã€100 å¤šé¡¶å¸½å­ã€35 ç§èˆžè¹ˆå’Œå§¿åŠ¿ä»¥åŠä¸€ä¸ªå¯åœ¨è€æ¿ä¸æ³¨æ„æ—¶å·æ‡’çš„ç½‘ç»œæµè§ˆå™¨ã€‚
 
-å®ƒè¿˜å°†åŒ…æ‹¬æ–°çš„è£…é¥°å’Œè¿žæŽ¥åˆ°ç”µè§†çš„è§†é¢‘ã€‚ä¸ºæ‚¨çš„å•†åº—æ¶‚è‰²çš„ç¬¬ä¸€ä¸ªæ›´æ–°å·²ç»å¯ç”¨ï¼"></option>
+ä½¿ç”¨æ–°å¹³æ¿ç”µè„‘ç²‰åˆ·æ‚¨çš„å•†åº—ï¼Œå¹¶äº«å—éšæ—¶é—´ä¸æ–­æ·»åŠ çš„ç‹¬å®¶è£…é¥°ã€‚ç¬¬ä¸€ä¸ª Youtube åŒæ­¥æ›´æ–°å·²ç»å¯ç”¨ï¼"></option>
 
     <option id="continue" dialogue="ç»§ç»­"></option>
     <option id="backups" dialogue="å¤‡ä»½"></option>
@@ -1074,11 +1089,29 @@
     <option id="emploNoTask" dialogue="æ— ä»»åŠ¡"></option>
     <option id="emplostaffhappi" dialogue="æ•™èŒå‘˜ä¼‘æ¯å®¤å¹¸ç¦æ„Ÿ"></option>
     <option id="emploreroll" dialogue="é‡æ–°æ»šåŠ¨"></option>
-    
-    
+
+    <option id="dlcdiscounted" dialogue="æŠ˜æ‰£"></option>
+    <option id="emploselect" dialogue="é€‰æ‹©"></option>
+    <option id="emplochangeall" dialogue="æ›´æ”¹æ‰€æœ‰ä¼˜å…ˆçº§"></option>
+    <option id="emplosavelay" dialogue="ä¿å­˜ä¼˜å…ˆçº§"></option>
+    <option id="emploloadlay" dialogue="åŠ è½½ä¼˜å…ˆçº§"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="å‘˜å·¥ç®¡ç†å·²ç§»è‡³ç»ç†é»‘æ¿"></option>
+    <option id="startkn" dialogue="èŽ·å¾—ä¸€é¢—æ˜Ÿæ˜Ÿä»¤ç‰Œï¼"></option>
+    <option id="bboardchristdisclaimer" dialogue="æ”¾ç½®åœ£è¯žç¤¼ç‰©è£…é¥°ï¼Œç­‰å¾…å¤œæ™šæ´»åŠ¨å¼€å§‹ï¼
+å‡†å¤‡å¥½æ‰«å¸š"></option>
+
+    <option id="panykey" dialogue="æŒ‰ä»»æ„é”®ç»§ç»­"></option>
+    <option id="gtunlckable" dialogue="èŽ·å¾—æ–°çš„å¯è§£é”ç‰©å“ï¼"></option>
+    <option id="nostartkn" dialogue="æ²¡æœ‰å¯ç”¨çš„æ˜Ÿå·æ ‡è®°"></option>
+    <option id="managsavebckup" dialogue="ç®¡ç†ä¿å­˜å¤‡ä»½"></option>
+    <option id="newoptionendday" dialogue="è‡ªåŠ¨ç»“æŸä¸€å¤©"></option>
+    <option id="sallprices" dialogue="å°†æ‰€æœ‰ä»·æ ¼è®¾ç½®ä¸ºç™¾åˆ†æ¯”"></option>
+    <option id="csettingprices" dialogue="[å½“å‰è®¾ç½®ä»·æ ¼]"></option>
+
   </options>
 
-</text>    Localization_PT A <text>
+</text>          Localization_PT  <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -1499,6 +1532,10 @@ CONTROLES
     <option id="decorat68" dialogue="Trem Choo Choo"></option>
     <option id="decorat69" dialogue="Simulador Najara"></option>
     <option id="decorat70" dialogue="Banco"></option>
+
+    <option id="decorat71" dialogue="Boneco de Neve"></option>
+    <option id="decorat72" dialogue="Bengala Doce"></option>
+    <option id="decorat73" dialogue="Presente de Natal"></option>
     
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -1541,6 +1578,12 @@ CONTROLES
     <option id="skill25a" dialogue="Os clientes usarÃ£o mais os autoatendimento"></option>
     <option id="skill26" dialogue="FuncionÃ¡rio XI"></option>
     <option id="skill27" dialogue="FuncionÃ¡rio XII"></option>
+    <option id="skill28" dialogue="Recipiente de reciclagem"></option>
+    <option id="skill28a" dialogue="O recipiente de lixo mais prÃ³ximo serÃ¡ substituÃ­do por um de reciclagem."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="O software da mÃ¡quina de preÃ§os foi aprimorado e agora Ã© possÃ­vel definir uma maneira de automatizar os preÃ§os"></option>
+    <option id="skill30" dialogue="Tic-tac vai rÃ¡pido"></option>
+    <option id="skill30a" dialogue="Quando a loja estiver fechada durante a noite, o gerente pode usar o novo relÃ³gio na sala do gerente para acelerar o tempo"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -2001,6 +2044,12 @@ CONTROLES
     <option id="paintmat97" dialogue="Natal H"></option>
     <option id="paintmat98" dialogue="Natal I"></option>
     <option id="paintmat99" dialogue="Natal J"></option>
+    <opÃ§Ã£o id="paintmat100" dialogue="Neve"></opÃ§Ã£o>
+
+    <opÃ§Ã£o id="paintmat101" dialogue="Gelo A"></opÃ§Ã£o>
+    <opÃ§Ã£o id="paintmat102" dialogue="Gelo B"></opÃ§Ã£o>
+    <opÃ§Ã£o id="paintmat103" dialogue="Gelo C"></opÃ§Ã£o>
+    <opÃ§Ã£o id="paintmat104" dialogue="Gelo D"></opÃ§Ã£o>
 
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
     <option id="skinshats" dialogue="Skins e chapÃ©us"></option>
@@ -2030,9 +2079,9 @@ CONTROLES
     <option id="lic12" dialogue="Neste terminal, vocÃª poderÃ¡ conectar o YouTube e o Twitch Ã s suas TVs assim que a licenÃ§a for aprovada."></option>
 
     <option id="cosmetics1" dialogue="O DLC de cosmÃ©ticos foi aprovado!"></option>
-    <option id="cosmetics2" dialogue="7 novos personagens, mais de 70 chapÃ©us, 35 danÃ§as e poses e um navegador da web para relaxar enquanto seu chefe nÃ£o estÃ¡ olhando.
+    <option id="cosmetics2" dialogue="9 novos personagens, mais de 100 chapÃ©us, 35 danÃ§as e poses e um navegador da web para relaxar enquanto seu chefe nÃ£o estÃ¡ olhando.
 
-TambÃ©m incluirÃ¡ novas decoraÃ§Ãµes e vÃ­deos de conexÃ£o Ã s suas TVs. A primeira atualizaÃ§Ã£o para pintar sua loja jÃ¡ estÃ¡ disponÃ­vel!"></option>
+Pinte sua loja com o novo tablet e aproveite decoraÃ§Ãµes exclusivas sendo adicionadas ao longo do tempo. A primeira atualizaÃ§Ã£o de sincronizaÃ§Ã£o do YouTube jÃ¡ estÃ¡ disponÃ­vel!!"></option>
 
     <option id="continue" dialogue="Continue"></option>
     <option id="backups" dialogue="Backups"></option>
@@ -2164,9 +2213,28 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="emplostaffhappi" dialogue="Felicidade na sala"></option>
     <option id="emploreroll" dialogue="Rolar Novamente"></option>
 
+    <option id="dlcdiscounted" dialogue="Desconto"></option>
+    <option id="emploselect" dialogue="Selecionar"></option>
+    <option id="emplochangeall" dialogue="Alterar todas as prioridades"></option>
+    <option id="emplosavelay" dialogue="Salvar prioridades"></option>
+    <option id="emploloadlay" dialogue="Carregar prioridades"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="A gestÃ£o do funcionÃ¡rio foi movida para o quadro negro do gerente"></option>
+    <option id="startkn" dialogue="Token estrela recebido!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Coloque uma decoraÃ§Ã£o de presente de Natal e espere a noite para o evento comeÃ§ar!
+Tenha a vassoura em mÃ£os"></option>
+
+    <option id="panykey" dialogue="Pressione qualquer tecla para continuar"></option>
+    <option id="gtunlckable" dialogue="Recebi um novo item desbloqueÃ¡vel!"></option>
+    <option id="nostartkn" dialogue="Nenhum token de estrela disponÃ­vel"></option>
+    <option id="managsavebckup" dialogue="Gerenciando backups salvos"></option>
+    <option id="newoptionendday" dialogue="Finalizar dia autom."></option>
+    <option id="sallprices" dialogue="Definir todos os preÃ§os para porcentagem"></option>
+    <option id="csettingprices" dialogue="[Definindo preÃ§os no momento]"></option>
+    
   </options>
 
-</text>          PlayMakerAssemblies    UnityEngine    Localization_CH2±ð  <text>
+</text>    PlayMakerAssemblies    UnityEngine    Localization_CH2,ù  <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -2582,6 +2650,10 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="decorat68" dialogue="å’•å’•ç«è»Š"></option>
     <option id="decorat69" dialogue="ç´åŠ æ‹‰æ¨¡æ“¬å™¨"></option>
     <option id="decorat70" dialogue="å‡³å­"></option>
+
+    <option id="decorat71" dialogue="é›ªäºº"></option>
+    <option id="decorat72" dialogue="æ‹æ–ç³–"></option>
+    <option id="decorat73" dialogue="è–èª•ç¦®ç‰©"></option>
     
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -2624,6 +2696,12 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="skill25a" dialogue="é¡§å®¢å°‡æ›´å¤šä½¿ç”¨è‡ªåŠ©çµå¸³"></option>
     <option id="skill26" dialogue="å“¡å·¥åä¸€"></option>
     <option id="skill27" dialogue="åƒ±å“¡åäºŒ"></option>
+    <option id="skill28" dialogue="å›žæ”¶å®¹å™¨"></option>
+    <option id="skill28a" dialogue="æœ€è¿‘çš„åžƒåœ¾ç®±å°‡è¢«æ›¿æ›ç‚ºå¯å›žæ”¶åžƒåœ¾ç®±ã€‚"></option>
+    <option id="skill29" dialogue="æ™ºæ…§åž‹ä½œæ¥­ç³»çµ±2.0"></option>
+    <option id="skill29a" dialogue="å®šåƒ¹æ©Ÿè»Ÿé«”ç¶“éŽæ”¹é€²ï¼Œç¾åœ¨å¯ä»¥è¨­å®šè‡ªå‹•å®šåƒ¹çš„æ–¹æ³•"></option>
+    <option id="skill30" dialogue="äº•å­—æ£‹èµ°å¾—å¾ˆå¿«"></option>
+    <option id="skill30a" dialogue="ç•¶å•†åº—æ™šä¸Šé—œé–€æ™‚ï¼Œç¶“ç†å¯ä»¥åŠ å¿«æ™‚é–“"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -3084,6 +3162,12 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="paintmat97" dialogue="è–èª•ç¯€ H"></option>
     <option id="paintmat98" dialogue="è–èª•ç¯€ I"></option>
     <option id="paintmat99" dialogue="è–èª•ç¯€ J"></option>
+    <option id="paintmat100" dialogue="é›ª"></option>
+
+    <option id="paintmat101" dialogue="å†°A"></option>
+    <option id="paintmat102" dialogue="å†°B"></option>
+    <option id="paintmat103" dialogue="å†°C"></option>
+    <option id="paintmat104" dialogue="å†°D"></option>
     
     
     <option id="skinshats" dialogue="çš®è†šå’Œå¸½å­"></option>
@@ -3110,9 +3194,9 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="lic12" dialogue="åœ¨é€™å€‹çµ‚ç«¯æ©Ÿä¸­ï¼Œä¸€æ—¦è¨±å¯è­‰ç²å¾—æ‰¹å‡†ï¼Œæ‚¨å°‡èƒ½å¤ å°‡ Youtube å’Œ Twitch é€£æŽ¥åˆ°æ‚¨çš„é›»è¦–ã€‚"></option>
 
     <option id="cosmetics1" dialogue="åŒ–å¦å“DLCå·²ç²æ‰¹å‡†ï¼"></option>
-    <option id="cosmetics2" dialogue="7 å€‹æ–°è§’è‰²ã€è¶…éŽ 70 é ‚å¸½å­ã€35 ç¨®èˆžè¹ˆå’Œå§¿å‹¢ï¼Œä»¥åŠä¸€å€‹å¯ä»¥åœ¨è€é—†ä¸æ³¨æ„çš„æ™‚å€™æ”¾é¬†çš„ç¶²è·¯ç€è¦½å™¨ã€‚
+    <option id="cosmetics2" dialogue="9 å€‹æ–°è§’è‰²ã€è¶…éŽ 100 é ‚å¸½å­ã€35 ç¨®èˆžè¹ˆå’Œå§¿å‹¢ï¼Œä»¥åŠä¸€å€‹å¯ä»¥åœ¨è€é—†ä¸æ³¨æ„çš„æ™‚å€™æ”¾é¬†çš„ç¶²è·¯ç€è¦½å™¨ã€‚
 
-å®ƒé‚„å°‡åŒ…æ‹¬æ–°çš„è£é£¾å“å’Œå°‡è¦–é »æŽ›è¼‰åˆ°æ‚¨çš„é›»è¦–ä¸Šã€‚ç¹ªè£½å•†åº—çš„ç¬¬ä¸€å€‹æ›´æ–°å·²ç¶“ç™¼å¸ƒï¼"></option>
+ä½¿ç”¨æ–°å¹³æ¿é›»è…¦ç²‰åˆ·æ‚¨çš„å•†åº—ï¼Œä¸¦äº«å—éš¨è‘—æ™‚é–“çš„æŽ¨ç§»æ·»åŠ çš„ç¨ç‰¹è£é£¾ã€‚ç¬¬ä¸€å€‹ YouTube åŒæ­¥æ›´æ–°å·²ç¶“æŽ¨å‡ºï¼"></option>
 
     <option id="continue" dialogue="ç¹¼çºŒ"></option>
     <option id="backups" dialogue="å‚™ä»½"></option>
@@ -3243,10 +3327,29 @@ Quanto mais prÃ³ximo da cÃ¢mera, mais eficaz Ã© o clique."></option>
     <option id="emploNoTask" dialogue="æ— ä»»åŠ¡"></option>
     <option id="emplostaffhappi" dialogue="å“¡å·¥å¹¸ç¦æ„Ÿ"></option>
     <option id="emploreroll" dialogue="é‡æ–°æ»¾å‹•"></option>
-    
+
+    <option id="dlcdiscounted" dialogue="æŠ˜æ‰£"></option>
+    <option id="emploselect" dialogue="é¸æ“‡"></option>
+    <option id="emplochangeall" dialogue="æ›´æ”¹æ‰€æœ‰å„ªå…ˆç´š"></option>
+    <option id="emplosavelay" dialogue="ä¿å­˜å„ªå…ˆç´š"></option>
+    <option id="emploloadlay" dialogue="è¼‰å…¥å„ªå…ˆæ¬Š"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="å‘˜å·¥ç®¡ç†å·²ç§»è‡³ç»ç†é»‘æ¿"></option>
+    <option id="startkn" dialogue="èŽ·å¾—ä¸€é¢—æ˜Ÿæ˜Ÿä»¤ç‰Œï¼"></option>
+    <option id="bboardchristdisclaimer" dialogue="æ”¾ç½®åœ£è¯žç¤¼ç‰©è£…é¥°ï¼Œç­‰å¾…å¤œæ™šæ´»åŠ¨å¼€å§‹ï¼
+å‡†å¤‡å¥½æ‰«å¸š"></option>
+
+    <option id="panykey" dialogue="æŒ‰ä»»æ„éµç¹¼çºŒ"></option>
+    <option id="gtunlckable" dialogue="ç²å¾—äº†æ–°çš„å¯è§£éŽ–ç‰©å“ï¼"></option>
+    <option id="nostartkn" dialogue="æ²’æœ‰å¯ç”¨çš„æ˜Ÿæ˜Ÿä»£å¹£"></option>
+    <option id="managsavebckup" dialogue="ç®¡ç†ä¿å­˜å‚™ä»½"></option>
+    <option id="newoptionendday" dialogue="è‡ªå‹•çµæŸæ—¥"></option>
+    <option id="sallprices" dialogue="å°‡æ‰€æœ‰åƒ¹æ ¼è¨­å®šç‚ºç™¾åˆ†æ¯”"></option>
+    <option id="csettingprices" dialogue="[ç›®å‰å®šåƒ¹]"></option>
+
   </options>
 
-</text>          Readme  ›  Welcome!
+</text>       Readme  ›  Welcome!
 
 This is a modified version of Unity standard Material that could be used to render both sides of a mesh. It can be used on all platforms. 
 Also Transparent material is supported. You can use textures with alpha channel to make two sided meshes like leaves or grasses. 
@@ -3259,7 +3362,7 @@ After creating a material you can choose this shader from shader tab of the mate
 
 Watch complete tutorial at link below:
 https://www.youtube.com/watch?v=93EMW-Yf3dg
-        Localization_UK ¬A <text>
+        Localization_UK ]N <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -3680,6 +3783,10 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="decorat69" dialogue="Ð¡Ð¸Ð¼ÑƒÐ»ÑÑ‚Ð¾Ñ€ ÐÐ°Ð´Ð¶Ð°Ñ€Ð¸"></option>
     <option id="decorat70" dialogue="Ð¢Ð°Ð±ÑƒÑ€ÐµÑ‚"></option>
 
+    <option id="decorat71" dialogue="Ð¡Ð½Ñ–Ð³Ð¾Ð²Ð¸Ðº"></option>
+    <option id="decorat72" dialogue="Ð¦ÑƒÐºÐµÑ€ÐºÐ¾Ð²Ð° Ñ‚Ñ€Ð¾ÑÑ‚Ð¸Ð½Ð°"></option>
+    <option id="decorat73" dialogue="Ð Ñ–Ð·Ð´Ð²ÑÐ½Ð¸Ð¹ Ð¿Ð¾Ð´Ð°Ñ€ÑƒÐ½Ð¾Ðº"></option>
+    
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="ÐŸÑ€Ð°Ñ†Ñ–Ð²Ð½Ð¸Ðº I"></option>
@@ -3721,6 +3828,12 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="skill25a" dialogue="ÐšÐ»Ñ–Ñ”Ð½Ñ‚Ð¸ Ð±Ñ–Ð»ÑŒÑˆÐµ ÐºÐ¾Ñ€Ð¸ÑÑ‚ÑƒÐ²Ð°Ñ‚Ð¸Ð¼ÑƒÑ‚ÑŒÑÑ ÑÐ°Ð¼Ð¾Ð¾Ð¿Ð»Ð°Ñ‚Ð¾ÑŽ"></option>
     <option id="skill26" dialogue="Ð¡Ð¿Ñ–Ð²Ñ€Ð¾Ð±Ñ–Ñ‚Ð½Ð¸Ðº XI"></option>
     <option id="skill27" dialogue="Ð¡Ð¿Ñ–Ð²Ñ€Ð¾Ð±Ñ–Ñ‚Ð½Ð¸Ðº XII"></option>
+    <option id="skill28" dialogue="ÐšÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð´Ð»Ñ Ð¿ÐµÑ€ÐµÑ€Ð¾Ð±ÐºÐ¸"></option>
+    <option id="skill28a" dialogue="ÐÐ°Ð¹Ð±Ð»Ð¸Ð¶Ñ‡Ð¸Ð¹ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð´Ð»Ñ ÑÐ¼Ñ–Ñ‚Ñ‚Ñ Ð±ÑƒÐ´Ðµ Ð·Ð°Ð¼Ñ–Ð½ÐµÐ½Ð¾ Ð½Ð° ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð´Ð»Ñ Ð¿ÐµÑ€ÐµÑ€Ð¾Ð±ÐºÐ¸."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð½Ðµ Ð·Ð°Ð±ÐµÐ·Ð¿ÐµÑ‡ÐµÐ½Ð½Ñ Ð¼Ð°ÑˆÐ¸Ð½Ð¸ Ñ†Ñ–Ð½Ð¾ÑƒÑ‚Ð²Ð¾Ñ€ÐµÐ½Ð½Ñ Ð¿Ð¾ÐºÑ€Ð°Ñ‰ÐµÐ½Ð¾, Ñ– Ñ‚ÐµÐ¿ÐµÑ€ Ð¼Ð¾Ð¶Ð½Ð° Ð²ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚Ð¸ ÑÐ¿Ð¾ÑÑ–Ð± Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ð·Ð°Ñ†Ñ–Ñ— Ñ†Ñ–Ð½"></option>
+    <option id="skill30" dialogue="Ð¢Ñ–Ðº-Ñ‚Ð°Ðº Ð¹Ð´Ðµ ÑˆÐ²Ð¸Ð´ÐºÐ¾"></option>
+    <option id="skill30a" dialogue="ÐšÐ¾Ð»Ð¸ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ Ð·Ð°ÐºÑ€Ð¸Ñ‚Ð¾ Ð²Ð½Ð¾Ñ‡Ñ–, Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€ Ð¼Ð¾Ð¶Ðµ Ð²Ð¸ÐºÐ¾Ñ€Ð¸ÑÑ‚Ð¾Ð²ÑƒÐ²Ð°Ñ‚Ð¸ Ð½Ð¾Ð²Ð¸Ð¹ Ð³Ð¾Ð´Ð¸Ð½Ð½Ð¸Ðº Ñƒ ÐºÑ–Ð¼Ð½Ð°Ñ‚Ñ– Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€Ð°, Ñ‰Ð¾Ð± Ð¿Ñ€Ð¸ÑÐºÐ¾Ñ€Ð¸Ñ‚Ð¸ Ñ‡Ð°Ñ"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -4181,7 +4294,14 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="paintmat97" dialogue="Ð Ñ–Ð·Ð´Ð²Ð¾ H"></option>
     <option id="paintmat98" dialogue="Ð Ñ–Ð·Ð´Ð²Ð¾ I"></option>
     <option id="paintmat99" dialogue="Ð Ñ–Ð·Ð´Ð²Ð¾ J"></option>
-    
+    <option id="paintmat100" dialogue="Ð¡Ð½Ñ–Ð³"></option>
+
+    <option id="paintmat101" dialogue="Ice A"></option>
+    <option id="paintmat102" dialogue="Ice B"></option>
+    <option id="paintmat103" dialogue="Ice C"></option>
+    <option id="paintmat104" dialogue="Ice D"></option>
+
+
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
     <option id="skinshats" dialogue="Ð¡ÐºÑ–Ð½Ð¸ Ñ‚Ð° ÑˆÐ°Ð¿ÐºÐ¸"></option>
     <option id="character" dialogue="Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€"></option>
@@ -4210,9 +4330,9 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="lic12" dialogue="Ð£ Ñ†ÑŒÐ¾Ð¼Ñƒ Ñ‚ÐµÑ€Ð¼Ñ–Ð½Ð°Ð»Ñ– Ð²Ð¸ Ð·Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ñ–Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚Ð¸ Youtube Ñ– Twitch Ð´Ð¾ ÑÐ²Ð¾Ñ—Ñ… Ñ‚ÐµÐ»ÐµÐ²Ñ–Ð·Ð¾Ñ€Ñ–Ð² Ð¿Ñ–ÑÐ»Ñ ÑÑ…Ð²Ð°Ð»ÐµÐ½Ð½Ñ Ð»Ñ–Ñ†ÐµÐ½Ð·Ñ–Ñ—."></option>
 
     <option id="cosmetics1" dialogue="ÐšÐ¾ÑÐ¼ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ð¹ DLC ÑÑ…Ð²Ð°Ð»ÐµÐ½Ð¾!"></option>
-    <option id="cosmetics2" dialogue="7 Ð½Ð¾Ð²Ð¸Ñ… Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ñ–Ð², Ð¿Ð¾Ð½Ð°Ð´ 70 ÐºÐ°Ð¿ÐµÐ»ÑŽÑ…Ñ–Ð², 35 Ñ‚Ð°Ð½Ñ†Ñ–Ð² Ñ– Ð¿Ð¾Ð·, Ð° Ñ‚Ð°ÐºÐ¾Ð¶ Ð²ÐµÐ±-Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€, Ñ‰Ð¾Ð± Ñ€Ð¾Ð·ÑÐ»Ð°Ð±Ð¸Ñ‚Ð¸ÑÑ, Ð¿Ð¾ÐºÐ¸ Ð²Ð°Ñˆ Ð±Ð¾Ñ Ð½Ðµ Ð´Ð¸Ð²Ð¸Ñ‚ÑŒÑÑ.
+    <option id="cosmetics2" dialogue="9 Ð½Ð¾Ð²Ð¸Ñ… Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ñ–Ð², Ð¿Ð¾Ð½Ð°Ð´ 100 ÐºÐ°Ð¿ÐµÐ»ÑŽÑ…Ñ–Ð², 35 Ñ‚Ð°Ð½Ñ†Ñ–Ð² Ñ– Ð¿Ð¾Ð·, Ð° Ñ‚Ð°ÐºÐ¾Ð¶ Ð²ÐµÐ±-Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€, Ñ‰Ð¾Ð± Ñ€Ð¾Ð·ÑÐ»Ð°Ð±Ð¸Ñ‚Ð¸ÑÑ, Ð¿Ð¾ÐºÐ¸ Ð²Ð°Ñˆ Ð±Ð¾Ñ Ð½Ðµ Ð´Ð¸Ð²Ð¸Ñ‚ÑŒÑÑ.
 
-Ð’Ñ–Ð½ Ñ‚Ð°ÐºÐ¾Ð¶ Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ‚Ð¸Ð¼Ðµ Ð½Ð¾Ð²Ñ– Ð¿Ñ€Ð¸ÐºÑ€Ð°ÑÐ¸ Ñ‚Ð° Ð¿Ñ–Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð½Ñ Ð²Ñ–Ð´ÐµÐ¾ Ð´Ð¾ Ð²Ð°ÑˆÐ¸Ñ… Ñ‚ÐµÐ»ÐµÐ²Ñ–Ð·Ð¾Ñ€Ñ–Ð². ÐŸÐµÑ€ÑˆÐµ Ð¾Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ Ð´Ð»Ñ Ñ„Ð°Ñ€Ð±ÑƒÐ²Ð°Ð½Ð½Ñ Ð²Ð°ÑˆÐ¾Ð³Ð¾ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ñƒ Ð²Ð¶Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ðµ!"></option>
+Ð Ð¾Ð·Ñ„Ð°Ñ€Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ²Ñ–Ð¹ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ Ð½Ð¾Ð²Ð¸Ð¼ Ð¿Ð»Ð°Ð½ÑˆÐµÑ‚Ð¾Ð¼ Ñ– Ð½Ð°ÑÐ¾Ð»Ð¾Ð´Ð¶ÑƒÐ¹Ñ‚ÐµÑÑ ÐµÐºÑÐºÐ»ÑŽÐ·Ð¸Ð²Ð½Ð¸Ð¼Ð¸ Ð¿Ñ€Ð¸ÐºÑ€Ð°ÑÐ°Ð¼Ð¸, ÑÐºÑ– Ð· Ñ‡Ð°ÑÐ¾Ð¼ Ð´Ð¾Ð´Ð°ÑŽÑ‚ÑŒÑÑ. ÐŸÐµÑ€ÑˆÐµ Ð¾Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ ÑÐ¸Ð½Ñ…Ñ€Ð¾Ð½Ñ–Ð·Ð°Ñ†Ñ–Ñ— Youtube Ð²Ð¶Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ðµ!"></option>
 
     <option id="continue" dialogue="ÐŸÑ€Ð¾Ð´Ð¾Ð²Ð¶Ð¸Ñ‚Ð¸"></option>
     <option id="backups" dialogue="Ð ÐµÐ·ÐµÑ€Ð²Ð½Ñ– ÐºÐ¾Ð¿Ñ–Ñ—"></option>
@@ -4343,11 +4463,29 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="emploNoTask" dialogue="ÐÐµÐ¼Ð°Ñ” Ð·Ð°Ð²Ð´Ð°Ð½ÑŒ"></option>
     <option id="emplostaffhappi" dialogue="Ð¨Ñ‚Ð°Ñ‚Ð½Ðµ Ñ‰Ð°ÑÑ‚Ñ"></option>
     <option id="emploreroll" dialogue="ÐŸÐµÑ€ÐµÐ¼Ð¾Ñ‚Ð°Ñ‚Ð¸"></option>
-    
+
+    <option id="dlcdiscounted" dialogue="Ð—Ð½Ð¸Ð¶ÐºÐ°"></option>
+    <option id="emploselect" dialogue="Ð’Ð¸Ð±ÐµÑ€Ñ–Ñ‚ÑŒ"></option>
+    <option id="emplochangeall" dialogue="Ð—Ð¼Ñ–Ð½Ð¸Ñ‚Ð¸ Ð²ÑÑ– Ð¿Ñ€Ñ–Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð¸"></option>
+    <option id="emplosavelay" dialogue="Ð—Ð±ÐµÑ€ÐµÐ³Ñ‚Ð¸ Ð¿Ñ€Ñ–Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð¸"></option>
+    <option id="emploloadlay" dialogue="ÐŸÑ€Ñ–Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð¸ Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶ÐµÐ½Ð½Ñ"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Ð£Ð¿Ñ€Ð°Ð²Ð»Ñ–Ð½Ð½Ñ Ð¿Ñ€Ð°Ñ†Ñ–Ð²Ð½Ð¸ÐºÐ¾Ð¼ Ð¿ÐµÑ€ÐµÐ½ÐµÑÐµÐ½Ð¾ Ð½Ð° Ð´Ð¾ÑˆÐºÑƒ ÐºÐµÑ€Ñ–Ð²Ð½Ð¸ÐºÐ°"></option>
+    <option id="startkn" dialogue="Ð—Ñ–Ñ€ÐºÐ¾Ð²Ð¸Ð¹ Ð¼Ð°Ñ€ÐºÐµÑ€ Ð¾Ñ‚Ñ€Ð¸Ð¼Ð°Ð½Ð¾!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Ð Ð¾Ð·Ð¼Ñ–ÑÑ‚Ñ–Ñ‚ÑŒ Ð¿Ñ€Ð¸ÐºÑ€Ð°ÑÑƒ Ð´Ð»Ñ Ñ€Ñ–Ð·Ð´Ð²ÑÐ½Ð¾Ð³Ð¾ Ð¿Ð¾Ð´Ð°Ñ€ÑƒÐ½ÐºÐ° Ñ‚Ð° Ð·Ð°Ñ‡ÐµÐºÐ°Ð¹Ñ‚Ðµ Ð½Ð¾Ñ‡Ñ–, Ð¿Ð¾ÐºÐ¸ Ð¿Ð¾Ð´Ñ–Ñ Ð¿Ð¾Ñ‡Ð½ÐµÑ‚ÑŒÑÑ!
+ÐœÐ°Ð¹Ñ‚Ðµ Ð¿Ñ–Ð´ Ñ€ÑƒÐºÐ¾ÑŽ Ð¼Ñ–Ñ‚Ð»Ñƒ"></option>
+
+    <option id="panykey" dialogue="ÐÐ°Ñ‚Ð¸ÑÐ½Ñ–Ñ‚ÑŒ Ð±ÑƒÐ´ÑŒ-ÑÐºÑƒ ÐºÐ»Ð°Ð²Ñ–ÑˆÑƒ, Ñ‰Ð¾Ð± Ð¿Ñ€Ð¾Ð´Ð¾Ð²Ð¶Ð¸Ñ‚Ð¸"></option>
+    <option id="gtunlckable" dialogue="ÐžÑ‚Ñ€Ð¸Ð¼Ð°Ð² Ð½Ð¾Ð²Ð¸Ð¹ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚, ÑÐºÐ¸Ð¹ Ð¼Ð¾Ð¶Ð½Ð° Ñ€Ð¾Ð·Ð±Ð»Ð¾ÐºÑƒÐ²Ð°Ñ‚Ð¸!"></option>
+    <option id="nostartkn" dialogue="ÐÐµÐ¼Ð°Ñ” Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¸Ñ… Ð¼Ð°Ñ€ÐºÐµÑ€Ñ–Ð² Ð·Ñ–Ñ€Ð¾Ñ‡Ð¾Ðº"></option>
+    <option id="managsavebckup" dialogue="ÐšÐµÑ€ÑƒÐ²Ð°Ð½Ð½Ñ Ð·Ð±ÐµÑ€ÐµÐ¶ÐµÐ½Ð½ÑÐ¼ Ñ€ÐµÐ·ÐµÑ€Ð²Ð½Ð¸Ñ… ÐºÐ¾Ð¿Ñ–Ð¹"></option>
+    <option id="newoptionendday" dialogue="ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡Ð½Ð¾ Ð·Ð°Ð²ÐµÑ€ÑˆÑƒÐ²Ð°Ñ‚Ð¸ Ð´ÐµÐ½ÑŒ"></option>
+    <option id="sallprices" dialogue="Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚Ð¸ Ð²ÑÑ– Ñ†Ñ–Ð½Ð¸ Ñƒ Ð²Ñ–Ð´ÑÐ¾Ñ‚ÐºÐ°Ñ…"></option>
+    <option id="csettingprices" dialogue="[ÐÐ°Ñ€Ð°Ð·Ñ– Ð²ÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÑŽÑŽÑ‚ÑŒÑÑ Ñ†Ñ–Ð½Ð¸]"></option>
 
   </options>
 
-</text>       Localization_RU HF <text>
+</text>      Localization_RU S <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -4688,7 +4826,7 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="tabtitle2" dialogue="Ð£ÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð°"></option>
     <option id="tabtitle3" dialogue="ÐžÑÐ²ÐµÑ‰ÐµÐ½Ð¸Ðµ"></option>
     <option id="tabtitle4" dialogue="Ð¡ÐµÐ·Ð¾Ð½Ð½Ñ‹Ð¹: Ð¥ÑÐ»Ð»Ð¾ÑƒÐ¸Ð½"></option>
-    <option id="tabtitle5" dialogue="ÐšÐ¾Ð¼Ð½Ð°Ñ‚Ð° Ð¾Ñ‚Ð´Ñ‹Ñ…Ð°"></option>
+    <option id="tabtitle5" dialogue="ÐšÐ¾Ð¼Ð½Ð°Ñ‚Ð° Ð¾Ñ‚Ð´Ñ‹Ñ…Ð° Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»Ð°"></option>
     <option id="tabtitle6" dialogue="Ð¡ÐµÐ·Ð¾Ð½Ð½Ñ‹Ð¹: Ð Ð¾Ð¶Ð´ÐµÑÑ‚Ð²Ð¾"></option>
     <option id="tabtitle7" dialogue="DLC"></option>
 
@@ -4768,6 +4906,10 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="decorat68" dialogue="ÐŸÐ°Ñ€Ð¾Ð²Ð¾Ð·Ð¸Ðº Â«Ð§ÑƒÑ…-Ñ‡ÑƒÑ…-Ñ‡ÑƒÑ…Â»"></option>
     <option id="decorat69" dialogue="Ð¡Ð¸Ð¼ÑƒÐ»ÑÑ‚Ð¾Ñ€ ÐÐ°Ð´Ð¶Ð°Ñ€Ñ‹"></option>
     <option id="decorat70" dialogue="Ð¢Ð°Ð±ÑƒÑ€ÐµÑ‚"></option>
+
+    <option id="decorat71" dialogue="Ð¡Ð½ÐµÐ³Ð¾Ð²Ð¸Ðº"></option>
+    <option id="decorat72" dialogue="ÐšÐ¾Ð½Ñ„ÐµÑ‚Ð½Ð°Ñ Ñ‚Ñ€Ð¾ÑÑ‚ÑŒ"></option>
+    <option id="decorat73" dialogue="Ð Ð¾Ð¶Ð´ÐµÑÑ‚Ð²ÐµÐ½ÑÐºÐ¸Ð¹ Ð¿Ð¾Ð´Ð°Ñ€Ð¾Ðº"></option>
     
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -4810,6 +4952,12 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="skill25a" dialogue="ÐšÐ»Ð¸ÐµÐ½Ñ‚Ñ‹ Ð±ÑƒÐ´ÑƒÑ‚ Ñ‡Ð°Ñ‰Ðµ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ ÐºÐ°ÑÑÐ°Ð¼Ð¸ ÑÐ°Ð¼Ð¾Ð¾Ð±ÑÐ»ÑƒÐ¶Ð¸Ð²Ð°Ð½Ð¸Ñ"></option>
     <option id="skill26" dialogue="Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº XI"></option>
     <option id="skill27" dialogue="Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº XII"></option>
+    <option id="skill28" dialogue="ÐšÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð´Ð»Ñ Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ð¾Ð¹ Ð¿ÐµÑ€ÐµÑ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸"></option>
+    <option id="skill28a" dialogue="Ð‘Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐ¸Ð¹ Ð¼ÑƒÑÐ¾Ñ€Ð½Ñ‹Ð¹ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð±ÑƒÐ´ÐµÑ‚ Ð·Ð°Ð¼ÐµÐ½ÐµÐ½ Ð½Ð° ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð´Ð»Ñ Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ð¾Ð¹ Ð¿ÐµÑ€ÐµÑ€Ð°Ð±Ð¾Ñ‚ÐºÐ¸."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð½Ð¾Ðµ Ð¾Ð±ÐµÑÐ¿ÐµÑ‡ÐµÐ½Ð¸Ðµ Ñ†ÐµÐ½Ð¾Ð²Ð¾Ð¹ Ð¼Ð°ÑˆÐ¸Ð½Ñ‹ ÑƒÐ»ÑƒÑ‡ÑˆÐµÐ½Ð¾, Ð¸ Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ð¼Ð¾Ð¶Ð½Ð¾ Ð·Ð°Ð´Ð°Ñ‚ÑŒ ÑÐ¿Ð¾ÑÐ¾Ð± Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ð·Ð°Ñ†Ð¸Ð¸ Ñ†ÐµÐ½"></option>
+    <option id="skill30" dialogue="Ð¢Ð¸Ðº-Ñ‚Ð°Ðº Ð¸Ð´ÐµÑ‚ Ð±Ñ‹ÑÑ‚Ñ€Ð¾"></option>
+    <option id="skill30a" dialogue="ÐšÐ¾Ð³Ð´Ð° Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ Ð·Ð°ÐºÑ€Ñ‹Ñ‚ Ð½Ð¾Ñ‡ÑŒÑŽ, Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ðµ Ñ‡Ð°ÑÑ‹ Ð² ÐºÐ¾Ð¼Ð½Ð°Ñ‚Ðµ Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€Ð°, Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÑÐºÐ¾Ñ€Ð¸Ñ‚ÑŒ Ð²Ñ€ÐµÐ¼Ñ"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -5270,12 +5418,19 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="paintmat97" dialogue="Ð Ð¾Ð¶Ð´ÐµÑÑ‚Ð²Ð¾ H"></option>
     <option id="paintmat98" dialogue="Ð Ð¾Ð¶Ð´ÐµÑÑ‚Ð²Ð¾ I"></option>
     <option id="paintmat99" dialogue="Ð Ð¾Ð¶Ð´ÐµÑÑ‚Ð²Ð¾ J"></option>
+    <option id="paintmat100" dialogue="Ð¡Ð½ÐµÐ³"></option>
+
+    <option id="paintmat101" dialogue="Ð›ÐµÐ´ A"></option>
+    <option id="paintmat102" dialogue="Ð›ÐµÐ´ B"></option>
+    <option id="paintmat103" dialogue="Ð›ÐµÐ´ C"></option>
+    <option id="paintmat104" dialogue="Ð›ÐµÐ´ D"></option>
+    
     
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
     <option id="skinshats" dialogue="Ð¡ÐºÐ¸Ð½Ñ‹ Ð¸ ÑˆÐ»ÑÐ¿Ñ‹"></option>
     <option id="character" dialogue="ÐŸÐµÑ€ÑÐ¾Ð½Ð°Ð¶"></option>
     <option id="hat" dialogue="Ð¨Ð»ÑÐ¿Ð°"></option>
-    <option id="coolpeople" dialogue="Ð Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ñ‹ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ ÐºÑ€ÑƒÑ‚Ñ‹Ðµ Ð»ÑŽÐ´Ð¸"></option>
+    <option id="coolpeople" dialogue="Ð’Ñ…Ð¾Ð´ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð´Ð»Ñ VIP"></option>
 
     <option id="mprice" dialogue="Ð Ñ‹Ð½Ð¾Ñ‡Ð½Ð°Ñ Ñ†ÐµÐ½Ð°"></option>
     <option id="yprice" dialogue="Ð’Ð°ÑˆÐ° Ñ†ÐµÐ½Ð°"></option>
@@ -5299,9 +5454,9 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="lic12" dialogue="Ð’ ÑÑ‚Ð¾Ð¼ Ñ‚ÐµÑ€Ð¼Ð¸Ð½Ð°Ð»Ðµ Ð²Ñ‹ ÑÐ¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Youtube Ð¸ Twitch Ðº ÑÐ²Ð¾Ð¸Ð¼ Ñ‚ÐµÐ»ÐµÐ²Ð¸Ð·Ð¾Ñ€Ð°Ð¼ Ð¿Ð¾ÑÐ»Ðµ Ð¾Ð´Ð¾Ð±Ñ€ÐµÐ½Ð¸Ñ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸."></option>
 
     <option id="cosmetics1" dialogue="DLC Ñ ÐºÐ¾ÑÐ¼ÐµÑ‚Ð¸ÐºÐ¾Ð¹ Ð¾Ð´Ð¾Ð±Ñ€ÐµÐ½Ð¾!"></option>
-    <option id="cosmetics2" dialogue="7 Ð½Ð¾Ð²Ñ‹Ñ… Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ÐµÐ¹, Ð±Ð¾Ð»ÐµÐµ 70 ÑˆÐ»ÑÐ¿, 35 Ñ‚Ð°Ð½Ñ†ÐµÐ² Ð¸ Ð¿Ð¾Ð·, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð²ÐµÐ±-Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ€Ð°ÑÑÐ»Ð°Ð±Ð¸Ñ‚ÑŒÑÑ, Ð¿Ð¾ÐºÐ° Ð²Ð°Ñˆ Ð±Ð¾ÑÑ Ð½Ðµ Ð²Ð¸Ð´Ð¸Ñ‚.
+    <option id="cosmetics2" dialogue="9 Ð½Ð¾Ð²Ñ‹Ñ… Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ÐµÐ¹, Ð±Ð¾Ð»ÐµÐµ 100 ÑˆÐ»ÑÐ¿, 35 Ñ‚Ð°Ð½Ñ†ÐµÐ² Ð¸ Ð¿Ð¾Ð·, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð²ÐµÐ±-Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ€Ð°ÑÑÐ»Ð°Ð±Ð¸Ñ‚ÑŒÑÑ, Ð¿Ð¾ÐºÐ° Ð²Ð°Ñˆ Ð±Ð¾ÑÑ Ð½Ðµ Ð²Ð¸Ð´Ð¸Ñ‚.
 
-ÐžÐ½ Ñ‚Ð°ÐºÐ¶Ðµ Ð±ÑƒÐ´ÐµÑ‚ Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ðµ ÑƒÐºÑ€Ð°ÑˆÐµÐ½Ð¸Ñ Ð¸ Ð²Ð¸Ð´ÐµÐ¾ Ð´Ð»Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ðº Ð²Ð°ÑˆÐ¸Ð¼ Ñ‚ÐµÐ»ÐµÐ²Ð¸Ð·Ð¾Ñ€Ð°Ð¼. ÐŸÐµÑ€Ð²Ð¾Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð»Ñ Ð¿Ð¾ÐºÑ€Ð°ÑÐºÐ¸ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð° ÑƒÐ¶Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾!"></option>
+Ð Ð°ÑÐºÑ€Ð°ÑÑŒÑ‚Ðµ ÑÐ²Ð¾Ð¹ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¿Ð»Ð°Ð½ÑˆÐµÑ‚Ð° Ð¸ Ð½Ð°ÑÐ»Ð°Ð¶Ð´Ð°Ð¹Ñ‚ÐµÑÑŒ ÑÐºÑÐºÐ»ÑŽÐ·Ð¸Ð²Ð½Ñ‹Ð¼Ð¸ ÑƒÐºÑ€Ð°ÑˆÐµÐ½Ð¸ÑÐ¼Ð¸, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð±ÑƒÐ´ÑƒÑ‚ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÑ‚ÑŒÑÑ ÑÐ¾ Ð²Ñ€ÐµÐ¼ÐµÐ½ÐµÐ¼. ÐŸÐµÑ€Ð²Ð¾Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ¸Ð½Ñ…Ñ€Ð¾Ð½Ð¸Ð·Ð°Ñ†Ð¸Ð¸ Ñ YouTube ÑƒÐ¶Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾!"></option>
 
     <option id="continue" dialogue="ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ"></option>
     <option id="backups" dialogue="Ð ÐµÐ·ÐµÑ€Ð²Ð½Ñ‹Ðµ ÐºÐ¾Ð¿Ð¸Ð¸"></option>
@@ -5431,11 +5586,31 @@ https://www.youtube.com/watch?v=93EMW-Yf3dg
     <option id="emplonewpriority" dialogue="Ð¥Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ðµ"></option>
     <option id="emploNoTask" dialogue="ÐÐµÑ‚ Ð·Ð°Ð´Ð°Ñ‡Ð¸"></option>
     <option id="emplostaffhappi" dialogue="Ð¡Ñ‡Ð°ÑÑ‚ÑŒÐµ Ð² ÑƒÑ‡Ð¸Ñ‚ÐµÐ»ÑŒÑÐºÐ¾Ð¹"></option>
-    <option id="emploreroll" dialog="ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ"></option>
+    <option id="emploreroll" dialogue="ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ"></option>
 
+    <option id="dlcdiscounted" dialogue="Ð¡ÐºÐ¸Ð´ÐºÐ°"></option>
+    <option id="emploselect" dialogue="Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ"></option>
+    <option id="emplochangeall" dialogue="Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð²ÑÐµ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ñ‹"></option>
+    <option id="emplosavelay" dialogue="Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ñ‹"></option>
+    <option id="emploloadlay" dialogue="Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ñ‹"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Ð£Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¾Ð¼ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¾ Ð½Ð° Ð´Ð¾ÑÐºÑƒ Ð¼ÐµÐ½ÐµÐ´Ð¶ÐµÑ€Ð°"></option>
+    <option id="startkn" dialogue="Ð—Ð²ÐµÐ·Ð´Ð½Ñ‹Ð¹ Ñ‚Ð¾ÐºÐµÐ½ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½!"></option>
+    <option id="bboardchristdisclaimer" dialogue="ÐŸÐ¾Ð¼ÐµÑÑ‚Ð¸Ñ‚Ðµ ÑƒÐºÑ€Ð°ÑˆÐµÐ½Ð¸Ðµ Ð² Ð²Ð¸Ð´Ðµ Ñ€Ð¾Ð¶Ð´ÐµÑÑ‚Ð²ÐµÐ½ÑÐºÐ¾Ð³Ð¾ Ð¿Ð¾Ð´Ð°Ñ€ÐºÐ° Ð¸ Ð´Ð¾Ð¶Ð´Ð¸Ñ‚ÐµÑÑŒ Ð½Ð°Ñ‡Ð°Ð»Ð° Ð¼ÐµÑ€Ð¾Ð¿Ñ€Ð¸ÑÑ‚Ð¸Ñ!
+Ð”ÐµÑ€Ð¶Ð¸Ñ‚Ðµ Ð¼ÐµÑ‚Ð»Ñƒ Ð¿Ð¾Ð´ Ñ€ÑƒÐºÐ¾Ð¹"></option>
+
+    <option id="panykey" dialogue="ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ Ð´Ð»Ñ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶ÐµÐ½Ð¸Ñ"></option>
+    <option id="gtunlckable" dialogue="ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ð» Ð½Ð¾Ð²Ñ‹Ð¹ Ñ€Ð°Ð·Ð±Ð»Ð¾ÐºÐ¸Ñ€ÑƒÐµÐ¼Ñ‹Ð¹ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚!"></option>
+    <option id="nostartkn" dialogue="ÐÐµÑ‚ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹Ñ… Ð·Ð²ÐµÐ·Ð´Ð½Ñ‹Ñ… Ñ‚Ð¾ÐºÐµÐ½Ð¾Ð²"></option>
+    <option id="managsavebckup" dialogue="Ð£Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ñ€ÐµÐ·ÐµÑ€Ð²Ð½Ñ‹Ð¼Ð¸ ÐºÐ¾Ð¿Ð¸ÑÐ¼Ð¸"></option>
+    <option id="newoptionendday" dialogue="ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ Ð´ÐµÐ½ÑŒ"></option>
+    <option id="sallprices" dialogue="Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð²ÑÐµ Ñ†ÐµÐ½Ñ‹ Ð² Ð¿Ñ€Ð¾Ñ†ÐµÐ½Ñ‚Ð°Ñ…"></option>
+    <option id="csettingprices" dialogue="[Ð¢ÐµÐºÑƒÑ‰Ð°Ñ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ñ†ÐµÐ½]"></option>
+    
   </options>
 
-</text>   Localization_DE ©  <text>
+</text>         Localization_DE Â
+ <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -5856,6 +6031,10 @@ STEUERUNG
     <option id="decorat69" dialogue="Najara-Simulator"></option>
     <option id="decorat70" dialogue="Hocker"></option>
 
+    <option id="decorat71" dialogue="Schneemann"></option>
+    <option id="decorat72" dialogue="Zuckerstange"></option>
+    <option id="decorat73" dialogue="Weihnachtsgeschenk"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="Mitarbeiter I"></option>
@@ -5897,6 +6076,12 @@ STEUERUNG
     <option id="skill25a" dialogue="Kunden werden Self-Checkouts hÃ¤ufiger nutzen"></option>
     <option id="skill26" dialogue="Mitarbeiter XI"></option>
     <option id="skill27" dialogue="Mitarbeiter XII"></option>
+    <option id="skill28" dialogue="RecyclingbehÃ¤lter"></option>
+    <option id="skill28a" dialogue="Der nÃ¤chstgelegene MÃ¼llbehÃ¤lter wird durch einen RecyclingbehÃ¤lter ersetzt."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Die Preisauszeichnungssoftware wurde verbessert und es kann jetzt eine MÃ¶glichkeit zur automatischen Preisgestaltung festgelegt werden"></option>
+    <option id="skill30" dialogue="Tic-Tac geht schnell"></option>
+    <option id="skill30a" dialogue="Wenn das GeschÃ¤ft nachts geschlossen ist, kann der Manager die neue Uhr im Managerzimmer verwenden, um die Zeit zu beschleunigen"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -6357,6 +6542,12 @@ STEUERUNG
     <option id="paintmat97" dialogue="Weihnachten H"></option>
     <option id="paintmat98" dialogue="Weihnachten I"></option>
     <option id="paintmat99" dialogue="Weihnachten J"></option>
+    <option id="paintmat100" dialogue="Schnee"></option>
+
+    <option id="paintmat101" dialogue="Eis A"></option>
+    <option id="paintmat102" dialogue="Eis B"></option>
+    <option id="paintmat103" dialogue="Eis C"></option>
+    <option id="paintmat104" dialogue="Eis D"></option>
     
     
     <option id="skinshats" dialogue="Skins und HÃ¼te"></option>
@@ -6383,9 +6574,9 @@ STEUERUNG
     <option id="lic12" dialogue="In diesem Terminal kÃ¶nnen Sie YouTube und Twitch an Ihre Fernseher anschlieÃŸen, sobald die Lizenz genehmigt ist."></option>
 
     <option id="cosmetics1" dialogue="Der Kosmetik-DLC wurde genehmigt!"></option>
-    <option id="cosmetics2" dialogue="7 neue Charaktere, Ã¼ber 70 HÃ¼te, 35 TÃ¤nze und Posen und ein Webbrowser zum Faulenzen, wenn Ihr Chef nicht hinsieht.
+    <option id="cosmetics2" dialogue="9 neue Charaktere, Ã¼ber 100 HÃ¼te, 35 TÃ¤nze und Posen und ein Webbrowser zum Faulenzen, wenn Ihr Chef gerade nicht hinsieht.
 
-Es wird auch neue Dekorationen und Videos zum AnschlieÃŸen an Ihre Fernseher enthalten. Das erste Update zum Anstreichen Ihres Ladens ist bereits verfÃ¼gbar!"></option>
+Streichen Sie Ihren Laden mit dem neuen Tablet und freuen Sie sich Ã¼ber exklusive Dekorationen, die im Laufe der Zeit hinzugefÃ¼gt werden. Das erste Youtube-Sync-Update ist bereits verfÃ¼gbar!"></option>
 
     <option id="continue" dialogue="Weiter"></option>
     <option id="backups" dialogue="Backups"></option>
@@ -6514,12 +6705,32 @@ Je nÃ¤her Sie an der Kamera sind, desto effektiver ist das Klicken."></option>
     <option id="emploassignedtask" dialogue="Zugewiesene Aufgabe"></option>
     <option id="emplonewpriority" dialogue="Speicher"></option>
     <option id="emploNoTask" dialogue="Keine Aufgabe"></option>
-    <option id="emplastaffhappi" dialogue="Zufriedenheit im Lehrerzimmer"></option>
+    <option id="emplostaffhappi" dialogue="Zufriedenheit im Lehrerzimmer"></option>
     <option id="emploreroll" dialogue="Neu wÃ¼rfeln"></option>
 
+    <option id="dlcdiscounted" dialogue="Rabatt"></option>
+    <option id="emploselect" dialogue="AuswÃ¤hlen"></option>
+    <option id="emplochangeall" dialogue="Alle PrioritÃ¤ten Ã¤ndern"></option>
+    <option id="emplosavelay" dialogue="PrioritÃ¤ten speichern"></option>
+    <option id="emploloadlay" dialogue="PrioritÃ¤ten laden"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Die Verwaltung des Mitarbeiters wurde auf die Pinnwand des Managers verschoben"></option>
+    <option id="startkn" dialogue="Habe ein Stern-Token bekommen!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Platzieren Sie eine Weihnachtsgeschenk-Dekoration und warten Sie, bis die Veranstaltung in der Nacht beginnt!
+Halten Sie den Besen bereit"></option>
+
+    <option id="panykey" dialogue="Zum Fortfahren eine beliebige Taste drÃ¼cken"></option>
+    <option id="gtunlckable" dialogue="Habe ein neues freischaltbares Objekt bekommen!"></option>
+    <option id="nostartkn" dialogue="Keine verfÃ¼gbaren Stern-Token"></option>
+    <option id="managsavebckup" dialogue="Sicherungskopien verwalten"></option>
+    <option id="newoptionendday" dialogue="Tag automatisch beenden"></option>
+    <option id="sallprices" dialogue="Alle Preise auf Prozent setzen"></option>
+    <option id="csettingprices" dialogue="[Preise werden derzeit festgelegt]"></option>
+    
   </options>
 
-</text>          Localization_ES  <text>
+</text>         Localization_ES @
+ <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -6940,6 +7151,10 @@ CONTROLES
     <option id="decorat69" dialogue="El Najara Simulator"></option>
     <option id="decorat70" dialogue="Taburete"></option>
 
+    <option id="decorat71" dialogue="MuÃ±eco de nieve"></option>
+    <option id="decorat72" dialogue="BastÃ³n de caramelo"></option>
+    <option id="decorat73" dialogue="Regalo de navidad"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="Empleado I"></option>
@@ -6981,7 +7196,13 @@ CONTROLES
     <option id="skill25a" dialogue="Los clientes utilizarÃ¡n mÃ¡s las cajas de autopago"></option>
     <option id="skill26" dialogue="Empleado XI"></option>
     <option id="skill27" dialogue="Empleado XII"></option>
-
+    <option id="skill28" dialogue="Contenedor de reciclaje"></option>
+    <option id="skill28a" dialogue="El contenedor de basura mÃ¡s cercano serÃ¡ reemplazado por uno de reciclaje"></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="El software de la mÃ¡quina de precios se ha mejorado y ahora se puede configurar una forma de automatizar los precios"></option>
+    <option id="skill30" dialogue="Tic-tac va rÃ¡pido"></option>
+    <option id="skill30a" dialogue="Cuando la tienda estÃ¡ cerrada durante la noche, el gerente puede usar el nuevo reloj en la habitaciÃ³n del gerente para acelerar el tiempo"></option>
+    
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
     <option id="productRelated0" dialogue="Precio por unidad"></option>
@@ -7440,8 +7661,14 @@ CONTROLES
     <option id="paintmat97" dialogue="Navidad H"></option>
     <option id="paintmat98" dialogue="Navidad I"></option>
     <option id="paintmat99" dialogue="Navidad J"></option>
-    
-    
+    <option id="paintmat100" dialogue="Nieve"></option>
+
+    <option id="paintmat101" dialogue="Hielo A"></option>
+    <option id="paintmat102" dialogue="Hielo B"></option>
+    <option id="paintmat103" dialogue="Hielo C"></option>
+    <option id="paintmat104" dialogue="Hielo D"></option>
+
+
     <option id="skinshats" dialogue="Aspectos y sombreros"></option>
     <option id="character" dialogue="Personaje"></option>
     <option id="hat" dialogue="Sombrero"></option>
@@ -7466,9 +7693,9 @@ CONTROLES
     <option id="lic12" dialogue="En esta terminal podrÃ¡s vincular Youtube y Twitch a tus televisores una vez aprobada la licencia."></option>
 
     <option id="cosmetics1" dialogue="Â¡El DLC de cosmÃ©ticos ha sido aprobado!"></option>
-    <option id="cosmetics2" dialogue="7 nuevos personajes, mÃ¡s de 70 sombreros, 35 bailes y poses y un navegador web para holgazanear mientras tu jefe no estÃ¡ mirando.
+    <option id="cosmetics2" dialogue="9 nuevos personajes, mÃ¡s de 100 sombreros, 35 bailes y poses y un navegador web para holgazanear mientras el jefe no mira.
 
-TambiÃ©n incluirÃ¡ nuevas decoraciones y videos para conectar a tus televisores. Â¡La primera actualizaciÃ³n para pintar tu tienda con la tablet ya estÃ¡ disponible!"></option>
+Pinta tu tienda con la nueva tableta y disfruta de decoraciones exclusivas que irÃ¡n incrementando con el tiempo. Â¡La primera actualizaciÃ³n de sincronizaciÃ³n con Youtube ya estÃ¡ disponible!"></option>
 
     <option id="continue" dialogue="Continuar"></option>
     <option id="backups" dialogue="Backups"></option>
@@ -7599,10 +7826,28 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="emploNoTask" dialogue="Sin tarea"></option>
     <option id="emplostaffhappi" dialogue="Felicidad empleados"></option>
     <option id="emploreroll" dialogue="Actualizar"></option>
-    
+
+    <option id="dlcdiscounted" dialogue="Descuento"></option>
+    <option id="emploselect" dialogue="Seleccionar"></option>
+    <option id="emplochangeall" dialogue="Todas las prioridades"></option>
+    <option id="emplosavelay" dialogue="Guardar prioridades"></option>
+    <option id="emploloadlay" dialogue="Cargar prioridades"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="La gestiÃ³n de empleados se ha trasladado a la pizarra del gerente"></option>
+    <option id="startkn" dialogue="Â¡Ficha estrella conseguida!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Coloca un regalo de Navidad como adorno y espera a que llegue la noche para que comience el evento. Ten la escoba a mano"></option>
+
+    <option id="panykey" dialogue="Pulsa cualquier tecla para continuar"></option>
+    <option id="gtunlckable" dialogue="Â¡Nuevo objeto desbloqueable!"></option>
+    <option id="nostartkn" dialogue="No tienes fichas estrella"></option>
+    <option id="managsavebckup" dialogue="Administrando copias de seguridad"></option>
+    <option id="newoptionendday" dialogue="Acabar dÃ­a autom."></option>
+    <option id="sallprices" dialogue="Cambiar todos los precios"></option>
+    <option id="csettingprices" dialogue="[Establenciendo precios]"></option>
+
   </options>
 
-</text>   Localization_JP ™ <text>
+</text>   Localization_JP O" <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -8022,6 +8267,10 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="decorat69" dialogue="ãƒŠã‚¸ãƒ£ãƒ©ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿"></option>
     <option id="decorat70" dialogue="ã‚¹ãƒ„ãƒ¼ãƒ«"></option>
 
+    <option id="decorat71" dialogue="é›ªã ã‚‹ã¾"></option>
+    <option id="decorat72" dialogue="ã‚­ãƒ£ãƒ³ãƒ‡ã‚£ã‚±ã‚¤ãƒ³"></option>
+    <option id="decorat73" dialogue="ã‚¯ãƒªã‚¹ãƒžã‚¹ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="å¾“æ¥­å“¡ I"></option>
@@ -8063,6 +8312,12 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="skill25a" dialogue="é¡§å®¢ã¯ã‚»ãƒ«ãƒ•ãƒã‚§ãƒƒã‚¯ã‚¢ã‚¦ãƒˆã‚’ã‚ˆã‚Šå¤šãåˆ©ç”¨ã™ã‚‹ã‚ˆã†ã«ãªã‚‹"></option>
     <option id="skill26" dialogue="å¾“æ¥­å“¡ XI"></option>
     <option id="skill27" dialogue="å¾“æ¥­å“¡ XII"></option>
+    <option id="skill28" dialogue="ãƒªã‚µã‚¤ã‚¯ãƒ«å®¹å™¨"></option>
+    <option id="skill28a" dialogue="æœ€ã‚‚è¿‘ã„ã‚´ãƒŸç®±ãŒãƒªã‚µã‚¤ã‚¯ãƒ«å®¹å™¨ã«ç½®ãæ›ãˆã‚‰ã‚Œã¾ã™ã€‚"></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="ä¾¡æ ¼è¨­å®šæ©Ÿã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ãŒæ”¹å–„ã•ã‚Œã€ä¾¡æ ¼ã‚’è‡ªå‹•åŒ–ã™ã‚‹æ–¹æ³•ã‚’è¨­å®šã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚"></option>
+    <option id="skill30" dialogue="Tic-tac ã¯é«˜é€ŸåŒ–ã—ã¾ã™ã€‚"></option>
+    <option id="skill30a" dialogue="å¤œé–“ã«åº—ãŒé–‰ã¾ã£ã¦ã„ã‚‹å ´åˆã€ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã¯ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼å®¤ã®æ–°ã—ã„æ™‚è¨ˆã‚’ä½¿ç”¨ã—ã¦æ™‚é–“ã‚’åŠ é€Ÿã§ãã¾ã™ã€‚"></option>
     
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -8523,7 +8778,12 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="paintmat97" dialogue="ã‚¯ãƒªã‚¹ãƒžã‚¹ H"></option>
     <option id="paintmat98" dialogue="ã‚¯ãƒªã‚¹ãƒžã‚¹ I"></option>
     <option id="paintmat99" dialogue="ã‚¯ãƒªã‚¹ãƒžã‚¹ J"></option>
-    
+    <option id="paintmat100" dialogue="é›ª"></option>
+
+    <option id="paintmat101" dialogue="æ°· A"></option>
+    <option id="paintmat102" dialogue="æ°· B"></option>
+    <option id="paintmat103" dialogue="æ°· C"></option>
+    <option id="paintmat104" dialogue="æ°· D"></option>
     
     <option id="skinshats" dialogue="ã‚¹ã‚­ãƒ³ã¨å¸½å­"></option>
     <option id="character" dialogue="ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼"></option>
@@ -8549,9 +8809,9 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="lic12" dialogue="ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ãŒæ‰¿èªã•ã‚Œã‚‹ã¨ã€ã“ã®ç«¯æœ«ã§ YouTube ã¨ Twitch ã‚’ãƒ†ãƒ¬ãƒ“ã«æŽ¥ç¶šã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚"></option>
 
     <option id="cosmetics1" dialogue="ã‚³ã‚¹ãƒ¡ãƒ†ã‚£ãƒƒã‚¯ DLC ãŒæ‰¿èªã•ã‚Œã¾ã—ãŸ!"></option>
-    <option id="cosmetics2" dialogue="7 äººã®æ–°ã—ã„ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã€70 ç¨®é¡žä»¥ä¸Šã®å¸½å­ã€35 ç¨®é¡žã®ãƒ€ãƒ³ã‚¹ã¨ãƒãƒ¼ã‚ºã€ãã—ã¦ä¸Šå¸ãŒè¦‹ã¦ã„ãªã„ã¨ãã«ã‚µãƒœã‚‹ãŸã‚ã® Web ãƒ–ãƒ©ã‚¦ã‚¶ã€‚
+    <option id="cosmetics2" dialogue="9 äººã®æ–°ã—ã„ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã€100 ç¨®é¡žä»¥ä¸Šã®å¸½å­ã€35 ç¨®é¡žã®ãƒ€ãƒ³ã‚¹ã¨ãƒãƒ¼ã‚ºã€ãã—ã¦ä¸Šå¸ãŒè¦‹ã¦ã„ãªã„ã¨ãã«ã‚µãƒœã‚‹ãŸã‚ã® Web ãƒ–ãƒ©ã‚¦ã‚¶ã€‚
 
-æ–°ã—ã„ãƒ‡ã‚³ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚„ãƒ†ãƒ¬ãƒ“ã«æ˜ ã—å‡ºã™ãƒ“ãƒ‡ã‚ªã‚‚å«ã¾ã‚Œã¾ã™ã€‚ãŠåº—ã‚’å½©ã‚‹æœ€åˆã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆã¯ã™ã§ã«åˆ©ç”¨å¯èƒ½ã§ã™!"></option>
+æ–°ã—ã„ã‚¿ãƒ–ãƒ¬ãƒƒãƒˆã§ãŠåº—ã‚’å½©ã‚Šã€æ™‚é–“ã®çµŒéŽã¨ã¨ã‚‚ã«è¿½åŠ ã•ã‚Œã‚‹ç‰¹åˆ¥ãªãƒ‡ã‚³ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ãŠæ¥½ã—ã¿ãã ã•ã„ã€‚æœ€åˆã® Youtube åŒæœŸã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆãŒã™ã§ã«åˆ©ç”¨å¯èƒ½ã§ã™!"></option>
 
     <option id="continue" dialogue="ç¶šè¡Œ"></option>
     <option id="backups" dialogue="ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—"></option>
@@ -8683,9 +8943,28 @@ Cuanto mÃ¡s cerca estÃ© de la cÃ¡mara, mÃ¡s efectivo serÃ¡ hacer clic"
     <option id="emplostaffhappi" dialogue="è·å“¡å®¤ã®å¹¸ã›"></option>
     <option id="emploreroll" dialogue="å†ãƒ­ãƒ¼ãƒ«"></option>
 
+    <option id="dlcdiscounted" dialogue="å‰²å¼•"></option>
+    <option id="emploselect" dialogue="é¸æŠž"></option>
+    <option id="emplochangeall" dialogue="ã™ã¹ã¦ã®å„ªå…ˆé †ä½ã‚’å¤‰æ›´"></option>
+    <option id="emplosavelay" dialogue="å„ªå…ˆåº¦ã‚’ä¿å­˜"></option>
+    <option id="emploloadlay" dialogue="å„ªå…ˆåº¦ã‚’ãƒ­ãƒ¼ãƒ‰"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="å¾“æ¥­å“¡ã®ç®¡ç†ã¯ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®é»’æ¿ã«ç§»å‹•ã•ã‚Œã¾ã—ãŸ"></option>
+    <option id="startkn" dialogue="ã‚¹ã‚¿ãƒ¼ãƒˆãƒ¼ã‚¯ãƒ³ã‚’å—ã‘å–ã‚Šã¾ã—ãŸ!"></option>
+    <option id="bboardchristdisclaimer" dialogue="ã‚¯ãƒªã‚¹ãƒžã‚¹ ã‚®ãƒ•ãƒˆã®é£¾ã‚Šã‚’é…ç½®ã—ã¦ã€ã‚¤ãƒ™ãƒ³ãƒˆãŒå§‹ã¾ã‚‹å¤œã‚’å¾…ã¡ã¾ã—ã‚‡ã†!
+ã»ã†ãã‚’ç”¨æ„ã—ã¦ãã ã•ã„"></option>
+
+    <option id="panykey" dialogue="ç¶šè¡Œã™ã‚‹ã«ã¯ä»»æ„ã®ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„"></option>
+    <option id="gtunlckable" dialogue="æ–°ã—ã„ãƒ­ãƒƒã‚¯è§£é™¤å¯èƒ½ãªã‚¢ã‚¤ãƒ†ãƒ ã‚’å…¥æ‰‹ã—ã¾ã—ãŸ!"></option>
+    <option id="nostartkn" dialogue="åˆ©ç”¨å¯èƒ½ãªã‚¹ã‚¿ãƒ¼ãƒˆãƒ¼ã‚¯ãƒ³ãŒã‚ã‚Šã¾ã›ã‚“"></option>
+    <option id="managsavebckup" dialogue="ä¿å­˜ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã®ç®¡ç†"></option>
+    <option id="newoptionendday" dialogue="æ—¥ã‚’è‡ªå‹•çš„ã«çµ‚äº†ã™ã‚‹"></option>
+    <option id="sallprices" dialogue="ã™ã¹ã¦ã®ä¾¡æ ¼ã‚’ãƒ‘ãƒ¼ã‚»ãƒ³ãƒ†ãƒ¼ã‚¸ã«è¨­å®šã™ã‚‹"></option>
+    <option id="csettingprices" dialogue="[ç¾åœ¨ä¾¡æ ¼ã‚’è¨­å®šä¸­]"></option>
+
   </options>
 
-</text>          Localization_CZ t <text>
+</text>    Localization_CZ ¤ <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -9107,6 +9386,10 @@ OVLÃDÃNÃ
     <option id="decorat69" dialogue="Najara Simulator"></option>
     <option id="decorat70" dialogue="Stolice"></option>
 
+    <option id="decorat71" dialogue="SnÄ›hulÃ¡k"></option>
+    <option id="decorat72" dialogue="CukrovÃ¡ tÅ™tina"></option>
+    <option id="decorat73" dialogue="vÃ¡noÄnÃ­ dÃ¡rek"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="ZamÄ›stnanec I"></option>
@@ -9148,7 +9431,13 @@ OVLÃDÃNÃ
     <option id="skill25a" dialogue="ZÃ¡kaznÃ­ci budou vÃ­ce vyuÅ¾Ã­vat samoobsluÅ¾nÃ© pokladny"></option>
     <option id="skill26" dialogue="ZamÄ›stnanec XI"></option>
     <option id="skill27" dialogue="ZamÄ›stnanec XII"></option>
-
+    <option id="skill28" dialogue="RecyklaÄnÃ­ kontejner"></option>
+    <option id="skill28a" dialogue="NejbliÅ¾Å¡Ã­ odpadkovÃ½ kontejner bude nahrazen recyklaÄnÃ­m."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Software oceÅˆovacÃ­ho stroje je vylepÅ¡en a nynÃ­ lze nastavit zpÅ¯sob automatizace cen"></option>
+    <option id="skill30" dialogue="Tic-tac jde rychle"></option>
+    <option id="skill30a" dialogue="KdyÅ¾ je obchod v noci zavÅ™enÃ½, manaÅ¾er mÅ¯Å¾e urychlit Äas"></option>
+    
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
     <option id="productRelated0" dialogue="Cena za jednotku"></option>
@@ -9608,6 +9897,13 @@ OVLÃDÃNÃ
     <option id="paintmat97" dialogue="VÃ¡noce H"></option>
     <option id="paintmat98" dialogue="VÃ¡noce I"></option>
     <option id="paintmat99" dialogue="VÃ¡noce J"></option>
+    <option id="paintmat100" dialogue="SnÃ­h"></option>
+
+    <option id="paintmat101" dialogue="Led A"></option>
+    <option id="paintmat102" dialogue="Led B"></option>
+    <option id="paintmat103" dialogue="Led C"></option>
+    <option id="paintmat104" dialogue="Led D"></option>
+    
     
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
     <option id="skinshats" dialogue="Vzhled a klobouky"></option>
@@ -9637,9 +9933,9 @@ OVLÃDÃNÃ
     <option id="lic12" dialogue="V tomto terminÃ¡lu budete moci pÅ™ipojit Youtube a Twitch ke svÃ½m televizorÅ¯m, jakmile bude licence schvÃ¡lena."></option>
 
     <option id="cosmetics1" dialogue="KosmetickÃ© DLC bylo schvÃ¡leno!"></option>
-    <option id="cosmetics2" dialogue="7 novÃ½ch postav, vÃ­ce neÅ¾ 70 kloboukÅ¯, 35 tancÅ¯ a pÃ³z a webovÃ½ prohlÃ­Å¾eÄ, kterÃ½ mÅ¯Å¾ete povolit, kdyÅ¾ se vÃ¡Å¡ Å¡Ã©f nedÃ­vÃ¡.
+    <option id="cosmetics2" dialogue="9 novÃ½ch postav, vÃ­ce neÅ¾ 100 kloboukÅ¯, 35 tancÅ¯ a pÃ³z a webovÃ½ prohlÃ­Å¾eÄ, kterÃ½ mÅ¯Å¾ete ochabnout, zatÃ­mco se vÃ¡Å¡ Å¡Ã©f nedÃ­vÃ¡.
 
-Zahrnuje takÃ© novÃ© dekorace a pÅ™ipojovÃ¡nÃ­ videÃ­ k vaÅ¡im televizorÅ¯m. PrvnÃ­ aktualizace pro malovÃ¡nÃ­ vaÅ¡eho obchodu je jiÅ¾ k dispozici!"></option>
+Vymalujte svÅ¯j obchod novÃ½m tabletem a uÅ¾ijte si exkluzivnÃ­ dekorace, kterÃ© budou Äasem pÅ™ibÃ½vat. PrvnÃ­ aktualizace synchronizace YouTube je jiÅ¾ k dispozici!"></option>
 
     <option id="continue" dialogue="PokraÄovat"></option>
     <option id="backups" dialogue="ZÃ¡lohy"></option>
@@ -9771,9 +10067,29 @@ Pro pÅ™Ã­stup k novÃ½m kartÃ¡m pouÅ¾Ã­vejte standardnÄ› X a Z.">
     <option id="emplostaffhappi" dialogue="Å tÄ›stÃ­ ve Å¡tÃ¡bu"></option>
     <option id="emploreroll" dialogue="PÅ™etoÄit"></option>
 
+    <option id="dlcdiscounted" dialogue="Sleva"></option>
+    <option id="emploselect" dialogue="Vybrat"></option>
+    <option id="emplochangeall" dialogue="ZmÄ›nit vÅ¡echny priority"></option>
+    <option id="emplosavelay" dialogue="UloÅ¾it priority"></option>
+    <option id="emploloadlay" dialogue="Priority naÄÃ­tÃ¡nÃ­"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="VedenÃ­ zamÄ›stnance bylo pÅ™esunuto na tabuli manaÅ¾era"></option>
+    <option id="startkn" dialogue="MÃ¡m token hvÄ›zdiÄky!"></option>
+    <option id="bboardchristdisclaimer" dialogue="VloÅ¾te vÃ¡noÄnÃ­ dÃ¡rek a poÄkejte na noc, neÅ¾ udÃ¡lost zaÄne!
+MÄ›jte po ruce koÅ¡tÄ›"></option>
+
+    <option id="panykey" dialogue="PokraÄujte stisknutÃ­m libovolnÃ© klÃ¡vesy"></option>
+    <option id="gtunlckable" dialogue="MÃ¡m novou odemykatelnou poloÅ¾ku!"></option>
+    <option id="nostartkn" dialogue="Å½Ã¡dnÃ© dostupnÃ© hvÄ›zdiÄky"></option>
+    <option id="managsavebbckup" dialogue="SprÃ¡va uklÃ¡dÃ¡nÃ­ zÃ¡loh"></option>
+    <option id="newoptionendday" dialogue="Den automatickÃ©ho ukonÄenÃ­"></option>
+    <option id="sallprices" dialogue="Nastavit vÅ¡echny ceny na procenta"></option>
+    <option id="csettingprices" dialogue="[Currently setting prices]"></option>
+
   </options>
 
-</text>       Localization_IT Ï <text>
+</text>       Localization_IT Û
+ <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -10194,6 +10510,10 @@ CONTROLLI
     <option id="decorat69" dialogue="Simulatore Najara"></option>
     <option id="decorat70" dialogue="Sgabello"></option>
 
+    <option id="decorat71" dialogue="Pupazzo di neve"></option>
+    <option id="decorat72" dialogue="Bastino di zucchero"></option>
+    <option id="decorat73" dialogue="Regalo di Natale"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="Dipendente I"></option>
@@ -10235,6 +10555,12 @@ CONTROLLI
     <option id="skill25a" dialogue="I clienti utilizzeranno di piÃ¹ i self-checkout"></option>
     <option id="skill26" dialogue="Dipendente XI"></option>
     <option id="skill27" dialogue="Dipendente XII"></option>
+    <option id="skill28" dialogue="Contenitore per il riciclaggio"></option>
+    <option id="skill28a" dialogue="Il contenitore per la spazzatura piÃ¹ vicino verrÃ  sostituito con uno per il riciclaggio."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Il software della macchina per la determinazione dei prezzi Ã¨ stato migliorato e ora Ã¨ possibile impostare un modo per automatizzare i prezzi"></option>
+    <option id="skill30" dialogue="Tic-tac Ã¨ veloce"></option>
+    <option id="skill30a" dialogue="Quando il negozio Ã¨ chiuso di notte, il direttore puÃ² usare il nuovo orologio nella stanza del direttore per accelerare il tempo"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -10695,7 +11021,13 @@ CONTROLLI
     <option id="paintmat97" dialogue="Natale H"></option>
     <option id="paintmat98" dialogue="Natale I"></option>
     <option id="paintmat99" dialogue="Natale J"></option>
+    <option id="paintmat100" dialogue="Neve"></option>
 
+    <option id="paintmat101" dialogue="Ghiaccio A"></option>
+    <option id="paintmat102" dialogue="Ghiaccio B"></option>
+    <option id="paintmat103" dialogue="Ghiaccio C"></option>
+    <option id="paintmat104" dialogue="Ghiaccio D"></option>
+    
 
     <option id="skinshats" dialogue="Skin e cappelli"></option>
     <option id="character" dialogue="Personaggio"></option>
@@ -10721,9 +11053,9 @@ CONTROLLI
     <option id="lic12" dialogue="In questo terminale potrai collegare Youtube e Twitch ai tuoi televisori una volta che la licenza sarÃ  approvata."></option>
 
     <option id="cosmetics1" dialogue="Il DLC cosmetici Ã¨ stato approvato!"></option>
-    <option id="cosmetics2" dialogue="7 nuovi personaggi, oltre 70 cappelli, 35 balli e pose e un browser web per slackare mentre il tuo capo non ti guarda.
+    <option id="cosmetics2" dialogue="9 nuovi personaggi, oltre 100 cappelli, 35 balli e pose e un browser web per slackare mentre il tuo capo non ti guarda.
 
-IncluderÃ  anche nuove decorazioni e video di collegamento alle tue TV. Il primo aggiornamento per dipingere il tuo negozio Ã¨ giÃ  disponibile!"></option>
+Dipingi il tuo negozio con il nuovo tablet e goditi decorazioni esclusive aggiunte nel tempo. Il primo aggiornamento di sincronizzazione di Youtube Ã¨ giÃ  disponibile!"></option>
 
     <option id="continue" dialogue="Continua"></option>
     <option id="backups" dialogue="Backup"></option>
@@ -10855,9 +11187,28 @@ PiÃ¹ vicino alla telecamera, piÃ¹ efficace Ã¨ cliccare."></option>
     <option id="emplostaffhappi" dialogue="FelicitÃ  sala personale"></option>
     <option id="emploreroll" dialogue="Ripeti"></option>
 
+    <option id="dlcdiscounted" dialogue="Sconto"></option>
+    <option id="emploselect" dialogue="Seleziona"></option>
+    <option id="emplochangeall" dialogue="Tutte le prioritÃ "></option>
+    <option id="emplosavelay" dialogue="Salva prioritÃ "></option>
+    <option id="emploloadlay" dialogue="Carica prioritÃ "></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="La gestione del dipendente Ã¨ stata spostata sulla lavagna del responsabile"></option>
+    <option id="startkn" dialogue="Token stella ricevuto!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Posiziona una decorazione natalizia e aspetta la notte in cui l'evento avrÃ  inizio!
+Tieni la scopa a portata di mano"></option>
+
+    <option id="panykey" dialogue="Premi un tasto qualsiasi per continuare"></option>
+    <option id="gtunlckable" dialogue="Hai un nuovo oggetto sbloccabile!"></option>
+    <option id="nostartkn" dialogue="Nessun gettone stella disponibile"></option>
+    <option id="managsavebckup" dialogue="Gestione dei backup di salvataggio"></option>
+    <option id="newoptionendday" dialogue="Termina autom. giorno"></option>
+    <option id="sallprices" dialogue="Imposta tutti i prezzi in percentuale"></option>
+    <option id="csettingprices" dialogue="[Impostazione prezzi in corso]"></option>
+    
   </options>
 
-</text>    Localization_FR [ <text>
+</text>        Localization_FR P <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -11277,6 +11628,10 @@ COMMANDES
     <option id="decorat69" dialogue="Simulateur de Najara"></option>
     <option id="decorat70" dialogue="Tabouret"></option>
 
+    <option id="decorat71" dialogue="Bonhomme de neige"></option>
+    <option id="decorat72" dialogue="Bonbon de canne"></option>
+    <option id="decorat73" dialogue="Cadeau de NoÃ«l"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="EmployÃ© I"></option>
@@ -11318,6 +11673,12 @@ COMMANDES
     <option id="skill25a" dialogue="Les clients utiliseront davantage les caisses automatiques"></option>
     <option id="skill26" dialogue="EmployÃ© XI"></option>
     <option id="skill27" dialogue="EmployÃ© XII"></option>
+    <option id="skill28" dialogue="Conteneur de recyclage"></option>
+    <option id="skill28a" dialogue="Le conteneur Ã  dÃ©chets le plus proche sera remplacÃ© par un conteneur de recyclage."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Le logiciel de la machine Ã  prix est amÃ©liorÃ© et un moyen d'automatiser les prix peut maintenant Ãªtre dÃ©fini"></option>
+    <option id="skill30" dialogue="Tic-tac va vite"></option>
+    <option id="skill30a" dialogue="Lorsque le magasin est fermÃ© la nuit, le gÃ©rant peut utiliser la nouvelle horloge dans la salle du gÃ©rant pour accÃ©lÃ©rer le temps"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -11777,7 +12138,13 @@ COMMANDES
     <option id="paintmat97" dialogue="NoÃ«l H"></option>
     <option id="paintmat98" dialogue="NoÃ«l I"></option>
     <option id="paintmat99" dialogue="NoÃ«l J"></option>
+    <option id="paintmat100" dialogue="Neige"></option>
 
+    <option id="paintmat101" dialogue="Glace A"></option>
+    <option id="paintmat102" dialogue="Glace B"></option>
+    <option id="paintmat103" dialogue="Glace C"></option>
+    <option id="paintmat104" dialogue="Glace D"></option>
+    
 
     <option id="skinshats" dialogue="Skins et chapeaux"></option>
     <option id="character" dialogue="Personnage"></option>
@@ -11803,9 +12170,9 @@ COMMANDES
     <option id="lic12" dialogue="Dans ce terminal, vous pourrez connecter YouTube et Twitch Ã  vos tÃ©lÃ©viseurs une fois la licence approuvÃ©e."></option>
 
     <option id="cosmetics1" dialogue="Le DLC cosmÃ©tique a Ã©tÃ© approuvÃ© !"></option>
-    <option id="cosmetics2" dialogue="7 nouveaux personnages, plus de 70 chapeaux, 35 danses et poses et un navigateur web pour vous dÃ©tendre pendant que votre patron ne regarde pas.
+    <option id="cosmetics2" dialogue="9 nouveaux personnages, plus de 100 chapeaux, 35 danses et poses et un navigateur Web pour vous dÃ©tendre pendant que votre patron ne regarde pas.
 
-Il inclura Ã©galement de nouvelles dÃ©corations et des vidÃ©os d'accroche pour vos tÃ©lÃ©viseurs. La premiÃ¨re mise Ã  jour pour peindre votre magasin est dÃ©jÃ  disponible !"></option>
+Peignez votre magasin avec la nouvelle tablette et profitez de dÃ©corations exclusives ajoutÃ©es au fil du temps. La premiÃ¨re mise Ã  jour de synchronisation Youtube est dÃ©jÃ  disponible !"></option>
 
     <option id="continue" dialogue="Continuer"></option>
     <option id="backups" dialogue="Sauvegardes"></option>
@@ -11937,9 +12304,29 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="emplostaffhappi" dialogue="Bonheur salle du personnel"></option>
     <option id="emploreroll" dialogue="Relancer"></option>
 
+    <option id="dlcdiscounted" dialogue="Remise"></option>
+    <option id="emploselect" dialogue="SÃ©lectionner"></option>
+    <option id="emplochangeall" dialogue="Toutes les prioritÃ©s"></option>
+    <option id="emplosavelay" dialogue="Enregistrer prioritÃ©s"></option>
+    <option id="emploloadlay" dialogue="Charger prioritÃ©s"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="La gestion des employÃ©s a Ã©tÃ© dÃ©placÃ©e vers le tableau noir du gestionnaire"></option>
+    <option id="startkn" dialogue="J'ai un jeton Ã©toileÂ !"></option>
+    <option id="bboardchristdisclaimer" dialogue="Placez une dÃ©coration de cadeau de NoÃ«l et attendez la nuit pour que l'Ã©vÃ©nement commenceÂ !
+Ayez le balai Ã  portÃ©e de main"></option>
+
+    <option id="panykey" dialogue="Appuyez sur n'importe quelle touche pour continuer"></option>
+    <option id="gtunlckable" dialogue="J'ai un nouvel objet Ã  dÃ©bloquerÂ !"></option>
+    <option id="nostartkn" dialogue="Aucun jeton Ã©toile disponible"></option>
+    <option id="managsavebckup" dialogue="Gestion des sauvegardes"></option>
+    <option id="newoptionendday" dialogue="Terminer autom. journÃ©e"></option>
+    <option id="sallprices" dialogue="DÃ©finir tous les prix en pourcentage"></option>
+    <option id="csettingprices" dialogue="[DÃ©finition actuelle des prix]"></option>
+    
   </options>
 
-</text>        Localization_KR ‚ <text>
+</text>   Localization_KR ‰
+ <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -12359,6 +12746,10 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="decorat69" dialogue="ë‚˜ìžë¼ ì‹œë®¬ë ˆì´í„°"></option>
     <option id="decorat70" dialogue="ì˜ìž"></option>
 
+    <option id="decorat71" dialogue="ìŠ¤ë…¸ìš°ë§¨"></option>
+    <option id="decorat72" dialogue="ìº”ë”” ì¼€ì¸"></option>
+    <option id="decorat73" dialogue="í¬ë¦¬ìŠ¤ë§ˆìŠ¤ ì„ ë¬¼"></option>
+
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
     <option id="skill01" dialogue="ì§ì› I"></option>
@@ -12400,6 +12791,12 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="skill25a" dialogue="ê³ ê°ì´ ì…€í”„ ì²´í¬ì•„ì›ƒì„ ë” ë§Žì´ ì‚¬ìš©í•  ê²ƒ"></option>
     <option id="skill26" dialogue="ì§ì› XI"></option>
     <option id="skill27" dialogue="ì§ì› XII"></option>
+    <option id="skill28" dialogue="ìž¬í™œìš© ìš©ê¸°"></option>
+    <option id="skill28a" dialogue="ê°€ìž¥ ê°€ê¹Œìš´ ì“°ë ˆê¸°í†µì„ ìž¬í™œìš© ìš©ê¸°ë¡œ êµì²´í•©ë‹ˆë‹¤."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="ê°€ê²© ì±…ì • ê¸°ê³„ ì†Œí”„íŠ¸ì›¨ì–´ê°€ ê°œì„ ë˜ì–´ ì´ì œ ê°€ê²©ì„ ìžë™í™”í•˜ëŠ” ë°©ë²•ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."></option>
+    <option id="skill30" dialogue="í‹±íƒì´ ë¹¨ë¦¬ ì›€ì§ì¸ë‹¤"></option>
+    <option id="skill30a" dialogue="ë§¤ìž¥ì´ ë°¤ì— ë¬¸ì„ ë‹«ì„ ë•Œ, ê´€ë¦¬ìžëŠ” ê´€ë¦¬ìžì‹¤ì— ìžˆëŠ” ìƒˆë¡œìš´ ì‹œê³„ë¥¼ ì‚¬ìš©í•˜ì—¬ ì‹œê°„ì„ ë‹¨ì¶•í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -12860,6 +13257,12 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="paintmat97" dialogue="í¬ë¦¬ìŠ¤ë§ˆìŠ¤ H"></option>
     <option id="paintmat98" dialogue="í¬ë¦¬ìŠ¤ë§ˆìŠ¤ I"></option>
     <option id="paintmat99" dialogue="í¬ë¦¬ìŠ¤ë§ˆìŠ¤ J"></option>
+    <option id="paintmat100" dialogue="ëˆˆ"></option>
+
+    <option id="paintmat101" dialogue="ì–¼ìŒ A"></option>
+    <option id="paintmat102" dialogue="ì–¼ìŒ B"></option>
+    <option id="paintmat103" dialogue="ì–¼ìŒ C"></option>
+    <option id="paintmat104" dialogue="ì–¼ìŒ D"></option>
     
 
     <option id="skinshats" dialogue="ìŠ¤í‚¨ê³¼ ëª¨ìž"></option>
@@ -12886,9 +13289,9 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="lic12" dialogue="ë¼ì´ì„¼ìŠ¤ê°€ ìŠ¹ì¸ë˜ë©´ ì´ í„°ë¯¸ë„ì—ì„œ Youtubeì™€ Twitchë¥¼ TVì— ì—°ê²°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."></option>
 
     <option id="cosmetics1" dialogue="í™”ìž¥í’ˆ DLCê°€ ìŠ¹ì¸ë˜ì—ˆìŠµë‹ˆë‹¤!"></option>
-    <option id="cosmetics2" dialogue="7ê°œì˜ ìƒˆë¡œìš´ ìºë¦­í„°, 70ê°œ ì´ìƒì˜ ëª¨ìž, 35ê°œì˜ ëŒ„ìŠ¤ì™€ í¬ì¦ˆ, ê·¸ë¦¬ê³  ìƒì‚¬ê°€ ë³´ì§€ ì•ŠëŠ” ë™ì•ˆ ìŠ¬ëž™ì„ í•  ìˆ˜ ìžˆëŠ” ì›¹ ë¸Œë¼ìš°ì €.
+    <option id="cosmetics2" dialogue="9ê°œì˜ ìƒˆë¡œìš´ ìºë¦­í„°, 100ê°œê°€ ë„˜ëŠ” ëª¨ìž, 35ê°œì˜ ëŒ„ìŠ¤ì™€ í¬ì¦ˆ, ê·¸ë¦¬ê³  ìƒì‚¬ê°€ ë³´ì§€ ì•ŠëŠ” ë™ì•ˆ ì‰¬ëŠ” ì›¹ ë¸Œë¼ìš°ì €.
 
-ë˜í•œ ìƒˆë¡œìš´ ìž¥ì‹ê³¼ TVì— ì—°ê²°í•˜ëŠ” ë¹„ë””ì˜¤ë„ í¬í•¨ë©ë‹ˆë‹¤. ë§¤ìž¥ì„ ì¹ í•˜ëŠ” ì²« ë²ˆì§¸ ì—…ë°ì´íŠ¸ê°€ ì´ë¯¸ ì¶œì‹œë˜ì—ˆìŠµë‹ˆë‹¤!"></option>
+ìƒˆë¡œìš´ íƒœë¸”ë¦¿ìœ¼ë¡œ ë§¤ìž¥ì„ ì¹ í•˜ê³  ì‹œê°„ì´ ì§€ë‚¨ì— ë”°ë¼ ì¶”ê°€ë˜ëŠ” ë…ì ì ì¸ ìž¥ì‹ì„ ì¦ê¸°ì„¸ìš”. ì²« ë²ˆì§¸ Youtube ë™ê¸°í™” ì—…ë°ì´íŠ¸ê°€ ì´ë¯¸ ì¶œì‹œë˜ì—ˆìŠµë‹ˆë‹¤!"></option>
 
     <option id="continue" dialogue="ê³„ì†"></option>
     <option id="backups" dialogue="ë°±ì—…"></option>
@@ -13020,9 +13423,28 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="emplostaffhappi" dialogue="êµì§ì› í–‰ë³µ"></option>
     <option id="emploreroll" dialogue="ìž¬ë“±ë¡"></option>
 
+    <option id="dlcdiscounted" dialogue="í• ì¸"></option>
+    <option id="emploselect" dialogue="ì„ íƒ"></option>
+    <option id="emplochangeall" dialogue="ëª¨ë“  ìš°ì„ ìˆœìœ„ ë³€ê²½"></option>
+    <option id="emplosavelay" dialogue="ìš°ì„ ìˆœìœ„ ì €ìž¥"></option>
+    <option id="emploloadlay" dialogue="ìš°ì„ ìˆœìœ„ ë¡œë“œ"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="ì§ì› ê´€ë¦¬ê°€ ê´€ë¦¬ìž ë¸”ëž™ë³´ë“œë¡œ ì´ë™ë˜ì—ˆìŠµë‹ˆë‹¤"></option>
+    <option id="startkn" dialogue="ë³„ í† í°ì„ ë°›ì•˜ìŠµë‹ˆë‹¤!"></option>
+    <option id="bboardchristdisclaimer" dialogue="í¬ë¦¬ìŠ¤ë§ˆìŠ¤ ì„ ë¬¼ ìž¥ì‹ì„ í•˜ê³  ì´ë²¤íŠ¸ê°€ ì‹œìž‘ë  ë•Œê¹Œì§€ ë°¤ì„ ê¸°ë‹¤ë¦¬ì„¸ìš”!
+ë¹—ìžë£¨ë¥¼ ì†ì— ë„£ìœ¼ì„¸ìš”"></option>
+
+    <option id="panykey" dialogue="ê³„ì†í•˜ë ¤ë©´ ì•„ë¬´ í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”"></option>
+    <option id="gtunlckable" dialogue="ìƒˆë¡œìš´ ìž ê¸ˆ í•´ì œ ì•„ì´í…œì„ ì–»ì—ˆìŠµë‹ˆë‹¤!"></option>
+    <option id="nostartkn" dialogue="ì‚¬ìš© ê°€ëŠ¥í•œ ë³„ í† í°ì´ ì—†ìŠµë‹ˆë‹¤"></option>
+    <option id="managsavebckup" dialogue="ì €ìž¥ ë°±ì—… ê´€ë¦¬"></option>
+    <option id="newoptionendday" dialogue="ìžë™ìœ¼ë¡œ í•˜ë£¨ ì¢…ë£Œ"></option>
+    <option id="sallprices" dialogue="ëª¨ë“  ê°€ê²©ì„ ë°±ë¶„ìœ¨ë¡œ ì„¤ì •"></option>
+    <option id="csettingprices" dialogue="[í˜„ìž¬ ì„¤ì • ì¤‘ì¸ ê°€ê²©]"></option>
+
   </options>
 
-</text>         Localization_PL X <text>
+</text>          Localization_PL B <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -13038,7 +13460,7 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="newstore2" dialogue="Tylko znajomi"></option>
     <option id="newstore3" dialogue="Publiczny"></option>
     <option id="newstore4" dialogue="UtwÃ³rz"></option>
-    <option id="newstore5" dialogue="Nazwa sklepu musi mieÄ‡ wiÄ™cej niÅ¼ 2 znaki i nie zawiera nieprawidÅ‚owych znakÃ³w"></option>
+    <option id="newstore5" dialogue="Nazwa sklepu musi mieÄ‡ wiÄ™cej niÅ¼ 2 znaki i nie moÅ¼e zawieraÄ‡ nieprawidÅ‚owych znakÃ³w"></option>
     <option id="newstore6" dialogue="MoÅ¼esz sztucznie zawyÅ¼aÄ‡ poziom trudnoÅ›ci, jeÅ›li chcesz"></option>
     <option id="newstore7" dialogue="Poziom trudnoÅ›ci: "></option>
 
@@ -13064,7 +13486,7 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="options6" dialogue="JakoÅ›Ä‡"></option>
     <option id="options6a" dialogue="Wydajny"></option>
     <option id="options6b" dialogue="ZrÃ³wnowaÅ¼ony"></option>
-    <option id="options6c" dialogue="Wysoka wiernoÅ›Ä‡"></option>
+    <option id="options6c" dialogue="Najlepszy"></option>
 
     <option id="options7" dialogue="Sterowanie"></option>
     <option id="options8" dialogue="CzuÅ‚oÅ›Ä‡ X"></option>
@@ -13085,7 +13507,7 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="options19" dialogue="WyjdÅº z gry"></option>
 
     <option id="options20" dialogue="PowrÃ³t do menu gÅ‚Ã³wnego?"></option>
-    <option id="options21" dialogue="WyjdÅº z gry?"></option>
+    <option id="options21" dialogue="WyjÅ›Ä‡ z gry?"></option>
 
     <option id="options22" dialogue="Kopiuj kod doÅ‚Ä…czania do schowka"></option>
     <option id="options23" dialogue="DoÅ‚Ä…cz do znajomych za pomocÄ… kodu"></option>
@@ -13110,7 +13532,7 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="rw15" dialogue="UpuÅ›Ä‡ przedmiot"></option>
     <option id="rw16" dialogue="Skok"></option>
     <option id="rw17" dialogue="Sprint"></option>
-    <option id="rw18" dialogue="Open Builder"></option>
+    <option id="rw18" dialogue="OtwÃ³rz Kreator"></option>
     <option id="rw19" dialogue="Menu NastÄ™pne"></option>
     <option id="rw20" dialogue="Menu Poprzednie"></option>
     <option id="rw21" dialogue="Czat"></option>
@@ -13118,8 +13540,8 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="rw23" dialogue="Menu wyjÅ›cia"></option>
     <option id="rw24" dialogue="Kucnij"></option>
 
-    <option id="rw25" dialogue="NastÄ™pna karta Builder"></option>
-    <option id="rw26" dialogue="Poprzednia karta Builder"></option>
+    <option id="rw25" dialogue="NastÄ™pna karta Kreatora"></option>
+    <option id="rw26" dialogue="Poprzednia karta Kreatora"></option>
     <option id="rw27" dialogue="Taniec 1"></option>
     <option id="rw28" dialogue="Taniec 2"></option>
     <option id="rw29" dialogue="Taniec 3"></option>
@@ -13129,37 +13551,37 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="rw33" dialogue="Taniec 7"></option>
     <option id="rw34" dialogue="Taniec 8"></option>
     <option id="rw35" dialogue="Taniec 9"></option>
-    <option id="rw36" dialogue="Numpad 0"></option>
-    <option id="rw37" dialogue="Numpad 1"></option>
-    <option id="rw38" dialogue="Numpad 2"></option>
-    <option id="rw39" dialogue="Numpad 3"></option>
-    <option id="rw40" dialogue="Numpad 4"></option>
-    <option id="rw41" dialogue="Numpad 5"></option>
-    <option id="rw42" dialogue="Numpad 6"></option>
-    <option id="rw43" dialogue="Numpad 7"></option>
-    <option id="rw44" dialogue="Numpad 8"></option>
-    <option id="rw45" dialogue="Numpad 9"></option>
-    <option id="rw46" dialogue="UsuÅ„ na klawiaturze numerycznej"></option>
-    <option id="rw47" dialogue="Kropka na klawiaturze numerycznej"></option>
-    <option id="rw48" dialogue="Akceptuj na klawiaturze numerycznej"></option>
+    <option id="rw36" dialogue="Klawiatura numeryczna: 0"></option>
+    <option id="rw37" dialogue="Klawiatura numeryczna: 1"></option>
+    <option id="rw38" dialogue="Klawiatura numeryczna: 2"></option>
+    <option id="rw39" dialogue="Klawiatura numeryczna: 3"></option>
+    <option id="rw40" dialogue="Klawiatura numeryczna: 4"></option>
+    <option id="rw41" dialogue="Klawiatura numeryczna: 5"></option>
+    <option id="rw42" dialogue="Klawiatura numeryczna: 6"></option>
+    <option id="rw43" dialogue="Klawiatura numeryczna: 7"></option>
+    <option id="rw44" dialogue="Klawiatura numeryczna: 8"></option>
+    <option id="rw45" dialogue="Klawiatura numeryczna: 9"></option>
+    <option id="rw46" dialogue="Klawiatura numeryczna: UsuÅ„"></option>
+    <option id="rw47" dialogue="Klawiatura numeryczna: Przecinek"></option>
+    <option id="rw48" dialogue="Klawiatura numeryczna: Akceptuj"></option>
 
-    <option id="rw49" dialogue="Budowanie przyciÄ…gania"></option>
+    <option id="rw49" dialogue="PrzyciÄ…ganie podczas budowy"></option>
 
     <!-- ///////////////////////////////////Text///////////////////////////////////// -->
 
     <option id="employees" dialogue="Pracownicy: "></option>
     <option id="employeesassignment" dialogue="Przypisanie pracownikÃ³w"></option>
     <option id="cashiers" dialogue="Kasjerzy"></option>
-    <option id="restock" dialogue="UzupeÅ‚nienie zapasÃ³w"></option>
-    <option id="storage" dialogue="Przechowywanie"></option>
-    <option id="security" dialogue="BezpieczeÅ„stwo"></option>
+    <option id="restock" dialogue="UzupeÅ‚nianie zapasÃ³w"></option>
+    <option id="storage" dialogue="Magazynowanie"></option>
+    <option id="security" dialogue="Ochrona"></option>
     <option id="mblackboard" dialogue="Tablica menedÅ¼era"></option>
-    <option id="productorder" dialogue="ZamÃ³wienie produktu"></option>
+    <option id="productorder" dialogue="Zamawianie produktÃ³w"></option>
     <option id="supermarket" dialogue="Supermarket"></option>
-    <option id="cosmetics" dialogue="ZamÃ³wienie kosmetykÃ³w"></option>
+    <option id="cosmetics" dialogue="Zamawianie kosmetykÃ³w"></option>
     <option id="stream" dialogue="Ustaw TV Video/Stream"></option>
     <option id="pinshelves" dialogue="Produkty na pÃ³Å‚kach"></option>
-    <option id="pinstorage" dialogue="Produkty w magazynach"></option>
+    <option id="pinstorage" dialogue="Produkty w magazynie"></option>
     <option id="pinboxes" dialogue="Produkty w pudeÅ‚kach"></option>
     <option id="shoplist" dialogue="Lista zakupÃ³w"></option>
     <option id="buy" dialogue="Kup"></option>
@@ -13181,61 +13603,66 @@ Plus vous Ãªtes proche de la camÃ©ra, plus le clic est efficace."></option>
     <option id="tutorial0" dialogue="Witamy w Supermarket Together!"></option>
     <option id="tutorial1" dialogue="Kiedy sklep jest zamkniÄ™ty, czas pÅ‚ynie znacznie wolniej.
 
-Pierwszym krokiem jest ustawienie mebli. NaciÅ›nij [TAB], aby otworzyÄ‡ kreatora"></option>
-    <option id="tutorial2" dialogue="Kup 2 pÃ³Å‚ki na produkty, kasÄ™ i pÃ³Å‚kÄ™ do przechowywania.
+Pierwszym krokiem jest ustawienie mebli. NaciÅ›nij [TAB], aby otworzyÄ‡ Kreator."></option>
+    <option id="tutorial2" dialogue="Kup 2 regaÅ‚y na produkty, kasÄ™ i regaÅ‚ magazynowy.
 
-Uwaga: pÃ³Å‚kÄ™ do przechowywania moÅ¼na umieÅ›ciÄ‡ tylko w pustym pokoju aneksu poÅ‚Ä…czonym z pokojem menedÅ¼era."></option>
+Uwaga: regaÅ‚ magazynowy moÅ¼na umieÅ›ciÄ‡ tylko w pustym pomieszczeniu aneksu poÅ‚Ä…czonego z pokojem menedÅ¼era."></option>
     <option id="tutorial3" dialogue="Dobra robota!
 
 Mamy dostÄ™pny punkt franczyzowy: punkty zdobywa siÄ™, prowadzÄ…c dobrze prosperujÄ…cy biznes.
 
-Udaj siÄ™ do pokoju menedÅ¼era i zdobÄ…dÅº pierwszy bonus z tablicy bonusÃ³w."></option>
-    <option id="tutorial4" dialogue="Åšwietnie. WÅ‚aÅ›nie nabyÅ‚eÅ› pierwszy pakiet produktÃ³w.
+Udaj siÄ™ do pokoju menedÅ¼era i zdobÄ…dÅº pierwszy punkt na tablicy punktÃ³w franczyzowych."></option>
+    <option id="tutorial4" dialogue="Åšwietnie. WÅ‚aÅ›nie uzyskaÅ‚eÅ› pierwszy pakiet produktÃ³w.
 
-WaÅ¼ne jest, aby pamiÄ™taÄ‡, Å¼e po nabyciu franczyzy produktu klienci bÄ™dÄ… oczekiwaÄ‡ tych produkty majÄ… byÄ‡ w sklepie, w przeciwnym razie bÄ™dÄ… narzekaÄ‡ na istnienie.
+WaÅ¼ne jest aby pamiÄ™taÄ‡, Å¼e po nabyciu franczyzy produktu klienci bÄ™dÄ… oczekiwaÄ‡ tych produktÃ³w w sklepie, w przeciwnym razie bÄ™dÄ… narzekaÄ‡ na ich brak.
 
-Teraz przejdÅº do tablicy menedÅ¼era, kliknij jÄ…, a nastÄ™pnie kliknij zamÃ³wienie produktÃ³w."></option>
+Teraz przejdÅº do tablicy menedÅ¼era, kliknij jÄ…, a nastÄ™pnie kliknij zamawianie produktÃ³w."></option>
     <option id="tutorial5" dialogue="Dobrze. Teraz kliknij Podstawowe produkty I."></option>
     <option id="tutorial6" dialogue="Kupmy pudeÅ‚ko kaÅ¼dego podstawowego produktu.
 
-Kliknij symbol plusa kaÅ¼dego produktu, aby dodaÄ‡ go do listy zakupÃ³w, gdy juÅ¼ bÄ™dziesz mieÄ‡ po jednym z kaÅ¼dego, kliknij kup."></option>
+Kliknij symbol plusa kaÅ¼dego produktu, aby dodaÄ‡ go do listy zakupÃ³w. Gdy juÅ¼ bÄ™dziesz mieÄ‡ po jednym z kaÅ¼dego, kliknij Kup."></option>
     <option id="tutorial7" dialogue="Åšwietnie. Teraz wyjdÅº na zewnÄ…trz i poszukaj zakupionych pudeÅ‚ek. Kliknij jedno, aby je przytrzymaÄ‡."></option>
-    <option id="tutorial8" dialogue="PrzejdÅº do pÃ³Å‚ki z produktami i kliknij [LMB] na jednym z jej wierszy, aby wypeÅ‚niÄ‡ jÄ… produktami.
+    <option id="tutorial8" dialogue="PrzejdÅº do regaÅ‚u z produktami i kliknij [LMB] na jednej z pÃ³Å‚ek, aby wypeÅ‚niÄ‡ jÄ… produktami.
 
 [RMB] zwrÃ³ci przedmioty z pÃ³Å‚ki do pudeÅ‚ka.
 
 MoÅ¼esz rÃ³wnieÅ¼ nacisnÄ…Ä‡ [F], aby upuÅ›ciÄ‡ przedmioty w wybranym miejscu.
 
 UmieÅ›Ä‡ wszystkie produkty na pÃ³Å‚kach sklepu."></option>
-    <option id="tutorial9" dialogue="Produkty sÄ… umieszczane, ale poczÄ…tkowo oznaczone sÄ… cenÄ… kosztowÄ…, co oznacza brak korzyÅ›ci.
+    <option id="tutorial9" dialogue="Produkty sÄ… umieszczane, ale poczÄ…tkowo oznaczone sÄ… cenÄ… zakupu, co oznacza brak zysku.
 
-IdÅº do pokoju menedÅ¼era i weÅº jedno z urzÄ…dzeÅ„ cenowych."></option>
+IdÅº do pokoju menedÅ¼era i weÅº jeden ze skanerÃ³w cen."></option>
     <option id="tutorial10" dialogue="Wyceluj w pÃ³Å‚kÄ™, a informacje o cenie produktu pojawiÄ… siÄ™ na ekranie urzÄ…dzenia.
 
-JeÅ›li Twoje ceny przekraczajÄ… dwukrotnie cenÄ™ bazowÄ… produktu, klienci bÄ™dÄ… mieli wiÄ™ksze szanse na to, Å¼e go nie kupiÄ…, wiÄ™c uÅ¼yj tej reguÅ‚y jako skali.
+JeÅ›li Twoje ceny przekraczajÄ… dwukrotnie cenÄ™ bazowÄ… produktu, klienci bÄ™dÄ… mniej skÅ‚onni do zakupu, wiÄ™c uÅ¼yj tej reguÅ‚y jako skali.
 
 Np. jeÅ›li produkt kosztowaÅ‚ 1 dolara, a Ty ustawisz cenÄ™ wyÅ¼szÄ… niÅ¼ 2 dolary, klienci mogÄ… go nie kupiÄ‡. SprÃ³buj ustaliÄ‡ cenÄ™ dla wszystkich szeÅ›ciu rÃ³Å¼nych produktÃ³w.
 
 STEROWANIE
+
 [KÃ³Å‚ko myszy] Dodaj lub odejmij w przyrostach co 0,01.
+
 [KÃ³Å‚ko myszy + E] Dodaj lub odejmij w przyrostach co 0,2.
+
 [LPM] Akceptuj cenÄ™.
-[Klawisz numeryczny] MoÅ¼na rÃ³wnieÅ¼ uÅ¼yÄ‡.
+
+[Klawiszy numerycznych] rÃ³wnieÅ¼ moÅ¼na uÅ¼ywaÄ‡.
+
 [F] UpuÅ›Ä‡ przedmioty"></option>
 
     <option id="tutorial11" dialogue="TwÃ³j sklep jest juÅ¼ gotowy do otwarcia. Aby wpuÅ›ciÄ‡ klientÃ³w, naciÅ›nij zielony przycisk znajdujÄ…cy siÄ™ w pokoju menedÅ¼era. Ale najpierw przeczytaj poniÅ¼sze waÅ¼ne informacje:
 
-- KaÅ¼dego czwartku inflacja rynkowa niektÃ³rych produktÃ³w wzrasta i bÄ™dziesz musiaÅ‚ sprawdziÄ‡ ceny.
+- W kaÅ¼dy czwartek inflacja rynkowa podnosi ceny niektÃ³rych produktÃ³w i bÄ™dziesz musiaÅ‚ sprawdziÄ‡ ceny.
 
-- MoÅ¼esz wrzuciÄ‡ puste pudeÅ‚ka do kontenera tuÅ¼ za rogiem LUB zanieÅ›Ä‡ je do najdalszego kontenera po drugiej stronie ulicy i zarobiÄ‡ trochÄ™ pieniÄ™dzy, poddajÄ…c je recyklingowi. PieniÄ…dze moÅ¼na zwiÄ™kszyÄ‡ dziÄ™ki profitowi.
+- MoÅ¼esz wrzuciÄ‡ puste pudeÅ‚ka do kontenera tuÅ¼ za rogiem LUB zanieÅ›Ä‡ je do oddalonego kontenera po drugiej stronie ulicy i zarobiÄ‡ trochÄ™ pieniÄ™dzy, poddajÄ…c pudeÅ‚ka recyklingowi. Zarabiane pieniÄ…dze moÅ¼na zwiÄ™kszyÄ‡ dziÄ™ki drzewie rozwoju franczyzy.
 
-- 8 dnia zÅ‚odzieje i Å›mieciarze bÄ™dÄ… mieli szansÄ™ siÄ™ pojawiÄ‡. RozwiÄ…zaniem obu problemÃ³w jest miotÅ‚a: uderz zÅ‚odziei, a oni upuszczÄ… jeden skradziony produkt za kaÅ¼dym razem.
+- od 8 dnia mogÄ… pojawiaÄ‡ siÄ™ zÅ‚odzieje oraz Å›mieci. RozwiÄ…zaniem obu problemÃ³w jest miotÅ‚a: uderz zÅ‚odziei, a oni upuszczÄ… przy kaÅ¼dym uderzeniu jeden skradziony produkt.
 
-- KaÅ¼da kasa moÅ¼e mieÄ‡ kolejkÄ™ 8 klientÃ³w, nie stracÄ… cierpliwoÅ›ci, ale dodatkowi klienci, ktÃ³rzy nie wykryjÄ… wolnej kolejki, stanÄ… siÄ™ zÅ‚odziejami i odejdÄ… bez pÅ‚acenia.
+- KaÅ¼da kasa moÅ¼e mieÄ‡ kolejkÄ™ 8 klientÃ³w, ktÃ³rzy nie bÄ™dÄ… traciÄ‡ cierpliwoÅ›ci, ale dodatkowi klienci, ktÃ³rzy nie znajdÄ… miejsca w kolejce, stanÄ… siÄ™ zÅ‚odziejami i odejdÄ… bez pÅ‚acenia.
 
-- MoÅ¼esz sprawdziÄ‡ Å›wiatÅ‚a i inne dekoracje, naciskajÄ…c domyÅ›lnie X lub Z podczas korzystania z Buildera.
+- MoÅ¼esz sprawdziÄ‡ Å›wiatÅ‚a i inne dekoracje, naciskajÄ…c domyÅ›lnie X lub Z podczas korzystania z kreatora sklepu.
 
-- Im wiÄ™cej graczy, tym trudniej. (SprÃ³buj uderzyÄ‡ graczy za pomocÄ… miotÅ‚a)"></option>
+- Im wiÄ™cej graczy, tym trudniej. (SprÃ³buj uderzyÄ‡ graczy za pomocÄ… miotÅ‚y)"></option>
     
 
     <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
@@ -13253,13 +13680,13 @@ STEROWANIE
 
     <option id="day" dialogue="DzieÅ„ "></option>
 
-    <option id="weekday1" dialogue="MON"></option>
-    <option id="weekday2" dialogue="TUE"></option>
-    <option id="weekday3" dialogue="WED"></option>
-    <option id="weekday4" dialogue="THU"></option>
-    <option id="weekday5" dialogue="FRI"></option>
-    <option id="weekday6" dialogue="SAT"></option>
-    <option id="weekday0" dialogue="SUN"></option>
+    <option id="weekday1" dialogue="PON"></option>
+    <option id="weekday2" dialogue="WT"></option>
+    <option id="weekday3" dialogue="ÅšR"></option>
+    <option id="weekday4" dialogue="CZW"></option>
+    <option id="weekday5" dialogue="PT"></option>
+    <option id="weekday6" dialogue="SO"></option>
+    <option id="weekday0" dialogue="ND"></option>
 
     <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
 
@@ -13267,15 +13694,15 @@ STEROWANIE
     <option id="totalcustomers" dialogue="ÅÄ…czna liczba klientÃ³w: "></option>
     <option id="notfoundproducts" dialogue="Nie znaleziono produktÃ³w: "></option>
     <option id="tooexpensiveproducts" dialogue="Zbyt drogie produkty: "></option>
-    <option id="timesrobbed" dialogue="Czasy okradzenia: "></option>
+    <option id="timesrobbed" dialogue="IloÅ›Ä‡ kradzieÅ¼y: "></option>
     <option id="complaintsfilth" dialogue="Skargi na brud: "></option>
     <option id="franchiselevel" dialogue="Poziom franczyzy: "></option>
     <option id="franchiseexperience" dialogue="DoÅ›wiadczenie franczyzowe: "></option>
     <option id="income" dialogue="DochÃ³d "></option>
-    <option id="moneylostbecauserobbing" dialogue="Utracone pieniÄ…dze z powodu rabusiÃ³w: "></option>
-    <option id="boughtproductscost" dialogue="Kupione produkty kosztujÄ…: "></option>
+    <option id="moneylostbecauserobbing" dialogue="Utracone pieniÄ…dze z powodu kradzieÅ¼y: "></option>
+    <option id="boughtproductscost" dialogue="Koszt kupionych produktÃ³w: "></option>
     <option id="rentcost" dialogue="Koszt wynajmu: "></option>
-    <option id="electricitycost" dialogue="Koszt prÄ…du: "></option>
+    <option id="electricitycost" dialogue="Koszt energii elektrycznej: "></option>
     <option id="employeeswages" dialogue="PÅ‚ace pracownikÃ³w: "></option>
     <option id="othercosts" dialogue="Inne koszty: "></option>
     <option id="daybalance" dialogue="Saldo dzienne: "></option>
@@ -13283,22 +13710,22 @@ STEROWANIE
     <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
 
     <option id="messagei0" dialogue="Supermarket otwarty"></option>
-    <option id="messagei1" dialogue="Poziom franczyzy w gÃ³rÄ™: przyznano punkty"></option>
-    <option id="messagei2" dialogue="Uzyskano profit"></option>
-    <option id="messagei3" dialogue="Uzyskano rozszerzenie supermarketu"></option>
-    <option id="messagei4" dialogue="Uzyskano rozszerzenie magazynu"></option>
+    <option id="messagei1" dialogue="Poziom franczyzy w gÃ³rÄ™: przyznano punkt"></option>
+    <option id="messagei2" dialogue="Uzyskano punkt"></option>
+    <option id="messagei3" dialogue="Uzyskano powiÄ™kszenie supermarketu"></option>
+    <option id="messagei4" dialogue="Uzyskano powiÄ™kszenie magazynu"></option>
 
     <option id="message0" dialogue="NieprawidÅ‚owy typ pojemnika dla tego produktu"></option>
-    <option id="message1" dialogue="Nie moÅ¼na dodaÄ‡ wiÄ™cej produktÃ³w do tej pÃ³Å‚ki"></option>
+    <option id="message1" dialogue="Nie moÅ¼na umieÅ›ciÄ‡ wiÄ™cej produktÃ³w na tej pÃ³Å‚ce"></option>
     <option id="message2" dialogue="Nie moÅ¼na mieszaÄ‡ produktÃ³w na tej samej pÃ³Å‚ce"></option>
-    <option id="message3" dialogue="Brak franczyzy dostÄ™pne punkty"></option>
-    <option id="message4" dialogue="Poprzednie wÄ™zÅ‚y franczyzowe nie zostaÅ‚y nabyte"></option>
+    <option id="message3" dialogue="Brak dostÄ™pnych punktÃ³w franczyzy"></option>
+    <option id="message4" dialogue="PoprzedzajÄ…ce wÄ™zÅ‚y franczyzowe nie zostaÅ‚y zdobyte"></option>
     <option id="message5" dialogue="Brak produktÃ³w na liÅ›cie zakupÃ³w"></option>
     <option id="message6" dialogue="Za maÅ‚o Å›rodkÃ³w"></option>
     <option id="message7" dialogue="JuÅ¼ coÅ› trzymam"></option>
-    <option id="message8" dialogue="Brak produktÃ³w w pudeÅ‚ku"></option>
-    <option id="message9" dialogue="Brak miejsca w supermarkecie do nabycia"></option>
-    <option id="message9a" dialogue="Brak miejsca do przechowywania do nabycia"></option>
+    <option id="message8" dialogue="Koniec produktÃ³w w pudeÅ‚ku"></option>
+    <option id="message9" dialogue="Koniec przestrzeni magazynowej do nabycia"></option>
+    <option id="message9a" dialogue="Koniec przestrzeni magazynowej do nabycia"></option>
     <option id="message10" dialogue="Nie moÅ¼na zwrÃ³ciÄ‡ mniejszej kwoty niÅ¼ wymagana reszta"></option>
     <option id="message11" dialogue="W pudeÅ‚ku sÄ… produkty"></option>
     <option id="message12" dialogue="Brak miejsca w pudeÅ‚ku"></option>
@@ -13306,8 +13733,8 @@ STEROWANIE
     <option id="message14" dialogue="Potrzebna do tego miotÅ‚a"></option>
     <option id="message15" dialogue="Dozwolone tylko wtedy, gdy sklep jest zamkniÄ™ty"></option>
     <option id="message16" dialogue="Dozwolone tylko wtedy, gdy nie ma juÅ¼ klientÃ³w"></option>
-    <option id="message17" dialogue="UsuÅ„ wszystkie produkty z pojemnika przed usuniÄ™ciem"></option>
-    <option id="message18" dialogue="Sklep potrzebuje co najmniej jednej obsÅ‚ugi kasowej"></option>
+    <option id="message17" dialogue="UsuÅ„ wszystkie produkty z miejsca przechowywania przed usuniÄ™ciem"></option>
+    <option id="message18" dialogue="Sklep potrzebuje co najmniej jednej obsadzonej kasy"></option>
 
     <option id="network0" dialogue="Utracono poÅ‚Ä…czenie z hostem"></option>
 
@@ -13317,15 +13744,15 @@ STEROWANIE
     <option id="NPCmessage1" dialogue="To jest za drogie: "></option>
     <option id="NPCmessage2" dialogue="Nie znalazÅ‚em tego, czego szukaÅ‚em"></option>
     <option id="NPCmessage3" dialogue="Brak dostÄ™pnych kas? Å»egnaj!"></option>
-    <option id="NPCmessage4" dialogue="Å»egnaj frajerzy!"></option>
-    <option id="NPCmessage5" dialogue="Ten supermarket jest taki brudny!"></option>
+    <option id="NPCmessage4" dialogue="Å»egnajcie frajerzy!"></option>
+    <option id="NPCmessage5" dialogue="Ten supermarket jest strasznie brudny!"></option>
 
-    <option id="NPCemployee0" dialogue="UsÅ‚uÅ¼Ä™ tej kasie."></option>
+    <option id="NPCemployee0" dialogue="ObsÅ‚uÅ¼Ä™ tÄ™ kasÄ™."></option>
 
     <option id="NPCmessagehit0" dialogue="AÅ‚!"></option>
     <option id="NPCmessagehit1" dialogue="Jezu"></option>
     <option id="NPCmessagehit2" dialogue="WsadÅº sobie tÄ™ miotÅ‚Ä™ w dupÄ™"></option>
-    <option id="NPCmessagehit3" dialogue="Policjaeeeee!"></option>
+    <option id="NPCmessagehit3" dialogue="Policjaaaaaaa!"></option>
     <option id="NPCmessagehit4" dialogue="Eeeeeek!"></option>
     <option id="NPCmessagehit5" dialogue="Aaaaaaaah!"></option>
     <option id="NPCmessagehit6" dialogue="To jest znÄ™canie siÄ™!"></option>
@@ -13340,30 +13767,30 @@ STEROWANIE
 
     <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
 
-    <option id="builder" dialogue="Builder"></option>
+    <option id="builder" dialogue="Kreator"></option>
     <option id="buildable0" dialogue="Tryb rozmieszczania"></option>
-    <option id="buildable1" dialogue="PÃ³Å‚ka produktÃ³w"></option>
+    <option id="buildable1" dialogue="RegaÅ‚ produktÃ³w"></option>
     <option id="buildable2" dialogue="Podstawowa lodÃ³wka"></option>
     <option id="buildable3" dialogue="PodwÃ³jna lodÃ³wka"></option>
     <option id="buildable4" dialogue="ZamraÅ¼arka"></option>
-    <option id="buildable5" dialogue="PÃ³Å‚ka do przechowywania"></option>
+    <option id="buildable5" dialogue="RegaÅ‚ magazynowy"></option>
     <option id="buildable6" dialogue="Kasa (po prawej)"></option>
     <option id="buildable7" dialogue="Kasa (po lewej)"></option>
     <option id="buildable8" dialogue="ZamraÅ¼arka stojÄ…ca"></option>
-    <option id="buildable9" dialogue="Licznik produktÃ³w A"></option>
-    <option id="buildable10" dialogue="PÃ³Å‚ka magazynowa (bez etykiety)"></option>
-    <option id="buildable11" dialogue="PÃ³Å‚ka produktÃ³w A"></option>
+    <option id="buildable9" dialogue="Wyspa produktÃ³w A"></option>
+    <option id="buildable10" dialogue="RegaÅ‚ magazynowy (bez etykiety)"></option>
+    <option id="buildable11" dialogue="RegaÅ‚ na warzywa i owoce A"></option>
     <option id="buildable12" dialogue="Kasa samoobsÅ‚ugowa"></option>
-    <option id="buildable13" dialogue="PÃ³Å‚ka produktÃ³w B"></option>
-    <option id="buildable14" dialogue="PÃ³Å‚ka produktÃ³w (poÅ‚owa)"></option>
+    <option id="buildable13" dialogue="RegaÅ‚ na warzywa i owoce B"></option>
+    <option id="buildable14" dialogue="RegaÅ‚ produktÃ³w (poÅ‚owa)"></option>
 
     <option id="buildable0a" dialogue="Tryb usuwania"></option>
-    <option id="tabtitle0" dialogue="Builder"></option>
+    <option id="tabtitle0" dialogue="Kreator"></option>
     <option id="tabtitle1" dialogue="Dekoracja"></option>
     <option id="tabtitle2" dialogue="UrzÄ…dzenia"></option>
     <option id="tabtitle3" dialogue="ÅšwiatÅ‚a"></option>
     <option id="tabtitle4" dialogue="Sezonowe: Halloween"></option>
-    <option id="tabtitle5" dialogue="Pomieszczenie dla pracownikÃ³w"></option>
+    <option id="tabtitle5" dialogue="Pomieszczenie socjalne"></option>
     <option id="tabtitle6" dialogue="Sezonowe: BoÅ¼e Narodzenie"></option>
     <option id="tabtitle7" dialogue="DLC"></option>
 
@@ -13372,7 +13799,7 @@ STEROWANIE
     <option id="decorat3" dialogue="TV"></option>
     <option id="decorat4" dialogue="Znak sufitowy"></option>
     <option id="decorat5" dialogue="Bariera ograniczajÄ…ca ruch"></option>
-    <option id="decorat6" dialogue="AntykradzieÅ¼owe Drzwi"></option>
+    <option id="decorat6" dialogue="Bramki antykradzieÅ¼owe"></option>
     <option id="decorat7" dialogue="Doniczkowy Å›wierk A"></option>
     <option id="decorat8" dialogue="Doniczkowy bambus A"></option>
     <option id="decorat9" dialogue="Wentylator sufitowy"></option>
@@ -13388,7 +13815,7 @@ STEROWANIE
     <option id="decorat18" dialogue="Dynia B"></option>
     <option id="decorat19" dialogue="Dynia C"></option>
 
-    <option id="decorat20" dialogue=" Pumpkinman"></option>
+    <option id="decorat20" dialogue="Pumpkinman"></option>
     <option id="decorat21" dialogue="Straszny duch"></option>
     <option id="decorat22" dialogue="BÅ‚yszczÄ…cy kwiat A"></option>
     <option id="decorat23" dialogue="BÅ‚yszczÄ…cy kwiat B"></option>
@@ -13412,9 +13839,9 @@ STEROWANIE
 
     <option id="decorat40" dialogue="Lampa wiszÄ…ca L"></option>
     <option id="decorat41" dialogue="Lampa wiszÄ…ca M"></option>
-    <option id="decorat42" dialogue="Specjalna lampa A"></option>
-    <option id="decorat43" dialogue="Kamera BezpieczeÅ„stwa"></option>
-    <option id="decorat44" dialogue="Biurko Ochrony"></option>
+    <option id="decorat42" dialogue="Lampa specjalna A"></option>
+    <option id="decorat43" dialogue="Kamera bezpieczeÅ„stwa"></option>
+    <option id="decorat44" dialogue="Biurko ochrony"></option>
     <option id="decorat45" dialogue="Robot sprzÄ…tajÄ…cy"></option>
     <option id="decorat46" dialogue="Podstawowy stÃ³Å‚ A"></option>
     <option id="decorat47" dialogue="Podstawowe krzesÅ‚o A"></option>
@@ -13422,27 +13849,31 @@ STEROWANIE
     <option id="decorat49" dialogue="Prywatna lodÃ³wka"></option>
     <option id="decorat50" dialogue="Ekspres do kawy"></option>
 
-    <option id="decorat51" dialogue="Ekspres do przekÄ…sek"></option>
-    <option id="decorat52" dialogue="Maszyna do napojÃ³w gazowanych"></option>
-    <option id="decorat53" dialogue="Maszyna do rzutek"></option>
-    <option id="decorat54" dialogue="StÃ³Å‚ do piÅ‚ki noÅ¼nej"></option>
+    <option id="decorat51" dialogue="Automat do przekÄ…sek"></option>
+    <option id="decorat52" dialogue="Automat do napojÃ³w gazowanych"></option>
+    <option id="decorat53" dialogue="Rzutki"></option>
+    <option id="decorat54" dialogue="PiÅ‚karzyki"></option>
     <option id="decorat55" dialogue="StÃ³Å‚ bilardowy"></option>
-    <option id="decorat56" dialogue="Pokrowiec na kije bilardowe"></option>
-    <option id="decorat57" dialogue="Salon gier: Robot Catcher"></option>
-    <option id="decorat58" dialogue="Salon gier: Space Wars"></option>
-    <option id="decorat59" dialogue="Salon gier: Treasure Island"></option>
+    <option id="decorat56" dialogue="Stojak na kije bilardowe"></option>
+    <option id="decorat57" dialogue="Automat z grÄ…: Robot Catcher"></option>
+    <option id="decorat58" dialogue="Automat z grÄ…: Space Wars"></option>
+    <option id="decorat59" dialogue="Automat z grÄ…: Treasure Island"></option>
     <option id="decorat60" dialogue="Choinka"></option>
 
     <option id="decorat61" dialogue="Åuk BoÅ¼onarodzeniowy"></option>
     <option id="decorat62" dialogue="Wieniec BoÅ¼onarodzeniowy"></option>
-    <option id="decorat63" dialogue="Perkusista Dziadek do OrzechÃ³w"></option>
-    <option id="decorat64" dialogue="GeneraÅ‚ Dziadek do OrzechÃ³w"></option>
-    <option id="decorat65" dialogue="JeÅºdziec do OrzechÃ³w"></option>
-    <option id="decorat66" dialogue="Szermierz Dziadek do OrzechÃ³w"></option>
+    <option id="decorat63" dialogue="Dziadek do orzechÃ³w: Perkusista"></option>
+    <option id="decorat64" dialogue="Dziadek do orzechÃ³w: GeneraÅ‚"></option>
+    <option id="decorat65" dialogue="Dziadek do orzechÃ³w: JeÅºdziec"></option>
+    <option id="decorat66" dialogue="Dziadek do orzechÃ³w: Szermierz"></option>
     <option id="decorat67" dialogue="LÅ›niÄ…cy JeleÅ„"></option>
     <option id="decorat68" dialogue="PociÄ…g Ciuchcia"></option>
-    <option id="decorat69" dialogue="Symulator Najary"></option>
+    <option id="decorat69" dialogue="Symulator Najara"></option>
     <option id="decorat70" dialogue="StoÅ‚ek"></option>
+
+    <option id="decorat71" dialogue="BaÅ‚wan"></option>
+    <option id="decorat72" dialogue="Laska cukrowa"></option>
+    <option id="decorat73" dialogue="Prezent Å›wiÄ…teczny"></option>
 
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -13461,7 +13892,7 @@ STEROWANIE
     <option id="skill4" dialogue="Kursy recyklingu"></option>
     <option id="skill4a" dialogue="PudeÅ‚ka do recyklingu przynoszÄ… czterokrotnie wiÄ™ksze zyski"></option>
     <option id="skill5" dialogue="Klimatyzacja"></option>
-    <option id="skill5a" dialogue="PrzyciÄ…ga wiÄ™cej klientÃ³w dziennie"></option>
+    <option id="skill5a" dialogue="PrzyciÄ…ga dziennie wiÄ™cej klientÃ³w"></option>
     <option id="skill6" dialogue="PoÅ‚Ä…czenie Wi-Fi"></option>
 
     <option id="skill11" dialogue="Pracownik VI"></option>
@@ -13469,13 +13900,13 @@ STEROWANIE
     <option id="skill13" dialogue="Pracownik VIII"></option>
     <option id="skill14" dialogue="Pracownik IX"></option>
     <option id="skill15" dialogue="Pracownik X"></option>
-    <option id="skill16" dialogue="Formacja kasjera I"></option>
-    <option id="skill16a" dialogue="Pracownicy bÄ™dÄ… obsÅ‚ugiwaÄ‡ produkty w kasie szybciej"></option>
-    <option id="skill17" dialogue="Formacja kasjera II"></option>
-    <option id="skill18" dialogue="Formacja kasjera III"></option>
-    <option id="skill19" dialogue="Formacja uzupeÅ‚nienia zapasÃ³w I"></option>
+    <option id="skill16" dialogue="Szkolenie kasjera I"></option>
+    <option id="skill16a" dialogue="Pracownicy bÄ™dÄ… szybciej obsÅ‚ugiwaÄ‡ produkty w kasie"></option>
+    <option id="skill17" dialogue="Szkolenie kasjera II"></option>
+    <option id="skill18" dialogue="Szkolenie kasjera III"></option>
+    <option id="skill19" dialogue="Szkolenie uzupeÅ‚niania zapasÃ³w I"></option>
     <option id="skill19a" dialogue="Pracownicy bÄ™dÄ… szybciej umieszczaÄ‡ produkty"></option>
-    <option id="skill20" dialogue="Restock Formation II"></option>
+    <option id="skill20" dialogue="Szkolenie uzupeÅ‚niania zapasÃ³w II"></option>
     <option id="skill21" dialogue="Jeszcze wiÄ™cej kawy"></option>
     <option id="skill22" dialogue="Darmowe napoje energetyczne I"></option>
     <option id="skill23" dialogue="Darmowe napoje energetyczne II"></option>
@@ -13485,6 +13916,12 @@ STEROWANIE
     <option id="skill25a" dialogue="Klienci bÄ™dÄ… czÄ™Å›ciej korzystaÄ‡ z kas samoobsÅ‚ugowych"></option>
     <option id="skill26" dialogue="Pracownik XI"></option>
     <option id="skill27" dialogue="Pracownik XII"></option>
+    <option id="skill28" dialogue="Kontener do recyklingu"></option>
+    <option id="skill28a" dialogue="NajbliÅ¼szy kontener na Å›mieci zostanie zastÄ…piony kontenerem do recyklingu."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Oprogramowanie maszyny cenowej zostaÅ‚o ulepszone i teraz moÅ¼na ustawiÄ‡ sposÃ³b automatyzacji cen"></option>
+    <option id="skill30" dialogue="Tic-tac dziaÅ‚a szybko"></option>
+    <option id="skill30a" dialogue="Kiedy sklep jest zamkniÄ™ty w nocy, kierownik moÅ¼e uÅ¼yÄ‡ nowego zegara w pokoju kierownika, aby przyspieszyÄ‡ czas"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -13499,12 +13936,12 @@ STEROWANIE
     <option id="productGroup6" dialogue="SÅ‚odycze i przekÄ…ski"></option>
     <option id="productGroup7" dialogue="MiÄ™so"></option>
     <option id="productGroup8" dialogue="Konserwy"></option>
-    <option id="productGroup9" dialogue="Infuzje"></option>
+    <option id="productGroup9" dialogue="Napary"></option>
     <option id="productGroup10" dialogue="Owoce morza"></option>
     <option id="productGroup11" dialogue="KsiÄ…Å¼ki"></option>
     <option id="productGroup12" dialogue="Napoje alkoholowe"></option>
     <option id="productGroup13" dialogue="Apteka"></option>
-    <option id="productGroup14" dialogue="Produkty"></option>
+    <option id="productGroup14" dialogue="Warzywa i owoce"></option>
     <option id="productGroup15" dialogue="Opieka nad dzieÄ‡mi"></option>
 
     <option id="productCategory0" dialogue="Podstawowe produkty I"></option>
@@ -13528,8 +13965,8 @@ STEROWANIE
     <option id="productCategory18" dialogue="SÅ‚odycze i przekÄ…ski III"></option>
     <option id="productCategory19" dialogue="SÅ‚odycze i przekÄ…ski IV"></option>
     <option id="productCategory20" dialogue="MiÄ™so I"></option>
-    <option id="productCategory21" dialogue="Przetwory I"></option>
-    <option id="productCategory22" dialogue="Infuzje I"></option>
+    <option id="productCategory21" dialogue="Konserwy I"></option>
+    <option id="productCategory22" dialogue="Napary I"></option>
     <option id="productCategory23" dialogue="Owoce morza I"></option>
     <option id="productCategory24" dialogue="Pakiet ksiÄ…Å¼ek I"></option>
     <option id="productCategory25" dialogue="Pakiet ksiÄ…Å¼ek II"></option>
@@ -13538,10 +13975,10 @@ STEROWANIE
     <option id="productCategory28" dialogue="Napoje alkoholowe III"></option>
     <option id="productCategory29" dialogue="Apteka I"></option>
     <option id="productCategory30" dialogue="Apteka II"></option>
-    <option id="productCategory31" dialogue="Produkt I"></option>
-    <option id="productCategory32" dialogue="Produkt II"></option>
-    <option id="productCategory33" dialogue="Produkt III"></option>
-    <option id="productCategory34" dialogue="Produkt IV"></option>
+    <option id="productCategory31" dialogue="Warzywa i owoce I"></option>
+    <option id="productCategory32" dialogue="Warzywa i owoce II"></option>
+    <option id="productCategory33" dialogue="Warzywa i owoce III"></option>
+    <option id="productCategory34" dialogue="Warzywa i owoce IV"></option>
     <option id="productCategory35" dialogue="Opieka nad dzieÄ‡mi I"></option>
     <option id="productCategory36" dialogue="Opieka nad dzieÄ‡mi II"></option>
     <option id="productCategory37" dialogue="Napoje gazowane II"></option>
@@ -13570,65 +14007,65 @@ STEROWANIE
     <option id="product16" dialogue="PudeÅ‚ko spaghetti"></option>
     <option id="product17" dialogue="Pasztet z tuÅ„czyka"></option>
     <option id="product18" dialogue="PÅ‚atki zboÅ¼owe z bÅ‚onnikiem"></option>
-    <option id="product19" dialogue="MÄ…ka najwyÅ¼szej jakoÅ›ci"></option>
+    <option id="product19" dialogue="MÄ…ka wysokogatunkowa"></option>
 
     <option id="product20" dialogue="Czarna kawa"></option>
-    <option id="product21" dialogue="Jajko Box"></option>
-    <option id="product22" dialogue="Houmous"></option>
+    <option id="product21" dialogue="PodeÅ‚ko jaj"></option>
+    <option id="product22" dialogue="Hummus"></option>
     <option id="product23" dialogue="BiaÅ‚a mÄ…ka"></option>
     <option id="product24" dialogue="PudeÅ‚ko cukru trzcinowego"></option>
     <option id="product25" dialogue="Cukier"></option>
-    <option id="product26" dialogue="Makarony"></option>
+    <option id="product26" dialogue="Makaron Penne Rigate"></option>
     <option id="product27" dialogue="Ekologiczny cukier"></option>
     <option id="product28" dialogue="BrÄ…zowy cukier"></option>
     <option id="product29" dialogue="Olej sÅ‚onecznikowy"></option>
 
     <option id="product30" dialogue="Ziemniaki puree"></option>
-    <option id="product31" dialogue="Worek ziemniaczany"></option>
+    <option id="product31" dialogue="Worek ziemniakÃ³w"></option>
     <option id="product32" dialogue="Kawa Espresso"></option>
     <option id="product33" dialogue="RyÅ¼ Basmati"></option>
     <option id="product34" dialogue="RyÅ¼ dÅ‚ugoziarnisty"></option>
     <option id="product35" dialogue="Kawa"></option>
     <option id="product36" dialogue="Makaron Supreme"></option>
-    <option id="product37" dialogue="PÅ‚atki Czekoladowe"></option>
-    <option id="product38" dialogue="Woda Premium"></option>
-    <option id="product39" dialogue="Woda Å¹rÃ³dlana"></option>
+    <option id="product37" dialogue="PÅ‚atki czekoladowe"></option>
+    <option id="product38" dialogue="Woda premium"></option>
+    <option id="product39" dialogue="Woda ÅºrÃ³dlana"></option>
 
     <option id="product40" dialogue="Cukier puder"></option>
     <option id="product41" dialogue="Cukier - duÅ¼e pudeÅ‚ko"></option>
     <option id="product42" dialogue="BrÄ…zowy cukier - duÅ¼e pudeÅ‚ko"></option>
-    <option id="product43" dialogue="Ser emmentaler"></option>
-    <option id="product44" dialogue="Ser gruyere"></option>
+    <option id="product43" dialogue="Ser Emmentaler"></option>
+    <option id="product44" dialogue="Ser Gruyere"></option>
     <option id="product45" dialogue="Ser odtÅ‚uszczony"></option>
     <option id="product46" dialogue="Jogurt owocowy"></option>
     <option id="product47" dialogue="Jogurt waniliowy"></option>
-    <option id="product48" dialogue="CegÅ‚a mleczna"></option>
+    <option id="product48" dialogue="Mleko"></option>
     <option id="product49" dialogue="MasÅ‚o"></option>
 
     <option id="product50" dialogue="Ser Parmigiano"></option>
     <option id="product51" dialogue="Ser Reggiano"></option>
     <option id="product52" dialogue="Ser Mozzarella"></option>
     <option id="product53" dialogue="Jogurt odtÅ‚uszczony"></option>
-    <option id="product54" dialogue="Opakowanie Cola"></option>
-    <option id="product55" dialogue="Opakowanie Soda"></option>
-    <option id="product56" dialogue="Opakowanie Soda Bezkofeinowa"></option>
-    <option id="product57" dialogue="Butelka Soda"></option>
-    <option id="product58" dialogue="Butelka Coca-Cola"></option>
-    <option id="product59" dialogue="Opakowanie Soda Bez Cukru Butelka"></option>
+    <option id="product54" dialogue="Cola - opakowanie"></option>
+    <option id="product55" dialogue="Soda - opakowanie"></option>
+    <option id="product56" dialogue="Soda bezkofeinowa - opakowanie"></option>
+    <option id="product57" dialogue="Soda - butelka"></option>
+    <option id="product58" dialogue="Cola - butelka"></option>
+    <option id="product59" dialogue="Soda bez cukru - butelka"></option>
 
-    <option id="product60" dialogue="Premium Soda"></option>
+    <option id="product60" dialogue="Soda premium - butelka"></option>
     <option id="product61" dialogue="Pizza Barbaque"></option>
     <option id="product62" dialogue="Fondue"></option>
     <option id="product63" dialogue="Crocanti Ham"></option>
     <option id="product64" dialogue="NaleÅ›nik z szynkÄ… i serem"></option>
     <option id="product65" dialogue="Frytki"></option>
-    <option id="product66" dialogue="ChrupiÄ…ce Pos ziemniaczane"></option>
-    <option id="product67" dialogue="Szparagowa Fasolka"></option>
-    <option id="product68" dialogue="Pizza Cztery Sery"></option>
-    <option id="product69" dialogue="Cztery Pory Roku Pizza"></option>
+    <option id="product66" dialogue="ChrupiÄ…ce kulki ziemniaczane"></option>
+    <option id="product67" dialogue="Fasolka szparagowa"></option>
+    <option id="product68" dialogue="Pizza Cztery sery"></option>
+    <option id="product69" dialogue="Pizza Cztery pory roku"></option>
 
     <option id="product70" dialogue="Mieszanka warzywna"></option>
-    <option id="product71" dialogue="Mieszanka kurczaka"></option>
+    <option id="product71" dialogue="Mieszanka drobiowa"></option>
     <option id="product72" dialogue="Lasagne boloÅ„ska"></option>
     <option id="product73" dialogue="Lasagne warzywna"></option>
     <option id="product74" dialogue="Pasta do zÄ™bÃ³w"></option>
@@ -13636,18 +14073,18 @@ STEROWANIE
     <option id="product76" dialogue="MydÅ‚o do rÄ…k"></option>
     <option id="product77" dialogue="Szampon z awokado"></option>
     <option id="product78" dialogue="Szampon jajeczny"></option>
-    <option id="product79" dialogue="KÄ…piel Å»el"></option>
+    <option id="product79" dialogue="Å»el do kÄ…pieli"></option>
 
     <option id="product80" dialogue="Papier toaletowy"></option>
     <option id="product81" dialogue="MydÅ‚o mango"></option>
-    <option id="product82" dialogue="Szampon Extra Soft"></option>
-    <option id="product83" dialogue="Szampon z miodem jojoba"></option>
+    <option id="product82" dialogue="Szampon extra delikatny"></option>
+    <option id="product83" dialogue="Szampon z miodem i olejkiem jojoba"></option>
     <option id="product84" dialogue="Szampon z olejem arganowym"></option>
     <option id="product85" dialogue="RÄ™cznik papierowy"></option>
     <option id="product86" dialogue="Dwustronny papier toaletowy"></option>
     <option id="product87" dialogue="MydÅ‚o cytrynowe"></option>
-    <option id="product88" dialogue="Å»el do kÄ…pieli Premium"></option>
-    <option id="product89" dialogue="Szampon do NiemowlÄ™ta"></option>
+    <option id="product88" dialogue="Å»el do kÄ…pieli premium"></option>
+    <option id="product89" dialogue="Szampon dla niemowlÄ…t"></option>
 
     <option id="product90" dialogue="Detergent"></option>
     <option id="product91" dialogue="Odplamiacz"></option>
@@ -13657,38 +14094,38 @@ STEROWANIE
     <option id="product95" dialogue="Wybielacz"></option>
     <option id="product96" dialogue="Wybielacz - duÅ¼a butelka"></option>
     <option id="product97" dialogue="ZmiÄ™kczacz"></option>
-    <option id="product98" dialogue="Detergent klasy premium"></option>
-    <option id="product99" dialogue="Insektycyd"></option>
+    <option id="product98" dialogue="Detergent premium"></option>
+    <option id="product99" dialogue="Åšrodek owadobÃ³jczy"></option>
 
     <option id="product100" dialogue="Chusteczki czyszczÄ…ce"></option>
-    <option id="product101" dialogue="KapsuÅ‚ki Premium"></option>
-    <option id="product102" dialogue="Wybielacz Premium"></option>
+    <option id="product101" dialogue="KapsuÅ‚ki premium"></option>
+    <option id="product102" dialogue="Wybielacz premium"></option>
     <option id="product103" dialogue="Amoniak"></option>
-    <option id="product104" dialogue="SÅ‚oik na ciasteczka"></option>
+    <option id="product104" dialogue="SÅ‚oik z ciasteczkami"></option>
     <option id="product105" dialogue="Maxi Cone"></option>
     <option id="product106" dialogue="Czekoladowy krem"></option>
-    <option id="product107" dialogue="Czekoladowy proszek"></option>
-    <option id="product108" dialogue="Chips"></option>
-    <option id="product109" dialogue="SÅ‚odkie Bonbek"></option>
+    <option id="product107" dialogue="Czekolada w proszku"></option>
+    <option id="product108" dialogue="Chipsy Vin's"></option>
+    <option id="product109" dialogue="Cukierki Bonbek"></option>
 
     <option id="product110" dialogue="DÅ¼em brzoskwiniowy"></option>
     <option id="product111" dialogue="PudeÅ‚ko z lodami"></option>
     <option id="product112" dialogue="PudeÅ‚ko z czekoladkami"></option>
     <option id="product113" dialogue="Ciasteczka czekoladowe"></option>
     <option id="product114" dialogue="Ciasteczka waniliowe"></option>
-    <option id="product115" dialogue="Madeleine"></option>
+    <option id="product115" dialogue="Magdalenki"></option>
     <option id="product116" dialogue="DÅ¼em truskawkowy"></option>
     <option id="product117" dialogue="MasÅ‚o orzechowe"></option>
-    <option id="product118" dialogue="Chipos"></option>
-    <option id="product119" dialogue="Marshmallow"></option>
+    <option id="product118" dialogue="Chipsy Chipos"></option>
+    <option id="product119" dialogue="Pianki"></option>
 
     <option id="product120" dialogue="Ciastko cytrynowe"></option>
     <option id="product121" dialogue="Ciastko orzechowe"></option>
-    <option id="product122" dialogue="Lody Premium"></option>
+    <option id="product122" dialogue="Lody premium"></option>
     <option id="product123" dialogue="MiÃ³d"></option>
     <option id="product124" dialogue="PudeÅ‚ko czekoladek Premium"></option>
     <option id="product125" dialogue="Foditos"></option>
-    <option id="product126" dialogue="Ciasto Premium"></option>
+    <option id="product126" dialogue="Ciasto premium"></option>
     <option id="product127" dialogue="Siekana woÅ‚owina"></option>
     <option id="product128" dialogue="Czysta woÅ‚owina"></option>
     <option id="product129" dialogue="CielÄ™cina"></option>
@@ -13709,19 +14146,19 @@ STEROWANIE
     <option id="product142" dialogue="Czarna herbata"></option>
     <option id="product143" dialogue="MiÄ™ta Pieprzowa"></option>
     <option id="product144" dialogue="MiÄ™ta"></option>
-    <option id="product145" dialogue="Walerian"></option>
+    <option id="product145" dialogue="Waleriana"></option>
     <option id="product146" dialogue="DuÅ¼e sushi"></option>
     <option id="product147" dialogue="MaÅ‚e sushi"></option>
     <option id="product148" dialogue="WÄ™dzony Å‚osoÅ›"></option>
-    <option id="product149" dialogue="Krab Sticks"></option>
+    <option id="product149" dialogue="Paluszki krabowe"></option>
 
-    <option id="product150" dialogue="KsiÄ…Å¼ka - Elektromagnetyczne"></option>
+    <option id="product150" dialogue="KsiÄ…Å¼ka - Pole elektromagnetyczne"></option>
     <option id="product151" dialogue="KsiÄ…Å¼ka - Niespodzianka"></option>
     <option id="product152" dialogue="KsiÄ…Å¼ka - ABC"></option>
     <option id="product153" dialogue="KsiÄ…Å¼ka - Matka i dziecko"></option>
     <option id="product154" dialogue="KsiÄ…Å¼ka - Kolory"></option>
     <option id="product155" dialogue="KsiÄ…Å¼ka - Piticha"></option>
-    <option id="product156" dialogue="KsiÄ…Å¼ka - OnceUpon"></option>
+    <option id="product156" dialogue="KsiÄ…Å¼ka - Pewnego razu"></option>
     <option id="product157" dialogue="KsiÄ…Å¼ka - Krok"></option>
     <option id="product158" dialogue="KsiÄ…Å¼ka - Przygody"></option>
     <option id="product159" dialogue="KsiÄ…Å¼ka - Donnine"></option>
@@ -13743,7 +14180,7 @@ STEROWANIE
     <option id="product173" dialogue="Whisky japoÅ„ska"></option>
     <option id="product174" dialogue="Whisky premium"></option>
     <option id="product175" dialogue="Whisky premium"></option>
-    <option id="product176" dialogue="Nadtlenek wodoru"></option>
+    <option id="product176" dialogue="Woda utleniona"></option>
     <option id="product177" dialogue="Åšrodek dezynfekujÄ…cy"></option>
     <option id="product178" dialogue="Ibuprofen"></option>
     <option id="product179" dialogue="Paracetamol"></option>
@@ -13753,13 +14190,13 @@ STEROWANIE
     <option id="product182" dialogue="Åšrodek przeciwhistaminowy"></option>
     <option id="product183" dialogue="Suplement cynku"></option>
     <option id="product184" dialogue="Przeciwutleniacz"></option>
-    <option id="product185" dialogue="Tranzyt"></option>
+    <option id="product185" dialogue="Tran"></option>
     <option id="product186" dialogue="Tabletki z algami"></option>
     <option id="product187" dialogue="Witaminy"></option>
     <option id="product188" dialogue="Melatonina"></option>
     <option id="product189" dialogue="Krem przeciwsÅ‚oneczny"></option>
 
-    <option id="product190" dialogue="Krem stretch"></option>
+    <option id="product190" dialogue="Krem na rozstÄ™py"></option>
     <option id="product191" dialogue="Taca z czerwonymi jabÅ‚kami"></option>
     <option id="product192" dialogue="Taca z zielonymi jabÅ‚kami"></option>
     <option id="product193" dialogue="Taca z mandarynkami"></option>
@@ -13779,7 +14216,7 @@ STEROWANIE
     <option id="product206" dialogue="Taca z pomidorami"></option>
     <option id="product207" dialogue="Taca z ziemniakami"></option>
     <option id="product208" dialogue="Taca z cebulÄ…"></option>
-    <option id="product209" dialogue="Taca z bananem Opakowanie"></option>
+    <option id="product209" dialogue="Opakowanie bananÃ³w"></option>
 
     <option id="product210" dialogue="Melon"></option>
     <option id="product211" dialogue="Ananas"></option>
@@ -13790,24 +14227,24 @@ STEROWANIE
     <option id="product216" dialogue="Å»ywnoÅ›Ä‡ dla niemowlÄ…t: Owoce"></option>
     <option id="product217" dialogue="Å»ywnoÅ›Ä‡ dla niemowlÄ…t: MiÄ™so"></option>
     <option id="product218" dialogue="Mleko odÅ¼ywcze Mix"></option>
-    <option id="product219" dialogue="Mleko w proszku odÅ¼ywcze"></option>
+    <option id="product219" dialogue="Mleko odÅ¼ywcze w proszku"></option>
 
     <option id="product220" dialogue="Ekologiczne pieluchy"></option>
     <option id="product221" dialogue="Podstawowe pieluchy"></option>
     <option id="product222" dialogue="Pieluchy dla maÅ‚ych dzieci"></option>
     <option id="product223" dialogue="Pieluchy premium"></option>
-    <option id="product224" dialogue="Chusteczki nawilÅ¼ane dla niemowlÄ…t z aloesem "></option>
+    <option id="product224" dialogue="Chusteczki nawilÅ¼ane dla niemowlÄ…t z aloesem"></option>
     <option id="product225" dialogue="Podstawowe chusteczki nawilÅ¼ane dla niemowlÄ…t"></option>
     <option id="product226" dialogue="Puder dla niemowlÄ…t"></option>
     <option id="product227" dialogue="PomaraÅ„czowy napÃ³j gazowany"></option>
     <option id="product228" dialogue="NapÃ³j gazowany z ananasem"></option>
     <option id="product229" dialogue="Tropikalna Soda"></option>
 
-    <option id="product230" dialogue="Herbata zielona"></option>
+    <option id="product230" dialogue="Zielona herbata"></option>
     <option id="product231" dialogue="Czerwona herbata"></option>
     <option id="product232" dialogue="Herbata cytrynowa"></option>
     <option id="product233" dialogue="Kawa parzona na zimno"></option>
-    <option id="product234" dialogue="NapÃ³j energetyczny o smaku jagÃ³d"></option>
+    <option id="product234" dialogue="NapÃ³j energetyczny jagoodowy"></option>
     <option id="product235" dialogue="NapÃ³j energetyczny z guawy"></option>
     <option id="product236" dialogue="NapÃ³j energetyczny Lima"></option>
     <option id="product237" dialogue="NapÃ³j energetyczny Fruit Punch"></option>
@@ -13819,7 +14256,7 @@ STEROWANIE
     <option id="product242" dialogue="Lody cytrynowe"></option>
     <option id="product243" dialogue="Lody kawowe"></option>
     <option id="product244" dialogue="Lody Stracciatella"></option>
-    <option id="product245" dialogue="Lody truskawkowe bezowe Åšmietanka"></option>
+    <option id="product245" dialogue="Lody truskawkowe z bezÄ…"></option>
     <option id="product246" dialogue="Lody karmelowe"></option>
     <option id="product247" dialogue="Lody truskawkowe premium"></option>
     <option id="product248" dialogue="Lody sernikowe truskawkowe"></option>
@@ -13835,11 +14272,11 @@ STEROWANIE
     <option id="product257" dialogue="Groszek w puszce"></option>
 
     <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
-    <option id="paintmat0" dialogue="Przechowuj pÅ‚ytki A"></option>
-    <option id="paintmat1" dialogue="Przechowuj pÅ‚ytki B"></option>
-    <option id="paintmat2" dialogue="Przechowuj cegÅ‚y"></option>
-    <option id="paintmat3" dialogue="Przechowuj tynk"></option>
-    <option id="paintmat4" dialogue="Przechowuj beton"></option>
+    <option id="paintmat0" dialogue="PÅ‚ytki sklepowe A"></option>
+    <option id="paintmat1" dialogue="PÅ‚ytki sklepowe B"></option>
+    <option id="paintmat2" dialogue="CegÅ‚y sklepowe"></option>
+    <option id="paintmat3" dialogue="Tynk sklepowy"></option>
+    <option id="paintmat4" dialogue="Beton sklepowy"></option>
     <option id="paintmat5" dialogue="Lakierowane drewno"></option>
     <option id="paintmat6" dialogue="Drewniane deski"></option>
     <option id="paintmat7" dialogue="Drewno strugane"></option>
@@ -13865,15 +14302,15 @@ STEROWANIE
     <option id="paintmat25" dialogue="WzÃ³r cegÅ‚y A"></option>
     <option id="paintmat26" dialogue="WzÃ³r cegÅ‚y B"></option>
     <option id="paintmat27" dialogue="WzÃ³r cegÅ‚y C"></option>
-    <option id="paintmat28" dialogue="Podstawowy aluminium"></option>
+    <option id="paintmat28" dialogue="Podstawowe aluminium"></option>
     <option id="paintmat29" dialogue="Szczotkowane aluminium A"></option>
 
     <option id="paintmat30" dialogue="Szczotkowane aluminium B"></option>
     <option id="paintmat31" dialogue="Odlewane aluminium"></option>
     <option id="paintmat32" dialogue="Matowe aluminium"></option>
-    <option id="paintmat33" dialogue="HaÅ‚aÅ›liwe aluminium"></option>
-    <option id="paintmat34" dialogue="Utlenione aluminium"></option>
-    <option id="paintmat35" dialogue="Szczotkowane miedÅº"></option>
+    <option id="paintmat33" dialogue="Aluminium o teksturze szumu"></option>
+    <option id="paintmat34" dialogue="Oksydowane aluminium"></option>
+    <option id="paintmat35" dialogue="Szczotkowana miedÅº"></option>
     <option id="paintmat36" dialogue="ZÅ‚ote panele"></option>
     <option id="paintmat37" dialogue="WzÃ³r miedziany A"></option>
     <option id="paintmat38" dialogue="WzÃ³r miedziany B"></option>
@@ -13899,7 +14336,7 @@ STEROWANIE
     <option id="paintmat56" dialogue="WzÃ³r mosiÄ™Å¼ny G"></option>
     <option id="paintmat57" dialogue="Panele miedziane"></option>
     <option id="paintmat58" dialogue="RÃ³Å¼ne wzory A"></option>
-    <option id="paintmat59" dialogue="RÃ³Å¼ne WzÃ³r B"></option>
+    <option id="paintmat59" dialogue="RÃ³Å¼ne wzory B"></option>
 
     <option id="paintmat60" dialogue="RÃ³Å¼ne wzory C"></option>
     <option id="paintmat61" dialogue="RÃ³Å¼ne wzory D"></option>
@@ -13909,8 +14346,8 @@ STEROWANIE
     <option id="paintmat65" dialogue="RÃ³Å¼ne wzory H"></option>
     <option id="paintmat66" dialogue="RÃ³Å¼ne wzory I"></option>
     <option id="paintmat67" dialogue="RÃ³Å¼ne wzory J"></option>
-    <option id="paintmat68" dialogue="RÃ³Å¼ne wzory WzÃ³r K"></option>
-    <option id="paintmat69" dialogue="RÃ³Å¼ne WzÃ³r L"></option>
+    <option id="paintmat68" dialogue="RÃ³Å¼ne wzory K"></option>
+    <option id="paintmat69" dialogue="RÃ³Å¼ne wzory L"></option>
 
     <option id="paintmat70" dialogue="Organiczne: Trawa"></option>
     <option id="paintmat71" dialogue="Organiczne: LiÅ›cie"></option>
@@ -13945,6 +14382,12 @@ STEROWANIE
     <option id="paintmat97" dialogue="BoÅ¼e Narodzenie H"></option>
     <option id="paintmat98" dialogue="BoÅ¼e Narodzenie I"></option>
     <option id="paintmat99" dialogue="BoÅ¼e Narodzenie J"></option>
+    <option id="paintmat100" dialogue="Åšnieg"></option>
+
+    <option id="paintmat101" dialogue="LÃ³d A"></option>
+    <option id="paintmat102" dialogue="LÃ³d B"></option>
+    <option id="paintmat103" dialogue="LÃ³d C"></option>
+    <option id="paintmat104" dialogue="LÃ³d D"></option>
     
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
     <option id="skinshats" dialogue="SkÃ³rki i kapelusze"></option>
@@ -13955,7 +14398,7 @@ STEROWANIE
     <option id="mprice" dialogue="Cena rynkowa"></option>
     <option id="yprice" dialogue="Twoja cena"></option>
 
-    <option id="mgiven" dialogue="Przekazane pieniÄ…dze"></option>
+    <option id="mgiven" dialogue="Otrzymane pieniÄ…dze"></option>
     <option id="mreturn" dialogue="PieniÄ…dze do zwrotu"></option>
     <option id="camount" dialogue="BieÅ¼Ä…ca kwota"></option>
     <option id="addmoney" dialogue="[LMB] Dodaj pieniÄ…dze"></option>
@@ -13966,22 +14409,22 @@ STEROWANIE
     <option id="alreadyopen" dialogue="Sklep jest juÅ¼ otwarty"></option>
     <option id="alreadyclose" dialogue="Sklep jest juÅ¼ zamkniÄ™ty"></option>
 
-    <option id="newoptions1" dialogue="FOV"></option>
-    <option id="newoptions2" dialogue="TV Vol."></option>
+    <option id="newoptions1" dialogue="Pole widzenia"></option>
+    <option id="newoptions2" dialogue="GÅ‚oÅ›noÅ›Ä‡ TV"></option>
 
-    <option id="poseskey" dialogue="Dances Key Assignment"></option>
+    <option id="poseskey" dialogue="Przypisanie klawiszy taÅ„cÃ³w"></option>
 
-    <option id="lic12" dialogue="W tym terminalu bÄ™dziesz mÃ³gÅ‚ podÅ‚Ä…czyÄ‡ YouTube i Twitch do telewizorÃ³w po zatwierdzeniu licencji."></option>
+    <option id="lic12" dialogue="Po zatwierdzeniu licencji, w tym terminalu bÄ™dziesz mÃ³gÅ‚ podÅ‚Ä…czyÄ‡ YouTube i Twitch do telewizorÃ³w."></option>
 
-    <option id="cosmetics1" dialogue="Dodatek DLC do kosmetykÃ³w ma zostaÅ‚ zatwierdzony!"></option>
-    <option id="cosmetics2" dialogue="7 nowych postaci, ponad 70 kapeluszy, 35 taÅ„cÃ³w i pÃ³z oraz przeglÄ…darka internetowa do slackowania, gdy szef nie patrzy.
+    <option id="cosmetics1" dialogue="Dodatek z elementami kosmetycznymi zostaÅ‚ zatwierdzony!"></option>
+    <option id="cosmetics2" dialogue="9 nowych postaci, ponad 100 kapeluszy, 35 taÅ„cÃ³w i pÃ³z oraz przeglÄ…darka internetowa do leniuchowania, gdy szef nie patrzy.
 
-BÄ™dzie rÃ³wnieÅ¼ zawieraÄ‡ nowe dekoracje i podpinanie filmÃ³w do telewizorÃ³w. Pierwsza aktualizacja do malowania Twojego sklepu jest juÅ¼ dostÄ™pna!"></option>
+Pomaluj swÃ³j sklep uÅ¼ywajÄ…c nowego tabletu i ciesz siÄ™ ekskluzywnymi dekoracjami dodawanymi z czasem. Pierwsza aktualizacja synchronizacji YouTube jest juÅ¼ dostÄ™pna!"></option>
 
     <option id="continue" dialogue="Kontynuuj"></option>
     <option id="backups" dialogue="Kopie zapasowe"></option>
     <option id="nobackups" dialogue="Brak kopii zapasowych"></option>
-    <option id="backupswarning" dialogue="OstrzeÅ¼enie: zaÅ‚adowanie kopii zapasowej spowoduje zastÄ…pienie dnia bieÅ¼Ä…cego pliku."></option>
+    <option id="backupswarning" dialogue="OstrzeÅ¼enie: zaÅ‚adowanie kopii zapasowej spowoduje zastÄ…pienie pliku dnia bieÅ¼Ä…cego."></option>
     <option id="deleteoff" dialogue="WyÅ‚Ä…czony tryb usuwania"></option>
     <option id="deleteon" dialogue="WÅ‚Ä…czony tryb usuwania"></option>
 
@@ -13989,22 +14432,22 @@ BÄ™dzie rÃ³wnieÅ¼ zawieraÄ‡ nowe dekoracje i podpinanie filmÃ³w do t
     <option id="punish" dialogue="Kara"></option>
     <option id="permi" dialogue="Uprawnienia"></option>
 
-    <option id="nplayer" dialogue="PoÅ‚Ä…czono nowego gracza: "></option>
+    <option id="nplayer" dialogue="DoÅ‚Ä…czyÅ‚ nowy gracz: "></option>
 
     <option id="disclaimer1" dialogue="JeÅ›li masz problemy z doÅ‚Ä…czeniem, pamiÄ™taj o aktualizacji do najnowszej wersji!"></option>
 
     <option id="tvcontrol" dialogue="Sterowanie telewizorami"></option>
     <option id="tvhook0" dialogue="WyÅ‚Ä…czone"></option>
     <option id="tvhook1" dialogue="Filmy zastÄ™pcze"></option>
-    <option id="tvhook2" dialogue="Film URL"></option>
+    <option id="tvhook2" dialogue="URL filmu"></option>
     <option id="tvhook3" dialogue="PrzeglÄ…darka"></option>
     <option id="tvhook4" dialogue="Twitch/YT Video"></option>
     <option id="tvdisclaimer" dialogue="Wizualizacja transmisji strumieniowej nadal w toku.
 DziÄ™kujemy za cierpliwoÅ›Ä‡."></option>
 
     <option id="lobby0" dialogue="Lobby jest teraz: "></option>
-    <option id="lobby1" dialogue="open"></option>
-    <option id="lobby2" dialogue="closed "></option>
+    <option id="lobby1" dialogue="otwarte"></option>
+    <option id="lobby2" dialogue="zamkniÄ™te"></option>
     <option id="lobby3" dialogue="OtwÃ³rz lobby"></option>
     <option id="lobby4" dialogue="Zamknij lobby"></option>
     <option id="lobby5" dialogue="ZamkniÄ™cie lobby uniemoÅ¼liwi doÅ‚Ä…czenie do niego.
@@ -14012,15 +14455,15 @@ Przydatne, jeÅ›li spodziewasz siÄ™ tylko okreÅ›lonej liczby graczy i ni
 
     <option id="newoptions3" dialogue="Zezwalaj na filmy"></option>
 
-    <option id="checkoutlane" dialogue="ZamkniÄ™ty pas pÅ‚atnoÅ›ci
+    <option id="checkoutlane" dialogue="Pas kasowy zamkniÄ™ty
 UÅ¼yj nastÄ™pnego"></option>
-    <option id="checkoutlane1" dialogue="Zamknij pas pÅ‚atnoÅ›ci"></option>
+    <option id="checkoutlane1" dialogue="Zamknij pas kasowy"></option>
 
     <option id="paintablestablet0" dialogue="Wybierz materiaÅ‚, nastÄ™pnie kolor, a nastÄ™pnie zastosuj wybÃ³r"></option>
     <option id="paintablestablet1" dialogue="PowrÃ³t do wyboru materiaÅ‚u"></option>
     <option id="paintablestablet2" dialogue="Poprzedni/nastÄ™pny materiaÅ‚ lub kolor"></option>
     <option id="paintablestablet3" dialogue="WdraÅ¼ana jest personalizacja sklepu.
-Ta Å›ciana umoÅ¼liwia podglÄ…d tabletu paintables bez ponoszenia kosztÃ³w.
+Ta Å›ciana umoÅ¼liwia podglÄ…d tabletu do malowania bez ponoszenia kosztÃ³w.
 W przypadku niektÃ³rych materiaÅ‚Ã³w moÅ¼na wybraÄ‡ warianty kolorystyczne."></option>
 
     <option id="newoptions4" dialogue="Wysokie opÃ³Åºnienie"></option>
@@ -14034,9 +14477,9 @@ W przypadku niektÃ³rych materiaÅ‚Ã³w moÅ¼na wybraÄ‡ warianty kolorys
 DomyÅ›lnie uÅ¼ywaj X i Z, aby uzyskaÄ‡ dostÄ™p do nowych kart."></option>
 
     <option id="pcat" dialogue="PogÅ‚askaÅ‚eÅ› kota. WrÃ³Ä‡ pÃ³Åºniej"></option>
-
-    <option id="snapping0" dialogue="NastÄ™pny tryb Snap"></option>
-    <option id="snapping1" dialogue="Tryb Snap"></option>
+    
+    <option id="snapping0" dialogue="NastÄ™pny tryb przyciÄ…gania"></option>
+    <option id="snapping1" dialogue="Tryb przyciÄ…gania"></option>
     <option id="snapping2" dialogue="Brak"></option>
     <option id="snapping3" dialogue="Siatka: Åšrodek"></option>
     <option id="snapping4" dialogue="Siatka: TyÅ‚"></option>
@@ -14044,12 +14487,12 @@ DomyÅ›lnie uÅ¼ywaj X i Z, aby uzyskaÄ‡ dostÄ™p do nowych kart."></opt
 
     <option id="checkoutwarning" dialogue="TwÃ³j sklep potrzebuje przynajmniej kasy z obsÅ‚ugÄ…"></option>
 
-    <option id="newoptions6" dialogue="Zawsze sprintuje"></option>
+    <option id="newoptions6" dialogue="Zawsze biega"></option>
     <option id="newoptions7" dialogue="PrzeglÄ…darka"></option>
     <option id="newoptions7a" dialogue="Brak"></option>
     <option id="newoptions7b" dialogue="Normalny"></option>
     <option id="newoptions7c" dialogue="ObsÅ‚ugiwany przez system Linux"></option>
-    <option id="newoptions8" dialogue="GÅ‚oÅ›noÅ›Ä‡ buforowania"></option>
+    <option id="newoptions8" dialogue="GÅ‚oÅ›noÅ›Ä‡ dÅºwiÄ™ku kasowania"></option>
     <option id="newoptions9" dialogue="Ogranicz kursor"></option>
     <option id="newoptions10" dialogue="Rozmiar celownika"></option>
     <option id="newoptions11" dialogue="Kolor celownika"></option>
@@ -14067,10 +14510,10 @@ Im bliÅ¼ej kamery, tym skuteczniejsze jest klikniÄ™cie."></option>
 
     <option id="productsorting0" dialogue="Brak sortowania"></option>
     <option id="productsorting1" dialogue="WedÅ‚ug rozmiaru"></option>
-    <option id="productsorting2" dialogue="WedÅ‚ug najniÅ¼szego stanu magazynowego"></option>
-    <option id="productsorting3" dialogue="WedÅ‚ug najniÅ¼szego miejsca przechowywania"></option>
+    <option id="productsorting2" dialogue="WedÅ‚ug najniÅ¼szego stanu na pÃ³Å‚kach"></option>
+    <option id="productsorting3" dialogue="WedÅ‚ug najniÅ¼szego stanu magazynowego"></option>
 
-    <option id="checkoutredbutton" dialogue="Tylko manager moÅ¼e nacisnÄ…Ä‡ ten przycisk"></option>
+    <option id="checkoutredbutton" dialogue="Tylko menedÅ¼er moÅ¼e nacisnÄ…Ä‡ ten przycisk"></option>
 
     <option id="invo" dialogue="Faktury"></option>
     <option id="invodebt" dialogue="Faktury / DÅ‚ug"></option>
@@ -14081,7 +14524,7 @@ Im bliÅ¼ej kamery, tym skuteczniejsze jest klikniÄ™cie."></option>
     <option id="permiss1" dialogue="MenedÅ¼er"></option>
     <option id="permiss2" dialogue="Kasjer"></option>
     <option id="permiss3" dialogue="UzupeÅ‚niacz"></option>
-    <option id="permiss4" dialogue="BezpieczeÅ„stwo"></option>
+    <option id="permiss4" dialogue="Ochrona"></option>
     <option id="permiss5" dialogue="Czat"></option>
 
     <option id="newemplo" dialogue="Pracownicy"></option>
@@ -14090,27 +14533,46 @@ Im bliÅ¼ej kamery, tym skuteczniejsze jest klikniÄ™cie."></option>
     <option id="emploassignment" dialogue="Przypisanie"></option>
     <option id="emplostats" dialogue="Statystyki pracownika"></option>
     <option id="emplorenew" dialogue="Pracownicy odnawiajÄ… siÄ™ kaÅ¼dego dnia!"></option>
-    <option id="emplomaxemplo" dialogue="Maks. Pracownicy"></option>
+    <option id="emplomaxemplo" dialogue="Maks. liczba pracownikÃ³w"></option>
     <option id="emplohired" dialogue="Zatrudnieni pracownicy"></option>
-    <option id="emploentername" dialogue="WprowadÅº imiÄ™ i nazwisko pracownika..."></option>
+    <option id="emploentername" dialogue="WprowadÅº imiÄ™ pracownika..."></option>
     <option id="emploCashexp" dialogue="DoÅ›wiadczenie kasjera"></option>
-    <option id="emplorestexp" dialogue="DoÅ›wiadczenie uzupeÅ‚niacza zapasÃ³w"></option>
-    <option id="emplostoexp" dialogue="DoÅ›wiadczenie w zakresie magazynowania"></option>
-    <option id="emplosecexp" dialogue="DoÅ›wiadczenie w zakresie bezpieczeÅ„stwa"></option>
+    <option id="emplorestexp" dialogue="DoÅ›wiadczenie uzupeÅ‚niacza"></option>
+    <option id="emplostoexp" dialogue="DoÅ›wiadczenie magazyniera"></option>
+    <option id="emplosecexp" dialogue="DoÅ›wiadczenie ochroniarza"></option>
     <option id="canthiremore" dialogue="Nie moÅ¼na zatrudniÄ‡ wiÄ™cej pracownikÃ³w"></option>
     <option id="hiredemployee" dialogue="Zatrudniono pracownika!"></option>
     <option id="dismissedemployee" dialogue="Zwolniono pracownika!"></option>
     <option id="emploalreadyhired" dialogue="Zatrudniono"></option>
     <option id="emptyposi" dialogue="Wolne stanowisko"></option>
     <option id="emploassignedtask" dialogue="Przypisane zadanie"></option>
-    <option id="emplonewpriority" dialogue="Przechowywanie"></option>
+    <option id="emplonewpriority" dialogue="Magazynier"></option>
     <option id="emploNoTask" dialogue="Brak zadania"></option>
-    <option id="emplostaffhappi" dialogue="SzczÄ™Å›cie w pokoju nauczycielskim"></option>
+    <option id="emplostaffhappi" dialogue="Zadowolenie w pomieszczeniu socjalnym"></option>
     <option id="emploreroll" dialogue="Ponowne losowanie"></option>
 
+    <option id="dlcdiscounted" dialogue="Rabat"></option>
+    <option id="emploselect" dialogue="Wybierz"></option>
+    <option id="emplochangeall" dialogue="ZmieÅ„ wszystkie priorytety"></option>
+    <option id="emplosavelay" dialogue="Zapisz priorytety"></option>
+    <option id="emploloadlay" dialogue="ZaÅ‚aduj priorytety"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="ZarzÄ…dzanie pracownikami zostaÅ‚o przeniesione na tablicÄ™ menedÅ¼era"></option>
+    <option id="startkn" dialogue="Otrzymano token gwiazdy!"></option>
+    <option id="bboardchristdisclaimer" dialogue="UmieÅ›Ä‡ ozdobÄ™ w postaci prezentu Å›wiÄ…tecznego i poczekaj do nocy, aÅ¼ wydarzenie siÄ™ rozpocznie!
+Miej pod rÄ™kÄ… miotÅ‚Ä™"></option>
+
+    <option id="panykey" dialogue="NaciÅ›nij dowolny klawisz, aby kontynuowaÄ‡"></option>
+    <option id="gtunlckable" dialogue="Masz nowy przedmiot do odblokowania!"></option>
+    <option id="nostartkn" dialogue="Brak dostÄ™pnych tokenÃ³w gwiazdek"></option>
+    <option id="managsavebckup" dialogue="ZarzÄ…dzanie kopiami zapasowymi"></option>
+    <option id="newoptionendday" dialogue="Automatyczne zakoÅ„czenie dnia"></option>
+    <option id="sallprices" dialogue="Ustaw wszystkie ceny na procenty"></option>
+    <option id="csettingprices" dialogue="[Aktualnie ustawiam ceny]"></option>
+    
   </options>
 
-</text>   LineBreaking Leading Characters _   ï»¿([ï½›ã€”ã€ˆã€Šã€Œã€Žã€ã€˜ã€–ã€â€˜â€œï½ŸÂ«$â€”â€¦â€¥ã€³ã€´ã€µ\ï¼»ï¼ˆ{Â£Â¥"ã€…ã€‡ï¼„ï¿¥ï¿¦ #    Localization_EN ”÷  <text>
+</text>         LineBreaking Leading Characters _   ï»¿([ï½›ã€”ã€ˆã€Šã€Œã€Žã€ã€˜ã€–ã€â€˜â€œï½ŸÂ«$â€”â€¦â€¥ã€³ã€´ã€µ\ï¼»ï¼ˆ{Â£Â¥"ã€…ã€‡ï¼„ï¿¥ï¿¦ #    Localization_EN ’  <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -14531,6 +14993,10 @@ CONTROLS
     <option id="decorat68" dialogue="Choo Choo Train"></option>
     <option id="decorat69" dialogue="Najara Simulator"></option>
     <option id="decorat70" dialogue="Stool"></option>
+
+    <option id="decorat71" dialogue="Snowman"></option>
+    <option id="decorat72" dialogue="Candy Cane"></option>
+    <option id="decorat73" dialogue="Christmas Gift"></option>
     
 
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
@@ -14574,6 +15040,12 @@ CONTROLS
     <option id="skill25a" dialogue="Customers will use self-checkouts more"></option>
     <option id="skill26" dialogue="Employee XI"></option>
     <option id="skill27" dialogue="Employee XII"></option>
+    <option id="skill28" dialogue="Recycling container"></option>
+    <option id="skill28a" dialogue="The closest trash container will be replaced with a recycling one."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="The pricing machine software is improved and a way to automate prices can now be set"></option>
+    <option id="skill30" dialogue="Tic-tac goes fast"></option>
+    <option id="skill30a" dialogue="When store is closed during nights, the manager can use the new clock in the manager's room to accelerate time"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -14674,7 +15146,7 @@ CONTROLS
     <option id="product29" dialogue="Sunflower Oil"></option>
 
     <option id="product30" dialogue="Mash Potatoes"></option>
-    <option id="product31" dialogue="Potatoe Bag"></option>
+    <option id="product31" dialogue="Potato Bag"></option>
     <option id="product32" dialogue="Espresso Coffee"></option>
     <option id="product33" dialogue="Basmati Rice"></option>
     <option id="product34" dialogue="Long Grain Rice"></option>
@@ -14712,7 +15184,7 @@ CONTROLS
     <option id="product63" dialogue="Crocanti Ham"></option>
     <option id="product64" dialogue="Ham Cheese Crepe"></option>
     <option id="product65" dialogue="French Fries"></option>
-    <option id="product66" dialogue="Crispy Potatoe Pos"></option>
+    <option id="product66" dialogue="Crispy Potato Pops"></option>
     <option id="product67" dialogue="Green Beans"></option>
     <option id="product68" dialogue="Four Cheese Pizza"></option>
     <option id="product69" dialogue="Four Seasons Pizza"></option>
@@ -15036,6 +15508,12 @@ CONTROLS
     <option id="paintmat97" dialogue="Christmas H"></option>
     <option id="paintmat98" dialogue="Christmas I"></option>
     <option id="paintmat99" dialogue="Christmas J"></option>
+    <option id="paintmat100" dialogue="Snow"></option>
+    
+    <option id="paintmat101" dialogue="Ice A"></option>
+    <option id="paintmat102" dialogue="Ice B"></option>
+    <option id="paintmat103" dialogue="Ice C"></option>
+    <option id="paintmat104" dialogue="Ice D"></option>
 
     
     <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
@@ -15066,9 +15544,9 @@ CONTROLS
     <option id="lic12" dialogue="In this terminal you will be able to hook Youtube and Twitch to your TVs once the license is approved."></option>
 
     <option id="cosmetics1" dialogue="The cosmetics DLC has been approved!"></option>
-    <option id="cosmetics2" dialogue="7 new characters, over 70 hats, 35 dances and poses and a web browser to slack while your boss isn't looking.
+    <option id="cosmetics2" dialogue="9 new characters, over 100 hats, 35 dances and poses and a web browser to slack while your boss isn't looking.
 
-It will also include new decorations and hooking videos to your TVs. The first update to paint your store is already available!"></option>
+Paint your store with the new tablet and enjoy exclusive decorations being added over time. First Youtube sync update is already available!"></option>
 
     <option id="continue" dialogue="Continue"></option>
     <option id="backups" dialogue="Backups"></option>
@@ -15096,7 +15574,7 @@ Thank you for your patience."></option>
 
     <option id="lobby0" dialogue="Lobby is now: "></option>
     <option id="lobby1" dialogue="open"></option>
-    <option id="lobby2" dialogue="closed "></option>
+    <option id="lobby2" dialogue="closed"></option>
     <option id="lobby3" dialogue="Open Lobby"></option>
     <option id="lobby4" dialogue="Close Lobby"></option>
     <option id="lobby5" dialogue="Closing a lobby will prevent anyone from joining.
@@ -15199,6 +15677,25 @@ The closest to the camera, the more effective clicking is."></option>
     <option id="emploNoTask" dialogue="No task"></option>
     <option id="emplostaffhappi" dialogue="Staffroom happiness"></option>
     <option id="emploreroll" dialogue="Reroll"></option>
+
+    <option id="dlcdiscounted" dialogue="Off"></option>
+    <option id="emploselect" dialogue="Select"></option>
+    <option id="emplochangeall" dialogue="Change all priorities"></option>
+    <option id="emplosavelay" dialogue="Save Priorities"></option>
+    <option id="emploloadlay" dialogue="Load Priorities"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Employee's management has been moved to the Manager's blackboard"></option>
+    <option id="startkn" dialogue="Got a star token!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Place a Christmas Gift decoration and wait for the night for the event to start!
+Have the broom at hand"></option>
+
+    <option id="panykey" dialogue="Press any key to continue"></option>
+    <option id="gtunlckable" dialogue="Got a new unlockable item!"></option>
+    <option id="nostartkn" dialogue="No available star tokens"></option>
+    <option id="managsavebckup" dialogue="Managing save backups"></option>
+    <option id="newoptionendday" dialogue="Auto End Day"></option>
+    <option id="sallprices" dialogue="Set all prices to percentage"></option>
+    <option id="csettingprices" dialogue="[Currently setting prices]"></option>
     
 
   </options>
