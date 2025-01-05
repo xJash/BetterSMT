@@ -8,7 +8,6 @@ Scanner & Product Management
 Customization & Configurations
 - Replace commas with periods in formatting.
 - Adjust employee- related perks:
-- - Number of employees per perk.
 - - Employee speed per perk.
 - - Employee restock time per perk.
 - - Employee checkout time per perk (temporarily disabled).
@@ -25,8 +24,6 @@ Customization & Configurations
 - Trash spawn rate adjustments.
 - Show FPS counter (off by default).
 - Show ping (off by default).
-- Adjust the amount of products that fit inside of a box
-- - This also increases its cost on the market accordingly.
 
 Building & Store Management
 - Delete buildings while the store is open.
