@@ -1,3 +1,9 @@
+## v1.9.2
+- Removed ordering from price gun due to it being added in base game
+- Removed comma to period replacement due to partial and eventual full implementation into base game
+- Removed highlighting on top right corner due to being added into base game
+- Modified how Self Checkout Limit works
+
 ## v1.9.1
 - Added option to disable/enable shelf highlighting
 - Added option to enter and leave third/first person view. Third person is currently semi-buggy. Some of these happen intermintently, to fix them enter first person and re-enter third person.

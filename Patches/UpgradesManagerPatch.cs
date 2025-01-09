@@ -59,6 +59,9 @@ public class UpgradesManagerPatch {
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
                 break;
+            case 25:
+                NPC_Manager.Instance.selfcheckoutExtraProductsFromPerk += BetterSMT.SelfCheckoutLimit.Value;
+                break;
             default:
                 return true;
         }
