@@ -48,15 +48,11 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> DisableBoxCollision;
 
     // === Price Adjustments ===
-    public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<bool> roundDown;
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
     public static ConfigEntry<bool> RemovePillars;
-    public static ConfigEntry<bool> OrderingPriceGun;
-    public static ConfigEntry<KeyboardShortcut> OrderingPriceGunHotkey;
     public static bool doublePrice = true;
-    public static ConfigEntry<bool> OrderingPriceGunToggle;
     public static ConfigEntry<bool> ToggleDoublePrice;
 
     // === Random Shit ===
@@ -127,20 +123,6 @@ public class BetterSMT : BaseUnityPlugin {
             "Enable or disable highlighting",
             false,
             new ConfigDescription("Enables or disables highlighting of product and storage shelves when holding a box")
-        );
-
-        OrderingPriceGun = Config.Bind(
-            "Utility",
-            "Enable or disable ordering from price gun",
-            false,
-            new ConfigDescription("Enables the hotkey to order product using the price gun")
-        );
-
-        OrderingPriceGunHotkey = Config.Bind(
-            "Utility",
-            "Pricing Gun Order Hotkey",
-            new KeyboardShortcut(KeyCode.E),
-            new ConfigDescription("Hotkey to order the product the price gun is looking at.")
         );
 
         RemovePillars = Config.Bind(
@@ -261,9 +243,9 @@ public class BetterSMT : BaseUnityPlugin {
         SelfCheckoutLimit = base.Config.Bind(
             "Self-Checkout",
             "Product limit on self checkout",
-            18,
+            4,
             new ConfigDescription("Limits the amount of item's a customer can have before using the self checkout",
-                new AcceptableValueRange<int>(0, 250)
+                new AcceptableValueRange<int>(0, 100)
             )
         );
 
@@ -429,12 +411,6 @@ public class BetterSMT : BaseUnityPlugin {
             new ConfigDescription("Customers place all items instantly on to the checkout")
         );
 
-        ReplaceCommasWithPeriods = base.Config.Bind(
-            "Other",
-            "Replace Commas with Periods",
-            false
-        );
-
         ShowFPS = base.Config.Bind(
             "Other",
             "Show FPS Counter",
@@ -451,18 +427,6 @@ public class BetterSMT : BaseUnityPlugin {
         Logger = base.Logger;
         harmony.PatchAll();
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
-    }
-    public static string ReplaceCommas(string text) {
-        if (!ReplaceCommasWithPeriods.Value) {
-            return text;
-        }
-
-        text = text.Replace("$", string.Empty);
-        text = text.Replace(char.Parse(","), char.Parse("."));
-        if (!text.Contains(".")) {
-            text += ".00";
-        }
-        return "$" + text;
     }
 
     public static void CreateCanvasNotification(string text) {

@@ -2,11 +2,8 @@
 Scanner & Product Management
 - Scanner now works with boxes.
 - Shelves containing the product in your hand are highlighted.
-- Top- right product info now supports boxes.
-
 
 Customization & Configurations
-- Replace commas with periods in formatting.
 - Adjust employee- related perks:
 - - Employee speed per perk.
 - - Employee restock time per perk.
@@ -17,14 +14,14 @@ Customization & Configurations
 - - Number of customers per perk.
 - - Faster checkout (customers place items instantly on checkout).
 - Toggle features for thieves:
-- All NPCs as thieves.
+- - All NPCs as thieves.
 - - No NPCs as thieves.
 - Adjustments for game economy:
 - - Modify costs of lights, rent, and employee bills (end- of- day stats).
 - Trash spawn rate adjustments.
 - Show FPS counter (off by default).
 - Show ping (off by default).
-- 
+
 Building & Store Management
 - Delete buildings while the store is open.
 - Delete buildings that contain products.
@@ -37,7 +34,9 @@ Pricing & Checkout
 - - Toggle with Q (configurable in the config file).
 - - Left Ctrl + Q: Switch between 0.05 and 0.10 rounding.
 - - Left Ctrl + Left Shift + Q: Toggle rounding on/off.
-	- 
+- Ability to adjust how many customer's will use Self Checkout
+- Ability to remove theft that is built into Self Checkout's
+
 Miscellaneous
 - Save game button in the pause menu:
 - - Saves stock, structures, and reorganization, but not in- day progress.

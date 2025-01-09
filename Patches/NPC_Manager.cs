@@ -95,9 +95,6 @@ namespace BetterSMT.Patches {
         }
 
         public static int SelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance) {
-            if (npcInfo.productsIDCarrying.Count > BetterSMT.SelfCheckoutLimit.Value) {
-                return -1;
-            }
             if (npcInfo.productsIDCarrying.Count == 0) {
                 return -1;
             }
