@@ -1,3 +1,6 @@
+## v1.9.4
+- Fixed 2 errors in previous update that I am dumb for making
+
 ## v1.9.3
 - Added ability to adjust amount of products in a box, also adjusts price accordingly to purchase
 - - WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER.
