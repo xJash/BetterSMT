@@ -8,6 +8,7 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(ProductListing))]
 public class ProductListingPatch {
 
+    [HarmonyPatch(typeof(ProductListing))]
     [HarmonyPatch("OnStartClient")]
     public class Patch_ProductMaxItems {
         private static void Postfix(ProductListing __instance) {

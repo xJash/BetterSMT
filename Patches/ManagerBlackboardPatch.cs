@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
+using Mirror;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using Mirror;
 
 namespace BetterSMT.Patches;
 
@@ -12,12 +12,12 @@ public class RemoveBoxSpawnTimePatch {
     [HarmonyPatch("ServerCargoSpawner"), HarmonyPrefix]
     private static bool InstantCargoSpawner(ManagerBlackboard __instance, ref IEnumerator __result) {
         __result = CustomCargoSpawner(__instance);
-        return false; 
+        return false;
     }
 
     private static IEnumerator CustomCargoSpawner(ManagerBlackboard instance) {
         instance.isSpawning = true;
-        Vector3 halfExtents = new Vector3(0.3f, 0.3f, 0.45f);
+        _ = new Vector3(0.3f, 0.3f, 0.45f);
 
         WaitForSeconds waitTime1;
         WaitForSeconds waitTime2;
