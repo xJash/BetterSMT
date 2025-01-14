@@ -27,6 +27,9 @@ Building & Store Management
 - Delete buildings that contain products.
 - Remove pillars within the store.
 - Spawn essential tools (broom, pricing gun, and DLC tablet) in your hand.
+- Disable collision on boxes with other boxes
+- Make orders spawn extremely quickly
+- Modify amount of product in a box
 
 Pricing & Checkout
 - Instantly change product prices at the start of the day (thanks to @Trevor for the idea/partial code).

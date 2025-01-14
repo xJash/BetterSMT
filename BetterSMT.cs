@@ -77,8 +77,24 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<bool> TooExpensive;
     public static ConfigEntry<bool> MissingProduct;
-
+    public static ConfigEntry<int> MaxBoxSize;
+    public static ConfigEntry<bool> BoxCollision;
+    public static ConfigEntry<bool> FastBoxSpawns;
     private void Awake() {
+
+        BoxCollision = Config.Bind(
+            "Boxes",
+            "Enable or disable collision with boxes",
+            false,
+            new ConfigDescription("Enables or disables collision with boxes allowing them to stack inside of each other https://i.imgur.com/ffJrHOA.jpeg")
+        );
+
+        FastBoxSpawns = Config.Bind(
+            "Boxes",
+            "Enable or disable fast spawning of boxes",
+            false,
+            new ConfigDescription("Enables or disables making purchases boxes spawn quickly https://i.imgur.com/92Ex4V6.png")
+        );
 
         MissingProduct = Config.Bind(
             "Notifications",
@@ -130,7 +146,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Removes Pillars & Beams",
             false,
             new ConfigDescription("Removes most of the pillars & beams from the main portion of the store. **Be warned** camera UI does glitch out when standing where " +
-                "a pillar would usually go. Aswell increases the load time considerably for now. For an idea what this does, check this link: https://i.imgur.com/OBeBj5i.jpeg")
+                "a pillar would usually go. For an idea what this does, check this link: https://i.imgur.com/OBeBj5i.jpeg")
         );
 
         PricingGunToggle = Config.Bind(
@@ -246,6 +262,15 @@ public class BetterSMT : BaseUnityPlugin {
             4,
             new ConfigDescription("Limits the amount of item's a customer can have before using the self checkout",
                 new AcceptableValueRange<int>(0, 100)
+            )
+        );
+
+        MaxBoxSize = base.Config.Bind(
+            "Boxes",
+            "Modify amount of products in boxes",
+            1,
+            new ConfigDescription("** WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER ** Multiples the amount of product in a box, aswell as it's cost. Higher = more products in box and higher cost https://imgur.com/a/QT5l2Ky",
+                new AcceptableValueRange<int>(1, 25)
             )
         );
 
