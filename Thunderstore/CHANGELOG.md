@@ -1,3 +1,9 @@
+## v1.9.3
+- Added ability to adjust amount of products in a box, also adjusts price accordingly to purchase
+- - WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER.
+- Added ability to disable box collision so they can stack inside of eachother
+- Added ability to make purchases boxes spawn extremely quickly
+
 ## v1.9.2
 - Removed ordering from price gun due to it being added in base game
 - Removed comma to period replacement due to partial and eventual full implementation into base game
