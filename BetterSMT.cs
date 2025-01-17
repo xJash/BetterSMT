@@ -2,6 +2,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
+using System.Net.Http;
 using TMPro;
 using UnityEngine;
 
@@ -43,6 +44,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> DisableTrash;
     public static ConfigEntry<bool> AlwaysDeleteMode;
     public static ConfigEntry<bool> DeleteProduct;
+    public static ConfigEntry<bool> DeleteOnlyCheckout;
     public static ConfigEntry<bool> AutoAdjustPriceDaily;
     public static ConfigEntry<float> AutoAdjustPriceDailyValue;
     public static ConfigEntry<bool> DisableBoxCollision;
@@ -59,6 +61,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> Highlighting;
     public static ConfigEntry<bool> ThirdPersonToggle;
     public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
+
     // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
@@ -80,7 +83,15 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> MaxBoxSize;
     public static ConfigEntry<bool> BoxCollision;
     public static ConfigEntry<bool> FastBoxSpawns;
+
     private void Awake() {
+
+        DeleteOnlyCheckout = Config.Bind(
+            "Building",
+            "Enable or disable deleting all checkout lanes",
+            false,
+            new ConfigDescription("Adds the ability to delete every checkout lane")
+        );
 
         BoxCollision = Config.Bind(
             "Boxes",
