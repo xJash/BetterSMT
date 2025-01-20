@@ -2,6 +2,7 @@
 - Added deleting the last checkout
 - Fixed a small money duplication error pointed out by Ika
 - Fixed box collision
+- Fixed random cashier no worky error (Thanks to TheGoatler for testing)
 
 ## v1.9.4
 - Fixed 2 errors in previous update that I am dumb for making
