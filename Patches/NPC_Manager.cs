@@ -11,13 +11,14 @@ namespace BetterSMT.Patches {
             _ = SelfCheckoutPatch(npcInfo, __instance);
         }
 
-        [HarmonyPatch("CustomerNPCControl"), HarmonyPrefix]
+        [HarmonyPatch("CustomerNPCControl"), HarmonyPostfix]
         private static void CustomerNPCControlPatch(NPC_Manager __instance, int NPCIndex) {
             TooExpensiveChatPatch(__instance, NPCIndex);
         }
 
         public static void TooExpensiveChatPatch(NPC_Manager __instance, int NPCIndex) {
-            Dictionary<int, string> productNames = new() {
+            if (BetterSMT.TooExpensive.Value == true || BetterSMT.MissingProduct.Value == true) {
+                Dictionary<int, string> productNames = new() {
                 {0, "Pasta Penne"},  {1, "Water Bottle"}, {2, "Honey Cereals"}, {3, "Rice"}, {4, "Salt"}, {5, "Sugar"}, {6, "Margarine"}, {7, "Flour"}, {8, "Apple Juice"}, {9, "Olive Oil"}, {10, "Ketchup"}, {11, "Sliced Bread"}, {12, "Pepper"},
                 {13, "Orange Juice"}, {14, "Barbaque Sauce"}, {15, "Mustard Sauce"}, {16, "Spaghetti Box"}, {17, "Tuna Pate"}, {18, "Fiber Cereals"}, {19, "Supreme Flour"}, {20, "Black Coffee"}, {21, "Egg Box"}, {22, "Houmous"},
                 {23, "White Flour"}, {24, "Cane Sugar Box"}, {25, "Sugar"}, {26, "Macarroni"}, {27, "Ecologic Sugar"}, {28, "Brown Sugar"}, {29, "Sunflower Oil"}, {30, "Mash Potatoes"}, {31, "Potatoe Bag"}, {32, "Espresso Coffee"},
@@ -41,81 +42,104 @@ namespace BetterSMT.Patches {
                 {194, "Orange Tray"}, {195, "Pear Tray"}, {196, "Lemon Tray"}, {197, "Mango Tray"}, {198, "Avocado Tray"}, {199, "Kiwi Tray"}, {200, "Papaya Tray"}, {201, "Strawberry Tray"}, {202, "Cherry Tray"}, {203, "Artichoke Tray"},
                 {204, "Zucchini Tray"}, {205, "Carrot Tray"}, {206, "Tomato Tray"}, {207, "Potato Tray"}, {208, "Onion Tray"}, {209, "Banana Pack"}, {210, "Melon"}, {211, "Pineapple"}, {212, "Pumpkin"}, {213, "Watermelon"},
                 {214, "Baby Food: Vegetables"}, {215, "Baby Food: Fish"}, {216, "Baby Food: Fruits"}, {217, "Baby Food: Meat"}, {218, "Nutritive Milk Mix"}, {219, "Nutritive Milk Powder"}, {220, "Ecologic Diapers"}, {221, "Basic Diapers"},
-                {222, "Toddler Diapers"}, {223, "Premium Diapers"}, {224, "Aloe Baby Wipes "}, {225, "Basic Baby Wipes"}, {226, "Baby Powder"}, {227, "Orange Soda"}, {228, "Pineapple Soda"}, {229, "Tropical Soda"}, {230, "Green Tea"},
+                {222, "Toddler Diapers"}, {223, "Premium Diapers"}, {224, "Aloe Baby Wipes "}, {225, "Basic Baby Wipes"}, {226, "Baby Powder"}, {227, "Orange Soda"}, {228, "Pineapple Soda"}, {229, "Tropical Soda"}, {230, "Green ea"},
                 {231, "Red Tea"}, {232, "Lemon Tea"}, {233, "Cold Brew Coffee"}, {234, "Blueberry Energy Drink"}, {235, "Guava Energy Drink"}, {236, "Lima Energy Drink"}, {237, "Fruit Punch Energy Drink"}, {238, "Mango Energy Drink"},
                 {239, "Cola Energy Drink"}, {240, "Sugar Free Energy Drink"}, {241, "Basic Strawberry Ice Cream"}, {242, "Lemon Ice Cream"}, {243, "Coffee Ice Cream"}, {244, "Stracciatella Ice Cream"}, {245, "Strawberry Meringue Ice Cream"},
                 {246, "Caramel Ice Cream"}, {247, "Premium Strawberry Ice Cream"}, {248, "Strawberry Cheesecake Ice Cream"}, {249, "Premium Caramel Ice Cream"}, {250, "Pink Strawberry Ice Cream"}, {251, "Alcoholic Ice Cream"},
                 {252, "Chickpeas"}, {253, "Meatballs"}, {254, "Lentils"}, {255, "Tomato Soup"}, {256, "Canned Corn"}, {257, "Canned Peas"}
             };
-
-            GameObject gameObject = __instance.customersnpcParentOBJ.transform.GetChild(NPCIndex).gameObject;
-            NPC_Info component = gameObject.GetComponent<NPC_Info>();
-            int state = component.state;
-            NavMeshAgent component2 = gameObject.GetComponent<NavMeshAgent>();
-            if (state == -1 || component2.pathPending || !(component2.remainingDistance <= component2.stoppingDistance) || (component2.hasPath && component2.velocity.sqrMagnitude != 0f)) {
-                return;
-            }
-            if (component.productsIDToBuy.Count > 0) {
-                switch (state) {
-                    case 0: {
-                            int productID = component.productsIDToBuy[0];
-                            int num4 = __instance.WhichShelfHasItem(productID);
-                            if (num4 == -1) {
-                                if (BetterSMT.MissingProduct.Value == true) {
-                                    string productName = productNames.ContainsKey(productID) ? productNames[productID] : $"Product {productID}";
-                                    PlayerObjectController playerController = GameObject.FindObjectOfType<PlayerObjectController>();
-                                    string message = $"{productName} is not found on the shelf.";
-                                    playerController.CmdSendMessage(message);
-                                    Debug.Log(message);
-                                }
-                            }
-                            break;
-                        }
-                    case 1: {
-                            int num = component.productsIDToBuy[0];
-                            if (__instance.IsItemInShelf(component.shelfThatHasTheItem, num)) {
-                                float num2 = ProductListing.Instance.productPlayerPricing[num];
-                                Data_Product component3 = ProductListing.Instance.productPrefabs[num].GetComponent<Data_Product>();
-                                int productTier = component3.productTier;
-                                float num3 = component3.basePricePerUnit * ProductListing.Instance.tierInflation[productTier] * Random.Range(2f, 2.5f);
-                                if (num2 > num3) {
-                                    if (BetterSMT.TooExpensive.Value == true) {
-                                        string productName = productNames.ContainsKey(num) ? productNames[num] : $"Product {num}";
+        
+                GameObject gameObject = __instance.customersnpcParentOBJ.transform.GetChild(NPCIndex).gameObject;
+                NPC_Info component = gameObject.GetComponent<NPC_Info>();
+                int state = component.state;
+                NavMeshAgent component2 = gameObject.GetComponent<NavMeshAgent>();
+                if (state == -1 || component2.pathPending || !(component2.remainingDistance <= component2.stoppingDistance) || (component2.hasPath && component2.velocity.sqrMagnitude != 0f)) {
+                    return;
+                }
+                if (component.productsIDToBuy.Count > 0) {
+                    switch (state) {
+                        case 0: {
+                                int productID = component.productsIDToBuy[0];
+                                int num4 = __instance.WhichShelfHasItem(productID);
+                                if (num4 == -1) {
+                                    GameData.Instance.AddNotFoundList(productID);
+                                    component.productsIDToBuy.RemoveAt(0);
+                                    component.RPCNotificationAboveHead("NPCmessage0", "product" + productID);
+                                    component.StartWaitState(1.5f, 0);
+                                    component.state = -1;
+                                    if (BetterSMT.MissingProduct.Value == true) {
+                                        string productName = productNames.ContainsKey(productID) ? productNames[productID] : $"Product {productID}";
                                         PlayerObjectController playerController = GameObject.FindObjectOfType<PlayerObjectController>();
-                                        string message = $"{productName} is too expensive.";
+                                        string message = $"{productName} is not found on the shelf.";
                                         playerController.CmdSendMessage(message);
                                         Debug.Log(message);
                                     }
+                                } else {
+                                    component.shelfThatHasTheItem = num4;
+                                    Vector3 position = __instance.shelvesOBJ.transform.GetChild(num4).Find("Standspot").transform.position;
+                                    component2.destination = position;
+                                    component.state = 1;
                                 }
+                                break;
                             }
+                        case 1: {
+                                int num = component.productsIDToBuy[0];
+                                if (__instance.IsItemInShelf(component.shelfThatHasTheItem, num)) {
+                                    float num2 = ProductListing.Instance.productPlayerPricing[num];
+                                    Data_Product component3 = ProductListing.Instance.productPrefabs[num].GetComponent<Data_Product>();
+                                    int productTier = component3.productTier;
+                                    float num3 = component3.basePricePerUnit * ProductListing.Instance.tierInflation[productTier] * Random.Range(2f, 2.5f);
+                                    component.productsIDToBuy.RemoveAt(0);
+                                    if (num2 > num3) {
+                                        component.StartWaitState(1.5f, 0);
+                                        component.RPCNotificationAboveHead("NPCmessage1", "product" + num);
+                                        GameData.Instance.AddExpensiveList(num);
+                                        if (BetterSMT.TooExpensive.Value == true) {
+                                            string productName = productNames.ContainsKey(num) ? productNames[num] : $"Product {num}";
+                                            PlayerObjectController playerController = GameObject.FindObjectOfType<PlayerObjectController>();
+                                            string message = $"{productName} is too expensive.";
+                                            playerController.CmdSendMessage(message);
+                                            Debug.Log(message);
+                                        }
+                                    } else {
+                                        component.productsIDCarrying.Add(num);
+                                        component.productsCarryingPrice.Add(num2);
+                                        component.numberOfProductsCarried++;
+                                        component.StartWaitState(1.5f, 0);
+                                        __instance.shelvesOBJ.transform.GetChild(component.shelfThatHasTheItem).GetComponent<Data_Container>().NPCGetsItemFromRow(num);
+                                    }
+                                    component.state = -1;
+                                } else {
+                                    component.state = 0;
+                                }
+                                break;
+                            }
+                        default:
+                            Debug.Log("npc case error");
                             break;
-                        }
+                    }
+                    return;
                 }
             }
         }
-
         public static int SelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance) {
-            if (npcInfo.productsIDCarrying.Count == 0) {
+            if (npcInfo.productsIDCarrying.Count > 18 + __instance.selfcheckoutExtraProductsFromPerk || npcInfo.productsIDCarrying.Count == 0) {
                 return -1;
             }
-
-            _ = Mathf.Clamp(18 / npcInfo.productsIDCarrying.Count, 0f, 1f);
-            for (int i = 0; i < __instance.selfCheckoutOBJ.transform.childCount; i++) {
-                Transform station = __instance.selfCheckoutOBJ.transform.GetChild(i);
-
-                Data_Container dataContainer = station.GetComponent<Data_Container>();
-                if (dataContainer.checkoutQueue[0]) {
-                    continue;
-                }
-
-                if (BetterSMT.SelfCheckoutTheft.Value) {
-                    if (npcInfo.productsIDCarrying.Count > 6 && UnityEngine.Random.value < 0.02f + (GameData.Instance.difficulty * 0.005f)) {
-                        int index = UnityEngine.Random.Range(0, npcInfo.productsIDCarrying.Count);
-                        npcInfo.productsIDCarrying.RemoveAt(index);
-                        npcInfo.productsCarryingPrice.RemoveAt(index);
+            float time = Mathf.Clamp((18 + __instance.selfcheckoutExtraProductsFromPerk) / npcInfo.productsIDCarrying.Count, 0f, 1f);
+            if (__instance.selfcheckoutChanceCurve.Evaluate(time) < Random.value) {
+                for (int i = 0; i < __instance.selfCheckoutOBJ.transform.childCount; i++) {
+                    if (!__instance.selfCheckoutOBJ.transform.GetChild(i).GetComponent<Data_Container>().checkoutQueue[0]) {
+                        if (BetterSMT.SelfCheckoutTheft.Value == false) {
+                            if (npcInfo.productsIDCarrying.Count > 6 && Random.value < 0.02f + (float)GameData.Instance.difficulty * 0.005f) {
+                                int index = Random.Range(0, npcInfo.productsIDCarrying.Count);
+                                npcInfo.productsIDCarrying.RemoveAt(index);
+                                npcInfo.productsCarryingPrice.RemoveAt(index);
+                            }
+                        }
+                        return i;
                     }
                 }
-                return i;
             }
             return -1;
         }
