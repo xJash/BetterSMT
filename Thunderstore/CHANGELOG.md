@@ -1,3 +1,13 @@
+## v1.9.6
+- Added Third Person hotkey being disabled while typing
+- Revamped the entire highlighting system
+- - Now includes labeled storage shelves
+- - Should be much quicker to both highlight and de-highlight
+- - Could potentially be buggy in multiplayer, please report any instances of bugs
+- Fixed some issues with vehicles and decorations not being able to be deleted
+- Fixed some general typos within existing notifications aswell as changelog and readmes
+- Updated custom box sizes to include most recent products
+
 ## v1.9.5
 - Added deleting the last checkout
 - Fixed a small money duplication error pointed out by Ika
