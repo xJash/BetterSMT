@@ -28,7 +28,7 @@
           <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
 		<Reference Include="Cinemachine">
-		  <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Cinemachine.dll</HintPath>
+		  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Cinemachine.dll</HintPath>
 		</Reference>
         <Reference Include="Mirror" Private="False" Publicize="true">
           <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Mirror.dll</HintPath>

@@ -1,8 +1,9 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using BetterSMT.Enums;
+using BetterSMT.Patches;
 using HarmonyLib;
-using System.Net.Http;
 using TMPro;
 using UnityEngine;
 
@@ -10,9 +11,11 @@ namespace BetterSMT;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
 public class BetterSMT : BaseUnityPlugin {
-    private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
 
     public static BetterSMT Instance;
+
+    internal static readonly Harmony Harmony = new(PluginInfo.PLUGIN_GUID);
+
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
     // === Employee-related settings ===
@@ -82,7 +85,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<bool> TooExpensive;
     public static ConfigEntry<bool> MissingProduct;
-    public static ConfigEntry<int> MaxBoxSize;
+    public static ConfigEntry<float> BoxSizeValue;
+    public static ConfigEntry<BoxSizeType> BoxSizeType;
     public static ConfigEntry<bool> BoxCollision;
     public static ConfigEntry<bool> FastBoxSpawns;
 
@@ -292,13 +296,20 @@ public class BetterSMT : BaseUnityPlugin {
             )
         );
 
-        MaxBoxSize = base.Config.Bind(
+        BoxSizeValue = base.Config.Bind(
             "Boxes",
             "Modify amount of products in boxes",
-            1,
-            new ConfigDescription("** WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER ** Multiples the amount of product in a box, aswell as it's cost. Higher = more products in box and higher cost https://imgur.com/a/QT5l2Ky",
-                new AcceptableValueRange<int>(1, 25)
+            1f,
+            new ConfigDescription("Adjusts (either multiplies or sets, depending on the \"box size type\" config) the amount of product in a box, aswell as it's cost. Higher = more products in box and higher cost https://imgur.com/a/QT5l2Ky",
+                new AcceptableValueRange<float>(1, 500)
             )
+        );
+
+        BoxSizeType = base.Config.Bind(
+            "Boxes",
+            "Box size type",
+            Enums.BoxSizeType.Multiplier,
+            new ConfigDescription("Choose if the config for the amount of products in boxes will either be multiplied or set completely")
         );
 
         EmployeeSpeedPerPerk = base.Config.Bind(
@@ -477,7 +488,9 @@ public class BetterSMT : BaseUnityPlugin {
 
         Instance = this;
         Logger = base.Logger;
-        harmony.PatchAll();
+        Harmony.PatchAll();
+        BoxSizePatch.AddNetwork.PatchAll();
+        BoxSizePatch.ProductList.PatchAll();
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
     }
 
@@ -486,6 +499,7 @@ public class BetterSMT : BaseUnityPlugin {
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
+
     public static void CreateImportantNotification(string text) {
         GameObject obj = Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
@@ -524,4 +538,3 @@ public class BetterSMT : BaseUnityPlugin {
         }
     }
 }
-
