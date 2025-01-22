@@ -6,19 +6,7 @@ using UnityEngine.AI;
 namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(NPC_Manager))]
     public class NPC_ManagerPatch {
-        [HarmonyPatch("GetAvailableSelfCheckout"), HarmonyPostfix]
-        private static void GetAvailableSelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance) {
-            _ = SelfCheckoutPatch(npcInfo, __instance);
-        }
-
-        [HarmonyPatch("CustomerNPCControl"), HarmonyPostfix]
-        private static void CustomerNPCControlPatch(NPC_Manager __instance, int NPCIndex) {
-            TooExpensiveChatPatch(__instance, NPCIndex);
-        }
-
-        public static void TooExpensiveChatPatch(NPC_Manager __instance, int NPCIndex) {
-            if (BetterSMT.TooExpensive.Value == true || BetterSMT.MissingProduct.Value == true) {
-                Dictionary<int, string> productNames = new() {
+        public static readonly Dictionary<int, string> productNames = new() {
                 {0, "Pasta Penne"},  {1, "Water Bottle"}, {2, "Honey Cereals"}, {3, "Rice"}, {4, "Salt"}, {5, "Sugar"}, {6, "Margarine"}, {7, "Flour"}, {8, "Apple Juice"}, {9, "Olive Oil"}, {10, "Ketchup"}, {11, "Sliced Bread"}, {12, "Pepper"},
                 {13, "Orange Juice"}, {14, "Barbaque Sauce"}, {15, "Mustard Sauce"}, {16, "Spaghetti Box"}, {17, "Tuna Pate"}, {18, "Fiber Cereals"}, {19, "Supreme Flour"}, {20, "Black Coffee"}, {21, "Egg Box"}, {22, "Houmous"},
                 {23, "White Flour"}, {24, "Cane Sugar Box"}, {25, "Sugar"}, {26, "Macarroni"}, {27, "Ecologic Sugar"}, {28, "Brown Sugar"}, {29, "Sunflower Oil"}, {30, "Mash Potatoes"}, {31, "Potatoe Bag"}, {32, "Espresso Coffee"},
@@ -48,7 +36,19 @@ namespace BetterSMT.Patches {
                 {246, "Caramel Ice Cream"}, {247, "Premium Strawberry Ice Cream"}, {248, "Strawberry Cheesecake Ice Cream"}, {249, "Premium Caramel Ice Cream"}, {250, "Pink Strawberry Ice Cream"}, {251, "Alcoholic Ice Cream"},
                 {252, "Chickpeas"}, {253, "Meatballs"}, {254, "Lentils"}, {255, "Tomato Soup"}, {256, "Canned Corn"}, {257, "Canned Peas"}
             };
-        
+
+        [HarmonyPatch("GetAvailableSelfCheckout"), HarmonyPostfix]
+        private static void GetAvailableSelfCheckoutPatch(NPC_Info npcInfo, NPC_Manager __instance) {
+            _ = SelfCheckoutPatch(npcInfo, __instance);
+        }
+
+        [HarmonyPatch("CustomerNPCControl"), HarmonyPostfix]
+        private static void CustomerNPCControlPatch(NPC_Manager __instance, int NPCIndex) {
+            TooExpensiveChatPatch(__instance, NPCIndex);
+        }
+
+        public static void TooExpensiveChatPatch(NPC_Manager __instance, int NPCIndex) {
+            if (BetterSMT.TooExpensive.Value == true || BetterSMT.MissingProduct.Value == true) {
                 GameObject gameObject = __instance.customersnpcParentOBJ.transform.GetChild(NPCIndex).gameObject;
                 NPC_Info component = gameObject.GetComponent<NPC_Info>();
                 int state = component.state;
@@ -131,7 +131,7 @@ namespace BetterSMT.Patches {
                 for (int i = 0; i < __instance.selfCheckoutOBJ.transform.childCount; i++) {
                     if (!__instance.selfCheckoutOBJ.transform.GetChild(i).GetComponent<Data_Container>().checkoutQueue[0]) {
                         if (BetterSMT.SelfCheckoutTheft.Value == false) {
-                            if (npcInfo.productsIDCarrying.Count > 6 && Random.value < 0.02f + (float)GameData.Instance.difficulty * 0.005f) {
+                            if (npcInfo.productsIDCarrying.Count > 6 && Random.value < 0.02f + (GameData.Instance.difficulty * 0.005f)) {
                                 int index = Random.Range(0, npcInfo.productsIDCarrying.Count);
                                 npcInfo.productsIDCarrying.RemoveAt(index);
                                 npcInfo.productsCarryingPrice.RemoveAt(index);
