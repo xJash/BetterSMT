@@ -73,6 +73,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<KeyboardShortcut> DLCTabletHotkey;
     public static ConfigEntry<bool> DLCTabletToggle;
     public static ConfigEntry<KeyboardShortcut> EmptyHandsHotkey;
+    public static ConfigEntry<KeyboardShortcut> PhoneHotkey;
+    public static ConfigEntry<bool> PhoneToggle;
 
     // === Notification & Miscellaneous ===
     public static bool notify = false;
@@ -188,6 +190,13 @@ public class BetterSMT : BaseUnityPlugin {
             new ConfigDescription("Hotkey to spawn a Broom in your hands.")
         );
 
+        PhoneToggle = Config.Bind(
+            "Utility",
+            "Ordering Phone TOggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Ordering Phone")
+        );
+
         DLCTabletToggle = Config.Bind(
             "Utility",
             "DLC Tablet Toggle",
@@ -200,6 +209,13 @@ public class BetterSMT : BaseUnityPlugin {
             "DLC Tablet Hotkey",
             new KeyboardShortcut(KeyCode.I),
             new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands.")
+        );
+
+        PhoneHotkey = Config.Bind(
+            "Utility",
+            "Ordering Phone Hotkey",
+            new KeyboardShortcut(KeyCode.H),
+            new ConfigDescription("Hotkey to spawn a Ordering Phone in your hands.")
         );
 
         EmptyHandsHotkey = Config.Bind(

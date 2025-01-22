@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using HutongGames.PlayMaker;
 
 namespace BetterSMT.Patches;
 
@@ -9,29 +10,33 @@ public class LateUpdateRaycastPatch {
     private static bool isThirdPersonEnabled = false;
 
     private static void Postfix(CustomCameraController __instance) {
-        if (BetterSMT.ThirdPersonToggle.Value == true) {
-            if (__instance == null || __instance.inVehicle || __instance.isInCameraEvent) {
-                return;
-            }
-
-            if (BetterSMT.ThirdPersonHotkey.Value.IsDown()) {
-                isThirdPersonEnabled = !isThirdPersonEnabled;
-            }
-
-            if (isThirdPersonEnabled) {
-                __instance.inEmoteEvent = true;
-                if (__instance.thirdPersonFollow != null) {
-                    __instance.thirdPersonFollow.CameraDistance = 2f;
-                    __instance.thirdPersonFollow.CameraCollisionFilter = __instance.thirdPersonDefaultLayerMask;
+        if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
+            return;
+        } else {
+            if (BetterSMT.ThirdPersonToggle.Value == true) {
+                if (__instance == null || __instance.inVehicle || __instance.isInCameraEvent) {
+                    return;
                 }
-                __instance.ShowCharacter(true);
-            } else {
-                __instance.inEmoteEvent = false;
-                if (__instance.thirdPersonFollow != null) {
-                    __instance.thirdPersonFollow.CameraDistance = 0f;
-                    __instance.thirdPersonFollow.CameraCollisionFilter = 0;
+
+                if (BetterSMT.ThirdPersonHotkey.Value.IsDown()) {
+                    isThirdPersonEnabled = !isThirdPersonEnabled;
                 }
-                __instance.ShowCharacter(false);
+
+                if (isThirdPersonEnabled) {
+                    __instance.inEmoteEvent = true;
+                    if (__instance.thirdPersonFollow != null) {
+                        __instance.thirdPersonFollow.CameraDistance = 2f;
+                        __instance.thirdPersonFollow.CameraCollisionFilter = __instance.thirdPersonDefaultLayerMask;
+                    }
+                    __instance.ShowCharacter(true);
+                } else {
+                    __instance.inEmoteEvent = false;
+                    if (__instance.thirdPersonFollow != null) {
+                        __instance.thirdPersonFollow.CameraDistance = 0f;
+                        __instance.thirdPersonFollow.CameraCollisionFilter = 0;
+                    }
+                    __instance.ShowCharacter(false);
+                }
             }
         }
     }

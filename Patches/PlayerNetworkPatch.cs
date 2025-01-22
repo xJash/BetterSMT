@@ -12,17 +12,26 @@ namespace BetterSMT.Patches;
 public class PlayerNetworkPatch {
     private static PlayerNetwork pNetwork = null;
 
-    [HarmonyPatch(typeof(PlayerNetwork), nameof(PlayerNetwork.OnStartClient))]
-    [HarmonyPrefix]
-    private static bool OptimizePricesOnSpawn() {
-        OptimizeProductPrices();
-        return true;
+    public enum ShelfType {
+        ProductDisplay,
+        Storage
     }
 
-    [HarmonyPatch("Start"), HarmonyPrefix]
-    private static void StartPatch(PlayerNetwork __instance) {
-        if (__instance.isLocalPlayer) {
-            pNetwork = __instance;
+    private struct ShelfData {
+        public string highlightsName;
+        public string highlightsOriginalName;
+        public ShelfType shelfType;
+
+        public ShelfData(ShelfType shelfType) {
+            if (shelfType == ShelfType.ProductDisplay) {
+                highlightsName = "Labels";
+                highlightsOriginalName = "";
+                this.shelfType = ShelfType.ProductDisplay;
+            } else {
+                highlightsName = "HighlightsMarker";
+                highlightsOriginalName = "Highlights";
+                this.shelfType = ShelfType.Storage;
+            }
         }
     }
 
@@ -50,11 +59,17 @@ public class PlayerNetworkPatch {
             }
 
             if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true) {
-                if (Input.GetKeyDown(KeyCode.R)) {
+                if (BetterSMT.EmptyHandsHotkey.Value.IsDown()) {
                     __instance.CmdChangeEquippedItem(0);
                 }
             }
+            if (BetterSMT.PhoneToggle.Value == true) {
+                if (BetterSMT.PhoneHotkey.Value.IsDown()) {
+                    __instance.CmdChangeEquippedItem(6);
+                }
+            }
         }
+
         if (BetterSMT.ToggleDoublePrice.Value == true) {
             if (BetterSMT.doublePrice && ___marketPriceTMP != null) {
                 if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
@@ -107,9 +122,47 @@ public class PlayerNetworkPatch {
         }
     }
 
+    [HarmonyPatch(typeof(PlayerNetwork), nameof(PlayerNetwork.OnStartClient))]
+    [HarmonyPrefix]
+    private static bool OptimizePricesOnSpawn() {
+        OptimizeProductPrices();
+        return true;
+    }
+
+    private static readonly Dictionary<int, Transform> highlightObjectCache = [];
+
+    public static bool IsHighlightCacheUsed { get; set; } = true;
+
+    [HarmonyPatch("Start"), HarmonyPrefix]
+    private static void StartPatch(PlayerNetwork __instance) {
+        if (__instance.isLocalPlayer) {
+            pNetwork = __instance;
+        }
+    }
+
     [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
     private static void UpdateBoxContentsPatch(int productIndex) {
         HighlightShelvesByProduct(productIndex);
+    }
+
+    [HarmonyPatch(typeof(Data_Container), "BoxSpawner")]
+    [HarmonyPostfix]
+    private static void BoxSpawnerPatch(Data_Container __instance) {
+        AddHighlightMarkersToStorage(__instance.transform);
+    }
+
+    [HarmonyPatch(typeof(NetworkSpawner), "UserCode_CmdSpawn__Int32__Vector3__Vector3")]
+    [HarmonyPostfix]
+    private static void NewBuildableConstructed(NetworkSpawner __instance, int prefabID) {
+        GameObject buildable = __instance.buildables[prefabID];
+
+        if (buildable.name.Contains("StorageShelf")) {
+            int index = buildable.GetComponent<Data_Container>().parentIndex;
+            Transform buildableParent = __instance.levelPropsOBJ.transform.GetChild(index);
+            GameObject lastStorageObject = buildableParent.GetChild(buildableParent.childCount - 1).gameObject;
+
+            AddHighlightMarkersToStorage(lastStorageObject.transform);
+        }
     }
 
     public static int GetProductFromRaycast() {
@@ -139,8 +192,7 @@ public class PlayerNetworkPatch {
                 }
 
                 Data_Container component = hitInfo.transform.parent.transform.parent.GetComponent<Data_Container>();
-                if (component != null && component.containerClass == 69) // STORAGE SHELF
-                {
+                if (component != null && component.containerClass == 69) {
                     int num = component.productInfoArray[siblingIndex * 2];
                     productID = num;
                 }
@@ -151,120 +203,137 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelvesByProduct(int productID) {
-        if (BetterSMT.Highlighting.Value == true) {
-            GameObject shelvesOBJ = GameObject.Find("Level_SupermarketProps/Shelves");
-
-            for (int i = 0; i < shelvesOBJ.transform.childCount; i++) {
-                Transform child = shelvesOBJ.transform.GetChild(i);
-                Data_Container container = child.gameObject.GetComponent<Data_Container>();
-                if (container == null) {
-                    continue;
-                }
-
-                int[] productInfoArray = container.productInfoArray;
-                int num = productInfoArray.Length / 2;
-                bool highlightShelf = false;
-                for (int j = 0; j < num; j++) {
-                    int num2 = productInfoArray[j * 2];
-
-                    bool highlightLabel = num2 == productID;
-                    Transform labels = child.Find("Labels");
-                    if (labels == null || labels.childCount <= j) {
-                        continue;
-                    }
-
-                    Transform label = labels.GetChild(j);
-                    if (highlightLabel) {
-                        highlightShelf = true;
-                    }
-
-                    HighlightShelf(label, highlightLabel, Color.yellow);
-                }
-                HighlightShelf(child, highlightShelf, Color.red);
-            }
-
-            GameObject storageShelvesOBJ = GameObject.Find("Level_SupermarketProps/StorageShelves");
-
-            for (int i = 0; i < storageShelvesOBJ.transform.childCount; i++) {
-                Transform child = storageShelvesOBJ.transform.GetChild(i);
-                int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
-                int num = productInfoArray.Length / 2;
-                for (int j = 0; j < num; j++) {
-                    int num2 = productInfoArray[j * 2];
-
-                    bool highlightBox = num2 == productID;
-                    Transform boxs = child.Find("BoxContainer");
-                    if (boxs == null || boxs.childCount <= j) {
-                        continue;
-                    }
-
-                    Transform box = boxs.GetChild(j);
-                    HighlightShelf(box, highlightBox, Color.yellow);
-                }
-            }
-        }
+        HighlightShelfTypeByProduct(productID, Color.yellow, ShelfType.ProductDisplay);
+        HighlightShelfTypeByProduct(productID, Color.red, ShelfType.Storage);
     }
 
     public static void ClearHighlightedShelves() {
-        GameObject shelvesOBJ = GameObject.Find("Level_SupermarketProps/Shelves");
-
-        for (int i = 0; i < shelvesOBJ.transform.childCount; i++) {
-            Transform child = shelvesOBJ.transform.GetChild(i);
-            int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
-            int num = productInfoArray.Length / 2;
-            for (int j = 0; j < num; j++) {
-                Transform labels = child.Find("Labels");
-                if (labels == null || labels.childCount <= j) {
-                    continue;
-                }
-
-                Transform label = labels.GetChild(j);
-                HighlightShelf(label, false);
+        if (IsHighlightCacheUsed) {
+            foreach (KeyValuePair<int, Transform> item in highlightObjectCache) {
+                HighlightShelf(item.Value, false);
             }
-            HighlightShelf(child, false);
+            highlightObjectCache.Clear();
+        } else {
+            ClearHighlightShelvesByProduct(ShelfType.ProductDisplay);
+            ClearHighlightShelvesByProduct(ShelfType.Storage);
+        }
+    }
+
+    private static void ClearHighlightShelvesByProduct(ShelfType shelfType) {
+        HighlightShelfTypeByProduct(-1, Color.white, shelfType);
+    }
+
+    private static void HighlightShelfTypeByProduct(int productID, Color shelfHighlightColor, ShelfType shelfType) {
+        GameObject shelvesObject = GameObject.Find(GetGameObjectStringPath(shelfType));
+
+        for (int i = 0; i < shelvesObject.transform.childCount; i++) {
+            Transform shelf = shelvesObject.transform.GetChild(i);
+            int[] productInfoArray = shelf.gameObject.GetComponent<Data_Container>().productInfoArray;
+            int num = productInfoArray.Length / 2;
+            bool enableShelfHighlight = false;
+
+            for (int j = 0; j < num; j++) {
+                bool enableSlotHighlight = productID >= 0 && productInfoArray[j * 2] == productID;
+                if (enableSlotHighlight) {
+                    enableShelfHighlight = true;
+
+                    ShelfData shelfData = new(shelfType);
+                    Transform highlightsMarker = shelf.Find(shelfData.highlightsName);
+
+                    if (highlightsMarker != null) {
+                        Transform specificHighlight = shelfType == ShelfType.Storage ? highlightsMarker.GetChild(j).GetChild(0) : highlightsMarker.GetChild(j);
+                        HighlightShelf(specificHighlight, true, Color.yellow);
+                    }
+                }
+            }
+
+            HighlightShelf(shelf, enableShelfHighlight, shelfHighlightColor);
+        }
+    }
+
+    public static string GetGameObjectStringPath(ShelfType shelfType) {
+        return shelfType switch {
+            ShelfType.ProductDisplay => "Level_SupermarketProps/Shelves",
+            ShelfType.Storage => "Level_SupermarketProps/StorageShelves",
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public static void HighlightShelf(Transform t, bool isEnableHighlight, Color? color = null) {
+        HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
+
+        if (IsHighlightCacheUsed) {
+            if (isEnableHighlight == highlightEffect.highlighted) {
+                return;
+            }
+
+            if (isEnableHighlight) {
+                if (!highlightObjectCache.ContainsKey(t.GetInstanceID())) {
+                    highlightObjectCache.Add(t.GetInstanceID(), t);
+                }
+            }
+
+            MeshRenderer meshRender = t.GetComponent<MeshRenderer>();
+            if (meshRender != null) {
+                meshRender.allowOcclusionWhenDynamic = !isEnableHighlight;
+            }
         }
 
-        GameObject storageShelvesOBJ = GameObject.Find("Level_SupermarketProps/StorageShelves");
+        if (color != null) {
+            highlightEffect.outlineColor = (Color)color;
+        }
+        highlightEffect.outlineQuality = HighlightPlus.QualityLevel.High;
+        highlightEffect.outlineVisibility = Visibility.AlwaysOnTop;
+        highlightEffect.outlineContourStyle = ContourStyle.AroundObjectShape;
 
-        for (int i = 0; i < storageShelvesOBJ.transform.childCount; i++) {
-            Transform child = storageShelvesOBJ.transform.GetChild(i);
-            int[] productInfoArray = child.gameObject.GetComponent<Data_Container>().productInfoArray;
-            int num = productInfoArray.Length / 2;
-            for (int j = 0; j < num; j++) {
-                Transform boxContainer = child.Find("BoxContainer");
-                if (boxContainer == null) {
-                    continue;
+        highlightEffect.outlineIndependent = true;
+        highlightEffect.outline = isEnableHighlight ? 1f : 0f;
+        highlightEffect.glow = isEnableHighlight ? 0f : 1f;
+
+        highlightEffect.Refresh();
+        highlightEffect.highlighted = isEnableHighlight;
+
+        foreach (Transform child in t) {
+            if (child.name.Contains("PriceLabel")) {
+                HighlightEffect childHighlightEffect = child.GetComponent<HighlightEffect>() ?? child.gameObject.AddComponent<HighlightEffect>();
+
+                if (color != null) {
+                    childHighlightEffect.outlineColor = (Color)color;
                 }
+                childHighlightEffect.outlineQuality = HighlightPlus.QualityLevel.High;
+                childHighlightEffect.outlineVisibility = Visibility.AlwaysOnTop;
+                childHighlightEffect.outlineContourStyle = ContourStyle.AroundObjectShape;
 
-                Transform box = boxContainer.GetChild(j);
-                if (box == null) {
-                    continue;
-                }
+                childHighlightEffect.outlineIndependent = true;
+                childHighlightEffect.outline = isEnableHighlight ? 1f : 0f;
+                childHighlightEffect.glow = isEnableHighlight ? 0f : 1f;
 
-                HighlightShelf(box, false);
+                childHighlightEffect.Refresh();
+                childHighlightEffect.highlighted = isEnableHighlight;
             }
         }
     }
 
-    public static void HighlightShelf(Transform t, bool value, Color? color = null) {
-        HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
-        if (color != null) {
-            highlightEffect.outlineColor = (Color)color;
+
+    public static void AddHighlightMarkersToStorage(Transform storage) {
+        ShelfData shelfData = new(ShelfType.Storage);
+
+        Transform highlightsMarker = storage.transform.Find(shelfData.highlightsName);
+
+        if (highlightsMarker != null) {
+            return;
         }
 
-        highlightEffect.outlineQuality = HighlightPlus.QualityLevel.High;
-        highlightEffect.outlineVisibility = Visibility.AlwaysOnTop;
-        highlightEffect.outlineContourStyle = ContourStyle.AroundObjectShape;
-        highlightEffect.outlineIndependent = true;
+        highlightsMarker = UnityEngine.Object.Instantiate(storage.Find(shelfData.highlightsOriginalName).gameObject, storage).transform;
+        highlightsMarker.name = shelfData.highlightsName;
 
-        highlightEffect.outline = value ? 1f : 0f;
-        highlightEffect.glow = value ? 0f : 1f;
+        for (int i = 0; i < highlightsMarker.childCount; i++) {
+            highlightsMarker.GetChild(i).gameObject.SetActive(true);
 
-        highlightEffect.enabled = true;
-        highlightEffect.SetHighlighted(value);
+            Transform highlight = highlightsMarker.GetChild(i).GetChild(0);
+            highlight.gameObject.SetActive(true);
 
-        highlightEffect.Refresh();
-        highlightEffect.highlighted = value;
-        highlightEffect._highlighted = value;
+            HighlightShelf(highlight, false, null);
+        }
     }
 }
