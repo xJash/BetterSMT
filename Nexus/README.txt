@@ -24,7 +24,6 @@ Customization & Configurations
 
 Building & Store Management
 - Delete buildings while the store is open.
-- Delete buildings that contain products.
 - Remove pillars within the store.
 - Spawn essential tools (broom, pricing gun, and DLC tablet) in your hand.
 - Disable collision on boxes with other boxes
