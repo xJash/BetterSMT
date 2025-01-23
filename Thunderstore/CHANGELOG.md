@@ -1,3 +1,7 @@
+## v1.9.7
+- Removed mod to delete shelves containing product due to it being added in base game
+- Fixed a bugged cuased by new update with deleting decorations
+
 ## v1.9.6
 - Added Third Person hotkey being disabled while typing
 - Revamped the entire highlighting system
