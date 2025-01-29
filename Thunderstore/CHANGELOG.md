@@ -1,3 +1,9 @@
+## v1.9.8
+- Removed remove pillar feature due to it being added to base game
+- Removed auto-2x price everything due to it being added to base game
+- Removed some config option's removed in previous versions I overlooked
+- Fixed building/deleting bug
+
 ## v1.9.7
 - Removed mod to delete shelves containing product due to it being added in base game
 - Fixed a bugged cuased by new update with deleting decorations

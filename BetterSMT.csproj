@@ -5,7 +5,7 @@
     <AssemblyName>BetterSMT</AssemblyName>
     <Product>BetterSMT</Product>
     <Description>BetterSMT</Description>
-    <Version>1.9.7</Version>
+    <Version>1.9.8</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -52,4 +52,6 @@
         <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\UnityEngine.UI.dll</HintPath>
       </Reference>
     </ItemGroup>
+
+    <ProjectExtensions><VisualStudio><UserProperties thunderstore_4manifest_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

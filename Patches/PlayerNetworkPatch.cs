@@ -88,45 +88,11 @@ public class PlayerNetworkPatch {
         }
     }
 
-    public static void OptimizeProductPrices() {
-        if (BetterSMT.AutoAdjustPriceDaily.Value == true) {
-            GameObject[] products = ProductListing.Instance.productPrefabs;
-            ProductListing productListing = ProductListing.Instance;
-            List<float> basePriceList = [];
-
-            for (int i = 0; i < products.Length; i++) {
-                if (i < products.Length) {
-                    Data_Product product = products[i].GetComponent<Data_Product>();
-                    basePriceList.Add(product.basePricePerUnit);
-                }
-            }
-
-            float[] basePrices = [.. basePriceList];
-            float[] inflationMultiplier = productListing.tierInflation;
-            float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-            _ = new float[basePrices.Length];
-
-            for (int i = 0; i < basePrices.Length; i++) {
-                Data_Product productToUpdate = products[i].GetComponent<Data_Product>();
-                float calculatedPrice = basePrices[i] * inflationMultiplier[productToUpdate.productTier] * priceMultiplier;
-                float newPrice = Mathf.Floor(calculatedPrice * 100) / 100;
-                productListing.CmdUpdateProductPrice(i, newPrice);
-            }
-        }
-    }
-
     [HarmonyPatch("ChangeEquipment"), HarmonyPostfix]
     private static void ChangeEquipmentPatch(int newEquippedItem) {
         if (newEquippedItem == 0) {
             ClearHighlightedShelves();
         }
-    }
-
-    [HarmonyPatch(typeof(PlayerNetwork), nameof(PlayerNetwork.OnStartClient))]
-    [HarmonyPrefix]
-    private static bool OptimizePricesOnSpawn() {
-        OptimizeProductPrices();
-        return true;
     }
 
     private static readonly Dictionary<int, Transform> highlightObjectCache = [];

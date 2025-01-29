@@ -11,12 +11,6 @@ namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(GameData), "WorkingDayControl")]
 public class GameDataPatch {
-    [HarmonyPatch(typeof(GameData), nameof(GameData.ServerCalculateNewInflation))]
-    [HarmonyPostfix]
-    private static void OptimizePricesDaily() {
-        OptimizeProductPrices();
-    }
-
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void OnStartClientPatch() {
         ShowCounters();
@@ -39,31 +33,7 @@ public class GameDataPatch {
     private static void UserCode_CmdOpenSupermarketPatch(GameData __instance) {
         MaxCustomersNPCsPatch(__instance);
     }
-    public static void OptimizeProductPrices() {
-        if (BetterSMT.AutoAdjustPriceDaily.Value == true) {
-            GameObject[] products = ProductListing.Instance.productPrefabs;
-            ProductListing productListing = ProductListing.Instance;
-            System.Collections.Generic.List<float> basePriceList = [];
 
-            for (int i = 0; i < products.Length; i++) {
-                if (i < products.Length) {
-                    Data_Product product = products[i].GetComponent<Data_Product>();
-                    basePriceList.Add(product.basePricePerUnit);
-                }
-            }
-
-            float[] basePrices = [.. basePriceList];
-            float[] inflationMultiplier = productListing.tierInflation;
-            float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-
-            for (int i = 0; i < basePrices.Length; i++) {
-                Data_Product productToUpdate = products[i].GetComponent<Data_Product>();
-                float calculatedPrice = basePrices[i] * inflationMultiplier[productToUpdate.productTier] * priceMultiplier;
-                float newPrice = Mathf.Floor(calculatedPrice * 100) / 100;
-                productListing.CmdUpdateProductPrice(i, newPrice);
-            }
-        }
-    }
     private static void UpdateEscapeMenu() {
         GameObject EscapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
 
