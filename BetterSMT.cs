@@ -43,17 +43,13 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ShowPing;
     public static ConfigEntry<bool> DisableTrash;
     public static ConfigEntry<bool> AlwaysDeleteMode;
-    public static ConfigEntry<bool> DeleteProduct;
     public static ConfigEntry<bool> DeleteOnlyCheckout;
-    public static ConfigEntry<bool> AutoAdjustPriceDaily;
-    public static ConfigEntry<float> AutoAdjustPriceDailyValue;
     public static ConfigEntry<bool> DisableBoxCollision;
 
     // === Price Adjustments ===
     public static ConfigEntry<bool> roundDown;
     public static ConfigEntry<bool> NearestFive;
     public static ConfigEntry<bool> NearestTen;
-    public static ConfigEntry<bool> RemovePillars;
     public static bool doublePrice = true;
     public static ConfigEntry<bool> ToggleDoublePrice;
 
@@ -152,14 +148,6 @@ public class BetterSMT : BaseUnityPlugin {
             "Enable or disable highlighting",
             false,
             new ConfigDescription("Enables or disables highlighting of product and storage shelves when holding a box")
-        );
-
-        RemovePillars = Config.Bind(
-            "Utility",
-            "Removes Pillars & Beams",
-            false,
-            new ConfigDescription("Removes most of the pillars & beams from the main portion of the store. **Be warned** camera UI does glitch out when standing where " +
-                "a pillar would usually go. For an idea what this does, check this link: https://i.imgur.com/OBeBj5i.jpeg")
         );
 
         PricingGunToggle = Config.Bind(
@@ -335,22 +323,6 @@ public class BetterSMT : BaseUnityPlugin {
              new ConfigDescription("Causes every NPC to be a thief")
         );
 
-        AutoAdjustPriceDaily = base.Config.Bind(
-            "QoL",
-            "Auto Adjust Prices Daily",
-            false,
-             new ConfigDescription("Enables or disables automatically doubling the price of products daily")
-        );
-
-        AutoAdjustPriceDailyValue = base.Config.Bind(
-            "QoL",
-            "Adjust the amount prices are automatically set to every day",
-            2f,
-            new ConfigDescription("Adjusts the amount prices are set to be multiplied by daily. Value of 2x is 2$ * 2 = 4$. Value of 1.99x is 2$*1.99=3.98",
-                new AcceptableValueRange<float>(1f, 2f)
-            )
-        );
-
         SelfCheckoutTheft = base.Config.Bind(
             "Self-Checkout",
             "Self-Checkout Theft",
@@ -440,13 +412,6 @@ public class BetterSMT : BaseUnityPlugin {
             "Always access to delete",
             false,
              new ConfigDescription("Delete shelves and others while customers are in store and store is open")
-        );
-
-        DeleteProduct = base.Config.Bind(
-            "Building",
-            "Delete shelves with product",
-            false,
-             new ConfigDescription("***WARNING*** THIS WILL ALLOW YOU TO DELETE SHELVES WITH PRODUCT. THIS WILL NOT REFUND MONEY.")
         );
 
         OneHitThief = base.Config.Bind(
