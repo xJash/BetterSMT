@@ -2,7 +2,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
-using System.Net.Http;
+using HutongGames;
 using TMPro;
 using UnityEngine;
 
@@ -52,6 +52,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> NearestTen;
     public static bool doublePrice = true;
     public static ConfigEntry<bool> ToggleDoublePrice;
+    public static ConfigEntry<bool> AutoAdjustPriceDaily;
+    public static ConfigEntry<float> AutoAdjustPriceDailyValue;
 
     // === Random Shit ===
     public static ConfigEntry<bool> Highlighting;
@@ -81,8 +83,56 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> MaxBoxSize;
     public static ConfigEntry<bool> BoxCollision;
     public static ConfigEntry<bool> FastBoxSpawns;
-
+    public static ConfigEntry<float> ClockSpeed;
+    public static ConfigEntry<KeyboardShortcut> ClockHotkey;
+    public static ConfigEntry<bool> ClockToggle;
+    public static ConfigEntry<bool> ClockMorning;
     private void Awake() {
+
+        AutoAdjustPriceDaily = base.Config.Bind(
+            "QoL",
+            "Auto Adjust Prices Daily",
+            false,
+             new ConfigDescription("Enables or disables automatically doubling the price of products daily")
+        );
+        AutoAdjustPriceDailyValue = base.Config.Bind(
+            "QoL",
+            "Adjust the amount prices are automatically set to every day",
+            2f,
+            new ConfigDescription("Adjusts the amount prices are set to be multiplied by daily. Value of 2x is 2$ * 2 = 4$. Value of 1.99x is 2$*1.99=3.98",
+                new AcceptableValueRange<float>(1f, 2f)
+            )
+        );
+
+        ClockMorning = Config.Bind(
+            "Clocks",
+            "Enables clock usage in morning",
+            false,
+            new ConfigDescription("Enables or disables using the clock in the morning")
+        );
+
+        ClockToggle = Config.Bind(
+            "Clocks",
+            "Enable hotkey for clock",
+            false,
+            new ConfigDescription("Enables or disabled hotkey activating clock.")
+        );
+
+        ClockHotkey = Config.Bind(
+            "Clocks",
+            "Toggle Clock",
+            new KeyboardShortcut(KeyCode.Z),
+            new ConfigDescription("Hotkey to enable/disable the clock")
+        );
+
+        ClockSpeed = base.Config.Bind(
+            "Clocks",
+            "Clock Speed",
+            5f,
+            new ConfigDescription("Adjust the amount of speed enabling the clock gives",
+                new AcceptableValueRange<float>(1f, 10f)
+            )
+        );
 
         DeleteOnlyCheckout = Config.Bind(
             "Building",

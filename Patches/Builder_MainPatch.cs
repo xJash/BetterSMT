@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using HighlightPlus;
 using Mirror;
-using UnityEngine;
 using System.Reflection;
+using UnityEngine;
 
 namespace BetterSMT.Patches;
 
@@ -16,15 +16,15 @@ public class Builder_MainPatch {
 
     public static bool DeleteWheneverPatch(Builder_Main __instance) {
         // Handle movable objects
-        HandleMovableObjects(__instance);
+        _ = HandleMovableObjects(__instance);
 
         // Handle decorations
-        HandleDecorations(__instance);
+        _ = HandleDecorations(__instance);
 
-        return true;
+        return false;
     }
 
-    private static void HandleMovableObjects(Builder_Main __instance) {
+    private static bool HandleMovableObjects(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 4f, __instance.lMask)) {
             if (hitInfo.transform.gameObject.CompareTag("Movable")) {
                 if (__instance.oldHitOBJ2 != null && hitInfo.transform.gameObject != __instance.oldHitOBJ2 && __instance.hEffect2 != null) {
@@ -42,18 +42,18 @@ public class Builder_MainPatch {
                     if (!BetterSMT.AlwaysDeleteMode.Value) {
                         if (GameData.Instance.isSupermarketOpen) {
                             GameCanvas.Instance.CreateCanvasNotification("message15");
-                            return;
+                            return false;
                         }
 
                         if (NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount > 0) {
                             GameCanvas.Instance.CreateCanvasNotification("message16");
-                            return;
+                            return false;
                         }
                     }
 
                     if (__instance.FurnitureContainsProduct(hitInfo.transform) && !__instance.MainPlayer.GetButton("Drop Item")) {
                         GameCanvas.Instance.CreateCanvasNotification("message17a");
-                        return;
+                        return false;
                     }
 
                     if (hitInfo.transform.GetComponent<Data_Container>() != null) {
@@ -61,7 +61,7 @@ public class Builder_MainPatch {
                         if (!BetterSMT.DeleteOnlyCheckout.Value) {
                             if ((containerID == 6 || containerID == 7) && GameData.Instance.GetComponent<NetworkSpawner>().levelPropsOBJ.transform.GetChild(2).transform.childCount == 1) {
                                 GameCanvas.Instance.CreateCanvasNotification("checkoutwarning");
-                                return;
+                                return false;
                             }
                         }
                     }
@@ -76,7 +76,7 @@ public class Builder_MainPatch {
                                     BindingFlags.NonPublic | BindingFlags.Instance
                                 );
                                 if (calculateShelfProductCostMethod != null) {
-                                    num += (float)calculateShelfProductCostMethod.Invoke(__instance, new object[] { hitInfo.transform });
+                                    num += (float)calculateShelfProductCostMethod.Invoke(__instance, [hitInfo.transform]);
                                 }
                             } catch (System.Exception ex) {
                                 Debug.LogError($"Reflection error: {ex.Message}");
@@ -89,22 +89,25 @@ public class Builder_MainPatch {
                 }
 
                 __instance.oldHitOBJ2 = hitInfo.transform.gameObject;
+                return true;
             } else if (__instance.hEffect2 != null) {
                 __instance.hEffect2.highlighted = false;
             }
         } else if (__instance.hEffect2 != null) {
             __instance.hEffect2.highlighted = false;
         }
+
+        return false;
     }
 
-    private static void HandleDecorations(Builder_Main __instance) {
+    private static bool HandleDecorations(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo2, 4f, __instance.lMask)) {
             if (hitInfo2.transform.gameObject.CompareTag("Decoration")) {
                 if (__instance.oldHitOBJ != null && hitInfo2.transform.gameObject != __instance.oldHitOBJ && __instance.hEffect != null) {
                     __instance.hEffect.enabled = false;
                 }
 
-                var highlightEffect = hitInfo2.transform.Find("Mesh")?.GetComponent<HighlightEffect>();
+                HighlightEffect highlightEffect = hitInfo2.transform.Find("Mesh")?.GetComponent<HighlightEffect>();
                 if (highlightEffect != null) {
                     __instance.hEffect = highlightEffect;
                     __instance.hEffect.enabled = true;
@@ -119,11 +122,14 @@ public class Builder_MainPatch {
                 }
 
                 __instance.oldHitOBJ = hitInfo2.transform.gameObject;
+                return true;
             } else if (__instance.hEffect != null) {
                 __instance.hEffect.enabled = false;
             }
         } else if (__instance.hEffect != null) {
             __instance.hEffect.enabled = false;
         }
+
+        return false;
     }
 }
