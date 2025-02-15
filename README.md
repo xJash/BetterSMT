@@ -37,11 +37,15 @@ Pricing & Checkout
 - - Toggle with Q (configurable in the config file).
 - - Left Ctrl + Q: Switch between 0.05 and 0.10 rounding.
 - - Left Ctrl + Left Shift + Q: Toggle rounding on/off.
+- Automatically set the prices of every product
 
 Miscellaneous
 - Save game button in the pause menu:
 - - Saves stock, structures, and reorganization, but not in- day progress.
 - Ability to change employee income increases per perk.
+- Clock Control via Hotkey
+- Control Clock Speed
+- Activate Clock whenever
 
 Credits
 - Ika [Helped with Transpiling]

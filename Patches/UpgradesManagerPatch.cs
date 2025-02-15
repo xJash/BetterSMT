@@ -1,10 +1,20 @@
 ﻿using HarmonyLib;
+using System.Reflection;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(UpgradesManager))]
 public class UpgradesManagerPatch {
+    [HarmonyPatch(typeof(UpgradesManager))]
+    [HarmonyPatch("OnStartClient")]
+    public class ClockSpeedPatch {
+        [HarmonyPostfix]
+        public static void Postfix(UpgradesManager __instance) {
+            FieldInfo field = typeof(UpgradesManager).GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance);
+            field?.SetValue(__instance, BetterSMT.ClockSpeed.Value);
+        }
+    }
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {

@@ -1,3 +1,9 @@
+## v1.9.9
+- Fixed a bug within deletion of structures
+- Re-aded auto-2x price
+- Added hotkey for clock activation
+- Clock is now throughout the full day
+
 ## v1.9.8
 - Removed remove pillar feature due to it being added to base game
 - Removed auto-2x price everything due to it being added to base game

@@ -11,7 +11,7 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(PlayerNetwork))]
 public class PlayerNetworkPatch {
     private static PlayerNetwork pNetwork = null;
-
+    private static UpgradesManager upgradesManager;
     public enum ShelfType {
         ProductDisplay,
         Storage
@@ -66,6 +66,23 @@ public class PlayerNetworkPatch {
             if (BetterSMT.PhoneToggle.Value == true) {
                 if (BetterSMT.PhoneHotkey.Value.IsDown()) {
                     __instance.CmdChangeEquippedItem(6);
+                }
+            }
+
+            if (BetterSMT.ClockToggle.Value == true) {
+                if (BetterSMT.ClockHotkey.Value.IsDown()) {
+                    if (upgradesManager == null) {
+                        TimeAccelerationWatcher watcher = UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>();
+                        if (watcher != null) {
+                            upgradesManager = watcher.GetComponent<UpgradesManager>();
+                        }
+                    }
+
+                    if (upgradesManager != null) {
+                        bool newState = !upgradesManager.NetworkacceleratedTime;
+                        upgradesManager.NetworkacceleratedTime = newState;
+                        upgradesManager.RpcTimeAcceleration(newState);
+                    }
                 }
             }
         }
