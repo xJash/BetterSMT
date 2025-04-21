@@ -150,6 +150,9 @@ public class PlayerNetworkPatch {
     [HarmonyPatch(typeof(NetworkSpawner), "UserCode_CmdSpawn__Int32__Vector3__Vector3")]
     [HarmonyPostfix]
     private static void NewBuildableConstructed(NetworkSpawner __instance, int prefabID) {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
+
         GameObject buildable = __instance.buildables[prefabID];
 
         if (buildable.name.Contains("StorageShelf")) {
@@ -162,6 +165,9 @@ public class PlayerNetworkPatch {
     }
 
     public static int GetProductFromRaycast() {
+        if (BetterSMT.Highlighting.Value == false)
+            return -1;
+
         int productID = -1;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo3, 4f, pNetwork.interactableMask)) {
             if (hitInfo3.transform.gameObject.name == "SubContainer") {
@@ -199,11 +205,15 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelvesByProduct(int productID) {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
         HighlightShelfTypeByProduct(productID, Color.yellow, ShelfType.ProductDisplay);
         HighlightShelfTypeByProduct(productID, Color.red, ShelfType.Storage);
     }
 
     public static void ClearHighlightedShelves() {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
         if (IsHighlightCacheUsed) {
             foreach (KeyValuePair<int, Transform> item in highlightObjectCache) {
                 HighlightShelf(item.Value, false);
@@ -220,6 +230,8 @@ public class PlayerNetworkPatch {
     }
 
     private static void HighlightShelfTypeByProduct(int productID, Color shelfHighlightColor, ShelfType shelfType) {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
         GameObject shelvesObject = GameObject.Find(GetGameObjectStringPath(shelfType));
 
         for (int i = 0; i < shelvesObject.transform.childCount; i++) {
@@ -256,6 +268,8 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelf(Transform t, bool isEnableHighlight, Color? color = null) {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
         HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
 
         if (IsHighlightCacheUsed) {
@@ -312,6 +326,8 @@ public class PlayerNetworkPatch {
 
 
     public static void AddHighlightMarkersToStorage(Transform storage) {
+        if (BetterSMT.Highlighting.Value == false)
+            return;
         ShelfData shelfData = new(ShelfType.Storage);
 
         Transform highlightsMarker = storage.transform.Find(shelfData.highlightsName);
