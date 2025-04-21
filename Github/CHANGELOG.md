@@ -1,3 +1,14 @@
+## v2.0.0
+- Reworked too expensive and missing product notifications
+- Added auto-saving
+- Added options to change customer cart size, and customer spawn amounts
+- Fixed box size multiplier applying repeatedly between save loads
+- Adjusted how box size multiplier works to future-proof it for new products (aswell as custom products added vid other mods)
+- Fixed highlighting not disabling when disabled
+- Added option to change the limit of how many sales you can run per perk unlocked
+- Added option to automatically have invoices paid for
+- Adding hotkey's to spawn a Sledgehammer, Os Mart 2.0 Tablet, Tray, and Sales Tablet into your hands
+
 ## v1.9.9
 - Fixed a bug within deletion of structures
 - Re-aded auto-2x price

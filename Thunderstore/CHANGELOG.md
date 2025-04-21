@@ -1,9 +1,13 @@
 ## v2.0.0
-- Revamped "Too Expensive" and "Missing Product" notifications
-- Changed how 3rd person view works
-- Added in max amount of customers per day and in store at one time modifiers
-- Added in max amount of product one customer buys modifier
-- Revamped minimum/maximum values for multiple options
+- Reworked too expensive and missing product notifications
+- Added auto-saving
+- Added options to change customer cart size, and customer spawn amounts
+- Fixed box size multiplier applying repeatedly between save loads
+- Adjusted how box size multiplier works to future-proof it for new products (aswell as custom products added vid other mods)
+- Fixed highlighting not disabling when disabled
+- Added option to change the limit of how many sales you can run per perk unlocked
+- Added option to automatically have invoices paid for
+- Adding hotkey's to spawn a Sledgehammer, Os Mart 2.0 Tablet, Tray, and Sales Tablet into your hands
 
 ## v1.9.9
 - Fixed a bug within deletion of structures
