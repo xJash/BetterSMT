@@ -14,8 +14,6 @@ public class RemoveBoxSpawnTimePatch
     {
         return BetterSMT.FastBoxSpawns.Value ?
             new CodeMatcher(instructions)
-
-                // Replace new WaitForSeconds(x) with new WaitForSeconds(0.01f)
                 .Start()
                 .MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)])))
                 .Repeat(matcher => {
