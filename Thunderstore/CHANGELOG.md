@@ -1,3 +1,10 @@
+## v2.0.0
+- Revamped "Too Expensive" and "Missing Product" notifications
+- Changed how 3rd person view works
+- Added in max amount of customers per day and in store at one time modifiers
+- Added in max amount of product one customer buys modifier
+- Revamped minimum/maximum values for multiple options
+
 ## v1.9.9
 - Fixed a bug within deletion of structures
 - Re-aded auto-2x price

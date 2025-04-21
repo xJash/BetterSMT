@@ -15,12 +15,8 @@ public class Builder_MainPatch {
     }
 
     public static bool DeleteWheneverPatch(Builder_Main __instance) {
-        // Handle movable objects
         _ = HandleMovableObjects(__instance);
-
-        // Handle decorations
         _ = HandleDecorations(__instance);
-
         return false;
     }
 

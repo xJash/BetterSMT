@@ -2,7 +2,6 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
-using HutongGames;
 using TMPro;
 using UnityEngine;
 
@@ -15,8 +14,17 @@ public class BetterSMT : BaseUnityPlugin {
     public static BetterSMT Instance;
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
+    // === Auto Save === 
+    public static ConfigEntry<bool> AutoSaveEnabled;
+    public static ConfigEntry<int> AutoSaveTimer;
+    public static ConfigEntry<bool> AutoSaveDuringDay;
+
     // === Employee-related settings ===
     public static ConfigEntry<int> CustomersPerPerk;
+    public static ConfigEntry<int> MaxCustomerInStore;
+    public static ConfigEntry<int> BaseCustomerSpawns;
+    public static ConfigEntry<int> BaseCustomerCart;
+    public static ConfigEntry<int> MaxCustomerCart;
     public static ConfigEntry<int> EmployeesLevel;
     public static ConfigEntry<bool> EmployeesEnabled;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
@@ -89,6 +97,29 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockMorning;
     private void Awake() {
 
+        AutoSaveEnabled = base.Config.Bind(
+            "Auto Saving",
+            "Enables Auto Saving",
+            false,
+             new ConfigDescription("Enables or disables automatic saving")
+        );
+
+        AutoSaveTimer = base.Config.Bind(
+            "Auto Saving",
+            "Amount of time between saves",
+            120,
+            new ConfigDescription("Adjusts the amount of time between auto saves in seconds, default is 120seconds or 2minutes",
+                new AcceptableValueRange<int>(30, 900)
+            )
+        );
+
+        AutoSaveDuringDay = base.Config.Bind(
+            "Auto Saving",
+            "Enables Auto Saving during the day",
+            false,
+             new ConfigDescription("Enables or disables saving while the store is open, default only autosaves while closed")
+        );
+
         AutoAdjustPriceDaily = base.Config.Bind(
             "QoL",
             "Auto Adjust Prices Daily",
@@ -130,7 +161,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Clock Speed",
             5f,
             new ConfigDescription("Adjust the amount of speed enabling the clock gives",
-                new AcceptableValueRange<float>(1f, 10f)
+                new AcceptableValueRange<float>(1f, 15f)
             )
         );
 
@@ -310,7 +341,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employees Level",
             0,
             new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 11 sets them all to max)",
-                new AcceptableValueRange<int>(0, 11)
+                new AcceptableValueRange<int>(0, 30)
             )
         );
 
@@ -344,7 +375,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee Speed Per Perk",
             .2f,
             new ConfigDescription("Adjust the amount of speed employees gain per perk (Higher = faster)",
-                new AcceptableValueRange<float>(.2f, 3f)
+                new AcceptableValueRange<float>(.01f, .6f)
             )
         );
 
@@ -353,7 +384,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee Restock Time Reduction Per Perk",
             0.05f,
             new ConfigDescription("Adjust the amount of time it takes for employees to restock per perk (Lower = faster)",
-                new AcceptableValueRange<float>(0.01f, 0.1f)
+                new AcceptableValueRange<float>(0.01f, 0.15f)
             )
         );
 
@@ -362,7 +393,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Adjust the cost of Lights at the end of the day",
             10f,
             new ConfigDescription("Adjust the cost of lights at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 50f)
+                new AcceptableValueRange<float>(0.1f, 30f)
             )
         );
 
@@ -399,7 +430,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Adjust the cost of Employee at the end of the day",
             10f,
             new ConfigDescription("Adjust the cost of Employee at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 50f)
+                new AcceptableValueRange<float>(0.1f, 30f)
             )
         );
 
@@ -408,7 +439,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Adjust the cost of Rent at the end of the day",
             10f,
             new ConfigDescription("Adjust the cost of Rent at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 50f)
+                new AcceptableValueRange<float>(0.1f, 30f)
             )
         );
 
@@ -417,7 +448,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employe Increased Income While Checking Customer Out Perk",
             0.1f,
             new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more income)",
-                new AcceptableValueRange<float>(0f, 0.25f)
+                new AcceptableValueRange<float>(0f, 0.3f)
                 )
             );
 
@@ -426,7 +457,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee Checkout Time Reduction Perk 1",
             .15f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 1) (Lower = slower)",
-                new AcceptableValueRange<float>(0.01f, 0.25f)
+                new AcceptableValueRange<float>(0.01f, 0.45f)
             )
         );
 
@@ -435,7 +466,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee Checkout Time Reduction Perk 2",
             .2f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)",
-                new AcceptableValueRange<float>(0.01f, 0.25f)
+                new AcceptableValueRange<float>(0.01f, 0.6f)
             )
         );
 
@@ -444,7 +475,43 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee Checkout Time Reduction Perk 3",
             .15f,
             new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)",
-                new AcceptableValueRange<float>(0.01f, 0.25f)
+                new AcceptableValueRange<float>(0.01f, 0.45f)
+            )
+        );
+
+        MaxCustomerCart = base.Config.Bind(
+            "Customers",
+            "Maximum amount of product customers will buy",
+            25,
+            new ConfigDescription("Adjust the maximum amount of product customers will buy",
+                new AcceptableValueRange<int>(1, 75)
+            )
+        );
+
+        BaseCustomerCart = base.Config.Bind(
+            "Customers",
+            "Minimum amount of product customers will buy",
+            5,
+            new ConfigDescription("Adjust the minimum amount of product customers will buy",
+                new AcceptableValueRange<int>(1, 15)
+            )
+        );
+
+        BaseCustomerSpawns = base.Config.Bind(
+            "Customers",
+            "Minimum amount of customers that will spawn",
+            3,
+            new ConfigDescription("Adjust the minimum amount of customer's that can spawn",
+                new AcceptableValueRange<int>(1, 9)
+            )
+        );
+
+        MaxCustomerInStore = base.Config.Bind(
+            "Customers",
+            "Max amount of customers in store",
+            70,
+            new ConfigDescription("Adjust the amount of customers that can spawn at one time",
+                new AcceptableValueRange<int>(1, 210)
             )
         );
 
@@ -453,7 +520,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Extra Customers per perk",
             1,
             new ConfigDescription("Adjust the amount of customers you gain per perk (Higher number = more customers)",
-                new AcceptableValueRange<int>(1, 100)
+                new AcceptableValueRange<int>(1, 5)
             )
         );
 

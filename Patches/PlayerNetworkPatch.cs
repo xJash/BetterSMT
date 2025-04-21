@@ -2,6 +2,7 @@
 using HighlightPlus;
 using HutongGames.PlayMaker;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(PlayerNetwork))]
 public class PlayerNetworkPatch {
+    private static readonly Stopwatch stopwatch = new();
     private static PlayerNetwork pNetwork = null;
     private static UpgradesManager upgradesManager;
     public enum ShelfType {
@@ -37,7 +39,18 @@ public class PlayerNetworkPatch {
 
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance, ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP) {
+        if (GameData.Instance.isServer) {
+            if (!stopwatch.IsRunning)
+                stopwatch.Start();
 
+            if (stopwatch.Elapsed.TotalSeconds > BetterSMT.AutoSaveTimer.Value) {
+                stopwatch.Restart();
+
+                if (BetterSMT.AutoSaveDuringDay.Value || !GameData.Instance.NetworkisSupermarketOpen) {
+                    GameDataPatch.SaveGame();
+                }
+            }
+        }
         if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
             return;
         } else {
