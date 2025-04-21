@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Timers;
 
 namespace BetterSMT.Patches;
 
@@ -37,23 +38,54 @@ public class PlayerNetworkPatch {
         }
     }
 
+    [HarmonyPatch(typeof(PlayerNetwork), "UserCode_CmdChangeEquippedItem__Int32")]
+    public static class PatchEquippedItemChange {
+        [HarmonyPrefix]
+        public static void Prefix(int selectedItem) {
+            UnityEngine.Debug.Log(selectedItem);
+        }
+    }
+
+
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance, ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP) {
-        if (GameData.Instance.isServer) {
-            if (!stopwatch.IsRunning)
-                stopwatch.Start();
-
-            if (stopwatch.Elapsed.TotalSeconds > BetterSMT.AutoSaveTimer.Value) {
-                stopwatch.Restart();
-
-                if (BetterSMT.AutoSaveDuringDay.Value || !GameData.Instance.NetworkisSupermarketOpen) {
-                    GameDataPatch.SaveGame();
+        if (BetterSMT.AutoSaveEnabled.Value == true) {
+            if (GameData.Instance.isServer) {
+                if (!stopwatch.IsRunning)
+                    stopwatch.Start();
+                if (stopwatch.Elapsed.TotalSeconds > BetterSMT.AutoSaveTimer.Value) {
+                    stopwatch.Restart();
+                    if (BetterSMT.AutoSaveDuringDay.Value || !GameData.Instance.NetworkisSupermarketOpen) {
+                        UnityEngine.Debug.Log("saved");
+                        GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
+                    }
                 }
             }
         }
+
         if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
             return;
         } else {
+            if (BetterSMT.SledgeToggle.Value == true) {
+                if (BetterSMT.SledgeHotkey.Value.IsDown()) {
+                    __instance.CmdChangeEquippedItem(7);
+                }
+            }
+            if (BetterSMT.OsMartToggle.Value == true) {
+                if (BetterSMT.OsMartHotkey.Value.IsDown()) {
+                    __instance.CmdChangeEquippedItem(6);
+                }
+            }
+            if (BetterSMT.TrayToggle.Value == true) {
+                if (BetterSMT.TrayHotkey.Value.IsDown()) {
+                    __instance.CmdChangeEquippedItem(9);
+                }
+            }
+            if (BetterSMT.SalesToggle.Value == true) {
+                if (BetterSMT.SalesHotkey.Value.IsDown()) {
+                    __instance.CmdChangeEquippedItem(10);
+                }
+            }
             if (BetterSMT.PricingGunToggle.Value == true) {
                 if (BetterSMT.PricingGunHotkey.Value.IsDown()) {
                     __instance.CmdChangeEquippedItem(2);
@@ -64,21 +96,14 @@ public class PlayerNetworkPatch {
                     __instance.CmdChangeEquippedItem(5);
                 }
             }
-
             if (BetterSMT.DLCTabletToggle.Value == true) {
                 if (BetterSMT.DLCTabletHotkey.Value.IsDown()) {
                     __instance.CmdChangeEquippedItem(3);
                 }
             }
-
-            if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true) {
+            if (BetterSMT.PricingGunToggle.Value == true || BetterSMT.BroomToggle.Value == true || BetterSMT.DLCTabletToggle.Value == true || BetterSMT.SledgeToggle.Value == true || BetterSMT.OsMartToggle.Value == true || BetterSMT.TrayToggle.Value == true || BetterSMT.SalesToggle.Value == true) {
                 if (BetterSMT.EmptyHandsHotkey.Value.IsDown()) {
                     __instance.CmdChangeEquippedItem(0);
-                }
-            }
-            if (BetterSMT.PhoneToggle.Value == true) {
-                if (BetterSMT.PhoneHotkey.Value.IsDown()) {
-                    __instance.CmdChangeEquippedItem(6);
                 }
             }
 

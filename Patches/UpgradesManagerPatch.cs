@@ -72,6 +72,15 @@ public class UpgradesManagerPatch {
             case 25:
                 NPC_Manager.Instance.selfcheckoutExtraProductsFromPerk += BetterSMT.SelfCheckoutLimit.Value;
                 break;
+            case 35:
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                break;
+            case 36:
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                break;
+            case 37:
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                break;
             default:
                 return true;
         }
