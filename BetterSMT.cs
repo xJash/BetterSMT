@@ -14,6 +14,11 @@ public class BetterSMT : BaseUnityPlugin {
     public static BetterSMT Instance;
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
+    // == Debt ===
+    public static ConfigEntry<bool> AutoPayInvoices;
+    // === Sales ===
+    public static ConfigEntry<int> SalesAmount;
+
     // === Auto Save === 
     public static ConfigEntry<bool> AutoSaveEnabled;
     public static ConfigEntry<int> AutoSaveTimer;
@@ -79,8 +84,14 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<KeyboardShortcut> DLCTabletHotkey;
     public static ConfigEntry<bool> DLCTabletToggle;
     public static ConfigEntry<KeyboardShortcut> EmptyHandsHotkey;
-    public static ConfigEntry<KeyboardShortcut> PhoneHotkey;
-    public static ConfigEntry<bool> PhoneToggle;
+    public static ConfigEntry<bool> SledgeToggle;
+    public static ConfigEntry<KeyboardShortcut> SledgeHotkey;
+    public static ConfigEntry<bool> OsMartToggle;
+    public static ConfigEntry<KeyboardShortcut> OsMartHotkey;
+    public static ConfigEntry<bool> TrayToggle;
+    public static ConfigEntry<KeyboardShortcut> TrayHotkey;
+    public static ConfigEntry<bool> SalesToggle;
+    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
 
     // === Notification & Miscellaneous ===
     public static bool notify = false;
@@ -96,6 +107,72 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
     public static ConfigEntry<bool> ClockMorning;
     private void Awake() {
+
+        SledgeHotkey = Config.Bind(
+            "Utility",
+            "Sledgehammer Hotkey",
+            new KeyboardShortcut(KeyCode.J),
+            new ConfigDescription("Hotkey to spawn a Sledgehammer in your hands.")
+        );
+        SledgeToggle = Config.Bind(
+            "Utility",
+            "Sledgehammer Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Sledgehammer")
+        );
+
+        OsMartHotkey = Config.Bind(
+            "Utility",
+            "Os Mart 2.0 Tablet Hotkey",
+            new KeyboardShortcut(KeyCode.H),
+            new ConfigDescription("Hotkey to spawn a Os Mart 2.0 Tablet in your hands.")
+        );
+
+        OsMartToggle = Config.Bind(
+            "Utility",
+            "Os Mart 2.0 Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Os Mart 2.0")
+        );
+        TrayHotkey = Config.Bind(
+            "Utility",
+            "Tray Hotkey",
+            new KeyboardShortcut(KeyCode.K),
+            new ConfigDescription("Hotkey to spawn a Tray in your hands.")
+        ); 
+        TrayToggle = Config.Bind(
+            "Utility",
+            "Tray Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Tray")
+        );
+        SalesHotkey = Config.Bind(
+            "Utility",
+            "Sales Tablet Hotkey",
+            new KeyboardShortcut(KeyCode.L),
+            new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands.")
+        );
+        SalesToggle = Config.Bind(
+            "Utility",
+            "Sales Tablet Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Sales Tablet")
+        );
+        AutoPayInvoices = base.Config.Bind(
+            "Utility",
+            "Enables or disables automatic invoice payment",
+            false,
+             new ConfigDescription("Enables or disables paying for invoices automatically")
+        );
+
+        SalesAmount = base.Config.Bind(
+            "Sales",
+            "Amount of sales unlocked each perk",
+            2,
+            new ConfigDescription("Adjusts the amount of sales you unlock for each perk",
+                new AcceptableValueRange<int>(1, 100)
+            )
+        );
 
         AutoSaveEnabled = base.Config.Bind(
             "Auto Saving",
@@ -152,7 +229,7 @@ public class BetterSMT : BaseUnityPlugin {
         ClockHotkey = Config.Bind(
             "Clocks",
             "Toggle Clock",
-            new KeyboardShortcut(KeyCode.Z),
+            new KeyboardShortcut(KeyCode.O),
             new ConfigDescription("Hotkey to enable/disable the clock")
         );
 
@@ -259,13 +336,6 @@ public class BetterSMT : BaseUnityPlugin {
             new ConfigDescription("Hotkey to spawn a Broom in your hands.")
         );
 
-        PhoneToggle = Config.Bind(
-            "Utility",
-            "Ordering Phone TOggle",
-            false,
-            new ConfigDescription("Enables the hotkey to activate Ordering Phone")
-        );
-
         DLCTabletToggle = Config.Bind(
             "Utility",
             "DLC Tablet Toggle",
@@ -278,13 +348,6 @@ public class BetterSMT : BaseUnityPlugin {
             "DLC Tablet Hotkey",
             new KeyboardShortcut(KeyCode.I),
             new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands.")
-        );
-
-        PhoneHotkey = Config.Bind(
-            "Utility",
-            "Ordering Phone Hotkey",
-            new KeyboardShortcut(KeyCode.H),
-            new ConfigDescription("Hotkey to spawn a Ordering Phone in your hands.")
         );
 
         EmptyHandsHotkey = Config.Bind(
