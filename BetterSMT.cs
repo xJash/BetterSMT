@@ -16,6 +16,7 @@ public class BetterSMT : BaseUnityPlugin {
 
     // == Debt ===
     public static ConfigEntry<bool> AutoPayInvoices;
+
     // === Sales ===
     public static ConfigEntry<int> SalesAmount;
 
@@ -58,6 +59,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> AlwaysDeleteMode;
     public static ConfigEntry<bool> DeleteOnlyCheckout;
     public static ConfigEntry<bool> DisableBoxCollision;
+    public static ConfigEntry<bool> AllRecyclers;
 
     // === Price Adjustments ===
     public static ConfigEntry<bool> roundDown;
@@ -72,6 +74,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> Highlighting;
     public static ConfigEntry<bool> ThirdPersonToggle;
     public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
+    public static ConfigEntry<bool> EnablePalletDisplays;
 
     // === Hotkeys ===
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
@@ -107,6 +110,21 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
     public static ConfigEntry<bool> ClockMorning;
     private void Awake() {
+
+        EnablePalletDisplays = Config.Bind(
+            "QoL",
+            "Enable pallet displays",
+            false,
+            new ConfigDescription("Enables pallet displays without unlocking the perk.")
+        );
+
+
+        AllRecyclers = Config.Bind(
+            "QoL",
+            "All Recyclers",
+            false,
+            new ConfigDescription("Turns the nearest trash can into a recycler without the perk.")
+        );
 
         SledgeHotkey = Config.Bind(
             "Utility",

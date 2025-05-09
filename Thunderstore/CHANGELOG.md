@@ -1,3 +1,9 @@
+## v2.0.1
+- Updated internal localization
+- Added new products to too expensive/missing product notifications
+- Added option to unlock Pallet Displays without the perk
+- Added option to turn nearest Trash Bin into a Recycler without the perk 
+
 ## v2.0.0
 - Reworked too expensive and missing product notifications
 - Added auto-saving
@@ -9,7 +15,8 @@
 - Added option to automatically have invoices paid for
 - Adding hotkey's to spawn a Sledgehammer, Os Mart 2.0 Tablet, Tray, and Sales Tablet into your hands
 
-## v1.9.9
+## 1.9.9
+
 - Fixed a bug within deletion of structures
 - Re-aded auto-2x price
 - Added hotkey for clock activation

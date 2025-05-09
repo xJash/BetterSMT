@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
+using System.Collections;
 
 namespace BetterSMT.Patches;
 
@@ -13,14 +14,37 @@ public class UpgradesManagerPatch {
         public static void Postfix(UpgradesManager __instance) {
             FieldInfo field = typeof(UpgradesManager).GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance);
             field?.SetValue(__instance, BetterSMT.ClockSpeed.Value);
+
+            if (BetterSMT.AllRecyclers.Value == true) {
+                __instance.normalTrashContainerOBJ.SetActive(false);
+                __instance.recycleContainerOBJ.SetActive(true);
+                NPC_Manager.Instance.closestRecyclePerk = true;
+            }
+
+            if (BetterSMT.EnablePalletDisplays.Value == true) {
+                __instance.StartCoroutine(ForceEnablePalletDisplays(__instance));
+            }
         }
+
+        private static IEnumerator ForceEnablePalletDisplays(UpgradesManager __instance) {
+            yield return new WaitForSeconds(1f);
+            for (int i = 0; i < __instance.UIpalletsOBJsArray.Length; i++) {
+                GameObject obj = __instance.UIpalletsOBJsArray[i];
+                obj.transform.SetParent(__instance.UIBuildablesParentOBJ.transform);
+                obj.transform.SetSiblingIndex(__instance.UIBuildablesParentOBJ.transform.childCount - 2);
+                obj.SetActive(value: true);
+                yield return null;
+            }
+            while (!GameCanvas.Instance) {
+                yield return null;
+            }
+            GameCanvas.Instance.GetComponent<Builder_Main>().ReassignBuildablesData();
+        }
+
     }
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
-        if (__instance == null) {
-            Debug.LogError("UpgradesManager instance is null in ManageExtraPerksPatch.");
-        }
         switch (perkIndex) {
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
