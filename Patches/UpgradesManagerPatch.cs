@@ -48,6 +48,7 @@ public class UpgradesManagerPatch {
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
+        #region Switch- Perks
         switch (perkIndex) {
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
@@ -110,6 +111,7 @@ public class UpgradesManagerPatch {
                 break;
             default:
                 return true;
+                #endregion
         }
 
         GameObject obj = __instance.UIPerksParent.transform.GetChild(perkIndex).gameObject;

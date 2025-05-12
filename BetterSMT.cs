@@ -13,7 +13,7 @@ public class BetterSMT : BaseUnityPlugin {
 
     public static BetterSMT Instance;
     internal static new ManualLogSource Logger { get; private set; } = null!;
-
+#region Config Variables
     // === !Debt! ===
     public static ConfigEntry<bool> AutoPayAllInvoices;
 
@@ -114,8 +114,10 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> FastBoxSpawns;
     public static ConfigEntry<float> ClockSpeed;
     public static ConfigEntry<bool> ClockMorning;
+#endregion
 
     private void Awake() {
+#region Config Definitions
         // === !Debt! ===
         AutoPayAllInvoices = base.Config.Bind(
             "Debt",
@@ -626,6 +628,7 @@ public class BetterSMT : BaseUnityPlugin {
                 new AcceptableValueRange<int>(1, 25)
             )
         );
+#endregion
 
         Instance = this;
         Logger = base.Logger;
