@@ -1,3 +1,9 @@
+## v2.1.0
+- Added option to change comma's into period's
+- Added option to replace default currency symbol $ with anything
+- Made drastic code improvements
+- Drastically reorganized and revamped the configuration file
+
 ## v2.0.1
 - Updated internal localization
 - Added new products to too expensive/missing product notifications

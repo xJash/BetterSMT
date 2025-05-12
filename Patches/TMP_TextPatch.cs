@@ -4,7 +4,7 @@ using TMPro;
 namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(TMP_Text), "text", MethodType.Setter)]
     public static class TMPTextPatch {
-        static void Prefix(ref string value) {
+        private static void Prefix(ref string value) {
             if (BetterSMT.ReplaceCommasWithPeriods.Value && !string.IsNullOrEmpty(value)) {
                 value = value.Replace(',', '.');
             }
