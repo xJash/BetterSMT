@@ -35,7 +35,7 @@ public class Builder_MainPatch {
                 }
 
                 if (__instance.MainPlayer.GetButtonDown("Build") || __instance.MainPlayer.GetButtonDown("Main Action") || __instance.MainPlayer.GetButtonDown("Secondary Action")) {
-                    if (!BetterSMT.AlwaysDeleteMode.Value) {
+                    if (!BetterSMT.AlwaysAbleToDeleteMode.Value) {
                         if (GameData.Instance.isSupermarketOpen) {
                             GameCanvas.Instance.CreateCanvasNotification("message15");
                             return false;
@@ -54,7 +54,7 @@ public class Builder_MainPatch {
 
                     if (hitInfo.transform.GetComponent<Data_Container>() != null) {
                         int containerID = hitInfo.transform.GetComponent<Data_Container>().containerID;
-                        if (!BetterSMT.DeleteOnlyCheckout.Value) {
+                        if (!BetterSMT.DeleteAllCheckouts.Value) {
                             if ((containerID == 6 || containerID == 7) && GameData.Instance.GetComponent<NetworkSpawner>().levelPropsOBJ.transform.GetChild(2).transform.childCount == 1) {
                                 GameCanvas.Instance.CreateCanvasNotification("checkoutwarning");
                                 return false;

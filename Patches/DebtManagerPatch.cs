@@ -2,13 +2,9 @@
 
 namespace BetterSMT.Patches;
 
-[HarmonyPatch(typeof(DebtManager))]
+[HarmonyPatch(typeof(DebtManager), "OnStartClient")]
 public static class DebtManagerPatch {
-    [HarmonyPostfix]
-    [HarmonyPatch("OnStartClient")]
-    private static void EnableAutoPay(DebtManager __instance) {
-        if (BetterSMT.AutoPayInvoices.Value == true) {
-            __instance.autopayInvoices = true;
-        }
+    static void Postfix(DebtManager __instance) {
+        __instance.autopayInvoices = BetterSMT.AutoPayAllInvoices?.Value ?? false;
     }
 }
