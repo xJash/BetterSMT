@@ -2,11 +2,10 @@
 using HighlightPlus;
 using HutongGames.PlayMaker;
 using System;
-using System.Diagnostics;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
-using System.Timers;
 
 namespace BetterSMT.Patches;
 
@@ -49,19 +48,22 @@ public class PlayerNetworkPatch {
     }
 
     private static void HandleAutoSave() {
-        if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer)
+        if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
             return;
+        }
 
-        if (!stopwatch.IsRunning)
+        if (!stopwatch.IsRunning) {
             stopwatch.Start();
+        }
 
-        if (stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value)
+        if (stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) {
             return;
+        }
 
         stopwatch.Restart();
 
         if (BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) {
-            GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
+            _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
         }
     }
 
@@ -73,7 +75,7 @@ public class PlayerNetworkPatch {
             return;
         } else {
             bool usedTool = false;
-            var toolHotkeys = new[] {
+            (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = new[] {
                 (BetterSMT.SledgeToggle?.Value,      BetterSMT.SledgeHotkey?.Value,      7),
                 (BetterSMT.OsMartToggle?.Value,      BetterSMT.OsMartHotkey?.Value,      6),
                 (BetterSMT.TrayToggle?.Value,        BetterSMT.TrayHotkey?.Value,        9),
@@ -84,7 +86,7 @@ public class PlayerNetworkPatch {
                 (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
             };
 
-            foreach (var (toggle, hotkey, itemId) in toolHotkeys) {
+            foreach ((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
                 if (toggle == true && hotkey?.IsDown() == true) {
                     __instance.CmdChangeEquippedItem(itemId);
                     usedTool = true;
@@ -158,8 +160,9 @@ public class PlayerNetworkPatch {
     [HarmonyPatch(typeof(NetworkSpawner), "UserCode_CmdSpawn__Int32__Vector3__Vector3")]
     [HarmonyPostfix]
     private static void NewBuildableConstructed(NetworkSpawner __instance, int prefabID) {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
 
         GameObject buildable = __instance.buildables[prefabID];
 
@@ -173,8 +176,9 @@ public class PlayerNetworkPatch {
     }
 
     public static int GetProductFromRaycast() {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return -1;
+        }
 
         int productID = -1;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo3, 4f, pNetwork.interactableMask)) {
@@ -213,15 +217,19 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelvesByProduct(int productID) {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
+
         HighlightShelfTypeByProduct(productID, Color.yellow, ShelfType.ProductDisplay);
         HighlightShelfTypeByProduct(productID, Color.red, ShelfType.Storage);
     }
 
     public static void ClearHighlightedShelves() {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
+
         if (IsHighlightCacheUsed) {
             foreach (KeyValuePair<int, Transform> item in highlightObjectCache) {
                 HighlightShelf(item.Value, false);
@@ -238,8 +246,10 @@ public class PlayerNetworkPatch {
     }
 
     private static void HighlightShelfTypeByProduct(int productID, Color shelfHighlightColor, ShelfType shelfType) {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
+
         GameObject shelvesObject = GameObject.Find(GetGameObjectStringPath(shelfType));
 
         for (int i = 0; i < shelvesObject.transform.childCount; i++) {
@@ -276,8 +286,10 @@ public class PlayerNetworkPatch {
     }
 
     public static void HighlightShelf(Transform t, bool isEnableHighlight, Color? color = null) {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
+
         HighlightEffect highlightEffect = t.GetComponent<HighlightEffect>() ?? t.gameObject.AddComponent<HighlightEffect>();
 
         if (IsHighlightCacheUsed) {
@@ -334,8 +346,10 @@ public class PlayerNetworkPatch {
 
 
     public static void AddHighlightMarkersToStorage(Transform storage) {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        if (BetterSMT.StorageHighlighting.Value == false) {
             return;
+        }
+
         ShelfData shelfData = new(ShelfType.Storage);
 
         Transform highlightsMarker = storage.transform.Find(shelfData.highlightsName);

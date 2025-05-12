@@ -1,58 +1,84 @@
-# BetterSMT
-Scanner & Product Management
-- Scanner now works with boxes.
-- Shelves containing the product in your hand are highlighted.
-- Top- right product info now supports boxes.
+Debt
+- Automatically pay all invoices without the perk
 
-Customization & Configurations
-- Replace commas with periods in formatting.
-- Adjust employee- related perks:
-- - Employee speed per perk.
-- - Employee restock time per perk.
-- - Employee checkout time per perk (temporarily disabled).
-- - Employee cash bonuses for extra cash perks.
-- - Income increase at checkout.
-- Modify customer- related perks:
-- - Number of customers per perk.
-- - Faster checkout (customers place items instantly on checkout).
-- Toggle features for thieves:
-- All NPCs as thieves.
-- - No NPCs as thieves.
-- Adjustments for game economy:
-- - Modify costs of lights, rent, and employee bills (end- of- day stats).
-- Trash spawn rate adjustments.
-- Show FPS counter (off by default).
-- Show ping (off by default).
+Sales Settings
+- Set number of active sales possible per perk unlocked
 
-Building & Store Management
-- Delete buildings while the store is open.
-- Delete buildings that contain products.
-- Delete all checkout lanes
-- Remove pillars within the store.
-- Spawn essential tools (broom, pricing gun, and DLC tablet) in your hand.
+Auto Save Settings
+- Enable/disable auto saving
+- Customize auto save timer
+- Toggle auto save while store is open
 
-Pricing & Checkout
-- Instantly change product prices at the start of the day (thanks to @Trevor for the idea/partial code).
-- Double pricing module (thanks to @Moudiz):
-- - Toggle with Q (configurable in the config file).
-- - Left Ctrl + Q: Switch between 0.05 and 0.10 rounding.
-- - Left Ctrl + Left Shift + Q: Toggle rounding on/off.
-- Automatically set the prices of every product
+Employee & Customer Settings
+- Customize customers per perk unlocked
+- Set max customers in store
+- Adjust base customer spawns
+- Set base and max cart sizes
+- Enable or disable changing employee's level
+- Adjust employee speed per perk unlocked
+- Customize employee restocking speed per perk unlocked
+- Customize employee checkout speed per perk unlocked
+- Set employee checkout bonus money
 
-Miscellaneous
-- Save game button in the pause menu:
-- - Saves stock, structures, and reorganization, but not in- day progress.
-- Ability to change employee income increases per perk.
-- Clock Control via Hotkey
-- Control Clock Speed
-- Activate Clock whenever
+Cost Modifiers
+- Modify lighting costs (end of day stats)
+- Modify rent costs (end of day stats)
+- Modify employee costs (end of day stats)
 
-Credits
-- Ika [Helped with Transpiling]
-- TeamCrisis [Most of the ideas in this mod]
-- Tech [Original Mod Developer]
-- Moudiz [Idea and code for double price module]
-- Tyler [Credit and partial code for price changes automatically at start of day]
+Thieves & Crime Settings
+- One-hit all thieves to drop everything at once
+- Enable or disable theft at self-checkouts
+- Disable all thieves
+- Make all customers thieves
 
-Other
--I have not given anyone permission to take anything from this mod
+Gameplay Settings
+- Customers will place all items instantly on the checkout lane
+- Show FPS counter
+- Show ping
+- Disable all trash from spawning
+- Always allow delete mode
+- Delete all checkouts
+- Turn trash can into recycler without the perk
+
+Pricing Assistance
+- Automatically adjust prices daily
+
+Double Price Gun
+- Enable rounding down
+- Round prices to nearest five or ten
+- Toggle double pricing
+- Set auto-adjust price multiplier
+- Enable price adjustment notifications
+
+Random Features
+- Enable usage of pallets without the perk
+- Replace commas with periods in pricing
+- Use any currency symbol
+
+Highlighting
+- Enable storage highlighting
+
+Hotkey Configurations
+- Toggle third-person mode with hotkey
+- Toggle double pricing with hotkey
+- Switch and toggle round down mode via hotkey
+- Toggle and assign hotkey to space pricing gun into your hand
+- Toggle and assign hotkey to space broom into your hand
+- Toggle and assign hotkey to space sales into your hand
+- Toggle and assign hotkey to space DLC tablet into your hand
+- Assign empty hands hotkey
+- Toggle and assign hotkey to space sledgehammer into your hand
+- Toggle and assign hotkey to space OsMart into your hand
+- Toggle and assign hotkey to space tray into your hand
+- Toggle and assign hotkey to space ladder into your hand
+- Toggle and assign hotkey to space clock into your hand
+
+ Miscellaneous QoL Features
+- Set self-checkout amount of product limit
+- Enable notifications for too expensive items
+- Enable missing product notifications
+- Change amount of product in a box
+- Disable product box collisions
+- Enable fast product box spawns
+- Adjust in-game clock speed
+- Allows usage of the clock while store is open

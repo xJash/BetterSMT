@@ -19,8 +19,6 @@ public class BetterSMT : BaseUnityPlugin {
 
     // === !Sales Settings! ===
     public static ConfigEntry<int> SalesActiveAmount;
-    public static ConfigEntry<bool> SalesToggle;
-    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
 
     // === !Auto Save Settings! ===
     public static ConfigEntry<bool> AutoSaveEnabled;
@@ -80,7 +78,10 @@ public class BetterSMT : BaseUnityPlugin {
 
     // === !Highlighting! ===
     public static ConfigEntry<bool> StorageHighlighting;
+
     // === !Hotkey Configurations! ===
+    public static ConfigEntry<bool> SalesToggle;
+    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
     public static ConfigEntry<bool> ThirdPersonToggle;
     public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;

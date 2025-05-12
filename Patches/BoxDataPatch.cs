@@ -10,8 +10,9 @@ public static class BoxDataPatch {
     [HarmonyPostfix]
     [HarmonyPatch(nameof(BoxData.OnStartClient))]
     public static void OnStartClientPostfix(BoxData __instance) {
-        if (BetterSMT.DisableBoxCollisions?.Value != true || __instance?.gameObject == null)
+        if (BetterSMT.DisableBoxCollisions?.Value != true || __instance?.gameObject == null) {
             return;
+        }
 
         ApplyCollisionChanges(__instance.gameObject);
     }

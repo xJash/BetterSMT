@@ -11,8 +11,9 @@ public class AutoProductPatch {
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
     public static void Postfix(ProductListing __instance) {
-        if (_hasPatched)
+        if (_hasPatched) {
             return;
+        }
 
         _hasPatched = true;
 
