@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
-using System.Collections;
 
 namespace BetterSMT.Patches;
 
@@ -12,19 +12,23 @@ public class UpgradesManagerPatch {
     public class ClockSpeedPatch {
         [HarmonyPostfix]
         public static void Postfix(UpgradesManager __instance) {
-            FieldInfo field = typeof(UpgradesManager).GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance);
-            field?.SetValue(__instance, BetterSMT.ClockSpeed.Value);
+            typeof(UpgradesManager)
+                .GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance)?
+                .SetValue(__instance, BetterSMT.ClockSpeed?.Value ?? 1f);
 
-            if (BetterSMT.AllRecyclers.Value == true) {
-                __instance.normalTrashContainerOBJ.SetActive(false);
-                __instance.recycleContainerOBJ.SetActive(true);
-                NPC_Manager.Instance.closestRecyclePerk = true;
+            if (BetterSMT.AllTrashToRecyclers?.Value == true) {
+                __instance.normalTrashContainerOBJ?.SetActive(false);
+                __instance.recycleContainerOBJ?.SetActive(true);
+                if (NPC_Manager.Instance != null) {
+                    NPC_Manager.Instance.closestRecyclePerk = true;
+                }
             }
 
-            if (BetterSMT.EnablePalletDisplays.Value == true) {
-                __instance.StartCoroutine(ForceEnablePalletDisplays(__instance));
+            if (BetterSMT.EnablePalletDisplaysPerk?.Value == true) {
+                _ = __instance.StartCoroutine(ForceEnablePalletDisplays(__instance));
             }
         }
+
 
         private static IEnumerator ForceEnablePalletDisplays(UpgradesManager __instance) {
             yield return new WaitForSeconds(1f);
@@ -40,7 +44,6 @@ public class UpgradesManagerPatch {
             }
             GameCanvas.Instance.GetComponent<Builder_Main>().ReassignBuildablesData();
         }
-
     }
 
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
@@ -97,13 +100,13 @@ public class UpgradesManagerPatch {
                 NPC_Manager.Instance.selfcheckoutExtraProductsFromPerk += BetterSMT.SelfCheckoutLimit.Value;
                 break;
             case 35:
-                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesActiveAmount.Value;
                 break;
             case 36:
-                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesActiveAmount.Value;
                 break;
             case 37:
-                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesAmount.Value;
+                __instance.GetComponent<ProductListing>().allowedSimultaneousSales += BetterSMT.SalesActiveAmount.Value;
                 break;
             default:
                 return true;

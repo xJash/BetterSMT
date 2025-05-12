@@ -10,17 +10,14 @@ public static class BoxDataPatch {
     [HarmonyPostfix]
     [HarmonyPatch(nameof(BoxData.OnStartClient))]
     public static void OnStartClientPostfix(BoxData __instance) {
-        if (!BetterSMT.BoxCollision.Value || __instance?.gameObject == null) {
+        if (BetterSMT.DisableBoxCollisions?.Value != true || __instance?.gameObject == null)
             return;
-        }
 
         ApplyCollisionChanges(__instance.gameObject);
     }
 
     private static void ApplyCollisionChanges(GameObject boxObject) {
-        if (_initialLayer == -1) {
-            _initialLayer = boxObject.layer;
-        }
+        _initialLayer = (_initialLayer == -1) ? boxObject.layer : _initialLayer;
 
         boxObject.layer = 20;
         Physics.IgnoreLayerCollision(20, 20, true);
