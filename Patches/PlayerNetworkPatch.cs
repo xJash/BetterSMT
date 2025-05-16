@@ -53,7 +53,7 @@ public class PlayerNetworkPatch {
                 (BetterSMT.BroomToggle?.Value,       BetterSMT.BroomHotkey?.Value,       3),
                 (BetterSMT.LadderToggle?.Value,      BetterSMT.LadderHotkey?.Value,      8),
                 (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
-            ];
+            };
 
             foreach ((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
                 if (toggle == true && hotkey?.IsDown() == true) {

@@ -24,29 +24,16 @@ public class UpgradesManagerPatch {
                 }
             }
 
-            if (BetterSMT.EnablePalletDisplaysPerk?.Value == true) {
-                _ = __instance.StartCoroutine(ForceEnablePalletDisplays(__instance));
-            }
-        }
-
-
-        private static IEnumerator ForceEnablePalletDisplays(UpgradesManager __instance) {
-            yield return new WaitForSeconds(1f);
-            for (int i = 0; i < __instance.UIpalletsOBJsArray.Length; i++) {
-                GameObject obj = __instance.UIpalletsOBJsArray[i];
-                obj.transform.SetParent(__instance.UIBuildablesParentOBJ.transform);
-                obj.transform.SetSiblingIndex(__instance.UIBuildablesParentOBJ.transform.childCount - 2);
-                obj.SetActive(value: true);
-                yield return null;
-            }
-            while (!GameCanvas.Instance) {
-                yield return null;
-            }
-            GameCanvas.Instance.GetComponent<Builder_Main>().ReassignBuildablesData();
         }
     }
 
-    [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
+    [HarmonyPatch("GameStartSetPerks"), HarmonyPrefix]
+    private static void GameStartSetPerksPatch(UpgradesManager __instance) {
+        if (BetterSMT.EnablePalletDisplaysPerk?.Value == true) {
+            BetterSMT.Instance.StartCoroutine(__instance.AuxiliarSetUIPallets());
+        }
+    }
+        [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
         #region Switch- Perks
         switch (perkIndex) {
