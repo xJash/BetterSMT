@@ -1,3 +1,7 @@
+## v2.1.1 
+- Fixed comma's replacement
+- Fixed pallet display unlock
+
 ## v2.1.0
 - Added option to change comma's into period's
 - Added option to replace default currency symbol $ with anything

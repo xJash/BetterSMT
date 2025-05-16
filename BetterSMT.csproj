@@ -5,7 +5,7 @@
     <AssemblyName>BetterSMT</AssemblyName>
     <Product>BetterSMT</Product>
     <Description>BetterSMT</Description>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -59,4 +59,8 @@
       <UserProperties thunderstore_4manifest_1json__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Discord\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Nexus\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Github\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Thunderstore\BepInEx\plugins&quot;&#xD;&#xA;" />
+  </Target>
 </Project>
