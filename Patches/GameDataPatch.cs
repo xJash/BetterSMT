@@ -165,10 +165,10 @@ public class GameDataPatch {
         }
         foreach (int productsTooExpensive in __instance.productsTooExpensiveList) {
             if (productsTooExpensive == productID) {
-                if (BetterSMT.MissingProductNotifications.Value == true) {
+                if (BetterSMT.TooExpensiveNotifications.Value == true) {
                     string productName = productNames.ContainsKey(productID) ? productNames[productID] : $"Product {productID}";
                     PlayerObjectController playerController = GameObject.FindObjectOfType<PlayerObjectController>();
-                    string message = $"{productName} is not found on the shelf.";
+                    string message = $"{productName} is too expensive.";
                     playerController.CmdSendMessage(message);
                     Debug.Log(message);
                 }
@@ -208,7 +208,7 @@ public class GameDataPatch {
 
     public static void NextTimeToSpawnTrashPatch(GameData __instance) {
         if (BetterSMT.DisableAllTrash.Value == true) {
-            __instance.nextTimeToSpawnTrash = 99999f;
+            __instance.nextTimeToSpawnTrash = 999999f;
             return;
         }
     }
