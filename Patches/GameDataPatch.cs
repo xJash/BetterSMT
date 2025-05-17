@@ -21,27 +21,6 @@ public class GameDataPatch {
         if (!BetterSMT.AutoAdjustPriceDaily.Value) {
             return;
         }
-
-        ProductListing productListing = ProductListing.Instance;
-        GameObject[] products = productListing.productPrefabs;
-        float[] inflationMultipliers = productListing.tierInflation;
-        float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
-
-        for (int i = 0; i < products.Length; i++) {
-            Data_Product product = products[i].GetComponent<Data_Product>();
-            if (product == null) {
-                continue;
-            }
-
-            float basePrice = product.basePricePerUnit;
-            int tier = product.productTier;
-            float inflation = (tier >= 0 && tier < inflationMultipliers.Length) ? inflationMultipliers[tier] : 1f;
-
-            float adjustedPrice = basePrice * inflation * priceMultiplier;
-            float finalPrice = Mathf.Floor(adjustedPrice * 100) / 100f;
-
-            productListing.CmdUpdateProductPrice(i, finalPrice);
-        }
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
