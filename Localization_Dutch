@@ -2,7 +2,7 @@
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->    
 
     <option id="title0" dialogue="Nieuwe winkel"></option>
-    <option id="title1" dialogue="Laadwinkel"></option>
+    <option id="title1" dialogue="Winkel Laden"></option>
     <option id="title2" dialogue="Winkel"></option>
     <option id="title3" dialogue="Opties"></option>
     <option id="title4" dialogue="Uitgang"></option>
@@ -18,27 +18,27 @@
 
     <option id="yes" dialogue="Ja"></option>
     <option id="no" dialogue="Nee"></option>
-    <option id="back" dialogue="Rug"></option>
+    <option id="back" dialogue="Terug"></option>
     <option id="save" dialogue="Toepassen"></option>
     <option id="entertext" dialogue="Voer tekst in ..."></option>
 
     <option id="join" dialogue="Meedoen"></option>
     <option id="invalidcode" dialogue="Ongeldige code of host heeft de lobby vergrendeld"></option>
-    <option id="joinfriends" dialogue="Word lid van vrienden met code"></option>
+    <option id="joinfriends" dialogue="Meedoen met vrienden via code"></option>
     <option id="copycode" dialogue="Kopieer code ..."></option>
 
     <option id="loading" dialogue="Laden"></option>
 
-    <option id="options0" dialogue="Grafische afbeeldingen"></option>
+    <option id="options0" dialogue="Resolutie "></option>
     <option id="options1" dialogue="Oplossing"></option>
     <option id="options2" dialogue="Op volledig scherm"></option>
     <option id="options3" dialogue="Vsync"></option>
     <option id="options4" dialogue="Antialiasing"></option>
     <option id="options5" dialogue="Helderheid"></option>
     <option id="options6" dialogue="Kwaliteit"></option>
-    <option id="options6a" dialogue="Performant"></option>
+    <option id="options6a" dialogue="Prestatie Gericht"></option>
     <option id="options6b" dialogue="Evenwichtig"></option>
-    <option id="options6c" dialogue="Hoge trouw"></option>
+    <option id="options6c" dialogue="Gedetailleerd"></option>
 
     <option id="options7" dialogue="Controles"></option>
     <option id="options8" dialogue="X Gevoeligheid"></option>
@@ -50,10 +50,10 @@
 
     <option id="options13" dialogue="Audio"></option>
     <option id="options14" dialogue="Master Vol."></option>
-    <option id="options15" dialogue="Music Vol."></option>
+    <option id="options15" dialogue="Muziek Vol."></option>
     <option id="options16" dialogue="SFX Vol."></option>
     <option id="options17" dialogue="UI Vol."></option>
-    <option id="options17a" dialogue="Voice Vol."></option>
+    <option id="options17a" dialogue="Stem Vol."></option>
 
     <option id="options18" dialogue="Hoofdmenu"></option>
     <option id="options19" dialogue="Stop met game"></option>
@@ -62,17 +62,17 @@
     <option id="options21" dialogue="Stoppen met spel?"></option>
 
     <option id="options22" dialogue="Kopieer join code naar klembord"></option>
-    <option id="options23" dialogue="Word lid van vrienden met code"></option>
+    <option id="options23" dialogue="Meedoen met vrienden via code"></option>
     <option id="options24" dialogue="Kopieer code ..."></option>
 
     <option id="options25" dialogue="Camera -gebeurtenis FOV"></option>
     <option id="options26" dialogue="Offensieve NPC's"></option>
-    <option id="options27" dialogue="Knallende afstand"></option>
+    <option id="options27" dialogue="Toepassen"></option>
 
     <option id="rw0" dialogue="Vooruitgaan"></option>
     <option id="rw1" dialogue="Ga vooruit+"></option>
     <option id="rw2" dialogue="Ga vooruit-"></option>
-    <option id="rw3" dialogue="Horizontaal beweeg"></option>
+    <option id="rw3" dialogue="Horizontaal bewegen"></option>
     <option id="rw4" dialogue="Beweeg horizontaal+"></option>
     <option id="rw5" dialogue="Beweeg horizontaal-"></option>
     <option id="rw6" dialogue="Muis verticaal"></option>
@@ -88,16 +88,16 @@
     <option id="rw15" dialogue="DROP -item"></option>
     <option id="rw16" dialogue="Springen"></option>
     <option id="rw17" dialogue="Sprint"></option>
-    <option id="rw18" dialogue="Open bouwer"></option>
+    <option id="rw18" dialogue="Bouwmenu openen"></option>
     <option id="rw19" dialogue="Menu Volgende"></option>
     <option id="rw20" dialogue="Menu Vorige"></option>
-    <option id="rw21" dialogue="Kletsen"></option>
+    <option id="rw21" dialogue="Chat"></option>
     <option id="rw22" dialogue="Spraakchat"></option>
     <option id="rw23" dialogue="Escape -menu"></option>
     <option id="rw24" dialogue="Hurken"></option>
 
     <option id="rw25" dialogue="Builder Tab Volgende"></option>
-    <option id="rw26" dialogue="Builder Tab Prev"></option>
+    <option id="rw26" dialogue=" Builder Tab Vorige"></option>
     <option id="rw27" dialogue="Dans 1"></option>
     <option id="rw28" dialogue="Dans 2"></option>
     <option id="rw29" dialogue="Dans 3"></option>
@@ -107,19 +107,19 @@
     <option id="rw33" dialogue="Dans 7"></option>
     <option id="rw34" dialogue="Dans 8"></option>
     <option id="rw35" dialogue="Dans 9"></option>
-    <option id="rw36" dialogue="Numeriek Klavier 0"></option>
-    <option id="rw37" dialogue="Numeriek Klavier 1"></option>
-    <option id="rw38" dialogue="Numeriek Klavier 2"></option>
-    <option id="rw39" dialogue="Numeriek Klavier 3"></option>
-    <option id="rw40" dialogue="Numeriek Klavier 4"></option>
-    <option id="rw41" dialogue="Numeriek Klavier 5"></option>
-    <option id="rw42" dialogue="Numeriek Klavier 6"></option>
-    <option id="rw43" dialogue="Numeriek Klavier 7"></option>
-    <option id="rw44" dialogue="Numeriek Klavier 8"></option>
-    <option id="rw45" dialogue="Numeriek Klavier 9"></option>
-    <option id="rw46" dialogue="Numeriek Klavier verwijderen"></option>
-    <option id="rw47" dialogue="Numeriek Klavier -periode"></option>
-    <option id="rw48" dialogue="Numeriek Klavier accepteren"></option>
+    <option id="rw36" dialogue="Numpad 0"></option>
+    <option id="rw37" dialogue="Numpad 1"></option>
+    <option id="rw38" dialogue="Numpad 2"></option>
+    <option id="rw39" dialogue="Numpad 3"></option>
+    <option id="rw40" dialogue="Numpad 4"></option>
+    <option id="rw41" dialogue="Numpad 5"></option>
+    <option id="rw42" dialogue="Numpad 6"></option>
+    <option id="rw43" dialogue="Numpad 7"></option>
+    <option id="rw44" dialogue="Numpad 8"></option>
+    <option id="rw45" dialogue="Numpad 9"></option>
+    <option id="rw46" dialogue="Numpad verwijderen"></option>
+    <option id="rw47" dialogue="Numpad -periode"></option>
+    <option id="rw48" dialogue="Numpad accepteren"></option>
 
     <option id="rw49" dialogue="Bouw snappen"></option>
 
@@ -127,12 +127,12 @@
 
     <option id="employees" dialogue="Medewerkers:"></option>
     <option id="employeesassignment" dialogue="Werknemerstoewijzing"></option>
-    <option id="cashiers" dialogue="Kassier"></option>
+    <option id="cashiers" dialogue="Caissière "></option>
     <option id="restock" dialogue="Aanvullen"></option>
     <option id="storage" dialogue="Opslag"></option>
     <option id="security" dialogue="Beveiliging"></option>
-    <option id="mblackboard" dialogue="Manager Blackboard"></option>
-    <option id="productorder" dialogue="Productorder"></option>
+    <option id="mblackboard" dialogue="Manager Krijtbord"></option>
+    <option id="productorder" dialogue="Product bestellen"></option>
     <option id="supermarket" dialogue="Supermarkt"></option>
     <option id="cosmetics" dialogue="Cosmetica -bestelling"></option>
     <option id="stream" dialogue="Stel tv -video/stream in"></option>
