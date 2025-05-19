@@ -1,164 +1,165 @@
-  <options>
-    <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
+﻿  < options >
+    < !-- ///////////////////////////////////Strings///////////////////////////////////// -->
 
-    <option id="title0" dialogue="New Store"></option>
-    <option id="title1" dialogue="Load Store"></option>
-    <option id="title2" dialogue="Join Store"></option>
-    <option id="title3" dialogue="Options"></option>
-    <option id="title4" dialogue="Exit"></option>
+    < option id = "title0" dialogue = "New Store" ></ option >
+    < option id = "title1" dialogue = "Load Store" ></ option >
+    < option id = "title2" dialogue = "Join Store" ></ option >
+    < option id = "title3" dialogue = "Options" ></ option >
+    < option id = "title4" dialogue = "Exit" ></ option >
 
-    <option id="newstore0" dialogue="Choose a name for your store"></option>
-    <option id="newstore1" dialogue="Private"></option>
-    <option id="newstore2" dialogue="Only Friends"></option>
-    <option id="newstore3" dialogue="Public"></option>
-    <option id="newstore4" dialogue="Create"></option>
-    <option id="newstore5" dialogue="Store name must have more than 2 characters and do not have invalid characters"></option>
-    <option id="newstore6" dialogue="You can inflate difficulty artificially if desired"></option>
-    <option id="newstore7" dialogue="Difficulty: "></option>
+    < option id = "newstore0" dialogue = "Choose a name for your store" ></ option >
+    < option id = "newstore1" dialogue = "Private" ></ option >
+    < option id = "newstore2" dialogue = "Only Friends" ></ option >
+    < option id = "newstore3" dialogue = "Public" ></ option >
+    < option id = "newstore4" dialogue = "Create" ></ option >
+    < option id = "newstore5" dialogue = "Store name must have more than 2 characters and do not have invalid characters" ></ option >
+    < option id = "newstore6" dialogue = "You can inflate difficulty artificially if desired" ></ option >
+    < option id = "newstore7" dialogue = "Difficulty: " ></ option >
 
-    <option id="yes" dialogue="Yes"></option>
-    <option id="no" dialogue="No"></option>
-    <option id="back" dialogue="Back"></option>
-    <option id="save" dialogue="Apply"></option>
-    <option id="entertext" dialogue="Enter text..."></option>
+    < option id = "yes" dialogue = "Yes" ></ option >
+    < option id = "no" dialogue = "No" ></ option >
+    < option id = "back" dialogue = "Back" ></ option >
+    < option id = "save" dialogue = "Apply" ></ option >
+    < option id = "entertext" dialogue = "Enter text..." ></ option >
 
-    <option id="join" dialogue="Join"></option>
-    <option id="invalidcode" dialogue="Invalid code or host has locked the lobby"></option>
-    <option id="joinfriends" dialogue="Join friends with code"></option>
-    <option id="copycode" dialogue="Copy code..."></option>
+    < option id = "join" dialogue = "Join" ></ option >
+    < option id = "invalidcode" dialogue = "Invalid code or host has locked the lobby" ></ option >
+    < option id = "joinfriends" dialogue = "Join friends with code" ></ option >
+    < option id = "copycode" dialogue = "Copy code..." ></ option >
 
-    <option id="loading" dialogue="Loading"></option>
+    < option id = "loading" dialogue = "Loading" ></ option >
 
-    <option id="options0" dialogue="Graphics"></option>
-    <option id="options1" dialogue="Resolution"></option>
-    <option id="options2" dialogue="Fullscreen"></option>
-    <option id="options3" dialogue="Vsync"></option>
-    <option id="options4" dialogue="Antialiasing"></option>
-    <option id="options5" dialogue="Brightness"></option>
-    <option id="options6" dialogue="Quality"></option>
-    <option id="options6a" dialogue="Performant"></option>
-    <option id="options6b" dialogue="Balanced"></option>
-    <option id="options6c" dialogue="High Fidelity"></option>
+    < option id = "options0" dialogue = "Graphics" ></ option >
+    < option id = "options1" dialogue = "Resolution" ></ option >
+    < option id = "options2" dialogue = "Fullscreen" ></ option >
+    < option id = "options3" dialogue = "Vsync" ></ option >
+    < option id = "options4" dialogue = "Antialiasing" ></ option >
+    < option id = "options5" dialogue = "Brightness" ></ option >
+    < option id = "options6" dialogue = "Quality" ></ option >
+    < option id = "options6a" dialogue = "Performant" ></ option >
+    < option id = "options6b" dialogue = "Balanced" ></ option >
+    < option id = "options6c" dialogue = "High Fidelity" ></ option >
 
-    <option id="options7" dialogue="Controls"></option>
-    <option id="options8" dialogue="X Sensitivity"></option>
-    <option id="options9" dialogue="Y Sensitivity"></option>
-    <option id="options10" dialogue="Zoom Sensitivity"></option>
-    <option id="options11" dialogue="Invert X Axis"></option>
-    <option id="options12" dialogue="Invert Y Axis"></option>
-    <option id="options12a" dialogue="Customize Controls"></option>
+    < option id = "options7" dialogue = "Controls" ></ option >
+    < option id = "options8" dialogue = "X Sensitivity" ></ option >
+    < option id = "options9" dialogue = "Y Sensitivity" ></ option >
+    < option id = "options10" dialogue = "Zoom Sensitivity" ></ option >
+    < option id = "options11" dialogue = "Invert X Axis" ></ option >
+    < option id = "options12" dialogue = "Invert Y Axis" ></ option >
+    < option id = "options12a" dialogue = "Customize Controls" ></ option >
 
-    <option id="options13" dialogue="Audio"></option>
-    <option id="options14" dialogue="Master Vol."></option>
-    <option id="options15" dialogue="Music Vol."></option>
-    <option id="options16" dialogue="SFX Vol."></option>
-    <option id="options17" dialogue="UI Vol."></option>
-    <option id="options17a" dialogue="Voice Vol."></option>
+    < option id = "options13" dialogue = "Audio" ></ option >
+    < option id = "options14" dialogue = "Master Vol." ></ option >
+    < option id = "options15" dialogue = "Music Vol." ></ option >
+    < option id = "options16" dialogue = "SFX Vol." ></ option >
+    < option id = "options17" dialogue = "UI Vol." ></ option >
+    < option id = "options17a" dialogue = "Voice Vol." ></ option >
 
-    <option id="options18" dialogue="Main Menu"></option>
-    <option id="options19" dialogue="Quit Game"></option>
+    < option id = "options18" dialogue = "Main Menu" ></ option >
+    < option id = "options19" dialogue = "Quit Game" ></ option >
 
-    <option id="options20" dialogue="Return to main menu?"></option>
-    <option id="options21" dialogue="Quit game?"></option>
+    < option id = "options20" dialogue = "Return to main menu?" ></ option >
+    < option id = "options21" dialogue = "Quit game?" ></ option >
 
-    <option id="options22" dialogue="Copy join code to clipboard"></option>
-    <option id="options23" dialogue="Join friends with code"></option>
-    <option id="options24" dialogue="Copy code..."></option>
+    < option id = "options22" dialogue = "Copy join code to clipboard" ></ option >
+    < option id = "options23" dialogue = "Join friends with code" ></ option >
+    < option id = "options24" dialogue = "Copy code..." ></ option >
 
-    <option id="options25" dialogue="Camera Event FOV"></option>
-    <option id="options26" dialogue="Offensive NPCs"></option>
-    <option id="options27" dialogue="Popping Distance"></option>
+    < option id = "options25" dialogue = "Camera Event FOV" ></ option >
+    < option id = "options26" dialogue = "Offensive NPCs" ></ option >
+    < option id = "options27" dialogue = "Popping Distance" ></ option >
 
-    <option id="rw0" dialogue="Move Forward"></option>
-    <option id="rw1" dialogue="Move Forward+"></option>
-    <option id="rw2" dialogue="Move Forward-"></option>
-    <option id="rw3" dialogue="Move Horizontal"></option>
-    <option id="rw4" dialogue="Move Horizontal+"></option>
-    <option id="rw5" dialogue="Move Horizontal-"></option>
-    <option id="rw6" dialogue="Mouse Vertical"></option>
-    <option id="rw7" dialogue="Mouse Vertical+"></option>
-    <option id="rw8" dialogue="Mouse Vertical-"></option>
-    <option id="rw9" dialogue="Mouse Horizontal"></option>
-    <option id="rw10" dialogue="Mouse Horizontal+"></option>
-    <option id="rw11" dialogue="Mouse Horizontal-"></option>
+    < option id = "rw0" dialogue = "Move Forward" ></ option >
+    < option id = "rw1" dialogue = "Move Forward+" ></ option >
+    < option id = "rw2" dialogue = "Move Forward-" ></ option >
+    < option id = "rw3" dialogue = "Move Horizontal" ></ option >
+    < option id = "rw4" dialogue = "Move Horizontal+" ></ option >
+    < option id = "rw5" dialogue = "Move Horizontal-" ></ option >
+    < option id = "rw6" dialogue = "Mouse Vertical" ></ option >
+    < option id = "rw7" dialogue = "Mouse Vertical+" ></ option >
+    < option id = "rw8" dialogue = "Mouse Vertical-" ></ option >
+    < option id = "rw9" dialogue = "Mouse Horizontal" ></ option >
+    < option id = "rw10" dialogue = "Mouse Horizontal+" ></ option >
+    < option id = "rw11" dialogue = "Mouse Horizontal-" ></ option >
 
-    <option id="rw12" dialogue="Main Action"></option>
-    <option id="rw13" dialogue="Secondary Action"></option>
-    <option id="rw14" dialogue="Build"></option>
-    <option id="rw15" dialogue="Drop Item"></option>
-    <option id="rw16" dialogue="Jump"></option>
-    <option id="rw17" dialogue="Sprint"></option>
-    <option id="rw18" dialogue="Open Builder"></option>
-    <option id="rw19" dialogue="Menu Next"></option>
-    <option id="rw20" dialogue="Menu Previous"></option>
-    <option id="rw21" dialogue="Chat"></option>
-    <option id="rw22" dialogue="Voice Chat"></option>
-    <option id="rw23" dialogue="Escape Menu"></option>
-    <option id="rw24" dialogue="Crouch"></option>
+    < option id = "rw12" dialogue = "Main Action" ></ option >
+    < option id = "rw13" dialogue = "Secondary Action" ></ option >
+    < option id = "rw14" dialogue = "Build" ></ option >
+    < option id = "rw15" dialogue = "Drop Item" ></ option >
+    < option id = "rw16" dialogue = "Jump" ></ option >
+    < option id = "rw17" dialogue = "Sprint" ></ option >
+    < option id = "rw18" dialogue = "Open Builder" ></ option >
+    < option id = "rw19" dialogue = "Menu Next" ></ option >
+    < option id = "rw20" dialogue = "Menu Previous" ></ option >
+    < option id = "rw21" dialogue = "Chat" ></ option >
+    < option id = "rw22" dialogue = "Voice Chat" ></ option >
+    < option id = "rw23" dialogue = "Escape Menu" ></ option >
+    < option id = "rw24" dialogue = "Crouch" ></ option >
 
-    <option id="rw25" dialogue="Builder Tab Next"></option>
-    <option id="rw26" dialogue="Builder Tab Prev"></option>
-    <option id="rw27" dialogue="Dance 1"></option>
-    <option id="rw28" dialogue="Dance 2"></option>
-    <option id="rw29" dialogue="Dance 3"></option>
-    <option id="rw30" dialogue="Dance 4"></option>
-    <option id="rw31" dialogue="Dance 5"></option>
-    <option id="rw32" dialogue="Dance 6"></option>
-    <option id="rw33" dialogue="Dance 7"></option>
-    <option id="rw34" dialogue="Dance 8"></option>
-    <option id="rw35" dialogue="Dance 9"></option>
-    <option id="rw36" dialogue="Numpad 0"></option>
-    <option id="rw37" dialogue="Numpad 1"></option>
-    <option id="rw38" dialogue="Numpad 2"></option>
-    <option id="rw39" dialogue="Numpad 3"></option>
-    <option id="rw40" dialogue="Numpad 4"></option>
-    <option id="rw41" dialogue="Numpad 5"></option>
-    <option id="rw42" dialogue="Numpad 6"></option>
-    <option id="rw43" dialogue="Numpad 7"></option>
-    <option id="rw44" dialogue="Numpad 8"></option>
-    <option id="rw45" dialogue="Numpad 9"></option>
-    <option id="rw46" dialogue="Numpad Delete"></option>
-    <option id="rw47" dialogue="Numpad Period"></option>
-    <option id="rw48" dialogue="Numpad Accept"></option>
+    < option id = "rw25" dialogue = "Builder Tab Next" ></ option >
+    < option id = "rw26" dialogue = "Builder Tab Prev" ></ option >
+    < option id = "rw27" dialogue = "Dance 1" ></ option >
+    < option id = "rw28" dialogue = "Dance 2" ></ option >
+    < option id = "rw29" dialogue = "Dance 3" ></ option >
+    < option id = "rw30" dialogue = "Dance 4" ></ option >
+    < option id = "rw31" dialogue = "Dance 5" ></ option >
+    < option id = "rw32" dialogue = "Dance 6" ></ option >
+    < option id = "rw33" dialogue = "Dance 7" ></ option >
+    < option id = "rw34" dialogue = "Dance 8" ></ option >
+    < option id = "rw35" dialogue = "Dance 9" ></ option >
+    < option id = "rw36" dialogue = "Numpad 0" ></ option >
+    < option id = "rw37" dialogue = "Numpad 1" ></ option >
+    < option id = "rw38" dialogue = "Numpad 2" ></ option >
+    < option id = "rw39" dialogue = "Numpad 3" ></ option >
+    < option id = "rw40" dialogue = "Numpad 4" ></ option >
+    < option id = "rw41" dialogue = "Numpad 5" ></ option >
+    < option id = "rw42" dialogue = "Numpad 6" ></ option >
+    < option id = "rw43" dialogue = "Numpad 7" ></ option >
+    < option id = "rw44" dialogue = "Numpad 8" ></ option >
+    < option id = "rw45" dialogue = "Numpad 9" ></ option >
+    < option id = "rw46" dialogue = "Numpad Delete" ></ option >
+    < option id = "rw47" dialogue = "Numpad Period" ></ option >
+    < option id = "rw48" dialogue = "Numpad Accept" ></ option >
 
-    <option id="rw49" dialogue="Build Snapping"></option>
+    < option id = "rw49" dialogue = "Build Snapping" ></ option >
 
-    <!-- ///////////////////////////////////Text///////////////////////////////////// -->
+    < !-- ///////////////////////////////////Text///////////////////////////////////// -->
 
-    <option id="employees" dialogue="Employees: "></option>
-    <option id="employeesassignment" dialogue="Employees Assignment"></option>
-    <option id="cashiers" dialogue="Cashiers"></option>
-    <option id="restock" dialogue="Restock"></option>
-    <option id="storage" dialogue="Storage"></option>
-    <option id="security" dialogue="Security"></option>
-    <option id="mblackboard" dialogue="Manager Blackboard"></option>
-    <option id="productorder" dialogue="Product Order"></option>
-    <option id="supermarket" dialogue="Supermarket"></option>
-    <option id="cosmetics" dialogue="Cosmetics Order"></option>
-    <option id="stream" dialogue="Set TV Video/Stream"></option>
-    <option id="pinshelves" dialogue="Products in shelves"></option>
-    <option id="pinstorage" dialogue="Products in storages"></option>
-    <option id="pinboxes" dialogue="Products in boxes"></option>
-    <option id="shoplist" dialogue="Shopping List"></option>
-    <option id="buy" dialogue="Buy"></option>
-    <option id="supermarketname" dialogue="Supermarket Name"></option>
-    <option id="supermarketcolor" dialogue="Supermarket Color"></option>
-    <option id="changename" dialogue="Change Name"></option>
-    <option id="changecolor" dialogue="Change Color"></option>
-    <option id="franchisepointsavailable" dialogue="Franchise Points Available"></option>
-    <option id="unlocks" dialogue="Unlocks"></option>
-    <option id="requires" dialogue="Requires"></option>
-    <option id="connectionlost" dialogue="Host connection lost"></option>
-    <option id="buyshopspace" dialogue="BUY SHOP SPACE"></option>
-    <option id="buystoragespace" dialogue="BUY STORAGE SPACE"></option>
-    <option id="addons" dialogue="Addons"></option>
+    < option id = "employees" dialogue = "Employees: " ></ option >
+    < option id = "employeesassignment" dialogue = "Employees Assignment" ></ option >
+    < option id = "cashiers" dialogue = "Cashiers" ></ option >
+    < option id = "restock" dialogue = "Restock" ></ option >
+    < option id = "storage" dialogue = "Storage" ></ option >
+    < option id = "security" dialogue = "Security" ></ option >
+    < option id = "mblackboard" dialogue = "Manager Blackboard" ></ option >
+    < option id = "productorder" dialogue = "Product Order" ></ option >
+    < option id = "supermarket" dialogue = "Supermarket" ></ option >
+    < option id = "cosmetics" dialogue = "Cosmetics Order" ></ option >
+    < option id = "stream" dialogue = "Set TV Video/Stream" ></ option >
+    < option id = "pinshelves" dialogue = "Products in shelves" ></ option >
+    < option id = "pinstorage" dialogue = "Products in storages" ></ option >
+    < option id = "pinboxes" dialogue = "Products in boxes" ></ option >
+    < option id = "shoplist" dialogue = "Shopping List" ></ option >
+    < option id = "buy" dialogue = "Buy" ></ option >
+    < option id = "supermarketname" dialogue = "Supermarket Name" ></ option >
+    < option id = "supermarketcolor" dialogue = "Supermarket Color" ></ option >
+    < option id = "changename" dialogue = "Change Name" ></ option >
+    < option id = "changecolor" dialogue = "Change Color" ></ option >
+    < option id = "franchisepointsavailable" dialogue = "Franchise Points Available" ></ option >
+    < option id = "unlocks" dialogue = "Unlocks" ></ option >
+    < option id = "requires" dialogue = "Requires" ></ option >
+    < option id = "connectionlost" dialogue = "Host connection lost" ></ option >
+    < option id = "buyshopspace" dialogue = "BUY SHOP SPACE" ></ option >
+    < option id = "buystoragespace" dialogue = "BUY STORAGE SPACE" ></ option >
+    < option id = "addons" dialogue = "Addons" ></ option >
 
 
-    <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
+    < !-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
 
-    <option id="tutorial0" dialogue="Welcome to Supermarket Together!"></option>
-    <option id="tutorial1" dialogue="While the store is closed time passes way more slowly.
-            
+    < option id = "tutorial0" dialogue = "Welcome to Supermarket Together!" ></ option >
+    < option id = "tutorial1" dialogue = "While the store is closed time passes way more slowly.
+
+
 The first step is to place some furniture. Press [TAB] to open the builder"></option>
     <option id="tutorial2" dialogue="Buy 2 product shelves, a checkout and a storage shelf.
 
@@ -215,7 +216,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
 
 - You can check lights and other decoration by pressing X or Z by default while using the Builder.
 
-- You can definitely clear a shelf row from its products by right clicking it with the pricing tool. Useful if you don't want any employees to keep restocking that row.
+-You can definitely clear a shelf row from its products by right clicking it with the pricing tool. Useful if you don't want any employees to keep restocking that row.
 
 - Pay attention to the invoices tab in the manager's blackboard. Your employees wages and electrical or rent invoices will arrive there.
 
@@ -1324,30 +1325,30 @@ In some materials you can select color variances."></option>
     <option id="tabletdisclaimer1" dialogue="This tablet has been deprecated and merged in the main builder.
 Use X and Z by default to access the new tabs."></option>
 
-    <option id="pcat" dialogue="You petted the cat. Come back later"></option>
+    < option id = "pcat" dialogue = "You petted the cat. Come back later" ></ option >
 
-    <option id="snapping0" dialogue="Next Snap Mode"></option>
-    <option id="snapping1" dialogue="Snap Mode"></option>
-    <option id="snapping2" dialogue="None"></option>
-    <option id="snapping3" dialogue="Grid: Center"></option>
-    <option id="snapping4" dialogue="Grid: Backside"></option>
-    <option id="snapping5" dialogue="Furniture"></option>
+    < option id = "snapping0" dialogue = "Next Snap Mode" ></ option >
+    < option id = "snapping1" dialogue = "Snap Mode" ></ option >
+    < option id = "snapping2" dialogue = "None" ></ option >
+    < option id = "snapping3" dialogue = "Grid: Center" ></ option >
+    < option id = "snapping4" dialogue = "Grid: Backside" ></ option >
+    < option id = "snapping5" dialogue = "Furniture" ></ option >
 
-    <option id="checkoutwarning" dialogue="Your store needs at least a manned checkout"></option>
+    < option id = "checkoutwarning" dialogue = "Your store needs at least a manned checkout" ></ option >
 
-    <option id="newoptions6" dialogue="Always Run"></option>
-    <option id="newoptions7" dialogue="Browser"></option>
-    <option id="newoptions7a" dialogue="None"></option>
-    <option id="newoptions7b" dialogue="Normal"></option>
-    <option id="newoptions7c" dialogue="Linux Supported"></option>
-    <option id="newoptions8" dialogue="Kaching Vol."></option>
-    <option id="newoptions9" dialogue="Confine Cursor"></option>
-    <option id="newoptions10" dialogue="Crosshair Size"></option>
-    <option id="newoptions11" dialogue="Crosshair Color"></option>
-    <option id="newoptions12" dialogue="Night Dim"></option>
+    < option id = "newoptions6" dialogue = "Always Run" ></ option >
+    < option id = "newoptions7" dialogue = "Browser" ></ option >
+    < option id = "newoptions7a" dialogue = "None" ></ option >
+    < option id = "newoptions7b" dialogue = "Normal" ></ option >
+    < option id = "newoptions7c" dialogue = "Linux Supported" ></ option >
+    < option id = "newoptions8" dialogue = "Kaching Vol." ></ option >
+    < option id = "newoptions9" dialogue = "Confine Cursor" ></ option >
+    < option id = "newoptions10" dialogue = "Crosshair Size" ></ option >
+    < option id = "newoptions11" dialogue = "Crosshair Color" ></ option >
+    < option id = "newoptions12" dialogue = "Night Dim" ></ option >
 
-    <option id="surveillance1" dialogue="Customer already checked"></option>
-    <option id="surveillance2" dialogue="Click on a customer repeatedly to check if it's a thief
+    < option id = "surveillance1" dialogue = "Customer already checked" ></ option >
+    < option id = "surveillance2" dialogue = "Click on a customer repeatedly to check if it's a thief
 The closest to the camera, the more effective clicking is."></option>
     <option id="surveillance2a" dialogue="Hold click and hover over a customer to check if it's a thief
 The closest to the camera, the more effective this is."></option>
