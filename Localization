@@ -1,4 +1,4 @@
-</text>      LineBreaking Leading Characters _   ﻿([｛〔〈《「『【〘〖〝‘“｟«$—…‥〳〴〵\［（{£¥"々〇＄￥￦ #    Localization_EN �a <text>
+</text>   LineBreaking Leading Characters _   ï»¿([ï½›ã€”ã€ˆã€Šã€Œã€Žã€ã€˜ã€–ã€â€˜â€œï½ŸÂ«$â€”â€¦â€¥ã€³ã€´ã€µ\ï¼»ï¼ˆ{Â£Â¥"ã€…ã€‡ï¼„ï¿¥ï¿¦ #    Localization_EN €n <text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -17,19 +17,19 @@
     <option id="newstore5" dialogue="Store name must have more than 2 characters and do not have invalid characters"></option>
     <option id="newstore6" dialogue="You can inflate difficulty artificially if desired"></option>
     <option id="newstore7" dialogue="Difficulty: "></option>
-    
+
     <option id="yes" dialogue="Yes"></option>
     <option id="no" dialogue="No"></option>
     <option id="back" dialogue="Back"></option>
     <option id="save" dialogue="Apply"></option>
     <option id="entertext" dialogue="Enter text..."></option>
-    
+
     <option id="join" dialogue="Join"></option>
     <option id="invalidcode" dialogue="Invalid code or host has locked the lobby"></option>
     <option id="joinfriends" dialogue="Join friends with code"></option>
     <option id="copycode" dialogue="Copy code..."></option>
 
-    <option id="loading" dialogue="Loading"></option>  
+    <option id="loading" dialogue="Loading"></option>
 
     <option id="options0" dialogue="Graphics"></option>
     <option id="options1" dialogue="Resolution"></option>
@@ -154,7 +154,7 @@
     <option id="buyshopspace" dialogue="BUY SHOP SPACE"></option>
     <option id="buystoragespace" dialogue="BUY STORAGE SPACE"></option>
     <option id="addons" dialogue="Addons"></option>
-    
+
 
     <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
 
@@ -204,7 +204,7 @@ CONTROLS
 [F] Drop items
 
 Note you can also set prices with your numpad or reassign keys in Options/Customize Controls to do so. Numpad can be also used to input amounts when customers pay with credit card in checkouts."></option>
-    
+
     <option id="tutorial11" dialogue="Your store is now ready to open. To allow customers in press the green button located in the manager's room. But first read the important info below:
 
 - Every Thursday market inflation increases on some products and you will have to review prices.
@@ -224,7 +224,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
 - To close the store wait until it's 22:30 PM and press the red button in the manager's room. Game is saved automatically every new day.
 
 - The more players, the more difficulty. (Try hitting players with the broom)"></option>
-    
+
 
     <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
 
@@ -236,11 +236,11 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
 
     <option id="checkout0" dialogue="[LMB] Add money"></option>
     <option id="checkout1" dialogue="[RMB] Remove money"></option>
-    
+
     <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
 
     <option id="day" dialogue="Day "></option>
-    
+
     <option id="weekday1" dialogue="MON"></option>
     <option id="weekday2" dialogue="TUE"></option>
     <option id="weekday3" dialogue="WED"></option>
@@ -256,7 +256,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="notfoundproducts" dialogue="Not found products: "></option>
     <option id="tooexpensiveproducts" dialogue="Too expensive products: "></option>
     <option id="timesrobbed" dialogue="Times robbed: "></option>
-    <option id="complaintsfilth" dialogue="Complaints about filth: "></option>    
+    <option id="complaintsfilth" dialogue="Complaints about filth: "></option>
     <option id="franchiselevel" dialogue="Franchise Level: "></option>
     <option id="franchiseexperience" dialogue="Franchise experience: "></option>
     <option id="income" dialogue="Income "></option>
@@ -278,7 +278,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="messagei5" dialogue="Department Acquired"></option>
     <option id="messagei5a" dialogue="Store requirements not met"></option>
     <option id="messagei5b" dialogue="Storage requirements not met"></option>
-    
+
     <option id="message0" dialogue="Wrong container type for this product"></option>
     <option id="message1" dialogue="Can't add more products to this shelf"></option>
     <option id="message2" dialogue="Can't mix products in the same shelf"></option>
@@ -301,6 +301,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="message17a" dialogue="Container has products. Hold [drop item] key while deleting if you are sure"></option>
     <option id="message18" dialogue="Store needs at least one manned checkout"></option>
     <option id="message19" dialogue="Can't fit this item in the tray"></option>
+    <option id="message20" dialogue="Pallet displays require products bigger than this"></option>
 
     <option id="network0" dialogue="Host connection lost"></option>
 
@@ -312,7 +313,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="NPCmessage3" dialogue="No checkouts available? Bye!"></option>
     <option id="NPCmessage4" dialogue="Bye suckers!"></option>
     <option id="NPCmessage5" dialogue="This supermarket is so filthy!"></option>
-    
+
     <option id="NPCemployee0" dialogue="I'll attend this cashier."></option>
 
     <option id="NPCmessagehit0" dialogue="Ow!"></option>
@@ -355,6 +356,11 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="buildable18" dialogue="Produce Shelf B (Half)"></option>
     <option id="buildable19" dialogue="Corner Shelf (Big)"></option>
     <option id="buildable20" dialogue="Corner Shelf (Small)"></option>
+    <option id="buildable21" dialogue="Basic Pallet Display"></option>
+    <option id="buildable22" dialogue="Wooden Pallet Display A"></option>
+    <option id="buildable23" dialogue="Wooden Pallet Display B"></option>
+    <option id="buildable24" dialogue="Plastic Pallet Display"></option>
+    <option id="buildable25" dialogue="Tall Pallet Display"></option>
 
     <option id="buildable0a" dialogue="Delete Mode"></option>
     <option id="tabtitle0" dialogue="Builder"></option>
@@ -366,7 +372,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="tabtitle6" dialogue="Seasonal: Christmas"></option>
     <option id="tabtitle7" dialogue="Decoration: Plants"></option>
     <option id="tabtitle8" dialogue="Architecture"></option>
-    
+
     <option id="decorat1" dialogue="Neon Lamp A"></option>
     <option id="decorat2" dialogue="Potted Plant A"></option>
     <option id="decorat3" dialogue="TV"></option>
@@ -454,7 +460,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="decorat78" dialogue="Ceramic Pot E"></option>
     <option id="decorat79" dialogue="Ceramic Pot F"></option>
     <option id="decorat80" dialogue="Ceramic Pot G"></option>
-    
+
     <option id="decorat81" dialogue="Plant A"></option>
     <option id="decorat82" dialogue="Plant B"></option>
     <option id="decorat83" dialogue="Plant C"></option>
@@ -465,7 +471,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="decorat88" dialogue="Plant H"></option>
     <option id="decorat89" dialogue="Plant I"></option>
     <option id="decorat90" dialogue="Plant crock A"></option>
-    
+
     <option id="decorat91" dialogue="Plant crock B"></option>
     <option id="decorat92" dialogue="Plant crock C"></option>
     <option id="decorat93" dialogue="Plant J"></option>
@@ -553,7 +559,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="decorat168" dialogue="Small Paintable Divider"></option>
     <option id="decorat169" dialogue="Medium Paintable Divider"></option>
     <option id="decorat170" dialogue="Large Paintable Divider"></option>
-    
+
     <option id="decorat171" dialogue="Corner Divider"></option>
     <option id="decorat172" dialogue="Large Ground Planter A"></option>
     <option id="decorat173" dialogue="Large Ground Planter B"></option>
@@ -564,7 +570,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="decorat178" dialogue="Picture Frame"></option>
     <option id="decorat179" dialogue="Door Paintable Divider"></option>
     <option id="decorat180" dialogue="Wall Planter A"></option>
-    
+
     <option id="decorat181" dialogue="Wall Planter A Panel"></option>
     <option id="decorat182" dialogue="Wall Planter B"></option>
     <option id="decorat183" dialogue="Wall Planter B Panel"></option>
@@ -573,6 +579,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="decorat186" dialogue="Cross Beam"></option>
     <option id="decorat187" dialogue="T Beam"></option>
     <option id="decorat188" dialogue="Corner Beam"></option>
+    <option id="decorat189" dialogue="Parcel Pickup Point"></option>
 
     <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
@@ -593,7 +600,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="skill5" dialogue="Air Conditioning"></option>
     <option id="skill5a" dialogue="Attracts more customers per day"></option>
     <option id="skill6" dialogue="Wifi connection"></option>
-    
+
     <option id="skill11" dialogue="Employee VI"></option>
     <option id="skill12" dialogue="Employee VII"></option>
     <option id="skill13" dialogue="Employee VIII"></option>
@@ -633,6 +640,8 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="skill35a" dialogue="Increases maximum amount of daily sales by 2."></option>
     <option id="skill36" dialogue="Special Prices II"></option>
     <option id="skill37" dialogue="Special Prices III"></option>
+    <option id="skill38" dialogue="Pallet Displays"></option>
+    <option id="skill38a" dialogue="Unlocks different types of pallet displays for the biggest products"></option>
 
     <!-- ///////////////////////////////////Products///////////////////////////////////// -->
 
@@ -656,7 +665,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="productGroup15" dialogue="Child Care"></option>
     <option id="productGroup16" dialogue="Gardening"></option>
     <option id="productGroup17" dialogue="Small Electronics"></option>
-    
+
     <option id="productCategory0" dialogue="Basic Products I"></option>
     <option id="productCategory1" dialogue="Basic Products II"></option>
     <option id="productCategory2" dialogue="Basic Products III"></option>
@@ -904,7 +913,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="product177" dialogue="Disinfectant"></option>
     <option id="product178" dialogue="Ibuprofen"></option>
     <option id="product179" dialogue="Paracetamol"></option>
-    
+
     <option id="product180" dialogue="Adhesive Bandages"></option>
     <option id="product181" dialogue="Laxative"></option>
     <option id="product182" dialogue="Antihistamine"></option>
@@ -915,7 +924,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="product187" dialogue="Vitamins"></option>
     <option id="product188" dialogue="Melatonin"></option>
     <option id="product189" dialogue="Sunscreen"></option>
-    
+
     <option id="product190" dialogue="Stretch Cream"></option>
     <option id="product191" dialogue="Red Apple Tray"></option>
     <option id="product192" dialogue="Green Apple Tray"></option>
@@ -1036,7 +1045,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="product297" dialogue="Basic Speaker"></option>
     <option id="product298" dialogue="Basic Headphones"></option>
     <option id="product299" dialogue="Basic Gaming Console"></option>
-    
+
 
     <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
     <option id="paintmat0" dialogue="Store Tiles A"></option>
@@ -1149,8 +1158,8 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="paintmat97" dialogue="Christmas H"></option>
     <option id="paintmat98" dialogue="Christmas I"></option>
     <option id="paintmat99" dialogue="Christmas J"></option>
-    
-    <option id="paintmat100" dialogue="Snow"></option>   
+
+    <option id="paintmat100" dialogue="Snow"></option>
     <option id="paintmat101" dialogue="Ice A"></option>
     <option id="paintmat102" dialogue="Ice B"></option>
     <option id="paintmat103" dialogue="Ice C"></option>
@@ -1160,7 +1169,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="paintmat107" dialogue="Products: Dairy A"></option>
     <option id="paintmat108" dialogue="Products: Dairy B"></option>
     <option id="paintmat109" dialogue="Products: Soda Drinks A"></option>
-    
+
     <option id="paintmat110" dialogue="Products: Soda Drinks B"></option>
     <option id="paintmat111" dialogue="Products: Frozen"></option>
     <option id="paintmat112" dialogue="Products: Hygiene A"></option>
@@ -1254,7 +1263,7 @@ Note you can also set prices with your numpad or reassign keys in Options/Custom
     <option id="newoptions2" dialogue="TV Vol."></option>
 
     <option id="poseskey" dialogue="Dances Key Assignment"></option>
-    
+
     <option id="lic12" dialogue="In this terminal you will be able to hook Youtube and Twitch to your TVs once the license is approved."></option>
 
     <option id="cosmetics1" dialogue="The cosmetics DLC has been approved!"></option>
@@ -1441,6 +1450,12 @@ Have the broom at hand"></option>
     <option id="stats13" dialogue="Boxes Introduced In Baler"></option>
     <option id="stats14" dialogue="Cardboard Bales Recycled"></option>
 
+    <option id="stats15" dialogue="Extra Items Sold Thanks To Sales"></option>
+    <option id="stats16" dialogue="Invoices paid"></option>
+
+    <option id="stats17" dialogue="Online Orders Assembled"></option>
+    <option id="stats18" dialogue="Money Earned With Online Orders"></option>
+
     <option id="unstckplyr" dialogue="Unstuck"></option>
     <option id="off2disclaimer" dialogue="Have a suggestion or problem? Steam forums are for now the only official media to stay in contact with the developer"></option>
 
@@ -1516,8 +1531,39 @@ Have the broom at hand"></option>
     <option id="sledvce1" dialogue="Maximum sales"></option>
 
     <option id="lghtlmttn0" dialogue="Limit Lighting"></option>
-    <option id="lghtlmttn1" dialogue="Having too many lights in the store has rarely caused a black screen problem in the past for some players. Activate this option if you want to try removing this limitation."></option>
+    <option id="lghtlmttn1" dialogue="Having too many lights in the store has rarely caused a black screen problem in the past for some players. Set this option to 'No' if you want to try removing this limitation."></option>
 
     <option id="arcblderdisclaimer" dialogue="Hold [Drop Item] to ignore collisions. Use this with caution."></option>
-    
+
+    <option id="rststtngs0" dialogue="Reset Game Settings"></option>
+    <option id="rststtngs1" dialogue="Settings cleared"></option>
+
+    <option id="opckgng0" dialogue="Available Orders"></option>
+    <option id="opckgng1" dialogue="Choose an order for this table"></option>
+    <option id="opckgng2" dialogue="Order packaging department is now opened!"></option>
+    <option id="opckgng3" dialogue="Package assigned to table"></option>
+    <option id="opckgng4" dialogue="Close current box"></option>
+    <option id="opckgng5" dialogue="Deposit required items from blue tray in the striped area below, then organize them inside the box by dragging them.
+Use [Horizontal Movement] to rotate products. The same order can have multiple boxes."></option>
+    <option id="opckgng6" dialogue="Order completed in table"></option>
+    <option id="opckgng7" dialogue="Items left to be packed"></option>
+    <option id="opckgng8" dialogue="Products required for this order"></option>
+    <option id="opckgng9" dialogue="Table"></option>
+    <option id="opckgng10" dialogue="Notify orders on arrival"></option>
+    <option id="opckgng11" dialogue="A new order has arrived!"></option>
+    <option id="opckgng12" dialogue="Instructions"></option>
+    <option id="opckgng13" dialogue="1.- Open the order packaging department.
+2.- Wait for orders to arrive during the working day, enable notifications if you wish to be warned when one arrives.
+3.- Use the cardboard boxes on each table to enter packaging mode. Select the order you wish to arrange in that table.
+4.- Go around your store or storage with the blue tray and carry all necessary items to the table's striped area. An additional tablet will appear in the tray reminding you which items are needed.
+5.- While using a table, drag products into the central box and use the 'Close current box' button when ready. The same order can have multiple boxes.
+6.- Build a parcel pickup point somewhere in your store and place there the order's boxes.
+7.- Eventually customers will arrive to claim their orders and pay."></option>
+
+    <option id="dcord0" dialogue="Join us on"></option>
+    <option id="dcord1" dialogue="To celebrate its inauguration we will have a one-time 200 keys DLC giveaway during this month. Don't miss it!"></option>
+
   </options>
+
+</text>!   LineBreaking Following Characters
+
