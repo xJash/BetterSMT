@@ -8,11 +8,12 @@ public class LateUpdateRaycastPatch {
     private static bool isThirdPersonEnabled = false;
 
     private static void Postfix(CustomCameraController __instance) {
-        if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) {
+        if (__instance == null) {
             return;
         }
 
-        if (!BetterSMT.ThirdPersonToggle.Value || __instance == null || __instance.inVehicle || __instance.isInCameraEvent) {
+        bool inChat = FsmVariables.GlobalVariables.GetFsmBool("InChat").Value;
+        if (inChat || __instance.inVehicle || __instance.isInCameraEvent || !BetterSMT.ThirdPersonToggle.Value) {
             return;
         }
 
@@ -21,9 +22,11 @@ public class LateUpdateRaycastPatch {
         }
 
         __instance.inEmoteEvent = isThirdPersonEnabled;
-        if (__instance.thirdPersonFollow != null) {
-            __instance.thirdPersonFollow.CameraDistance = isThirdPersonEnabled ? 2f : 0f;
-            __instance.thirdPersonFollow.CameraCollisionFilter = isThirdPersonEnabled ? __instance.thirdPersonDefaultLayerMask : 0;
+
+        Cinemachine.Cinemachine3rdPersonFollow follow = __instance.thirdPersonFollow;
+        if (follow != null) {
+            follow.CameraDistance = isThirdPersonEnabled ? 2f : 0f;
+            follow.CameraCollisionFilter = isThirdPersonEnabled ? __instance.thirdPersonDefaultLayerMask : 0;
         }
 
         __instance.ShowCharacter(isThirdPersonEnabled);

@@ -11,7 +11,7 @@ namespace BetterSMT.Patches {
                 __result = key[1..];
                 return false;
             }
-            return true;
+            return true; 
         }
     }
 }

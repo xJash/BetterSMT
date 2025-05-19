@@ -33,7 +33,7 @@ public class UpgradesManagerPatch {
             BetterSMT.Instance.StartCoroutine(__instance.AuxiliarSetUIPallets());
         }
     }
-        [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
+    [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
         #region Switch- Perks
         switch (perkIndex) {
