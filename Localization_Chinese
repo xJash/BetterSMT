@@ -1,1299 +1,1493 @@
-﻿Python 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
+﻿<?xml version='1.0' encoding='utf-8'?>
+<options>
+    
 
-============= RESTART: C:\Users\Mitch\Desktop\language\translate.py ============
-Translated: "New Store" → "新商店"
-Translated: "Load Store" → "负载商店"
-Translated: "Join Store" → "加入商店"
-Translated: "Options" → "选项"
-Translated: "Exit" → "出口"
-Translated: "Choose a name for your store" → "为您的商店选择名称"
-Translated: "Private" → "私人的"
-Translated: "Only Friends" → "只有朋友"
-Translated: "Public" → "民众"
-Translated: "Create" → "创造"
-Translated: "Store name must have more than 2 characters and do not have invalid characters" → "存储名称必须具有2个以上的字符，并且没有无效的字符"
-Translated: "You can inflate difficulty artificially if desired" → "如果需要，您可能会人为地膨胀困难"
-Translated: "Difficulty: " → "困难："
-Translated: "Yes" → "是的"
-Translated: "No" → "不"
-Translated: "Back" → "后退"
-Translated: "Apply" → "申请"
-Translated: "Enter text..." → "输入文字..."
-Translated: "Join" → "加入"
-Translated: "Invalid code or host has locked the lobby" → "无效的代码或主机已锁定大厅"
-Translated: "Join friends with code" → "加入代码的朋友"
-Translated: "Copy code..." → "复制代码..."
-Translated: "Loading" → "加载中"
-Translated: "Graphics" → "图形"
-Translated: "Resolution" → "解决"
-Translated: "Fullscreen" → "全屏"
-Translated: "Vsync" → "vsync"
-Translated: "Antialiasing" → "抗质量"
-Translated: "Brightness" → "亮度"
-Translated: "Quality" → "质量"
-Translated: "Performant" → "表演者"
-Translated: "Balanced" → "均衡"
-Translated: "High Fidelity" → "高保真"
-Translated: "Controls" → "控件"
-Translated: "X Sensitivity" → "x灵敏度"
-Translated: "Y Sensitivity" → "y灵敏度"
-Translated: "Zoom Sensitivity" → "缩放灵敏度"
-Translated: "Invert X Axis" → "反转X轴"
-Translated: "Invert Y Axis" → "倒轴"
-Translated: "Customize Controls" → "自定义控件"
-Translated: "Audio" → "声音的"
-Translated: "Master Vol." → "大师卷。"
-Translated: "Music Vol." → "音乐卷。"
-Translated: "SFX Vol." → "SFX卷。"
-Translated: "UI Vol." → "UI卷。"
-Translated: "Voice Vol." → "语音卷。"
-Translated: "Main Menu" → "主菜单"
-Translated: "Quit Game" → "退出游戏"
-Translated: "Return to main menu?" → "返回主菜单？"
-Translated: "Quit game?" → "退出游戏？"
-Translated: "Copy join code to clipboard" → "将加入代码复制到剪贴板"
-Translated: "Join friends with code" → "加入代码的朋友"
-Translated: "Copy code..." → "复制代码..."
-Translated: "Camera Event FOV" → "相机事件FOV"
-Translated: "Offensive NPCs" → "进攻性NPC"
-Translated: "Popping Distance" → "弹出距离"
-Translated: "Move Forward" → "前进"
-Translated: "Move Forward+" → "向前+"
-Translated: "Move Forward-" → "前进 -"
-Translated: "Move Horizontal" → "移动水平"
-Translated: "Move Horizontal+" → "移动水平+"
-Translated: "Move Horizontal-" → "移动水平"
-Translated: "Mouse Vertical" → "鼠标垂直"
-Translated: "Mouse Vertical+" → "鼠标垂直+"
-Translated: "Mouse Vertical-" → "小鼠垂直 -"
-Translated: "Mouse Horizontal" → "鼠标水平"
-Translated: "Mouse Horizontal+" → "鼠标水平+"
-Translated: "Mouse Horizontal-" → "鼠标"
-Translated: "Main Action" → "主要动作"
-Translated: "Secondary Action" → "次要动作"
-Translated: "Build" → "建造"
-Translated: "Drop Item" → "删除项目"
-Translated: "Jump" → "跳"
-Translated: "Sprint" → "短跑"
-Translated: "Open Builder" → "开放式建筑商"
-Translated: "Menu Next" → "菜单下一个"
-Translated: "Menu Previous" → "菜单以前"
-Translated: "Chat" → "聊天"
-Translated: "Voice Chat" → "语音聊天"
-Translated: "Escape Menu" → "逃生菜单"
-Translated: "Crouch" → "蹲伏"
-Translated: "Builder Tab Next" → "建筑商选项卡下一个"
-Translated: "Builder Tab Prev" → "建筑商标签上一个"
-Translated: "Dance 1" → "舞蹈1"
-Translated: "Dance 2" → "舞蹈2"
-Translated: "Dance 3" → "舞蹈3"
-Translated: "Dance 4" → "舞蹈4"
-Translated: "Dance 5" → "舞蹈5"
-Translated: "Dance 6" → "舞蹈6"
-Translated: "Dance 7" → "舞蹈7"
-Translated: "Dance 8" → "舞蹈8"
-Translated: "Dance 9" → "舞蹈9"
-Translated: "Numpad 0" → "numpad 0"
-Translated: "Numpad 1" → "numpad 1"
-Translated: "Numpad 2" → "numpad 2"
-Translated: "Numpad 3" → "numpad 3"
-Translated: "Numpad 4" → "numpad 4"
-Translated: "Numpad 5" → "numpad 5"
-Translated: "Numpad 6" → "numpad 6"
-Translated: "Numpad 7" → "numpad 7"
-Translated: "Numpad 8" → "numpad 8"
-Translated: "Numpad 9" → "numpad 9"
-Translated: "Numpad Delete" → "numpad删除"
-Translated: "Numpad Period" → "数字期"
-Translated: "Numpad Accept" → "numpad接受"
-Translated: "Build Snapping" → "构建捕捉"
-Translated: "Employees: " → "雇员："
-Translated: "Employees Assignment" → "员工任务"
-Translated: "Cashiers" → "收银员"
-Translated: "Restock" → "补货"
-Translated: "Storage" → "贮存"
-Translated: "Security" → "安全"
-Translated: "Manager Blackboard" → "经理黑板"
-Translated: "Product Order" → "产品订单"
-Translated: "Supermarket" → "超级市场"
-Translated: "Cosmetics Order" → "化妆品顺序"
-Translated: "Set TV Video/Stream" → "设置电视视频/流"
-Translated: "Products in shelves" → "货架上的产品"
-Translated: "Products in storages" → "产品中的产品"
-Translated: "Products in boxes" → "盒子中的产品"
-Translated: "Shopping List" → "购物清单"
-Translated: "Buy" → "买"
-Translated: "Supermarket Name" → "超市名称"
-Translated: "Supermarket Color" → "超市颜色"
-Translated: "Change Name" → "更改名称"
-Translated: "Change Color" → "更改颜色"
-Translated: "Franchise Points Available" → "特许点可用"
-Translated: "Unlocks" → "解锁"
-Translated: "Requires" → "需要"
-Translated: "Host connection lost" → "主机连接丢失"
-Translated: "BUY SHOP SPACE" → "购买商店空间"
-Translated: "BUY STORAGE SPACE" → "购买存储空间"
-Translated: "Addons" → "插件"
-Translated: "Welcome to Supermarket Together!" → "欢迎一起去超市！"
-Translated: "While the store is closed time passes way more slowly.              The first step is to place some furniture. Press [TAB] to open the builder" → "商店的关闭时间更慢。              第一步是放置一些家具。按[TAB]打开建造者"
-Translated: "Buy 2 product shelves, a checkout and a storage shelf.  Note the storage shelf can only be placed in the annex empty room connected to the manager room." → "购买2个产品架子，一个结帐和一个存储架。  请注意，存储架只能放置在连接到经理房间的附件空房间中。"
-Translated: "Good job!              We have a franchise point available: points are earned by owning a successful business.  Go to the manager room and acquire the first perk in the perk's blackboard." → "好工作！              我们有一个特许经营点：拥有成功的业务来赚取要点。  前往经理室，获取PERK黑板中的第一个津贴。"
-Translated: "Great. You have just acquired the first pack of products.  It's important to remember that once you've acquired a product franchise, customers will expect those products to be in the store or they will complain about existences.  Now go to the manager blackboard, click in it and then click in products order." → "伟大的。您刚刚购买了第一包产品。  重要的是要记住，一旦您获得了产品专营权，客户就会期望这些产品在商店中，否则他们会抱怨存在。  现在，转到Manager Blackboard，单击它，然后单击产品顺序。"
-Translated: "Good. Now click in Basic Products I." → "好的。现在单击基本产品。"
-Translated: "Let's buy a box of each basic product.  Click on the plus symbol of each product to add it to the shopping list, once you have one of each there, click buy." → "让我们买一盒每个基本产品。  单击每种产品的加上符号以将其添加到购物列表中，一旦您在那里，请单击“购买”。"
-Translated: "Great. Now go outside and look for the purchased boxes. Click on one to hold it." → "伟大的。现在去外面寻找购买的盒子。单击一个以保持它。"
-Translated: "Go to a product shelf and click [LMB] on one of its rows to fill it with products.  [RMB] will return items from the shelf to the box.  You can also press [F] to drop items where you want to.  Place all products in the store's shelves." → "转到产品架子，然后在其行之一上单击[LMB]，以填充产品。  [RMB]将将物品从架子返回到盒子。  您也可以按[F]将项目放在您想要的位置。  将所有产品放在商店的货架上。"
-Translated: "Products are placed but initially labeled at cost price which means no benefit.  Go to the manager room and take one of the pricing devices." → "放置产品，但最初以成本价格标记，这意味着没有好处。  前往经理室，采用价格之一。"
-Translated: "Aim at a shelf and the product pricing information will appear on the device' screen.  If your prices surpasses more than double of the product's base price customers will have an increasing chance of not buying it so use this rule as a scale.  P.e. if a product has cost 1 dollar and you set your price higher than 2 dollars customers may not buy it. Try to set a price to all six different products.  CONTROLS [Mouse Wheel] Add or subtract in increments of 0.01. [Mouse Wheel + E] Add or subtract in increments of 0.2. [LMB] Accept price. [Numpad] Can also be used. [F] Drop items  Note you can also set prices with your numpad or reassign keys in Options/Customize Controls to do so. Numpad can be also used to input amounts when customers pay with credit card in checkouts." → "瞄准架子，产品定价信息将出现在设备的屏幕上。  如果您的价格超过产品的基本价格的两倍以上，那么客户将有越来越多的机会不购买它，因此请将此规则作为规模。  P.E.如果产品的价格为1美元，并且您将价格高于2美元的价格可能不会购买。尝试为所有六种不同的产品设定价格。  控制[鼠标轮]以0.01的增量添加或减去。 [鼠标车轮 + E]以0.2的增量添加或减去。 [LMB]接受价格。 [numpad]也可以使用。 [f]删除项目注意，您还可以在选项/自定义控件中使用numpad或重新分配密钥设置价格。当客户在结帐中使用信用卡付款时，NUMPAD也可用于输入金额。"
-Translated: "Your store is now ready to open. To allow customers in press the green button located in the manager's room. But first read the important info below:  - Every Thursday market inflation increases on some products and you will have to review prices.  - You can drop empty boxes in the container just outside OR carry them to the farthest container across the street and earn some money back by recycling it. Money can be increased with a perk.  - At day 8, thieves and trash will have a chance to spawn. The solution to both is the broom: hit the thieves and they will drop their stolen products.  - Each checkout can have a queue of 8 customers, they won't become impatient but extra customers that do not detect a free checkout queue, will become thieves and leave without paying.  - You can check lights and other decoration by pressing X or Z by default while using the Builder.  - You can definitely clear a shelf row from its products by right clicking it with the pricing tool. Useful if you don't want any employees to keep restocking that row.  - Pay attention to the invoices tab in the manager's blackboard. Your employees wages and electrical or rent invoices will arrive there.  - To close the store wait until it's 22:30 PM and press the red button in the manager's room. Game is saved automatically every new day.  - The more players, the more difficulty. (Try hitting players with the broom)" → "您的商店现在可以开业了。为了让客户按下位于经理房间中的绿色按钮。但是首先阅读以下重要信息： - 某些产品的每个星期四市场通货膨胀率都会增加，您将不得不审查价格。   - 您可以将空箱子放在外面的容器中，也可以将它们带到马路对面最远的容器，并通过回收利用来赚钱。可以用福利增加金钱。   - 在第8天，盗贼和垃圾将有机会产卵。两者的解决方案是扫帚：击中小偷，他们会丢下被盗的产品。   - 每个结帐都可以有8个客户的队列，他们不会变得不耐烦，但是没有发现免费结帐队列的额外客户将成为小偷，而无需付款而离开。   - 您可以在使用构建器时默认按X或Z检查灯和其他装饰。   - 您绝对可以通过使用定价工具右键单击其产品中的架子行。如果您不希望任何员工继续进行该行，有用。   - 注意经理黑板中的“发票”选项卡。您的员工工资以及电气或租金发票将到达那里。   - 要关闭商店，请等到22:30 pm，然后按下经理房间中的红色按钮。每天都会自动保存游戏。   - 球员越多，困难就越多。 （尝试用扫帚击打球员）"
-Translated: "Build / Move / Delete" → "构建 /移动 /删除"
-Translated: "Rotate Left" → "向左旋转"
-Translated: "Rotate Right" → "向右旋转"
-Translated: "Navigate Menu Up" → "导航菜单"
-Translated: "Navigate Menu Down" → "导航菜单下降"
-Translated: "[LMB] Add money" → "[LMB]加钱"
-Translated: "[RMB] Remove money" → "[rmb]删除钱"
-Translated: "Day " → "天"
-Translated: "MON" → "周一"
-Translated: "TUE" → "星期二"
-Translated: "WED" → "星期三"
-Translated: "THU" → "星期四"
-Translated: "FRI" → "星期五"
-Translated: "SAT" → "坐着"
-Translated: "SUN" → "太阳"
-Translated: "End of working day: " → "工作日结束："
-Translated: "Total Customers: " → "总客户："
-Translated: "Not found products: " → "找不到产品："
-Translated: "Too expensive products: " → "太昂贵的产品："
-Translated: "Times robbed: " → "时代被抢劫："
-Translated: "Complaints about filth: " → "关于肮脏的投诉："
-Translated: "Franchise Level: " → "特许经营级别："
-Translated: "Franchise experience: " → "特许经验："
-Translated: "Income " → "收入"
-Translated: "Money lost because robbers: " → "钱损失是因为强盗："
-Translated: "Bought products cost: " → "购买的产品成本："
-Translated: "Rent cost: " → "租金成本："
-Translated: "Electricity cost: " → "电力成本："
-Translated: "Employees wages: " → "员工工资："
-Translated: "Other costs: " → "其他费用："
-Translated: "Day Balance: " → "日平衡："
-Translated: "Supermarket Opened" → "超市开业"
-Translated: "Franchise Level Up: Point Awarded" → "特许经营级别：授予点"
-Translated: "Perk Acquired" → "振作获得了"
-Translated: "Supermarket Expansion Acquired" → "超市扩张获得了"
-Translated: "Storage Expansion Acquired" → "获取存储扩展"
-Translated: "Department Acquired" → "部门获得了"
-Translated: "Store requirements not met" → "商店要求未满足"
-Translated: "Storage requirements not met" → "存储要求未满足"
-Translated: "Wrong container type for this product" → "该产品的错误容器类型"
-Translated: "Can't add more products to this shelf" → "无法在这个架子上添加更多产品"
-Translated: "Can't mix products in the same shelf" → "不能在同一架子上混合产品"
-Translated: "No franchise points available" → "没有特许点可用"
-Translated: "Previous franchise nodes not acquired" → "以前未获得的特许经营节点"
-Translated: "No products in shopping list" → "购物清单中没有产品"
-Translated: "Not enough funds" → "资金不足"
-Translated: "Already holding something" → "已经拿着东西了"
-Translated: "No more products in the box" → "包装盒中没有更多产品"
-Translated: "No more supermarket space to acquire" → "不再获得超市的空间"
-Translated: "No more storage space to acquire" → "没有更多的存储空间可以获取"
-Translated: "Can't return less money than the required change" → "不能比所需的更改更少的钱"
-Translated: "Box has products inside" → "盒子里有产品"
-Translated: "No more space in box" → "包装盒中没有更多空间"
-Translated: "Can't mix products in the same box" → "不能在同一盒子里混合产品"
-Translated: "Need a broom for this" → "需要扫帚"
-Translated: "Only allowed when store is closed" → "仅当商店关闭时允许"
-Translated: "Only allowed when no more customers" → "只有在没有更多客户的情况下才允许"
-Translated: "Remove all products from container before deleting" → "删除之前，请从容器中删除所有产品"
-Translated: "Container has products. Hold [drop item] key while deleting if you are sure" → "容器有产品。如果确定"
-Translated: "Store needs at least one manned checkout" → "商店需要至少一个载人的结帐"
-Translated: "Can't fit this item in the tray" → "无法在托盘中适合此项目"
-Translated: "Pallet displays require products bigger than this" → "托盘显示需要比这更大的产品"
-Translated: "Host connection lost" → "主机连接丢失"
-Translated: "I haven't found this: " → "我还没有找到这个："
-Translated: "This is too expensive: " → "这太贵了："
-Translated: "Haven't found what I was looking for" → "还没找到我要寻找的东西"
-Translated: "No checkouts available? Bye!" → "没有结帐？再见！"
-Translated: "Bye suckers!" → "再见吸盘！"
-Translated: "This supermarket is so filthy!" → "这个超市太肮脏了！"
-Translated: "I'll attend this cashier." → "我会参加这个收银员。"
-Translated: "Ow!" → "哇！"
-Translated: "Jeez" → "耶斯"
-Translated: "Stick that broom up your arse" → "坚持擦伤你的屁股"
-Translated: "Policeeeeeee!" → "警察！"
-Translated: "Eeeeeek!" → "eeeeeek！"
-Translated: "Aaaaaaaah!" → "aaaaaaaah！"
-Translated: "This is abuse!" → "这是虐待！"
-Translated: "Gaah!" → "盖！"
-Translated: "Hit me harder baby" → "打我更难的宝贝"
-Translated: "OwO" → "owo"
-Translated: "Bad boss" → "坏老板"
-Translated: "This is abuse" → "这是虐待"
-Translated: "D:" → "D："
-Translated: "Call the strike!" → "打罢工！"
-Translated: "Builder" → "建筑商"
-Translated: "Placement Mode" → "放置模式"
-Translated: "Product Shelf" → "产品架子"
-Translated: "Basic Fridge" → "基本冰箱"
-Translated: "Double Fridge" → "双冰箱"
-Translated: "Freezer" → "冰箱"
-Translated: "Storage Shelf" → "存储架"
-Translated: "Checkout (Right)" → "结帐（右）"
-Translated: "Checkout (Left)" → "结帐（左）"
-Translated: "Standing Freezer" → "站立的冰柜"
-Translated: "Product Counter A" → "产品计数器"
-Translated: "Storage Shelf (Unlabeled)" → "存储架（未标记）"
-Translated: "Produce Shelf A" → "生产架子a"
-Translated: "Self-checkout" → "自我检查"
-Translated: "Produce Shelf B" → "产生架子b"
-Translated: "Product Shelf (Half)" → "产品架（一半）"
-Translated: "Tiered Shelf" → "分层架子"
-Translated: "Wall Shelf" → "墙架"
-Translated: "Pegboard Shelf" → "钉板架"
-Translated: "Produce Shelf B (Half)" → "生产架子B（一半）"
-Translated: "Corner Shelf (Big)" → "角架（大）"
-Translated: "Corner Shelf (Small)" → "角架（小）"
-Translated: "Basic Pallet Display" → "基本托盘显示"
-Translated: "Wooden Pallet Display A" → "木制托盘显示"
-Translated: "Wooden Pallet Display B" → "木制托盘显示b"
-Translated: "Plastic Pallet Display" → "塑料托盘显示"
-Translated: "Tall Pallet Display" → "高托盘显示"
-Translated: "Delete Mode" → "删除模式"
-Translated: "Builder" → "建筑商"
-Translated: "Decoration" → "装饰"
-Translated: "Devices" → "设备"
-Translated: "Lights" → "灯"
-Translated: "Seasonal: Halloween" → "季节性：万圣节"
-Translated: "Staff Room" → "员工室"
-Translated: "Seasonal: Christmas" → "季节性：圣诞节"
-Translated: "Decoration: Plants" → "装饰：植物"
-Translated: "Architecture" → "建筑学"
-Translated: "Neon Lamp A" → "霓虹灯a"
-Translated: "Potted Plant A" → "盆栽植物a"
-Translated: "TV" → "电视"
-Translated: "Ceiling Sign" → "天花板标志"
-Translated: "Crowd Barrier" → "人群障碍"
-Translated: "Anti-theft Door" → "防盗门"
-Translated: "Wooden Pot" → "木锅"
-Translated: "Wooden Pot Wide" → "木锅宽"
-Translated: "Ceiling Vent" → "天花板通风孔"
-Translated: "Central Pricing Machine" → "中央定价机"
-Translated: "Tombstone A" → "墓碑a"
-Translated: "Tombstone B" → "墓碑b"
-Translated: "Tombstone C" → "墓碑c"
-Translated: "Tombstone D" → "墓碑d"
-Translated: "Tombstone E" → "墓碑e"
-Translated: "Tombstone F" → "墓碑f"
-Translated: "Pumpkin A" → "南瓜a"
-Translated: "Pumpkin B" → "南瓜b"
-Translated: "Pumpkin C" → "南瓜c"
-Translated: "The Pumpkinman" → "南瓜人"
-Translated: "Spooky Ghost" → "怪异的幽灵"
-Translated: "Shiny Flower A" → "闪亮的花a"
-Translated: "Shiny Flower B" → "闪亮的花b"
-Translated: "Mini Transport Vehicle" → "迷你运输车辆"
-Translated: "Neon Lamp B" → "霓虹灯b"
-Translated: "Neon Lamp C" → "霓虹灯c"
-Translated: "Neon Lamp D" → "霓虹灯d"
-Translated: "Neon Lamp E" → "霓虹灯e"
-Translated: "Hanging Lamp A" → "悬挂灯A。"
-Translated: "Hanging Lamp B" → "悬挂灯b"
-Translated: "Hanging Lamp C" → "悬挂灯c"
-Translated: "Hanging Lamp D" → "悬挂灯d"
-Translated: "Hanging Lamp E" → "悬挂灯e"
-Translated: "Hanging Lamp F" → "悬挂灯f"
-Translated: "Hanging Lamp G" → "悬挂灯g"
-Translated: "Hanging Lamp H" → "悬挂灯h"
-Translated: "Hanging Lamp I" → "悬挂灯i"
-Translated: "Hanging Lamp J" → "悬挂灯j"
-Translated: "Hanging Lamp K" → "悬挂灯k"
-Translated: "Hanging Lamp L" → "悬挂灯l"
-Translated: "Hanging Lamp M" → "悬挂灯m"
-Translated: "Special Lamp A" → "特殊灯A。"
-Translated: "Security Camera" → "安全摄像头"
-Translated: "Security Desk" → "安全台"
-Translated: "Cleaner Robot" → "清洁机器人"
-Translated: "Basic Table A" → "基本表A。"
-Translated: "Basic Chair A" → "基本椅子"
-Translated: "Staff Furniture A" → "员工家具a"
-Translated: "Private Fridge" → "私人冰箱"
-Translated: "Coffee Machine" → "咖啡机"
-Translated: "Snacks Machine" → "小吃机"
-Translated: "Soda Machine" → "苏打机"
-Translated: "Dart Machine" → "飞镖机"
-Translated: "Soccer Table" → "足球桌"
-Translated: "Billiard Table" → "台球表"
-Translated: "Billiard Cue Case" → "台球提示案"
-Translated: "Arcade: Robot Catcher" → "街机：机器人捕手"
-Translated: "Arcade: Space Wars" → "街机：太空战"
-Translated: "Arcade: Treasure Island" → "街机：宝藏岛"
-Translated: "Christmas Tree" → "圣诞树"
-Translated: "Christmas Arc" → "圣诞节弧"
-Translated: "Christmas Wreath" → "圣诞花圈"
-Translated: "Drummer Nutcracker" → "鼓手胡桃夹子"
-Translated: "General Nutcracker" → "一般胡桃夹子"
-Translated: "Horseman Nutcracker" → "骑士胡桃夹子"
-Translated: "Swordsman Nutcracker" → "剑客胡桃夹子"
-Translated: "Shiny Deer" → "闪亮的鹿"
-Translated: "Choo Choo Train" → "Choo Choo火车"
-Translated: "Najara Simulator" → "纳哈拉模拟器"
-Translated: "Stool" → "凳子"
-Translated: "Snowman" → "雪人"
-Translated: "Candy Cane" → "糖果甘蔗"
-Translated: "Christmas Gift" → "圣诞礼物"
-Translated: "Ceramic Pot A" → "陶瓷锅a"
-Translated: "Ceramic Pot B" → "陶瓷锅b"
-Translated: "Ceramic Pot C" → "陶瓷锅c"
-Translated: "Ceramic Pot D" → "陶瓷锅d"
-Translated: "Ceramic Pot E" → "陶瓷锅e"
-Translated: "Ceramic Pot F" → "陶瓷锅f"
-Translated: "Ceramic Pot G" → "陶瓷锅g"
-Translated: "Plant A" → "植物"
-Translated: "Plant B" → "植物b"
-Translated: "Plant C" → "植物c"
-Translated: "Plant D" → "d"
-Translated: "Plant E" → "植物e"
-Translated: "Plant F" → "植物f"
-Translated: "Plant G" → "植物g"
-Translated: "Plant H" → "植物h"
-Translated: "Plant I" → "植物i"
-Translated: "Plant crock A" → "植物crock a"
-Translated: "Plant crock B" → "植物crock b"
-Translated: "Plant crock C" → "植物crock c"
-Translated: "Plant J" → "植物j"
-Translated: "Plant K" → "植物k"
-Translated: "Plant L" → "植物"
-Translated: "Flower A" → "花a"
-Translated: "Flower B" → "花b"
-Translated: "Flower C" → "花c"
-Translated: "Flower D" → "花d"
-Translated: "Flower E" → "花e"
-Translated: "Flower F" → "花f"
-Translated: "Flower G" → "花g"
-Translated: "Flower H" → "花h"
-Translated: "Flower I" → "花i"
-Translated: "Flower J" → "花j"
-Translated: "Flower K" → "花k"
-Translated: "Flower L" → "花l"
-Translated: "Flower M" → "花米"
-Translated: "Flower N" → "花n"
-Translated: "Flower O" → "花o"
-Translated: "Flower P" → "花p"
-Translated: "Flower Q" → "花q"
-Translated: "Flower R" → "花r"
-Translated: "Flower S" → "花朵"
-Translated: "Flower T" → "花t"
-Translated: "Flower U" → "花"
-Translated: "Flower V" → "花V。"
-Translated: "Flower W" → "花w"
-Translated: "Flower X" → "花X"
-Translated: "Flower Y" → "花y"
-Translated: "Flower Z" → "花Z"
-Translated: "Flower A1" → "花A1"
-Translated: "Flower B1" → "花B1"
-Translated: "Supermarket Pillar" → "超市支柱"
-Translated: "Metallic Pillar" → "金属支柱"
-Translated: "Concrete Hanging Planter A" → "混凝土悬挂播"
-Translated: "Concrete Hanging Planter B" → "混凝土悬挂的花盆b"
-Translated: "Ceramic Hanging Planter A" → "陶瓷悬挂播"
-Translated: "NPC Unstuck Block" → "NPC Unstuck Block"
-Translated: "Street Light A" → "路灯a"
-Translated: "Street Light B" → "路灯b"
-Translated: "Street Light C" → "路灯c"
-Translated: "Street Light D" → "路灯d"
-Translated: "Street Light E" → "路灯e"
-Translated: "Street Light F" → "路灯f"
-Translated: "Street Light G" → "街头灯g"
-Translated: "Street Light H" → "路灯h"
-Translated: "Street Light I" → "路灯我"
-Translated: "Street Light J" → "路灯j"
-Translated: "Street Light K" → "路灯k"
-Translated: "Street Light L" → "路灯l"
-Translated: "Street Light M" → "路灯m"
-Translated: "Street Light N" → "路灯n"
-Translated: "Street Light O" → "路灯o"
-Translated: "Street Light P" → "路灯p"
-Translated: "Street Light Q" → "路灯问"
-Translated: "Fountain A1" → "喷泉A1"
-Translated: "Fountain A2" → "喷泉A2"
-Translated: "Fountain A3" → "喷泉A3"
-Translated: "Fountain B1" → "喷泉B1"
-Translated: "Fountain B2" → "喷泉B2"
-Translated: "Fountain B3" → "喷泉B3"
-Translated: "Fountain C1" → "喷泉C1"
-Translated: "Fountain C2" → "喷泉C2"
-Translated: "Fountain C3" → "喷泉C3"
-Translated: "Fountain D1" → "喷泉D1"
-Translated: "Fountain D2" → "喷泉D2"
-Translated: "Fountain D3" → "喷泉D3"
-Translated: "Fountain E1" → "喷泉E1"
-Translated: "Fountain E2" → "喷泉E2"
-Translated: "Fountain E3" → "喷泉E3"
-Translated: "Fountain F1" → "喷泉F1"
-Translated: "Fountain F2" → "喷泉F2"
-Translated: "Fountain F3" → "喷泉F3"
-Translated: "Fountain G1" → "喷泉G1"
-Translated: "Fountain G2" → "喷泉G2"
-Translated: "Fountain G3" → "喷泉G3"
-Translated: "Small Paintable Divider" → "小型可油漆分层"
-Translated: "Medium Paintable Divider" → "中型可油漆分隔器"
-Translated: "Large Paintable Divider" → "大型可油漆分隔线"
-Translated: "Corner Divider" → "角分隔线"
-Translated: "Large Ground Planter A" → "大地面播种机"
-Translated: "Large Ground Planter B" → "大地面播种机B"
-Translated: "Large Ground Planter C" → "大地面播种机C"
-Translated: "Large Ground Planter D" → "大地面播种机D"
-Translated: "Cross Paintable Divider" → "交叉油漆分隔线"
-Translated: "T-Shaped Paintable Divider" → "T形油漆分隔器"
-Translated: "Picture Frame" → "镜框"
-Translated: "Door Paintable Divider" → "门可油漆分隔器"
-Translated: "Wall Planter A" → "壁花A。"
-Translated: "Wall Planter A Panel" → "壁花"
-Translated: "Wall Planter B" → "壁花b"
-Translated: "Wall Planter B Panel" → "壁花B面板"
-Translated: "Cardboard Baler" → "纸板打包机"
-Translated: "Simple Beam" → "简单的光束"
-Translated: "Cross Beam" → "横梁"
-Translated: "T Beam" → "T梁"
-Translated: "Corner Beam" → "角梁"
-Translated: "Parcel Pickup Point" → "包裹拾取点"
-Translated: "Employee I" → "员工i"
-Translated: "Employee II" → "员工II"
-Translated: "Employee III" → "员工III"
-Translated: "Employee IV" → "员工IV"
-Translated: "Employee V" → "员工v"
-Translated: "Allows hiring an extra employee" → "允许雇用额外的员工"
-Translated: "Free morning coffee" → "免费的早晨咖啡"
-Translated: "Employees move +20% faster" → "员工移动 +20％"
-Translated: "Marketing courses I" → "营销课程我"
-Translated: "Employees generate +10% money in checkouts" → "员工在结帐时产生 +10％的钱"
-Translated: "Formation courses" → "编队课程"
-Translated: "Employees move 20% faster" → "员工速度更快20％"
-Translated: "Recycling courses" → "回收课程"
-Translated: "Recycling boxes award four times as much" → "回收盒奖奖是四倍"
-Translated: "Air Conditioning" → "空调"
-Translated: "Attracts more customers per day" → "每天吸引更多客户"
-Translated: "Wifi connection" → "WiFi连接"
-Translated: "Employee VI" → "员工vi"
-Translated: "Employee VII" → "员工VII"
-Translated: "Employee VIII" → "员工VIII"
-Translated: "Employee IX" → "员工IX"
-Translated: "Employee X" → "员工x"
-Translated: "Cashier Formation I" → "出纳员组合i"
-Translated: "Employees will handle products in checkout faster" → "员工将更快地处理产品"
-Translated: "Cashier Formation II" → "收银员组合II"
-Translated: "Cashier Formation III" → "收银员组III"
-Translated: "Restock Formation I" → "补货组i"
-Translated: "Employees will place products faster" → "员工将更快地放置产品"
-Translated: "Restock Formation II" → "补货组II"
-Translated: "Even more coffee" → "更多的咖啡"
-Translated: "Free Energy Drinks I" → "自由能量饮料我"
-Translated: "Free Energy Drinks II" → "自由能量饮料II"
-Translated: "Recycling courses II" → "回收课程II"
-Translated: "Employees will recycle boxes" → "员工将回收盒子"
-Translated: "Friendly Interface" → "友好界面"
-Translated: "Customers will use self-checkouts more" → "客户将更多地使用自我检查"
-Translated: "Employee XI" → "员工xi"
-Translated: "Employee XII" → "员工xii"
-Translated: "Recycling container" → "回收容器"
-Translated: "The closest trash container will be replaced with a recycling one." → "最近的垃圾容器将被回收容器替换。"
-Translated: "MART OS 2.0" → "MART OS 2.0"
-Translated: "The pricing machine software is improved and a way to automate prices can now be set" → "定价机软件得到了改进，现在可以设置一种自动化价格的方法"
-Translated: "Tic-tac goes fast" → "TIC-TAC走得很快"
-Translated: "When store is closed during nights, the manager can use the new clock in the manager's room to accelerate time" → "当夜间商店关闭时，经理可以在经理的房间中使用新时钟来加速时间"
-Translated: "Low energy light bulbs" → "低能灯泡"
-Translated: "Reduces overall electrical consumption by a 20%" → "将总体电消耗降低20％"
-Translated: "User-friendly Interface" → "用户友好的接口"
-Translated: "Customers use self-checkout faster" → "客户使用自我检查的速度更快"
-Translated: "Logistics" → "后勤"
-Translated: "When taking a box, players will be able to visualize its contained product's position both in store and storage" → "拿起盒子时，玩家将能够可视化其包含的产品在商店和存储中的位置"
-Translated: "External Accountant" → "外部会计师"
-Translated: "Invoices will be paid every new day if there are funds to do so." → "如果有资金，将每天支付发票。"
-Translated: "Special Prices I" → "特殊价格i"
-Translated: "Increases maximum amount of daily sales by 2." → "将每日销售量的最大数量增加2。"
-Translated: "Special Prices II" → "特殊价格ii"
-Translated: "Special Prices III" → "特殊价格iii"
-Translated: "Pallet Displays" → "托盘显示"
-Translated: "Unlocks different types of pallet displays for the biggest products" → "解锁最大产品的不同类型的托盘显示器"
-Translated: "Price per unit" → "每单位价格"
-Translated: "Basic Products" → "基本产品"
-Translated: "Dairy Products" → "乳制品"
-Translated: "Soda Drinks" → "苏打水"
-Translated: "Frozen Foods" → "冷冻食品"
-Translated: "Hygiene" → "卫生"
-Translated: "Cleaning Products" → "清洁产品"
-Translated: "Sweets and Snacks" → "糖果和小吃"
-Translated: "Meat" → "肉"
-Translated: "Preserves" → "果酱"
-Translated: "Infusions" → "输注"
-Translated: "Seafood" → "海鲜"
-Translated: "Books" → "图书"
-Translated: "Alcoholic Drinks" → "酒精饮料"
-Translated: "Pharmacy" → "药店"
-Translated: "Produce" → "生产"
-Translated: "Child Care" → "育儿"
-Translated: "Gardening" → "园艺"
-Translated: "Small Electronics" → "小型电子产品"
-Translated: "Basic Products I" → "基本产品i"
-Translated: "Basic Products II" → "基本产品II"
-Translated: "Basic Products III" → "基本产品III"
-Translated: "Basic Products IV" → "基本产品IV"
-Translated: "Basic Products V" → "基本产品v"
-Translated: "Basic Products VI" → "基本产品VI"
-Translated: "Dairy Products I" → "乳制品i"
-Translated: "Dairy Products II" → "乳制品II"
-Translated: "Soda Drinks I" → "苏打水i"
-Translated: "Frozen Foods I" → "冷冻食品i"
-Translated: "Frozen Foods II" → "冷冻食品II"
-Translated: "Hygiene I" → "卫生i"
-Translated: "Hygiene II" → "卫生II"
-Translated: "Hygiene III" → "卫生III"
-Translated: "Cleaning Products I" → "清洁产品i"
-Translated: "Cleaning Products II" → "清洁产品II"
-Translated: "Sweets And Snacks I" → "糖果和小吃"
-Translated: "Sweets And Snacks II" → "糖果和小吃II"
-Translated: "Sweets And Snacks III" → "糖果和小吃iii"
-Translated: "Sweets And Snacks IV" → "糖果和小吃iv"
-Translated: "Meat I" → "肉我"
-Translated: "Preserves I" → "保留我"
-Translated: "Infusions I" → "输液i"
-Translated: "Seafood I" → "海鲜i"
-Translated: "Books Pack I" → "书包我"
-Translated: "Books Pack II" → "书包II"
-Translated: "Alcoholic Drinks I" → "酒精饮料i"
-Translated: "Alcoholic Drinks II" → "酒精饮料II"
-Translated: "Alcoholic Drinks III" → "酒精饮料III"
-Translated: "Pharmacy I" → "药房"
-Translated: "Pharmacy II" → "药房II"
-Translated: "Produce I" → "生产i"
-Translated: "Produce II" → "产生II"
-Translated: "Produce III" → "产生III"
-Translated: "Produce IV" → "产生iv"
-Translated: "Child Care I" → "育儿i"
-Translated: "Child Care II" → "育儿ii"
-Translated: "Soda Drinks II" → "苏打饮料II"
-Translated: "Soda Drinks III" → "苏打饮料III"
-Translated: "Sweets And Snacks V" → "糖果和小吃v"
-Translated: "Sweets And Snacks VI" → "糖果和小吃vi"
-Translated: "Preserves II" → "保留II"
-Translated: "Gardening I" → "园艺i"
-Translated: "Gardening II" → "园艺II"
-Translated: "Gardening III" → "园艺三"
-Translated: "Gardening IV" → "园艺iv"
-Translated: "Small Electronics I" → "小电子i"
-Translated: "Small Electronics II" → "小电子II"
-Translated: "Small Electronics III" → "小型电子III"
-Translated: "Pasta Penne" → "意大利面Penne"
-Translated: "Water Bottle" → "水瓶"
-Translated: "Honey Cereals" → "蜂蜜谷物"
-Translated: "Rice" → "米"
-Translated: "Salt" → "盐"
-Translated: "Sugar" → "糖"
-Translated: "Margarine" → "人造黄油"
-Translated: "Flour" → "面粉"
-Translated: "Apple Juice" → "苹果汁"
-Translated: "Olive Oil" → "橄榄油"
-Translated: "Ketchup" → "番茄酱"
-Translated: "Sliced Bread" → "切成薄片的面包"
-Translated: "Pepper" → "胡椒"
-Translated: "Orange Juice" → "橙汁"
-Translated: "Barbaque Sauce" → "烤酱"
-Translated: "Mustard Sauce" → "芥末酱"
-Translated: "Spaghetti Box" → "意大利面条盒"
-Translated: "Tuna Pate" → "金枪鱼"
-Translated: "Fiber Cereals" → "纤维谷物"
-Translated: "Supreme Flour" → "最高面粉"
-Translated: "Black Coffee" → "黑咖啡"
-Translated: "Egg Box" → "鸡蛋盒"
-Translated: "Houmous" → "houmous"
-Translated: "White Flour" → "白面粉"
-Translated: "Cane Sugar Box" → "甘蔗糖盒"
-Translated: "Sugar" → "糖"
-Translated: "Macarroni" → "马ron"
-Translated: "Ecologic Sugar" → "生态糖"
-Translated: "Brown Sugar" → "红糖"
-Translated: "Sunflower Oil" → "向日葵油"
-Translated: "Mash Potatoes" → "土豆泥"
-Translated: "Potato Bag" → "土豆袋"
-Translated: "Espresso Coffee" → "浓缩咖啡"
-Translated: "Basmati Rice" → "巴斯玛米饭"
-Translated: "Long Grain Rice" → "长谷物米饭"
-Translated: "Coffee" → "咖啡"
-Translated: "Supreme Pasta" → "至尊面食"
-Translated: "Chocolate Cereals" → "巧克力谷物"
-Translated: "Premium Water" → "优质水"
-Translated: "Spring Water" → "春水"
-Translated: "Powdered Sugar" → "糖粉"
-Translated: "Sugar - Big Box" → "糖 - 大盒子"
-Translated: "Brown Sugar - Big Box" → "红糖 - 大盒子"
-Translated: "Emmental Cheese" → "emmental奶酪"
-Translated: "Gruyere Cheese" → "Gruyere奶酪"
-Translated: "Skimmed Cheese" → "脱脂奶酪"
-Translated: "Fruit Yoghurt" → "水果酸奶"
-Translated: "Vanilla Yoghurt" → "香草酸奶"
-Translated: "Milk Brick" → "牛奶砖"
-Translated: "Butter" → "黄油"
-Translated: "Parmigiano Cheese" → "帕马尼亚奶酪"
-Translated: "Reggiano Cheese" → "雷吉亚诺奶酪"
-Translated: "Mozzarella Cheese" → "马苏里拉奶酪"
-Translated: "Skimmed Yoghurt" → "脱脂酸奶"
-Translated: "Cola Pack" → "可乐包"
-Translated: "Soda Pack" → "苏打包"
-Translated: "Decaf Soda Pack" → "Decaf Soda Pack"
-Translated: "Soda Bottle" → "苏打瓶"
-Translated: "Cola Bottle" → "可乐瓶"
-Translated: "Sugar Free Soda Bottle" → "无糖苏打瓶"
-Translated: "Premium Soda" → "高级苏打水"
-Translated: "Pizza Barbaque" → "披萨芭芭拉"
-Translated: "Fondue" → "火锅"
-Translated: "Crocanti Ham" → "鳄鱼火腿"
-Translated: "Ham Cheese Crepe" → "火腿奶酪可丽饼"
-Translated: "French Fries" → "炸薯条"
-Translated: "Crispy Potato Pops" → "脆皮马铃薯弹出"
-Translated: "Green Beans" → "绿豆"
-Translated: "Four Cheese Pizza" → "四个奶酪披萨"
-Translated: "Four Seasons Pizza" → "四季披萨"
-Translated: "Vegetable Mix" → "蔬菜混合物"
-Translated: "Chicken Mix" → "鸡肉混合"
-Translated: "Bolognaise Lasagna" → "bolognaise烤宽面条"
-Translated: "Vegetable Lasagna" → "蔬菜宽面条"
-Translated: "Toothpaste" → "牙膏"
-Translated: "Toilet Paper" → "卫生纸"
-Translated: "Hand Soap" → "手肥皂"
-Translated: "Avocado Shampoo" → "鳄梨洗发水"
-Translated: "Egg Shampoo" → "鸡蛋洗发水"
-Translated: "Bath Gel" → "沐浴凝胶"
-Translated: "Toilet Paper" → "卫生纸"
-Translated: "Mango Soap" → "芒果肥皂"
-Translated: "Extra Soft Shampoo" → "额外的软洗发水"
-Translated: "Jojoba Honey Shampoo" → "霍霍巴蜂蜜洗发水"
-Translated: "Argan Oil Shampoo" → "摩洛哥坚果油洗发水"
-Translated: "Paper Towel" → "纸巾"
-Translated: "Double Side Toilet Paper" → "双面厕纸"
-Translated: "Lemon Soap" → "柠檬肥皂"
-Translated: "Premium Bath Gel" → "高级浴凝胶"
-Translated: "Shampoo For Babies" → "婴儿的洗发水"
-Translated: "Detergent" → "洗涤剂"
-Translated: "Stain Remover" → "污渍去除剂"
-Translated: "Glass Cleaner" → "玻璃清洁剂"
-Translated: "Detergent Tables" → "洗涤剂桌"
-Translated: "Dishwasher" → "洗碗机"
-Translated: "Bleach" → "漂白"
-Translated: "Bleach - Big Bottle" → "漂白剂 - 大瓶"
-Translated: "Softener" → "柔软剂"
-Translated: "Premium Detergent" → "优质清洁剂"
-Translated: "Insecticide" → "杀虫剂"
-Translated: "Cleaning Cloths" → "清洁布"
-Translated: "Premium Capsules" → "高级胶囊"
-Translated: "Premium Bleach" → "优质漂白剂"
-Translated: "Ammonia" → "氨"
-Translated: "Cookie Jar" → "饼干罐"
-Translated: "Maxi Cone" → "马克西锥"
-Translated: "Chocolate Spread" → "巧克力蔓延"
-Translated: "Chocolate Powder" → "巧克力粉"
-Translated: "Chips" → "筹码"
-Translated: "Sweet Bonbek" → "甜蜜的邦贝克"
-Translated: "Peach Jam" → "桃果酱"
-Translated: "Ice Cream Box" → "冰淇淋盒"
-Translated: "Chocolate Box" → "巧克力盒"
-Translated: "Chocolate Biscuit" → "巧克力饼干"
-Translated: "Vanilate Biscuit" → "消除饼干"
-Translated: "Madeleine" → "玛德琳"
-Translated: "Strawberry Jam" → "草莓果酱"
-Translated: "Peanut Butter" → "花生酱"
-Translated: "Chipos" → "chipos"
-Translated: "Marshmallow" → "棉花糖"
-Translated: "Lemon Biscuit" → "柠檬饼干"
-Translated: "Hazelnut Biscuit" → "榛子饼干"
-Translated: "Premium Ice Cream" → "优质冰淇淋"
-Translated: "Honey" → "蜂蜜"
-Translated: "Premium Chocolate Box" → "优质巧克力盒"
-Translated: "Foditos" → "foditos"
-Translated: "Premium Cake" → "优质蛋糕"
-Translated: "Chopped Beef" → "切碎的牛肉"
-Translated: "Pure Beef" → "纯牛肉"
-Translated: "Veal" → "小牛肉"
-Translated: "Chicken Wings" → "鸡翅"
-Translated: "Chicken" → "鸡"
-Translated: "Parma Ham" → "帕尔马火腿"
-Translated: "Sliced Ham" → "切成薄片的火腿"
-Translated: "Peas - Big" → "豌豆 - 大"
-Translated: "Tuna - Big" → "金枪鱼 - 大"
-Translated: "Red Beans" → "红豆"
-Translated: "Cat Food" → "猫粮"
-Translated: "Cat Food" → "猫粮"
-Translated: "Dog Food" → "狗粮"
-Translated: "Green Tea" → "绿茶"
-Translated: "Lemon Tea" → "柠檬茶"
-Translated: "Black Tea" → "红茶"
-Translated: "Peppermint" → "薄荷"
-Translated: "Mint" → "薄荷"
-Translated: "Valerian" → "瓦莱里安"
-Translated: "Big Sushi" → "大寿司"
-Translated: "Small Sushi" → "小寿司"
-Translated: "Smoked Salmon" → "烟熏三文鱼"
-Translated: "Crab Sticks" → "螃蟹棒"
-Translated: "Book - Electromagnetic" → "书 - 电磁"
-Translated: "Book - Surprise" → "书 - 惊喜"
-Translated: "Book - ABC" → "书-ABC"
-Translated: "Book - Mother And Child" → "书 - 母子"
-Translated: "Book - Colors" → "书 - 颜色"
-Translated: "Book - Piticha" → "书-Piticha"
-Translated: "Book - OnceUpon" → "书 - 一次"
-Translated: "Book - Krok" → "书-Krok"
-Translated: "Book - Adventures" → "书 - 冒险"
-Translated: "Book - Donnine" → "书 - 唐宁"
-Translated: "Book - Vintage" → "书 - 复古"
-Translated: "Book - I Wont Share" → "书 - 我不会分享"
-Translated: "Beer Pack" → "啤酒包"
-Translated: "Beer Pack" → "啤酒包"
-Translated: "Beer Pack" → "啤酒包"
-Translated: "Beer Barrel" → "啤酒桶"
-Translated: "Beer Barrel" → "啤酒桶"
-Translated: "Vodka" → "伏特加酒"
-Translated: "Red Wine" → "红葡萄酒"
-Translated: "Rose Wine" → "桃红葡萄酒"
-Translated: "White Wine" → "白葡萄酒"
-Translated: "Beer Barrel" → "啤酒桶"
-Translated: "Premium Vodka" → "高级伏特加酒"
-Translated: "Japanese Whisky" → "日本威士忌"
-Translated: "Premium Whisky" → "优质威士忌"
-Translated: "Premium Whisky" → "优质威士忌"
-Translated: "Hydrogen Peroxide" → "过氧化氢"
-Translated: "Disinfectant" → "消毒剂"
-Translated: "Ibuprofen" → "布洛芬"
-Translated: "Paracetamol" → "扑热息痛"
-Translated: "Adhesive Bandages" → "粘合剂绷带"
-Translated: "Laxative" → "泻药"
-Translated: "Antihistamine" → "抗组胺药"
-Translated: "Zinc Supplement" → "锌补充"
-Translated: "Antioxidant" → "抗氧化剂"
-Translated: "Fish Oil" → "鱼油"
-Translated: "Algae Pills" → "藻类药"
-Translated: "Vitamins" → "维生素"
-Translated: "Melatonin" → "褪黑激素"
-Translated: "Sunscreen" → "防晒霜"
-Translated: "Stretch Cream" → "拉伸奶油"
-Translated: "Red Apple Tray" → "红色苹果托盘"
-Translated: "Green Apple Tray" → "绿色苹果托盘"
-Translated: "Clementine Tray" → "克莱门汀托盘"
-Translated: "Orange Tray" → "橙色托盘"
-Translated: "Pear Tray" → "梨托盘"
-Translated: "Lemon Tray" → "柠檬托盘"
-Translated: "Mango Tray" → "芒果托盘"
-Translated: "Avocado Tray" → "鳄梨托盘"
-Translated: "Kiwi Tray" → "猕猴桃托盘"
-Translated: "Papaya Tray" → "木瓜托盘"
-Translated: "Strawberry Tray" → "草莓托盘"
-Translated: "Cherry Tray" → "樱桃托盘"
-Translated: "Artichoke Tray" → "朝鲜蓟托盘"
-Translated: "Zucchini Tray" → "西葫芦托盘"
-Translated: "Carrot Tray" → "胡萝卜托盘"
-Translated: "Tomato Tray" → "番茄托盘"
-Translated: "Potato Tray" → "土豆托盘"
-Translated: "Onion Tray" → "洋葱托盘"
-Translated: "Banana Pack" → "香蕉包"
-Translated: "Melon" → "瓜"
-Translated: "Pineapple" → "菠萝"
-Translated: "Pumpkin" → "南瓜"
-Translated: "Watermelon" → "西瓜"
-Translated: "Baby Food: Vegetables" → "婴儿食品：蔬菜"
-Translated: "Baby Food: Fish" → "婴儿食品：鱼"
-Translated: "Baby Food: Fruits" → "婴儿食品：水果"
-Translated: "Baby Food: Meat" → "婴儿食品：肉"
-Translated: "Nutritive Milk Mix" → "营养牛奶混合物"
-Translated: "Nutritive Milk Powder" → "营养奶粉"
-Translated: "Ecologic Diapers" → "生态尿布"
-Translated: "Basic Diapers" → "基本尿布"
-Translated: "Toddler Diapers" → "幼儿尿布"
-Translated: "Premium Diapers" → "高级尿布"
-Translated: "Aloe Baby Wipes " → "芦荟婴儿湿巾"
-Translated: "Basic Baby Wipes" → "基本的婴儿湿巾"
-Translated: "Baby Powder" → "婴儿爽身粉"
-Translated: "Orange Soda" → "橙苏"
-Translated: "Pineapple Soda" → "菠萝汽水"
-Translated: "Tropical Soda" → "热带汽水"
-Translated: "Green Tea Drink" → "绿茶饮料"
-Translated: "Red Tea Drink" → "红茶饮料"
-Translated: "Lemon Tea Drink" → "柠檬茶水"
-Translated: "Cold Brew Coffee" → "冷冲泡咖啡"
-Translated: "Blueberry Energy Drink" → "蓝莓能量饮料"
-Translated: "Guava Energy Drink" → "番石榴能量饮料"
-Translated: "Lima Energy Drink" → "利马能量饮料"
-Translated: "Fruit Punch Energy Drink" → "水果打孔能量饮料"
-Translated: "Mango Energy Drink" → "芒果能量饮料"
-Translated: "Cola Energy Drink" → "可乐能量饮料"
-Translated: "Sugar Free Energy Drink" → "无糖能量饮料"
-Translated: "Basic Strawberry Ice Cream" → "基本草莓冰淇淋"
-Translated: "Lemon Ice Cream" → "柠檬冰淇淋"
-Translated: "Coffee Ice Cream" → "咖啡冰淇淋"
-Translated: "Stracciatella Ice Cream" → "Stracciatella冰淇淋"
-Translated: "Strawberry Meringue Ice Cream" → "草莓酥皮冰淇淋"
-Translated: "Caramel Ice Cream" → "焦糖冰淇淋"
-Translated: "Premium Strawberry Ice Cream" → "优质草莓冰淇淋"
-Translated: "Strawberry Cheesecake Ice Cream" → "草莓芝士蛋糕冰淇淋"
-Translated: "Premium Caramel Ice Cream" → "优质焦糖冰淇淋"
-Translated: "Pink Strawberry Ice Cream" → "粉红色的草莓冰淇淋"
-Translated: "Alcoholic Ice Cream" → "酒精冰淇淋"
-Translated: "Chickpeas" → "鹰嘴豆"
-Translated: "Meatballs" → "肉丸"
-Translated: "Lentils" → "小扁豆"
-Translated: "Tomato Soup" → "番茄汤"
-Translated: "Canned Corn" → "玉米罐头"
-Translated: "Canned Peas" → "豌豆罐头"
-Translated: "Strawberry Seeds" → "草莓种子"
-Translated: "Raspberry Seeds" → "覆盆子种子"
-Translated: "Blueberry Seeds" → "蓝莓种子"
-Translated: "Pineapple Seeds" → "菠萝种子"
-Translated: "Meyer Lemon Seeds" → "迈耶柠檬种子"
-Translated: "Tomato Seeds" → "番茄种子"
-Translated: "Pepper Seeds" → "胡椒种子"
-Translated: "Cucumber Seeds" → "黄瓜种子"
-Translated: "Radish Seeds" → "萝卜种子"
-Translated: "Carrots Seeds" → "胡萝卜种子"
-Translated: "Lawn Seeds" → "草坪种子"
-Translated: "Poppy Seeds" → "罂粟种子"
-Translated: "Tulip Seeds" → "郁金香种子"
-Translated: "Sunflower Seeds" → "葵花籽"
-Translated: "Petunia Seeds" → "矮牵牛种子"
-Translated: "Hand Rake (A)" → "手耙（A）"
-Translated: "Hand Rake (B)" → "手耙（b）"
-Translated: "Hand Shovel" → "手铲"
-Translated: "Hand Cultivator" → "手工耕种者"
-Translated: "Potting Soil" → "盆栽土壤"
-Translated: "Fertilizer" → "肥料"
-Translated: "Plant Pot Dish" → "种植锅"
-Translated: "Plant Pot" → "种植锅"
-Translated: "AA Batteries" → "AA电池"
-Translated: "AAA Batteries" → "AAA电池"
-Translated: "C Batteries" → "C电池"
-Translated: "9V Batteries" → "9V电池"
-Translated: "Universal TV Remote" → "通用电视遥控器"
-Translated: "Universal Phone Charger" → "通用电话充电器"
-Translated: "Basic Prepaid Phone" → "基本预付费电话"
-Translated: "Basic Mouse" → "基本鼠标"
-Translated: "Wifi Dongle" → "wifi加密狗"
-Translated: "Basic Earbuds" → "基本耳塞"
-Translated: "Basic Keyboard" → "基本键盘"
-Translated: "Basic Gamepad" → "基本游戏板"
-Translated: "USB Flash Drive (128GB)" → "USB闪存驱动器（128GB）"
-Translated: "USB Flash Drive (256GB)" → "USB闪存驱动器（256GB）"
-Translated: "USB Flash Drive (512GB)" → "USB闪存驱动器（512GB）"
-Translated: "USB Flash Drive (1TB)" → "USB闪存驱动器（1TB）"
-Translated: "Basic Speaker" → "基本扬声器"
-Translated: "Basic Headphones" → "基本耳机"
-Translated: "Basic Gaming Console" → "基本游戏机"
-Translated: "Store Tiles A" → "存储瓷砖a"
-Translated: "Store Tiles B" → "存储瓷砖b"
-Translated: "Store Bricks" → "存放砖块"
-Translated: "Store Plaster" → "商店石膏"
-Translated: "Store Concrete" → "存储混凝土"
-Translated: "Lacquered Wood" → "漆的木头"
-Translated: "Wood Planks" → "木板"
-Translated: "Planed Wood" → "刨木"
-Translated: "Unplaned Wood (knotted)" → "未盖的木头（打结）"
-Translated: "Unplaned Wood" → "未铺好的木头"
-Translated: "Painted Wood" → "油漆的木头"
-Translated: "Basic Tiles A" → "基本瓷砖a"
-Translated: "Basic Tiles B" → "基本瓷砖b"
-Translated: "Basic Tiles C" → "基本瓷砖c"
-Translated: "Basic Tiles D" → "基本瓷砖d"
-Translated: "Granite Tiles A" → "花岗岩瓷砖a"
-Translated: "Granite Tiles B" → "花岗岩瓷砖b"
-Translated: "Granite Tiles C" → "花岗岩瓷砖c"
-Translated: "Granite Tiles D" → "花岗岩瓷砖d"
-Translated: "Marble Tiles A" → "大理石瓷砖"
-Translated: "Marble Tiles B" → "大理石瓷砖b"
-Translated: "Marble Tiles C" → "大理石瓷砖c"
-Translated: "Raw Marble" → "原始大理石"
-Translated: "Painted Metal" → "油漆金属"
-Translated: "Basic Brick" → "基本砖"
-Translated: "Brick Pattern A" → "砖图案"
-Translated: "Brick Pattern B" → "砖图案b"
-Translated: "Brick Pattern C" → "砖图案c"
-Translated: "Basic Aluminum" → "基本铝"
-Translated: "Brushed Aluminum A" → "拉丝铝a"
-Translated: "Brushed Aluminum B" → "拉丝铝b"
-Translated: "Casted Aluminum" → "铸造的铝"
-Translated: "Matt Aluminum" → "马特铝"
-Translated: "Noisy Aluminum" → "嘈杂的铝"
-Translated: "Oxidized Aluminum" → "氧化铝"
-Translated: "Brushed Copper" → "刷铜"
-Translated: "Gold Panels" → "金面板"
-Translated: "Copper Pattern A" → "铜模式a"
-Translated: "Copper Pattern B" → "铜图案b"
-Translated: "Copper Pattern C" → "铜图案c"
-Translated: "Aluminum Pattern A" → "铝模式a"
-Translated: "Aluminum Pattern B" → "铝模式b"
-Translated: "Aluminum Pattern C" → "铝模式c"
-Translated: "Aluminum Pattern D" → "铝模式d"
-Translated: "Aluminum Pattern E" → "铝模式e"
-Translated: "Aluminum Pattern F" → "铝模式f"
-Translated: "Aluminum Pattern G" → "铝模式g"
-Translated: "Aluminum Pattern H" → "铝模式h"
-Translated: "Aluminum Pattern I" → "铝模式i"
-Translated: "Aluminum Pattern J" → "铝模式j"
-Translated: "Brass Pattern A" → "黄铜图案a"
-Translated: "Brass Pattern B" → "黄铜图案b"
-Translated: "Brass Pattern C" → "黄铜图案c"
-Translated: "Brass Pattern D" → "黄铜图案d"
-Translated: "Brass Pattern E" → "黄铜图案e"
-Translated: "Brass Pattern F" → "黄铜图案f"
-Translated: "Brass Pattern G" → "黄铜图案g"
-Translated: "Copper Panels" → "铜板"
-Translated: "Misc. Pattern A" → "杂项。模式"
-Translated: "Misc. Pattern B" → "杂项。图案b"
-Translated: "Misc. Pattern C" → "杂项。模式c"
-Translated: "Misc. Pattern D" → "杂项。模式d"
-Translated: "Misc. Pattern E" → "杂项。模式e"
-Translated: "Misc. Pattern F" → "杂项。模式f"
-Translated: "Misc. Pattern G" → "杂项。图案g"
-Translated: "Misc. Pattern H" → "杂项。模式h"
-Translated: "Misc. Pattern I" → "杂项。图案i"
-Translated: "Misc. Pattern J" → "杂项。模式j"
-Translated: "Misc. Pattern K" → "杂项。图案k"
-Translated: "Misc. Pattern L" → "杂项。图案l"
-Translated: "Organic: Grass" → "有机：草"
-Translated: "Organic: Leaves" → "有机：叶"
-Translated: "Organic: Stone A" → "有机：石头A。"
-Translated: "Organic: Stone B" → "有机：石头b"
-Translated: "Halloween: Pattern A" → "万圣节：图案a"
-Translated: "Halloween: Pattern B" → "万圣节：图案b"
-Translated: "Halloween: Pattern C" → "万圣节：图案c"
-Translated: "Halloween: Pattern D" → "万圣节：图案d"
-Translated: "Halloween: Pattern E" → "万圣节：图案e"
-Translated: "Halloween: Pattern F" → "万圣节：图案f"
-Translated: "Halloween: Pattern G" → "万圣节：图案g"
-Translated: "Halloween: Pattern H" → "万圣节：图案h"
-Translated: "Halloween: Pattern I" → "万圣节：图案i"
-Translated: "Halloween: Pattern J" → "万圣节：图案j"
-Translated: "Halloween: Pattern K" → "万圣节：图案k"
-Translated: "Halloween: Pattern L" → "万圣节：图案l"
-Translated: "Halloween: Pattern M" → "万圣节：图案m"
-Translated: "Halloween: Pumpkins" → "万圣节：南瓜"
-Translated: "Halloween: Skeletons" → "万圣节：骨骼"
-Translated: "Halloween: Cobwebs" → "万圣节：蜘蛛网"
-Translated: "Christmas A" → "圣诞节a"
-Translated: "Christmas B" → "圣诞节b"
-Translated: "Christmas C" → "圣诞节c"
-Translated: "Christmas D" → "圣诞节d"
-Translated: "Christmas E" → "圣诞节e"
-Translated: "Christmas F" → "圣诞节f"
-Translated: "Christmas G" → "圣诞节G。"
-Translated: "Christmas H" → "圣诞节h"
-Translated: "Christmas I" → "圣诞节i"
-Translated: "Christmas J" → "圣诞节j"
-Translated: "Snow" → "雪"
-Translated: "Ice A" → "冰A。"
-Translated: "Ice B" → "冰b"
-Translated: "Ice C" → "冰c"
-Translated: "Ice D" → "冰d"
-Translated: "Products: Basic A" → "产品：基本a"
-Translated: "Products: Basic B" → "产品：基本b"
-Translated: "Products: Dairy A" → "产品：乳制品a"
-Translated: "Products: Dairy B" → "产品：乳制品b"
-Translated: "Products: Soda Drinks A" → "产品：苏打水饮料"
-Translated: "Products: Soda Drinks B" → "产品：苏打饮料B"
-Translated: "Products: Frozen" → "产品：冷冻"
-Translated: "Products: Hygiene A" → "产品：卫生a"
-Translated: "Products: Hygiene B" → "产品：卫生b"
-Translated: "Products: Cleaning" → "产品：清洁"
-Translated: "Products: Sweets A" → "产品：糖果a"
-Translated: "Products: Sweets B" → "产品：糖果b"
-Translated: "Products: Meat" → "产品：肉"
-Translated: "Products: Preserves" → "产品：保留"
-Translated: "Products: Infusions" → "产品：输液"
-Translated: "Products: Fish A" → "产品：鱼"
-Translated: "Products: Fish B" → "产品：鱼b"
-Translated: "Products: Books A" → "产品：书籍"
-Translated: "Products: Books B" → "产品：书籍b"
-Translated: "Products: Alcohol A" → "产品：酒精a"
-Translated: "Products: Alcohol B" → "产品：酒精b"
-Translated: "Products: Pharmacy A" → "产品：药房"
-Translated: "Products: Pharmacy B" → "产品：药房b"
-Translated: "Products: Produce A" → "产品：生产"
-Translated: "Products: Produce B" → "产品：生产b"
-Translated: "Products: Produce C" → "产品：生产c"
-Translated: "Products: Produce D" → "产品：生产d"
-Translated: "Products: Childcare A" → "产品：育儿a"
-Translated: "Products: Childcare B" → "产品：育儿b"
-Translated: "Experimental TV" → "实验电视"
-Translated: "Products: Gardening A" → "产品：园艺"
-Translated: "Products: Gardening B" → "产品：园艺b"
-Translated: "Products: Electronics A" → "产品：电子a"
-Translated: "Products: Electronics B" → "产品：电子b"
-Translated: "Bamboo" → "竹子"
-Translated: "Carpet A" → "地毯"
-Translated: "Carpet B" → "地毯b"
-Translated: "Carpet C" → "地毯c"
-Translated: "Carpet D" → "地毯d"
-Translated: "Carpet E" → "地毯e"
-Translated: "Carpet F" → "地毯f"
-Translated: "Carpet G" → "地毯g"
-Translated: "Carpet H" → "地毯h"
-Translated: "Carpet I" → "地毯i"
-Translated: "Concrete A" → "混凝土a"
-Translated: "Concrete B" → "混凝土b"
-Translated: "Concrete C" → "混凝土c"
-Translated: "Concrete D" → "混凝土d"
-Translated: "Concrete E" → "混凝土e"
-Translated: "Concrete F" → "混凝土f"
-Translated: "Concrete G" → "混凝土g"
-Translated: "Diamond Plate A" → "钻石板A。"
-Translated: "Diamond Plate B" → "钻石板b"
-Translated: "Metal Plate A" → "金属板A。"
-Translated: "Metal Plate B" → "金属板b"
-Translated: "Metal Plate C" → "金属板c"
-Translated: "Rock A" → "岩石"
-Translated: "Rock B" → "岩石b"
-Translated: "Rock C" → "岩石c"
-Translated: "Rock D" → "岩石d"
-Translated: "Wooden Pattern A" → "木制图案a"
-Translated: "Wooden Pattern B" → "木制图案b"
-Translated: "Wooden Pattern C" → "木制图案c"
-Translated: "Wooden Pattern D" → "木制图案d"
-Translated: "Wooden Pattern E" → "木制图案e"
-Translated: "Wooden Pattern F" → "木制图案f"
-Translated: "Wooden Pattern G" → "木制图案g"
-Translated: "Skins and Hats" → "皮肤和帽子"
-Translated: "Character" → "特点"
-Translated: "Hat" → "帽子"
-Translated: "Only cool people allowed" → "只有很酷的人允许"
-Translated: "Market Price" → "市价"
-Translated: "Your Price" → "你的价格"
-Translated: "Money given" → "钱给了"
-Translated: "Money to return" → "钱回来"
-Translated: "Current amount" → "当前金额"
-Translated: "[LMB] Add money" → "[LMB]加钱"
-Translated: "[RMB] Remove money" → "[rmb]删除钱"
-Translated: "Extra funds added for coop player" → "为Coop Player添加额外的资金"
-Translated: "Store is already opened" → "商店已经开业"
-Translated: "Store is already closed" → "商店已经关闭"
-Translated: "FOV" → "FOV"
-Translated: "TV Vol." → "电视卷。"
-Translated: "Dances Key Assignment" → "舞蹈密钥分配"
-Translated: "In this terminal you will be able to hook Youtube and Twitch to your TVs once the license is approved." → "在此终端，一旦许可证获得批准，您将能够将YouTube并抽搐到您的电视上。"
-Translated: "The cosmetics DLC has been approved!" → "化妆品DLC已获批准！"
-Translated: "9 new characters, over 100 hats, 35 dances and poses and a web browser to slack while your boss isn't looking.  Paint your store with the new tablet and enjoy exclusive decorations being added over time. First Youtube sync update is already available!" → "9个新角色，超过100顶帽子，35次舞蹈和姿势以及一个在老板看不到的情况下放松的网络浏览器。  用新平板电脑涂上商店，并随着时间的推移添加独家装饰。首先，YouTube同步更新已经可用！"
-Translated: "Continue" → "继续"
-Translated: "Backups" → "备份"
-Translated: "No Backups" → "没有备份"
-Translated: "Warning: loading a backup will override the current file's day." → "警告：加载备份将覆盖当前文件的日子。"
-Translated: "Delete Mode Off" → "删除模式关闭"
-Translated: "Delete Mode On" → "删除模式打开"
-Translated: "Kick" → "踢"
-Translated: "Punish" → "惩治"
-Translated: "Permissions" → "权限"
-Translated: "New player connected: " → "连接新播放器："
-Translated: "If you are having joining problems remember to update to latest patch!" → "如果您遇到了问题，请记住更新到最新补丁！"
-Translated: "TVs Control" → "电视控制"
-Translated: "Off" → "离开"
-Translated: "Placeholder Videos" → "占位符视频"
-Translated: "URL Video" → "URL视频"
-Translated: "Browser" → "浏览器"
-Translated: "Twitch/YT Video" → "抽搐/YT视频"
-Translated: "Streaming visualization still pending.  Thank you for your patience." → "流媒体可视化仍在待处理。  谢谢您的耐心配合。"
-Translated: "Lobby is now: " → "大堂现在是："
-Translated: "open" → "打开"
-Translated: "closed" → "关闭"
-Translated: "Open Lobby" → "开放大厅"
-Translated: "Close Lobby" → "关闭大厅"
-Translated: "Closing a lobby will prevent anyone from joining. Useful if you only expect a certain number of players and don't want anyone without code to join via Steam Friends." → "关闭大厅将阻止任何人加入。如果您只期望一定数量的玩家并且不希望没有代码的任何人通过Steam朋友加入，则有用。"
-Translated: "Allow Videos" → "允许视频"
-Translated: "Checkout lane closed Please use next" → "结帐巷关闭，请下一步使用"
-Translated: "Close checkout lane" → "关闭结帐车道"
-Translated: "Select Material, then color, then apply selection" → "选择材料，然后涂色，然后应用选择"
-Translated: "Return to material selection" → "返回物料选择"
-Translated: "Previous/next material or color" → "上一个/下一个材料或颜色"
-Translated: "Store customization being implemented.  This wall allows to preview the paintables tablet without money cost. In some materials you can select color variances." → "正在实施商店自定义。  这堵墙允许无金钱预览油漆平板电脑。在某些材料中，您可以选择颜色差异。"
-Translated: "High Latency" → "高潜伏期"
-Translated: "General" → "一般的"
-Translated: "Missing products when joining a game and restocking? Activate the new High Latency mode in options" → "加入游戏和补货时缺少产品？在选项中激活新的高延迟模式"
-Translated: "Buy Empty Box" → "购买空盒子"
-Translated: "Interrupt box recycling" → "中断箱回收"
-Translated: "This tablet has been deprecated and merged in the main builder. Use X and Z by default to access the new tabs." → "该平板电脑已被弃用并合并为主要建筑商。默认情况下使用X和Z访问新选项卡。"
-Translated: "You petted the cat. Come back later" → "你抚摸了猫。稍后再回来"
-Translated: "Next Snap Mode" → "下一个快照模式"
-Translated: "Snap Mode" → "快照模式"
-Translated: "None" → "没有任何"
-Translated: "Grid: Center" → "网格：中心"
-Translated: "Grid: Backside" → "网格：背面"
-Translated: "Furniture" → "家具"
-Translated: "Your store needs at least a manned checkout" → "您的商店至少需要载人的结帐"
-Translated: "Always Run" → "总是运行"
-Translated: "Browser" → "浏览器"
-Translated: "None" → "没有任何"
-Translated: "Normal" → "普通的"
-Translated: "Linux Supported" → "Linux支持"
-Translated: "Kaching Vol." → "Kaching卷。"
-Translated: "Confine Cursor" → "局限光标"
-Translated: "Crosshair Size" → "十字路口大小"
-Translated: "Crosshair Color" → "十字准色"
-Translated: "Night Dim" → "夜晚"
-Translated: "Customer already checked" → "客户已经检查了"
-Translated: "Click on a customer repeatedly to check if it's a thief The closest to the camera, the more effective clicking is." → "重复单击客户以检查最接近相机的小偷，点击越有效。"
-Translated: "Hold click and hover over a customer to check if it's a thief The closest to the camera, the more effective this is." → "握住点击并悬停在客户身上，检查它是否最接近相机的小偷，这越有效。"
-Translated: "Round Down" → "下跌"
-Translated: "Autosync" → "AutoSync"
-Translated: "Allow all players to change URLs" → "允许所有玩家更改URL"
-Translated: "Youtube videos" → "YouTube视频"
-Translated: "No sorting" → "没有分类"
-Translated: "By size" → "按大小"
-Translated: "By lowest total stock" → "总库存最低"
-Translated: "By lowest storage" → "通过最低存储"
-Translated: "By lowest shelf stock" → "通过最低的货架库存"
-Translated: "Only the manager can press this button" → "只有经理才能按下此按钮"
-Translated: "Invoices" → "发票"
-Translated: "Invoices / Debt" → "发票 /债务"
-Translated: "Statistics" → "统计数据"
-Translated: "Remove all permissions when joining" → "加入时删除所有权限"
-Translated: "Global" → "全球的"
-Translated: "Manager" → "经理"
-Translated: "Cashier" → "出纳员"
-Translated: "Restocker" → "RETSOCKER"
-Translated: "Security" → "安全"
-Translated: "Chat" → "聊天"
-Translated: "Employees" → "雇员"
-Translated: "Hire" → "聘请"
-Translated: "Dismiss" → "解雇"
-Translated: "Assignment" → "任务"
-Translated: "Employee's stats" → "员工的统计数据"
-Translated: "Employees renew every day!" → "员工每天续签！"
-Translated: "Max. Employees" → "最大限度。雇员"
-Translated: "Hired Employees" → "雇用员工"
-Translated: "Enter employee name..." → "输入员工名称..."
-Translated: "Cashier experience" → "出纳经验"
-Translated: "Restocker experience" → "Retocker体验"
-Translated: "Storage experience" → "存储经验"
-Translated: "Security experience" → "安全经验"
-Translated: "Can't hire more employees" → "不能雇用更多的员工"
-Translated: "Hired an employee!" → "雇用了一名员工！"
-Translated: "Dismissed an employee!" → "解雇了雇员！"
-Translated: "Hired" → "雇用"
-Translated: "Empty position" → "空位置"
-Translated: "Assigned Task" → "分配的任务"
-Translated: "Storage" → "贮存"
-Translated: "No task" → "没有任务"
-Translated: "Staffroom happiness" → "员工的幸福"
-Translated: "Reroll" → "重读"
-Translated: "Off" → "离开"
-Translated: "Select" → "选择"
-Translated: "Change all priorities" → "更改所有优先事项"
-Translated: "Save Priorities" → "保存优先级"
-Translated: "Load Priorities" → "加载优先级"
-Translated: "Employee's management has been moved to the Manager's blackboard" → "员工的管理已移至经理的黑板"
-Translated: "Got a star token!" → "有一个明星令牌！"
-Translated: "Place a Christmas Gift decoration and wait for the night for the event to start! Have the broom at hand" → "放置圣诞礼物装饰，等待晚上开始活动！手头有扫帚"
-Translated: "Press any key to continue" → "按任何键继续"
-Translated: "Got a new unlockable item!" → "有一个新的可解锁物品！"
-Translated: "No available star tokens" → "没有可用的星形令牌"
-Translated: "Managing save backups" → "管理保存备份"
-Translated: "Auto End Day" → "自动结束"
-Translated: "Set all prices to percentage" → "将所有价格设置为百分比"
-Translated: "[Currently setting prices]" → "[目前设定价格]"
-Translated: "Amount placed in store" → "存储的金额"
-Translated: "Amount required to fill the store" → "填充商店所需的金额"
-Translated: "Amount in storage and boxes" → "存储和盒子中的金额"
-Translated: "Acquire the MART OS 2.0 to unlock advanced features" → "获取Mart OS 2.0以解锁高级功能"
-Translated: "Acceleration Factor" → "加速因子"
-Translated: "Copy game's logs to clipboard" → "将游戏的日志复制到剪贴板"
-Translated: "Copied!" → "复制！"
-Translated: "Total Money Earned" → "总钱赚了"
-Translated: "Total Products Placed" → "放置的总产品"
-Translated: "Total Boxes Recycled" → "总盒子回收"
-Translated: "Total Customers Served" → "总客户服务"
-Translated: "Total Products Checked Out" → "总产品签出"
-Translated: "Total Trash Collected" → "总垃圾收集了"
-Translated: "Correct Change Given In A Row" → "正确的更改连续给出"
-Translated: "Times Thief Hit" → "小偷击中"
-Translated: "Stolen Products Collected" → "收集的被盗产品"
-Translated: "Cat Petted Times" → "猫抚摸了时间"
-Translated: "Analyzed Customers In CCTV" → "分析了CCTV的客户"
-Translated: "Thieves Caught In CCTV" → "小偷陷入了闭路电视"
-Translated: "Not found the previous day" → "前一天找不到"
-Translated: "Found too expensive the previous day" → "前一天发现太贵了"
-Translated: "Sales Done To This Day" → "到目前为止完成的销售"
-Translated: "Boxes Introduced In Baler" → "在打包机中引入的盒子"
-Translated: "Cardboard Bales Recycled" → "纸板捆循环"
-Translated: "Extra Items Sold Thanks To Sales" → "售出的额外物品得益于销售"
-Translated: "Invoices paid" → "支付发票"
-Translated: "Online Orders Assembled" → "在线订单组装"
-Translated: "Money Earned With Online Orders" → "通过在线订单赚取的钱"
-Translated: "Unstuck" → "解开"
-Translated: "Have a suggestion or problem? Steam forums are for now the only official media to stay in contact with the developer" → "有建议或问题吗？蒸汽论坛目前是唯一与开发人员保持联系的官方媒体"
-Translated: "Excessive..." → "过多的..."
-Translated: "Bank Loan" → "银行贷款"
-Translated: "Electrical" → "电气"
-Translated: "Salary" → "薪水"
-Translated: "Rent" → "租"
-Translated: "Invoice paid!" → "发票已付！"
-Translated: "Pay off your current loan first!" → "首先还清您当前的贷款！"
-Translated: "Loan granted!" → "贷款已获得！"
-Translated: "Issue date" → "签发日期"
-Translated: "Due date" → "到期日"
-Translated: "Pay this invoice" → "支付此发票"
-Translated: "Amount requested" → "要求的金额"
-Translated: "Loan duration" → "贷款持续时间"
-Translated: "Amount to return" → "返回的金额"
-Translated: "Daily payment" → "每日付款"
-Translated: "Confirm loan" → "确认贷款"
-Translated: "Loan request" → "贷款请求"
-Translated: "You cannot request a new loan until the current one is paid off" → "在当前贷款还清之前，您不能要求新贷款"
-Translated: "Please, pay your rent invoices." → "请支付租金发票。"
-Translated: "Pay your loans!" → "支付您的贷款！"
-Translated: "Disable Invoices" → "禁用发票"
-Translated: "If employees don't appear or they slack, remember to pay their wages as not doing so has consequences" → "如果员工不出现或懈怠，请记住付款，因为不这样做会带来后果"
-Translated: "Employees having weird pathing? Use the Unstuck NPC Block and report your store data in forums" → "员工有奇怪的路吗？使用Unstuck NPC块并在论坛中报告您的商店数据"
-Translated: "Draw the word! Minigame" → "画这个词！迷你游戏"
-Translated: "A drawing minigame has started!" → "绘画迷已经开始了！"
-Translated: "Winner of the drawing minigame: " → "绘图迷你游戏的获胜者："
-Translated: "Drawing minigame: time ran out!" → "绘画迷你游戏：时间用完了！"
-Translated: "Your word is..." → "你的话是..."
-Translated: "Enter your word..." → "输入你的话..."
-Translated: "Request" → "要求"
-Translated: "Enable minigame" → "启用迷你游戏"
-Translated: "Default Picture" → "默认图片"
-Translated: "Picture Size" → "图片大小"
-Translated: "Enter a valid URL image..." → "输入有效的URL图像..."
-Translated: "Attempt to set URL" → "尝试设置URL"
-Translated: "Corner Shelves Fix (Only press in case of out of reach shelves)" → "角架修复（仅在伸出架子的情况下按下）"
-Translated: "Move shelves to entrance (Only Host)" → "将货架移至入口（只有主机）"
-Translated: "There's an unpaid bank loan!" → "有未付银行贷款！"
-Translated: "Lights off! An electrical invoice is unpaid!" → "熄灭！电气发票未付！"
-Translated: "Employees are on riot! They will slack or not come to work!" → "员工正在骚乱！他们会放松或不上班！"
-Translated: "A rent invoice is unpaid!" → "租金发票未付！"
-Translated: "BUY DEPARTMENT" → "购买部门"
-Translated: "FEATURE IN PROGRESS" → "正在进行的功能"
-Translated: "# STORE REQUIREMENTS" → "＃商店要求"
-Translated: "# STORAGE REQUIREMENTS" → "＃存储要求"
-Translated: "Order Packaging" → "订单包装"
-Translated: "Today's invoices have been paid!" → "今天的发票已得到报酬！"
-Translated: "Not enough money to pay today's invoices!" → "没有足够的钱来支付当今的发票！"
-Translated: "Copy primary logs" → "复制主日志"
-Translated: "Copy secondary logs" → "复制次要日志"
-Translated: "Override lights limit" → "覆盖灯限制"
-Translated: "Cannot set more sales for today" → "今天无法设定更多的销售"
-Translated: "A sale has been set for this product: " → "为此产品设定了销售："
-Translated: "Current sales" → "当前销售"
-Translated: "Maximum sales" → "最大销售额"
-Translated: "Limit Lighting" → "限制照明"
-Translated: "Having too many lights in the store has rarely caused a black screen problem in the past for some players. Set this option to 'No' if you want to try removing this limitation." → "过去，对于某些玩家来说，商店里有太多的灯光很少引起黑屏问题。如果您想尝试删除此限制，将此选项设置为“否”。"
-Translated: "Hold [Drop Item] to ignore collisions. Use this with caution." → "握住[掉落项目]以忽略碰撞。谨慎使用它。"
-Translated: "Reset Game Settings" → "重置游戏设置"
-Translated: "Settings cleared" → "设置已清除"
-Translated: "Available Orders" → "可用订单"
-Translated: "Choose an order for this table" → "选择该表的订单"
-Translated: "Order packaging department is now opened!" → "订单包装部门现已开放！"
-Translated: "Package assigned to table" → "分配给表的软件包"
-Translated: "Close current box" → "关闭当前框"
-Translated: "Deposit required items from blue tray in the striped area below, then organize them inside the box by dragging them. Use [Horizontal Movement] to rotate products. The same order can have multiple boxes." → "将所需的物品存放在下面条纹区域中的蓝色托盘中，然后通过拖动它们在盒子里整理它们。使用[水平运动]旋转产品。相同的订单可以具有多个盒子。"
-Translated: "Order completed in table" → "桌子中完成的订单"
-Translated: "Items left to be packed" → "剩下要包装的物品"
-Translated: "Products required for this order" → "此订单所需的产品"
-Translated: "Table" → "桌子"
-Translated: "Notify orders on arrival" → "到达时通知订单"
-Translated: "A new order has arrived!" → "新订单已经到了！"
-Translated: "Instructions" → "指示"
-Translated: "1.- Open the order packaging department. 2.- Wait for orders to arrive during the working day, enable notifications if you wish to be warned when one arrives. 3.- Use the cardboard boxes on each table to enter packaging mode. Select the order you wish to arrange in that table. 4.- Go around your store or storage with the blue tray and carry all necessary items to the table's striped area. An additional tablet will appear in the tray reminding you which items are needed. 5.- While using a table, drag products into the central box and use the 'Close current box' button when ready. The same order can have multiple boxes. 6.- Build a parcel pickup point somewhere in your store and place there the order's boxes. 7.- Eventually customers will arrive to claim their orders and pay." → "1.-开设订单包装部门。 2.-等待订单在工作日到达，如果您想在一个人到达时被警告，请启用通知。 3.-使用每个表上的纸板箱进入包装模式。选择您希望在该表中安排的订单。 4.-与蓝色托盘一起绕着商店或存储，并将所有必要的物品携带到桌子的条纹区域。托盘中将出现另一个平板电脑，提醒您需要哪些项目。 5.-使用表格时，将产品拖到中央框中，然后在准备就绪时使用“关闭电流框”按钮。相同的订单可以具有多个盒子。 6.-在商店的某个地方建立一个包裹拾取点，然后放在订单的盒子。 7.-最终，客户将到达命令并付款。"
-Translated: "Join us on" → "加入我们"
-Translated: "To celebrate its inauguration we will have a one-time 200 keys DLC giveaway during this month. Don't miss it!" → "为了庆祝其就职典礼，我们将在本月获得一次200键DLC赠品。不要错过！"
+    <option id="title0" dialogue="新商店" />
+    <option id="title1" dialogue="负载商店" />
+    <option id="title2" dialogue="加入商店" />
+    <option id="title3" dialogue="选项" />
+    <option id="title4" dialogue="出口" />
+
+    <option id="newstore0" dialogue="为您的商店选择名称" />
+    <option id="newstore1" dialogue="私人的" />
+    <option id="newstore2" dialogue="只有朋友" />
+    <option id="newstore3" dialogue="民众" />
+    <option id="newstore4" dialogue="创造" />
+    <option id="newstore5" dialogue="存储名称必须具有2个以上的字符，并且没有无效的字符" />
+    <option id="newstore6" dialogue="如果需要，您可能会人为地膨胀困难" />
+    <option id="newstore7" dialogue="困难：" />
+
+    <option id="yes" dialogue="是的" />
+    <option id="no" dialogue="不" />
+    <option id="back" dialogue="后退" />
+    <option id="save" dialogue="申请" />
+    <option id="entertext" dialogue="输入文字..." />
+
+    <option id="join" dialogue="加入" />
+    <option id="invalidcode" dialogue="无效的代码或主机已锁定大厅" />
+    <option id="joinfriends" dialogue="加入代码的朋友" />
+    <option id="copycode" dialogue="复制代码..." />
+
+    <option id="loading" dialogue="加载中" />
+
+    <option id="options0" dialogue="图形" />
+    <option id="options1" dialogue="解决" />
+    <option id="options2" dialogue="全屏" />
+    <option id="options3" dialogue="vsync" />
+    <option id="options4" dialogue="抗质量" />
+    <option id="options5" dialogue="亮度" />
+    <option id="options6" dialogue="质量" />
+    <option id="options6a" dialogue="表演者" />
+    <option id="options6b" dialogue="均衡" />
+    <option id="options6c" dialogue="高保真" />
+
+    <option id="options7" dialogue="控件" />
+    <option id="options8" dialogue="x灵敏度" />
+    <option id="options9" dialogue="y灵敏度" />
+    <option id="options10" dialogue="缩放灵敏度" />
+    <option id="options11" dialogue="反转X轴" />
+    <option id="options12" dialogue="倒轴" />
+    <option id="options12a" dialogue="自定义控件" />
+
+    <option id="options13" dialogue="声音的" />
+    <option id="options14" dialogue="大师卷。" />
+    <option id="options15" dialogue="音乐卷。" />
+    <option id="options16" dialogue="SFX卷。" />
+    <option id="options17" dialogue="UI卷。" />
+    <option id="options17a" dialogue="语音卷。" />
+
+    <option id="options18" dialogue="主菜单" />
+    <option id="options19" dialogue="退出游戏" />
+
+    <option id="options20" dialogue="返回主菜单？" />
+    <option id="options21" dialogue="退出游戏？" />
+
+    <option id="options22" dialogue="将加入代码复制到剪贴板" />
+    <option id="options23" dialogue="加入代码的朋友" />
+    <option id="options24" dialogue="复制代码..." />
+
+    <option id="options25" dialogue="相机事件FOV" />
+    <option id="options26" dialogue="进攻性NPC" />
+    <option id="options27" dialogue="弹出距离" />
+
+    <option id="rw0" dialogue="前进" />
+    <option id="rw1" dialogue="向前+" />
+    <option id="rw2" dialogue="前进 -" />
+    <option id="rw3" dialogue="移动水平" />
+    <option id="rw4" dialogue="移动水平+" />
+    <option id="rw5" dialogue="移动水平" />
+    <option id="rw6" dialogue="鼠标垂直" />
+    <option id="rw7" dialogue="鼠标垂直+" />
+    <option id="rw8" dialogue="小鼠垂直 -" />
+    <option id="rw9" dialogue="鼠标水平" />
+    <option id="rw10" dialogue="鼠标水平+" />
+    <option id="rw11" dialogue="鼠标" />
+
+    <option id="rw12" dialogue="主要动作" />
+    <option id="rw13" dialogue="次要动作" />
+    <option id="rw14" dialogue="建造" />
+    <option id="rw15" dialogue="删除项目" />
+    <option id="rw16" dialogue="跳" />
+    <option id="rw17" dialogue="短跑" />
+    <option id="rw18" dialogue="开放式建筑商" />
+    <option id="rw19" dialogue="菜单下一个" />
+    <option id="rw20" dialogue="菜单以前" />
+    <option id="rw21" dialogue="聊天" />
+    <option id="rw22" dialogue="语音聊天" />
+    <option id="rw23" dialogue="逃生菜单" />
+    <option id="rw24" dialogue="蹲伏" />
+
+    <option id="rw25" dialogue="建筑商选项卡下一个" />
+    <option id="rw26" dialogue="建筑商标签上一个" />
+    <option id="rw27" dialogue="舞蹈1" />
+    <option id="rw28" dialogue="舞蹈2" />
+    <option id="rw29" dialogue="舞蹈3" />
+    <option id="rw30" dialogue="舞蹈4" />
+    <option id="rw31" dialogue="舞蹈5" />
+    <option id="rw32" dialogue="舞蹈6" />
+    <option id="rw33" dialogue="舞蹈7" />
+    <option id="rw34" dialogue="舞蹈8" />
+    <option id="rw35" dialogue="舞蹈9" />
+    <option id="rw36" dialogue="numpad 0" />
+    <option id="rw37" dialogue="numpad 1" />
+    <option id="rw38" dialogue="numpad 2" />
+    <option id="rw39" dialogue="numpad 3" />
+    <option id="rw40" dialogue="numpad 4" />
+    <option id="rw41" dialogue="numpad 5" />
+    <option id="rw42" dialogue="numpad 6" />
+    <option id="rw43" dialogue="numpad 7" />
+    <option id="rw44" dialogue="numpad 8" />
+    <option id="rw45" dialogue="numpad 9" />
+    <option id="rw46" dialogue="numpad删除" />
+    <option id="rw47" dialogue="数字期" />
+    <option id="rw48" dialogue="numpad接受" />
+
+    <option id="rw49" dialogue="构建捕捉" />
+
+    
+
+    <option id="employees" dialogue="雇员：" />
+    <option id="employeesassignment" dialogue="员工任务" />
+    <option id="cashiers" dialogue="收银员" />
+    <option id="restock" dialogue="补货" />
+    <option id="storage" dialogue="贮存" />
+    <option id="security" dialogue="安全" />
+    <option id="mblackboard" dialogue="经理黑板" />
+    <option id="productorder" dialogue="产品订单" />
+    <option id="supermarket" dialogue="超级市场" />
+    <option id="cosmetics" dialogue="化妆品顺序" />
+    <option id="stream" dialogue="设置电视视频/流" />
+    <option id="pinshelves" dialogue="货架上的产品" />
+    <option id="pinstorage" dialogue="产品中的产品" />
+    <option id="pinboxes" dialogue="盒子中的产品" />
+    <option id="shoplist" dialogue="购物清单" />
+    <option id="buy" dialogue="买" />
+    <option id="supermarketname" dialogue="超市名称" />
+    <option id="supermarketcolor" dialogue="超市颜色" />
+    <option id="changename" dialogue="更改名称" />
+    <option id="changecolor" dialogue="更改颜色" />
+    <option id="franchisepointsavailable" dialogue="特许点可用" />
+    <option id="unlocks" dialogue="解锁" />
+    <option id="requires" dialogue="需要" />
+    <option id="connectionlost" dialogue="主机连接丢失" />
+    <option id="buyshopspace" dialogue="购买商店空间" />
+    <option id="buystoragespace" dialogue="购买存储空间" />
+    <option id="addons" dialogue="插件" />
+
+
+    
+
+    <option id="tutorial0" dialogue="欢迎一起去超市！" />
+    <option id="tutorial1" dialogue="商店的关闭时间更慢。              第一步是放置一些家具。按[TAB]打开建造者" />
+    <option id="tutorial2" dialogue="购买2个产品架子，一个结帐和一个存储架。  请注意，存储架只能放置在连接到经理房间的附件空房间中。" />
+    <option id="tutorial3" dialogue="好工作！              我们有一个特许经营点：拥有成功的业务来赚取要点。  前往经理室，获取PERK黑板中的第一个津贴。" />
+    <option id="tutorial4" dialogue="伟大的。您刚刚购买了第一包产品。  重要的是要记住，一旦您获得了产品专营权，客户就会期望这些产品在商店中，否则他们会抱怨存在。  现在，转到Manager Blackboard，单击它，然后单击产品顺序。" />
+    <option id="tutorial5" dialogue="好的。现在单击基本产品。" />
+    <option id="tutorial6" dialogue="让我们买一盒每个基本产品。  单击每种产品的加上符号以将其添加到购物列表中，一旦您在那里，请单击“购买”。" />
+    <option id="tutorial7" dialogue="伟大的。现在去外面寻找购买的盒子。单击一个以保持它。" />
+    <option id="tutorial8" dialogue="转到产品架子，然后在其行之一上单击[LMB]，以填充产品。  [RMB]将将物品从架子返回到盒子。  您也可以按[F]将项目放在您想要的位置。  将所有产品放在商店的货架上。" />
+    <option id="tutorial9" dialogue="放置产品，但最初以成本价格标记，这意味着没有好处。  前往经理室，采用价格之一。" />
+    <option id="tutorial10" dialogue="瞄准架子，产品定价信息将出现在设备的屏幕上。  如果您的价格超过产品的基本价格的两倍以上，那么客户将有越来越多的机会不购买它，因此请将此规则作为规模。  P.E.如果产品的价格为1美元，并且您将价格高于2美元的价格可能不会购买。尝试为所有六种不同的产品设定价格。  控制[鼠标轮]以0.01的增量添加或减去。 [鼠标车轮 + E]以0.2的增量添加或减去。 [LMB]接受价格。 [numpad]也可以使用。 [f]删除项目注意，您还可以在选项/自定义控件中使用numpad或重新分配密钥设置价格。当客户在结帐中使用信用卡付款时，NUMPAD也可用于输入金额。" />
+
+    <option id="tutorial11" dialogue="您的商店现在可以开业了。为了让客户按下位于经理房间中的绿色按钮。但是首先阅读以下重要信息： - 某些产品的每个星期四市场通货膨胀率都会增加，您将不得不审查价格。   - 您可以将空箱子放在外面的容器中，也可以将它们带到马路对面最远的容器，并通过回收利用来赚钱。可以用福利增加金钱。   - 在第8天，盗贼和垃圾将有机会产卵。两者的解决方案是扫帚：击中小偷，他们会丢下被盗的产品。   - 每个结帐都可以有8个客户的队列，他们不会变得不耐烦，但是没有发现免费结帐队列的额外客户将成为小偷，而无需付款而离开。   - 您可以在使用构建器时默认按X或Z检查灯和其他装饰。   - 您绝对可以通过使用定价工具右键单击其产品中的架子行。如果您不希望任何员工继续进行该行，有用。   - 注意经理黑板中的“发票”选项卡。您的员工工资以及电气或租金发票将到达那里。   - 要关闭商店，请等到22:30 pm，然后按下经理房间中的红色按钮。每天都会自动保存游戏。   - 球员越多，困难就越多。 （尝试用扫帚击打球员）" />
+
+
+    
+
+    <option id="builder0" dialogue="构建 /移动 /删除" />
+    <option id="builder1" dialogue="向左旋转" />
+    <option id="builder2" dialogue="向右旋转" />
+    <option id="builder3" dialogue="导航菜单" />
+    <option id="builder4" dialogue="导航菜单下降" />
+
+    <option id="checkout0" dialogue="[LMB]加钱" />
+    <option id="checkout1" dialogue="[rmb]删除钱" />
+
+    
+
+    <option id="day" dialogue="天" />
+
+    <option id="weekday1" dialogue="周一" />
+    <option id="weekday2" dialogue="星期二" />
+    <option id="weekday3" dialogue="星期三" />
+    <option id="weekday4" dialogue="星期四" />
+    <option id="weekday5" dialogue="星期五" />
+    <option id="weekday6" dialogue="坐着" />
+    <option id="weekday0" dialogue="太阳" />
+
+    
+
+    <option id="endofworkingday" dialogue="工作日结束：" />
+    <option id="totalcustomers" dialogue="总客户：" />
+    <option id="notfoundproducts" dialogue="找不到产品：" />
+    <option id="tooexpensiveproducts" dialogue="太昂贵的产品：" />
+    <option id="timesrobbed" dialogue="时代被抢劫：" />
+    <option id="complaintsfilth" dialogue="关于肮脏的投诉：" />
+    <option id="franchiselevel" dialogue="特许经营级别：" />
+    <option id="franchiseexperience" dialogue="特许经验：" />
+    <option id="income" dialogue="收入" />
+    <option id="moneylostbecauserobbing" dialogue="钱损失是因为强盗：" />
+    <option id="boughtproductscost" dialogue="购买的产品成本：" />
+    <option id="rentcost" dialogue="租金成本：" />
+    <option id="electricitycost" dialogue="电力成本：" />
+    <option id="employeeswages" dialogue="员工工资：" />
+    <option id="othercosts" dialogue="其他费用：" />
+    <option id="daybalance" dialogue="日平衡：" />
+
+    
+
+    <option id="messagei0" dialogue="超市开业" />
+    <option id="messagei1" dialogue="特许经营级别：授予点" />
+    <option id="messagei2" dialogue="振作获得了" />
+    <option id="messagei3" dialogue="超市扩张获得了" />
+    <option id="messagei4" dialogue="获取存储扩展" />
+    <option id="messagei5" dialogue="部门获得了" />
+    <option id="messagei5a" dialogue="商店要求未满足" />
+    <option id="messagei5b" dialogue="存储要求未满足" />
+
+    <option id="message0" dialogue="该产品的错误容器类型" />
+    <option id="message1" dialogue="无法在这个架子上添加更多产品" />
+    <option id="message2" dialogue="不能在同一架子上混合产品" />
+    <option id="message3" dialogue="没有特许点可用" />
+    <option id="message4" dialogue="以前未获得的特许经营节点" />
+    <option id="message5" dialogue="购物清单中没有产品" />
+    <option id="message6" dialogue="资金不足" />
+    <option id="message7" dialogue="已经拿着东西了" />
+    <option id="message8" dialogue="包装盒中没有更多产品" />
+    <option id="message9" dialogue="不再获得超市的空间" />
+    <option id="message9a" dialogue="没有更多的存储空间可以获取" />
+    <option id="message10" dialogue="不能比所需的更改更少的钱" />
+    <option id="message11" dialogue="盒子里有产品" />
+    <option id="message12" dialogue="包装盒中没有更多空间" />
+    <option id="message13" dialogue="不能在同一盒子里混合产品" />
+    <option id="message14" dialogue="需要扫帚" />
+    <option id="message15" dialogue="仅当商店关闭时允许" />
+    <option id="message16" dialogue="只有在没有更多客户的情况下才允许" />
+    <option id="message17" dialogue="删除之前，请从容器中删除所有产品" />
+    <option id="message17a" dialogue="容器有产品。如果确定" />
+    <option id="message18" dialogue="商店需要至少一个载人的结帐" />
+    <option id="message19" dialogue="无法在托盘中适合此项目" />
+    <option id="message20" dialogue="托盘显示需要比这更大的产品" />
+
+    <option id="network0" dialogue="主机连接丢失" />
+
+    
+
+    <option id="NPCmessage0" dialogue="我还没有找到这个：" />
+    <option id="NPCmessage1" dialogue="这太贵了：" />
+    <option id="NPCmessage2" dialogue="还没找到我要寻找的东西" />
+    <option id="NPCmessage3" dialogue="没有结帐？再见！" />
+    <option id="NPCmessage4" dialogue="再见吸盘！" />
+    <option id="NPCmessage5" dialogue="这个超市太肮脏了！" />
+
+    <option id="NPCemployee0" dialogue="我会参加这个收银员。" />
+
+    <option id="NPCmessagehit0" dialogue="哇！" />
+    <option id="NPCmessagehit1" dialogue="耶斯" />
+    <option id="NPCmessagehit2" dialogue="坚持擦伤你的屁股" />
+    <option id="NPCmessagehit3" dialogue="警察！" />
+    <option id="NPCmessagehit4" dialogue="eeeeeek！" />
+    <option id="NPCmessagehit5" dialogue="aaaaaaaah！" />
+    <option id="NPCmessagehit6" dialogue="这是虐待！" />
+    <option id="NPCmessagehit7" dialogue="盖！" />
+    <option id="NPCmessagehit8" dialogue="打我更难的宝贝" />
+    <option id="NPCmessagehit9" dialogue="owo" />
+
+    <option id="NPCmessagehitemployee0" dialogue="坏老板" />
+    <option id="NPCmessagehitemployee1" dialogue="这是虐待" />
+    <option id="NPCmessagehitemployee2" dialogue="D：" />
+    <option id="NPCmessagehitemployee3" dialogue="打罢工！" />
+
+    
+
+    <option id="builder" dialogue="建筑商" />
+    <option id="buildable0" dialogue="放置模式" />
+    <option id="buildable1" dialogue="产品架子" />
+    <option id="buildable2" dialogue="基本冰箱" />
+    <option id="buildable3" dialogue="双冰箱" />
+    <option id="buildable4" dialogue="冰箱" />
+    <option id="buildable5" dialogue="存储架" />
+    <option id="buildable6" dialogue="结帐（右）" />
+    <option id="buildable7" dialogue="结帐（左）" />
+    <option id="buildable8" dialogue="站立的冰柜" />
+    <option id="buildable9" dialogue="产品计数器" />
+    <option id="buildable10" dialogue="存储架（未标记）" />
+    <option id="buildable11" dialogue="生产架子a" />
+    <option id="buildable12" dialogue="自我检查" />
+    <option id="buildable13" dialogue="产生架子b" />
+    <option id="buildable14" dialogue="产品架（一半）" />
+    <option id="buildable15" dialogue="分层架子" />
+    <option id="buildable16" dialogue="墙架" />
+    <option id="buildable17" dialogue="钉板架" />
+    <option id="buildable18" dialogue="生产架子B（一半）" />
+    <option id="buildable19" dialogue="角架（大）" />
+    <option id="buildable20" dialogue="角架（小）" />
+    <option id="buildable21" dialogue="基本托盘显示" />
+    <option id="buildable22" dialogue="木制托盘显示" />
+    <option id="buildable23" dialogue="木制托盘显示b" />
+    <option id="buildable24" dialogue="塑料托盘显示" />
+    <option id="buildable25" dialogue="高托盘显示" />
+
+    <option id="buildable0a" dialogue="删除模式" />
+    <option id="tabtitle0" dialogue="建筑商" />
+    <option id="tabtitle1" dialogue="装饰" />
+    <option id="tabtitle2" dialogue="设备" />
+    <option id="tabtitle3" dialogue="灯" />
+    <option id="tabtitle4" dialogue="季节性：万圣节" />
+    <option id="tabtitle5" dialogue="员工室" />
+    <option id="tabtitle6" dialogue="季节性：圣诞节" />
+    <option id="tabtitle7" dialogue="装饰：植物" />
+    <option id="tabtitle8" dialogue="建筑学" />
+
+    <option id="decorat1" dialogue="霓虹灯a" />
+    <option id="decorat2" dialogue="盆栽植物a" />
+    <option id="decorat3" dialogue="电视" />
+    <option id="decorat4" dialogue="天花板标志" />
+    <option id="decorat5" dialogue="人群障碍" />
+    <option id="decorat6" dialogue="防盗门" />
+    <option id="decorat7" dialogue="木锅" />
+    <option id="decorat8" dialogue="木锅宽" />
+    <option id="decorat9" dialogue="天花板通风孔" />
+    <option id="decorat10" dialogue="中央定价机" />
+
+    <option id="decorat11" dialogue="墓碑a" />
+    <option id="decorat12" dialogue="墓碑b" />
+    <option id="decorat13" dialogue="墓碑c" />
+    <option id="decorat14" dialogue="墓碑d" />
+    <option id="decorat15" dialogue="墓碑e" />
+    <option id="decorat16" dialogue="墓碑f" />
+    <option id="decorat17" dialogue="南瓜a" />
+    <option id="decorat18" dialogue="南瓜b" />
+    <option id="decorat19" dialogue="南瓜c" />
+
+    <option id="decorat20" dialogue="南瓜人" />
+    <option id="decorat21" dialogue="怪异的幽灵" />
+    <option id="decorat22" dialogue="闪亮的花a" />
+    <option id="decorat23" dialogue="闪亮的花b" />
+    <option id="decorat24" dialogue="迷你运输车辆" />
+    <option id="decorat25" dialogue="霓虹灯b" />
+    <option id="decorat26" dialogue="霓虹灯c" />
+    <option id="decorat27" dialogue="霓虹灯d" />
+    <option id="decorat28" dialogue="霓虹灯e" />
+    <option id="decorat29" dialogue="悬挂灯A。" />
+
+    <option id="decorat30" dialogue="悬挂灯b" />
+    <option id="decorat31" dialogue="悬挂灯c" />
+    <option id="decorat32" dialogue="悬挂灯d" />
+    <option id="decorat33" dialogue="悬挂灯e" />
+    <option id="decorat34" dialogue="悬挂灯f" />
+    <option id="decorat35" dialogue="悬挂灯g" />
+    <option id="decorat36" dialogue="悬挂灯h" />
+    <option id="decorat37" dialogue="悬挂灯i" />
+    <option id="decorat38" dialogue="悬挂灯j" />
+    <option id="decorat39" dialogue="悬挂灯k" />
+
+    <option id="decorat40" dialogue="悬挂灯l" />
+    <option id="decorat41" dialogue="悬挂灯m" />
+    <option id="decorat42" dialogue="特殊灯A。" />
+    <option id="decorat43" dialogue="安全摄像头" />
+    <option id="decorat44" dialogue="安全台" />
+    <option id="decorat45" dialogue="清洁机器人" />
+    <option id="decorat46" dialogue="基本表A。" />
+    <option id="decorat47" dialogue="基本椅子" />
+    <option id="decorat48" dialogue="员工家具a" />
+    <option id="decorat49" dialogue="私人冰箱" />
+    <option id="decorat50" dialogue="咖啡机" />
+
+    <option id="decorat51" dialogue="小吃机" />
+    <option id="decorat52" dialogue="苏打机" />
+    <option id="decorat53" dialogue="飞镖机" />
+    <option id="decorat54" dialogue="足球桌" />
+    <option id="decorat55" dialogue="台球表" />
+    <option id="decorat56" dialogue="台球提示案" />
+    <option id="decorat57" dialogue="街机：机器人捕手" />
+    <option id="decorat58" dialogue="街机：太空战" />
+    <option id="decorat59" dialogue="街机：宝藏岛" />
+    <option id="decorat60" dialogue="圣诞树" />
+
+    <option id="decorat61" dialogue="圣诞节弧" />
+    <option id="decorat62" dialogue="圣诞花圈" />
+    <option id="decorat63" dialogue="鼓手胡桃夹子" />
+    <option id="decorat64" dialogue="一般胡桃夹子" />
+    <option id="decorat65" dialogue="骑士胡桃夹子" />
+    <option id="decorat66" dialogue="剑客胡桃夹子" />
+    <option id="decorat67" dialogue="闪亮的鹿" />
+    <option id="decorat68" dialogue="Choo Choo火车" />
+    <option id="decorat69" dialogue="纳哈拉模拟器" />
+    <option id="decorat70" dialogue="凳子" />
+
+    <option id="decorat71" dialogue="雪人" />
+    <option id="decorat72" dialogue="糖果甘蔗" />
+    <option id="decorat73" dialogue="圣诞礼物" />
+    <option id="decorat74" dialogue="陶瓷锅a" />
+    <option id="decorat75" dialogue="陶瓷锅b" />
+    <option id="decorat76" dialogue="陶瓷锅c" />
+    <option id="decorat77" dialogue="陶瓷锅d" />
+    <option id="decorat78" dialogue="陶瓷锅e" />
+    <option id="decorat79" dialogue="陶瓷锅f" />
+    <option id="decorat80" dialogue="陶瓷锅g" />
+
+    <option id="decorat81" dialogue="植物" />
+    <option id="decorat82" dialogue="植物b" />
+    <option id="decorat83" dialogue="植物c" />
+    <option id="decorat84" dialogue="d" />
+    <option id="decorat85" dialogue="植物e" />
+    <option id="decorat86" dialogue="植物f" />
+    <option id="decorat87" dialogue="植物g" />
+    <option id="decorat88" dialogue="植物h" />
+    <option id="decorat89" dialogue="植物i" />
+    <option id="decorat90" dialogue="植物crock a" />
+
+    <option id="decorat91" dialogue="植物crock b" />
+    <option id="decorat92" dialogue="植物crock c" />
+    <option id="decorat93" dialogue="植物j" />
+    <option id="decorat94" dialogue="植物k" />
+    <option id="decorat95" dialogue="植物" />
+    <option id="decorat96" dialogue="花a" />
+    <option id="decorat97" dialogue="花b" />
+    <option id="decorat98" dialogue="花c" />
+    <option id="decorat99" dialogue="花d" />
+    <option id="decorat100" dialogue="花e" />
+
+    <option id="decorat101" dialogue="花f" />
+    <option id="decorat102" dialogue="花g" />
+    <option id="decorat103" dialogue="花h" />
+    <option id="decorat104" dialogue="花i" />
+    <option id="decorat105" dialogue="花j" />
+    <option id="decorat106" dialogue="花k" />
+    <option id="decorat107" dialogue="花l" />
+    <option id="decorat108" dialogue="花米" />
+    <option id="decorat109" dialogue="花n" />
+    <option id="decorat110" dialogue="花o" />
+
+    <option id="decorat111" dialogue="花p" />
+    <option id="decorat112" dialogue="花q" />
+    <option id="decorat113" dialogue="花r" />
+    <option id="decorat114" dialogue="花朵" />
+    <option id="decorat115" dialogue="花t" />
+    <option id="decorat116" dialogue="花" />
+    <option id="decorat117" dialogue="花V。" />
+    <option id="decorat118" dialogue="花w" />
+    <option id="decorat119" dialogue="花X" />
+    <option id="decorat120" dialogue="花y" />
+
+    <option id="decorat121" dialogue="花Z" />
+    <option id="decorat122" dialogue="花A1" />
+    <option id="decorat123" dialogue="花B1" />
+    <option id="decorat124" dialogue="超市支柱" />
+    <option id="decorat125" dialogue="金属支柱" />
+    <option id="decorat126" dialogue="混凝土悬挂播" />
+    <option id="decorat127" dialogue="混凝土悬挂的花盆b" />
+    <option id="decorat128" dialogue="陶瓷悬挂播" />
+    <option id="decorat129" dialogue="NPC Unstuck Block" />
+    <option id="decorat130" dialogue="路灯a" />
+
+    <option id="decorat131" dialogue="路灯b" />
+    <option id="decorat132" dialogue="路灯c" />
+    <option id="decorat133" dialogue="路灯d" />
+    <option id="decorat134" dialogue="路灯e" />
+    <option id="decorat135" dialogue="路灯f" />
+    <option id="decorat136" dialogue="街头灯g" />
+    <option id="decorat137" dialogue="路灯h" />
+    <option id="decorat138" dialogue="路灯我" />
+    <option id="decorat139" dialogue="路灯j" />
+    <option id="decorat140" dialogue="路灯k" />
+
+    <option id="decorat141" dialogue="路灯l" />
+    <option id="decorat142" dialogue="路灯m" />
+    <option id="decorat143" dialogue="路灯n" />
+    <option id="decorat144" dialogue="路灯o" />
+    <option id="decorat145" dialogue="路灯p" />
+    <option id="decorat146" dialogue="路灯问" />
+    <option id="decorat147" dialogue="喷泉A1" />
+    <option id="decorat148" dialogue="喷泉A2" />
+    <option id="decorat149" dialogue="喷泉A3" />
+    <option id="decorat150" dialogue="喷泉B1" />
+
+    <option id="decorat151" dialogue="喷泉B2" />
+    <option id="decorat152" dialogue="喷泉B3" />
+    <option id="decorat153" dialogue="喷泉C1" />
+    <option id="decorat154" dialogue="喷泉C2" />
+    <option id="decorat155" dialogue="喷泉C3" />
+    <option id="decorat156" dialogue="喷泉D1" />
+    <option id="decorat157" dialogue="喷泉D2" />
+    <option id="decorat158" dialogue="喷泉D3" />
+    <option id="decorat159" dialogue="喷泉E1" />
+    <option id="decorat160" dialogue="喷泉E2" />
+
+    <option id="decorat161" dialogue="喷泉E3" />
+    <option id="decorat162" dialogue="喷泉F1" />
+    <option id="decorat163" dialogue="喷泉F2" />
+    <option id="decorat164" dialogue="喷泉F3" />
+    <option id="decorat165" dialogue="喷泉G1" />
+    <option id="decorat166" dialogue="喷泉G2" />
+    <option id="decorat167" dialogue="喷泉G3" />
+    <option id="decorat168" dialogue="小型可油漆分层" />
+    <option id="decorat169" dialogue="中型可油漆分隔器" />
+    <option id="decorat170" dialogue="大型可油漆分隔线" />
+
+    <option id="decorat171" dialogue="角分隔线" />
+    <option id="decorat172" dialogue="大地面播种机" />
+    <option id="decorat173" dialogue="大地面播种机B" />
+    <option id="decorat174" dialogue="大地面播种机C" />
+    <option id="decorat175" dialogue="大地面播种机D" />
+    <option id="decorat176" dialogue="交叉油漆分隔线" />
+    <option id="decorat177" dialogue="T形油漆分隔器" />
+    <option id="decorat178" dialogue="镜框" />
+    <option id="decorat179" dialogue="门可油漆分隔器" />
+    <option id="decorat180" dialogue="壁花A。" />
+
+    <option id="decorat181" dialogue="壁花" />
+    <option id="decorat182" dialogue="壁花b" />
+    <option id="decorat183" dialogue="壁花B面板" />
+    <option id="decorat184" dialogue="纸板打包机" />
+    <option id="decorat185" dialogue="简单的光束" />
+    <option id="decorat186" dialogue="横梁" />
+    <option id="decorat187" dialogue="T梁" />
+    <option id="decorat188" dialogue="角梁" />
+    <option id="decorat189" dialogue="包裹拾取点" />
+
+    
+
+    <option id="skill01" dialogue="员工i" />
+    <option id="skill02" dialogue="员工II" />
+    <option id="skill03" dialogue="员工III" />
+    <option id="skill04" dialogue="员工IV" />
+    <option id="skill05" dialogue="员工v" />
+    <option id="skill0a" dialogue="允许雇用额外的员工" />
+    <option id="skill1" dialogue="免费的早晨咖啡" />
+    <option id="skill1a" dialogue="员工移动 +20％" />
+    <option id="skill2" dialogue="营销课程我" />
+    <option id="skill2a" dialogue="员工在结帐时产生 +10％的钱" />
+    <option id="skill3" dialogue="编队课程" />
+    <option id="skill3a" dialogue="员工速度更快20％" />
+    <option id="skill4" dialogue="回收课程" />
+    <option id="skill4a" dialogue="回收盒奖奖是四倍" />
+    <option id="skill5" dialogue="空调" />
+    <option id="skill5a" dialogue="每天吸引更多客户" />
+    <option id="skill6" dialogue="WiFi连接" />
+
+    <option id="skill11" dialogue="员工vi" />
+    <option id="skill12" dialogue="员工VII" />
+    <option id="skill13" dialogue="员工VIII" />
+    <option id="skill14" dialogue="员工IX" />
+    <option id="skill15" dialogue="员工x" />
+    <option id="skill16" dialogue="出纳员组合i" />
+    <option id="skill16a" dialogue="员工将更快地处理产品" />
+    <option id="skill17" dialogue="收银员组合II" />
+    <option id="skill18" dialogue="收银员组III" />
+    <option id="skill19" dialogue="补货组i" />
+    <option id="skill19a" dialogue="员工将更快地放置产品" />
+    <option id="skill20" dialogue="补货组II" />
+    <option id="skill21" dialogue="更多的咖啡" />
+    <option id="skill22" dialogue="自由能量饮料我" />
+    <option id="skill23" dialogue="自由能量饮料II" />
+    <option id="skill24" dialogue="回收课程II" />
+    <option id="skill24a" dialogue="员工将回收盒子" />
+    <option id="skill25" dialogue="友好界面" />
+    <option id="skill25a" dialogue="客户将更多地使用自我检查" />
+    <option id="skill26" dialogue="员工xi" />
+    <option id="skill27" dialogue="员工xii" />
+    <option id="skill28" dialogue="回收容器" />
+    <option id="skill28a" dialogue="最近的垃圾容器将被回收容器替换。" />
+    <option id="skill29" dialogue="MART OS 2.0" />
+    <option id="skill29a" dialogue="定价机软件得到了改进，现在可以设置一种自动化价格的方法" />
+    <option id="skill30" dialogue="TIC-TAC走得很快" />
+    <option id="skill30a" dialogue="当夜间商店关闭时，经理可以在经理的房间中使用新时钟来加速时间" />
+    <option id="skill31" dialogue="低能灯泡" />
+    <option id="skill31a" dialogue="将总体电消耗降低20％" />
+    <option id="skill32" dialogue="用户友好的接口" />
+    <option id="skill32a" dialogue="客户使用自我检查的速度更快" />
+    <option id="skill33" dialogue="后勤" />
+    <option id="skill33a" dialogue="拿起盒子时，玩家将能够可视化其包含的产品在商店和存储中的位置" />
+    <option id="skill34" dialogue="外部会计师" />
+    <option id="skill34a" dialogue="如果有资金，将每天支付发票。" />
+    <option id="skill35" dialogue="特殊价格i" />
+    <option id="skill35a" dialogue="将每日销售量的最大数量增加2。" />
+    <option id="skill36" dialogue="特殊价格ii" />
+    <option id="skill37" dialogue="特殊价格iii" />
+    <option id="skill38" dialogue="托盘显示" />
+    <option id="skill38a" dialogue="解锁最大产品的不同类型的托盘显示器" />
+
+    
+
+    <option id="productRelated0" dialogue="每单位价格" />
+
+    <option id="productGroup0" dialogue="基本产品" />
+    <option id="productGroup1" dialogue="乳制品" />
+    <option id="productGroup2" dialogue="苏打水" />
+    <option id="productGroup3" dialogue="冷冻食品" />
+    <option id="productGroup4" dialogue="卫生" />
+    <option id="productGroup5" dialogue="清洁产品" />
+    <option id="productGroup6" dialogue="糖果和小吃" />
+    <option id="productGroup7" dialogue="肉" />
+    <option id="productGroup8" dialogue="果酱" />
+    <option id="productGroup9" dialogue="输注" />
+    <option id="productGroup10" dialogue="海鲜" />
+    <option id="productGroup11" dialogue="图书" />
+    <option id="productGroup12" dialogue="酒精饮料" />
+    <option id="productGroup13" dialogue="药店" />
+    <option id="productGroup14" dialogue="生产" />
+    <option id="productGroup15" dialogue="育儿" />
+    <option id="productGroup16" dialogue="园艺" />
+    <option id="productGroup17" dialogue="小型电子产品" />
+
+    <option id="productCategory0" dialogue="基本产品i" />
+    <option id="productCategory1" dialogue="基本产品II" />
+    <option id="productCategory2" dialogue="基本产品III" />
+    <option id="productCategory3" dialogue="基本产品IV" />
+    <option id="productCategory4" dialogue="基本产品v" />
+    <option id="productCategory5" dialogue="基本产品VI" />
+    <option id="productCategory6" dialogue="乳制品i" />
+    <option id="productCategory7" dialogue="乳制品II" />
+    <option id="productCategory8" dialogue="苏打水i" />
+    <option id="productCategory9" dialogue="冷冻食品i" />
+    <option id="productCategory10" dialogue="冷冻食品II" />
+    <option id="productCategory11" dialogue="卫生i" />
+    <option id="productCategory12" dialogue="卫生II" />
+    <option id="productCategory13" dialogue="卫生III" />
+    <option id="productCategory14" dialogue="清洁产品i" />
+    <option id="productCategory15" dialogue="清洁产品II" />
+    <option id="productCategory16" dialogue="糖果和小吃" />
+    <option id="productCategory17" dialogue="糖果和小吃II" />
+    <option id="productCategory18" dialogue="糖果和小吃iii" />
+    <option id="productCategory19" dialogue="糖果和小吃iv" />
+    <option id="productCategory20" dialogue="肉我" />
+    <option id="productCategory21" dialogue="保留我" />
+    <option id="productCategory22" dialogue="输液i" />
+    <option id="productCategory23" dialogue="海鲜i" />
+    <option id="productCategory24" dialogue="书包我" />
+    <option id="productCategory25" dialogue="书包II" />
+    <option id="productCategory26" dialogue="酒精饮料i" />
+    <option id="productCategory27" dialogue="酒精饮料II" />
+    <option id="productCategory28" dialogue="酒精饮料III" />
+    <option id="productCategory29" dialogue="药房" />
+    <option id="productCategory30" dialogue="药房II" />
+    <option id="productCategory31" dialogue="生产i" />
+    <option id="productCategory32" dialogue="产生II" />
+    <option id="productCategory33" dialogue="产生III" />
+    <option id="productCategory34" dialogue="产生iv" />
+    <option id="productCategory35" dialogue="育儿i" />
+    <option id="productCategory36" dialogue="育儿ii" />
+    <option id="productCategory37" dialogue="苏打饮料II" />
+    <option id="productCategory38" dialogue="苏打饮料III" />
+    <option id="productCategory39" dialogue="糖果和小吃v" />
+    <option id="productCategory40" dialogue="糖果和小吃vi" />
+    <option id="productCategory41" dialogue="保留II" />
+    <option id="productCategory42" dialogue="园艺i" />
+    <option id="productCategory43" dialogue="园艺II" />
+    <option id="productCategory44" dialogue="园艺三" />
+    <option id="productCategory45" dialogue="园艺iv" />
+    <option id="productCategory46" dialogue="小电子i" />
+    <option id="productCategory47" dialogue="小电子II" />
+    <option id="productCategory48" dialogue="小型电子III" />
+
+    <option id="product0" dialogue="意大利面Penne" />
+    <option id="product1" dialogue="水瓶" />
+    <option id="product2" dialogue="蜂蜜谷物" />
+    <option id="product3" dialogue="米" />
+    <option id="product4" dialogue="盐" />
+    <option id="product5" dialogue="糖" />
+    <option id="product6" dialogue="人造黄油" />
+    <option id="product7" dialogue="面粉" />
+    <option id="product8" dialogue="苹果汁" />
+    <option id="product9" dialogue="橄榄油" />
+
+    <option id="product10" dialogue="番茄酱" />
+    <option id="product11" dialogue="切成薄片的面包" />
+    <option id="product12" dialogue="胡椒" />
+    <option id="product13" dialogue="橙汁" />
+    <option id="product14" dialogue="烤酱" />
+    <option id="product15" dialogue="芥末酱" />
+    <option id="product16" dialogue="意大利面条盒" />
+    <option id="product17" dialogue="金枪鱼" />
+    <option id="product18" dialogue="纤维谷物" />
+    <option id="product19" dialogue="最高面粉" />
+
+    <option id="product20" dialogue="黑咖啡" />
+    <option id="product21" dialogue="鸡蛋盒" />
+    <option id="product22" dialogue="houmous" />
+    <option id="product23" dialogue="白面粉" />
+    <option id="product24" dialogue="甘蔗糖盒" />
+    <option id="product25" dialogue="糖" />
+    <option id="product26" dialogue="马ron" />
+    <option id="product27" dialogue="生态糖" />
+    <option id="product28" dialogue="红糖" />
+    <option id="product29" dialogue="向日葵油" />
+
+    <option id="product30" dialogue="土豆泥" />
+    <option id="product31" dialogue="土豆袋" />
+    <option id="product32" dialogue="浓缩咖啡" />
+    <option id="product33" dialogue="巴斯玛米饭" />
+    <option id="product34" dialogue="长谷物米饭" />
+    <option id="product35" dialogue="咖啡" />
+    <option id="product36" dialogue="至尊面食" />
+    <option id="product37" dialogue="巧克力谷物" />
+    <option id="product38" dialogue="优质水" />
+    <option id="product39" dialogue="春水" />
+
+    <option id="product40" dialogue="糖粉" />
+    <option id="product41" dialogue="糖 - 大盒子" />
+    <option id="product42" dialogue="红糖 - 大盒子" />
+    <option id="product43" dialogue="emmental奶酪" />
+    <option id="product44" dialogue="Gruyere奶酪" />
+    <option id="product45" dialogue="脱脂奶酪" />
+    <option id="product46" dialogue="水果酸奶" />
+    <option id="product47" dialogue="香草酸奶" />
+    <option id="product48" dialogue="牛奶砖" />
+    <option id="product49" dialogue="黄油" />
+
+    <option id="product50" dialogue="帕马尼亚奶酪" />
+    <option id="product51" dialogue="雷吉亚诺奶酪" />
+    <option id="product52" dialogue="马苏里拉奶酪" />
+    <option id="product53" dialogue="脱脂酸奶" />
+    <option id="product54" dialogue="可乐包" />
+    <option id="product55" dialogue="苏打包" />
+    <option id="product56" dialogue="Decaf Soda Pack" />
+    <option id="product57" dialogue="苏打瓶" />
+    <option id="product58" dialogue="可乐瓶" />
+    <option id="product59" dialogue="无糖苏打瓶" />
+
+    <option id="product60" dialogue="高级苏打水" />
+    <option id="product61" dialogue="披萨芭芭拉" />
+    <option id="product62" dialogue="火锅" />
+    <option id="product63" dialogue="鳄鱼火腿" />
+    <option id="product64" dialogue="火腿奶酪可丽饼" />
+    <option id="product65" dialogue="炸薯条" />
+    <option id="product66" dialogue="脆皮马铃薯弹出" />
+    <option id="product67" dialogue="绿豆" />
+    <option id="product68" dialogue="四个奶酪披萨" />
+    <option id="product69" dialogue="四季披萨" />
+
+    <option id="product70" dialogue="蔬菜混合物" />
+    <option id="product71" dialogue="鸡肉混合" />
+    <option id="product72" dialogue="bolognaise烤宽面条" />
+    <option id="product73" dialogue="蔬菜宽面条" />
+    <option id="product74" dialogue="牙膏" />
+    <option id="product75" dialogue="卫生纸" />
+    <option id="product76" dialogue="手肥皂" />
+    <option id="product77" dialogue="鳄梨洗发水" />
+    <option id="product78" dialogue="鸡蛋洗发水" />
+    <option id="product79" dialogue="沐浴凝胶" />
+
+    <option id="product80" dialogue="卫生纸" />
+    <option id="product81" dialogue="芒果肥皂" />
+    <option id="product82" dialogue="额外的软洗发水" />
+    <option id="product83" dialogue="霍霍巴蜂蜜洗发水" />
+    <option id="product84" dialogue="摩洛哥坚果油洗发水" />
+    <option id="product85" dialogue="纸巾" />
+    <option id="product86" dialogue="双面厕纸" />
+    <option id="product87" dialogue="柠檬肥皂" />
+    <option id="product88" dialogue="高级浴凝胶" />
+    <option id="product89" dialogue="婴儿的洗发水" />
+
+    <option id="product90" dialogue="洗涤剂" />
+    <option id="product91" dialogue="污渍去除剂" />
+    <option id="product92" dialogue="玻璃清洁剂" />
+    <option id="product93" dialogue="洗涤剂桌" />
+    <option id="product94" dialogue="洗碗机" />
+    <option id="product95" dialogue="漂白" />
+    <option id="product96" dialogue="漂白剂 - 大瓶" />
+    <option id="product97" dialogue="柔软剂" />
+    <option id="product98" dialogue="优质清洁剂" />
+    <option id="product99" dialogue="杀虫剂" />
+
+    <option id="product100" dialogue="清洁布" />
+    <option id="product101" dialogue="高级胶囊" />
+    <option id="product102" dialogue="优质漂白剂" />
+    <option id="product103" dialogue="氨" />
+    <option id="product104" dialogue="饼干罐" />
+    <option id="product105" dialogue="马克西锥" />
+    <option id="product106" dialogue="巧克力蔓延" />
+    <option id="product107" dialogue="巧克力粉" />
+    <option id="product108" dialogue="筹码" />
+    <option id="product109" dialogue="甜蜜的邦贝克" />
+
+    <option id="product110" dialogue="桃果酱" />
+    <option id="product111" dialogue="冰淇淋盒" />
+    <option id="product112" dialogue="巧克力盒" />
+    <option id="product113" dialogue="巧克力饼干" />
+    <option id="product114" dialogue="消除饼干" />
+    <option id="product115" dialogue="玛德琳" />
+    <option id="product116" dialogue="草莓果酱" />
+    <option id="product117" dialogue="花生酱" />
+    <option id="product118" dialogue="chipos" />
+    <option id="product119" dialogue="棉花糖" />
+
+    <option id="product120" dialogue="柠檬饼干" />
+    <option id="product121" dialogue="榛子饼干" />
+    <option id="product122" dialogue="优质冰淇淋" />
+    <option id="product123" dialogue="蜂蜜" />
+    <option id="product124" dialogue="优质巧克力盒" />
+    <option id="product125" dialogue="foditos" />
+    <option id="product126" dialogue="优质蛋糕" />
+    <option id="product127" dialogue="切碎的牛肉" />
+    <option id="product128" dialogue="纯牛肉" />
+    <option id="product129" dialogue="小牛肉" />
+
+    <option id="product130" dialogue="鸡翅" />
+    <option id="product131" dialogue="鸡" />
+    <option id="product132" dialogue="帕尔马火腿" />
+    <option id="product133" dialogue="切成薄片的火腿" />
+    <option id="product134" dialogue="豌豆 - 大" />
+    <option id="product135" dialogue="金枪鱼 - 大" />
+    <option id="product136" dialogue="红豆" />
+    <option id="product137" dialogue="猫粮" />
+    <option id="product138" dialogue="猫粮" />
+    <option id="product139" dialogue="狗粮" />
+
+    <option id="product140" dialogue="绿茶" />
+    <option id="product141" dialogue="柠檬茶" />
+    <option id="product142" dialogue="红茶" />
+    <option id="product143" dialogue="薄荷" />
+    <option id="product144" dialogue="薄荷" />
+    <option id="product145" dialogue="瓦莱里安" />
+    <option id="product146" dialogue="大寿司" />
+    <option id="product147" dialogue="小寿司" />
+    <option id="product148" dialogue="烟熏三文鱼" />
+    <option id="product149" dialogue="螃蟹棒" />
+
+    <option id="product150" dialogue="书 - 电磁" />
+    <option id="product151" dialogue="书 - 惊喜" />
+    <option id="product152" dialogue="书-ABC" />
+    <option id="product153" dialogue="书 - 母子" />
+    <option id="product154" dialogue="书 - 颜色" />
+    <option id="product155" dialogue="书-Piticha" />
+    <option id="product156" dialogue="书 - 一次" />
+    <option id="product157" dialogue="书-Krok" />
+    <option id="product158" dialogue="书 - 冒险" />
+    <option id="product159" dialogue="书 - 唐宁" />
+
+    <option id="product160" dialogue="书 - 复古" />
+    <option id="product161" dialogue="书 - 我不会分享" />
+    <option id="product162" dialogue="啤酒包" />
+    <option id="product163" dialogue="啤酒包" />
+    <option id="product164" dialogue="啤酒包" />
+    <option id="product165" dialogue="啤酒桶" />
+    <option id="product166" dialogue="啤酒桶" />
+    <option id="product167" dialogue="伏特加酒" />
+    <option id="product168" dialogue="红葡萄酒" />
+    <option id="product169" dialogue="桃红葡萄酒" />
+
+    <option id="product170" dialogue="白葡萄酒" />
+    <option id="product171" dialogue="啤酒桶" />
+    <option id="product172" dialogue="高级伏特加酒" />
+    <option id="product173" dialogue="日本威士忌" />
+    <option id="product174" dialogue="优质威士忌" />
+    <option id="product175" dialogue="优质威士忌" />
+    <option id="product176" dialogue="过氧化氢" />
+    <option id="product177" dialogue="消毒剂" />
+    <option id="product178" dialogue="布洛芬" />
+    <option id="product179" dialogue="扑热息痛" />
+
+    <option id="product180" dialogue="粘合剂绷带" />
+    <option id="product181" dialogue="泻药" />
+    <option id="product182" dialogue="抗组胺药" />
+    <option id="product183" dialogue="锌补充" />
+    <option id="product184" dialogue="抗氧化剂" />
+    <option id="product185" dialogue="鱼油" />
+    <option id="product186" dialogue="藻类药" />
+    <option id="product187" dialogue="维生素" />
+    <option id="product188" dialogue="褪黑激素" />
+    <option id="product189" dialogue="防晒霜" />
+
+    <option id="product190" dialogue="拉伸奶油" />
+    <option id="product191" dialogue="红色苹果托盘" />
+    <option id="product192" dialogue="绿色苹果托盘" />
+    <option id="product193" dialogue="克莱门汀托盘" />
+    <option id="product194" dialogue="橙色托盘" />
+    <option id="product195" dialogue="梨托盘" />
+    <option id="product196" dialogue="柠檬托盘" />
+    <option id="product197" dialogue="芒果托盘" />
+    <option id="product198" dialogue="鳄梨托盘" />
+    <option id="product199" dialogue="猕猴桃托盘" />
+
+    <option id="product200" dialogue="木瓜托盘" />
+    <option id="product201" dialogue="草莓托盘" />
+    <option id="product202" dialogue="樱桃托盘" />
+    <option id="product203" dialogue="朝鲜蓟托盘" />
+    <option id="product204" dialogue="西葫芦托盘" />
+    <option id="product205" dialogue="胡萝卜托盘" />
+    <option id="product206" dialogue="番茄托盘" />
+    <option id="product207" dialogue="土豆托盘" />
+    <option id="product208" dialogue="洋葱托盘" />
+    <option id="product209" dialogue="香蕉包" />
+
+    <option id="product210" dialogue="瓜" />
+    <option id="product211" dialogue="菠萝" />
+    <option id="product212" dialogue="南瓜" />
+    <option id="product213" dialogue="西瓜" />
+    <option id="product214" dialogue="婴儿食品：蔬菜" />
+    <option id="product215" dialogue="婴儿食品：鱼" />
+    <option id="product216" dialogue="婴儿食品：水果" />
+    <option id="product217" dialogue="婴儿食品：肉" />
+    <option id="product218" dialogue="营养牛奶混合物" />
+    <option id="product219" dialogue="营养奶粉" />
+
+    <option id="product220" dialogue="生态尿布" />
+    <option id="product221" dialogue="基本尿布" />
+    <option id="product222" dialogue="幼儿尿布" />
+    <option id="product223" dialogue="高级尿布" />
+    <option id="product224" dialogue="芦荟婴儿湿巾" />
+    <option id="product225" dialogue="基本的婴儿湿巾" />
+    <option id="product226" dialogue="婴儿爽身粉" />
+    <option id="product227" dialogue="橙苏" />
+    <option id="product228" dialogue="菠萝汽水" />
+    <option id="product229" dialogue="热带汽水" />
+
+    <option id="product230" dialogue="绿茶饮料" />
+    <option id="product231" dialogue="红茶饮料" />
+    <option id="product232" dialogue="柠檬茶水" />
+    <option id="product233" dialogue="冷冲泡咖啡" />
+    <option id="product234" dialogue="蓝莓能量饮料" />
+    <option id="product235" dialogue="番石榴能量饮料" />
+    <option id="product236" dialogue="利马能量饮料" />
+    <option id="product237" dialogue="水果打孔能量饮料" />
+    <option id="product238" dialogue="芒果能量饮料" />
+    <option id="product239" dialogue="可乐能量饮料" />
+
+    <option id="product240" dialogue="无糖能量饮料" />
+    <option id="product241" dialogue="基本草莓冰淇淋" />
+    <option id="product242" dialogue="柠檬冰淇淋" />
+    <option id="product243" dialogue="咖啡冰淇淋" />
+    <option id="product244" dialogue="Stracciatella冰淇淋" />
+    <option id="product245" dialogue="草莓酥皮冰淇淋" />
+    <option id="product246" dialogue="焦糖冰淇淋" />
+    <option id="product247" dialogue="优质草莓冰淇淋" />
+    <option id="product248" dialogue="草莓芝士蛋糕冰淇淋" />
+    <option id="product249" dialogue="优质焦糖冰淇淋" />
+
+    <option id="product250" dialogue="粉红色的草莓冰淇淋" />
+    <option id="product251" dialogue="酒精冰淇淋" />
+    <option id="product252" dialogue="鹰嘴豆" />
+    <option id="product253" dialogue="肉丸" />
+    <option id="product254" dialogue="小扁豆" />
+    <option id="product255" dialogue="番茄汤" />
+    <option id="product256" dialogue="玉米罐头" />
+    <option id="product257" dialogue="豌豆罐头" />
+    <option id="product258" dialogue="草莓种子" />
+    <option id="product259" dialogue="覆盆子种子" />
+
+    <option id="product260" dialogue="蓝莓种子" />
+    <option id="product261" dialogue="菠萝种子" />
+    <option id="product262" dialogue="迈耶柠檬种子" />
+    <option id="product263" dialogue="番茄种子" />
+    <option id="product264" dialogue="胡椒种子" />
+    <option id="product265" dialogue="黄瓜种子" />
+    <option id="product266" dialogue="萝卜种子" />
+    <option id="product267" dialogue="胡萝卜种子" />
+    <option id="product268" dialogue="草坪种子" />
+    <option id="product269" dialogue="罂粟种子" />
+
+    <option id="product270" dialogue="郁金香种子" />
+    <option id="product271" dialogue="葵花籽" />
+    <option id="product272" dialogue="矮牵牛种子" />
+    <option id="product273" dialogue="手耙（A）" />
+    <option id="product274" dialogue="手耙（b）" />
+    <option id="product275" dialogue="手铲" />
+    <option id="product276" dialogue="手工耕种者" />
+    <option id="product277" dialogue="盆栽土壤" />
+    <option id="product278" dialogue="肥料" />
+    <option id="product279" dialogue="种植锅" />
+
+    <option id="product280" dialogue="种植锅" />
+    <option id="product281" dialogue="AA电池" />
+    <option id="product282" dialogue="AAA电池" />
+    <option id="product283" dialogue="C电池" />
+    <option id="product284" dialogue="9V电池" />
+    <option id="product285" dialogue="通用电视遥控器" />
+    <option id="product286" dialogue="通用电话充电器" />
+    <option id="product287" dialogue="基本预付费电话" />
+    <option id="product288" dialogue="基本鼠标" />
+    <option id="product289" dialogue="wifi加密狗" />
+    <option id="product290" dialogue="基本耳塞" />
+
+    <option id="product291" dialogue="基本键盘" />
+    <option id="product292" dialogue="基本游戏板" />
+    <option id="product293" dialogue="USB闪存驱动器（128GB）" />
+    <option id="product294" dialogue="USB闪存驱动器（256GB）" />
+    <option id="product295" dialogue="USB闪存驱动器（512GB）" />
+    <option id="product296" dialogue="USB闪存驱动器（1TB）" />
+    <option id="product297" dialogue="基本扬声器" />
+    <option id="product298" dialogue="基本耳机" />
+    <option id="product299" dialogue="基本游戏机" />
+
+
+    
+    <option id="paintmat0" dialogue="存储瓷砖a" />
+    <option id="paintmat1" dialogue="存储瓷砖b" />
+    <option id="paintmat2" dialogue="存放砖块" />
+    <option id="paintmat3" dialogue="商店石膏" />
+    <option id="paintmat4" dialogue="存储混凝土" />
+    <option id="paintmat5" dialogue="漆的木头" />
+    <option id="paintmat6" dialogue="木板" />
+    <option id="paintmat7" dialogue="刨木" />
+    <option id="paintmat8" dialogue="未盖的木头（打结）" />
+    <option id="paintmat9" dialogue="未铺好的木头" />
+
+    <option id="paintmat10" dialogue="油漆的木头" />
+    <option id="paintmat11" dialogue="基本瓷砖a" />
+    <option id="paintmat12" dialogue="基本瓷砖b" />
+    <option id="paintmat13" dialogue="基本瓷砖c" />
+    <option id="paintmat14" dialogue="基本瓷砖d" />
+    <option id="paintmat15" dialogue="花岗岩瓷砖a" />
+    <option id="paintmat16" dialogue="花岗岩瓷砖b" />
+    <option id="paintmat17" dialogue="花岗岩瓷砖c" />
+    <option id="paintmat18" dialogue="花岗岩瓷砖d" />
+    <option id="paintmat19" dialogue="大理石瓷砖" />
+
+    <option id="paintmat20" dialogue="大理石瓷砖b" />
+    <option id="paintmat21" dialogue="大理石瓷砖c" />
+    <option id="paintmat22" dialogue="原始大理石" />
+    <option id="paintmat23" dialogue="油漆金属" />
+    <option id="paintmat24" dialogue="基本砖" />
+    <option id="paintmat25" dialogue="砖图案" />
+    <option id="paintmat26" dialogue="砖图案b" />
+    <option id="paintmat27" dialogue="砖图案c" />
+    <option id="paintmat28" dialogue="基本铝" />
+    <option id="paintmat29" dialogue="拉丝铝a" />
+
+    <option id="paintmat30" dialogue="拉丝铝b" />
+    <option id="paintmat31" dialogue="铸造的铝" />
+    <option id="paintmat32" dialogue="马特铝" />
+    <option id="paintmat33" dialogue="嘈杂的铝" />
+    <option id="paintmat34" dialogue="氧化铝" />
+    <option id="paintmat35" dialogue="刷铜" />
+    <option id="paintmat36" dialogue="金面板" />
+    <option id="paintmat37" dialogue="铜模式a" />
+    <option id="paintmat38" dialogue="铜图案b" />
+    <option id="paintmat39" dialogue="铜图案c" />
+
+    <option id="paintmat40" dialogue="铝模式a" />
+    <option id="paintmat41" dialogue="铝模式b" />
+    <option id="paintmat42" dialogue="铝模式c" />
+    <option id="paintmat43" dialogue="铝模式d" />
+    <option id="paintmat44" dialogue="铝模式e" />
+    <option id="paintmat45" dialogue="铝模式f" />
+    <option id="paintmat46" dialogue="铝模式g" />
+    <option id="paintmat47" dialogue="铝模式h" />
+    <option id="paintmat48" dialogue="铝模式i" />
+    <option id="paintmat49" dialogue="铝模式j" />
+
+    <option id="paintmat50" dialogue="黄铜图案a" />
+    <option id="paintmat51" dialogue="黄铜图案b" />
+    <option id="paintmat52" dialogue="黄铜图案c" />
+    <option id="paintmat53" dialogue="黄铜图案d" />
+    <option id="paintmat54" dialogue="黄铜图案e" />
+    <option id="paintmat55" dialogue="黄铜图案f" />
+    <option id="paintmat56" dialogue="黄铜图案g" />
+    <option id="paintmat57" dialogue="铜板" />
+    <option id="paintmat58" dialogue="杂项。模式" />
+    <option id="paintmat59" dialogue="杂项。图案b" />
+
+    <option id="paintmat60" dialogue="杂项。模式c" />
+    <option id="paintmat61" dialogue="杂项。模式d" />
+    <option id="paintmat62" dialogue="杂项。模式e" />
+    <option id="paintmat63" dialogue="杂项。模式f" />
+    <option id="paintmat64" dialogue="杂项。图案g" />
+    <option id="paintmat65" dialogue="杂项。模式h" />
+    <option id="paintmat66" dialogue="杂项。图案i" />
+    <option id="paintmat67" dialogue="杂项。模式j" />
+    <option id="paintmat68" dialogue="杂项。图案k" />
+    <option id="paintmat69" dialogue="杂项。图案l" />
+
+    <option id="paintmat70" dialogue="有机：草" />
+    <option id="paintmat71" dialogue="有机：叶" />
+    <option id="paintmat72" dialogue="有机：石头A。" />
+    <option id="paintmat73" dialogue="有机：石头b" />
+
+    <option id="paintmat74" dialogue="万圣节：图案a" />
+    <option id="paintmat75" dialogue="万圣节：图案b" />
+    <option id="paintmat76" dialogue="万圣节：图案c" />
+    <option id="paintmat77" dialogue="万圣节：图案d" />
+    <option id="paintmat78" dialogue="万圣节：图案e" />
+    <option id="paintmat79" dialogue="万圣节：图案f" />
+
+    <option id="paintmat80" dialogue="万圣节：图案g" />
+    <option id="paintmat81" dialogue="万圣节：图案h" />
+    <option id="paintmat82" dialogue="万圣节：图案i" />
+    <option id="paintmat83" dialogue="万圣节：图案j" />
+    <option id="paintmat84" dialogue="万圣节：图案k" />
+    <option id="paintmat85" dialogue="万圣节：图案l" />
+    <option id="paintmat86" dialogue="万圣节：图案m" />
+    <option id="paintmat87" dialogue="万圣节：南瓜" />
+    <option id="paintmat88" dialogue="万圣节：骨骼" />
+    <option id="paintmat89" dialogue="万圣节：蜘蛛网" />
+
+    <option id="paintmat90" dialogue="圣诞节a" />
+    <option id="paintmat91" dialogue="圣诞节b" />
+    <option id="paintmat92" dialogue="圣诞节c" />
+    <option id="paintmat93" dialogue="圣诞节d" />
+    <option id="paintmat94" dialogue="圣诞节e" />
+    <option id="paintmat95" dialogue="圣诞节f" />
+    <option id="paintmat96" dialogue="圣诞节G。" />
+    <option id="paintmat97" dialogue="圣诞节h" />
+    <option id="paintmat98" dialogue="圣诞节i" />
+    <option id="paintmat99" dialogue="圣诞节j" />
+
+    <option id="paintmat100" dialogue="雪" />
+    <option id="paintmat101" dialogue="冰A。" />
+    <option id="paintmat102" dialogue="冰b" />
+    <option id="paintmat103" dialogue="冰c" />
+    <option id="paintmat104" dialogue="冰d" />
+    <option id="paintmat105" dialogue="产品：基本a" />
+    <option id="paintmat106" dialogue="产品：基本b" />
+    <option id="paintmat107" dialogue="产品：乳制品a" />
+    <option id="paintmat108" dialogue="产品：乳制品b" />
+    <option id="paintmat109" dialogue="产品：苏打水饮料" />
+
+    <option id="paintmat110" dialogue="产品：苏打饮料B" />
+    <option id="paintmat111" dialogue="产品：冷冻" />
+    <option id="paintmat112" dialogue="产品：卫生a" />
+    <option id="paintmat113" dialogue="产品：卫生b" />
+    <option id="paintmat114" dialogue="产品：清洁" />
+    <option id="paintmat115" dialogue="产品：糖果a" />
+    <option id="paintmat116" dialogue="产品：糖果b" />
+    <option id="paintmat117" dialogue="产品：肉" />
+    <option id="paintmat118" dialogue="产品：保留" />
+    <option id="paintmat119" dialogue="产品：输液" />
+
+    <option id="paintmat120" dialogue="产品：鱼" />
+    <option id="paintmat121" dialogue="产品：鱼b" />
+    <option id="paintmat122" dialogue="产品：书籍" />
+    <option id="paintmat123" dialogue="产品：书籍b" />
+    <option id="paintmat124" dialogue="产品：酒精a" />
+    <option id="paintmat125" dialogue="产品：酒精b" />
+    <option id="paintmat126" dialogue="产品：药房" />
+    <option id="paintmat127" dialogue="产品：药房b" />
+    <option id="paintmat128" dialogue="产品：生产" />
+    <option id="paintmat129" dialogue="产品：生产b" />
+
+    <option id="paintmat130" dialogue="产品：生产c" />
+    <option id="paintmat131" dialogue="产品：生产d" />
+    <option id="paintmat132" dialogue="产品：育儿a" />
+    <option id="paintmat133" dialogue="产品：育儿b" />
+    <option id="paintmat134" dialogue="实验电视" />
+    <option id="paintmat135" dialogue="产品：园艺" />
+    <option id="paintmat136" dialogue="产品：园艺b" />
+    <option id="paintmat137" dialogue="产品：电子a" />
+    <option id="paintmat138" dialogue="产品：电子b" />
+    <option id="paintmat139" dialogue="竹子" />
+
+    <option id="paintmat140" dialogue="地毯" />
+    <option id="paintmat141" dialogue="地毯b" />
+    <option id="paintmat142" dialogue="地毯c" />
+    <option id="paintmat143" dialogue="地毯d" />
+    <option id="paintmat144" dialogue="地毯e" />
+    <option id="paintmat145" dialogue="地毯f" />
+    <option id="paintmat146" dialogue="地毯g" />
+    <option id="paintmat147" dialogue="地毯h" />
+    <option id="paintmat148" dialogue="地毯i" />
+    <option id="paintmat149" dialogue="混凝土a" />
+
+    <option id="paintmat150" dialogue="混凝土b" />
+    <option id="paintmat151" dialogue="混凝土c" />
+    <option id="paintmat152" dialogue="混凝土d" />
+    <option id="paintmat153" dialogue="混凝土e" />
+    <option id="paintmat154" dialogue="混凝土f" />
+    <option id="paintmat155" dialogue="混凝土g" />
+    <option id="paintmat156" dialogue="钻石板A。" />
+    <option id="paintmat157" dialogue="钻石板b" />
+    <option id="paintmat158" dialogue="金属板A。" />
+    <option id="paintmat159" dialogue="金属板b" />
+
+    <option id="paintmat160" dialogue="金属板c" />
+    <option id="paintmat161" dialogue="岩石" />
+    <option id="paintmat162" dialogue="岩石b" />
+    <option id="paintmat163" dialogue="岩石c" />
+    <option id="paintmat164" dialogue="岩石d" />
+    <option id="paintmat165" dialogue="木制图案a" />
+    <option id="paintmat166" dialogue="木制图案b" />
+    <option id="paintmat167" dialogue="木制图案c" />
+    <option id="paintmat168" dialogue="木制图案d" />
+    <option id="paintmat169" dialogue="木制图案e" />
+
+    <option id="paintmat170" dialogue="木制图案f" />
+    <option id="paintmat171" dialogue="木制图案g" />
+
+    
+    <option id="skinshats" dialogue="皮肤和帽子" />
+    <option id="character" dialogue="特点" />
+    <option id="hat" dialogue="帽子" />
+    <option id="coolpeople" dialogue="只有很酷的人允许" />
+
+    <option id="mprice" dialogue="市价" />
+    <option id="yprice" dialogue="你的价格" />
+
+    <option id="mgiven" dialogue="钱给了" />
+    <option id="mreturn" dialogue="钱回来" />
+    <option id="camount" dialogue="当前金额" />
+    <option id="addmoney" dialogue="[LMB]加钱" />
+    <option id="removemoney" dialogue="[rmb]删除钱" />
+
+    <option id="coopplayerfunds" dialogue="为Coop Player添加额外的资金" />
+
+    <option id="alreadyopen" dialogue="商店已经开业" />
+    <option id="alreadyclose" dialogue="商店已经关闭" />
+
+    <option id="newoptions1" dialogue="FOV" />
+    <option id="newoptions2" dialogue="电视卷。" />
+
+    <option id="poseskey" dialogue="舞蹈密钥分配" />
+
+    <option id="lic12" dialogue="在此终端，一旦许可证获得批准，您将能够将YouTube并抽搐到您的电视上。" />
+
+    <option id="cosmetics1" dialogue="化妆品DLC已获批准！" />
+    <option id="cosmetics2" dialogue="9个新角色，超过100顶帽子，35次舞蹈和姿势以及一个在老板看不到的情况下放松的网络浏览器。  用新平板电脑涂上商店，并随着时间的推移添加独家装饰。首先，YouTube同步更新已经可用！" />
+
+    <option id="continue" dialogue="继续" />
+    <option id="backups" dialogue="备份" />
+    <option id="nobackups" dialogue="没有备份" />
+    <option id="backupswarning" dialogue="警告：加载备份将覆盖当前文件的日子。" />
+    <option id="deleteoff" dialogue="删除模式关闭" />
+    <option id="deleteon" dialogue="删除模式打开" />
+
+    <option id="kick" dialogue="踢" />
+    <option id="punish" dialogue="惩治" />
+    <option id="permi" dialogue="权限" />
+
+    <option id="nplayer" dialogue="连接新播放器：" />
+
+    <option id="disclaimer1" dialogue="如果您遇到了问题，请记住更新到最新补丁！" />
+
+    <option id="tvcontrol" dialogue="电视控制" />
+    <option id="tvhook0" dialogue="离开" />
+    <option id="tvhook1" dialogue="占位符视频" />
+    <option id="tvhook2" dialogue="URL视频" />
+    <option id="tvhook3" dialogue="浏览器" />
+    <option id="tvhook4" dialogue="抽搐/YT视频" />
+    <option id="tvdisclaimer" dialogue="流媒体可视化仍在待处理。  谢谢您的耐心配合。" />
+
+    <option id="lobby0" dialogue="大堂现在是：" />
+    <option id="lobby1" dialogue="打开" />
+    <option id="lobby2" dialogue="关闭" />
+    <option id="lobby3" dialogue="开放大厅" />
+    <option id="lobby4" dialogue="关闭大厅" />
+    <option id="lobby5" dialogue="关闭大厅将阻止任何人加入。如果您只期望一定数量的玩家并且不希望没有代码的任何人通过Steam朋友加入，则有用。" />
+
+    <option id="newoptions3" dialogue="允许视频" />
+
+    <option id="checkoutlane" dialogue="结帐巷关闭，请下一步使用" />
+    <option id="checkoutlane1" dialogue="关闭结帐车道" />
+
+    <option id="paintablestablet0" dialogue="选择材料，然后涂色，然后应用选择" />
+    <option id="paintablestablet1" dialogue="返回物料选择" />
+    <option id="paintablestablet2" dialogue="上一个/下一个材料或颜色" />
+    <option id="paintablestablet3" dialogue="正在实施商店自定义。  这堵墙允许无金钱预览油漆平板电脑。在某些材料中，您可以选择颜色差异。" />
+
+    <option id="newoptions4" dialogue="高潜伏期" />
+    <option id="newoptions5" dialogue="一般的" />
+    <option id="titledisclaimer1" dialogue="加入游戏和补货时缺少产品？在选项中激活新的高延迟模式" />
+
+    <option id="managerboardnew1" dialogue="购买空盒子" />
+    <option id="employeeboardnew1" dialogue="中断箱回收" />
+
+    <option id="tabletdisclaimer1" dialogue="该平板电脑已被弃用并合并为主要建筑商。默认情况下使用X和Z访问新选项卡。" />
+
+    <option id="pcat" dialogue="你抚摸了猫。稍后再回来" />
+
+    <option id="snapping0" dialogue="下一个快照模式" />
+    <option id="snapping1" dialogue="快照模式" />
+    <option id="snapping2" dialogue="没有任何" />
+    <option id="snapping3" dialogue="网格：中心" />
+    <option id="snapping4" dialogue="网格：背面" />
+    <option id="snapping5" dialogue="家具" />
+
+    <option id="checkoutwarning" dialogue="您的商店至少需要载人的结帐" />
+
+    <option id="newoptions6" dialogue="总是运行" />
+    <option id="newoptions7" dialogue="浏览器" />
+    <option id="newoptions7a" dialogue="没有任何" />
+    <option id="newoptions7b" dialogue="普通的" />
+    <option id="newoptions7c" dialogue="Linux支持" />
+    <option id="newoptions8" dialogue="Kaching卷。" />
+    <option id="newoptions9" dialogue="局限光标" />
+    <option id="newoptions10" dialogue="十字路口大小" />
+    <option id="newoptions11" dialogue="十字准色" />
+    <option id="newoptions12" dialogue="夜晚" />
+
+    <option id="surveillance1" dialogue="客户已经检查了" />
+    <option id="surveillance2" dialogue="重复单击客户以检查最接近相机的小偷，点击越有效。" />
+    <option id="surveillance2a" dialogue="握住点击并悬停在客户身上，检查它是否最接近相机的小偷，这越有效。" />
+
+    <option id="rdown" dialogue="下跌" />
+
+    <option id="tvautosync0" dialogue="AutoSync" />
+    <option id="tvautosync1" dialogue="允许所有玩家更改URL" />
+    <option id="tvautosync2" dialogue="YouTube视频" />
+
+    <option id="productsorting0" dialogue="没有分类" />
+    <option id="productsorting1" dialogue="按大小" />
+    <option id="productsorting2" dialogue="总库存最低" />
+    <option id="productsorting3" dialogue="通过最低存储" />
+    <option id="productsorting4" dialogue="通过最低的货架库存" />
+
+    <option id="checkoutredbutton" dialogue="只有经理才能按下此按钮" />
+
+    <option id="invo" dialogue="发票" />
+    <option id="invodebt" dialogue="发票 /债务" />
+    <option id="stats" dialogue="统计数据" />
+
+    <option id="removeallperm" dialogue="加入时删除所有权限" />
+    <option id="permiss0" dialogue="全球的" />
+    <option id="permiss1" dialogue="经理" />
+    <option id="permiss2" dialogue="出纳员" />
+    <option id="permiss3" dialogue="RETSOCKER" />
+    <option id="permiss4" dialogue="安全" />
+    <option id="permiss5" dialogue="聊天" />
+
+    <option id="newemplo" dialogue="雇员" />
+    <option id="emplohire" dialogue="聘请" />
+    <option id="emplodismiss" dialogue="解雇" />
+    <option id="emploassignment" dialogue="任务" />
+    <option id="emplostats" dialogue="员工的统计数据" />
+    <option id="emplorenew" dialogue="员工每天续签！" />
+    <option id="emplomaxemplo" dialogue="最大限度。雇员" />
+    <option id="emplohired" dialogue="雇用员工" />
+    <option id="emploentername" dialogue="输入员工名称..." />
+    <option id="emplocashexp" dialogue="出纳经验" />
+    <option id="emplorestexp" dialogue="Retocker体验" />
+    <option id="emplostoexp" dialogue="存储经验" />
+    <option id="emplosecexp" dialogue="安全经验" />
+    <option id="canthiremore" dialogue="不能雇用更多的员工" />
+    <option id="hiredemployee" dialogue="雇用了一名员工！" />
+    <option id="dismissedemployee" dialogue="解雇了雇员！" />
+    <option id="emploalreadyhired" dialogue="雇用" />
+    <option id="emptyposi" dialogue="空位置" />
+    <option id="emploassignedtask" dialogue="分配的任务" />
+    <option id="emplonewpriority" dialogue="贮存" />
+    <option id="emploNoTask" dialogue="没有任务" />
+    <option id="emplostaffhappi" dialogue="员工的幸福" />
+    <option id="emploreroll" dialogue="重读" />
+
+    <option id="dlcdiscounted" dialogue="离开" />
+    <option id="emploselect" dialogue="选择" />
+    <option id="emplochangeall" dialogue="更改所有优先事项" />
+    <option id="emplosavelay" dialogue="保存优先级" />
+    <option id="emploloadlay" dialogue="加载优先级" />
+
+    <option id="bboardmoveddisclaimer" dialogue="员工的管理已移至经理的黑板" />
+    <option id="startkn" dialogue="有一个明星令牌！" />
+    <option id="bboardchristdisclaimer" dialogue="放置圣诞礼物装饰，等待晚上开始活动！手头有扫帚" />
+
+    <option id="panykey" dialogue="按任何键继续" />
+    <option id="gtunlckable" dialogue="有一个新的可解锁物品！" />
+    <option id="nostartkn" dialogue="没有可用的星形令牌" />
+    <option id="managsavebckup" dialogue="管理保存备份" />
+    <option id="newoptionendday" dialogue="自动结束" />
+    <option id="sallprices" dialogue="将所有价格设置为百分比" />
+    <option id="csettingprices" dialogue="[目前设定价格]" />
+
+    <option id="orddevice0" dialogue="存储的金额" />
+    <option id="orddevice1" dialogue="填充商店所需的金额" />
+    <option id="orddevice2" dialogue="存储和盒子中的金额" />
+    <option id="orddevice3" dialogue="获取Mart OS 2.0以解锁高级功能" />
+    <option id="accfactor" dialogue="加速因子" />
+    <option id="loglog1" dialogue="将游戏的日志复制到剪贴板" />
+    <option id="loglog2" dialogue="复制！" />
+
+    <option id="stats0" dialogue="总钱赚了" />
+    <option id="stats1" dialogue="放置的总产品" />
+    <option id="stats2" dialogue="总盒子回收" />
+    <option id="stats3" dialogue="总客户服务" />
+    <option id="stats4" dialogue="总产品签出" />
+    <option id="stats5" dialogue="总垃圾收集了" />
+    <option id="stats6" dialogue="正确的更改连续给出" />
+    <option id="stats7" dialogue="小偷击中" />
+    <option id="stats8" dialogue="收集的被盗产品" />
+    <option id="stats9" dialogue="猫抚摸了时间" />
+    <option id="stats10" dialogue="分析了CCTV的客户" />
+    <option id="stats11" dialogue="小偷陷入了闭路电视" />
+    <option id="statsfoundtoo" dialogue="前一天找不到" />
+    <option id="statsnofound" dialogue="前一天发现太贵了" />
+
+    <option id="stats12" dialogue="到目前为止完成的销售" />
+    <option id="stats13" dialogue="在打包机中引入的盒子" />
+    <option id="stats14" dialogue="纸板捆循环" />
+
+    <option id="stats15" dialogue="售出的额外物品得益于销售" />
+    <option id="stats16" dialogue="支付发票" />
+
+    <option id="stats17" dialogue="在线订单组装" />
+    <option id="stats18" dialogue="通过在线订单赚取的钱" />
+
+    <option id="unstckplyr" dialogue="解开" />
+    <option id="off2disclaimer" dialogue="有建议或问题吗？蒸汽论坛目前是唯一与开发人员保持联系的官方媒体" />
+
+    <option id="xcessve" dialogue="过多的..." />
+
+    <option id="invoicetype0" dialogue="银行贷款" />
+    <option id="invoicetype1" dialogue="电气" />
+    <option id="invoicetype2" dialogue="薪水" />
+    <option id="invoicetype3" dialogue="租" />
+
+    <option id="invopaidannoun" dialogue="发票已付！" />
+    <option id="invopaidannoun2" dialogue="首先还清您当前的贷款！" />
+    <option id="invopaidannoun3" dialogue="贷款已获得！" />
+    <option id="invovalue0" dialogue="签发日期" />
+    <option id="invovalue1" dialogue="到期日" />
+    <option id="invovalue2" dialogue="支付此发票" />
+    <option id="invovalue3" dialogue="要求的金额" />
+    <option id="invovalue4" dialogue="贷款持续时间" />
+    <option id="invovalue5" dialogue="返回的金额" />
+    <option id="invovalue6" dialogue="每日付款" />
+    <option id="invovalue7" dialogue="确认贷款" />
+    <option id="invovalue8" dialogue="贷款请求" />
+    <option id="loandisclmer" dialogue="在当前贷款还清之前，您不能要求新贷款" />
+
+    <option id="payloandisclmer" dialogue="请支付租金发票。" />
+    <option id="paynpcmessage" dialogue="支付您的贷款！" />
+
+    <option id="disableinvoicesoption" dialogue="禁用发票" />
+
+    <option id="off3disclaimer" dialogue="如果员工不出现或懈怠，请记住付款，因为不这样做会带来后果" />
+    <option id="off4disclaimer" dialogue="员工有奇怪的路吗？使用Unstuck NPC块并在论坛中报告您的商店数据" />
+
+    <option id="drawgame0" dialogue="画这个词！迷你游戏" />
+    <option id="drawgame1" dialogue="绘画迷已经开始了！" />
+    <option id="drawgame2" dialogue="绘图迷你游戏的获胜者：" />
+    <option id="drawgame3" dialogue="绘画迷你游戏：时间用完了！" />
+    <option id="drawgame4" dialogue="你的话是..." />
+    <option id="drawgame5" dialogue="输入你的话..." />
+    <option id="drawgame6" dialogue="要求" />
+    <option id="drawgame7" dialogue="启用迷你游戏" />
+
+    <option id="picfram0" dialogue="默认图片" />
+    <option id="picfram1" dialogue="图片大小" />
+    <option id="picfram2" dialogue="输入有效的URL图像..." />
+    <option id="picfram3" dialogue="尝试设置URL" />
+
+    <option id="cshelfaux1" dialogue="角架修复（仅在伸出架子的情况下按下）" />
+    <option id="cshelfaux2" dialogue="将货架移至入口（只有主机）" />
+
+    <option id="invwarning0" dialogue="有未付银行贷款！" />
+    <option id="invwarning1" dialogue="熄灭！电气发票未付！" />
+    <option id="invwarning2" dialogue="员工正在骚乱！他们会放松或不上班！" />
+    <option id="invwarning3" dialogue="租金发票未付！" />
+
+    <option id="departneed0" dialogue="购买部门" />
+    <option id="departneed0a" dialogue="正在进行的功能" />
+    <option id="departneed1" dialogue="＃商店要求" />
+    <option id="departneed2" dialogue="＃存储要求" />
+
+    <option id="deprtmnt0" dialogue="订单包装" />
+
+    <option id="atopayinvce0" dialogue="今天的发票已得到报酬！" />
+    <option id="atopayinvce1" dialogue="没有足够的钱来支付当今的发票！" />
+
+    <option id="cpylogs0" dialogue="复制主日志" />
+    <option id="cpylogs1" dialogue="复制次要日志" />
+    <option id="lghtnblptn" dialogue="覆盖灯限制" />
+
+    <option id="slemssage0" dialogue="今天无法设定更多的销售" />
+    <option id="slemssage1" dialogue="为此产品设定了销售：" />
+    <option id="sledvce0" dialogue="当前销售" />
+    <option id="sledvce1" dialogue="最大销售额" />
+
+    <option id="lghtlmttn0" dialogue="限制照明" />
+    <option id="lghtlmttn1" dialogue="过去，对于某些玩家来说，商店里有太多的灯光很少引起黑屏问题。如果您想尝试删除此限制，将此选项设置为“否”。" />
+
+    <option id="arcblderdisclaimer" dialogue="握住[掉落项目]以忽略碰撞。谨慎使用它。" />
+
+    <option id="rststtngs0" dialogue="重置游戏设置" />
+    <option id="rststtngs1" dialogue="设置已清除" />
+
+    <option id="opckgng0" dialogue="可用订单" />
+    <option id="opckgng1" dialogue="选择该表的订单" />
+    <option id="opckgng2" dialogue="订单包装部门现已开放！" />
+    <option id="opckgng3" dialogue="分配给表的软件包" />
+    <option id="opckgng4" dialogue="关闭当前框" />
+    <option id="opckgng5" dialogue="将所需的物品存放在下面条纹区域中的蓝色托盘中，然后通过拖动它们在盒子里整理它们。使用[水平运动]旋转产品。相同的订单可以具有多个盒子。" />
+    <option id="opckgng6" dialogue="桌子中完成的订单" />
+    <option id="opckgng7" dialogue="剩下要包装的物品" />
+    <option id="opckgng8" dialogue="此订单所需的产品" />
+    <option id="opckgng9" dialogue="桌子" />
+    <option id="opckgng10" dialogue="到达时通知订单" />
+    <option id="opckgng11" dialogue="新订单已经到了！" />
+    <option id="opckgng12" dialogue="指示" />
+    <option id="opckgng13" dialogue="1.-开设订单包装部门。 2.-等待订单在工作日到达，如果您想在一个人到达时被警告，请启用通知。 3.-使用每个表上的纸板箱进入包装模式。选择您希望在该表中安排的订单。 4.-与蓝色托盘一起绕着商店或存储，并将所有必要的物品携带到桌子的条纹区域。托盘中将出现另一个平板电脑，提醒您需要哪些项目。 5.-使用表格时，将产品拖到中央框中，然后在准备就绪时使用“关闭电流框”按钮。相同的订单可以具有多个盒子。 6.-在商店的某个地方建立一个包裹拾取点，然后放在订单的盒子。 7.-最终，客户将到达命令并付款。" />
+
+    <option id="dcord0" dialogue="加入我们" />
+    <option id="dcord1" dialogue="为了庆祝其就职典礼，我们将在本月获得一次200键DLC赠品。不要错过！" />
+
+  </options>
