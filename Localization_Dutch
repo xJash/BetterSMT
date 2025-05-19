@@ -239,13 +239,13 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
 
     <option id="day" dialogue="Dag"></option>
 
-    <option id="weekday1" dialogue="Mon"></option>
-    <option id="weekday2" dialogue="Meet"></option>
-    <option id="weekday3" dialogue="Woensdag"></option>
+    <option id="weekday1" dialogue="Ma"></option>
+    <option id="weekday2" dialogue="Di"></option>
+    <option id="weekday3" dialogue="Wo"></option>
     <option id="weekday4" dialogue="Do"></option>
     <option id="weekday5" dialogue="Vr"></option>
-    <option id="weekday6" dialogue="Zat"></option>
-    <option id="weekday0" dialogue="ZON"></option> 
+    <option id="weekday6" dialogue="Za"></option>
+    <option id="weekday0" dialogue="Zo"></option> 
 
     <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
 
