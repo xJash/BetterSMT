@@ -6,23 +6,28 @@ using UnityEngine;
 
 namespace BetterSMT.Patches;
 
+// Overrides the default delete behavior in build mode
 [HarmonyPatch(typeof(Builder_Main))]
 public class Builder_MainPatch {
 
+    // Intercepts DeleteBehaviour so we can do our own thing instead
     [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
     private static bool DeleteBehaviourPatch(Builder_Main __instance) {
         return DeleteWheneverPatch(__instance);
     }
 
+    // Runs both handlers and always prevents the original method from firing
     public static bool DeleteWheneverPatch(Builder_Main __instance) {
         _ = HandleMovableObjects(__instance);
         _ = HandleDecorations(__instance);
         return false;
     }
 
+    // Lets players delete "Movable" tagged objects (like furniture)
     private static bool HandleMovableObjects(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 4f, __instance.lMask)) {
             if (hitInfo.transform.gameObject.CompareTag("Movable")) {
+                // Handles highlight logic
                 if (__instance.oldHitOBJ2 != null && hitInfo.transform.gameObject != __instance.oldHitOBJ2 && __instance.hEffect2 != null) {
                     __instance.hEffect2.highlighted = false;
                 }
@@ -34,6 +39,7 @@ public class Builder_MainPatch {
                     Debug.LogWarning("HighlightEffect not found on Movable object!");
                 }
 
+                // Handles actual deletion logic
                 if (__instance.MainPlayer.GetButtonDown("Build") || __instance.MainPlayer.GetButtonDown("Main Action") || __instance.MainPlayer.GetButtonDown("Secondary Action")) {
                     if (!BetterSMT.AlwaysAbleToDeleteMode.Value) {
                         if (GameData.Instance.isSupermarketOpen) {
@@ -63,6 +69,7 @@ public class Builder_MainPatch {
                     }
 
                     if (hitInfo.transform.GetComponent<NetworkIdentity>() != null) {
+                        // Give some money back and destroy the object
                         float num = hitInfo.transform.GetComponent<Data_Container>().cost * 0.9f;
 
                         if (__instance.MainPlayer.GetButton("Drop Item")) {
@@ -96,6 +103,7 @@ public class Builder_MainPatch {
         return false;
     }
 
+    // Same as above, but for decorations
     private static bool HandleDecorations(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo2, 4f, __instance.lMask)) {
             if (hitInfo2.transform.gameObject.CompareTag("Decoration")) {

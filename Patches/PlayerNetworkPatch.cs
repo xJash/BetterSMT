@@ -44,7 +44,7 @@ public class PlayerNetworkPatch {
             return;
         } else {
             bool usedTool = false;
-            var toolHotkeys = new[] {
+            (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = [
                 (BetterSMT.SledgeToggle?.Value,      BetterSMT.SledgeHotkey?.Value,      7),
                 (BetterSMT.OsMartToggle?.Value,      BetterSMT.OsMartHotkey?.Value,      6),
                 (BetterSMT.TrayToggle?.Value,        BetterSMT.TrayHotkey?.Value,        9),
@@ -53,7 +53,7 @@ public class PlayerNetworkPatch {
                 (BetterSMT.BroomToggle?.Value,       BetterSMT.BroomHotkey?.Value,       3),
                 (BetterSMT.LadderToggle?.Value,      BetterSMT.LadderHotkey?.Value,      8),
                 (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
-            };
+            ];
 
             foreach ((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
                 if (toggle == true && hotkey?.IsDown() == true) {
@@ -98,7 +98,7 @@ public class PlayerNetworkPatch {
         #endregion
     }
 
-#region Highlighting
+    #region Highlighting
     [HarmonyPatch("ChangeEquipment"), HarmonyPostfix]
     private static void ChangeEquipmentPatch(int newEquippedItem) {
         if (newEquippedItem == 0) {
@@ -364,4 +364,4 @@ public class PlayerNetworkPatch {
         }
     }
 }
-#endregion 
+#endregion
