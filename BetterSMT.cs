@@ -115,6 +115,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<float> ClockSpeed;
     public static ConfigEntry<bool> ClockMorning;
     public static ConfigEntry<bool> AutoOrdering;
+    public static ConfigEntry<float> PhysicsDeltaTime;
 #endregion
 
     private void Awake() {
@@ -636,11 +637,18 @@ public class BetterSMT : BaseUnityPlugin {
                 new AcceptableValueRange<int>(1, 25)
             )
         );
-#endregion
+        PhysicsDeltaTime = Config.Bind(
+            "Physics", "Physics Update Timer", 0.02f,
+            new ConfigDescription("Physics update interval. 0.02 = Unity default. Lower = quicker employees/customers, more cpu usage",
+            new AcceptableValueRange<float>(0.01f, 0.02f))
+        );
+
+        #endregion
 
         Instance = this;
         Logger = base.Logger;
         harmony.PatchAll();
+        Time.fixedDeltaTime = PhysicsDeltaTime.Value;
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
     }
 
