@@ -13,7 +13,7 @@
   <option id="newstore3" dialogue="Openbaar"></option>
   <option id="newstore4" dialogue="Creëren"></option>
   <option id="newstore5" dialogue="Winkelnaam moet meer dan 2 tekens hebben en geen ongeldige tekens hebben"></option>
-  <option id="newstore6" dialogue="U kunt indien gewenst kunstmatig moeilijk maken"></option>
+  <option id="newstore6" dialogue="U kunt indien gewenst kunstmatig de moeilijkheid verhogen"></option>
   <option id="newstore7" dialogue="Moeilijkheid:"></option>
 
   <option id="yes" dialogue="Ja"></option>
@@ -31,22 +31,22 @@
 
   <option id="options0" dialogue="Resolutie "></option>
   <option id="options1" dialogue="Oplossing"></option>
-  <option id="options2" dialogue="Op volledig scherm"></option>
+  <option id="options2" dialogue="Volledig scherm"></option>
   <option id="options3" dialogue="Vsync"></option>
   <option id="options4" dialogue="Antialiasing"></option>
   <option id="options5" dialogue="Helderheid"></option>
   <option id="options6" dialogue="Kwaliteit"></option>
-  <option id="options6a" dialogue="Prestatie Gericht"></option>
+  <option id="options6a" dialogue="Prestatiegericht"></option>
   <option id="options6b" dialogue="Evenwichtig"></option>
   <option id="options6c" dialogue="Gedetailleerd"></option>
 
-  <option id="options7" dialogue="Controles"></option>
+  <option id="options7" dialogue="Besturing"></option>
   <option id="options8" dialogue="X Gevoeligheid"></option>
   <option id="options9" dialogue="Y Gevoeligheid"></option>
   <option id="options10" dialogue="Zoomgevoeligheid"></option>
-  <option id="options11" dialogue="Omkeer X -as"></option>
-  <option id="options12" dialogue="Omkeer y -as"></option>
-  <option id="options12a" dialogue="Pas besturingselementen aan"></option>
+  <option id="options11" dialogue="Draai X as om"></option>
+  <option id="options12" dialogue="Draai Y as om"></option>
+  <option id="options12a" dialogue="Pas besturing aan"></option>
 
   <option id="options13" dialogue="Audio"></option>
   <option id="options14" dialogue="Master Vol."></option>
@@ -56,25 +56,25 @@
   <option id="options17a" dialogue="Stem Vol."></option>
 
   <option id="options18" dialogue="Hoofdmenu"></option>
-  <option id="options19" dialogue="Stop met game"></option>
+  <option id="options19" dialogue="Spel afsluiten"></option>
 
   <option id="options20" dialogue="Terug naar het hoofdmenu?"></option>
-  <option id="options21" dialogue="Stoppen met spel?"></option>
+  <option id="options21" dialogue="Spel afsluiten?"></option>
 
   <option id="options22" dialogue="Kopieer join code naar klembord"></option>
   <option id="options23" dialogue="Meedoen met vrienden via code"></option>
   <option id="options24" dialogue="Kopieer code ..."></option>
 
-  <option id="options25" dialogue="Camera -gebeurtenis FOV"></option>
-  <option id="options26" dialogue="Offensieve NPC's"></option>
-  <option id="options27" dialogue="Toepassen"></option>
+  <option id="options25" dialogue="Camera FOV"></option>
+  <option id="options26" dialogue="Aanstootgevende NPC's"></option>
+  <option id="options27" dialogue="Popping afstand"></option>
 
-  <option id="rw0" dialogue="Vooruitgaan"></option>
-  <option id="rw1" dialogue="Ga vooruit+"></option>
-  <option id="rw2" dialogue="Ga vooruit-"></option>
+  <option id="rw0" dialogue="Vooruit bewegen"></option>
+  <option id="rw1" dialogue="Vooruit bewegen+"></option>
+  <option id="rw2" dialogue="Vooruit bewegen-"></option>
   <option id="rw3" dialogue="Horizontaal bewegen"></option>
-  <option id="rw4" dialogue="Beweeg horizontaal+"></option>
-  <option id="rw5" dialogue="Beweeg horizontaal-"></option>
+  <option id="rw4" dialogue="Horizontaal bewegen+"></option>
+  <option id="rw5" dialogue="Horizontaal bewegen-"></option>
   <option id="rw6" dialogue="Muis verticaal"></option>
   <option id="rw7" dialogue="Muis verticaal+"></option>
   <option id="rw8" dialogue="Muis verticaal-"></option>
@@ -85,7 +85,7 @@
   <option id="rw12" dialogue="Hoofdactie"></option>
   <option id="rw13" dialogue="Secundaire actie"></option>
   <option id="rw14" dialogue="Bouwen"></option>
-  <option id="rw15" dialogue="DROP -item"></option>
+  <option id="rw15" dialogue="Laat item vallen"></option>
   <option id="rw16" dialogue="Springen"></option>
   <option id="rw17" dialogue="Sprint"></option>
   <option id="rw18" dialogue="Bouwmenu openen"></option>
@@ -93,11 +93,11 @@
   <option id="rw20" dialogue="Menu Vorige"></option>
   <option id="rw21" dialogue="Chat"></option>
   <option id="rw22" dialogue="Spraakchat"></option>
-  <option id="rw23" dialogue="Escape -menu"></option>
+  <option id="rw23" dialogue="Escape menu"></option>
   <option id="rw24" dialogue="Hurken"></option>
 
-  <option id="rw25" dialogue="Builder Tab Volgende"></option>
-  <option id="rw26" dialogue=" Builder Tab Vorige"></option>
+  <option id="rw25" dialogue="Bouwmenu Tab Volgende"></option>
+  <option id="rw26" dialogue="Bouwmenu Tab Vorige"></option>
   <option id="rw27" dialogue="Dans 1"></option>
   <option id="rw28" dialogue="Dans 2"></option>
   <option id="rw29" dialogue="Dans 3"></option>
@@ -118,10 +118,10 @@
   <option id="rw44" dialogue="Numpad 8"></option>
   <option id="rw45" dialogue="Numpad 9"></option>
   <option id="rw46" dialogue="Numpad verwijderen"></option>
-  <option id="rw47" dialogue="Numpad -periode"></option>
+  <option id="rw47" dialogue="Numpad punt"></option>
   <option id="rw48" dialogue="Numpad accepteren"></option>
 
-  <option id="rw49" dialogue="Bouw snappen"></option>
+  <option id="rw49" dialogue="Bouw plaatsing"></option>
 
   <!-- ///////////////////////////////////Text///////////////////////////////////// -->
 
@@ -131,24 +131,24 @@
   <option id="restock" dialogue="Aanvullen"></option>
   <option id="storage" dialogue="Opslag"></option>
   <option id="security" dialogue="Beveiliging"></option>
-  <option id="mblackboard" dialogue="Manager Krijtbord"></option>
+  <option id="mblackboard" dialogue="Managerbord"></option>
   <option id="productorder" dialogue="Product bestellen"></option>
   <option id="supermarket" dialogue="Supermarkt"></option>
-  <option id="cosmetics" dialogue="Cosmetica -bestelling"></option>
-  <option id="stream" dialogue="Stel tv -video/stream in"></option>
-  <option id="pinshelves" dialogue="Producten in planken"></option>
-  <option id="pinstorage" dialogue="Producten in opslagplaatsen"></option>
+  <option id="cosmetics" dialogue="Cosmeticabestelling"></option>
+  <option id="stream" dialogue="Stel TV video/stream in"></option>
+  <option id="pinshelves" dialogue="Producten in schappen"></option>
+  <option id="pinstorage" dialogue="Producten in opslag"></option>
   <option id="pinboxes" dialogue="Producten in dozen"></option>
   <option id="shoplist" dialogue="Boodschappenlijst"></option>
   <option id="buy" dialogue="Kopen"></option>
   <option id="supermarketname" dialogue="Supermarktnaam"></option>
   <option id="supermarketcolor" dialogue="Supermarktkleur"></option>
   <option id="changename" dialogue="Naam wijzigen"></option>
-  <option id="changecolor" dialogue="Verander van kleur"></option>
+  <option id="changecolor" dialogue="Verander kleur"></option>
   <option id="franchisepointsavailable" dialogue="Franchisepunten beschikbaar"></option>
   <option id="unlocks" dialogue="Ontgrendelen"></option>
   <option id="requires" dialogue="Vereist"></option>
-  <option id="connectionlost" dialogue="Gastheerverbinding verloren"></option>
+  <option id="connectionlost" dialogue="Hostverbinding verloren"></option>
   <option id="buyshopspace" dialogue="Koop winkelruimte"></option>
   <option id="buystoragespace" dialogue="Koop opslagruimte"></option>
   <option id="addons" dialogue="Add -ons"></option>
@@ -162,7 +162,7 @@
 De eerste stap is om wat meubels te plaatsen. Druk op [Tab] om de bouwer te openen"></option>
   <option id="tutorial2" dialogue="Koop 2 productplanken, een kassa en een opslagplank.  
 
-Opmerking De opslagplank kan alleen worden geplaatst in de bijlage lege kamer verbonden met de managerruimte."></option>
+Opmerking De opslagplank kan alleen worden geplaatst in de lege kamer grenzend aan de managerruimte."></option>
   <option id="tutorial3" dialogue="Goed gedaan!
             
 We hebben een franchisepunt beschikbaar: punten worden verdiend door een succesvol bedrijf te bezitten.
@@ -170,58 +170,58 @@ We hebben een franchisepunt beschikbaar: punten worden verdiend door een succesv
 Ga naar de managerkamer en verwerven het eerste voordeel in het schoolbord van de Perk."></option>
   <option id="tutorial4" dialogue="Geweldig. U hebt zojuist het eerste pakket producten overgenomen.
 
-Het is belangrijk om te onthouden dat zodra u een productfranchise hebt overgenomen, klanten verwachten dat die producten in de winkel zijn of dat ze zullen klagen over de bestaan.
+Het is belangrijk om te onthouden dat zodra u een productfranchise hebt aangeschaft, klanten verwachten dat die producten in de winkel zijn of dat ze zullen klagen over de afwezigheid.
 
 Ga nu naar het Blackboard van Manager, klik erin en klik vervolgens in de bestelling van producten."></option>
   <option id="tutorial5" dialogue="Goed. Klik nu in basisproducten I."></option>
   <option id="tutorial6" dialogue="Laten we een doos van elk basisproduct kopen.  
 
 Klik op het plussymbool van elk product om het toe te voegen aan de boodschappenlijst, zodra u er een van elk hebt, klikt u op Kopen."></option>
-  <option id="tutorial7" dialogue="Geweldig. Ga nu naar buiten en zoek de gekochte dozen. Klik op een om het vast te houden."></option>
-  <option id="tutorial8" dialogue="Ga naar een productplank en klik op [LMB] op een van de rijen om het met producten te vullen.  
+  <option id="tutorial7" dialogue="Geweldig. Ga nu naar buiten en zoek de gekochte dozen. Klik op een ervan om het vast te houden."></option>
+  <option id="tutorial8" dialogue="Ga naar een schapplank en klik op [LMB] op een van de rijen om die met producten te vullen.  
 
 [RMB] retourneert items van de plank naar de doos.
 
 U kunt ook drukken op [F] om items te laten vallen waar u wilt.
 
-Plaats alle producten in de planken van de winkel."></option>
+Plaats alle producten op de schappen van de winkel."></option>
   <option id="tutorial9" dialogue="Producten worden geplaatst maar aanvankelijk gelabeld tegen de kostenprijs, wat geen voordeel betekent.
 
 Ga naar de managerkamer en neem een ​​van de prijsapparaten."></option>
   <option id="tutorial10" dialogue="Richt op een plank en de productprijsinformatie verschijnt op het scherm van het apparaat.  
 
-Als uw prijzen meer dan het dubbele van de basisprijs van het product overtreffen, zullen klanten een toenemende kans hebben om het niet te kopen, dus gebruik deze regel als een schaal.
+Als uw prijzen meer dan het dubbele van de basisprijs van het product behelzen, zullen klanten een toenemende kans hebben om het niet te kopen, dus gebruik deze regel als een schaal.
 
-P.E. Als een product 1 dollar heeft gekost en u uw prijs hoger dan 2 dollar instelt, kopen klanten het mogelijk niet. Probeer een prijs in te stellen op alle zes verschillende producten.
+Bijvoorbeeld: als een product 1 dollar heeft gekost en u uw prijs hoger dan 2 dollar instelt, kopen klanten het mogelijk niet. Probeer een prijs in te stellen op alle zes verschillende producten.
 
 Besturingselementen 
-[muiswiel] Toevoegen of aftrekken in stappen van 0,01.
-[Muiswiel + E] Toevoegen of aftrek in stappen van 0,2.
+[muiswiel] Prijs verhogen of verlagen in stappen van 0,01.
+[Muiswiel + E] Prijs verhogen of verlagen in stappen van 0,2.
 [LMB] Accepteer de prijs.
 [Numpad] kan ook worden gebruikt.
-[F] Items op
+[F] Items laten vallen
 
-OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleutels in opties/Pas besturingselementen aan om dit te doen. Numpad kan ook worden gebruikt om bedragen in te voeren wanneer klanten betalen met creditcard in checkouts."></option>
+OPMERKING U kunt ook prijzen instellen met uw Numpad of de besturing aanpassen in opties om dit te doen. Numpad kan ook worden gebruikt om bedragen in te voeren wanneer klanten betalen met creditcard in checkouts."></option>
 
-  <option id="tutorial11" dialogue="Uw winkel is nu klaar om te openen. Zodat klanten in de groene knop in de kamer van de manager kunnen drukken. Maar lees eerst de belangrijke informatie hieronder:
+  <option id="tutorial11" dialogue="Uw winkel is nu klaar om te openen. Om klanten toe te laten kunt u op de groene knop in de kamer van de manager drukken. Maar lees eerst de belangrijke informatie hieronder:
 
-- Elke donderdag neemt de marktinflatie toe aan sommige producten en u zult de prijzen moeten herzien.
+- Elke donderdag neemt de marktinflatie toe op sommige producten en u zult de prijzen moeten herzien.
 
-- Je kunt lege dozen in de container laten vallen net buiten of ze naar de verste container aan de overkant van de straat dragen en wat geld terug verdienen door het te recyclen. Geld kan worden verhoogd met een voordeel.
+- Je kunt lege dozen in de container laten vallen net buiten of ze naar de verste container aan de overkant van de straat dragen en wat geld terug verdienen door het te recyclen. Geld kan worden verhoogd met een perk.
 
-- Op dag 8 krijgen dieven en afval de kans om te spawnen. De oplossing voor beide is de bezem: druk op de dieven en ze zullen hun gestolen producten laten vallen.
+- Op dag 8 krijgen dieven en afval de kans om te spawnen. De oplossing voor beiden is de bezem: sla de dieven en ze zullen hun gestolen producten laten vallen.
 
-- Elke kassa kan een wachtrij van 8 klanten hebben, ze worden niet ongeduldig, maar extra klanten die geen gratis kassa -wachtrij detecteren, zullen dieven worden en vertrekken zonder te betalen.
+- Elke kassa kan een wachtrij van 8 klanten hebben, ze worden niet ongeduldig, maar extra klanten die geen beschikbare kassawachtrij detecteren, zullen dieven worden en vertrekken zonder te betalen.
 
-- U kunt lichten en andere decoratie controleren door standaard op X of Z te drukken tijdens het gebruik van de bouwer.
+- U kunt lichten en andere decoratie bekijken door standaard op X of Z te drukken tijdens het gebruik van de bouwer.
 
-- U kunt zeker een plankrij van zijn producten wissen door er met de rechtermuisknop op te klikken met het prijsbepalingstool. Handig als u niet wilt dat werknemers die rij blijven aanvullen.
+- U kunt een plankrij van zijn producten wissen door er met de rechtermuisknop op te klikken met de prijsbepalingstool. Handig als u niet wilt dat werknemers die plank blijven aanvullen.
 
-- Let op het tabblad Facturen in het schoolbord van de manager. Uw werknemers lonen en elektrische of huurfacturen zullen daar aankomen.
+- Let op het tabblad Facturen op het bord van de manager. Uw werknemerlonen en electriciteit of huurfacturen zullen daar aankomen.
 
 - Wacht om de winkel te sluiten tot het 22.30 uur is en druk op de rode knop in de kamer van de manager. Het spel wordt elke nieuwe dag automatisch opgeslagen.
 
-- Hoe meer spelers, hoe meer moeite. (Probeer spelers te raken met de bezem)"></option>
+- Hoe meer spelers, hoe moeilijker. (Probeer spelers te raken met de bezem)"></option>
 
 
   <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
@@ -334,31 +334,31 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
 
   <option id="builder" dialogue="Bouwer"></option>
   <option id="buildable0" dialogue="Plaatsingsmodus"></option>
-  <option id="buildable1" dialogue="Productplank"></option>
+  <option id="buildable1" dialogue="Productschap"></option>
   <option id="buildable2" dialogue="Basis koelkast"></option>
   <option id="buildable3" dialogue="Dubbele koelkast"></option>
   <option id="buildable4" dialogue="Vriezer"></option>
-  <option id="buildable5" dialogue="Opbergplank"></option>
-  <option id="buildable6" dialogue="Checkout (rechts)"></option>
-  <option id="buildable7" dialogue="Checkout (links)"></option>
+  <option id="buildable5" dialogue="Opslagschap"></option>
+  <option id="buildable6" dialogue="Kassa (rechts)"></option>
+  <option id="buildable7" dialogue="Kassa (links)"></option>
   <option id="buildable8" dialogue="Staande vriezer"></option>
-  <option id="buildable9" dialogue="Productteller a"></option>
-  <option id="buildable10" dialogue="Opslagplank (niet -gelabeld)"></option>
-  <option id="buildable11" dialogue="Produceer plank a"></option>
-  <option id="buildable12" dialogue="Zelfvertrouwen"></option>
-  <option id="buildable13" dialogue="Produceer plank B"></option>
-  <option id="buildable14" dialogue="Productplank (half)"></option>
-  <option id="buildable15" dialogue="Gelaagde plank"></option>
-  <option id="buildable16" dialogue="Muurplank"></option>
-  <option id="buildable17" dialogue="Pegboardplank"></option>
-  <option id="buildable18" dialogue="Produceer plank B (half)"></option>
-  <option id="buildable19" dialogue="Hoekplank (groot)"></option>
-  <option id="buildable20" dialogue="Hoekplank (klein)"></option>
-  <option id="buildable21" dialogue="Basic Pallet Display"></option>
-  <option id="buildable22" dialogue="Houten pallet display a"></option>
-  <option id="buildable23" dialogue="Houten palletweergave b"></option>
-  <option id="buildable24" dialogue="Plastic palletdisplay"></option>
-  <option id="buildable25" dialogue="Hoog palletdisplay"></option>
+  <option id="buildable9" dialogue="Product schap A"></option>
+  <option id="buildable10" dialogue="Opslagschap (ongelabeld)"></option>
+  <option id="buildable11" dialogue="Groentenschap A"></option>
+  <option id="buildable12" dialogue="Zelfscankassa"></option>
+  <option id="buildable13" dialogue="Groentenschap B"></option>
+  <option id="buildable14" dialogue="Productschap (half)"></option>
+  <option id="buildable15" dialogue="Gelaagd schap"></option>
+  <option id="buildable16" dialogue="Muurschap"></option>
+  <option id="buildable17" dialogue="Hangschap"></option>
+  <option id="buildable18" dialogue="Groentenschap B (half)"></option>
+  <option id="buildable19" dialogue="Hoekschap (groot)"></option>
+  <option id="buildable20" dialogue="Hoekschap (klein)"></option>
+  <option id="buildable21" dialogue="Basis Pallet Display"></option>
+  <option id="buildable22" dialogue="Houten Pallet Display A"></option>
+  <option id="buildable23" dialogue="Houten Pallet Display B"></option>
+  <option id="buildable24" dialogue="Plastic Pallet Display"></option>
+  <option id="buildable25" dialogue="Hoog Pallet Display"></option>
 
   <option id="buildable0a" dialogue="Verwijder modus"></option>
   <option id="tabtitle0" dialogue="Bouwer"></option>
@@ -371,67 +371,67 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="tabtitle7" dialogue="Decoratie: planten"></option>
   <option id="tabtitle8" dialogue="Architectuur"></option>
 
-  <option id="decorat1" dialogue="Neonlamp a"></option>
-  <option id="decorat2" dialogue="Potplant a"></option>
+  <option id="decorat1" dialogue="Neonlamp A"></option>
+  <option id="decorat2" dialogue="Potplant A"></option>
   <option id="decorat3" dialogue="TV"></option>
   <option id="decorat4" dialogue="Plafondbord"></option>
-  <option id="decorat5" dialogue="Menigte barrière"></option>
+  <option id="decorat5" dialogue="Barrière"></option>
   <option id="decorat6" dialogue="Anti-diefstal deur"></option>
   <option id="decorat7" dialogue="Houten pot"></option>
   <option id="decorat8" dialogue="Houten pot breed"></option>
   <option id="decorat9" dialogue="Plafondventilatie"></option>
   <option id="decorat10" dialogue="Centrale prijsmachine"></option>
 
-  <option id="decorat11" dialogue="Grafsteen a"></option>
-  <option id="decorat12" dialogue="Tombstone B"></option>
-  <option id="decorat13" dialogue="Tombstone C"></option>
-  <option id="decorat14" dialogue="Tombstone D"></option>
-  <option id="decorat15" dialogue="Tombstone E"></option>
+  <option id="decorat11" dialogue="Grafsteen A"></option>
+  <option id="decorat12" dialogue="Grafsteen B"></option>
+  <option id="decorat13" dialogue="Grafsteen C"></option>
+  <option id="decorat14" dialogue="Grafsteen D"></option>
+  <option id="decorat15" dialogue="Grafsteen E"></option>
   <option id="decorat16" dialogue="Grafsteen F"></option>
-  <option id="decorat17" dialogue="Pompoen a"></option>
+  <option id="decorat17" dialogue="Pompoen A"></option>
   <option id="decorat18" dialogue="Pompoen B"></option>
   <option id="decorat19" dialogue="Pompoen C"></option>
 
   <option id="decorat20" dialogue="De pompoenman"></option>
   <option id="decorat21" dialogue="Spookachtige geest"></option>
-  <option id="decorat22" dialogue="Glanzende bloem a"></option>
+  <option id="decorat22" dialogue="Glanzende bloem A"></option>
   <option id="decorat23" dialogue="Glanzende bloem B"></option>
-  <option id="decorat24" dialogue="Mini -transportvoertuig"></option>
+  <option id="decorat24" dialogue="Mini transportvoertuig"></option>
   <option id="decorat25" dialogue="Neonlamp B"></option>
   <option id="decorat26" dialogue="Neonlamp C"></option>
   <option id="decorat27" dialogue="Neonlamp D"></option>
   <option id="decorat28" dialogue="Neonlamp E"></option>
-  <option id="decorat29" dialogue="Hangende lamp a"></option>
+  <option id="decorat29" dialogue="Hangende lamp A"></option>
 
-  <option id="decorat30" dialogue="Hangende lamp b"></option>
-  <option id="decorat31" dialogue="Hangende lamp c"></option>
-  <option id="decorat32" dialogue="Hangende lamp d"></option>
-  <option id="decorat33" dialogue="Hangende lamp e"></option>
-  <option id="decorat34" dialogue="Hangende lamp f"></option>
-  <option id="decorat35" dialogue="Hangende lamp g"></option>
-  <option id="decorat36" dialogue="Hangende lamp h"></option>
-  <option id="decorat37" dialogue="Hangende lamp i"></option>
-  <option id="decorat38" dialogue="Hangende lamp j"></option>
-  <option id="decorat39" dialogue="Hangende lamp k"></option>
+  <option id="decorat30" dialogue="Hangende lamp B"></option>
+  <option id="decorat31" dialogue="Hangende lamp C"></option>
+  <option id="decorat32" dialogue="Hangende lamp D"></option>
+  <option id="decorat33" dialogue="Hangende lamp E"></option>
+  <option id="decorat34" dialogue="Hangende lamp F"></option>
+  <option id="decorat35" dialogue="Hangende lamp G"></option>
+  <option id="decorat36" dialogue="Hangende lamp H"></option>
+  <option id="decorat37" dialogue="Hangende lamp I"></option>
+  <option id="decorat38" dialogue="Hangende lamp J"></option>
+  <option id="decorat39" dialogue="Hangende lamp K"></option>
 
-  <option id="decorat40" dialogue="Hangende lamp l"></option>
-  <option id="decorat41" dialogue="Hangende lamp m"></option>
-  <option id="decorat42" dialogue="Speciale lamp a"></option>
+  <option id="decorat40" dialogue="Hangende lamp L"></option>
+  <option id="decorat41" dialogue="Hangende lamp M"></option>
+  <option id="decorat42" dialogue="Speciale lamp A"></option>
   <option id="decorat43" dialogue="Beveiligingscamera"></option>
   <option id="decorat44" dialogue="Beveiligingsdesk"></option>
-  <option id="decorat45" dialogue="Schonere robot"></option>
-  <option id="decorat46" dialogue="Basistabel A"></option>
-  <option id="decorat47" dialogue="Basisstoel a"></option>
-  <option id="decorat48" dialogue="Personeel meubels a"></option>
+  <option id="decorat45" dialogue="Schoonmaakrobot"></option>
+  <option id="decorat46" dialogue="Basistafel A"></option>
+  <option id="decorat47" dialogue="Basisstoel A"></option>
+  <option id="decorat48" dialogue="Personeel meubels A"></option>
   <option id="decorat49" dialogue="Privékoelkast"></option>
   <option id="decorat50" dialogue="Koffiemachine"></option>
 
   <option id="decorat51" dialogue="Snacks machine"></option>
-  <option id="decorat52" dialogue="Soda -machine"></option>
-  <option id="decorat53" dialogue="Pijlmachine"></option>
+  <option id="decorat52" dialogue="Frisdrank machine"></option>
+  <option id="decorat53" dialogue="Dartsmachine"></option>
   <option id="decorat54" dialogue="Voetbaltafel"></option>
   <option id="decorat55" dialogue="Biljarttafel"></option>
-  <option id="decorat56" dialogue="Biljart cue -zaak"></option>
+  <option id="decorat56" dialogue="Biljartkeu koffer"></option>
   <option id="decorat57" dialogue="Arcade: Robot Catcher"></option>
   <option id="decorat58" dialogue="Arcade: Space Wars"></option>
   <option id="decorat59" dialogue="Arcade: Treasure Island"></option>
@@ -445,21 +445,21 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="decorat66" dialogue="Zwaardvechter notenkraker"></option>
   <option id="decorat67" dialogue="Glanzend hert"></option>
   <option id="decorat68" dialogue="Choo Choo Train"></option>
-  <option id="decorat69" dialogue="Najara -simulator"></option>
+  <option id="decorat69" dialogue="Najara Simulator"></option>
   <option id="decorat70" dialogue="Kruk"></option>
 
   <option id="decorat71" dialogue="Sneeuwman"></option>
   <option id="decorat72" dialogue="Snoepriet"></option>
   <option id="decorat73" dialogue="Kerstcadeau"></option>
-  <option id="decorat74" dialogue="Keramische pot a"></option>
-  <option id="decorat75" dialogue="Keramische pot b"></option>
-  <option id="decorat76" dialogue="Keramische pot c"></option>
-  <option id="decorat77" dialogue="Keramische pot d"></option>
-  <option id="decorat78" dialogue="Keramische pot e"></option>
-  <option id="decorat79" dialogue="Keramische pot f"></option>
-  <option id="decorat80" dialogue="Keramische pot g"></option>
+  <option id="decorat74" dialogue="Keramische pot A"></option>
+  <option id="decorat75" dialogue="Keramische pot B"></option>
+  <option id="decorat76" dialogue="Keramische pot C"></option>
+  <option id="decorat77" dialogue="Keramische pot D"></option>
+  <option id="decorat78" dialogue="Keramische pot E"></option>
+  <option id="decorat79" dialogue="Keramische pot F"></option>
+  <option id="decorat80" dialogue="Keramische pot G"></option>
 
-  <option id="decorat81" dialogue="Plant a"></option>
+  <option id="decorat81" dialogue="Plant A"></option>
   <option id="decorat82" dialogue="Plant B"></option>
   <option id="decorat83" dialogue="Plant C"></option>
   <option id="decorat84" dialogue="Plant D"></option>
@@ -468,120 +468,120 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="decorat87" dialogue="Plant G"></option>
   <option id="decorat88" dialogue="Plant H"></option>
   <option id="decorat89" dialogue="Plant I"></option>
-  <option id="decorat90" dialogue="Plantcrock a"></option>
+  <option id="decorat90" dialogue="Plantkruik A"></option>
 
-  <option id="decorat91" dialogue="Plant Crock B"></option>
-  <option id="decorat92" dialogue="Plant Crock C"></option>
+  <option id="decorat91" dialogue="Plantkruik B"></option>
+  <option id="decorat92" dialogue="Plantkruik C"></option>
   <option id="decorat93" dialogue="Plant J"></option>
   <option id="decorat94" dialogue="Plant K"></option>
   <option id="decorat95" dialogue="Plant L"></option>
-  <option id="decorat96" dialogue="Bloem een"></option>
+  <option id="decorat96" dialogue="Bloem A"></option>
   <option id="decorat97" dialogue="Bloem B"></option>
   <option id="decorat98" dialogue="Bloem C"></option>
   <option id="decorat99" dialogue="Bloem D"></option>
-  <option id="decorat100" dialogue="Bloem e"></option>
+  <option id="decorat100" dialogue="Bloem E"></option>
 
   <option id="decorat101" dialogue="Bloem F"></option>
-  <option id="decorat102" dialogue="Flower G"></option>
+  <option id="decorat102" dialogue="Bloem G"></option>
   <option id="decorat103" dialogue="Bloem H"></option>
-  <option id="decorat104" dialogue="Bloem i"></option>
+  <option id="decorat104" dialogue="Bloem I"></option>
   <option id="decorat105" dialogue="Bloem J"></option>
   <option id="decorat106" dialogue="Bloem K"></option>
   <option id="decorat107" dialogue="Bloem L"></option>
-  <option id="decorat108" dialogue="Bloem m"></option>
-  <option id="decorat109" dialogue="Bloem n"></option>
-  <option id="decorat110" dialogue="Bloem o"></option>
+  <option id="decorat108" dialogue="Bloem M"></option>
+  <option id="decorat109" dialogue="Bloem N"></option>
+  <option id="decorat110" dialogue="Bloem O"></option>
 
   <option id="decorat111" dialogue="Bloem P"></option>
   <option id="decorat112" dialogue="Bloem Q"></option>
-  <option id="decorat113" dialogue="Bloem r"></option>
-  <option id="decorat114" dialogue="Bloems"></option>
+  <option id="decorat113" dialogue="Bloem R"></option>
+  <option id="decorat114" dialogue="Bloem S"></option>
   <option id="decorat115" dialogue="Bloem T"></option>
-  <option id="decorat116" dialogue="Bloem u"></option>
+  <option id="decorat116" dialogue="Bloem U"></option>
   <option id="decorat117" dialogue="Bloem V"></option>
   <option id="decorat118" dialogue="Bloem W"></option>
-  <option id="decorat119" dialogue="Bloem x"></option>
-  <option id="decorat120" dialogue="Bloem y"></option>
+  <option id="decorat119" dialogue="Bloem X"></option>
+  <option id="decorat120" dialogue="Bloem Y"></option>
 
   <option id="decorat121" dialogue="Bloem Z"></option>
-  <option id="decorat122" dialogue="Flower A1"></option>
+  <option id="decorat122" dialogue="Bloem A1"></option>
   <option id="decorat123" dialogue="Bloem B1"></option>
   <option id="decorat124" dialogue="Supermarktpilaar"></option>
-  <option id="decorat125" dialogue="Metalen pijler"></option>
-  <option id="decorat126" dialogue="Concrete hangende planter a"></option>
-  <option id="decorat127" dialogue="Concrete hangende planter B"></option>
-  <option id="decorat128" dialogue="Keramische hangende planter a"></option>
+  <option id="decorat125" dialogue="Metalen pilaar"></option>
+  <option id="decorat126" dialogue="Betonnen hangende planter A"></option>
+  <option id="decorat127" dialogue="Betonnen hangende planter B"></option>
+  <option id="decorat128" dialogue="Keramische hangende planter A"></option>
   <option id="decorat129" dialogue="NPC Unstuck Block"></option>
-  <option id="decorat130" dialogue="Straatlicht a"></option>
+  <option id="decorat130" dialogue="Straatverlichting A"></option>
 
-  <option id="decorat131" dialogue="Street Light B"></option>
-  <option id="decorat132" dialogue="Street Light C"></option>
-  <option id="decorat133" dialogue="Street Light D"></option>
-  <option id="decorat134" dialogue="Street Light E"></option>
-  <option id="decorat135" dialogue="Street Light F"></option>
-  <option id="decorat136" dialogue="Street Light G"></option>
-  <option id="decorat137" dialogue="Straatlicht h"></option>
-  <option id="decorat138" dialogue="Street Light I"></option>
-  <option id="decorat139" dialogue="Street Light J"></option>
-  <option id="decorat140" dialogue="Street Light K"></option>
+  <option id="decorat131" dialogue="Straatverlichting B"></option>
+  <option id="decorat132" dialogue="Straatverlichting C"></option>
+  <option id="decorat133" dialogue="Straatverlichting D"></option>
+  <option id="decorat134" dialogue="Straatverlichting E"></option>
+  <option id="decorat135" dialogue="Straatverlichting F"></option>
+  <option id="decorat136" dialogue="Straatverlichting G"></option>
+  <option id="decorat137" dialogue="Straatverlichting H"></option>
+  <option id="decorat138" dialogue="Straatverlichting I"></option>
+  <option id="decorat139" dialogue="Straatverlichting J"></option>
+  <option id="decorat140" dialogue="Straatverlichting K"></option>
 
-  <option id="decorat141" dialogue="Street Light L"></option>
-  <option id="decorat142" dialogue="Street Light M"></option>
-  <option id="decorat143" dialogue="Street Light N"></option>
-  <option id="decorat144" dialogue="Straatlicht o"></option>
-  <option id="decorat145" dialogue="Street Light P"></option>
-  <option id="decorat146" dialogue="Street Light Q"></option>
-  <option id="decorat147" dialogue="Fountain A1"></option>
-  <option id="decorat148" dialogue="Fountain A2"></option>
-  <option id="decorat149" dialogue="Fountain A3"></option>
-  <option id="decorat150" dialogue="Fountain B1"></option>
+  <option id="decorat141" dialogue="Straatverlichting L"></option>
+  <option id="decorat142" dialogue="Straatverlichting M"></option>
+  <option id="decorat143" dialogue="Straatverlichting N"></option>
+  <option id="decorat144" dialogue="Straatverlichting O"></option>
+  <option id="decorat145" dialogue="Straatverlichting P"></option>
+  <option id="decorat146" dialogue="Straatverlichting Q"></option>
+  <option id="decorat147" dialogue="Fontein A1"></option>
+  <option id="decorat148" dialogue="Fontein A2"></option>
+  <option id="decorat149" dialogue="Fontein A3"></option>
+  <option id="decorat150" dialogue="Fontein B1"></option>
 
-  <option id="decorat151" dialogue="Fountain B2"></option>
-  <option id="decorat152" dialogue="Fountain B3"></option>
-  <option id="decorat153" dialogue="Fountain C1"></option>
-  <option id="decorat154" dialogue="Fountain C2"></option>
-  <option id="decorat155" dialogue="Fountain C3"></option>
-  <option id="decorat156" dialogue="Fountain D1"></option>
-  <option id="decorat157" dialogue="Fountain D2"></option>
-  <option id="decorat158" dialogue="Fountain D3"></option>
-  <option id="decorat159" dialogue="Fountain E1"></option>
-  <option id="decorat160" dialogue="Fountain E2"></option>
+  <option id="decorat151" dialogue="Fontein B2"></option>
+  <option id="decorat152" dialogue="Fontein B3"></option>
+  <option id="decorat153" dialogue="Fontein C1"></option>
+  <option id="decorat154" dialogue="Fontein C2"></option>
+  <option id="decorat155" dialogue="Fontein C3"></option>
+  <option id="decorat156" dialogue="Fontein D1"></option>
+  <option id="decorat157" dialogue="Fontein D2"></option>
+  <option id="decorat158" dialogue="Fontein D3"></option>
+  <option id="decorat159" dialogue="Fontein E1"></option>
+  <option id="decorat160" dialogue="Fontein E2"></option>
 
-  <option id="decorat161" dialogue="Fountain E3"></option>
-  <option id="decorat162" dialogue="Fountain F1"></option>
-  <option id="decorat163" dialogue="Fountain F2"></option>
-  <option id="decorat164" dialogue="Fountain F3"></option>
-  <option id="decorat165" dialogue="Fountain G1"></option>
-  <option id="decorat166" dialogue="Fountain G2"></option>
-  <option id="decorat167" dialogue="Fountain G3"></option>
-  <option id="decorat168" dialogue="Kleine schilderverdeler"></option>
-  <option id="decorat169" dialogue="Gemiddelde schilderscheiding"></option>
-  <option id="decorat170" dialogue="Grote schilderverdeler"></option>
+  <option id="decorat161" dialogue="Fontein E3"></option>
+  <option id="decorat162" dialogue="Fontein F1"></option>
+  <option id="decorat163" dialogue="Fontein F2"></option>
+  <option id="decorat164" dialogue="Fontein F3"></option>
+  <option id="decorat165" dialogue="Fontein G1"></option>
+  <option id="decorat166" dialogue="Fontein G2"></option>
+  <option id="decorat167" dialogue="Fontein G3"></option>
+  <option id="decorat168" dialogue="Kleine schilderbare verdeler"></option>
+  <option id="decorat169" dialogue="Gemiddelde schilderbare verdeler"></option>
+  <option id="decorat170" dialogue="Grote schilderbare verdeler"></option>
 
   <option id="decorat171" dialogue="Hoekverdeler"></option>
-  <option id="decorat172" dialogue="Grote grondplanter a"></option>
-  <option id="decorat173" dialogue="Grote grondplanter B"></option>
-  <option id="decorat174" dialogue="Grote grondplanter c"></option>
-  <option id="decorat175" dialogue="Grote grondplanter D"></option>
-  <option id="decorat176" dialogue="Cross Paintable Divider"></option>
-  <option id="decorat177" dialogue="T-vormige schilderverdeler"></option>
+  <option id="decorat172" dialogue="Grote grondplantenbak A"></option>
+  <option id="decorat173" dialogue="Grote grondplantenbak B"></option>
+  <option id="decorat174" dialogue="Grote grondplantenbak C"></option>
+  <option id="decorat175" dialogue="Grote grondplantenbak D"></option>
+  <option id="decorat176" dialogue="Kruis schilderbare verdeler"></option>
+  <option id="decorat177" dialogue="T-vormige schilderbare verdeler"></option>
   <option id="decorat178" dialogue="Fotolijst"></option>
-  <option id="decorat179" dialogue="Deur schilderschilder"></option>
-  <option id="decorat180" dialogue="Wall Planter a"></option>
+  <option id="decorat179" dialogue="Deur schilderbare verdeler"></option>
+  <option id="decorat180" dialogue="Muur Plantenbak A"></option>
 
-  <option id="decorat181" dialogue="Wall Planter Een paneel"></option>
-  <option id="decorat182" dialogue="Wall Planter B"></option>
-  <option id="decorat183" dialogue="Wall Planter B Paneel"></option>
+  <option id="decorat181" dialogue="Muur Plantenbak A paneel"></option>
+  <option id="decorat182" dialogue="Muur Plantenbak B"></option>
+  <option id="decorat183" dialogue="Muur Plantenbak B Paneel"></option>
   <option id="decorat184" dialogue="Kartonnen baler"></option>
   <option id="decorat185" dialogue="Eenvoudige balk"></option>
-  <option id="decorat186" dialogue="Kruisstraal"></option>
+  <option id="decorat186" dialogue="Kruisbalk"></option>
   <option id="decorat187" dialogue="T balk"></option>
-  <option id="decorat188" dialogue="Hoekstraal"></option>
-  <option id="decorat189" dialogue="Pakket pick -uppunt"></option>
+  <option id="decorat188" dialogue="Hoekbalk"></option>
+  <option id="decorat189" dialogue="Pakket ophaalpunt"></option>
 
   <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
 
-  <option id="skill01" dialogue="Werknemer i"></option>
+  <option id="skill01" dialogue="Werknemer I"></option>
   <option id="skill02" dialogue="Werknemer II"></option>
   <option id="skill03" dialogue="Werknemer III"></option>
   <option id="skill04" dialogue="Werknemer IV"></option>
@@ -589,56 +589,56 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="skill0a" dialogue="Maakt het inhuren van een extra werknemer"></option>
   <option id="skill1" dialogue="Gratis ochtendkoffie"></option>
   <option id="skill1a" dialogue="Werknemers bewegen +20% sneller"></option>
-  <option id="skill2" dialogue="Marketingcursussen i"></option>
+  <option id="skill2" dialogue="Marketingcursussen I"></option>
   <option id="skill2a" dialogue="Werknemers genereren +10% geld in checkouts"></option>
   <option id="skill3" dialogue="Formatiecursussen"></option>
   <option id="skill3a" dialogue="Werknemers bewegen 20% sneller"></option>
   <option id="skill4" dialogue="Recyclingcursussen"></option>
-  <option id="skill4a" dialogue="Recyclingboxen toekennen vier keer zoveel"></option>
+  <option id="skill4a" dialogue="Recyclingboxen leveren vier keer zoveel op"></option>
   <option id="skill5" dialogue="Airconditioning"></option>
   <option id="skill5a" dialogue="Trekt meer klanten per dag aan"></option>
-  <option id="skill6" dialogue="WiFi -verbinding"></option>
+  <option id="skill6" dialogue="WiFi-verbinding"></option>
 
   <option id="skill11" dialogue="Werknemer VI"></option>
   <option id="skill12" dialogue="Werknemer VII"></option>
   <option id="skill13" dialogue="Werknemer VIII"></option>
-  <option id="skill14" dialogue="Werknemer ix"></option>
-  <option id="skill15" dialogue="Werknemer x"></option>
-  <option id="skill16" dialogue="Kassiervorming i"></option>
+  <option id="skill14" dialogue="Werknemer IX"></option>
+  <option id="skill15" dialogue="Werknemer X"></option>
+  <option id="skill16" dialogue="Kassier Formatie I"></option>
   <option id="skill16a" dialogue="Medewerkers zullen sneller producten afhandelen in het afrekenen"></option>
   <option id="skill17" dialogue="Kassier Formation II"></option>
   <option id="skill18" dialogue="Kassier Formatie III"></option>
-  <option id="skill19" dialogue="Restock Formation I"></option>
+  <option id="skill19" dialogue="Vakkenvullen Formatie I"></option>
   <option id="skill19a" dialogue="Werknemers zullen producten sneller plaatsen"></option>
-  <option id="skill20" dialogue="Restock Formation II"></option>
+  <option id="skill20" dialogue="Vakkenvullen Formatie II"></option>
   <option id="skill21" dialogue="Nog meer koffie"></option>
-  <option id="skill22" dialogue="Gratis energiedrankjes i"></option>
-  <option id="skill23" dialogue="Gratis energiedranken ii"></option>
+  <option id="skill22" dialogue="Gratis energiedrankjes I"></option>
+  <option id="skill23" dialogue="Gratis energiedranken II"></option>
   <option id="skill24" dialogue="Recyclingcursussen II"></option>
   <option id="skill24a" dialogue="Werknemers zullen dozen recyclen"></option>
   <option id="skill25" dialogue="Vriendelijke interface"></option>
   <option id="skill25a" dialogue="Klanten zullen meer zelfcontroles gebruiken"></option>
-  <option id="skill26" dialogue="Werknemer xi"></option>
-  <option id="skill27" dialogue="Werknemer xii"></option>
+  <option id="skill26" dialogue="Werknemer XI"></option>
+  <option id="skill27" dialogue="Werknemer XII"></option>
   <option id="skill28" dialogue="Recyclingcontainer"></option>
   <option id="skill28a" dialogue="De dichtstbijzijnde afvalcontainer wordt vervangen door een recycling."></option>
   <option id="skill29" dialogue="Mart OS 2.0"></option>
-  <option id="skill29a" dialogue="De prijsmachine -software is verbeterd en een manier om prijzen te automatiseren kan nu worden ingesteld"></option>
+  <option id="skill29a" dialogue="De prijsmachine-software is verbeterd en een manier om prijzen te automatiseren kan nu worden ingesteld"></option>
   <option id="skill30" dialogue="Tic-tac gaat snel"></option>
   <option id="skill30a" dialogue="Wanneer de winkel 's nachts is gesloten, kan de manager de nieuwe klok in de kamer van de manager gebruiken om de tijd te versnellen"></option>
   <option id="skill31" dialogue="Lage energie -lampen"></option>
   <option id="skill31a" dialogue="Vermindert het totale elektrische verbruik met 20%"></option>
   <option id="skill32" dialogue="Gebruikersvriendelijke interface"></option>
-  <option id="skill32a" dialogue="Klanten gebruiken sneller zelfuitchecken"></option>
+  <option id="skill32a" dialogue="Klanten gebruiken de zelfscankassa sneller"></option>
   <option id="skill33" dialogue="Logistiek"></option>
-  <option id="skill33a" dialogue="Bij het nemen van een doos kunnen spelers de positie van het bevatte product zowel in de winkel als in de winkel visualiseren"></option>
+  <option id="skill33a" dialogue="Bij het nemen van een doos kunnen spelers de positie van het bevatte product zowel in de winkel als in de opslag visualiseren"></option>
   <option id="skill34" dialogue="Externe accountant"></option>
-  <option id="skill34a" dialogue="Facturen worden elke nieuwe dag betaald als er fondsen zijn om dit te doen."></option>
-  <option id="skill35" dialogue="Speciale prijzen i"></option>
-  <option id="skill35a" dialogue="Verhoogt de maximale hoeveelheid dagelijkse omzet met 2."></option>
-  <option id="skill36" dialogue="Speciale prijzen ii"></option>
+  <option id="skill34a" dialogue="Facturen worden elke nieuwe dag betaald als er geld is om dit te doen."></option>
+  <option id="skill35" dialogue="Speciale prijzen I"></option>
+  <option id="skill35a" dialogue="Verhoogt de maximale hoeveelheid dagelijkse aanbiedingen met 2."></option>
+  <option id="skill36" dialogue="Speciale prijzen II"></option>
   <option id="skill37" dialogue="Speciale prijzen III"></option>
-  <option id="skill38" dialogue="Pallet -weergaven"></option>
+  <option id="skill38" dialogue="Pallet Displays"></option>
   <option id="skill38a" dialogue="Ontgrendelt verschillende soorten palletdisplays voor de grootste producten"></option>
 
   <!-- ///////////////////////////////////Products///////////////////////////////////// -->
@@ -664,53 +664,53 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="productGroup16" dialogue="Tuinieren"></option>
   <option id="productGroup17" dialogue="Kleine elektronica"></option>
 
-  <option id="productCategory0" dialogue="Basicproducten i"></option>
+  <option id="productCategory0" dialogue="Basicproducten I"></option>
   <option id="productCategory1" dialogue="Basicproducten II"></option>
   <option id="productCategory2" dialogue="Basicproducten III"></option>
   <option id="productCategory3" dialogue="Basicproducten IV IV"></option>
-  <option id="productCategory4" dialogue="Basicproducten v"></option>
+  <option id="productCategory4" dialogue="Basicproducten V"></option>
   <option id="productCategory5" dialogue="Basicproducten VI"></option>
-  <option id="productCategory6" dialogue="Zuivelproducten i"></option>
-  <option id="productCategory7" dialogue="Dairy Products II"></option>
-  <option id="productCategory8" dialogue="Frisdrank drinkt ik"></option>
-  <option id="productCategory9" dialogue="Frozen Foods I"></option>
-  <option id="productCategory10" dialogue="Frozen Foods II"></option>
-  <option id="productCategory11" dialogue="Hygiëne i"></option>
+  <option id="productCategory6" dialogue="Zuivelproducten I"></option>
+  <option id="productCategory7" dialogue="Zuivelproducten II"></option>
+  <option id="productCategory8" dialogue="Frisdrank I"></option>
+  <option id="productCategory9" dialogue="Diepvries I"></option>
+  <option id="productCategory10" dialogue="Diepvries II"></option>
+  <option id="productCategory11" dialogue="Hygiëne I"></option>
   <option id="productCategory12" dialogue="Hygiëne II"></option>
   <option id="productCategory13" dialogue="Hygiëne III"></option>
-  <option id="productCategory14" dialogue="Producten van schoonmaken i"></option>
-  <option id="productCategory15" dialogue="Reinigingsproducten II II"></option>
-  <option id="productCategory16" dialogue="Snoepjes en snacks i"></option>
-  <option id="productCategory17" dialogue="Snoep en snacks ii"></option>
-  <option id="productCategory18" dialogue="Snoep en snacks iii"></option>
+  <option id="productCategory14" dialogue="Reinigingsproducten I"></option>
+  <option id="productCategory15" dialogue="Reinigingsproducten II"></option>
+  <option id="productCategory16" dialogue="Snoep en snacks I"></option>
+  <option id="productCategory17" dialogue="Snoep en snacks II"></option>
+  <option id="productCategory18" dialogue="Snoep en snacks III"></option>
   <option id="productCategory19" dialogue="Snoep en snacks IV"></option>
-  <option id="productCategory20" dialogue="Vlees i"></option>
-  <option id="productCategory21" dialogue="Conserveert i"></option>
-  <option id="productCategory22" dialogue="Infusies i"></option>
-  <option id="productCategory23" dialogue="Zeevruchten i"></option>
-  <option id="productCategory24" dialogue="Boeken Pack I"></option>
-  <option id="productCategory25" dialogue="Books Pack II"></option>
-  <option id="productCategory26" dialogue="Alcoholische dranken ik"></option>
+  <option id="productCategory20" dialogue="Vlees I"></option>
+  <option id="productCategory21" dialogue="Conserven I"></option>
+  <option id="productCategory22" dialogue="Kruidenthee I"></option>
+  <option id="productCategory23" dialogue="Zeevruchten I"></option>
+  <option id="productCategory24" dialogue="Boeken Pakket I"></option>
+  <option id="productCategory25" dialogue="Boeken Pakket II"></option>
+  <option id="productCategory26" dialogue="Alcoholische dranken I"></option>
   <option id="productCategory27" dialogue="Alcoholische dranken II"></option>
-  <option id="productCategory28" dialogue="Alcoholische dranken iii"></option>
-  <option id="productCategory29" dialogue="Apotheek i"></option>
+  <option id="productCategory28" dialogue="Alcoholische dranken III"></option>
+  <option id="productCategory29" dialogue="Apotheek I"></option>
   <option id="productCategory30" dialogue="Apotheek II"></option>
-  <option id="productCategory31" dialogue="Produceren i"></option>
-  <option id="productCategory32" dialogue="Produceer II"></option>
-  <option id="productCategory33" dialogue="Produceer III"></option>
-  <option id="productCategory34" dialogue="Produceer IV"></option>
-  <option id="productCategory35" dialogue="Kinderopvang i"></option>
-  <option id="productCategory36" dialogue="Kinderopvang II"></option>
-  <option id="productCategory37" dialogue="Soda -dranken II"></option>
-  <option id="productCategory38" dialogue="Soda -dranken III"></option>
-  <option id="productCategory39" dialogue="Snoep en snacks v"></option>
-  <option id="productCategory40" dialogue="Snoep en snacks vi"></option>
-  <option id="productCategory41" dialogue="Conserveert II"></option>
-  <option id="productCategory42" dialogue="Tuinieren i"></option>
+  <option id="productCategory31" dialogue="Groenten en Fruit I"></option>
+  <option id="productCategory32" dialogue="Groenten en Fruit II"></option>
+  <option id="productCategory33" dialogue="Groenten en Fruit III"></option>
+  <option id="productCategory34" dialogue="Groenten en Fruit IV"></option>
+  <option id="productCategory35" dialogue="Kind verzorging I"></option>
+  <option id="productCategory36" dialogue="Kind verzorging II"></option>
+  <option id="productCategory37" dialogue="Frisdrank II"></option>
+  <option id="productCategory38" dialogue="Frisdrank III"></option>
+  <option id="productCategory39" dialogue="Snoep en snacks V"></option>
+  <option id="productCategory40" dialogue="Snoep en snacks VI"></option>
+  <option id="productCategory41" dialogue="Conserven II"></option>
+  <option id="productCategory42" dialogue="Tuinieren I"></option>
   <option id="productCategory43" dialogue="Tuinieren II"></option>
   <option id="productCategory44" dialogue="Tuinieren III"></option>
   <option id="productCategory45" dialogue="Tuinieren IV"></option>
-  <option id="productCategory46" dialogue="Kleine elektronica i"></option>
+  <option id="productCategory46" dialogue="Kleine elektronica I"></option>
   <option id="productCategory47" dialogue="Kleine elektronica II"></option>
   <option id="productCategory48" dialogue="Kleine elektronica III"></option>
 
@@ -729,10 +729,10 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product11" dialogue="Gesneden brood"></option>
   <option id="product12" dialogue="Peper"></option>
   <option id="product13" dialogue="Sinaasappelsap"></option>
-  <option id="product14" dialogue="Barbaque saus"></option>
+  <option id="product14" dialogue="Barbecuesaus"></option>
   <option id="product15" dialogue="Mosterdsaus"></option>
-  <option id="product16" dialogue="Spaghetti -doos"></option>
-  <option id="product17" dialogue="Tonijnpaat"></option>
+  <option id="product16" dialogue="Spaghetti doos"></option>
+  <option id="product17" dialogue="Tonijnpate"></option>
   <option id="product18" dialogue="Vezelgranen"></option>
   <option id="product19" dialogue="Opperste bloem"></option>
 
@@ -742,14 +742,14 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product23" dialogue="Wit bloem"></option>
   <option id="product24" dialogue="Rietsuikerbox"></option>
   <option id="product25" dialogue="Suiker"></option>
-  <option id="product26" dialogue="Macarroni"></option>
+  <option id="product26" dialogue="Macaroni"></option>
   <option id="product27" dialogue="Ecologische suiker"></option>
   <option id="product28" dialogue="Bruine suiker"></option>
   <option id="product29" dialogue="Zonnebloemolie"></option>
 
   <option id="product30" dialogue="Aardappelpuree"></option>
   <option id="product31" dialogue="Aardappelzak"></option>
-  <option id="product32" dialogue="Espresso -koffie"></option>
+  <option id="product32" dialogue="Espresso koffie"></option>
   <option id="product33" dialogue="Basmati rijst"></option>
   <option id="product34" dialogue="Lange graanrijst"></option>
   <option id="product35" dialogue="Koffie"></option>
@@ -761,7 +761,7 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product40" dialogue="Poedersuiker"></option>
   <option id="product41" dialogue="Suiker - grote doos"></option>
   <option id="product42" dialogue="Bruine suiker - grote doos"></option>
-  <option id="product43" dialogue="Ementale kaas"></option>
+  <option id="product43" dialogue="Emmentaler kaas"></option>
   <option id="product44" dialogue="Gruyere kaas"></option>
   <option id="product45" dialogue="Magere kaas"></option>
   <option id="product46" dialogue="Fruit yoghurt"></option>
@@ -769,19 +769,19 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product48" dialogue="Melksteen"></option>
   <option id="product49" dialogue="Boter"></option>
 
-  <option id="product50" dialogue="Parmigiano -kaas"></option>
-  <option id="product51" dialogue="Reggiano -kaas"></option>
+  <option id="product50" dialogue="Parmigiano kaas"></option>
+  <option id="product51" dialogue="Reggiano kaas"></option>
   <option id="product52" dialogue="Mozzarella kaas"></option>
   <option id="product53" dialogue="Skimmed yoghurt"></option>
-  <option id="product54" dialogue="Cola -pakket"></option>
+  <option id="product54" dialogue="Cola pakket"></option>
   <option id="product55" dialogue="Frisdrankje"></option>
-  <option id="product56" dialogue="Decaf soda pack"></option>
+  <option id="product56" dialogue="Decaf frisdrank pack"></option>
   <option id="product57" dialogue="Frisdrank"></option>
-  <option id="product58" dialogue="Cola -fles"></option>
+  <option id="product58" dialogue="Cola fles"></option>
   <option id="product59" dialogue="Sugar Free Soda -fles"></option>
 
   <option id="product60" dialogue="Premium frisdrank"></option>
-  <option id="product61" dialogue="Pizza Barbaque"></option>
+  <option id="product61" dialogue="Pizza Barbecue"></option>
   <option id="product62" dialogue="Fondue"></option>
   <option id="product63" dialogue="Crocanti Ham"></option>
   <option id="product64" dialogue="Hamkaas crêpe"></option>
@@ -799,7 +799,7 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product75" dialogue="Toiletpapier"></option>
   <option id="product76" dialogue="Handzeep"></option>
   <option id="product77" dialogue="Avocado shampoo"></option>
-  <option id="product78" dialogue="Eierhampoo"></option>
+  <option id="product78" dialogue="Eiershampoo"></option>
   <option id="product79" dialogue="Badgel"></option>
 
   <option id="product80" dialogue="Toiletpapier"></option>
@@ -1040,44 +1040,44 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="product294" dialogue="USB Flash Drive (256 GB)"></option>
   <option id="product295" dialogue="USB Flash Drive (512 GB)"></option>
   <option id="product296" dialogue="USB Flash Drive (1 TB)"></option>
-  <option id="product297" dialogue="Basisspreker"></option>
+  <option id="product297" dialogue="Basisspeaker"></option>
   <option id="product298" dialogue="Basis hoofdtelefoon"></option>
   <option id="product299" dialogue="Basic gaming console"></option>
 
 
   <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
-  <option id="paintmat0" dialogue="Bewaar tegels a"></option>
-  <option id="paintmat1" dialogue="Bewaar tegels B"></option>
-  <option id="paintmat2" dialogue="Bewaar bakstenen"></option>
-  <option id="paintmat3" dialogue="Bewaar gips"></option>
-  <option id="paintmat4" dialogue="Betaal beton op"></option>
+  <option id="paintmat0" dialogue="Winkel tegels A"></option>
+  <option id="paintmat1" dialogue="Winkel tegels B"></option>
+  <option id="paintmat2" dialogue="Winkel bakstenen"></option>
+  <option id="paintmat3" dialogue="Winkel gips"></option>
+  <option id="paintmat4" dialogue="Winkel beton"></option>
   <option id="paintmat5" dialogue="Gelakt hout"></option>
   <option id="paintmat6" dialogue="Houten planken"></option>
   <option id="paintmat7" dialogue="Gepland hout"></option>
-  <option id="paintmat8" dialogue="Ongepanteld hout (geknoopt)"></option>
-  <option id="paintmat9" dialogue="Ongeraneerd hout"></option>
+  <option id="paintmat8" dialogue="Ongeschaafd hout (geknoopt)"></option>
+  <option id="paintmat9" dialogue="Ongeschaafd hout"></option>
 
   <option id="paintmat10" dialogue="Geschilderd hout"></option>
-  <option id="paintmat11" dialogue="Basic tegels a"></option>
-  <option id="paintmat12" dialogue="Basic tegels B"></option>
-  <option id="paintmat13" dialogue="Basic tegels C"></option>
-  <option id="paintmat14" dialogue="Basic tegels D"></option>
-  <option id="paintmat15" dialogue="Granieten tegels a"></option>
+  <option id="paintmat11" dialogue="Basis tegels A"></option>
+  <option id="paintmat12" dialogue="Basis tegels B"></option>
+  <option id="paintmat13" dialogue="Basis tegels C"></option>
+  <option id="paintmat14" dialogue="Basis tegels D"></option>
+  <option id="paintmat15" dialogue="Granieten tegels A"></option>
   <option id="paintmat16" dialogue="Granieten tegels B"></option>
   <option id="paintmat17" dialogue="Granieten tegels C"></option>
   <option id="paintmat18" dialogue="Granieten tegels D"></option>
-  <option id="paintmat19" dialogue="Marmeren tegels a"></option>
+  <option id="paintmat19" dialogue="Marmeren tegels A"></option>
 
-  <option id="paintmat20" dialogue="Marmeren tegels b"></option>
-  <option id="paintmat21" dialogue="Marmeren tegels c"></option>
+  <option id="paintmat20" dialogue="Marmeren tegels B"></option>
+  <option id="paintmat21" dialogue="Marmeren tegels C"></option>
   <option id="paintmat22" dialogue="Rauw marmer"></option>
   <option id="paintmat23" dialogue="Geschilderd metaal"></option>
   <option id="paintmat24" dialogue="Fundamentele baksteen"></option>
-  <option id="paintmat25" dialogue="Bakstenen patroon a"></option>
-  <option id="paintmat26" dialogue="Bakstenen patroon b"></option>
-  <option id="paintmat27" dialogue="Bakstenen patroon c"></option>
+  <option id="paintmat25" dialogue="Bakstenen patroon A"></option>
+  <option id="paintmat26" dialogue="Bakstenen patroon B"></option>
+  <option id="paintmat27" dialogue="Bakstenen patroon C"></option>
   <option id="paintmat28" dialogue="Basisaluminium"></option>
-  <option id="paintmat29" dialogue="Geborsteld aluminium a"></option>
+  <option id="paintmat29" dialogue="Geborsteld aluminium A"></option>
 
   <option id="paintmat30" dialogue="Geborsteld aluminium B"></option>
   <option id="paintmat31" dialogue="Gegoten aluminium"></option>
@@ -1086,38 +1086,38 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="paintmat34" dialogue="Geoxideerd aluminium"></option>
   <option id="paintmat35" dialogue="Borstelig koper"></option>
   <option id="paintmat36" dialogue="Gouden panelen"></option>
-  <option id="paintmat37" dialogue="Koperen patroon a"></option>
+  <option id="paintmat37" dialogue="Koperen patroon A"></option>
   <option id="paintmat38" dialogue="Koperpatroon B"></option>
   <option id="paintmat39" dialogue="Koperpatroon C"></option>
 
-  <option id="paintmat40" dialogue="Aluminium patroon a"></option>
+  <option id="paintmat40" dialogue="Aluminium patroon A"></option>
   <option id="paintmat41" dialogue="Aluminium patroon B"></option>
   <option id="paintmat42" dialogue="Aluminium patroon C"></option>
   <option id="paintmat43" dialogue="Aluminium patroon D"></option>
-  <option id="paintmat44" dialogue="Aluminium patroon e"></option>
-  <option id="paintmat45" dialogue="Aluminium patroon f"></option>
+  <option id="paintmat44" dialogue="Aluminium patroon E"></option>
+  <option id="paintmat45" dialogue="Aluminium patroon F"></option>
   <option id="paintmat46" dialogue="Aluminium patroon G"></option>
-  <option id="paintmat47" dialogue="Aluminium patroon h"></option>
+  <option id="paintmat47" dialogue="Aluminium patroon H"></option>
   <option id="paintmat48" dialogue="Aluminium patroon I"></option>
   <option id="paintmat49" dialogue="Aluminium patroon J"></option>
 
-  <option id="paintmat50" dialogue="Messing patroon a"></option>
-  <option id="paintmat51" dialogue="Messing patroon b"></option>
-  <option id="paintmat52" dialogue="Messing patroon c"></option>
-  <option id="paintmat53" dialogue="Messing patroon d"></option>
-  <option id="paintmat54" dialogue="Messing patroon e"></option>
-  <option id="paintmat55" dialogue="Messing patroon f"></option>
-  <option id="paintmat56" dialogue="Messing patroon g"></option>
+  <option id="paintmat50" dialogue="Messing patroon A"></option>
+  <option id="paintmat51" dialogue="Messing patroon B"></option>
+  <option id="paintmat52" dialogue="Messing patroon C"></option>
+  <option id="paintmat53" dialogue="Messing patroon D"></option>
+  <option id="paintmat54" dialogue="Messing patroon E"></option>
+  <option id="paintmat55" dialogue="Messing patroon F"></option>
+  <option id="paintmat56" dialogue="Messing patroon G"></option>
   <option id="paintmat57" dialogue="Koperen panelen"></option>
-  <option id="paintmat58" dialogue="Misc. Patroon a"></option>
+  <option id="paintmat58" dialogue="Misc. Patroon A"></option>
   <option id="paintmat59" dialogue="Misc. Patroon B"></option>
 
   <option id="paintmat60" dialogue="Misc. Patroon C"></option>
   <option id="paintmat61" dialogue="Misc. Patroon D"></option>
-  <option id="paintmat62" dialogue="Misc. Patroon e"></option>
+  <option id="paintmat62" dialogue="Misc. Patroon E"></option>
   <option id="paintmat63" dialogue="Misc. Patroon F"></option>
   <option id="paintmat64" dialogue="Misc. Patroon G"></option>
-  <option id="paintmat65" dialogue="Misc. Patroon h"></option>
+  <option id="paintmat65" dialogue="Misc. Patroon H"></option>
   <option id="paintmat66" dialogue="Misc. Patroon I"></option>
   <option id="paintmat67" dialogue="Misc. Patroon J"></option>
   <option id="paintmat68" dialogue="Misc. Patroon K"></option>
@@ -1125,117 +1125,117 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
 
   <option id="paintmat70" dialogue="Organisch: gras"></option>
   <option id="paintmat71" dialogue="Organisch: bladeren"></option>
-  <option id="paintmat72" dialogue="Organisch: steen a"></option>
+  <option id="paintmat72" dialogue="Organisch: steen A"></option>
   <option id="paintmat73" dialogue="Organisch: Stone B"></option>
 
-  <option id="paintmat74" dialogue="Halloween: patroon a"></option>
+  <option id="paintmat74" dialogue="Halloween: patroon A"></option>
   <option id="paintmat75" dialogue="Halloween: patroon B"></option>
   <option id="paintmat76" dialogue="Halloween: patroon C"></option>
   <option id="paintmat77" dialogue="Halloween: patroon D"></option>
-  <option id="paintmat78" dialogue="Halloween: patroon e"></option>
-  <option id="paintmat79" dialogue="Halloween: patroon f"></option>
+  <option id="paintmat78" dialogue="Halloween: patroon E"></option>
+  <option id="paintmat79" dialogue="Halloween: patroon F"></option>
 
-  <option id="paintmat80" dialogue="Halloween: patroon g"></option>
-  <option id="paintmat81" dialogue="Halloween: patroon h"></option>
+  <option id="paintmat80" dialogue="Halloween: patroon G"></option>
+  <option id="paintmat81" dialogue="Halloween: patroon H"></option>
   <option id="paintmat82" dialogue="Halloween: patroon I"></option>
   <option id="paintmat83" dialogue="Halloween: patroon J"></option>
-  <option id="paintmat84" dialogue="Halloween: patroon k"></option>
-  <option id="paintmat85" dialogue="Halloween: patroon l"></option>
-  <option id="paintmat86" dialogue="Halloween: patroon m"></option>
+  <option id="paintmat84" dialogue="Halloween: patroon K"></option>
+  <option id="paintmat85" dialogue="Halloween: patroon L"></option>
+  <option id="paintmat86" dialogue="Halloween: patroon M"></option>
   <option id="paintmat87" dialogue="Halloween: pompoenen"></option>
   <option id="paintmat88" dialogue="Halloween: skeletten"></option>
   <option id="paintmat89" dialogue="Halloween: spinnenwebben"></option>
 
-  <option id="paintmat90" dialogue="Kerstmis een"></option>
+  <option id="paintmat90" dialogue="Kerstmis A"></option>
   <option id="paintmat91" dialogue="Kerstmis B"></option>
-  <option id="paintmat92" dialogue="Kerstmis c"></option>
+  <option id="paintmat92" dialogue="Kerstmis C"></option>
   <option id="paintmat93" dialogue="Kerstmis D"></option>
-  <option id="paintmat94" dialogue="Kerstmis e"></option>
-  <option id="paintmat95" dialogue="Kerstmis f"></option>
+  <option id="paintmat94" dialogue="Kerstmis E"></option>
+  <option id="paintmat95" dialogue="Kerstmis F"></option>
   <option id="paintmat96" dialogue="Kerstmis G"></option>
   <option id="paintmat97" dialogue="Christmas H"></option>
-  <option id="paintmat98" dialogue="Kerstmis i"></option>
+  <option id="paintmat98" dialogue="Kerstmis I"></option>
   <option id="paintmat99" dialogue="Kerstmis J"></option>
 
   <option id="paintmat100" dialogue="Sneeuw"></option>
-  <option id="paintmat101" dialogue="IJs a"></option>
-  <option id="paintmat102" dialogue="Ice B"></option>
-  <option id="paintmat103" dialogue="IJs c"></option>
+  <option id="paintmat101" dialogue="IJs A"></option>
+  <option id="paintmat102" dialogue="IJs B"></option>
+  <option id="paintmat103" dialogue="IJs C"></option>
   <option id="paintmat104" dialogue="IJs D"></option>
   <option id="paintmat105" dialogue="Producten: Basis A"></option>
   <option id="paintmat106" dialogue="Producten: Basis B"></option>
   <option id="paintmat107" dialogue="Producten: zuivel A"></option>
-  <option id="paintmat108" dialogue="Producten: Dairy B"></option>
-  <option id="paintmat109" dialogue="Producten: frisdrank drinkt een"></option>
+  <option id="paintmat108" dialogue="Producten: zuivel B"></option>
+  <option id="paintmat109" dialogue="Producten: frisdrank A"></option>
 
-  <option id="paintmat110" dialogue="Producten: Soda -dranken B"></option>
-  <option id="paintmat111" dialogue="Producten: bevroren"></option>
+  <option id="paintmat110" dialogue="Producten: frisdrank B"></option>
+  <option id="paintmat111" dialogue="Producten: diepvries"></option>
   <option id="paintmat112" dialogue="Producten: Hygiëne A"></option>
   <option id="paintmat113" dialogue="Producten: Hygiëne B"></option>
-  <option id="paintmat114" dialogue="Producten: schoonmaken"></option>
-  <option id="paintmat115" dialogue="Producten: snoep a"></option>
-  <option id="paintmat116" dialogue="Producten: Sweets B"></option>
+  <option id="paintmat114" dialogue="Producten: schoonmaak"></option>
+  <option id="paintmat115" dialogue="Producten: Snoep A"></option>
+  <option id="paintmat116" dialogue="Producten: Snoep B"></option>
   <option id="paintmat117" dialogue="Producten: vlees"></option>
-  <option id="paintmat118" dialogue="Producten: conserveert"></option>
-  <option id="paintmat119" dialogue="Producten: infusies"></option>
+  <option id="paintmat118" dialogue="Producten: conserven"></option>
+  <option id="paintmat119" dialogue="Producten: kruidenthee"></option>
 
-  <option id="paintmat120" dialogue="Producten: vis a"></option>
+  <option id="paintmat120" dialogue="Producten: vis A"></option>
   <option id="paintmat121" dialogue="Producten: vis B"></option>
-  <option id="paintmat122" dialogue="Producten: boeken a"></option>
-  <option id="paintmat123" dialogue="Producten: boeken b"></option>
-  <option id="paintmat124" dialogue="Producten: alcohol a"></option>
+  <option id="paintmat122" dialogue="Producten: boeken A"></option>
+  <option id="paintmat123" dialogue="Producten: boeken B"></option>
+  <option id="paintmat124" dialogue="Producten: alcohol A"></option>
   <option id="paintmat125" dialogue="Producten: alcohol B"></option>
-  <option id="paintmat126" dialogue="Producten: apotheek a"></option>
+  <option id="paintmat126" dialogue="Producten: apotheek A"></option>
   <option id="paintmat127" dialogue="Producten: apotheek B"></option>
-  <option id="paintmat128" dialogue="Producten: produceer een"></option>
-  <option id="paintmat129" dialogue="Producten: produceren B"></option>
+  <option id="paintmat128" dialogue="Producten: Groenten A"></option>
+  <option id="paintmat129" dialogue="Producten: Groenten B"></option>
 
-  <option id="paintmat130" dialogue="Producten: produceren C"></option>
-  <option id="paintmat131" dialogue="Producten: produceren D"></option>
-  <option id="paintmat132" dialogue="Producten: kinderopvang a"></option>
-  <option id="paintmat133" dialogue="Producten: kinderopvang B"></option>
-  <option id="paintmat134" dialogue="Experimentele tv"></option>
-  <option id="paintmat135" dialogue="Producten: tuinieren a"></option>
+  <option id="paintmat130" dialogue="Producten: Groenten C"></option>
+  <option id="paintmat131" dialogue="Producten: Groenten D"></option>
+  <option id="paintmat132" dialogue="Producten: kinderverzorging A"></option>
+  <option id="paintmat133" dialogue="Producten: kinderverzorging B"></option>
+  <option id="paintmat134" dialogue="Experimentele TV"></option>
+  <option id="paintmat135" dialogue="Producten: tuinieren A"></option>
   <option id="paintmat136" dialogue="Producten: tuinieren B"></option>
-  <option id="paintmat137" dialogue="Producten: elektronica a"></option>
+  <option id="paintmat137" dialogue="Producten: Elektronica A"></option>
   <option id="paintmat138" dialogue="Producten: Elektronica B"></option>
   <option id="paintmat139" dialogue="Bamboe"></option>
 
-  <option id="paintmat140" dialogue="Tapijt a"></option>
+  <option id="paintmat140" dialogue="Tapijt A"></option>
   <option id="paintmat141" dialogue="Tapijt B"></option>
-  <option id="paintmat142" dialogue="Tapijt c"></option>
+  <option id="paintmat142" dialogue="Tapijt C"></option>
   <option id="paintmat143" dialogue="Tapijt D"></option>
   <option id="paintmat144" dialogue="Tapijt E"></option>
   <option id="paintmat145" dialogue="Tapijt F"></option>
-  <option id="paintmat146" dialogue="Tapijt g"></option>
-  <option id="paintmat147" dialogue="Tapijt h"></option>
-  <option id="paintmat148" dialogue="Tapijt i"></option>
-  <option id="paintmat149" dialogue="Concreet a"></option>
+  <option id="paintmat146" dialogue="Tapijt G"></option>
+  <option id="paintmat147" dialogue="Tapijt H"></option>
+  <option id="paintmat148" dialogue="Tapijt I"></option>
+  <option id="paintmat149" dialogue="Beton A"></option>
 
-  <option id="paintmat150" dialogue="Concrete B"></option>
-  <option id="paintmat151" dialogue="Concrete C"></option>
-  <option id="paintmat152" dialogue="Concrete D"></option>
-  <option id="paintmat153" dialogue="Concreet E"></option>
-  <option id="paintmat154" dialogue="Concrete F"></option>
-  <option id="paintmat155" dialogue="Concrete G"></option>
-  <option id="paintmat156" dialogue="Diamantplaat a"></option>
+  <option id="paintmat150" dialogue="Beton B"></option>
+  <option id="paintmat151" dialogue="Beton C"></option>
+  <option id="paintmat152" dialogue="Beton D"></option>
+  <option id="paintmat153" dialogue="Beton E"></option>
+  <option id="paintmat154" dialogue="Beton F"></option>
+  <option id="paintmat155" dialogue="Beton G"></option>
+  <option id="paintmat156" dialogue="Diamantplaat A"></option>
   <option id="paintmat157" dialogue="Diamantplaat B"></option>
-  <option id="paintmat158" dialogue="Metalen plaat a"></option>
+  <option id="paintmat158" dialogue="Metalen plaat A"></option>
   <option id="paintmat159" dialogue="Metalen plaat B"></option>
 
   <option id="paintmat160" dialogue="Metalen plaat C"></option>
-  <option id="paintmat161" dialogue="Rock a"></option>
-  <option id="paintmat162" dialogue="Rock B"></option>
-  <option id="paintmat163" dialogue="Rock C"></option>
-  <option id="paintmat164" dialogue="Rock D"></option>
-  <option id="paintmat165" dialogue="Houten patroon a"></option>
-  <option id="paintmat166" dialogue="Houten patroon b"></option>
-  <option id="paintmat167" dialogue="Houten patroon c"></option>
-  <option id="paintmat168" dialogue="Houten patroon d"></option>
-  <option id="paintmat169" dialogue="Houten patroon e"></option>
+  <option id="paintmat161" dialogue="Steen A"></option>
+  <option id="paintmat162" dialogue="Steen B"></option>
+  <option id="paintmat163" dialogue="Steen C"></option>
+  <option id="paintmat164" dialogue="Steen D"></option>
+  <option id="paintmat165" dialogue="Houten patroon A"></option>
+  <option id="paintmat166" dialogue="Houten patroon B"></option>
+  <option id="paintmat167" dialogue="Houten patroon C"></option>
+  <option id="paintmat168" dialogue="Houten patroon D"></option>
+  <option id="paintmat169" dialogue="Houten patroon E"></option>
 
-  <option id="paintmat170" dialogue="Houten patroon f"></option>
-  <option id="paintmat171" dialogue="Houten patroon g"></option>
+  <option id="paintmat170" dialogue="Houten patroon F"></option>
+  <option id="paintmat171" dialogue="Houten patroon G"></option>
 
   <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
   <option id="skinshats" dialogue="Huiden en hoeden"></option>
@@ -1265,12 +1265,12 @@ OPMERKING U kunt ook prijzen instellen met uw Numpad- of opnieuw toewijst Sleute
   <option id="lic12" dialogue="In deze terminal kunt u YouTube en Twitch aan uw tv's aansluiten zodra de licentie is goedgekeurd."></option>
 
   <option id="cosmetics1" dialogue="De Cosmetics DLC is goedgekeurd!"></option>
-  <option id="cosmetics2" dialogue="9 nieuwe personages, meer dan 100 hoeden, 35 dansen en poses en een webbrowser om te sparen terwijl je baas niet zoekt.  Verf uw winkel met de nieuwe tablet en geniet van exclusieve decoraties die in de loop van de tijd worden toegevoegd. Eerst is YouTube Sync Update al beschikbaar!"></option>
+  <option id="cosmetics2" dialogue="9 nieuwe personages, meer dan 100 hoeden, 35 dansen en poses en een webbrowser om te sparen terwijl je baas niet kijkt. Verf uw winkel met de nieuwe tablet en geniet van exclusieve decoraties die in de loop van de tijd worden toegevoegd. Eerst is YouTube Sync Update al beschikbaar!"></option>
 
   <option id="continue" dialogue="Doorgaan"></option>
-  <option id="backups" dialogue="Back -ups"></option>
-  <option id="nobackups" dialogue="Geen back -ups"></option>
-  <option id="backupswarning" dialogue="Waarschuwing: het laden van een back -up zal de dag van het huidige bestand overschrijven."></option>
+  <option id="backups" dialogue="Backups"></option>
+  <option id="nobackups" dialogue="Geen backups"></option>
+  <option id="backupswarning" dialogue="Waarschuwing: het laden van een backup zal de dag van het huidige bestand overschrijven."></option>
   <option id="deleteoff" dialogue="Verwijder de modus UIT"></option>
   <option id="deleteon" dialogue="Verwijder modus aan"></option>
 
@@ -1371,7 +1371,7 @@ het dichtst bij de camera, hoe effectiever dit is."></option>
   <option id="permiss0" dialogue="Globaal"></option>
   <option id="permiss1" dialogue="Manager"></option>
   <option id="permiss2" dialogue="Kassa"></option>
-  <option id="permiss3" dialogue="Hersteker"></option>
+  <option id="permiss3" dialogue="Vakkenvullen"></option>
   <option id="permiss4" dialogue="Beveiliging"></option>
   <option id="permiss5" dialogue="Kletsen"></option>
 
@@ -1385,7 +1385,7 @@ het dichtst bij de camera, hoe effectiever dit is."></option>
   <option id="emplohired" dialogue="Ingehuurde werknemers"></option>
   <option id="emploentername" dialogue="Voer de naam van de werknemers in ..."></option>
   <option id="emplocashexp" dialogue="Kassierervaring"></option>
-  <option id="emplorestexp" dialogue="Restocker -ervaring"></option>
+  <option id="emplorestexp" dialogue="Vakkenvulervaring"></option>
   <option id="emplostoexp" dialogue="Opslagervaring"></option>
   <option id="emplosecexp" dialogue="Beveiligingservaring"></option>
   <option id="canthiremore" dialogue="Kan niet meer werknemers inhuren"></option>
@@ -1411,10 +1411,10 @@ het dichtst bij de camera, hoe effectiever dit is."></option>
 Houd de bezem bij de hand"></option>
 
   <option id="panykey" dialogue="Druk op elke toets om door te gaan"></option>
-  <option id="gtunlckable" dialogue="Ik heb een nieuw ontgrendbaar item!"></option>
+  <option id="gtunlckable" dialogue="Ik heb een nieuw ontgrendelbaar item!"></option>
   <option id="nostartkn" dialogue="Geen beschikbare stertokens"></option>
   <option id="managsavebckup" dialogue="Beheer van back -ups opslaan"></option>
-  <option id="newoptionendday" dialogue="Auto -einddag"></option>
+  <option id="newoptionendday" dialogue="Auto-einde dag"></option>
   <option id="sallprices" dialogue="Stel alle prijzen in op het percentage"></option>
   <option id="csettingprices" dialogue="[Momenteel vaststellen van prijzen]"></option>
 
@@ -1427,15 +1427,15 @@ Houd de bezem bij de hand"></option>
   <option id="loglog2" dialogue="Gekopieerd!"></option>
 
   <option id="stats0" dialogue="Totaal verdiende geld"></option>
-  <option id="stats1" dialogue="Totale geplaatst producten"></option>
-  <option id="stats2" dialogue="Totale dozen gerecycled"></option>
-  <option id="stats3" dialogue="Totale klanten geserveerd"></option>
+  <option id="stats1" dialogue="Totaal geplaatst producten"></option>
+  <option id="stats2" dialogue="Totaal dozen gerecycled"></option>
+  <option id="stats3" dialogue="Totaal klanten geserveerd"></option>
   <option id="stats4" dialogue="Totaal uitgecheckte producten"></option>
   <option id="stats5" dialogue="Totaal afval verzameld"></option>
-  <option id="stats6" dialogue="Correcte verandering op een rij gegeven"></option>
+  <option id="stats6" dialogue="Correcte bedrag teruggegeven op een rij"></option>
   <option id="stats7" dialogue="Times dief sloeg"></option>
   <option id="stats8" dialogue="Gestolen producten verzameld"></option>
-  <option id="stats9" dialogue="Kat gemaaid tijden"></option>
+  <option id="stats9" dialogue="Kat geaaid tijden"></option>
   <option id="stats10" dialogue="Geanalyseerde klanten in CCTV"></option>
   <option id="stats11" dialogue="Dieven gevangen in CCTV"></option>
   <option id="statsfoundtoo" dialogue="De vorige dag niet gevonden"></option>
@@ -1464,10 +1464,10 @@ Houd de bezem bij de hand"></option>
   <option id="invopaidannoun" dialogue="Factuur betaald!"></option>
   <option id="invopaidannoun2" dialogue="Betaal eerst uw huidige lening af!"></option>
   <option id="invopaidannoun3" dialogue="Lening verleend!"></option>
-  <option id="invovalue0" dialogue="Uitgifte -datum"></option>
+  <option id="invovalue0" dialogue="Uitgifte-datum"></option>
   <option id="invovalue1" dialogue="Deadline"></option>
   <option id="invovalue2" dialogue="Betaal deze factuur"></option>
-  <option id="invovalue3" dialogue="Vraaglijk bedrag"></option>
+  <option id="invovalue3" dialogue="Gevraagd bedrag"></option>
   <option id="invovalue4" dialogue="Lening"></option>
   <option id="invovalue5" dialogue="Bedragen om terug te keren"></option>
   <option id="invovalue6" dialogue="Dagelijkse betaling"></option>
@@ -1480,8 +1480,8 @@ Houd de bezem bij de hand"></option>
 
   <option id="disableinvoicesoption" dialogue="Schakel facturen uit"></option>
 
-  <option id="off3disclaimer" dialogue="Als werknemers niet verschijnen of om te slappelen, vergeet dan niet om hun loon te betalen als dit niet doen, heeft consequenties"></option>
-  <option id="off4disclaimer" dialogue="Werknemers hebben een raar pad? Gebruik het NPC -blok niet en rapporteer uw winkelgegevens in forums"></option>
+  <option id="off3disclaimer" dialogue="Als werknemers niet verschijnen of maar wat lummelen, vergeet dan niet om hun loon te betalen: als u dit niet doet, heeft het consequenties"></option>
+  <option id="off4disclaimer" dialogue="Werknemers hebben een rare routering? Gebruik NPC deblokkeren en rapporteer uw winkelgegevens in forums"></option>
 
   <option id="drawgame0" dialogue="Teken het woord! Minigame"></option>
   <option id="drawgame1" dialogue="Een tekening -minigame is begonnen!"></option>
