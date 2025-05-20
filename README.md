@@ -80,5 +80,6 @@ Hotkey Configurations
 - Change amount of product in a box
 - Disable product box collisions
 - Enable fast product box spawns
+- Automatically order enough product to fill the store when picking up OS Mart Tablet
 - Adjust in-game clock speed
 - Allows usage of the clock while store is open

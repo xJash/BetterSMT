@@ -114,6 +114,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> FastBoxSpawns;
     public static ConfigEntry<float> ClockSpeed;
     public static ConfigEntry<bool> ClockMorning;
+    public static ConfigEntry<bool> AutoOrdering;
 #endregion
 
     private void Awake() {
@@ -574,6 +575,13 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random QoL! ===
+        AutoOrdering = Config.Bind(
+            "Random QoL",
+            "Enables auto-ordering items",
+            false,
+            new ConfigDescription("Enables or disables automatically adding enough stock to the shopping order when picking up the OS Mart device")
+        );
+
         ClockMorning = Config.Bind(
             "Random QoL",
             "Enables clock usage in morning",
