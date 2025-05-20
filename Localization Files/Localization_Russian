@@ -1,0 +1,1567 @@
+﻿<text>
+
+  <options>
+    <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
+
+    <option id="title0" dialogue="Новый магазин"></option>
+    <option id="title1" dialogue="Загрузить магазин"></option>
+    <option id="title2" dialogue="Присоединиться к магазину"></option>
+    <option id="title3" dialogue="Параметры"></option>
+    <option id="title4" dialogue="Выйти"></option>
+
+    <option id="newstore0" dialogue="Выберите название магазина"></option>
+    <option id="newstore1" dialogue="Частный"></option>
+    <option id="newstore2" dialogue="Только друзья"></option>
+    <option id="newstore3" dialogue="Публичный"></option>
+    <option id="newstore4" dialogue="Создать"></option>
+    <option id="newstore5" dialogue="Название магазина должно содержать более 2 символов и не содержать недопустимых символов"></option>
+    <option id="newstore6" dialogue="Вы можете искусственно увеличить сложность, если хотите"></option>
+    <option id="newstore7" dialogue="Сложность: "></option>
+
+    <option id="yes" dialogue="Да"></option>
+    <option id="no" dialogue="Нет"></option>
+    <option id="back" dialogue="Назад"></option>
+    <option id="save" dialogue="Применить"></option>
+    <option id="entertext" dialogue="Поиск..."></option>
+
+    <option id="join" dialogue="Присоединиться"></option>
+    <option id="invalidcode" dialogue="Неверный код или хост закрыл игру"></option>
+    <option id="joinfriends" dialogue="Присоединиться с помощью кода"></option>
+    <option id="copycode" dialogue="Вставить код..."></option>
+
+    <option id="loading" dialogue="Загрузка"></option>
+
+    <option id="options0" dialogue="Графика"></option>
+    <option id="options1" dialogue="Разрешение"></option>
+    <option id="options2" dialogue="Полный экран"></option>
+    <option id="options3" dialogue="Vsync"></option>
+    <option id="options4" dialogue="Сглаживание"></option>
+    <option id="options5" dialogue="Яркость"></option>
+    <option id="options6" dialogue="Качество"></option>
+    <option id="options6a" dialogue="Производительный"></option>
+    <option id="options6b" dialogue="Сбалансированный"></option>
+    <option id="options6c" dialogue="Высокая точность"></option>
+
+    <option id="options7" dialogue="Элементы управления"></option>
+    <option id="options8" dialogue="Чувствительность по оси X"></option>
+    <option id="options9" dialogue="Чувствительность по оси Y"></option>
+    <option id="options10" dialogue="Чувствительность масштабирования"></option>
+    <option id="options11" dialogue="Инвертировать ось X"></option>
+    <option id="options12" dialogue="Инвертировать ось Y"></option>
+    <option id="options12a" dialogue="Настройки управление"></option>
+
+    <option id="options13" dialogue="Аудио"></option>
+    <option id="options14" dialogue="Общая громкость"></option>
+    <option id="options15" dialogue="Громкость музыки"></option>
+    <option id="options16" dialogue="Громкость эффектов"></option>
+    <option id="options17" dialogue="Громкость интерфейса"></option>
+    <option id="options17a" dialogue="Громкость голоса"></option>
+
+    <option id="options18" dialogue="Главное меню"></option>
+    <option id="options19" dialogue="Выйти из игры"></option>
+
+    <option id="options20" dialogue="Вернуться в главное меню?"></option>
+    <option id="options21" dialogue="Выйти из игры?"></option>
+
+    <option id="options22" dialogue="Копировать код лобби"></option>
+    <option id="options23" dialogue="Присоединиться к друзьям с кодом"></option>
+    <option id="options24" dialogue="Копировать код..."></option>
+
+    <option id="options25" dialogue="FOV события камеры"></option>
+    <option id="options26" dialogue="Агрессивные NPC"></option>
+    <option id="options27" dialogue="Расстояние появления"></option>
+
+    <option id="rw0" dialogue="Движение персонажем (ось X)"></option>
+    <option id="rw1" dialogue="Вперёд"></option>
+    <option id="rw2" dialogue="Назад"></option>
+    <option id="rw3" dialogue="Движение персонажем (ось Z)"></option>
+    <option id="rw4" dialogue="Вправо"></option>
+    <option id="rw5" dialogue="Влево"></option>
+    <option id="rw6" dialogue="Движение мышью (ось Y)"></option>
+    <option id="rw7" dialogue="Вверх"></option>
+    <option id="rw8" dialogue="Вниз"></option>
+    <option id="rw9" dialogue="Движение мышью (ось X)"></option>
+    <option id="rw10" dialogue="Вправо"></option>
+    <option id="rw11" dialogue="Влево"></option>
+
+    <option id="rw12" dialogue="Основное действие"></option>
+    <option id="rw13" dialogue="Доп. действие"></option>
+    <option id="rw14" dialogue="Построить"></option>
+    <option id="rw15" dialogue="Отпустить элемент"></option>
+    <option id="rw16" dialogue="Прыжок"></option>
+    <option id="rw17" dialogue="Спринт"></option>
+    <option id="rw18" dialogue="Меню конструктора"></option>
+    <option id="rw19" dialogue="Вверх по меню конструктора"></option>
+    <option id="rw20" dialogue="Вниз по меню конструктора"></option>
+    <option id="rw21" dialogue="Чат"></option>
+    <option id="rw22" dialogue="Голосовой чат"></option>
+    <option id="rw23" dialogue="Меню выхода"></option>
+    <option id="rw24" dialogue="Присесть"></option>
+
+    <option id="rw25" dialogue="Следующая вкладка"></option>
+    <option id="rw26" dialogue="Предыдущая вкладка"></option>
+    <option id="rw27" dialogue="Танец 1"></option>
+    <option id="rw28" dialogue="Танец 2"></option>
+    <option id="rw29" dialogue="Танец 3"></option>
+    <option id="rw30" dialogue="Танец 4"></option>
+    <option id="rw31" dialogue="Танец 5"></option>
+    <option id="rw32" dialogue="Танец 6"></option>
+    <option id="rw33" dialogue="Танец 7"></option>
+    <option id="rw34" dialogue="Танец 8"></option>
+    <option id="rw35" dialogue="Танец 9"></option>
+    <option id="rw36" dialogue="Кнопка '0' (Касса)"></option>
+    <option id="rw37" dialogue="Кнопка '1' (Касса)"></option>
+    <option id="rw38" dialogue="Кнопка '2' (Касса)"></option>
+    <option id="rw39" dialogue="Кнопка '3' (Касса)"></option>
+    <option id="rw40" dialogue="Кнопка '4' (Касса)"></option>
+    <option id="rw41" dialogue="Кнопка '5' (Касса)"></option>
+    <option id="rw42" dialogue="Кнопка '6' (Касса)"></option>
+    <option id="rw43" dialogue="Кнопка '7' (Касса)"></option>
+    <option id="rw44" dialogue="Кнопка '8' (Касса)а)"></option>
+    <option id="rw45" dialogue="Кнопка '9' (Касса)"></option>
+    <option id="rw46" dialogue="Стереть (Касса)"></option>
+    <option id="rw47" dialogue="Точка (Касса)"></option>
+    <option id="rw48" dialogue="Принять (Касса)"></option>
+
+    <option id="rw49" dialogue="Смена режима привязки"></option>
+
+    <!-- ///////////////////////////////////Text///////////////////////////////////// -->
+
+    <option id="employees" dialogue="Кол-во сотрудников: "></option>
+    <option id="employeesassignment" dialogue="Назначить сотрудников"></option>
+    <option id="cashiers" dialogue="Кассиры"></option>
+    <option id="restock" dialogue="Выкладка"></option>
+    <option id="storage" dialogue="Грузчики"></option>
+    <option id="security" dialogue="Охрана"></option>
+    <option id="mblackboard" dialogue="Панель менеджера"></option>
+    <option id="productorder" dialogue="Продукты"></option>
+    <option id="supermarket" dialogue="Супермаркет"></option>
+    <option id="cosmetics" dialogue="Заказ косметики"></option>
+    <option id="stream" dialogue="Установить ТВ-видео/поток"></option>
+    <option id="pinshelves" dialogue="На полках"></option>
+    <option id="pinstorage" dialogue="На складе"></option>
+    <option id="pinboxes" dialogue="В коробках"></option>
+    <option id="shoplist" dialogue="Корзина"></option>
+    <option id="buy" dialogue="Купить"></option>
+    <option id="supermarketname" dialogue="Название супермаркета"></option>
+    <option id="supermarketcolor" dialogue="Цвет вывески"></option>
+    <option id="changename" dialogue="Изменить название"></option>
+    <option id="changecolor" dialogue="Изменить цвет"></option>
+    <option id="franchisepointsavailable" dialogue="Доступные баллы франшизы"></option>
+    <option id="unlocks" dialogue="Разблокирует"></option>
+    <option id="requires" dialogue="Требуется"></option>
+    <option id="connectionlost" dialogue="Потеряно соединение с хостом"></option>
+    <option id="buyshopspace" dialogue="Расширить магазин"></option>
+    <option id="buystoragespace" dialogue="Расширить склад"></option>
+    <option id="addons" dialogue="Дополнения"></option>
+    
+
+    <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
+
+    <option id="tutorial0" dialogue="Добро пожаловать в Supermarket Together!"></option>
+    <option id="tutorial1" dialogue="Пока Вы не откроете свой магазин - время идти не будет.
+
+Первый шаг - купить и поставить первую мебель. Для этого, нажмите [TAB], чтобы перейти в меню конструктора."></option>
+    <option id="tutorial2" dialogue="Теперь купите 2 полки для продуктов, кассу и полку для склада.
+
+Обратите внимание, что полки и кассы можно размещать в основном помещении, но полку для склада можно разместить только на складе."></option>
+    <option id="tutorial3" dialogue="Отлично!
+
+В течении игры Вы сможете зарабатывать баллы франшизы. Успешно управляя своим бизнесом Вы будете получать очки опыта, которые повышают уровень Вашего магазина. За каждое повышение уровня Вы будете получать 1 балл франшизы.
+
+Сейчас у Вас уже есть Ваш первый бал франшизы. Чтобы потратить его - перейдите в комнату менеджера и выберите категорию продуктов, которая появится в меню заказов продуктов."></option>
+    <option id="tutorial4" dialogue="Отлично! Вы только что открыли новую категорию продуктов.
+
+Помните, что приобретая новую категорию продуктов - клиенты сразу же узнают об этом и будут искать эти продукты на полках Вашего магазина. Если клиент не найдёт нужный ему продукт - он будет жаловаться на его отсутствие.
+
+Давайте купим первые продукты. Для этого подойдите к Панели менеджера, щёлкнув по ней, а затем по вкладке 'Продукты'."></option>
+    <option id="tutorial5" dialogue="Хорошо. Теперь выберите вкладку 'Базовые продукты'."></option>
+    <option id="tutorial6" dialogue="Давайте добавим в корзину каждый из доступных продуктов.
+
+Для этого нажмите символ плюса под каждым продуктом, который хотите заказать. Также, Вы можете использовать большой символ плюса в нижней части вкладки - это добавит сразу все товары из вкладки в корзину для заказа.
+
+Остаётся лишь нажать кнопку 'Купить', чтобы сделать Ваш первый заказ."></option>
+    <option id="tutorial7" dialogue="Отлично! Теперь выйдите на улицу.
+
+В зоне выгрузки товаров Вы найдёте все товары, которые заказали.
+Для того, чтобы взять коробку - нажмите на неё с помощью [ЛКМ]."></option>
+    <option id="tutorial8" dialogue="Теперь подойдите к полке для продуктов, которую Вы приобрели в начале игры.
+
+Чтобы выложить товар из коробки - нажмите [ЛКМ], наведя на одну из полок. Чтобы вернуть товар в коробку - нажмите [ПКМ]. Вы также можете зажать кнопку, чтобы товары выкладывались автоматически.
+
+Для того, чтобы поставить коробку на пол - нажмите [F].
+
+Теперь разложите все товары на полки."></option>
+    <option id="tutorial9" dialogue="После того, как Вы выставили продукты на полки - стоит изменить их цену продажи, иначе они будут продаваться по себестоимости, что означает отсутствие выгоды.
+
+Для этого возьмите сканер в комнате менеджера."></option>
+    <option id="tutorial10" dialogue="Наведите курсор на полку, на которой Вы хотите изменить цену. На сканеры Вы увидите две цены - рыночную и магазинную.
+
+Чтобы изменить цену, крутите колесо мыши - так Вы будете добавлять или вычитать сумму с шагом в 0,01. Если, при этом, зажать кнопку [E], то цена будет меняться с шагом в 0,2. Для того, чтобы применить цену - нажмите [ЛКМ].
+
+Учтите, что цена в магазине не может превышать рыночную более чем в два раза! Иначе - клиенты не станут покупать данный товар. Например, если рыночная цена товара составляет [1,00], а Вы установили цену выше, чем [2,00] - то продукт покупать не станут.
+
+Теперь установите цену для каждого доступного товара.
+
+Обратите внимание, что вы также можете устанавливать цены с помощью цифровой клавиатуры или переназначать клавиши в Options/Customize Controls, чтобы сделать это. Цифровую клавиатуру также можно использовать для ввода сумм, когда клиенты платят кредитной картой на кассах."></option>
+
+    <option id="tutorial11" dialogue="Отлично! Ваш магазин готов к первому открытию. Чтобы открыть магазин, нажмите зелёную кнопку в комнате менеджера. Но для начала прочтите важную информацию:
+
+Каждый четверг на рынке происходит инфляция. В связи с этим, рыночная стоимость некоторых товаров будет увеличиваться. Поэтому, не забывайте обновлять ценники! (В будущем Вам с этим поможет Аппарат контроля цен, который Вы сможете приобрести в меню конструктора)
+
+Пустые коробки можно выбрасывать в ближайший мусорный контейнер, а можно отнести их в дальние контейнеры для переработки, чтобы немного заработать на этом.
+
+На 8-й день управления магазином клиенты начнут оставлять мусор в магазине, а также появятся воры. Решение обеих проблем - метла: нажмите [ЛКМ] по мусору или вору.
+
+Очередь за каждой кассой не может содержать более 8-и клиентов. Если клиенты не увидят свободную кассу - они уйдут со всеми продуктами, которые взяли с полок.
+
+Вы можете посмотреть лампы и декорации в меню конструктора. Для переключения между вкладками используйте [Z] и [X].
+
+Вы определенно можете очистить ряд полок от продуктов, щелкнув по нему правой кнопкой мыши с помощью инструмента ценообразования. Полезно, если вы не хотите, чтобы сотрудники постоянно пополняли этот ряд.
+
+Обратите внимание на вкладку счетов на доске менеджера. Туда будут приходить счета за зарплату и счета за электроэнергию или аренду вашим сотрудникам.            
+            
+Чтобы закрыть магазин, дождитесь 22:30 и нажмите красную кнопку в комнате менеджера. Игра сохраняется автоматически каждый новый день.
+
+Чем больше игроков в лобби - тем больше сложность.)"></option>
+    
+
+    <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
+
+    <option id="builder0" dialogue="Действие"></option>
+    <option id="builder1" dialogue="Повернуть влево"></option>
+    <option id="builder2" dialogue="Повернуть вправо"></option>
+    <option id="builder3" dialogue="Перейти вверх по меню"></option>
+    <option id="builder4" dialogue="Перейти вниз по меню"></option>
+
+    <option id="checkout0" dialogue="[LMB] Добавить деньги"></option>
+    <option id="checkout1" dialogue="[RMB] Убрать деньги"></option>
+    
+    <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
+
+    <option id="day" dialogue="день "></option>
+    
+    <option id="weekday1" dialogue="ПН"></option>
+    <option id="weekday2" dialogue="ВТ"></option>
+    <option id="weekday3" dialogue="СР"></option>
+    <option id="weekday4" dialogue="ЧТ"></option>
+    <option id="weekday5" dialogue="ПТ"></option>
+    <option id="weekday6" dialogue="СБ"></option>
+    <option id="weekday0" dialogue="ВС"></option>
+
+    <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
+
+    <option id="endofworkingday" dialogue="Конец рабочего дня: "></option>
+    <option id="totalcustomers" dialogue="Всего клиентов: "></option>
+    <option id="notfoundproducts" dialogue="Не найдено товаров: "></option>
+    <option id="tooexpensiveproducts" dialogue="Слишком дорогие товары: "></option>
+    <option id="timesrobbed" dialogue="Количество ограблений: "></option>
+    <option id="complaintsfilth" dialogue="Жалобы на грязь: "></option>
+    <option id="franchiselevel" dialogue="Уровень франшизы: "></option>
+    <option id="franchiseexperience" dialogue="Опыт франшизы: "></option>
+    <option id="income" dialogue="Доход "></option>
+    <option id="moneylostbecauserobbing" dialogue="Деньги потеряны из-за грабителей: "></option>
+    <option id="boughtproductscost" dialogue="Стоимость купленных продуктов: "></option>
+    <option id="rentcost" dialogue="Стоимость аренды: "></option>
+    <option id="electricitycost" dialogue="Стоимость электроэнергии: "></option>
+    <option id="employeeswages" dialogue="Зарплата сотрудников: "></option>
+    <option id="othercosts" dialogue="Другие расходы: "></option>
+    <option id="daybalance" dialogue="Дневной баланс: "></option>
+
+    <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
+
+    <option id="messagei0" dialogue="Теперь супермаркет открыт для посетителей!"></option>
+    <option id="messagei1" dialogue="Уровень франшизы повышен: начислены баллы"></option>
+    <option id="messagei2" dialogue="Вы приобрели новую привилегию"></option>
+    <option id="messagei3" dialogue="Приобретено расширение супермаркета"></option>
+    <option id="messagei4" dialogue="Приобретено расширение хранилища"></option>
+    <option id="messagei5" dialogue="Отдел получен"></option>
+    <option id="messagei5a" dialogue="Требования к магазину не выполнены"></option>
+    <option id="messagei5b" dialogue="Требования к хранению не выполнены"></option>
+
+    <option id="message0" dialogue="Нельзя совместить несколько видов продуктов"></option>
+    <option id="message1" dialogue="Данная полка полностью заполнена"></option>
+    <option id="message2" dialogue="Невозможно смешивать продукты на одной полке"></option>
+    <option id="message3" dialogue="Нет доступных баллов франшизы"></option>
+    <option id="message4" dialogue="Предыдущие узлы франшизы не приобретены"></option>
+    <option id="message5" dialogue="Нет товаров в списке покупок"></option>
+    <option id="message6" dialogue="Недостаточно средств"></option>
+    <option id="message7" dialogue="Уже что-то есть"></option>
+    <option id="message8" dialogue="В коробке больше нет товаров"></option>
+    <option id="message9" dialogue="Нет места в супермаркете для приобретения"></option>
+    <option id="message9a" dialogue="Нет места для хранения для приобретения"></option>
+    <option id="message10" dialogue="Нельзя вернуть меньше денег, чем требуется сдача"></option>
+    <option id="message11" dialogue="В коробке есть товары"></option>
+    <option id="message12" dialogue="В коробке больше нет места"></option>
+    <option id="message13" dialogue="Нельзя объединить продукты в одну коробку"></option>
+    <option id="message14" dialogue="Кажется, мне понадобится метла"></option>
+    <option id="message15" dialogue="Разрешено только когда магазин закрыт"></option>
+    <option id="message16" dialogue="Разрешено только когда больше нет покупателей"></option>
+    <option id="message17" dialogue="Удалить все продукты из контейнера перед удалением"></option>
+    <option id="message17a" dialogue="На полке есть продукты. Удерживайте клавишу [выбросить предмет] при удалении, если вы уверены"></option>
+    <option id="message18" dialogue="Магазину нужна как минимум одна касса с персоналом"></option>
+    <option id="message19" dialogue="Эта запись не помещается в трей"></option>
+    <option id="message20" dialogue="Для отображения поддонов требуются продукты большего размера"></option>
+
+    <option id="network0" dialogue="Потеряно соединение с хостом"></option>
+
+    <!-- ///////////////////////////////////NPCMessages///////////////////////////////////// -->
+
+    <option id="NPCmessage0" dialogue="Я этого не нашел: "></option>
+    <option id="NPCmessage1" dialogue="Это слишком дорого: "></option>
+    <option id="NPCmessage2" dialogue="Не нашел то, что искал"></option>
+    <option id="NPCmessage3" dialogue="Нет касс? Пока!"></option>
+    <option id="NPCmessage4" dialogue="Пока, сосунки!"></option>
+    <option id="NPCmessage5" dialogue="Этот супермаркет такой грязный!"></option>
+
+    <option id="NPCemployee0" dialogue="Пожалуй, я займу эту кассу"></option>
+
+    <option id="NPCmessagehit0" dialogue="Ой!"></option>
+    <option id="NPCmessagehit1" dialogue="Боже мой"></option>
+    <option id="NPCmessagehit2" dialogue="Засунь эту метлу себе в задницу"></option>
+    <option id="NPCmessagehit3" dialogue="Полицияееееее!"></option>
+    <option id="NPCmessagehit4" dialogue="Эээээк!"></option>
+    <option id="NPCmessagehit5" dialogue="Аааааааах!"></option>
+    <option id="NPCmessagehit6" dialogue="Это оскорбление!"></option>
+    <option id="NPCmessagehit7" dialogue="Гааах!"></option>
+    <option id="NPCmessagehit8" dialogue="Ударь меня сильнее, детка"></option>
+    <option id="NPCmessagehit9" dialogue="OwO"></option>
+
+    <option id="NPCmessagehitemployee0" dialogue="Босс, мать вашу"></option>
+    <option id="NPCmessagehitemployee1" dialogue="Это оскорбление"></option>
+    <option id="NPCmessagehitemployee2" dialogue="D:"></option>
+    <option id="NPCmessagehitemployee3" dialogue="Объявляем забастовку!"></option>
+
+    <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
+
+    <option id="builder" dialogue="Конструктор:"></option>
+    <option id="buildable0" dialogue="Переместить"></option>
+    <option id="buildable1" dialogue="Большая полка для продуктов"></option>
+    <option id="buildable2" dialogue="Малая холодильная камера"></option>
+    <option id="buildable3" dialogue="Большая холодильная камера"></option>
+    <option id="buildable4" dialogue="Морозильник"></option>
+    <option id="buildable5" dialogue="Полка для склада"></option>
+    <option id="buildable6" dialogue="Касса (справа)"></option>
+    <option id="buildable7" dialogue="Касса (слева)"></option>
+    <option id="buildable8" dialogue="Большая морозильная камера"></option>
+    <option id="buildable9" dialogue="Полка Тип А"></option>
+    <option id="buildable10" dialogue="Полка для склада (без маркировки"></option>
+    <option id="buildable11" dialogue="Полка для фруктов и овощей A"></option>
+    <option id="buildable12" dialogue="Касса самообслуживания"></option>
+    <option id="buildable13" dialogue="Полка для фруктов и овощей B"></option>
+    <option id="buildable14" dialogue="Малая полка для продуктов"></option>
+    <option id="buildable15" dialogue="Многоуровневая полка"></option>
+    <option id="buildable16" dialogue="Настенная полка"></option>
+    <option id="buildable17" dialogue="Полка из перфорированной доски"></option>
+    <option id="buildable18" dialogue="Полка для продуктов B (половина)"></option>
+    <option id="buildable19" dialogue="Угловая полка (большая)"></option>
+    <option id="buildable20" dialogue="Угловая полка (маленькая)"></option>
+    <option id="buildable21" dialogue="Базовый дисплей поддонов"></option>
+    <option id="buildable22" dialogue="Дисплей деревянных поддонов A"></option>
+    <option id="buildable23" dialogue="Дисплей деревянных поддонов B"></option>
+    <option id="buildable24" dialogue="Дисплей пластиковых поддонов"></option>
+    <option id="buildable25" dialogue="Дисплей высоких поддонов"></option>
+
+    <option id="buildable0a" dialogue="Продать"></option>
+    <option id="tabtitle0" dialogue="Конструктор"></option>
+    <option id="tabtitle1" dialogue="Украшения"></option>
+    <option id="tabtitle2" dialogue="Устройства"></option>
+    <option id="tabtitle3" dialogue="Освещение"></option>
+    <option id="tabtitle4" dialogue="Сезонный: Хэллоуин"></option>
+    <option id="tabtitle5" dialogue="Комната отдыха персонала"></option>
+    <option id="tabtitle6" dialogue="Сезонный: Рождество"></option>
+    <option id="tabtitle7" dialogue="Декор: Растения"></option>
+    <option id="tabtitle8" dialogue="Архитектура"></option>
+
+    <option id="decorat1" dialogue="Неоновая лампа A"></option>
+    <option id="decorat2" dialogue="Растение в горшке A"></option>
+    <option id="decorat3" dialogue="Телевизор"></option>
+    <option id="decorat4" dialogue="Потолочная вывеска"></option>
+    <option id="decorat5" dialogue="Ограждение от толпы"></option>
+    <option id="decorat6" dialogue="Рамка для защиты от кражи"></option>
+    <option id="decorat7" dialogue="Деревянный горшок"></option>
+    <option id="decorat8" dialogue="Деревянный горшок широкий"></option>
+    <option id="decorat9" dialogue="Вентиляционное отверстие в потолке"></option>
+    <option id="decorat10" dialogue="Аппарат контроля цен"></option>
+
+    <option id="decorat11" dialogue="Надгробие A"></option>
+    <option id="decorat12" dialogue="Надгробие B"></option>
+    <option id="decorat13" dialogue="Надгробие C"></option>
+    <option id="decorat14" dialogue="Надгробие D"></option>
+    <option id="decorat15" dialogue="Надгробие E"></option>
+    <option id="decorat16" dialogue="Надгробие F"></option>
+    <option id="decorat17" dialogue="Тыква A"></option>
+    <option id="decorat18" dialogue="Тыква B"></option>
+    <option id="decorat19" dialogue="Тыква C"></option>
+
+    <option id="decorat20" dialogue=" Тыквоман"></option>
+    <option id="decorat21" dialogue="Жуткий призрак"></option>
+    <option id="decorat22" dialogue="Блестящий цветок A"></option>
+    <option id="decorat23" dialogue="Блестящий цветок B"></option>
+    <option id="decorat24" dialogue="Погрузчик"></option>
+    <option id="decorat25" dialogue="Неоновая лампа B"></option>
+    <option id="decorat26" dialogue="Неоновая лампа C"></option>
+    <option id="decorat27" dialogue="Неоновая лампа D"></option>
+    <option id="decorat28" dialogue="Неоновая лампа E"></option>
+    <option id="decorat29" dialogue="Подвесная лампа A"></option>
+
+    <option id="decorat30" dialogue="Подвесная лампа B"></option>
+    <option id="decorat31" dialogue="Подвесная лампа C"></option>
+    <option id="decorat32" dialogue="Подвесная лампа D"></option>
+    <option id="decorat33" dialogue="Подвесная лампа E"></option>
+    <option id="decorat34" dialogue="Подвесная лампа F"></option>
+    <option id="decorat35" dialogue="Подвесной светильник G"></option>
+    <option id="decorat36" dialogue="Подвесной светильник H"></option>
+    <option id="decorat37" dialogue="Подвесной светильник I"></option>
+    <option id="decorat38" dialogue="Подвесной светильник J"></option>
+    <option id="decorat39" dialogue="Подвесной светильник K"></option>
+
+    <option id="decorat40" dialogue="Подвесной светильник L"></option>
+    <option id="decorat41" dialogue="Подвесной светильник M"></option>
+    <option id="decorat42" dialogue="Специальная лампа A"></option>
+    <option id="decorat43" dialogue="Камера видеонаблюдения"></option>
+    <option id="decorat44" dialogue="Мониторный пульт охраны"></option>
+    <option id="decorat45" dialogue="Робот-уборщик"></option>
+    <option id="decorat46" dialogue="Стол A"></option>
+    <option id="decorat47" dialogue="Стул A"></option>
+    <option id="decorat48" dialogue="Кухня A"></option>
+    <option id="decorat49" dialogue="Холодильник для персонала"></option>
+    <option id="decorat50" dialogue="Кофейный автомат"></option>
+
+    <option id="decorat51" dialogue="Торговый автомат"></option>
+    <option id="decorat52" dialogue="Автомат с напитками"></option>
+    <option id="decorat53" dialogue="Игровой автомат для дартса"></option>
+    <option id="decorat54" dialogue="Настольный футбол"></option>
+    <option id="decorat55" dialogue="Бильярдный стол"></option>
+    <option id="decorat56" dialogue="Киевница-шкаф"></option>
+    <option id="decorat57" dialogue="Аркада: Робот-ловец"></option>
+    <option id="decorat58" dialogue="Аркада: Космические войны"></option>
+    <option id="decorat59" dialogue="Аркада: Остров сокровищ"></option>
+    <option id="decorat60" dialogue="Рождественская елка"></option>
+
+    <option id="decorat61" dialogue="Рождественская арка"></option>
+    <option id="decorat62" dialogue="Рождественский венок"></option>
+    <option id="decorat63" dialogue="Барабанщик Щелкунчик"></option>
+    <option id="decorat64" dialogue="Генерал Щелкунчик"></option>
+    <option id="decorat65" dialogue="Всадник Щелкунчик"></option>
+    <option id="decorat66" dialogue="Меченосец Щелкунчик"></option>
+    <option id="decorat67" dialogue="Блестящий олень"></option>
+    <option id="decorat68" dialogue="Паровозик «Чух-чух-чух»"></option>
+    <option id="decorat69" dialogue="Симулятор Наджары"></option>
+    <option id="decorat70" dialogue="Табурет"></option>
+
+    <option id="decorat71" dialogue="Снеговик"></option>
+    <option id="decorat72" dialogue="Конфетная трость"></option>
+    <option id="decorat73" dialogue="Рождественский подарок"></option>
+    <option id="decorat74" dialogue="Керамический горшок A"></option>
+    <option id="decorat75" dialogue="Керамический горшок B"></option>
+    <option id="decorat76" dialogue="Керамический горшок C"></option>
+    <option id="decorat77" dialogue="Керамический горшок D"></option>
+    <option id="decorat78" dialogue="Керамический горшок E"></option>
+    <option id="decorat79" dialogue="Керамический горшок F"></option>
+    <option id="decorat80" dialogue="Керамический горшок G"></option>
+
+    <option id="decorat81" dialogue="Растение A"></option>
+    <option id="decorat82" dialogue="Растение B"></option>
+    <option id="decorat83" dialogue="Растение C"></option>
+    <option id="decorat84" dialogue="Растение D"></option>
+    <option id="decorat85" dialogue="Растение E"></option>
+    <option id="decorat86" dialogue="Растение F"></option>
+    <option id="decorat87" dialogue="Растение G"></option>
+    <option id="decorat88" dialogue="Растение H"></option>
+    <option id="decorat89" dialogue="Растение I"></option>
+    <option id="decorat90" dialogue="Растение горшок A"></option>
+
+    <option id="decorat91" dialogue="Растение горшок B"></option>
+    <option id="decorat92" dialogue="Растение горшок C"></option>
+    <option id="decorat93" dialogue="Растение J"></option>
+    <option id="decorat94" dialogue="Растение K"></option>
+    <option id="decorat95" dialogue="Растение L"></option>
+    <option id="decorat96" dialogue="Цветок A"></option>
+    <option id="decorat97" dialogue="Цветок B"></option>
+    <option id="decorat98" dialogue="Цветок C"></option>
+    <option id="decorat99" dialogue="Цветок D"></option>
+    <option id="decorat100" dialogue="Цветок E"></option>
+
+    <option id="decorat101" dialogue="Цветок F"></option>
+    <option id="decorat102" dialogue="Цветок G"></option>
+    <option id="decorat103" dialogue="Цветок H"></option>
+    <option id="decorat104" dialogue="Цветок I"></option>
+    <option id="decorat105" dialogue="Цветок J"></option>
+    <option id="decorat106" dialogue="Цветок K"></option>
+    <option id="decorat107" dialogue="Цветок L"></option>
+    <option id="decorat108" dialogue="Цветок M"></option>
+    <option id="decorat109" dialogue="Цветок N"></option>
+    <option id="decorat110" dialogue="Цветок O"></option>
+
+    <option id="decorat111" dialogue="Цветок P"></option>
+    <option id="decorat112" dialogue="Цветок Q"></option>
+    <option id="decorat113" dialogue="Цветок R"></option>
+    <option id="decorat114" dialogue="Цветок S"></option>
+    <option id="decorat115" dialogue="Цветок T"></option>
+    <option id="decorat116" dialogue="Цветок U"></option>
+    <option id="decorat117" dialogue="Цветок V"></option>
+    <option id="decorat118" dialogue="Цветок W"></option>
+    <option id="decorat119" dialogue="Цветок X"></option>
+    <option id="decorat120" dialogue="Цветок Y"></option>
+
+    <option id="decorat121" dialogue="Цветок Z"></option>
+    <option id="decorat122" dialogue="Цветок A1"></option>
+    <option id="decorat123" dialogue="Цветок B1"></option>
+    <option id="decorat124" dialogue="Столб супермаркета"></option>
+    <option id="decorat125" dialogue="Металлический столб"></option>
+    <option id="decorat126" dialogue="Бетонный подвесной горшок A"></option>
+    <option id="decorat127" dialogue="Бетонный подвесной горшок B"></option>
+    <option id="decorat128" dialogue="Керамический подвесной горшок A"></option>
+    <option id="decorat129" dialogue="NPC Отклеить Блок"></option>
+    <option id="decorat130" dialogue="Уличный фонарь A"></option>
+
+    <option id="decorat131" dialogue="Уличный фонарь B"></option>
+    <option id="decorat132" dialogue="Уличный фонарь C"></option>
+    <option id="decorat133" dialogue="Уличный фонарь D"></option>
+    <option id="decorat134" dialogue="Уличный фонарь E"></option>
+    <option id="decorat135" dialogue="Уличный фонарь F"></option>
+    <option id="decorat136" dialogue="Уличный фонарь G"></option>
+    <option id="decorat137" dialogue="Уличный фонарь H"></option>
+    <option id="decorat138" dialogue="Уличный фонарь I"></option>
+    <option id="decorat139" dialogue="Уличный фонарь J"></option>
+    <option id="decorat140" dialogue="Уличный фонарь K"></option>
+
+    <option id="decorat141" dialogue="Уличный фонарь L"></option>
+    <option id="decorat142" dialogue="Уличный фонарь M"></option>
+    <option id="decorat143" dialogue="Уличный фонарь N"></option>
+    <option id="decorat144" dialogue="Уличный фонарь O"></option>
+    <option id="decorat145" dialogue="Уличный фонарь P"></option>
+    <option id="decorat146" dialogue="Уличный фонарь Q"></option>
+    <option id="decorat147" dialogue="Фонтан A1"></option>
+    <option id="decorat148" dialogue="Фонтан A2"></option>
+    <option id="decorat149" dialogue="Фонтан A3"></option>
+    <option id="decorat150" dialogue="Фонтан B1"></option>
+
+    <option id="decorat151" dialogue="Фонтан B2"></option>
+    <option id="decorat152" dialogue="Фонтан B3"></option>
+    <option id="decorat153" dialogue="Фонтан C1"></option>
+    <option id="decorat154" dialogue="Фонтан C2"></option>
+    <option id="decorat155" dialogue="Фонтан C3"></option>
+    <option id="decorat156" dialogue="Фонтан D1"></option>
+    <option id="decorat157" dialogue="Фонтан D2"></option>
+    <option id="decorat158" dialogue="Фонтан D3"></option>
+    <option id="decorat159" dialogue="Фонтан E1"></option>
+    <option id="decorat160" dialogue="Фонтан E2"></option>
+
+    <option id="decorat161" dialogue="Фонтан E3"></option>
+    <option id="decorat162" dialogue="Фонтан F1"></option>
+    <option id="decorat163" dialogue="Фонтан F2"></option>
+    <option id="decorat164" dialogue="Фонтан F3"></option>
+    <option id="decorat165" dialogue="Фонтан G1"></option>
+    <option id="decorat166" dialogue="Фонтан G2"></option>
+    <option id="decorat167" dialogue="Фонтан G3"></option>
+    <option id="decorat168" dialogue="Малый разделитель под покраску"></option>
+    <option id="decorat169" dialogue="Средний разделитель под покраску"></option>
+    <option id="decorat170" dialogue="Большой разделитель под покраску"></option>
+
+    <option id="decorat171" dialogue="Угловой разделитель"></option>
+    <option id="decorat172" dialogue="Большой наземный горшок A"></option>
+    <option id="decorat173" dialogue="Большой наземный горшок B"></option>
+    <option id="decorat174" dialogue="Большой наземный горшок C"></option>
+    <option id="decorat175" dialogue="Большой наземный горшок D"></option>
+    <option id="decorat176" dialogue="Перекрестный разделитель под покраску"></option>
+    <option id="decorat177" dialogue="Т-образный разделитель под покраску"></option>
+    <option id="decorat178" dialogue="Рамка для фото"></option>
+    <option id="decorat179" dialogue="Дверной разделитель под покраску"></option>
+    <option id="decorat180" dialogue="Настенный горшок A"></option>
+
+    <option id="decorat181" dialogue="Панель настенного горшочка A"></option>
+    <option id="decorat182" dialogue="Настенный горшок B"></option>
+    <option id="decorat183" dialogue="Панель настенного горшочка B"></option>
+    <option id="decorat184" dialogue="Картонный пресс"></option>
+    <option id="decorat185" dialogue="Простая балка"></option>
+    <option id="decorat186" dialogue="Поперечная балка"></option>
+    <option id="decorat187" dialogue="Тавровая балка"></option>
+    <option id="decorat188" dialogue="Угловая балка"></option>
+    <option id="decorat189" dialogue="Пункт выдачи посылки"></option>
+    
+    <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
+
+    <option id="skill01" dialogue="Сотрудник I"></option>
+    <option id="skill02" dialogue="Сотрудник II"></option>
+    <option id="skill03" dialogue="Сотрудник III"></option>
+    <option id="skill04" dialogue="Сотрудник IV"></option>
+    <option id="skill05" dialogue="Сотрудник V"></option>
+    <option id="skill0a" dialogue="Позволяет нанять дополнительного сотрудника"></option>
+    <option id="skill1" dialogue="Бесплатный утренний кофе"></option>
+    <option id="skill1a" dialogue="Сотрудники двигаются на +20% быстрее"></option>
+    <option id="skill2" dialogue="Маркетинговые курсы I"></option>
+    <option id="skill2a" dialogue="Сотрудники генерируют +10% денег в кассах"></option>
+    <option id="skill3" dialogue="Курсы обучения"></option>
+    <option id="skill3a" dialogue="Сотрудники передвигаются на 20% быстрее"></option>
+    <option id="skill4" dialogue="Курсы по переработке"></option>
+    <option id="skill4a" dialogue="Переработка приносит в четыре раза больше денег"></option>
+    <option id="skill5" dialogue="Кондиционирование воздуха"></option>
+    <option id="skill5a" dialogue="Привлекает больше клиентов в день"></option>
+    <option id="skill6" dialogue="Подключение к Wi-Fi"></option>
+
+    <option id="skill11" dialogue="Сотрудник VI"></option>
+    <option id="skill12" dialogue="Сотрудник VII"></option>
+    <option id="skill13" dialogue="Сотрудник VIII"></option>
+    <option id="skill14" dialogue="Сотрудник IX"></option>
+    <option id="skill15" dialogue="Сотрудник X"></option>
+    <option id="skill16" dialogue="Формирование кассира I"></option>
+    <option id="skill16a" dialogue="Сотрудники будут обрабатывать продукты на кассе быстрее"></option>
+    <option id="skill17" dialogue="Формирование кассира II"></option>
+    <option id="skill18" dialogue="Формирование кассира III"></option>
+    <option id="skill19" dialogue="Формирование пополнения запасов I"></option>
+    <option id="skill19a" dialogue="Сотрудники будут размещать продукты быстрее"></option>
+    <option id="skill20" dialogue="Формирование пополнения запасов II"></option>
+    <option id="skill21" dialogue="Еще больше кофе"></option>
+    <option id="skill22" dialogue="Бесплатные энергетические напитки I"></option>
+    <option id="skill23" dialogue="Бесплатные энергетические напитки II"></option>
+    <option id="skill24" dialogue="Курсы по переработке II"></option>
+    <option id="skill24a" dialogue="Сотрудники будут перерабатывать коробки"></option>
+    <option id="skill25" dialogue="Дружественный интерфейс"></option>
+    <option id="skill25a" dialogue="Клиенты будут чаще пользоваться кассами самообслуживания"></option>
+    <option id="skill26" dialogue="Сотрудник XI"></option>
+    <option id="skill27" dialogue="Сотрудник XII"></option>
+    <option id="skill28" dialogue="Контейнер для вторичной переработки"></option>
+    <option id="skill28a" dialogue="Ближайший мусорный контейнер будет заменен на контейнер для вторичной переработки."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Программное обеспечение ценовой машины улучшено, и теперь можно задать способ автоматизации цен"></option>
+    <option id="skill30" dialogue="Тик-так идет быстро"></option>
+    <option id="skill30a" dialogue="Когда магазин закрыт ночью, менеджер может использовать новые часы в комнате менеджера, чтобы ускорить время"></option>
+    <option id="skill31" dialogue="Энергосберегающие лампочки"></option>
+    <option id="skill31a" dialogue="Снижает общее потребление электроэнергии на 20%"></option>
+    <option id="skill32" dialogue="Удобный интерфейс"></option>
+    <option id="skill32a" dialogue="Клиенты быстрее используют самостоятельную кассу"></option>
+    <option id="skill33" dialogue="Логистика"></option>
+    <option id="skill33a" dialogue="При взятии коробки игроки смогут визуализировать положение содержащегося в ней продукта как в магазине, так и на складе"></option>
+    <option id="skill34" dialogue="Внешний бухгалтер"></option>
+    <option id="skill34a" dialogue="Счета будут оплачиваться каждый новый день, если на это есть средства."></option>
+    <option id="skill35" dialogue="Специальные цены I"></option>
+    <option id="skill35a" dialogue="Увеличивает максимальную сумму ежедневных продаж на 2."></option>
+    <option id="skill36" dialogue="Специальные цены II"></option>
+    <option id="skill37" dialogue="Специальные цены III"></option>
+    <option id="skill38" dialogue="Дисплеи поддонов"></option>
+    <option id="skill38a" dialogue="Разблокирует различные типы дисплеев поддонов для самых больших продуктов"></option>
+
+    <!-- ///////////////////////////////////Products///////////////////////////////////// -->
+
+    <option id="productRelated0" dialogue="Цена за единицу"></option>
+
+    <option id="productGroup0" dialogue="Базовые продукты"></option>
+    <option id="productGroup1" dialogue="Молочные продукты"></option>
+    <option id="productGroup2" dialogue="Газированные напитки"></option>
+    <option id="productGroup3" dialogue="Замороженные продукты"></option>
+    <option id="productGroup4" dialogue="Гигиена"></option>
+    <option id="productGroup5" dialogue="Чистящие средства"></option>
+    <option id="productGroup6" dialogue="Сладости и закуски"></option>
+    <option id="productGroup7" dialogue="Мясо"></option>
+    <option id="productGroup8" dialogue="Консервы"></option>
+    <option id="productGroup9" dialogue="Чаи и травы"></option>
+    <option id="productGroup10" dialogue="Морепродукты"></option>
+    <option id="productGroup11" dialogue="Книги"></option>
+    <option id="productGroup12" dialogue="Алкогольные напитки"></option>
+    <option id="productGroup13" dialogue="Медикаменты"></option>
+    <option id="productGroup14" dialogue="Фрукты и овощи"></option>
+    <option id="productGroup15" dialogue="Уход за детьми"></option>
+    <option id="productGroup16" dialogue="Садоводство"></option>
+    <option id="productGroup17" dialogue="Малая электроника"></option>
+
+    <option id="productCategory0" dialogue="Базовые продукты I"></option>
+    <option id="productCategory1" dialogue="Базовые продукты II"></option>
+    <option id="productCategory2" dialogue="Базовые продукты III"></option>
+    <option id="productCategory3" dialogue="Базовые продукты IV"></option>
+    <option id="productCategory4" dialogue="Базовые продукты V"></option>
+    <option id="productCategory5" dialogue="Базовые продукты VI"></option>
+    <option id="productCategory6" dialogue="Молочные продукты I"></option>
+    <option id="productCategory7" dialogue="Молочные продукты II"></option>
+    <option id="productCategory8" dialogue="Газированные напитки I"></option>
+    <option id="productCategory9" dialogue="Замороженные продукты I"></option>
+    <option id="productCategory10" dialogue="Замороженные продукты II"></option>
+    <option id="productCategory11" dialogue="Гигиена I"></option>
+    <option id="productCategory12" dialogue="Гигиена II"></option>
+    <option id="productCategory13" dialogue="Гигиена III"></option>
+    <option id="productCategory14" dialogue="Чистящие средства I"></option>
+    <option id="productCategory15" dialogue="Чистящие средства II"></option>
+    <option id="productCategory16" dialogue="Сладости и закуски I"></option>
+    <option id="productCategory17" dialogue="Сладости и закуски II"></option>
+    <option id="productCategory18" dialogue="Сладости и закуски III"></option>
+    <option id="productCategory19" dialogue="Сладости и закуски IV"></option>
+    <option id="productCategory20" dialogue="Мясо I"></option>
+    <option id="productCategory21" dialogue="Консервы I"></option>
+    <option id="productCategory22" dialogue="Настои I"></option>
+    <option id="productCategory23" dialogue="Морепродукты I"></option>
+    <option id="productCategory24" dialogue="Набор книг I"></option>
+    <option id="productCategory25" dialogue="Набор книг II"></option>
+    <option id="productCategory26" dialogue="Алкогольные напитки I"></option>
+    <option id="productCategory27" dialogue="Алкогольные напитки II"></option>
+    <option id="productCategory28" dialogue="Алкогольные напитки III"></option>
+    <option id="productCategory29" dialogue="Медикаменты I"></option>
+    <option id="productCategory30" dialogue="Медикаменты II"></option>
+    <option id="productCategory31" dialogue="Фрукты и овощи I"></option>
+    <option id="productCategory32" dialogue="Фрукты и овощи II"></option>
+    <option id="productCategory33" dialogue="Фрукты и овощи III"></option>
+    <option id="productCategory34" dialogue="Фрукты и овощи IV"></option>
+    <option id="productCategory35" dialogue="Уход за детьми I"></option>
+    <option id="productCategory36" dialogue="Уход за детьми II"></option>
+    <option id="productCategory37" dialogue="Газированные напитки II"></option>
+    <option id="productCategory38" dialogue="Газированные напитки III"></option>
+    <option id="productCategory39" dialogue="Сладости и закуски V"></option>
+    <option id="productCategory40" dialogue="Сладости и закуски VI"></option>
+    <option id="productCategory41" dialogue="Консервы II"></option>
+    <option id="productCategory42" dialogue="Садоводство I"></option>
+    <option id="productCategory43" dialogue="Садоводство II"></option>
+    <option id="productCategory44" dialogue="Садоводство III"></option>
+    <option id="productCategory45" dialogue="Садоводство IV"></option>
+    <option id="productCategory46" dialogue="Малая электроника I"></option>
+    <option id="productCategory47" dialogue="Малая электроника II"></option>
+    <option id="productCategory48" dialogue="Малая электроника III"></option>
+
+    <option id="product0" dialogue="Паста «Пенне»"></option>
+    <option id="product1" dialogue="Минеральная вода"></option>
+    <option id="product2" dialogue="Медовые хлопья"></option>
+    <option id="product3" dialogue="Рис"></option>
+    <option id="product4" dialogue="Соль"></option>
+    <option id="product5" dialogue="Сахар"></option>
+    <option id="product6" dialogue="Маргарин"></option>
+    <option id="product7" dialogue="Мука"></option>
+    <option id="product8" dialogue="Яблочный сок"></option>
+    <option id="product9" dialogue="Оливковое масло"></option>
+
+    <option id="product10" dialogue="Кетчуп"></option>
+    <option id="product11" dialogue="Тостовый хлеб"></option>
+    <option id="product12" dialogue="Перец"></option>
+    <option id="product13" dialogue="Апельсиновый сок"></option>
+    <option id="product14" dialogue="Соус барбекю"></option>
+    <option id="product15" dialogue="Горчица"></option>
+    <option id="product16" dialogue="Паста «Спагетти»"></option>
+    <option id="product17" dialogue="Паштет из тунца"></option>
+    <option id="product18" dialogue="Хлопья со злаками"></option>
+    <option id="product19" dialogue="Мука высшего сорта"></option>
+
+    <option id="product20" dialogue="Черный кофе"></option>
+    <option id="product21" dialogue="Яйца куриные"></option>
+    <option id="product22" dialogue="Хумус"></option>
+    <option id="product23" dialogue="Пшеничная мука"></option>
+    <option id="product24" dialogue="Сахар тростниковый"></option>
+    <option id="product25" dialogue="Сахар (мал.)"></option>
+    <option id="product26" dialogue="Паста «Рожки»"></option>
+    <option id="product27" dialogue="Эко-сахар"></option>
+    <option id="product28" dialogue="Коричневый сахар (мал.)"></option>
+    <option id="product29" dialogue="Подсолнечное масло"></option>
+
+    <option id="product30" dialogue="Картофельное пюре"></option>
+    <option id="product31" dialogue="Мешок картошки"></option>
+    <option id="product32" dialogue="Кофе эспрессо"></option>
+    <option id="product33" dialogue="Рис «Басмати»"></option>
+    <option id="product34" dialogue="Рис длиннозёрный"></option>
+    <option id="product35" dialogue="Кофе молотый"></option>
+    <option id="product36" dialogue="Паста высшего сорта"></option>
+    <option id="product37" dialogue="Шоколадные шарики"></option>
+    <option id="product38" dialogue="Вода премиум-класса"></option>
+    <option id="product39" dialogue="Родниковая вода"></option>
+
+    <option id="product40" dialogue="Сахар в банке"></option>
+    <option id="product41" dialogue="Сахар (бол.)"></option>
+    <option id="product42" dialogue="Коричневый сахар (бол.)"></option>
+    <option id="product43" dialogue="Сыр «Эмменталь»"></option>
+    <option id="product44" dialogue="Сыр «Грюйер»"></option>
+    <option id="product45" dialogue="Обезжиренный сыр"></option>
+    <option id="product46" dialogue="Фруктовый йогурт"></option>
+    <option id="product47" dialogue="Ванильный йогурт"></option>
+    <option id="product48" dialogue="Молоко"></option>
+    <option id="product49" dialogue="Сливочное масло"></option>
+
+    <option id="product50" dialogue="Сыр «Пармиджано»"></option>
+    <option id="product51" dialogue="Сыр «Реджано»"></option>
+    <option id="product52" dialogue="Сыр «Моцарелла»"></option>
+    <option id="product53" dialogue="Обезжиренный йогурт"></option>
+    <option id="product54" dialogue="Пак колы"></option>
+    <option id="product55" dialogue="Пак газировки"></option>
+    <option id="product56" dialogue="Пак газировки без кофеина"></option>
+    <option id="product57" dialogue="Бутылка газировки"></option>
+    <option id="product58" dialogue="Бутылка колы"></option>
+    <option id="product59" dialogue="Бутылка газировки без сахара"></option>
+
+    <option id="product60" dialogue="Газировка премиум-класса"></option>
+    <option id="product61" dialogue="Пицца «Барбекю»"></option>
+    <option id="product62" dialogue="Фондю"></option>
+    <option id="product63" dialogue="Ветчина"></option>
+    <option id="product64" dialogue="Блин с ветчиной и сыром"></option>
+    <option id="product65" dialogue="Картофель-фри"></option>
+    <option id="product66" dialogue="Хрустящий картофельный ассорти"></option>
+    <option id="product67" dialogue="Стручковая фасоль"></option>
+    <option id="product68" dialogue="Пицца «4 сыра»"></option>
+    <option id="product69" dialogue="Пицца «4 сезона»"></option>
+
+    <option id="product70" dialogue="Овощная смесь"></option>
+    <option id="product71" dialogue="Куриная смесь"></option>
+    <option id="product72" dialogue="Болонская лазанья"></option>
+    <option id="product73" dialogue="Овощная лазанья"></option>
+    <option id="product74" dialogue="Зубная паста"></option>
+    <option id="product75" dialogue="Туалетная бумага"></option>
+    <option id="product76" dialogue="Мыло для рук"></option>
+    <option id="product77" dialogue="Шампунь с авокадо"></option>
+    <option id="product78" dialogue="Яичный шампунь"></option>
+    <option id="product79" dialogue="Гель для душа"></option>
+
+    <option id="product80" dialogue="Туалетная бумага"></option>
+    <option id="product81" dialogue="Мыло «Манго»"></option>
+    <option id="product82" dialogue="Экстрамягкий шампунь"></option>
+    <option id="product83" dialogue="Шампунь с мёдом «Жожоба»"></option>
+    <option id="product84" dialogue="Шампунь с аргановым маслом"></option>
+    <option id="product85" dialogue="Бумажное полотенце"></option>
+    <option id="product86" dialogue="Двухслойная туалетная бумага"></option>
+    <option id="product87" dialogue="Мыло «Лимон»"></option>
+    <option id="product88" dialogue="Гель для душа премиум-класса"></option>
+    <option id="product89" dialogue="Детский шампунь"></option>
+
+    <option id="product90" dialogue="Моющее средство"></option>
+    <option id="product91" dialogue="Пятновыводитель"></option>
+    <option id="product92" dialogue="Очиститель для стекол"></option>
+    <option id="product93" dialogue="Капсулы для стирки"></option>
+    <option id="product94" dialogue="Таблетки для посудомойки"></option>
+    <option id="product95" dialogue="Отбеливатель"></option>
+    <option id="product96" dialogue="Отбеливатель - Большая бутылка"></option>
+    <option id="product97" dialogue="Кондиционер для белья"></option>
+    <option id="product98" dialogue="Премиум-моющее средство"></option>
+    <option id="product99" dialogue="Средство от насекомых"></option>
+
+    <option id="product100" dialogue="Влажные салфетки"></option>
+    <option id="product101" dialogue="Премиум-капсулы"></option>
+    <option id="product102" dialogue="Премиум-отбеливатель"></option>
+    <option id="product103" dialogue="Аммиак"></option>
+    <option id="product104" dialogue="Банка с печеньем"></option>
+    <option id="product105" dialogue="Мороженое в рожке"></option>
+    <option id="product106" dialogue="Шоколадная паста"></option>
+    <option id="product107" dialogue="Какао"></option>
+    <option id="product108" dialogue="Чипсы"></option>
+    <option id="product109" dialogue="Суфле «Нежное»"></option>
+
+    <option id="product110" dialogue="Персиковый джем"></option>
+    <option id="product111" dialogue="Мороженое «Пломбир»"></option>
+    <option id="product112" dialogue="Шоколад в коробке"></option>
+    <option id="product113" dialogue="Шоколадное печенье"></option>
+    <option id="product114" dialogue="Ванильное печенье"></option>
+    <option id="product115" dialogue="Мадлен"></option>
+    <option id="product116" dialogue="Клубничный джем"></option>
+    <option id="product117" dialogue="Арахисовое масло"></option>
+    <option id="product118" dialogue="Чипос"></option>
+    <option id="product119" dialogue="Зефир"></option>
+
+    <option id="product120" dialogue="Лимонный бисквит"></option>
+    <option id="product121" dialogue="Ореховое печенье"></option>
+    <option id="product122" dialogue="Мороженое премиум-класса"></option>
+    <option id="product123" dialogue="Мёд"></option>
+    <option id="product124" dialogue="Премиум-шоколад в коробке"></option>
+    <option id="product125" dialogue="Фодитос"></option>
+    <option id="product126" dialogue="Торт премиум-класса"></option>
+    <option id="product127" dialogue="Фарш говяжий"></option>
+    <option id="product128" dialogue="Нарезка из говядины"></option>
+    <option id="product129" dialogue="Нарезка из телятины"></option>
+
+    <option id="product130" dialogue="Крылья куриные"></option>
+    <option id="product131" dialogue="Тушка курицы"></option>
+    <option id="product132" dialogue="Пармская ветчина"></option>
+    <option id="product133" dialogue="Нарезка из ветчины"></option>
+    <option id="product134" dialogue="Консервированный горошек (бол.)"></option>
+    <option id="product135" dialogue="Консервированный тунец"></option>
+    <option id="product136" dialogue="Консервированная фасоль"></option>
+    <option id="product137" dialogue="Корм для котят"></option>
+    <option id="product138" dialogue="Корм для кошек"></option>
+    <option id="product139" dialogue="Корм для собак"></option>
+
+    <option id="product140" dialogue="Чай зелёный"></option>
+    <option id="product141" dialogue="Чай с лимоном"></option>
+    <option id="product142" dialogue="Чай чёрный"></option>
+    <option id="product143" dialogue="Перечная мята"></option>
+    <option id="product144" dialogue="Мята"></option>
+    <option id="product145" dialogue="Валериана"></option>
+    <option id="product146" dialogue="Большой сет роллов"></option>
+    <option id="product147" dialogue="Маленький сет роллов"></option>
+    <option id="product148" dialogue="Копченый лосось"></option>
+    <option id="product149" dialogue="Крабовые палочки"></option>
+
+    <option id="product150" dialogue="Окружающий мир"></option>
+    <option id="product151" dialogue="Детские фокусы"></option>
+    <option id="product152" dialogue="Азбука"></option>
+    <option id="product153" dialogue="Мать и дитя"></option>
+    <option id="product154" dialogue="Учим цвета"></option>
+    <option id="product155" dialogue="Мяв"></option>
+    <option id="product156" dialogue="Жили-были"></option>
+    <option id="product157" dialogue="Сказка о крокодиле"></option>
+    <option id="product158" dialogue="Большое приключение"></option>
+    <option id="product159" dialogue="Маленькие куклы"></option>
+
+    <option id="product160" dialogue="Винтаж"></option>
+    <option id="product161" dialogue="Я не поделюсь"></option>
+    <option id="product162" dialogue="Пак тёмного пива"></option>
+    <option id="product163" dialogue="Пак нефильтрованного пива"></option>
+    <option id="product164" dialogue="Пак светлого пива"></option>
+    <option id="product165" dialogue="Кега тёмного пива"></option>
+    <option id="product166" dialogue="Кега светлого пива"></option>
+    <option id="product167" dialogue="Водка"></option>
+    <option id="product168" dialogue="Красное вино"></option>
+    <option id="product169" dialogue="Розовое вино"></option>
+
+    <option id="product170" dialogue="Белое вино"></option>
+    <option id="product171" dialogue="Кега нефильтрованного пива"></option>
+    <option id="product172" dialogue="Водка премиум-класса"></option>
+    <option id="product173" dialogue="Японский виски"></option>
+    <option id="product174" dialogue="Купажированный виски"></option>
+    <option id="product175" dialogue="Теннессийский виски"></option>
+    <option id="product176" dialogue="Перекись водорода"></option>
+    <option id="product177" dialogue="Хлоргексидин"></option>
+    <option id="product178" dialogue="Ибупрофен"></option>
+    <option id="product179" dialogue="Парацетамол"></option>
+    
+    <option id="product180" dialogue="Пластыри"></option>
+    <option id="product181" dialogue="Слабительное"></option>
+    <option id="product182" dialogue="Супрастин"></option>
+    <option id="product183" dialogue="Добавка цинка"></option>
+    <option id="product184" dialogue="Комплекс антиоксидантов"></option>
+    <option id="product185" dialogue="Рыбий жир"></option>
+    <option id="product186" dialogue="Таблетки с водорослями"></option>
+    <option id="product187" dialogue="Комплекс витаминов"></option>
+    <option id="product188" dialogue="Мелатонин"></option>
+    <option id="product189" dialogue="Солнцезащитный крем"></option>
+
+    <option id="product190" dialogue="Крем от растяжек"></option>
+    <option id="product191" dialogue="Яблоки красные"></option>
+    <option id="product192" dialogue="Яблоки зелёные"></option>
+    <option id="product193" dialogue="Клементины"></option>
+    <option id="product194" dialogue="Апельсины"></option>
+    <option id="product195" dialogue="Груши"></option>
+    <option id="product196" dialogue="Лимоны"></option>
+    <option id="product197" dialogue="Манго"></option>
+    <option id="product198" dialogue="Авокадо"></option>
+    <option id="product199" dialogue="Киви"></option>
+
+    <option id="product200" dialogue="Папайя"></option>
+    <option id="product201" dialogue="Клубника"></option>
+    <option id="product202" dialogue="Вишня"></option>
+    <option id="product203" dialogue="Артишок"></option>
+    <option id="product204" dialogue="Цуккини"></option>
+    <option id="product205" dialogue="Морковь"></option>
+    <option id="product206" dialogue="Помидоры"></option>
+    <option id="product207" dialogue="Картофель"></option>
+    <option id="product208" dialogue="Лук"></option>
+    <option id="product209" dialogue="Бананы"></option>
+
+    <option id="product210" dialogue="Дыня"></option>
+    <option id="product211" dialogue="Ананас"></option>
+    <option id="product212" dialogue="Тыква"></option>
+    <option id="product213" dialogue="Арбуз"></option>
+    <option id="product214" dialogue="Детское пюре с овощами"></option>
+    <option id="product215" dialogue="Детское пюре с рыбой"></option>
+    <option id="product216" dialogue="Детское пюре с фруктами"></option>
+    <option id="product217" dialogue="Детское пюре с мясом"></option>
+    <option id="product218" dialogue="Детская смесь"></option>
+    <option id="product219" dialogue="Детское сухое молоко"></option>
+
+    <option id="product220" dialogue="Эко-подгузники"></option>
+    <option id="product221" dialogue="Детские подгузники"></option>
+    <option id="product222" dialogue="Подгузники для малышей"></option>
+    <option id="product223" dialogue="Премиум-подгузники"></option>
+    <option id="product224" dialogue="Влажные салфетки Aloe Baby "></option>
+    <option id="product225" dialogue="Детские салфетки"></option>
+    <option id="product226" dialogue="Детская присыпка"></option>
+    <option id="product227" dialogue="Газировка «Апельсин»"></option>
+    <option id="product228" dialogue="Газировка «Ананас»"></option>
+    <option id="product229" dialogue="Газировка «Мультифрукт»"></option>
+
+    <option id="product230" dialogue="Напиток из зеленого чая"></option>
+    <option id="product231" dialogue="Напиток из красного чая"></option>
+    <option id="product232" dialogue="Напиток из лимонного чая"></option>
+    <option id="product233" dialogue="Холодный кофейный напиток"></option>
+    <option id="product234" dialogue="Энергетик «Черника»"></option>
+    <option id="product235" dialogue="Энергетик «Гуава»"></option>
+    <option id="product236" dialogue="Энергетик «Лайм»"></option>
+    <option id="product237" dialogue="Энергетик «Фруктовый пунш»"></option>
+    <option id="product238" dialogue="Энергетик «Манго»"></option>
+    <option id="product239" dialogue="Энергетик «Кола»"></option>
+
+    <option id="product240" dialogue="Энергетик без сахара"></option>
+    <option id="product241" dialogue="Мороженое «Клубника»"></option>
+    <option id="product242" dialogue="Мороженое «Лимон»"></option>
+    <option id="product243" dialogue="Мороженое «Кофе»"></option>
+    <option id="product244" dialogue="Мороженое «Страчателла»"></option>
+    <option id="product245" dialogue="Мороженое-безе «Клубника»"></option>
+    <option id="product246" dialogue="Мороженое «Карамель»"></option>
+    <option id="product247" dialogue="Премиум-мороженое «Клубника»"></option>
+    <option id="product248" dialogue="Мороженое-чизкейк «Клубника»"></option>
+    <option id="product249" dialogue="Премиум-мороженое «Карамель»"></option>
+
+    <option id="product250" dialogue="Мороженое «Розовая клубника»"></option>
+    <option id="product251" dialogue="Мороженое с добавкой алкоголя"></option>
+    <option id="product252" dialogue="Нут"></option>
+    <option id="product253" dialogue="Фрикадельки"></option>
+    <option id="product254" dialogue="Чечевица"></option>
+    <option id="product255" dialogue="Томатный суп"></option>
+    <option id="product256" dialogue="Консервированный Кукуруза"></option>
+    <option id="product257" dialogue="Консервированный горошек (мал.)"></option>
+    <option id="product258" dialogue="Семена клубники"></option>
+    <option id="product259" dialogue="Семена малины"></option>
+
+    <option id="product260" dialogue="Семена черники"></option>
+    <option id="product261" dialogue="Семена ананаса"></option>
+    <option id="product262" dialogue="Семена лимона Мейера"></option>
+    <option id="product263" dialogue="Семена томата"></option>
+    <option id="product264" dialogue="Семена перца"></option>
+    <option id="product265" dialogue="Семена огурца"></option>
+    <option id="product266" dialogue="Семена редиса"></option>
+    <option id="product267" dialogue="Семена моркови"></option>
+    <option id="product268" dialogue="Семена газона"></option>
+    <option id="product269" dialogue="Семена мака"></option>
+
+    <option id="product270" dialogue="Семена тюльпана"></option>
+    <option id="product271" dialogue="Семена подсолнечника"></option>
+    <option id="product272" dialogue="Семена петунии"></option>
+    <option id="product273" dialogue="Ручные грабли (A)"></option>
+    <option id="product274" dialogue="Ручные грабли (B)"></option>
+    <option id="product275" dialogue="Ручная лопата"></option>
+    <option id="product276" dialogue="Ручной культиватор"></option>
+    <option id="product277" dialogue="Почва для рассады"></option>
+    <option id="product278" dialogue="Удобрение"></option>
+    <option id="product279" dialogue="Подставка для цветочного горшка"></option>
+
+    <option id="product280" dialogue="Горшок для рассады"></option>
+    <option id="product281" dialogue="Батареи AA"></option>
+    <option id="product282" dialogue="Батареи AAA"></option>
+    <option id="product283" dialogue="Батареи C"></option>
+    <option id="product284" dialogue="Батареи 9 В"></option>
+    <option id="product285" dialogue="Универсальный пульт для телевизора"></option>
+    <option id="product286" dialogue="Универсальное зарядное устройство для телефона"></option>
+    <option id="product287" dialogue="Базовый предоплаченный телефон"></option>
+    <option id="product288" dialogue="Базовая мышь"></option>
+    <option id="product289" dialogue="Wi-Fi-адаптер"></option>
+    <option id="product290" dialogue="Базовые наушники"></option>
+
+    <option id="product291" dialogue="Базовая клавиатура"></option>
+    <option id="product292" dialogue="Базовый геймпад"></option>
+    <option id="product293" dialogue="USB-флеш-накопитель (128 ГБ)"></option>
+    <option id="product294" dialogue="USB-флеш-накопитель (256 ГБ)"></option>
+    <option id="product295" dialogue="USB-флеш-накопитель (512 ГБ)"></option>
+    <option id="product296" dialogue="USB-флеш-накопитель (1 ТБ)"></option>
+    <option id="product297" dialogue="Базовый динамик"></option>
+    <option id="product298" dialogue="Базовые наушники"></option>
+    <option id="product299" dialogue="Базовая игровая консоль"></option>
+
+
+    <option id="paintmat0" dialogue="Хранить плитку A"></option>
+    <option id="paintmat1" dialogue="Хранить плитку B"></option>
+    <option id="paintmat2" dialogue="Хранить кирпичи"></option>
+    <option id="paintmat3" dialogue="Хранить штукатурку"></option>
+    <option id="paintmat4" dialogue="Хранить бетон"></option>
+    <option id="paintmat5" dialogue="Лакированное дерево"></option>
+    <option id="paintmat6" dialogue="Деревянная панель"></option>
+    <option id="paintmat7" dialogue="Строганая древесина"></option>
+    <option id="paintmat8" dialogue="Нестроганая древесина (сучковая)"></option>
+    <option id="paintmat9" dialogue="Нестроганая древесина"></option>
+
+    <option id="paintmat10" dialogue="Окрашенное дерево"></option>
+    <option id="paintmat11" dialogue="Базовая плитка A"></option>
+    <option id="paintmat12" dialogue="Базовая плитка B"></option>
+    <option id="paintmat13" dialogue="Базовая плитка C"></option>
+    <option id="paintmat14" dialogue="Базовая плитка D"></option>
+    <option id="paintmat15" dialogue="Гранитная плитка A"></option>
+    <option id="paintmat16" dialogue="Гранитная плитка B"></option>
+    <option id="paintmat17" dialogue="Гранитная плитка C"></option>
+    <option id="paintmat18" dialogue="Гранитная плитка D"></option>
+    <option id="paintmat19" dialogue="Мраморная плитка A"></option>
+
+    <option id="paintmat20" dialogue="Мраморная плитка B"></option>
+    <option id="paintmat21" dialogue="Мраморная плитка C"></option>
+    <option id="paintmat22" dialogue="Необработанный мрамор"></option>
+    <option id="paintmat23" dialogue="Окрашенный металл"></option>
+    <option id="paintmat24" dialogue="Базовый кирпич"></option>
+    <option id="paintmat25" dialogue="Шаблон кирпича A"></option>
+    <option id="paintmat26" dialogue="Шаблон кирпича B"></option>
+    <option id="paintmat27" dialogue="Шаблон кирпича C"></option>
+    <option id="paintmat28" dialogue="Базовый алюминий"></option>
+    <option id="paintmat29" dialogue="Шаблон алюминия A"></option>
+
+    <option id="paintmat30" dialogue="Шаблон Алюминий B"></option>
+    <option id="paintmat31" dialogue="Литой алюминий"></option>
+    <option id="paintmat32" dialogue="Матовый алюминий"></option>
+    <option id="paintmat33" dialogue="Шумный алюминий"></option>
+    <option id="paintmat34" dialogue="Окисленный алюминий"></option>
+    <option id="paintmat35" dialogue="Шлифованная медь"></option>
+    <option id="paintmat36" dialogue="Золотые панели"></option>
+    <option id="paintmat37" dialogue="Медный узор A"></option>
+    <option id="paintmat38" dialogue="Медный узор B"></option>
+    <option id="paintmat39" dialogue="Медный узор C"></option>
+
+    <option id="paintmat40" dialogue="Алюминиевый узор A"></option>
+    <option id="paintmat41" dialogue="Алюминиевый узор B"></option>
+    <option id="paintmat42" dialogue="Алюминиевый узор C"></option>
+    <option id="paintmat43" dialogue="Алюминиевый узор D"></option>
+    <option id="paintmat44" dialogue="Алюминиевый узор E"></option>
+    <option id="paintmat45" dialogue="Алюминиевый узор F"></option>
+    <option id="paintmat46" dialogue="Алюминиевый узор G"></option>
+    <option id="paintmat47" dialogue="Алюминиевый узор H"></option>
+    <option id="paintmat48" dialogue="Алюминиевый узор I"></option>
+    <option id="paintmat49" dialogue="Алюминиевый узор J"></option>
+
+    <option id="paintmat50" dialogue="Латунный узор A"></option>
+    <option id="paintmat51" dialogue="Узор латуни B"></option>
+    <option id="paintmat52" dialogue="Узор латуни C"></option>
+    <option id="paintmat53" dialogue="Узор латуни D"></option>
+    <option id="paintmat54" dialogue="Узор латуни E"></option>
+    <option id="paintmat55" dialogue="Узор латуни F"></option>
+    <option id="paintmat56" dialogue="Узор латуни G"></option>
+    <option id="paintmat57" dialogue="Медные панели"></option>
+    <option id="paintmat58" dialogue="Разн. Узор A"></option>
+    <option id="paintmat59" dialogue="Разн. Узор B"></option>
+
+    <option id="paintmat60" dialogue="Разн. Pattern C"></option>
+    <option id="paintmat61" dialogue="Разн. Pattern D"></option>
+    <option id="paintmat62" dialogue="Разн. Pattern E"></option>
+    <option id="paintmat63" dialogue="Разн. Pattern F"></option>
+    <option id="paintmat64" dialogue="Разн. Pattern G"></option>
+    <option id="paintmat65" dialogue="Разн. Pattern H"></option>
+    <option id="paintmat66" dialogue="Разн. Pattern I"></option>
+    <option id="paintmat67" dialogue="Разн. Pattern J"></option>
+    <option id="paintmat68" dialogue="Разн. Pattern K"></option>
+    <option id="paintmat69" dialogue="Разн. Pattern Pattern L"></option>
+
+    <option id="paintmat70" dialogue="Органический: Трава"></option>
+    <option id="paintmat71" dialogue="Органический: Листья"></option>
+    <option id="paintmat72" dialogue="Органический: Камень A"></option>
+    <option id="paintmat73" dialogue="Органический: Камень B"></option>
+
+    <option id="paintmat74" dialogue="Хэллоуин: Узор A"></option>
+    <option id="paintmat75" dialogue="Хэллоуин: Узор B"></option>
+    <option id="paintmat76" dialogue="Хэллоуин: Узор C"></option>
+    <option id="paintmat77" dialogue="Хэллоуин: Узор D"></option>
+    <option id="paintmat78" dialogue="Хэллоуин: Узор E"></option>
+    <option id="paintmat79" dialogue="Хэллоуин: Узор F"></option>
+
+    <option id="paintmat80" dialogue="Хэллоуин: Узор G"></option>
+    <option id="paintmat81" dialogue="Хэллоуин: Узор H"></option>
+    <option id="paintmat82" dialogue="Хэллоуин: Узор I"></option>
+    <option id="paintmat83" dialogue="Хэллоуин: Узор J"></option>
+    <option id="paintmat84" dialogue="Хэллоуин: Узор K"></option>
+    <option id="paintmat85" dialogue="Хэллоуин: Узор L"></option>
+    <option id="paintmat86" dialogue="Хэллоуин: Узор M"></option>
+    <option id="paintmat87" dialogue="Хэллоуин: Тыквы"></option>
+    <option id="paintmat88" dialogue="Хэллоуин: Скелеты"></option>
+    <option id="paintmat89" dialogue="Хэллоуин: Паутина"></option>
+
+    <option id="paintmat90" dialogue="Рождество A"></option>
+    <option id="paintmat91" dialogue="Рождество B"></option>
+    <option id="paintmat92" dialogue="Рождество C"></option>
+    <option id="paintmat93" dialogue="Рождество D"></option>
+    <option id="paintmat94" dialogue="Рождество E"></option>
+    <option id="paintmat95" dialogue="Рождество F"></option>
+    <option id="paintmat96" dialogue="Рождество G"></option>
+    <option id="paintmat97" dialogue="Рождество H"></option>
+    <option id="paintmat98" dialogue="Рождество I"></option>
+    <option id="paintmat99" dialogue="Рождество J"></option>
+    <option id="paintmat100" dialogue="Снег"></option>
+
+    <option id="paintmat101" dialogue="Лед A"></option>
+    <option id="paintmat102" dialogue="Лед B"></option>
+    <option id="paintmat103" dialogue="Лед C"></option>
+    <option id="paintmat104" dialogue="Лед D"></option>
+    <option id="paintmat105" dialogue="Продукты: Базовый A"></option>
+    <option id="paintmat106" dialogue="Продукты: Базовый B"></option>
+    <option id="paintmat107" dialogue="Продукты: Ежедневник A"></option>
+    <option id="paintmat108" dialogue="Продукты: Ежедневник B"></option>
+    <option id="paintmat109" dialogue="Продукты: Газированные напитки A"></option>
+
+    <option id="paintmat110" dialogue="Продукты: Газированные напитки B"></option>
+    <option id="paintmat111" dialogue="Продукты: Замороженные"></option>
+    <option id="paintmat112" dialogue="Продукты: Гигиена A"></option>
+    <option id="paintmat113" dialogue="Продукты: Гигиена B"></option>
+    <option id="paintmat114" dialogue="Продукты: Очистка"></option>
+    <option id="paintmat115" dialogue="Продукты: Сладости A"></option>
+    <option id="paintmat116" dialogue="Продукты: Сладости B"></option>
+    <option id="paintmat117" dialogue="Продукты: Мясо"></option>
+    <option id="paintmat118" dialogue="Продукты: Консервы"></option>
+    <option id="paintmat119" dialogue="Продукты: Настои"></option>
+
+    <option id="paintmat120" dialogue="Продукты: Рыба A"></option>
+    <option id="paintmat121" dialogue="Продукты: Рыба B"></option>
+    <option id="paintmat122" dialogue="Продукты: Книги A"></option>
+    <option id="paintmat123" dialogue="Продукты: Книги B"></option>
+    <option id="paintmat124" dialogue="Продукты: Алкоголь A"></option>
+    <option id="paintmat125" dialogue="Продукты: Алкоголь B"></option>
+    <option id="paintmat126" dialogue="Продукты: Аптека A"></option>
+    <option id="paintmat127" dialogue="Продукты: Аптека B"></option>
+    <option id="paintmat128" dialogue="Продукты: Продукция A"></option>
+    <option id="paintmat129" dialogue="Продукты: Продукция B"></option>
+
+    <option id="paintmat130" dialogue="Продукты: Продукция C"></option>
+    <option id="paintmat131" dialogue="Продукты: Продукция D"></option>
+    <option id="paintmat132" dialogue="Продукты: Уход за детьми A"></option>
+    <option id="paintmat133" dialogue="Продукты: Уход за детьми B"></option>
+    <option id="paintmat134" dialogue="Экспериментальное ТВ"></option>
+    <option id="paintmat135" dialogue="Продукты: Садоводство A"></option>
+    <option id="paintmat136" dialogue="Продукты: Садоводство B"></option>
+    <option id="paintmat137" dialogue="Продукты: Электроника A"></option>
+    <option id="paintmat138" dialogue="Продукты: Электроника B"></option>
+    <option id="paintmat139" dialogue="Бамбук"></option>
+
+    <option id="paintmat140" dialogue="Ковер A"></option>
+    <option id="paintmat141" dialogue="Ковер B"></option>
+    <option id="paintmat142" dialogue="Ковер C"></option>
+    <option id="paintmat143" dialogue="Ковер D"></option>
+    <option id="paintmat144" dialogue="Ковер E"></option>
+    <option id="paintmat145" dialogue="Ковер F"></option>
+    <option id="paintmat146" dialogue="Ковер G"></option>
+    <option id="paintmat147" dialogue="Ковер H"></option>
+    <option id="paintmat148" dialogue="Ковер I"></option>
+    <option id="paintmat149" dialogue="Бетон A"></option>
+
+    <option id="paintmat150" dialogue="Бетон B"></option>
+    <option id="paintmat151" dialogue="Бетон C"></option>
+    <option id="paintmat152" dialogue="Бетон D"></option>
+    <option id="paintmat153" dialogue="Бетон E"></option>
+    <option id="paintmat154" dialogue="Бетон F"></option>
+    <option id="paintmat155" dialogue="Бетон G"></option>
+    <option id="paintmat156" dialogue="Алмазная пластина A"></option>
+    <option id="paintmat157" dialogue="Алмазная пластина B"></option>
+    <option id="paintmat158" dialogue="Металлическая пластина A"></option>
+    <option id="paintmat159" dialogue="Металлическая пластина B"></option>
+
+    <option id="paintmat160" dialogue="Металлическая пластина C"></option>
+    <option id="paintmat161" dialogue="Скала A"></option>
+    <option id="paintmat162" dialogue="Скала B"></option>
+    <option id="paintmat163" dialogue="Скала C"></option>
+    <option id="paintmat164" dialogue="Скала D"></option>
+    <option id="paintmat165" dialogue="Деревянный узор A"></option>
+    <option id="paintmat166" dialogue="Деревянный узор B"></option>
+    <option id="paintmat167" dialogue="Деревянный узор C"></option>
+    <option id="paintmat168" dialogue="Деревянный узор D"></option>
+    <option id="paintmat169" dialogue="Деревянный узор E"></option>
+
+    <option id="paintmat170" dialogue="Деревянный узор F"></option>
+    <option id="paintmat171" dialogue="Деревянный узор G"></option>
+    
+    <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
+    <option id="skinshats" dialogue="Скины и шляпы"></option>
+    <option id="character" dialogue="Персонаж"></option>
+    <option id="hat" dialogue="Шляпа"></option>
+    <option id="coolpeople" dialogue="Вход только для VIP"></option>
+
+    <option id="mprice" dialogue="Рыночная цена"></option>
+    <option id="yprice" dialogue="Ваша цена"></option>
+
+    <option id="mgiven" dialogue="Внесённая сумма"></option>
+    <option id="mreturn" dialogue="Требуемая сдача"></option>
+    <option id="camount" dialogue="Текущая сдача"></option>
+    <option id="addmoney" dialogue="[LMB] Добавить деньги"></option>
+    <option id="removemoney" dialogue="[RMB] Удалить money"></option>
+
+    <option id="coopplayerfunds" dialogue="Дополнительные средства добавлены для coop player"></option>
+
+    <option id="alreadyopen" dialogue="Магазин уже открыт"></option>
+    <option id="alreadyclose" dialogue="Магазин уже закрыт"></option>
+
+    <option id="newoptions1" dialogue="Поле зрения"></option>
+    <option id="newoptions2" dialogue="Громкость ТВ"></option>
+
+    <option id="poseskey" dialogue="Назначение клавиш для танцев"></option>
+
+    <option id="lic12" dialogue="В этом терминале вы сможете подключить Youtube и Twitch к своим телевизорам после одобрения лицензии."></option>
+
+    <option id="cosmetics1" dialogue="DLC с косметикой одобрено!"></option>
+    <option id="cosmetics2" dialogue="9 новых персонажей, более 100 шляп, 35 танцев и поз, а также веб-браузер, чтобы расслабиться, пока ваш босс не видит.
+
+Раскрасьте свой магазин с помощью нового планшета и наслаждайтесь эксклюзивными украшениями, которые будут добавляться со временем. Первое обновление синхронизации с YouTube уже доступно!"></option>
+
+    <option id="continue" dialogue="Продолжить"></option>
+    <option id="backups" dialogue="Резервные копии"></option>
+    <option id="nobackups" dialogue="Нет резервных копий"></option> 
+    <option id="backupswarning" dialogue="Предупреждение: загрузка резервной копии приведет к перезаписи файла текущего дня."></option>
+    <option id="deleteoff" dialogue="Режим удаления: выкл."></option>
+    <option id="deleteon" dialogue="Режим удаления: вкл."></option>
+
+    <option id="kick" dialogue="Выгнать"></option>
+    <option id="punish" dialogue="Наказать"></option>
+    <option id="permi" dialogue="Разрешения"></option>
+
+    <option id="nplayer" dialogue="Подключен новый игрок: "></option>
+
+    <option id="disclaimer1" dialogue="Если у вас возникли проблемы с присоединением, не забудьте обновиться до последнего патча!"></option>
+
+    <option id="tvcontrol" dialogue="Управление телевизорами"></option>
+    <option id="tvhook0" dialogue="Выкл"></option>
+    <option id="tvhook1" dialogue="Видео-заполнитель"></option>
+    <option id="tvhook2" dialogue="URL Видео"></option>
+    <option id="tvhook3" dialogue="Браузер"></option>
+    <option id="tvhook4" dialogue="Видео Twitch/YT"></option>
+    <option id="tvdisclaimer" dialogue="Визуализация потоковой передачи все еще находится в ожидании.
+Спасибо за ваше терпение."></option>
+
+    <option id="lobby0" dialogue="Статус лобби: "></option>
+    <option id="lobby1" dialogue="открытое"></option>
+    <option id="lobby2" dialogue="закрытое "></option>
+    <option id="lobby3" dialogue="Открыть лобби"></option>
+    <option id="lobby4" dialogue="Закрыть лобби"></option>
+    <option id="lobby5" dialogue="В закрытое лобби не смогут присоединиться игроки, не имеющие для этого код (который можно скопировать ниже). 
+Данная опция полезна для тех, кто желает поиграть с определенным кругом людей. Вы сможете заново открыть лобби в любой момент."></option>
+
+    <option id="newoptions3" dialogue="Разрешить видео"></option>
+
+    <option id="checkoutlane" dialogue="Закрытая касса. Пожалуйста
+обратитесь к соседней кассеt"></option>
+    <option id="checkoutlane1" dialogue="Закрыть кассу"></option>
+
+    <option id="paintablestablet0" dialogue="Выберите материал, затем цвет, затем примените выбор"></option>
+    <option id="paintablestablet1" dialogue="Вернуться к выбору материала"></option>
+    <option id="paintablestablet2" dialogue="Предыдущий/следующий материал или цвет"></option>
+    <option id="paintablestablet3" dialogue="Реализуется настройка магазина.
+Эта стена позволяет предварительно просмотреть планшет для рисования без денежных затрат.
+В некоторых материалах можно выбрать цветовые вариации."></option>
+
+    <option id="newoptions4" dialogue="Высокая задержка"></option>
+    <option id="newoptions5" dialogue="Общие настройки"></option>
+    <option id="titledisclaimer1" dialogue="Пропадают продукты при присоединении к игре и пополнении запасов? Активируйте новый режим высокой задержки в параметрах"></option>
+
+    <option id="managerboardnew1" dialogue="Купить пустую коробку"></option>
+    <option id="employeeboardnew1" dialogue="Остановить переработку коробок"></option>
+
+    <option id="tabletdisclaimer1" dialogue="Этот планшет устарел и объединен в основном конструкторе.
+Используйте X и Z по умолчанию для доступа к новым вкладкам."></option>
+
+    <option id="pcat" dialogue="Вы погладили кошку. Возвращайтесь позже"></option>
+
+    <option id="snapping0" dialogue="Смена режима привязки"></option>
+    <option id="snapping1" dialogue="Режим привязки"></option>
+    <option id="snapping2" dialogue="Нет"></option>
+    <option id="snapping3" dialogue="Сетка: Центр"></option>
+    <option id="snapping4" dialogue="Сетка: Задняя сторона"></option>
+    <option id="snapping5" dialogue="Мебель"></option>
+
+    <option id="checkoutwarning" dialogue="Вашему магазину как минимум нужна касса с персоналом"></option>
+
+    <option id="newoptions6" dialogue="Бег: всегда"></option>
+    <option id="newoptions7" dialogue="Браузер"></option>
+    <option id="newoptions7a" dialogue="Нет"></option>
+    <option id="newoptions7b" dialogue="Обычный"></option>
+    <option id="newoptions7c" dialogue="Поддерживается Linux"></option>
+    <option id="newoptions8" dialogue="Громкость кассы"></option>
+    <option id="newoptions9" dialogue="Ограничить курсор"></option>
+    <option id="newoptions10" dialogue="Размер перекрестия"></option>
+    <option id="newoptions11" dialogue="Цвет перекрестия"></option>
+    <option id="newoptions12" dialogue="Ночной эффект"></option>
+
+    <option id="surveillance1" dialogue="Клиент уже проверен"></option>
+    <option id="surveillance2" dialogue="Нажмите на клиента несколько раз, чтобы проверить, не вор ли он
+Чем ближе к камере, тем эффективнее нажатие."></option>
+    <option id="surveillance2a" dialogue="Удерживайте кнопку мыши и наведите курсор на клиента, чтобы проверить, не вор ли он
+Чем ближе к камере, тем эффективнее."></option>
+
+    <option id="rdown" dialogue="Округлить в меньшую сторону"></option>
+
+    <option id="tvautosync0" dialogue="Автосинхронизация"></option>
+    <option id="tvautosync1" dialogue="Разрешить всем игрокам изменять URL"></option>
+    <option id="tvautosync2" dialogue="Видео YouTube"></option>
+
+    <option id="productsorting0" dialogue="Не сортировать"></option>
+    <option id="productsorting1" dialogue="По размеру"></option>
+    <option id="productsorting2" dialogue="По общему количеству (возр.)"></option>
+    <option id="productsorting3" dialogue="По количеству на складе (возр.)"></option>
+    <option id="productsorting4" dialogue="По самому низкому запасу на полке"></option>
+
+    <option id="checkoutredbutton" dialogue="Только менеджер может нажать эту кнопку"></option>
+
+    <option id="invo" dialogue="Счета-фактуры"></option>
+    <option id="invodebt" dialogue="Счета-фактуры/Долг"></option>
+    <option id="stats" dialogue="Статистика"></option>
+
+    <option id="removeallperm" dialogue="Сбрасывать разрешения у игрока при подключении"></option>
+    <option id="permiss0" dialogue="Полный доступ"></option>
+    <option id="permiss1" dialogue="Менеджер"></option>
+    <option id="permiss2" dialogue="Кассир"></option>
+    <option id="permiss3" dialogue="Выкладка"></option>
+    <option id="permiss4" dialogue="Охрана"></option>
+    <option id="permiss5" dialogue="Чат"></option>
+
+    <option id="newemplo" dialogue="Сотрудники"></option>
+    <option id="emplohire" dialogue="Нанять"></option>
+    <option id="emplodismiss" dialogue="Уволить"></option>
+    <option id="emploassignment" dialogue="Назначение"></option>
+    <option id="emplostats" dialogue="Статистика сотрудника"></option>
+    <option id="emplorenew" dialogue="Сотрудники обновляются каждый день!"></option>
+    <option id="emplomaxemplo" dialogue="Макс. сотрудников"></option>
+    <option id="emplohired" dialogue="Нанятые сотрудники"></option>
+    <option id="emploentername" dialogue="Введите имя сотрудника..."></option>
+    <option id="emplocashexp" dialogue="Опыт кассира"></option>
+    <option id="emplorestexp" dialogue="Опыт работы с Restocker"></option>
+    <option id="emplostoexp" dialogue="Опыт работы с хранилищем"></option>
+    <option id="emplosecexp" dialogue="Опыт работы с безопасностью"></option>
+    <option id="canthiremore" dialogue="Невозможно нанять больше сотрудников"></option>
+    <option id="hiredemployee" dialogue="Нанят сотрудник!"></option>
+    <option id="dismissedemployee" dialogue="Уволен сотрудник!"></option>
+    <option id="emploalreadyhired" dialogue="Нанят"></option>
+    <option id="emptyposi" dialogue="Пустая должность"></option>
+    <option id="emploassignedtask" dialogue="Назначенная задача"></option>
+    <option id="emplonewpriority" dialogue="Хранилище"></option>
+    <option id="emploNoTask" dialogue="Нет задачи"></option>
+    <option id="emplostaffhappi" dialogue="Счастье в учительской"></option>
+    <option id="emploreroll" dialogue="Повторить"></option>
+
+    <option id="dlcdiscounted" dialogue="Скидка"></option>
+    <option id="emploselect" dialogue="Выбрать"></option>
+    <option id="emplochangeall" dialogue="Изменить все приоритеты"></option>
+    <option id="emplosavelay" dialogue="Сохранить приоритеты"></option>
+    <option id="emploloadlay" dialogue="Загрузить приоритеты"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Управление сотрудником перемещено на доску менеджера"></option>
+    <option id="startkn" dialogue="Звездный токен получен!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Поместите украшение в виде рождественского подарка и дождитесь начала мероприятия!
+Держите метлу под рукой"></option>
+
+    <option id="panykey" dialogue="Нажмите любую клавишу для продолжения"></option>
+    <option id="gtunlckable" dialogue="Получил новый разблокируемый предмет!"></option>
+    <option id="nostartkn" dialogue="Нет доступных звездных токенов"></option>
+    <option id="managsavebckup" dialogue="Управление резервными копиями"></option>
+    <option id="newoptionendday" dialogue="Автоматически завершить день"></option>
+    <option id="sallprices" dialogue="Установить все цены в процентах"></option>
+    <option id="csettingprices" dialogue="[Текущая установка цен]"></option>
+    
+    <option id="orddevice0" dialogue="Сумма, размещенная в магазине"></option>
+    <option id="orddevice1" dialogue="Сумма, необходимая для заполнения магазина"></option>
+    <option id="orddevice2" dialogue="Сумма в хранилище и ящиках"></option>
+    <option id="orddevice3" dialogue="Приобретите MART OS 2.0, чтобы разблокировать расширенные функции"></option>
+    <option id="accfactor" dialogue="Фактор ускорения"></option>
+    <option id="loglog1" dialogue="Копировать логи игры в буфер обмена"></option>
+    <option id="loglog2" dialogue="Скопировано!"></option>
+
+    <option id="stats0" dialogue="Всего заработано денег"></option>
+    <option id="stats1" dialogue="Всего размещено товаров"></option>
+    <option id="stats2" dialogue="Всего переработано коробок"></option>
+    <option id="stats3" dialogue="Всего обслужено клиентов"></option>
+    <option id="stats4" dialogue="Всего оплачено товаров"></option>
+    <option id="stats5" dialogue="Всего собрано мусора"></option>
+    <option id="stats6" dialogue="Правильная сдача выдана подряд"></option>
+    <option id="stats7" dialogue="Количество нападений воров"></option>
+    <option id="stats8" dialogue="Воры уронили собранные товары"></option>
+    <option id="stats9" dialogue="Погладили кошку Times"></option>
+    <option id="stats10" dialogue="Проанализированные клиенты в системе видеонаблюдения"></option>
+    <option id="stats11" dialogue="Воры, пойманные в системе видеонаблюдения"></option>
+    <option id="statsfoundtoo" dialogue="Не найдено в предыдущий день"></option>
+    <option id="statsnofound" dialogue="Найдено слишком дорого в предыдущий день"></option>
+
+    <option id="stats12" dialogue="Продажи, выполненные на сегодняшний день"></option>
+    <option id="stats13" dialogue="Введены коробки в пресс-подборщик"></option>
+    <option id="stats14" dialogue="Переработанные картонные тюки"></option>
+
+    <option id="stats15" dialogue="Дополнительные товары проданы благодаря скидкам"></option>
+    <option id="stats16" dialogue="Оплаченные счета"></option>
+
+    <option id="stats17" dialogue="Собрано онлайн-заказов"></option>
+    <option id="stats18" dialogue="Деньги, заработанные с помощью онлайн-заказов"></option>
+    
+    <option id="unstckplyr" dialogue="Отклеился"></option>
+    <option id="off2disclaimer" dialogue="Есть предложения или проблемы? Форумы Steam на данный момент являются единственным официальным средством связи с разработчиком"></option>
+
+    <option id="xcessve" dialogue="Чрезмерный..."></option>
+
+    <option id="invoicetype0" dialogue="Банковский кредит"></option>
+    <option id="invoicetype1" dialogue="Электричество"></option>
+    <option id="invoicetype2" dialogue="Зарплата"></option>
+    <option id="invoicetype3" dialogue="Аренда"></option>
+
+    <option id="invopaidannoun" dialogue="Счет оплачен!"></option>
+    <option id="invopaidannoun2" dialogue="Сначала погасите текущий кредит!"></option>
+    <option id="invopaidannoun3" dialogue="Кредит предоставлен!"></option>
+    <option id="invovalue0" dialogue="Дата выдачи"></option>
+    <option id="invovalue1" dialogue="Срок оплаты"></option>
+    <option id="invovalue2" dialogue="Оплатить этот счет"></option>
+    <option id="invovalue3" dialogue="Запрошенная сумма"></option>
+    <option id="invovalue4" dialogue="Срок кредита"></option>
+    <option id="invovalue5" dialogue="Сумма к возврату"></option>
+    <option id="invovalue6" dialogue="Ежедневный платеж"></option>
+    <option id="invovalue7" dialogue="Подтвердить кредит"></option>
+    <option id="invovalue8" dialogue="Запрос на кредит"></option>
+    <option id="loandisclmer" dialogue="Вы не можете запросить новый кредит, пока текущий не будет погашен"></option>
+
+    <option id="payloandisclmer" dialogue="Пожалуйста, оплатите счета за аренду."></option>
+    <option id="paynpcmessage" dialogue="Оплатите свои кредиты!"></option>
+
+    <option id="disableinvoicesoption" dialogue="Отключить счета"></option>
+
+    <option id="off3disclaimer" dialogue="Если сотрудники не появляются или ленятся, не забудьте выплатить им заработную плату, поскольку невыполнение этого требования влечет за собой последствия"></option>
+    <option id="off4disclaimer" dialogue="У сотрудников странные пути? Используйте блок Unstuck NPC и сообщите данные о вашем магазине на форумах"></option>
+
+    <option id="drawgame0" dialogue="Нарисуй слово! Мини-игра"></option>
+    <option id="drawgame1" dialogue="Началась мини-игра-рисование!"></option>
+    <option id="drawgame2" dialogue="Победитель мини-игры-рисования: "></option>
+    <option id="drawgame3" dialogue="Мини-игра-рисование: время вышло!"></option>
+    <option id="drawgame4" dialogue="Ваше слово..."></option>
+    <option id="drawgame5" dialogue="Введите свое слово..."></option>
+    <option id="drawgame6" dialogue="Запрос"></option>
+    <option id="drawgame7" dialogue="Включить мини-игру"></option>
+
+    <option id="picfram0" dialogue="Изображение по умолчанию"></option>
+    <option id="picfram1" dialogue="Размер изображения"></option>
+    <option id="picfram2" dialogue="Введите допустимый URL-адрес изображения..."></option>
+    <option id="picfram3" dialogue="Попытка задать URL"></option>
+
+    <option id="cshelfaux1" dialogue="Исправление угловых полок
+(Нажмите только в случае, если полки недоступны)"></option>
+    <option id="cshelfaux2" dialogue="Переместить полки к входу (Только хост)"></option>
+
+    <option id="invwarning0" dialogue="Есть неоплаченный банковский кредит!"></option>
+    <option id="invwarning1" dialogue="Выключите свет! Счет за электричество не оплачен!"></option>
+    <option id="invwarning2" dialogue="Сотрудники бунтуют! Они будут лениться или не придут на работу!"></option>
+    <option id="invwarning3" dialogue="Счет за аренду не оплачен!"></option>
+
+    <option id="departneed0" dialogue="ОТДЕЛ ПОКУПКИ"></option>
+    <option id="departneed0a" dialogue="ФУНКЦИЯ В РАБОТЕ"></option>
+    <option id="departneed1" dialogue="# ТРЕБОВАНИЯ К МАГАЗИНУ"></option>
+    <option id="departneed2" dialogue="# ТРЕБОВАНИЯ К ХРАНЕНИЮ"></option>
+
+    <option id="deprtmnt0" dialogue="Упаковка заказа"></option>
+
+    <option id="atopayinvce0" dialogue="Сегодняшние счета оплачены!"></option>
+    <option id="atopayinvce1" dialogue="Недостаточно денег для оплаты сегодняшних счетов!"></option>
+
+    <option id="cpylogs0" dialogue="Копировать основные журналы"></option>
+    <option id="cpylogs1" dialogue="Копировать вторичные журналы"></option>
+    <option id="lghtnblptn" dialogue="Переопределить лимит освещения"></option>
+
+    <option id="slemssage0" dialogue="Невозможно установить больше продаж на сегодня"></option>
+    <option id="slemssage1" dialogue="Для этого продукта установлена ​​распродажа: "></option>
+    <option id="sledvce0" dialogue="Текущие продажи"></option>
+    <option id="sledvce1" dialogue="Максимальные продажи"></option>
+
+    <option id="lghtlmttn0" dialogue="Ограничить освещение"></option>
+    <option id="lghtlmttn1" dialogue="Слишком много света в магазине редко вызывало проблему черного экрана у некоторых игроков в прошлом. Активируйте эту опцию, если хотите снять это ограничение."></option>
+
+    <option id="arcblderdisclaimer" dialogue="Удерживайте [Бросить элемент], чтобы игнорировать столкновения. Используйте это с осторожностью."></option>
+
+    <option id="rststtngs0" dialogue="Сбросить настройки игры"></option>
+    <option id="rststtngs1" dialogue="Настройки очищены"></option>
+
+    <option id="opckgng0" dialogue="Доступные заказы"></option>
+    <option id="opckgng1" dialogue="Выберите заказ для этой таблицы"></option>
+    <option id="opckgng2" dialogue="Отдел упаковки заказов открыт!"></option>
+    <option id="opckgng3" dialogue="Упаковка назначена таблице"></option>
+    <option id="opckgng4" dialogue="Закрыть текущее поле"></option>
+    <option id="opckgng5" dialogue="Поместите необходимые элементы из синего лотка в полосатую область ниже, затем организуйте их внутри поля, перетаскивая их.
+Используйте [Горизонтальное перемещение] для поворота продуктов. Один и тот же заказ может иметь несколько полей."></option>
+    <option id="opckgng6" dialogue="Заказ выполнен в таблице"></option>
+    <option id="opckgng7" dialogue="Осталось элементов to be packing"></option>
+    <option id="opckgng8" dialogue="Товары, необходимые для этого заказа"></option>
+    <option id="opckgng9" dialogue="Таблица"></option>
+    <option id="opckgng10" dialogue="Уведомлять о заказах по прибытии"></option>
+    <option id="opckgng11" dialogue="Прибыл новый заказ!"></option>
+    <option id="opckgng12" dialogue="Инструкции"></option>
+    <option id="opckgng13" dialogue="1.- Откройте отдел упаковки заказов.
+2.- Дождитесь прибытия заказов в течение рабочего дня, включите уведомления, если хотите получать уведомления, когда они прибудут.
+3.- Используйте картонные коробки на каждом столе, чтобы войти в режим упаковки. Выберите заказ, который вы хотите разместить на этом столе.
+4.- Обойдите свой магазин или склад с синим подносом и отнесите все необходимые предметы в полосатую зону стола. Дополнительный планшет в трее появляются напоминания о том, какие товары нужны.
+5.- При использовании таблицы перетащите продукты в центральный ящик и нажмите кнопку «Закрыть текущий ящик», когда будете готовы. Один и тот же заказ может иметь несколько ящиков.
+6.- Постройте пункт выдачи посылок где-нибудь в вашем магазине и разместите там ящики с заказами.
+7.- В конце концов клиенты придут, чтобы забрать свои заказы и оплатить их."></option>
+
+    <option id="dcord0" dialogue="Присоединяйтесь к нам в"></option>
+    <option id="dcord1" dialogue="В честь его открытия мы проведем единовременную раздачу 200 ключей DLC в течение этого месяца. Не пропустите!"></option>
+
+  </options>
+
+</text>

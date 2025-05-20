@@ -1,3 +1,4 @@
+<text>
 
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
@@ -153,7 +154,7 @@
     <option id="buyshopspace" dialogue="LADENPLATZ KAUFEN"></option>
     <option id="buystoragespace" dialogue="LAGERPLATZ KAUFEN LEERTASTE"></option>
     <option id="addons" dialogue="Addons"></option>
-    
+
 
     <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
 
@@ -222,7 +223,7 @@ Beachten Sie, dass Sie Preise auch mit Ihrem Ziffernblock festlegen oder die Tas
 - Um den Laden zu schließen, warten Sie, bis es 22:30 Uhr ist, und drücken Sie den roten Knopf im Managerzimmer. Das Spiel wird jeden neuen Tag automatisch gespeichert.
 
 - Je mehr Spieler, desto schwieriger. (Versuchen Sie, Spieler mit dem Besen zu treffen)"></option>
-    
+
 
     <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
 
@@ -234,7 +235,7 @@ Beachten Sie, dass Sie Preise auch mit Ihrem Ziffernblock festlegen oder die Tas
 
     <option id="checkout0" dialogue="[LMB] Geld hinzufügen"></option>
     <option id="checkout1" dialogue="[RMB] Geld entfernen"></option>
-    
+
     <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
 
     <option id="day" dialogue="Tag "></option>
@@ -911,7 +912,7 @@ Beachten Sie, dass Sie Preise auch mit Ihrem Ziffernblock festlegen oder die Tas
     <option id="product177" dialogue="Desinfektionsmittel"></option>
     <option id="product178" dialogue="Ibuprofen"></option>
     <option id="product179" dialogue="Paracetamol"></option>
-    
+
     <option id="product180" dialogue="Pflaster"></option>
     <option id="product181" dialogue="Abführmittel"></option>
     <option id="product182" dialogue="Antihistaminikum"></option>
@@ -1043,7 +1044,7 @@ Beachten Sie, dass Sie Preise auch mit Ihrem Ziffernblock festlegen oder die Tas
     <option id="product297" dialogue="Einfacher Lautsprecher"></option>
     <option id="product298" dialogue="Einfacher Kopfhörer"></option>
     <option id="product299" dialogue="Einfache Spielkonsole"></option>
-    
+
 
     <option id="paintmat0" dialogue="Supermarkt A"></option>
     <option id="paintmat1" dialogue="Supermarkt B"></option>
@@ -1235,7 +1236,7 @@ Beachten Sie, dass Sie Preise auch mit Ihrem Ziffernblock festlegen oder die Tas
 
     <option id="paintmat170" dialogue="Holzmuster F"></option>
     <option id="paintmat171" dialogue="Holzmuster G"></option>
-    
+
     <option id="skinshats" dialogue="Skins und Hüte"></option>
     <option id="character" dialogue="Charakter"></option>
     <option id="hat" dialogue="Hut"></option>
@@ -1557,3 +1558,5 @@ Verwenden Sie [Horizontale Bewegung], um Produkte zu drehen. Dieselbe Bestellung
     <option id="dcord1" dialogue="Zur Feier der Einführung verlosen wir diesen Monat einmalig 200 DLC-Schlüssel. Nicht verpassen!"></option>
 
   </options>
+
+</text>

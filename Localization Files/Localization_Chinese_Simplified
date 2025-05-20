@@ -1,0 +1,1560 @@
+﻿<text>
+
+  <options>
+    <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
+
+    <option id="title0" dialogue="新店"></option>
+    <option id="title1" dialogue="加载商店"></option>
+    <option id="title2" dialogue="加入商店"></option>
+    <option id="title3" dialogue="选项"></option>
+    <option id="title4" dialogue="出口"></option>
+
+    <option id="newstore0" dialogue="为您的商店选择一个名称"></option>
+    <option id="newstore1" dialogue="私人"></option>
+    <option id="newstore2" dialogue="仅限好友"></option>
+    <option id="newstore3" dialogue="公开"></option>
+    <option id="newstore4" dialogue="创建"></option>
+    <option id="newstore5" dialogue="商店名称必须超过 2 个字符，且不能包含无效字符"></option>
+    <option id="newstore6" dialogue="您可以根据需要人为增加难度"></option>
+    <option id="newstore7" dialogue="难度："></option>
+
+    <option id="yes" dialogue="是"></option>
+    <option id="no" dialogue="否"></option>
+    <option id="back" dialogue="返回"></option>
+    <option id="save" dialogue="应用"></option>
+    <option id="entertext" dialogue="输入文本..."></option>
+
+    <option id="join" dialogue="加入"></option>
+    <option id="invalidcode" dialogue="代码无效或主机已关闭游戏"></option>
+    <option id="joinfriends" dialogue="使用代码加入好友"></option>
+    <option id="copycode" dialogue="复制代码..."></option>
+
+    <option id="loading" dialogue="正在加载"></option>
+
+    <option id="options0" dialogue="图形"></option>
+    <option id="options1" dialogue="分辨率"></option>
+    <option id="options2" dialogue="全屏"></option>
+    <option id="options3" dialogue="垂直同步"></option>
+    <option id="options4" dialogue="抗锯齿"></option>
+    <option id="options5" dialogue="亮度"></option>
+    <option id="options6" dialogue="质量"></option>
+    <option id="options6a" dialogue="性能"></option>
+    <option id="options6b" dialogue="平衡"></option>
+    <option id="options6c" dialogue="高保真"></option>
+
+    <option id="options7" dialogue="控件"></option>
+    <option id="options8" dialogue="X 灵敏度"></option>
+    <option id="options9" dialogue="Y 灵敏度"></option>
+    <option id="options10" dialogue="缩放灵敏度"></option>
+    <option id="options11" dialogue="反转 X 轴"></option>
+    <option id="options12" dialogue="反转 Y 轴"></option>
+    <option id="options12a" dialogue="自定义控件"></option>
+
+    <option id="options13" dialogue="音频"></option>
+    <option id="options14" dialogue="主音量。"></option>
+    <option id="options15" dialogue="音乐音量。"></option>
+    <option id="options16" dialogue="音效音量。"></option>
+    <option id="options17" dialogue="用户界面音量。"></option>
+    <option id="options17a" dialogue="语音音量。"></option>
+
+    <option id="options18" dialogue="主菜单"></option>
+    <option id="options19" dialogue="退出游戏"></option>
+
+    <option id="options20" dialogue="返回主菜单？"></option>
+    <option id="options21" dialogue="退出游戏？"></option>
+
+    <option id="options22" dialogue="将加入代码复制到剪贴板"></option>
+    <option id="options23" dialogue="使用代码加入好友"></option>
+    <option id="options24" dialogue="复制代码..."></option>
+
+    <option id="options25" dialogue="摄像机事件视野"></option>
+    <option id="options26" dialogue="攻击性NPC"></option>
+    <option id="options27" dialogue="弹出距离"></option>
+
+    <option id="rw0" dialogue="向前移动"></option>
+    <option id="rw1" dialogue="向前移动+"></option>
+    <option id="rw2" dialogue="向前移动-"></option>
+    <option id="rw3" dialogue="水平移动"></option>
+    <option id="rw4" dialogue="水平移动+"></option>
+    <option id="rw5" dialogue="水平移动-"></option>
+    <option id="rw6" dialogue="鼠标垂直"></option>
+    <option id="rw7" dialogue="鼠标垂直+"></option>
+    <option id="rw8" dialogue="鼠标垂直-"></option>
+    <option id="rw9" dialogue="鼠标水平"></option>
+    <option id="rw10" dialogue="鼠标水平+"></option>
+    <option id="rw11" dialogue="鼠标水平-"></option>
+
+    <option id="rw12" dialogue="主要操作"></option>
+    <option id="rw13" dialogue="次要操作"></option>
+    <option id="rw14" dialogue="构建"></option>
+    <option id="rw15" dialogue="放下物品"></option>
+    <option id="rw16" dialogue="跳跃"></option>
+    <option id="rw17" dialogue="冲刺"></option>
+    <option id="rw18" dialogue="打开构建器"></option>
+    <option id="rw19" dialogue="下一个菜单"></option>
+    <option id="rw20" dialogue="上一个菜单"></option>
+    <option id="rw21" dialogue="聊天"></option>
+    <option id="rw22" dialogue="语音聊天"></option>
+    <option id="rw23" dialogue="退出菜单"></option>
+    <option id="rw24" dialogue="蹲下"></option>
+
+    <option id="rw25" dialogue="下一个构建器选项卡"></option>
+    <option id="rw26" dialogue="上一个构建器选项卡"></option>
+    <option id="rw27" dialogue="舞蹈 1"></option>
+    <option id="rw28" dialogue="舞蹈 2"></option>
+    <option id="rw29" dialogue="舞蹈 3"></option>
+    <option id="rw30" dialogue="舞蹈 4"></option>
+    <option id="rw31" dialogue="舞蹈 5"></option>
+    <option id="rw32" dialogue="舞蹈 6"></option>
+    <option id="rw33" dialogue="舞蹈 7"></option>
+    <option id="rw34" dialogue="舞蹈 8"></option>
+    <option id="rw35" dialogue="舞蹈9"></option>
+    <option id="rw36" dialogue="数字键盘 0"></option>
+    <option id="rw37" dialogue="数字键盘 1"></option>
+    <option id="rw38" dialogue="数字键盘 2"></option>
+    <option id="rw39" dialogue="数字键盘 3"></option>
+    <option id="rw40" dialogue="数字键盘 4"></option>
+    <option id="rw41" dialogue="数字键盘 5"></option>
+    <option id="rw42" dialogue="数字键盘 6"></option>
+    <option id="rw43" dialogue="数字键盘 7"></option>
+    <option id="rw44" dialogue="数字键盘 8"></option>
+    <option id="rw45" dialogue="数字键盘9"></option>
+    <option id="rw46" dialogue="数字键盘删除"></option>
+    <option id="rw47" dialogue="数字键盘句点"></option>
+    <option id="rw48" dialogue="数字键盘接受"></option>
+
+    <option id="rw49" dialogue="调整建设"></option>
+
+    <!-- ///////////////////////////////////Text///////////////////////////////////// -->
+
+    <option id="employees" dialogue="员工："></option>
+    <option id="employeesassignment" dialogue="员工分配"></option>
+    <option id="cashiers" dialogue="收银员"></option>
+    <option id="restock" dialogue="补货"></option>
+    <option id="storage" dialogue="存储"></option>
+    <option id="security" dialogue="安全"></option>
+    <option id="mblackboard" dialogue="经理黑板"></option>
+    <option id="productorder" dialogue="产品订单"></option>
+    <option id="supermarket" dialogue="超市"></option>
+    <option id="cosmetics" dialogue="化妆品订单"></option>
+    <option id="stream" dialogue="设置电视视频/流"></option>
+    <option id="pinshelves" dialogue="货架上的产品"></option>
+    <option id="pinstorage" dialogue="仓库中的产品"></option>
+    <option id="pinboxes" dialogue="盒子中的产品"></option>
+    <option id="shoplist" dialogue="购物清单"></option>
+    <option id="buy" dialogue="购买"></option>
+    <option id="supermarketname" dialogue="超市名称"></option>
+    <option id="supermarketcolor" dialogue="超市颜色"></option>
+    <option id="changename" dialogue="更改名称"></option>
+    <option id="changecolor" dialogue="更改颜色"></option>
+    <option id="franchisepointsavailable" dialogue="可用特许经营积分"></option>
+    <option id="unlocks" dialogue="解锁"></option>
+    <option id="requires" dialogue="需要"></option>
+    <option id="connectionlost" dialogue="主机连接丢失"></option>
+    <option id="buyshopspace" dialogue="购买商店空间"></option>
+    <option id="buystoragespace" dialogue="购买存储空间"></option>
+    <option id="addons" dialogue="Addons"></option>
+
+
+    <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
+
+    <option id="tutorial0" dialogue="欢迎来到超市！"></option>
+    <option id="tutorial1" dialogue="商店关门时，时间过得更慢。
+
+第一步是放置一些家具。按 [TAB] 打开构建器"></option>
+    <option id="tutorial2" dialogue="购买 2 个产品货架、一个收银台和一个储物架。
+
+请注意，储物架只能放置在与经理室相连的附属空房间中。"></option>
+    <option id="tutorial3" dialogue="干得好！
+
+我们有一个特许经营点：通过拥有成功的业务可以获得积分。
+
+前往经理室并在特权的黑板上获得第一个特权。"></option>
+    <option id="tutorial4" dialogue="太好了。您刚刚获得了第一包产品。
+
+重要的是要记住，一旦您获得了产品特许经营权，客户就会期望这些产品在商店中否则他们会抱怨存在。
+
+现在转到经理黑板，单击它，然后单击产品订单。"></option>
+    <option id="tutorial5" dialogue="好。现在单击基本产品 I。"></option>
+    <option id="tutorial6" dialogue="让我们购买每种基本产品一盒。
+
+单击每种产品的加号将其添加到购物清单中，一旦您拥有每种产品，请单击购买。"></option>
+    <option id="tutorial7" dialogue="太好了。现在出去寻找购买的盒子。单击一个以持有它。"></option>
+    <option id="tutorial8" dialogue="转到产品货架并单击其中一行上的 [LMB] 以用产品填充它。
+
+[RMB] 将物品从货架放回盒子。
+
+您也可以按 [F] 将物品放在您想要的位置。
+
+将所有产品放入商店的货架上。"></option>
+    <option id="tutorial9" dialogue="产品已放置但最初标有成本价，这意味着没有任何好处。
+
+前往经理室并拿取其中一个定价设备。"></option>
+    <option id="tutorial10" dialogue="瞄准货架，产品定价信息就会出现在设备屏幕上。
+
+如果您的价格超过产品基本价格的两倍以上，客户不购买的可能性就会增加，因此请使用此规则作为衡量标准。
+
+例如，如果产品成本为 1 美元，而您将价格设定为高于 2 美元，客户可能不会购买。尝试为所有六种不同的产品设定价格。
+
+控制
+[鼠标滚轮] 以 0.01 为增量添加或减去。
+[鼠标滚轮 + E] 以 0.2 为增量添加或减去。
+[LMB] 接受价格。
+[F] 放下物品
+
+请注意，您也可以使用数字键盘设置价格，或在选项/自定义控件中重新分配按键。当客户在结账时使用信用卡付款时，数字键盘还可用于输入金额"></option>
+
+    <option id="tutorial11" dialogue="您的商店现已准备好开业。要允许客户进入，请按下位于经理室的绿色按钮。但首先请阅读以下重要信息：
+
+- 每周四，某些产品的市场通货膨胀率都会上升，您必须查看价格。
+
+- 您可以将空盒子扔到外面的容器中，或者将它们带到街对面最远的容器中，并通过回收来赚回一些钱。金钱可以通过特权来增加。
+
+- 在第 8 天，小偷和垃圾将有机会出现。解决两者的方法是使用扫帚：击打小偷，他们每次击打都会掉落一件偷来的产品。
+
+- 每次结账可以有 8 个客户排队，他们不会不耐烦，但没有检测到免费结账队列的额外客户将成为小偷并离开而不付款。
+
+- 使用构建器选项卡时，您可以默认按 X 或 Z 来检查灯光和其他装饰。
+
+- 您可以使用定价工具右键单击货架上的某一行，清除其中的产品。如果您不希望任何员工继续补货该行，这很有用。
+
+- 注意经理黑板上的发票标签。您的员工工资和电费或租金发票将到达那里。
+            
+- 要关闭商店，请等到晚上 22:30，然后按下经理室中的红色按钮。游戏每天都会自动保存。
+
+- 玩家越多，难度越大。（尝试用扫帚击打玩家）"></option>
+
+
+    <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
+
+    <option id="builder0" dialogue="建立/移动/删除"></option>
+    <option id="builder1" dialogue="向左旋转"></option>
+    <option id="builder2" dialogue="向右旋转"></option>
+    <option id="builder3" dialogue="向上导航菜单"></option>
+    <option id="builder4" dialogue="向下导航菜单"></option>
+
+    <option id="checkout0" dialogue="[LMB] 添加资金"></option>
+    <option id="checkout1" dialogue="[RMB] 移除资金"></option>
+
+    <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
+
+    <option id="day" dialogue="日"></option>
+
+    <option id="weekday1" dialogue="星期一"></option>
+    <option id="weekday2" dialogue="星期二"></option>
+    <option id="weekday3" dialogue="星期三"></option>
+    <option id="weekday4" dialogue="星期四"></option>
+    <option id="weekday5" dialogue="星期五"></option>
+    <option id="weekday6" dialogue="星期六"></option>
+    <option id="weekday0" dialogue="星期日"></option>
+
+    <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
+
+    <option id="endofworkingday" dialogue="工作日结束："></option>
+    <option id="totalcustomers" dialogue="总客户："></option>
+    <option id="notfoundproducts" dialogue="未找到产品："></option>
+    <option id="tooexpensiveproducts" dialogue="产品太贵："></option>
+    <option id="timesrobbed" dialogue="被抢劫次数："></option>
+    <option id="complaintsfilth" dialogue="对肮脏的投诉："></option>
+    <option id="franchiselevel" dialogue="特许经营级别："></option>
+    <option id="franchiseexperience" dialogue="特许经营经验："></option>
+    <option id="income" dialogue="收入 "></option>
+    <option id="moneylostbecauserobbing" dialogue="金钱损失，因为强盗："></option>
+    <option id="boughtproductscost" dialogue="购买产品成本："></option>
+    <option id="rentcost" dialogue="租金成本："></option>
+    <option id="electricitycost" dialogue="电费："></option>
+    <option id="employeeswages" dialogue="员工工资："></option>
+    <option id="othercosts" dialogue="其他成本："></option>
+    <option id="daybalance" dialogue="当日余额："></option>
+
+    <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
+
+    <option id="messagei0" dialogue="超市开业"></option>
+    <option id="messagei1" dialogue="特许经营升级：积分奖励"></option>
+    <option id="messagei2" dialogue="获得特权"></option>
+    <option id="messagei3" dialogue="获得超市扩张"></option>
+    <option id="messagei4" dialogue="获得存储扩张"></option>
+    <option id="messagei5" dialogue="部门已收购"></option>
+    <option id="messagei5a" dialogue="未满足存储要求"></option>
+    <option id="messagei5b" dialogue="未满足存储要求"></option>
+
+    <option id="message0" dialogue="此产品的容器类型错误"></option>
+    <option id="message1" dialogue="无法向此货架添加更多产品"></option>
+    <option id="message2" dialogue="无法在同一货架中混合产品"></option>
+    <option id="message3" dialogue="没有可用的特许经营积分"></option>
+    <option id="message4" dialogue="未获取上一个特许经营节点"></option>
+    <option id="message5" dialogue="购物清单中没有产品"></option>
+    <option id="message6" dialogue="资金不足"></option>
+    <option id="message7" dialogue="已持有某物"></option>
+    <option id="message8" dialogue="盒子中没有更多产品"></option>
+    <option id="message9" dialogue="没有更多超市空间可供获取"></option>
+    <option id="message9a" dialogue="没有更多存储空间可供获取"></option>
+    <option id="message10" dialogue="无法退还少于所需零钱的金额"></option>
+    <option id="message11" dialogue="盒子中有产品"></option>
+    <option id="message12" dialogue="没有更多空间可供获取box"></option>
+    <option id="message13" dialogue="不能在同一个盒子里混合产品"></option>
+    <option id="message14" dialogue="需要一把扫帚"></option>
+    <option id="message15" dialogue="仅在商店关闭时允许"></option>
+    <option id="message16" dialogue="仅在没有更多顾客时允许"></option>
+    <option id="message17" dialogue="删除前从容器中移除所有产品"></option>
+    <option id="message17a" dialogue="货架上有商品。如果确定，删除时请按住 [掉落物品] 键"></option>
+    <option id="message18" dialogue="商店需要至少一次人工结账"></option>
+    <option id="message19" dialogue="托盘中无法容纳此项"></option>
+    <option id="message20" dialogue="托盘展示需要大于此尺寸的产品"></option>
+
+    <option id="network0" dialogue="主机连接丢失"></option>
+
+    <!-- ///////////////////////////////////NPCMessages///////////////////////////////////// -->
+
+    <option id="NPCmessage0" dialogue="我没找到这个："></option>
+    <option id="NPCmessage1" dialogue="这个太贵了："></option>
+    <option id="NPCmessage2" dialogue="没找到我要找的东西"></option>
+    <option id="NPCmessage3" dialogue="没有可用的结账台？再见！"></option>
+    <option id="NPCmessage4" dialogue="再见，笨蛋！"></option>
+    <option id="NPCmessage5" dialogue="这个超市太脏了！"></option>
+
+    <option id="NPCemployee0" dialogue="我要去收银台。"></option>
+
+    <option id="NPCmessagehit0" dialogue="哎哟！"></option>
+    <option id="NPCmessagehit1" dialogue="天哪"></option>
+    <option id="NPCmessagehit2" dialogue="把扫帚插到你的屁股上"></option>
+    <option id="NPCmessagehit3" dialogue="Policeeeeeee！"></option>
+    <option id="NPCmessagehit4" dialogue="Eeeeeek！"></option>
+    <option id="NPCmessagehit5" dialogue="Aaaaaaaah！"></option>
+    <option id="NPCmessagehit6" dialogue="这是虐待！"></option>
+    <option id="NPCmessagehit7" dialogue="Gaah！"></option>
+    <option id="NPCmessagehit8" dialogue="用力打我宝贝！"></option>
+    <option id="NPCmessagehit9" dialogue="OwO"></option>
+
+    <option id="NPCmessagehitemployee0" dialogue="该死的老板"></option>
+    <option id="NPCmessagehitemployee1" dialogue="这是虐待"></option>
+    <option id="NPCmessagehitemployee2" dialogue="D:"></option>
+    <option id="NPCmessagehitemployee3" dialogue="发起罢工！"></option>
+
+    <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
+
+    <option id="builder" dialogue="建造者"></option>
+    <option id="buildable0" dialogue="放置模式"></option>
+    <option id="buildable1" dialogue="产品货架"></option>
+    <option id="buildable2" dialogue="基本冰箱"></option>
+    <option id="buildable3" dialogue="双冰箱"></option>
+    <option id="buildable4" dialogue="冷冻柜"></option>
+    <option id="buildable5" dialogue="储物架"></option>
+    <option id="buildable6" dialogue="结帐（右）"></option>
+    <option id="buildable7" dialogue="结帐（左）"></option>
+    <option id="buildable8" dialogue="立式冷冻柜"></option>
+    <option id="buildable9" dialogue="产品柜台A"></option>
+    <option id="buildable10" dialogue="储物架（无标签"></option>
+    <option id="buildable11" dialogue="蔬果货架A"></option>
+    <option id="buildable12" dialogue="自助结账"></option>
+    <option id="buildable13" dialogue="蔬果货架B"></option>
+    <option id="buildable14" dialogue="产品货架（一半）"></option>
+    <option id="buildable15" dialogue="分层搁架"></option>
+    <option id="buildable16" dialogue="墙架"></option>
+    <option id="buildable17" dialogue="钉板架"></option>
+    <option id="buildable18" dialogue="生产货架 B (一半)"></option>
+    <option id="buildable19" dialogue="转角搁板（大）"></option>
+    <option id="buildable20" dialogue="转角搁板（小）"></option>
+    <option id="buildable21" dialogue="基础托盘展示架"></option>
+    <option id="buildable22" dialogue="木质托盘展示架 A"></option>
+    <option id="buildable23" dialogue="木质托盘展示架 B"></option>
+    <option id="buildable24" dialogue="塑料托盘展示架"></option>
+    <option id="buildable25" dialogue="高托盘展示架"></option>
+
+    <option id="buildable0a" dialogue="删除模式"></option>
+    <option id="tabtitle0" dialogue="建造者"></option>
+    <option id="tabtitle1" dialogue="装饰"></option>
+    <option id="tabtitle2" dialogue="设备"></option>
+    <option id="tabtitle3" dialogue="灯光"></option>
+    <option id="tabtitle4" dialogue="季节性：万圣节"></option>
+    <option id="tabtitle5" dialogue="洗手间"></option>
+    <option id="tabtitle6" dialogue="季节性：圣诞节"></option>
+    <option id="tabtitle7" dialogue="装饰：植物"></option>
+    <option id="tabtitle8" dialogue="建筑"></option>
+
+    <option id="decorat1" dialogue="霓虹灯"></option>
+    <option id="decorat2" dialogue="盆栽植物 A"></option>
+    <option id="decorat3" dialogue="电视"></option>
+    <option id="decorat4" dialogue="天花板标志"></option>
+    <option id="decorat5" dialogue="人群屏障"></option>
+    <option id="decorat6" dialogue="防盗门"></option>
+    <option id="decorat7" dialogue="木锅"></option>
+    <option id="decorat8" dialogue="宽木锅"></option>
+    <option id="decorat9" dialogue="天花板通风口"></option>
+    <option id="decorat10" dialogue="中央定价机"></option>
+
+    <option id="decorat11" dialogue="墓碑 A"></option>
+    <option id="decorat12" dialogue="墓碑 B"></option>
+    <option id="decorat13" dialogue="墓碑 C"></option>
+    <option id="decorat14" dialogue="墓碑 D"></option>
+    <option id="decorat15" dialogue="墓碑 E"></option>
+    <option id="decorat16" dialogue="墓碑 F"></option>
+    <option id="decorat17" dialogue="南瓜 A"></option>
+    <option id="decorat18" dialogue="南瓜 B"></option>
+    <option id="decorat19" dialogue="南瓜 C"></option>
+
+    <option id="decorat20" dialogue="南瓜人"></option>
+    <option id="decorat21" dialogue="恐怖幽灵"></option>
+    <option id="decorat22" dialogue="闪亮花朵 A"></option>
+    <option id="decorat23" dialogue="闪亮花朵 B"></option>
+    <option id="decorat24" dialogue="迷你运输车"></option>
+    <option id="decorat25" dialogue="霓虹灯 B"></option>
+    <option id="decorat26" dialogue="霓虹灯 C"></option>
+    <option id="decorat27" dialogue="霓虹灯 D"></option>
+    <option id="decorat28" dialogue="霓虹灯 E"></option>
+    <option id="decorat29" dialogue="吊灯 A"></option>
+
+    <option id="decorat30" dialogue="吊灯 B"></option>
+    <option id="decorat31" dialogue="吊灯 C"></option>
+    <option id="decorat32" dialogue="吊灯 D"></option>
+    <option id="decorat33" dialogue="吊灯 E"></option>
+    <option id="decorat34" dialogue="吊灯F"></option>
+    <option id="decorat35" dialogue="吊灯 G"></option>
+    <option id="decorat36" dialogue="吊灯 H"></option>
+    <option id="decorat37" dialogue="吊灯 I"></option>
+    <option id="decorat38" dialogue="吊灯 J"></option>
+    <option id="decorat39" dialogue="吊灯 K"></option>
+
+    <option id="decorat40" dialogue="吊灯 L"></option>
+    <option id="decorat41" dialogue="吊灯 M"></option>
+    <option id="decorat42" dialogue="特殊灯A"></option>
+    <option id="decorat43" dialogue="安全摄像头"></option>
+    <option id="decorat44" dialogue="安全台"></option>
+    <option id="decorat45" dialogue="清洁机器人"></option>
+    <option id="decorat46" dialogue="基本桌 A"></option>
+    <option id="decorat47" dialogue="基本椅 A"></option>
+    <option id="decorat48" dialogue="员工柜"></option>
+    <option id="decorat49" dialogue="私人冰箱"></option>
+    <option id="decorat50" dialogue="咖啡机"></option>
+
+    <option id="decorat51" dialogue="零食机"></option>
+    <option id="decorat52" dialogue="苏打水机"></option>
+    <option id="decorat53" dialogue="飞镖机"></option>
+    <option id="decorat54" dialogue="足球桌"></option>
+    <option id="decorat55" dialogue="台球桌"></option>
+    <option id="decorat56" dialogue="台球杆盒"></option>
+    <option id="decorat57" dialogue="街机：机器人接球手"></option>
+    <option id="decorat58" dialogue="街机：太空战争"></option>
+    <option id="decorat59" dialogue="街机：金银岛"></option>
+    <option id="decorat60" dialogue="圣诞树"></option>
+
+    <option id="decorat61" dialogue="圣诞弧"></option>
+    <option id="decorat62" dialogue="圣诞花环"></option>
+    <option id="decorat63" dialogue="鼓手胡桃夹子"></option>
+    <option id="decorat64" dialogue="将军胡桃夹子"></option>
+    <option id="decorat65" dialogue="骑士胡桃夹子"></option>
+    <option id="decorat66" dialogue="剑士胡桃夹子"></option>
+    <option id="decorat67" dialogue="闪亮的鹿"></option>
+    <option id="decorat68" dialogue="火车"></option>
+    <option id="decorat69" dialogue="纳贾拉模拟器"></option>
+    <option id="decorat70" dialogue="凳子"></option>
+
+    <option id="decorat71" dialogue="雪人"></option>
+    <option id="decorat72" dialogue="拐杖糖"></option>
+    <option id="decorat73" dialogue="圣诞礼物"></option>
+    <option id="decorat74" dialogue="陶瓷花盆 A"></option>
+    <option id="decorat75" dialogue="陶瓷花盆 B"></option>
+    <option id="decorat76" dialogue="陶瓷花盆 C"></option>
+    <option id="decorat77" dialogue="陶瓷花盆 D"></option>
+    <option id="decorat78" dialogue="陶瓷花盆 E"></option>
+    <option id="decorat79" dialogue="陶瓷花盆 F"></option>
+    <option id="decorat80" dialogue="陶瓷花盆 G"></option>
+
+    <option id="decorat81" dialogue="植物 A"></option>
+    <option id="decorat82" dialogue="植物 B"></option>
+    <option id="decorat83" dialogue="植物 C"></option>
+    <option id="decorat84" dialogue="植物 D"></option>
+    <option id="decorat85" dialogue="植物 E"></option>
+    <option id="decorat86" dialogue="植物 F"></option>
+    <option id="decorat87" dialogue="植物 G"></option>
+    <option id="decorat88" dialogue="植物 H"></option>
+    <option id="decorat89" dialogue="植物 I"></option>
+    <option id="decorat90" dialogue="植物陶罐 A"></option>
+
+    <option id="decorat91" dialogue="植物陶罐 B"></option>
+    <option id="decorat92" dialogue="植物陶罐 C"></option>
+    <option id="decorat93" dialogue="植物 J"></option>
+    <option id="decorat94" dialogue="植物 K"></option>
+    <option id="decorat95" dialogue="植物 L"></option>
+    <option id="decorat96" dialogue="花 A"></option>
+    <option id="decorat97" dialogue="花 B"></option>
+    <option id="decorat98" dialogue="花 C"></option>
+    <option id="decorat99" dialogue="花 D"></option>
+    <option id="decorat100" dialogue="花 E"></option>
+
+    <option id="decorat101" dialogue="花 F"></option>
+    <option id="decorat102" dialogue="花 G"></option>
+    <option id="decorat103" dialogue="花 H"></option>
+    <option id="decorat104" dialogue="花 I"></option>
+    <option id="decorat105" dialogue="花 J"></option>
+    <option id="decorat106" dialogue="花 K"></option>
+    <option id="decorat107" dialogue="花 L"></option>
+    <option id="decorat108" dialogue="花 M"></option>
+    <option id="decorat109" dialogue="花 N"></option>
+    <option id="decorat110" dialogue="花 O"></option>
+
+    <option id="decorat111" dialogue="花 P"></option>
+    <option id="decorat112" dialogue="花 Q"></option>
+    <option id="decorat113" dialogue="花 R"></option>
+    <option id="decorat114" dialogue="花S"></option>
+    <option id="decorat115" dialogue="花 T"></option>
+    <option id="decorat116" dialogue="花 U"></option>
+    <option id="decorat117" dialogue="花 V"></option>
+    <option id="decorat118" dialogue="花 W"></option>
+    <option id="decorat119" dialogue="花 X"></option>
+    <option id="decorat120" dialogue="花 Y"></option>
+
+    <option id="decorat121" dialogue="花 Z"></option>
+    <option id="decorat122" dialogue="花 A1"></option>
+    <option id="decorat123" dialogue="花 B1"></option>
+    <option id="decorat124" dialogue="超市柱子"></option>
+    <option id="decorat125" dialogue="金属柱子"></option>
+    <option id="decorat126" dialogue="混凝土悬挂花盆 A"></option>
+    <option id="decorat127" dialogue="混凝土悬挂花盆 B"></option>
+    <option id="decorat128" dialogue="陶瓷悬挂花盆 A"></option>
+    <option id="decorat129" dialogue="解除卡住的方块"></option>
+    <option id="decorat130" dialogue="路灯 A"></option>
+
+    <option id="decorat131" dialogue="路灯 B"></option>
+    <option id="decorat132" dialogue="路灯 C"></option>
+    <option id="decorat133" dialogue="路灯 D"></option>
+    <option id="decorat134" dialogue="路灯 E"></option>
+    <option id="decorat135" dialogue="路灯 F"></option>
+    <option id="decorat136" dialogue="路灯 G"></option>
+    <option id="decorat137" dialogue="路灯 H"></option>
+    <option id="decorat138" dialogue="路灯 I"></option>
+    <option id="decorat139" dialogue="街灯 J"></option>
+    <option id="decorat140" dialogue="街灯 K"></option>
+
+    <option id="decorat141" dialogue="街灯 L"></option>
+    <option id="decorat142" dialogue="街灯 M"></option>
+    <option id="decorat143" dialogue="街灯 N"></option>
+    <option id="decorat144" dialogue="街灯 O"></option>
+    <option id="decorat145" dialogue="街灯 P"></option>
+    <option id="decorat146" dialogue="街灯 Q"></option>
+    <option id="decorat147" dialogue="喷泉 A1"></option>
+    <option id="decorat148" dialogue="喷泉 A2"></option>
+    <option id="decorat149" dialogue="喷泉 A3"></option>
+    <option id="decorat150" dialogue="喷泉 B1"></option>
+
+    <option id="decorat151" dialogue="喷泉 B2"></option>
+    <option id="decorat152" dialogue="喷泉 B3"></option>
+    <option id="decorat153" dialogue="喷泉 C1"></option>
+    <option id="decorat154" dialogue="喷泉 C2"></option>
+    <option id="decorat155" dialogue="喷泉 C3"></option>
+    <option id="decorat156" dialogue="喷泉 D1"></option>
+    <option id="decorat157" dialogue="喷泉 D2"></option>
+    <option id="decorat158" dialogue="喷泉 D3"></option>
+    <option id="decorat159" dialogue="喷泉 E1"></option>
+    <option id="decorat160" dialogue="喷泉 E2"></option>
+
+    <option id="decorat161" dialogue="喷泉 E3"></option>
+    <option id="decorat162" dialogue="喷泉 F1"></option>
+    <option id="decorat163" dialogue="喷泉 F2"></option>
+    <option id="decorat164" dialogue="喷泉 F3"></option>
+    <option id="decorat165" dialogue="喷泉 G1"></option>
+    <option id="decorat166" dialogue="喷泉 G2"></option>
+    <option id="decorat167" dialogue="喷泉 G3"></option>
+    <option id="decorat168" dialogue="小型可涂漆隔板"></option>
+    <option id="decorat169" dialogue="中型可涂漆隔板"></option>
+    <option id="decorat170" dialogue="大型可涂漆隔板"></option>
+
+    <option id="decorat171" dialogue="角落分隔线"></option>
+    <option id="decorat172" dialogue="大型地面花盆 A"></option>
+    <option id="decorat173" dialogue="大型地面花盆 B"></option>
+    <option id="decorat174" dialogue="大型地面花盆 C"></option>
+    <option id="decorat175" dialogue="大型地面花盆 D"></option>
+    <option id="decorat176" dialogue="十字可涂漆分隔线"></option>
+    <option id="decorat177" dialogue="T 形可涂漆分隔线"></option>
+    <option id="decorat178" dialogue="相框"></option>
+    <option id="decorat179" dialogue="门可涂漆隔板"></option>
+    <option id="decorat180" dialogue="墙面花盆 A"></option>
+
+    <option id="decorat181" dialogue="墙面花盆 A 面板"></option>
+    <option id="decorat182" dialogue="墙面花盆 B"></option>
+    <option id="decorat183" dialogue="墙面花盆 B 面板"></option>
+    <option id="decorat184" dialogue="纸板打包机"></option>
+    <option id="decorat185" dialogue="单梁"></option>
+    <option id="decorat186" dialogue="横梁"></option>
+    <option id="decorat187" dialogue="T型梁"></option>
+    <option id="decorat188" dialogue="转角梁"></option>
+    <option id="decorat189" dialogue="包裹提货点"></option>
+
+    <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
+
+    <option id="skill01" dialogue="员工 I"></option>
+    <option id="skill02" dialogue="员工 II"></option>
+    <option id="skill03" dialogue="员工 III"></option>
+    <option id="skill04" dialogue="员工 IV"></option>
+    <option id="skill05" dialogue="员工 V"></option>
+    <option id="skill0a" dialogue="允许雇用额外员工"></option>
+    <option id="skill1" dialogue="免费早晨咖啡"></option>
+    <option id="skill1a" dialogue="员工移动速度提高 20%"></option>
+    <option id="skill2" dialogue="营销课程 I"></option>
+    <option id="skill2a" dialogue="员工结账收入提高 10%"></option>
+    <option id="skill3" dialogue="组建课程"></option>
+    <option id="skill3a" dialogue="员工行动速度提高 20%"></option>
+    <option id="skill4" dialogue="回收课程"></option>
+    <option id="skill4a" dialogue="回收箱奖励增加四倍"></option>
+    <option id="skill5" dialogue="空调"></option>
+    <option id="skill5a" dialogue="每天吸引更多客户"></option>
+    <option id="skill6" dialogue="Wifi 连接"></option>
+
+    <option id="skill11" dialogue="员工 VI"></option>
+    <option id="skill12" dialogue="员工 VII"></option>
+    <option id="skill13" dialogue="员工 VIII"></option>
+    <option id="skill14" dialogue="员工 IX"></option>
+    <option id="skill15" dialogue="员工 X"></option>
+    <option id="skill16" dialogue="收银员队伍 I"></option>
+    <option id="skill16a" dialogue="员工将更快地处理结账产品"></option>
+    <option id="skill17" dialogue="收银员队伍 II"></option>
+    <option id="skill18" dialogue="收银员队伍 III"></option>
+    <option id="skill19" dialogue="补货队伍 I"></option>
+    <option id="skill19a" dialogue="员工将更快地放置产品"></option>
+    <option id="skill20" dialogue="补货形成 II"></option>
+    <option id="skill21" dialogue="更多咖啡"></option>
+    <option id="skill22" dialogue="免费能量饮料 I"></option>
+    <option id="skill23" dialogue="免费能量饮料 II"></option>
+    <option id="skill24" dialogue="回收课程 II"></option>
+    <option id="skill24a" dialogue="员工将回收包装盒"></option>
+    <option id="skill25" dialogue="友好界面"></option>
+    <option id="skill25a" dialogue="客户将更多地使用自助结账"></option>
+    <option id="skill26" dialogue="员工 XI"></option>
+    <option id="skill27" dialogue="员工 XII"></option>
+    <option id="skill28" dialogue="回收容器"></option>
+    <option id="skill28a" dialogue="最近的垃圾箱将被替换为回收容器。"></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="定价机软件已得到改进，现在可以设置自动定价的方式"></option>
+    <option id="skill30" dialogue="Tic-tac 速度很快"></option>
+    <option id="skill30a" dialogue="当商店在夜间关闭时，经理可以加快时间"></option>
+    <option id="skill31" dialogue="低能耗灯泡"></option>
+    <option id="skill31a" dialogue="整体用电量减少 20%"></option>
+    <option id="skill32" dialogue="用户友好界面"></option>
+    <option id="skill32a" dialogue="客户使用自助结账速度更快"></option>
+    <option id="skill33" dialogue="物流"></option>
+    <option id="skill33a" dialogue="拿起箱子时，玩家将能够在商店和仓库中看到其中所含的产品"></option>
+    <option id="skill34" dialogue="外部会计师"></option>
+    <option id="skill34a" dialogue="如果有资金，发票将每天支付。"></option>
+    <option id="skill35" dialogue="特价 I"></option>
+    <option id="skill35a" dialogue="每日最高销售量增加 2。"></option>
+    <option id="skill36" dialogue="特价 II"></option>
+    <option id="skill37" dialogue="特价 III"></option>
+    <option id="skill38" dialogue="托盘展示"></option>
+    <option id="skill38a" dialogue="解锁不同类型的托盘展示，以适应最大的产品"></option>
+
+    <!-- ///////////////////////////////////Products///////////////////////////////////// -->
+    <option id="productRelated0" dialogue="每单位价格"></option>
+
+    <option id="productGroup0" dialogue="基础产品"></option>
+    <option id="productGroup1" dialogue="乳制品"></option>
+    <option id="productGroup2" dialogue="碳酸饮料"></option>
+    <option id="productGroup3" dialogue="冷冻食品"></option>
+    <option id="productGroup4" dialogue="卫生"></option>
+    <option id="productGroup5" dialogue="清洁产品"></option>
+    <option id="productGroup6" dialogue="糖果和零食"></option>
+    <option id="productGroup7" dialogue="肉类"></option>
+    <option id="productGroup8" dialogue="蜜饯"></option>
+    <option id="productGroup9" dialogue="泡菜"></option>
+    <option id="productGroup10" dialogue="海鲜"></option>
+    <option id="productGroup11" dialogue="图书"></option>
+    <option id="productGroup12" dialogue="酒精饮料"></option>
+    <option id="productGroup13" dialogue="药房"></option>
+    <option id="productGroup14" dialogue="农产品"></option>
+    <option id="productGroup15" dialogue="儿童保育"></option>
+    <option id="productGroup16" dialogue="园艺"></option>
+    <option id="productGroup17" dialogue="小型电子产品"></option>
+
+    <option id="productCategory0" dialogue="基础产品 I"></option>
+    <option id="productCategory1" dialogue="基础产品 II"></option>
+    <option id="productCategory2" dialogue="基础产品 III"></option>
+    <option id="productCategory3" dialogue="基础产品 IV"></option>
+    <option id="productCategory4" dialogue="基础产品 V"></option>
+    <option id="productCategory5" dialogue="基础产品 VI"></option>
+    <option id="productCategory6" dialogue="乳制品 I"></option>
+    <option id="productCategory7" dialogue="乳制品 II"></option>
+    <option id="productCategory8" dialogue="苏打饮料 I"></option>
+    <option id="productCategory9" dialogue="冷冻食品 I"></option>
+    <option id="productCategory10" dialogue="冷冻食品 II"></option>
+    <option id="productCategory11" dialogue="卫生 I"></option>
+    <option id="productCategory12" dialogue="卫生 II"></option>
+    <option id="productCategory13" dialogue="卫生 III"></option>
+    <option id="productCategory14" dialogue="清洁产品 I"></option>
+    <option id="productCategory15" dialogue="清洁产品 II"></option>
+    <option id="productCategory16" dialogue="糖果和零食 I"></option>
+    <option id="productCategory17" dialogue="糖果和零食 II"></option>
+    <option id="productCategory18" dialogue="糖果和零食 III"></option>
+    <option id="productCategory19" dialogue="糖果和零食 IV"></option>
+    <option id="productCategory20" dialogue="肉类 I"></option>
+    <option id="productCategory21" dialogue="蜜饯 I"></option>
+    <option id="productCategory22" dialogue="调味品 I"></option>
+    <option id="productCategory23" dialogue="海鲜 I"></option>
+    <option id="productCategory24" dialogue="书籍包 I"></option>
+    <option id="productCategory25" dialogue="书籍包 II"></option>
+    <option id="productCategory26" dialogue="酒精饮料 I"></option>
+    <option id="productCategory27" dialogue="酒精饮料 II"></option>
+    <option id="productCategory28" dialogue="酒精饮料 III"></option>
+    <option id="productCategory29" dialogue="药店 I"></option>
+    <option id="productCategory30" dialogue="药店 II"></option>
+    <option id="productCategory31" dialogue="农产品 I"></option>
+    <option id="productCategory32" dialogue="农产品 II"></option>
+    <option id="productCategory33" dialogue="农产品 III"></option>
+    <option id="productCategory34" dialogue="农产品 IV"></option>
+    <option id="productCategory35" dialogue="儿童保育 I"></option>
+    <option id="productCategory36" dialogue="儿童保育 II"></option>
+    <option id="productCategory37" dialogue="苏打饮料 II"></option>
+    <option id="productCategory38" dialogue="苏打饮料 III"></option>
+    <option id="productCategory39" dialogue="糖果和零食 V"></option>
+    <option id="productCategory40" dialogue="糖果和零食 VI"></option>
+    <option id="productCategory41" dialogue="蜜饯 II"></option>
+    <option id="productCategory42" dialogue="园艺 I"></option>
+    <option id="productCategory43" dialogue="园艺 II"></option>
+    <option id="productCategory44" dialogue="园艺 III"></option>
+    <option id="productCategory45" dialogue="园艺 IV"></option>
+    <option id="productCategory46" dialogue="小型电子产品 I"></option>
+    <option id="productCategory47" dialogue="小型电子产品 II"></option>
+    <option id="productCategory48" dialogue="小型电子产品 III"></option>
+
+    <option id="product0" dialogue="意大利面通心粉"></option>
+    <option id="product1" dialogue="水瓶"></option>
+    <option id="product2" dialogue="蜂蜜麦片"></option>
+    <option id="product3" dialogue="米饭"></option>
+    <option id="product4" dialogue="盐"></option>
+    <option id="product5" dialogue="糖"></option>
+    <option id="product6" dialogue="人造黄油"></option>
+    <option id="product7" dialogue="面粉"></option>
+    <option id="product8" dialogue="苹果汁"></option>
+    <option id="product9" dialogue="橄榄油"></option>
+
+    <option id="product10" dialogue="番茄酱"></option>
+    <option id="product11" dialogue="切片面包"></option>
+    <option id="product12" dialogue="胡椒"></option>
+    <option id="product13" dialogue="橙汁"></option>
+    <option id="product14" dialogue="烧烤酱"></option>
+    <option id="product15" dialogue="芥末酱"></option>
+    <option id="product16" dialogue="意大利面条盒"></option>
+    <option id="product17" dialogue="金枪鱼酱"></option>
+    <option id="product18" dialogue="纤维谷物"></option>
+    <option id="product19" dialogue="极品面粉"></option>
+
+    <option id="product20" dialogue="黑咖啡"></option>
+    <option id="product21" dialogue="鸡蛋盒"></option>
+    <option id="product22" dialogue="鹰嘴豆泥"></option>
+    <option id="product23" dialogue="白面粉"></option>
+    <option id="product24" dialogue="蔗糖盒"></option>
+    <option id="product25" dialogue="糖"></option>
+    <option id="product26" dialogue="通心粉"></option>
+    <option id="product27" dialogue="生态糖"></option>
+    <option id="product28" dialogue="红糖"></option>
+    <option id="product29" dialogue="葵花籽油"></option>
+
+    <option id="product30" dialogue="土豆泥"></option>
+    <option id="product31" dialogue="土豆袋"></option>
+    <option id="product32" dialogue="浓缩咖啡"></option>
+    <option id="product33" dialogue="印度香米"></option>
+    <option id="product34" dialogue="长粒米"></option>
+    <option id="product35" dialogue="咖啡"></option>
+    <option id="product36" dialogue="极品意面"></option>
+    <option id="product37" dialogue="巧克力麦片"></option>
+    <option id="product38" dialogue="优质水"></option>
+    <option id="product39" dialogue="泉水"></option>
+
+    <option id="product40" dialogue="玻璃糖"></option>
+    <option id="product41" dialogue="糖 - 大盒"></option>
+    <option id="product42" dialogue="红糖 - 大盒"></option>
+    <option id="product43" dialogue="埃曼塔奶酪"></option>
+    <option id="product44" dialogue="格鲁耶尔奶酪奶酪"></option>
+    <option id="product45" dialogue="脱脂奶酪"></option>
+    <option id="product46" dialogue="水果酸奶"></option>
+    <option id="product47" dialogue="香草酸奶"></option>
+    <option id="product48" dialogue="牛奶砖"></option>
+    <option id="product49" dialogue="黄油"></option>
+
+    <option id="product50" dialogue="Parmigiano 奶酪"></option>
+    <option id="product51" dialogue="Reggiano 奶酪"></option>
+    <option id="product52" dialogue="Mozzarella 奶酪"></option>
+    <option id="product53" dialogue="脱脂酸奶"></option>
+    <option id="product54" dialogue="可乐包"></option>
+    <option id="product55" dialogue="苏打水包"></option>
+    <option id="product56" dialogue="无咖啡因苏打水包"></option>
+    <option id="product57" dialogue="苏打水瓶"></option>
+    <option id="product58" dialogue="可乐瓶"></option>
+    <option id="product59" dialogue="无糖苏打水瓶"></option>
+
+    <option id="product60" dialogue="Premium苏打水"></option>
+    <option id="product61" dialogue="烤肉披萨"></option>
+    <option id="product62" dialogue="火锅"></option>
+    <option id="product63" dialogue="Crocanti 火腿"></option>
+    <option id="product64" dialogue="火腿奶酪薄饼"></option>
+    <option id="product65" dialogue="炸薯条"></option>
+    <option id="product66" dialogue="脆皮土豆披萨"></option>
+    <option id="product67" dialogue="青豆"></option>
+    <option id="product68" dialogue="四重奶酪披萨"></option>
+    <option id="product69" dialogue="四季披萨"></option>
+
+    <option id="product70" dialogue="蔬菜拼盘"></option>
+    <option id="product71" dialogue="鸡肉混合物"></option>
+    <option id="product72" dialogue="博洛尼亚意式千层面"></option>
+    <option id="product73" dialogue="蔬菜千层面"></option>
+    <option id="product74" dialogue="牙膏"></option>
+    <option id="product75" dialogue="卫生纸"></option>
+    <option id="product76" dialogue="洗手液"></option>
+    <option id="product77" dialogue="牛油果洗发水"></option>
+    <option id="product78" dialogue="鸡蛋洗发水"></option>
+    <option id="product79" dialogue="沐浴露"></option>
+
+    <option id="product80" dialogue="卫生纸"></option>
+    <option id="product81" dialogue="芒果香皂"></option>
+    <option id="product82" dialogue="超柔洗发水"></option>
+    <option id="product83" dialogue="荷荷巴蜂蜜洗发水"></option>
+    <option id="product84" dialogue="摩洛哥坚果油洗发水"></option>
+    <option id="product85" dialogue="纸巾"></option>
+    <option id="product86" dialogue="双面卫生纸"></option>
+    <option id="product87" dialogue="柠檬香皂"></option>
+    <option id="product88" dialogue="高级沐浴露"></option>
+    <option id="product89" dialogue="婴儿洗发水"></option>
+    <option id="product90" dialogue="洗涤剂"></option>
+    <option id="product91" dialogue="去污剂"></option>
+    <option id="product92" dialogue="玻璃清洁剂"></option>
+    <option id="product93" dialogue="洗涤剂表"></option>
+    <option id="product94" dialogue="洗碗机"></option>
+    <option id="product95" dialogue="漂白剂"></option>
+    <option id="product96" dialogue="漂白剂 - 大瓶"></option>
+    <option id="product97" dialogue="柔顺剂"></option>
+    <option id="product98" dialogue="优质洗涤剂"></option>
+    <option id="product99" dialogue="杀虫剂"></option>
+
+    <option id="product100" dialogue="清洁布"></option>
+    <option id="product101" dialogue="优质胶囊"></option>
+    <option id="product102" dialogue="优质漂白剂"></option>
+    <option id="product103" dialogue="氨水"></option>
+    <option id="product104" dialogue="饼干罐"></option>
+    <option id="product105" dialogue="Maxi Cone"></option>
+    <option id="product106" dialogue="巧克力酱"></option>
+    <option id="product107" dialogue="巧克力粉"></option>
+    <option id="product108" dialogue="薯片"></option>
+    <option id="product109" dialogue="Sweet Bonbek"></option>
+
+    <option id="product110" dialogue="桃子果酱"></option>
+    <option id="product111" dialogue="冰淇淋盒"></option>
+    <option id="product112" dialogue="巧克力盒"></option>
+    <option id="product113" dialogue="巧克力饼干"></option>
+    <option id="product114" dialogue="香草饼干"></option>
+    <option id="product115" dialogue="玛德琳"></option>
+    <option id="product116" dialogue="草莓酱"></option>
+    <option id="product117" dialogue="花生酱"></option>
+    <option id="product118" dialogue="Chipos"></option>
+    <option id="product119" dialogue="棉花糖"></option>
+
+    <option id="product120" dialogue="柠檬饼干"></option>
+    <option id="product121" dialogue="榛子饼干"></option>
+    <option id="product122" dialogue="高级冰淇淋"></option>
+    <option id="product123" dialogue="蜂蜜"></option>
+    <option id="product124" dialogue="高级巧克力盒"></option>
+    <option id="product125" dialogue="Foditos"></option>
+    <option id="product126" dialogue="高级蛋糕"></option>
+    <option id="product127" dialogue="剁碎的牛肉"></option>
+    <option id="product128" dialogue="纯牛肉"></option>
+    <option id="product129" dialogue="小牛肉"></option>
+
+    <option id="product130" dialogue="鸡肉鸡翅"></option>
+    <option id="product131" dialogue="鸡肉"></option>
+    <option id="product132" dialogue="帕尔马火腿"></option>
+    <option id="product133" dialogue="切片火腿"></option>
+    <option id="product134" dialogue="豌豆 - 大"></option>
+    <option id="product135" dialogue="金枪鱼 - 大"></option>
+    <option id="product136" dialogue="Rea Beans"></option>
+    <option id="product137" dialogue="猫粮"></option>
+    <option id="product138" dialogue="猫粮"></option>
+    <option id="product139" dialogue="狗粮"></option>
+
+    <option id="product140" dialogue="绿茶"></option>
+    <option id="product141" dialogue="柠檬茶"></option>
+    <option id="product142" dialogue="红茶"></option>
+    <option id="product143" dialogue="薄荷"></option>
+    <option id="product144" dialogue="薄荷"></option>
+    <option id="product145" dialogue="缬草"></option>
+    <option id="product146" dialogue="大寿司"></option>
+    <option id="product147" dialogue="小寿司"></option>
+    <option id="product148" dialogue="烟熏三文鱼"></option>
+    <option id="product149" dialogue="蟹肉棒"></option>
+
+    <option id="product150" dialogue="书 - 电磁"></option>
+    <option id="product151" dialogue="书 - 惊喜"></option>
+    <option id="product152" dialogue="书籍 - ABC"></option>
+    <option id="product153" dialogue="书籍 - Mother And Child"></option>
+    <option id="product154" dialogue="书籍 - Colors"></option>
+    <option id="product155" dialogue="书籍 - Piticha"></option>
+    <option id="product156" dialogue="书籍 - OnceUpon"></option>
+    <option id="product157" dialogue="书籍 - Krok"></option>
+    <option id="product158" dialogue="书籍 - Adventures"></option>
+    <option id="product159" dialogue="书籍 - Donnine"></option>
+
+    <option id="product160" dialogue="书籍 - Vintage"></option>
+    <option id="product161" dialogue="书籍 - I Wont Share"></option>
+    <option id="product162" dialogue="啤酒包"></option>
+    <option id="product163" dialogue="啤酒包"></option>
+    <option id="product164" dialogue="啤酒包"></option>
+    <option id="product165" dialogue="啤酒桶"></option>
+    <option id="product166" dialogue="啤酒桶"></option>
+    <option id="product167" dialogue="伏特加"></option>
+    <option id="product168" dialogue="红酒"></option>
+    <option id="product169" dialogue="玫瑰红酒"></option>
+
+    <option id="product170" dialogue="白葡萄酒"></option>
+    <option id="product171" dialogue="潮州"></option>
+    <option id="product172" dialogue="高级伏特加"></option>
+    <option id="product173" dialogue="日本威士忌"></option>
+    <option id="product174" dialogue="高级威士忌"></option>
+    <option id="product175" dialogue="高级威士忌"></option>
+    <option id="product176" dialogue="过氧化氢"></option>
+    <option id="product177" dialogue="消毒剂"></option>
+    <option id="product178" dialogue="布洛芬"></option>
+    <option id="product179" dialogue="扑热息痛"></option>
+
+    <option id="product180" dialogue="创可贴"></option>
+    <option id="product181" dialogue="泻药"></option>
+    <option id="product182" dialogue="抗组胺药"></option>
+    <option id="product183" dialogue="锌补充剂"></option>
+    <option id="product184" dialogue="抗氧化剂"></option>
+    <option id="product185" dialogue="鱼油"></option>
+    <option id="product186" dialogue="海藻丸"></option>
+    <option id="product187" dialogue="维生素"></option>
+    <option id="product188" dialogue="褪黑激素"></option>
+    <option id="product189" dialogue="防晒霜"></option>
+
+    <option id="product190" dialogue="弹力霜"></option>
+    <option id="product191" dialogue="红苹果托盘"></option>
+    <option id="product192" dialogue="绿苹果托盘"></option>
+    <option id="product193" dialogue="小柑橘托盘"></option>
+    <option id="product194" dialogue="橙子托盘"></option>
+    <option id="product195" dialogue="梨子托盘"></option>
+    <option id="product196" dialogue="柠檬托盘"></option>
+    <option id="product197" dialogue="芒果托盘"></option>
+    <option id="product198" dialogue="鳄梨托盘"></option>
+    <option id="product199" dialogue="奇异果托盘"></option>
+
+    <option id="product200" dialogue="木瓜托盘"></option>
+    <option id="product201" dialogue="草莓托盘"></option>
+    <option id="product202" dialogue="樱桃托盘"></option>
+    <option id="product203" dialogue="洋蓟托盘"></option>
+    <option id="product204" dialogue="西葫芦托盘"></option>
+    <option id="product205" dialogue="胡萝卜托盘"></option>
+    <option id="product206" dialogue="番茄托盘"></option>
+    <option id="product207" dialogue="土豆托盘"></option>
+    <option id="product208" dialogue="洋葱托盘"></option>
+    <option id="product209" dialogue="香蕉包"></option>
+
+    <option id="product210" dialogue="甜瓜"></option>
+    <option id="product211" dialogue="菠萝"></option>
+    <option id="product212" dialogue="南瓜"></option>
+    <option id="product213" dialogue="西瓜"></option>
+    <option id="product214" dialogue="婴儿食品：蔬菜"></option>
+    <option id="product215" dialogue="婴儿食品：鱼"></option>
+    <option id="product216" dialogue="婴儿食品：水果"></option>
+    <option id="product217" dialogue="婴儿食品：肉类"></option>
+    <option id="product218" dialogue="营养奶粉"></option>
+    <option id="product219" dialogue="营养奶粉"></option>
+
+    <option id="product220" dialogue="生态尿布"></option>
+    <option id="product221" dialogue="基本尿布"></option>
+    <option id="product222" dialogue="幼儿尿布"></option>
+    <option id="product223" dialogue="高级尿布"></option>
+    <option id="product224" dialogue="芦荟婴儿湿巾"></option>
+    <option id="product225" dialogue="基本款婴儿湿巾"></option>
+    <option id="product226" dialogue="婴儿爽身粉"></option>
+    <option id="product227" dialogue="橙子汽水"></option>
+    <option id="product228" dialogue="菠萝汽水"></option>
+    <option id="product229" dialogue="热带汽水"></option>
+
+    <option id="product230" dialogue="绿茶饮料"></option>
+    <option id="product231" dialogue="红茶饮料"></option>
+    <option id="product232" dialogue="柠檬茶饮料"></option>
+    <option id="product233" dialogue="冷萃咖啡"></option>
+    <option id="product234" dialogue="蓝莓能量饮料"></option>
+    <option id="product235" dialogue="番石榴能量饮料"></option>
+    <option id="product236" dialogue="利马能量饮料"></option>
+    <option id="product237" dialogue="果汁宾治能量饮料"></option>
+    <option id="product238" dialogue="芒果能量饮料"></option>
+    <option id="product239" dialogue="可乐能量饮料"></option>
+
+    <option id="product240" dialogue="无糖能量饮料"></option>
+    <option id="product241" dialogue="基础草莓冰淇淋"></option>
+    <option id="product242" dialogue="柠檬冰淇淋"></option>
+    <option id="product243" dialogue="咖啡冰淇淋"></option>
+    <option id="product244" dialogue="Stracciatella 冰淇淋"></option>
+    <option id="product245" dialogue="草莓蛋白霜冰淇淋"></option>
+    <option id="product246" dialogue="焦糖冰淇淋"></option>
+    <option id="product247" dialogue="高级草莓冰淇淋"></option>
+    <option id="product248" dialogue="草莓芝士蛋糕冰淇淋"></option>
+    <option id="product249" dialogue="高级焦糖冰淇淋"></option>
+
+    <option id="product250" dialogue="粉红草莓冰淇淋"></option>
+    <option id="product251" dialogue="酒精冰淇淋"></option>
+    <option id="product252" dialogue="鹰嘴豆"></option>
+    <option id="product253" dialogue="肉丸"></option>
+    <option id="product254" dialogue="小扁豆"></option>
+    <option id="product255" dialogue="番茄汤"></option>
+    <option id="product256" dialogue="玉米罐头"></option>
+    <option id="product257" dialogue="罐头豌豆"></option>
+    <option id="product258" dialogue="草莓种子"></option>
+    <option id="product259" dialogue="覆盆子种子"></option>
+
+    <option id="product260" dialogue="蓝莓种子"></option>
+    <option id="product261" dialogue="菠萝种子"></option>
+    <option id="product262" dialogue="迈耶柠檬种子"></option>
+    <option id="product263" dialogue="番茄种子"></option>
+    <option id="product264" dialogue="辣椒种子"></option>
+    <option id="product265" dialogue="黄瓜种子"></option>
+    <option id="product266" dialogue="萝卜种子"></option>
+    <option id="product267" dialogue="胡萝卜种子"></option>
+    <option id="product268" dialogue="草坪种子"></option>
+    <option id="product269" dialogue="罂粟种子"></option>
+
+    <option id="product270" dialogue="郁金香种子"></option>
+    <option id="product271" dialogue="向日葵种子"></option>
+    <option id="product272" dialogue="矮牵牛种子"></option>
+    <option id="product273" dialogue="手耙 (A)"></option>
+    <option id="product274" dialogue="手耙 (B)"></option>
+    <option id="product275" dialogue="手铲"></option>
+    <option id="product276" dialogue="手动耕耘机"></option>
+    <option id="product277" dialogue="盆栽土壤"></option>
+    <option id="product278" dialogue="肥料"></option>
+    <option id="product279" dialogue="花盆盘"></option>
+
+    <option id="product280" dialogue="花盆"></option>
+    <option id="product281" dialogue="AA 电池"></option>
+    <option id="product282" dialogue="AAA 电池"></option>
+    <option id="product283" dialogue="C 电池"></option>
+    <option id="product284" dialogue="9V 电池"></option>
+    <option id="product285" dialogue="通用电视遥控器"></option>
+    <option id="product286" dialogue="通用手机充电器"></option>
+    <option id="product287" dialogue="基本预付费电话"></option>
+    <option id="product288" dialogue="基本鼠标"></option>
+    <option id="product289" dialogue="Wifi 适配器"></option>
+    <option id="product290" dialogue="基本耳塞"></option>
+
+    <option id="product291" dialogue="基本键盘"></option>
+    <option id="product292" dialogue="基本游戏手柄"></option>
+    <option id="product293" dialogue="USB 闪存盘 (128GB)"></option>
+    <option id="product294" dialogue="USB 闪存盘 (256GB)"></option>
+    <option id="product295" dialogue="USB 闪存盘 (512GB)"></option>
+    <option id="product296" dialogue="USB 闪存盘 (1TB)"></option>
+    <option id="product297" dialogue="基本扬声器"></option>
+    <option id="product298" dialogue="基本耳机"></option>
+    <option id="product299" dialogue="基本游戏机"></option>
+
+    <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
+    <option id="paintmat0" dialogue="存储瓷砖 A"></option>
+    <option id="paintmat1" dialogue="存储瓷砖 B"></option>
+    <option id="paintmat2" dialogue="存储砖块"></option>
+    <option id="paintmat3" dialogue="存储石膏"></option>
+    <option id="paintmat4" dialogue="存储混凝土"></option>
+    <option id="paintmat5" dialogue="上漆木材"></option>
+    <option id="paintmat6" dialogue="木板"></option>
+    <option id="paintmat7" dialogue="刨光木材"></option>
+    <option id="paintmat8" dialogue="未刨光木材（有节）"></option>
+    <option id="paintmat9" dialogue="未刨光木材"></option>
+
+    <option id="paintmat10" dialogue="上漆木材"></option>
+    <option id="paintmat11" dialogue="基本瓷砖 A"></option>
+    <option id="paintmat12" dialogue="基本瓷砖 B"></option>
+    <option id="paintmat13" dialogue="基本瓷砖 C"></option>
+    <option id="paintmat14" dialogue="基本瓷砖 D"></option>
+    <option id="paintmat15" dialogue="花岗岩瓷砖 A"></option>
+    <option id="paintmat16" dialogue="花岗岩瓷砖 B"></option>
+    <option id="paintmat17" dialogue="花岗岩瓷砖 C"></option>
+    <option id="paintmat18" dialogue="花岗岩瓷砖 D"></option>
+    <option id="paintmat19" dialogue="大理石瓷砖 A"></option>
+
+    <option id="paintmat20" dialogue="大理石瓷砖 B"></option>
+    <option id="paintmat21" dialogue="大理石瓷砖 C"></option>
+    <option id="paintmat22" dialogue="原始大理石"></option>
+    <option id="paintmat23" dialogue="彩绘金属"></option>
+    <option id="paintmat24" dialogue="基本砖"></option>
+    <option id="paintmat25" dialogue="砖图案 A"></option>
+    <option id="paintmat26" dialogue="砖图案 B"></option>
+    <option id="paintmat27" dialogue="砖图案 C"></option>
+    <option id="paintmat28" dialogue="基本铝"></option>
+    <option id="paintmat29" dialogue="拉丝铝 A"></option>
+
+    <option id="paintmat30" dialogue="拉丝铝B"></option>
+    <option id="paintmat31" dialogue="铸铝"></option>
+    <option id="paintmat32" dialogue="哑光铝"></option>
+    <option id="paintmat33" dialogue="嘈杂铝"></option>
+    <option id="paintmat34" dialogue="氧化铝"></option>
+    <option id="paintmat35" dialogue="拉丝铜"></option>
+    <option id="paintmat36" dialogue="金色面板"></option>
+    <option id="paintmat37" dialogue="铜图案 A"></option>
+    <option id="paintmat38" dialogue="铜图案 B"></option>
+    <option id="paintmat39" dialogue="铜图案 C"></option>
+
+    <option id="paintmat40" dialogue="铝图案 A"></option>
+    <option id="paintmat41" dialogue="铝图案 B"></option>
+    <option id="paintmat42" dialogue="铝图案 C"></option>
+    <option id="paintmat43" dialogue="铝图案 D"></option>
+    <option id="paintmat44" dialogue="铝图案 E"></option>
+    <option id="paintmat45" dialogue="铝图案 F"></option>
+    <option id="paintmat46" dialogue="铝图案 G"></option>
+    <option id="paintmat47" dialogue="铝图案 H"></option>
+    <option id="paintmat48" dialogue="铝图案 I"></option>
+    <option id="paintmat49" dialogue="铝图案 J"></option>
+
+    <option id="paintmat50" dialogue="黄铜图案 A"></option>
+    <option id="paintmat51" dialogue="黄铜图案 B"></option>
+    <option id="paintmat52" dialogue="黄铜图案 C"></option>
+    <option id="paintmat53" dialogue="黄铜图案 D"></option>
+    <option id="paintmat54" dialogue="黄铜图案 E"></option>
+    <option id="paintmat55" dialogue="黄铜图案 F"></option>
+    <option id="paintmat56" dialogue="黄铜图案 G"></option>
+    <option id="paintmat57" dialogue="铜板"></option>
+    <option id="paintmat58" dialogue="其他图案 A"></option>
+    <option id="paintmat59" dialogue="其他图案 B"></option>
+
+    <option id="paintmat60" dialogue="其他图案图案 C"></option>
+    <option id="paintmat61" dialogue="其他图案 D"></option>
+    <option id="paintmat62" dialogue="其他图案 E"></option>
+    <option id="paintmat63" dialogue="其他图案 F"></option>
+    <option id="paintmat64" dialogue="其他图案 G"></option>
+    <option id="paintmat65" dialogue="其他图案 H"></option>
+    <option id="paintmat66" dialogue="其他图案 I"></option>
+    <option id="paintmat67" dialogue="其他图案 J"></option>
+    <option id="paintmat68" dialogue="其他图案 K"></option>
+    <option id="paintmat69" dialogue="其他图案图案 L"></option>
+
+    <option id="paintmat70" dialogue="有机：草"></option>
+    <option id="paintmat71" dialogue="有机：叶子"></option>
+    <option id="paintmat72" dialogue="有机：石头 A"></option>
+    <option id="paintmat73" dialogue="有机：石头 B"></option>
+
+    <option id="paintmat74" dialogue="万圣节：图案 A"></option>
+    <option id="paintmat75" dialogue="万圣节：图案 B"></option>
+    <option id="paintmat76" dialogue="万圣节：图案 C"></option>
+    <option id="paintmat77" dialogue="万圣节：图案 D"></option>
+    <option id="paintmat78" dialogue="万圣节：图案 E"></option>
+    <option id="paintmat79" dialogue="万圣节：图案 F"></option>
+
+    <option id="paintmat80" dialogue="万圣节：图案 G"></option>
+    <option id="paintmat81" dialogue="万圣节：图案 H"></option>
+    <option id="paintmat82" dialogue="万圣节：图案 I"></option>
+    <option id="paintmat83" dialogue="万圣节：图案J"></option>
+    <option id="paintmat84" dialogue="万圣节：图案 K"></option>
+    <option id="paintmat85" dialogue="万圣节：图案 L"></option>
+    <option id="paintmat86" dialogue="万圣节：图案 M"></option>
+    <option id="paintmat87" dialogue="万圣节：南瓜"></option>
+    <option id="paintmat88" dialogue="万圣节：骷髅"></option>
+    <option id="paintmat89" dialogue="万圣节：蜘蛛网"></option>
+
+    <option id="paintmat90" dialogue="圣诞节 A"></option>
+    <option id="paintmat91" dialogue="圣诞节 B"></option>
+    <option id="paintmat92" dialogue="圣诞节 C"></option>
+    <option id="paintmat93" dialogue="圣诞节 D"></option>
+    <option id="paintmat94" dialogue="圣诞节 E"></option>
+    <option id="paintmat95" dialogue="圣诞节 F"></option>
+    <option id="paintmat96" dialogue="圣诞节 G"></option>
+    <option id="paintmat97" dialogue="圣诞节 H"></option>
+    <option id="paintmat98" dialogue="圣诞节 I"></option>
+    <option id="paintmat99" dialogue="圣诞节 J"></option>
+    <option id="paintmat100" dialogue="雪"></option>
+
+    <option id="paintmat101" dialogue="冰 A"></option>
+    <option id="paintmat102" dialogue="冰 B"></option>
+    <option id="paintmat103" dialogue="冰 C"></option>
+    <option id="paintmat104" dialogue="冰 D"></option>
+    <option id="paintmat105" dialogue="产品：基本 A"></option>
+    <option id="paintmat106" dialogue="产品：基本 B"></option>
+    <option id="paintmat107" dialogue="产品：日记 A"></option>
+    <option id="paintmat108" dialogue="产品：日记 B"></option>
+    <option id="paintmat109" dialogue="产品：苏打饮料 A"></option>
+
+    <option id="paintmat110" dialogue="产品：苏打饮料 B"></option>
+    <option id="paintmat111" dialogue="产品：冰冻"></option>
+    <option id="paintmat112" dialogue="产品：卫生 A"></option>
+    <option id="paintmat113" dialogue="产品：卫生 B"></option>
+    <option id="paintmat114" dialogue="产品：清洁"></option>
+    <option id="paintmat115" dialogue="产品：糖果 A"></option>
+    <option id="paintmat116" dialogue="产品：糖果 B"></option>
+    <option id="paintmat117" dialogue="产品：肉类"></option>
+    <option id="paintmat118" dialogue="产品：蜜饯"></option>
+    <option id="paintmat119" dialogue="产品：浸剂"></option>
+
+    <option id="paintmat120" dialogue="产品：鱼 A"></option>
+    <option id="paintmat121" dialogue="产品：鱼 B"></option>
+    <option id="paintmat122" dialogue="产品：书籍 A"></option>
+    <option id="paintmat123" dialogue="产品：书籍B"></option>
+    <option id="paintmat124" dialogue="产品：酒精 A"></option>
+    <option id="paintmat125" dialogue="产品：酒精 B"></option>
+    <option id="paintmat126" dialogue="产品：药房 A"></option>
+    <option id="paintmat127" dialogue="产品：药房 B"></option>
+    <option id="paintmat128" dialogue="产品：农产品 A"></option>
+    <option id="paintmat129" dialogue="产品：农产品 B"></option>
+
+    <option id="paintmat130" dialogue="产品：农产品 C"></option>
+    <option id="paintmat131" dialogue="产品：农产品 D"></option>
+    <option id="paintmat132" dialogue="产品：儿童保育 A"></option>
+    <option id="paintmat133" dialogue="产品：儿童保育 B"></option>
+    <option id="paintmat134" dialogue="实验电视"></option>
+    <option id="paintmat135" dialogue="产品：园艺 A"></option>
+    <option id="paintmat136" dialogue="产品：园艺 B"></option>
+    <option id="paintmat137" dialogue="产品：电子产品 A"></option>
+    <option id="paintmat138" dialogue="产品：电子产品 B"></option>
+    <option id="paintmat139" dialogue="竹子"></option>
+
+    <option id="paintmat140" dialogue="地毯 A"></option>
+    <option id="paintmat141" dialogue="地毯 B"></option>
+    <option id="paintmat142" dialogue="地毯 C"></option>
+    <option id="paintmat143" dialogue="地毯 D"></option>
+    <option id="paintmat144" dialogue="地毯 E"></option>
+    <option id="paintmat145" dialogue="地毯 F"></option>
+    <option id="paintmat146" dialogue="地毯 G"></option>
+    <option id="paintmat147" dialogue="地毯 H"></option>
+    <option id="paintmat148" dialogue="地毯 I"></option>
+    <option id="paintmat149" dialogue="混凝土 A"></option>
+
+    <option id="paintmat150" dialogue="混凝土 B"></option>
+    <option id="paintmat151" dialogue="混凝土 C"></option>
+    <option id="paintmat152" dialogue="混凝土 D"></option>
+    <option id="paintmat153" dialogue="混凝土 E"></option>
+    <option id="paintmat154" dialogue="混凝土 F"></option>
+    <option id="paintmat155" dialogue="混凝土 G"></option>
+    <option id="paintmat156" dialogue="菱形板 A"></option>
+    <option id="paintmat157" dialogue="钻石板 B"></option>
+    <option id="paintmat158" dialogue="金属板 A"></option>
+    <option id="paintmat159" dialogue="金属板 B"></option>
+
+    <option id="paintmat160" dialogue="金属板 C"></option>
+    <option id="paintmat161" dialogue="岩石 A"></option>
+    <option id="paintmat162" dialogue="岩石 B"></option>
+    <option id="paintmat163" dialogue="岩石 C"></option>
+    <option id="paintmat164" dialogue="岩石 D"></option>
+    <option id="paintmat165" dialogue="木制图案 A"></option>
+    <option id="paintmat166" dialogue="木制图案 B"></option>
+    <option id="paintmat167" dialogue="木制图案 C"></option>
+    <option id="paintmat168" dialogue="木制图案 D"></option>
+    <option id="paintmat169" dialogue="木制图案 E"></option>
+
+    <option id="paintmat170" dialogue="木制图案 F"></option>
+    <option id="paintmat171" dialogue="木制图案 G"></option>
+
+
+    <option id="skinshats" dialogue="皮肤和帽子"></option>
+    <option id="character" dialogue="角色"></option>
+    <option id="hat" dialogue="帽子"></option>
+    <option id="coolpeople" dialogue="只允许酷人"></option>
+
+    <option id="mprice" dialogue="市场价格"></option>
+    <option id="yprice" dialogue="您的价格"></option>
+
+    <option id="mgiven" dialogue="已给金额"></option>
+    <option id="mreturn" dialogue="要返还的金额"></option>
+    <option id="camount" dialogue="当前金额"></option>
+    <option id="addmoney" dialogue="[LMB] 添加金额"></option>
+    <option id="removemoney" dialogue="[RMB] 移除金额"></option>
+
+    <option id="coopplayerfunds" dialogue="为合作玩家添加额外资金"></option>
+
+    <option id="newoptions1" dialogue="FOV"></option>
+    <option id="newoptions2" dialogue="电视卷。"></option>
+
+    <option id="poseskey" dialogue="舞蹈调性分配"></option>
+
+    <option id="lic12" dialogue="许可证获得批准后，您将能够在此终端中将 Youtube 和 Twitch 连接到电视上。"></option>
+
+    <option id="cosmetics1" dialogue="化妆品 DLC 已获批准！"></option>
+    <option id="cosmetics2" dialogue="9 个新角色、100 多顶帽子、35 种舞蹈和姿势以及一个可在老板不注意时偷懒的网络浏览器。
+
+使用新平板电脑粉刷您的商店，并享受随时间不断添加的独家装饰。第一个 Youtube 同步更新已经可用！"></option>
+
+    <option id="continue" dialogue="继续"></option>
+    <option id="backups" dialogue="备份"></option>
+    <option id="nobackups" dialogue="无备份"></option>
+    <option id="backupswarning" dialogue="警告：加载备份将覆盖当前文件的日期。"></option>
+    <option id="deleteoff" dialogue="删除模式关闭"></option>
+    <option id="deleteon" dialogue="删除模式开启"></option>
+
+    <option id="kick" dialogue="驱逐者"></option>
+    <option id="punish" dialogue="惩罚"></option>
+    <option id="permi" dialogue="权限"></option>
+
+    <option id="nplayer" dialogue="新玩家已连接："></option>
+
+    <option id="disclaimer1" dialogue="如果您遇到加入问题，请记得更新至最新补丁！"></option>
+
+    <option id="tvcontrol" dialogue="电视控制"></option>
+    <option id="tvhook0" dialogue="关闭"></option>
+    <option id="tvhook1" dialogue="占位符视频"></option>
+    <option id="tvhook2" dialogue="URL 视频"></option>
+    <option id="tvhook3" dialogue="浏览器"></option>
+    <option id="tvhook4" dialogue="Twitch/YT 视频"></option>
+    <option id="tvdisclaimer" dialogue="流式可视化仍待完成。
+感谢您的耐心等待。"></option>
+
+    <option id="lobby0" dialogue="大厅现在是："></option>
+    <option id="lobby1" dialogue="打开"></option>
+    <option id="lobby2" dialogue="关闭 "></option>
+    <option id="lobby3" dialogue="开放大厅"></option>
+    <option id="lobby4" dialogue="关闭大厅"></option>
+    <option id="lobby5" dialogue="关闭大厅将阻止任何人加入。
+如果您只预计一定数量的玩家并且不希望任何没有代码的人通过 Steam 好友加入，则此功能很有用。"></option>
+
+    <option id="newoptions3" dialogue="允许视频"></option>
+
+    <option id="checkoutlane" dialogue="结账通道已关闭
+请使用下一个"></option>
+    <option id="checkoutlane1" dialogue="关闭结账通道"></option>
+
+    <option id="paintablestablet0" dialogue="选择材料，然后选择颜色，然后应用选择"></option>
+    <option id="paintablestablet1" dialogue="返回材料选择"></option>
+    <option id="paintablestablet2" dialogue="上一个/下一个材料或颜色"></option>
+    <option id="paintablestablet3" dialogue="正在实施商店定制。
+此墙允许预览可绘画平板电脑而无需花钱。
+在某些材料中，您可以选择颜色变化。"></option>
+
+    <option id="newoptions4" dialogue="高延迟"></option>
+    <option id="newoptions5" dialogue="常规选项"></option>
+    <option id="titledisclaimer1" dialogue="加入游戏并补货时缺少产品？在选项中激活新的高延迟模式"></option>
+
+    <option id="managerboardnew1" dialogue="购买空盒子"></option>
+    <option id="employeeboardnew1" dialogue="中断盒回收"></option>
+
+    <option id="tabletdisclaimer1" dialogue="此平板电脑已被弃用并合并到主构建器中。
+默认情况下使用 X 和 Z 访问新选项卡。"></option>
+
+    <option id="pcat" dialogue="您抚摸了猫。稍后再回来"></option>
+
+    <option id="snapping0" dialogue="下一个捕捉模式"></option>
+    <option id="snapping1" dialogue="捕捉模式"></option>
+    <option id="snapping2" dialogue="无"></option>
+    <option id="snapping3" dialogue="网格：中心"></option>
+    <option id="snapping4" dialogue="网格：背面"></option>
+    <option id="snapping5" dialogue="家具"></option>
+
+    <option id="checkoutwarning" dialogue="您的商店至少需要人工结账"></option>
+
+    <option id="newoptions6" dialogue="始终运行"></option>
+    <option id="newoptions7" dialogue="浏览器"></option>
+    <option id="newoptions7a" dialogue="无"></option>
+    <option id="newoptions7b" dialogue="正常"></option>
+    <option id="newoptions7c" dialogue="Linux 支持"></option>
+    <option id="newoptions8" dialogue="缓存音量"></option>
+    <option id="newoptions9" dialogue="限制光标"></option>
+    <option id="newoptions10" dialogue="十字线大小"></option>
+    <option id="newoptions11" dialogue="十字线颜色"></option>
+    <option id="newoptions12" dialogue="夜间暗淡"></option>
+
+    <option id="surveillance1" dialogue="客户已经检查过"></option>
+    <option id="surveillance2" dialogue="反复点击客户以检查其是否是小偷。距离摄像头越近，点击效果越好。"></option>
+    <option id="surveillance2a" dialogue="按住鼠标并将鼠标悬停在顾客上方，检查其是否是小偷
+距离摄像头越近，效果就越好。"></option>
+
+    <option id="rdown" dialogue="向下舍入"></option>
+
+    <option id="tvautosync0" dialogue="自动同步"></option>
+    <option id="tvautosync1" dialogue="允许所有玩家更改网址"></option>
+    <option id="tvautosync2" dialogue="Youtube 视频"></option>
+
+    <option id="productsorting0" dialogue="无排序"></option>
+    <option id="productsorting1" dialogue="按尺寸排序"></option>
+    <option id="productsorting2" dialogue="按最低库存排序"></option>
+    <option id="productsorting3" dialogue="按最低存储量"></option>
+    <option id="productsorting4" dialogue="按货架最低库存排序"></option>
+
+    <option id="checkoutredbutton" dialogue="只有经理可以按此按钮"></option>
+
+    <option id="invo" dialogue="发票"></option>
+    <option id="invodebt" dialogue="发票/债务"></option>
+    <option id="stats" dialogue="统计信息"></option>
+
+    <option id="removeallperm" dialogue="加入时删除所有权限"></option>
+    <option id="permiss0" dialogue="全局"></option>
+    <option id="permiss1" dialogue="经理"></option>
+    <option id="permiss2" dialogue="收银员"></option>
+    <option id="permiss3" dialogue="补货员"></option>
+    <option id="permiss4" dialogue="安全"></option>
+    <option id="permiss5" dialogue="聊天"></option>
+
+    <option id="newemplo" dialogue="员工"></option>
+    <option id="emplohire" dialogue="雇用"></option>
+    <option id="emplodismiss" dialogue="解雇"></option>
+    <option id="emploassignment" dialogue="分配"></option>
+    <option id="emplostats" dialogue="员工统计数据"></option>
+    <option id="emplorenew" dialogue="员工每天更新！"></option>
+    <option id="emplomaxemplo" dialogue="最大员工数"></option>
+    <option id="emplohired" dialogue="雇用员工"></option>
+    <option id="emploentername" dialogue="输入员工姓名..."></option>
+    <option id="emplocashexp" dialogue="收银员体验"></option>
+    <option id="emplorestexp" dialogue="补货员经验"></option>
+    <option id="emplostoexp" dialogue="存储经验"></option>
+    <option id="emplosecexp" dialogue="安全经验"></option>
+    <option id="canthiremore" dialogue="无法雇用更多员工"></option>
+    <option id="hiredemployee" dialogue="雇用一名员工！"></option>
+    <option id="dismissedemployee" dialogue="解雇一名员工！"></option>
+    <option id="emploalreadyhired" dialogue="雇用"></option>
+    <option id="emptyposi" dialogue="空缺职位"></option>
+    <option id="emploassignedtask" dialogue="分配的任务"></option>
+    <option id="emplonewpriority" dialogue="存储"></option>
+    <option id="emploNoTask" dialogue="无任务"></option>
+    <option id="emplostaffhappi" dialogue="教职员休息室幸福感"></option>
+    <option id="emploreroll" dialogue="重新滚动"></option>
+
+    <option id="dlcdiscounted" dialogue="折扣"></option>
+    <option id="emploselect" dialogue="选择"></option>
+    <option id="emplochangeall" dialogue="更改所有优先级"></option>
+    <option id="emplosavelay" dialogue="保存优先级"></option>
+    <option id="emploloadlay" dialogue="加载优先级"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="员工管理已移至经理黑板"></option>
+    <option id="startkn" dialogue="获得一颗星星令牌！"></option>
+    <option id="bboardchristdisclaimer" dialogue="放置圣诞礼物装饰，等待夜晚活动开始！
+准备好扫帚"></option>
+
+    <option id="panykey" dialogue="按任意键继续"></option>
+    <option id="gtunlckable" dialogue="获得新的可解锁物品！"></option>
+    <option id="nostartkn" dialogue="没有可用的星号标记"></option>
+    <option id="managsavebckup" dialogue="管理保存备份"></option>
+    <option id="newoptionendday" dialogue="自动结束一天"></option>
+    <option id="sallprices" dialogue="将所有价格设置为百分比"></option>
+    <option id="csettingprices" dialogue="[当前设置价格]"></option>
+
+    <option id="orddevice0" dialogue="商店中存放的数量"></option>
+    <option id="orddevice1" dialogue="填充商店所需的数量"></option>
+    <option id="orddevice2" dialogue="存储和盒子中的数量"></option>
+    <option id="orddevice3" dialogue="获取 MART OS 2.0 以解锁高级功能"></option>
+    <option id="accfactor" dialogue="加速因子"></option>
+    <option id="loglog1" dialogue="将游戏日志复制到剪贴板"></option>
+    <option id="loglog2" dialogue="已复制！"></option>
+
+    <option id="stats0" dialogue="总收入"></option>
+    <option id="stats1" dialogue="总放置产品数"></option>
+    <option id="stats2" dialogue="总回收包装箱数"></option>
+    <option id="stats3" dialogue="服务客户总数"></option>
+    <option id="stats4" dialogue="总结账产品数"></option>
+    <option id="stats5" dialogue="总垃圾收集数"></option>
+    <option id="stats6" dialogue="连续找零"></option>
+    <option id="stats7" dialogue="小偷偷摸摸次数"></option>
+    <option id="stats8" dialogue="小偷掉落产品收集数"></option>
+    <option id="stats9" dialogue="抚摸猫咪次数"></option>
+    <option id="stats10" dialogue="CCTV 中分析的客户"></option>
+    <option id="stats11" dialogue="CCTV 中抓获的窃贼"></option>
+    <option id="statsfoundtoo" dialogue="前一天未找到"></option>
+    <option id="statsnofound" dialogue="前一天发现价格过高"></option>
+
+    <option id="stats12" dialogue="今日销售量"></option>
+    <option id="stats13" dialogue="打包机新增纸箱"></option>
+    <option id="stats14" dialogue="回收纸板捆包"></option>
+
+    <option id="stats15" dialogue="由于销售而售出的额外商品"></option>
+    <option id="stats16" dialogue="已付发票"></option>
+
+    <option id="stats17" dialogue="已组装的在线订单"></option>
+    <option id="stats18" dialogue="通过在线订单赚取的金额"></option>
+
+    <option id="unstckplyr" dialogue="解脱"></option>
+    <option id="off2disclaimer" dialogue="有建议或问题？Steam 论坛是目前与开发者保持联系的唯一官方媒体"></option>
+
+    <option id="xcessve" dialogue="过度..."></option>
+
+    <option id="invoicetype0" dialogue="银行贷款"></option>
+    <option id="invoicetype1" dialogue="电气"></option>
+    <option id="invoicetype2" dialogue="工资"></option>
+    <option id="invoicetype3" dialogue="租金"></option>
+
+    <option id="invopaidannoun" dialogue="发票已付！"></option>
+    <option id="invopaidannoun2" dialogue="先还清当前贷款！"></option>
+    <option id="invopaidannoun3" dialogue="贷款已发放！"></option>
+    <option id="invovalue0" dialogue="发放日期"></option>
+    <option id="invovalue1" dialogue="到期日"></option>
+    <option id="invovalue2" dialogue="支付此发票"></option>
+    <option id="invovalue3" dialogue="请求金额"></option>
+    <option id="invovalue4" dialogue="贷款期限"></option>
+    <option id="invovalue5" dialogue="退还金额"></option>
+    <option id="invovalue6" dialogue="每日付款"></option>
+    <option id="invovalue7" dialogue="确认贷款"></option>
+    <option id="invovalue8" dialogue="贷款请求"></option>
+    <option id="loandisclmer" dialogue="您不能申请新贷款，除非当前贷款还清"></option>
+
+    <option id="payloandisclmer" dialogue="请支付您的租金发票。"></option>
+    <option id="paynpcmessage" dialogue="偿还贷款！"></option>
+
+    <option id="disableinvoicesoption" dialogue="禁用发票"></option>
+
+    <option id="off3disclaimer" dialogue="如果员工没有出现或者懈怠，请记得支付他们的工资，否则会产生后果"></option>
+    <option id="off4disclaimer" dialogue="员工的路径很奇怪？使用 Unstuck NPC Block 并在论坛上报告您的商店数据"></option>
+
+    <option id="drawgame0" dialogue="画出单词！小游戏"></option>
+    <option id="drawgame1" dialogue="画出小游戏已开始！"></option>
+    <option id="drawgame2" dialogue="画出小游戏获胜者："></option>
+    <option id="drawgame3" dialogue="画出小游戏：时间用完！"></option>
+    <option id="drawgame4" dialogue="您的单词是..."></option>
+    <option id="drawgame5" dialogue="输入您的单词..."></option>
+    <option id="drawgame6" dialogue="请求"></option>
+    <option id="drawgame7" dialogue="启用小游戏"></option>
+
+    <option id="picfram0" dialogue="默认图片"></option>
+    <option id="picfram1" dialogue="图片大小"></option>
+    <option id="picfram2" dialogue="输入有效的 URL 图片..."></option>
+    <option id="picfram3" dialogue="尝试设置 URL"></option>
+
+    <option id="cshelfaux1" dialogue="角落搁板修复
+（仅在搁板够不到的情况下按下）"></option>
+    <option id="cshelfaux2" dialogue="将搁板移至入口（仅限主持人）"></option>
+
+    <option id="invwarning0" dialogue="有一笔银行贷款未付！"></option>
+    <option id="invwarning1" dialogue="关灯！电费发票未付！"></option>
+    <option id="invwarning2" dialogue="员工们暴动了！他们会偷懒或者不来上班！"></option>
+    <option id="invwarning3" dialogue="租金发票未付！"></option>
+
+    <option id="departneed0" dialogue="购买部门"></option>
+    <option id="departneed0a" dialogue="功能正在进行中"></option>
+    <option id="departneed1" dialogue="# 商店要求"></option>
+    <option id="departneed2" dialogue="# 存储要求"></option>
+
+    <option id="deprtmnt0" dialogue="订单包装"></option>
+
+    <option id="atopayinvce0" dialogue="今天的发票已付清！"></option>
+    <option id="atopayinvce1" dialogue="没有足够的钱来支付今天的发票！"></option>
+
+    <option id="cpylogs0" dialogue="复制主日志"></option>
+    <option id="cpylogs1" dialogue="复制次日志"></option>
+    <option id="lghtnblptn" dialogue="覆盖灯光限制"></option>
+
+    <option id="slemssage0" dialogue="无法设置今日更多促销"></option>
+    <option id="slemssage1" dialogue="此商品已设置促销："></option>
+    <option id="sledvce0" dialogue="当前促销"></option>
+    <option id="sledvce1" dialogue="最高促销"></option>
+
+    <option id="lghtlmttn0" dialogue="限制灯光"></option>
+    <option id="lghtlmttn1" dialogue="过去，商店中灯光过多的情况很少导致某些玩家出现黑屏问题。如果您想移除此限制，请激活此选项。"></option>
+
+    <option id="arcblderdisclaimer" dialogue="按住[放下物品]可忽略碰撞。请谨慎使用。"></option>
+
+    <option id="rststtngs0" dialogue="重置游戏设置"></option>
+    <option id="rststtngs1" dialogue="设置已清除"></option>
+
+    <option id="opckgng0" dialogue="可用订单"></option>
+    <option id="opckgng1" dialogue="为该桌选择一个订单"></option>
+    <option id="opckgng2" dialogue="订单包装部门现已开放！"></option>
+    <option id="opckgng3" dialogue="包裹已分配至桌号"></option>
+    <option id="opckgng4" dialogue="关闭当前箱子"></option>
+    <option id="opckgng5" dialogue="将蓝色托盘中的所需商品放入下方条纹区域，然后通过拖动将它们整理到箱子内。
+使用[水平移动]旋转商品。同一订单可以有多个箱子。"></option>
+    <option id="opckgng6" dialogue="订单已在桌号中完成"></option>
+    <option id="opckgng7" dialogue="剩余待包装商品"></option>
+    <option id="opckgng8" dialogue="此订单所需产品"></option>
+    <option id="opckgng9" dialogue="餐桌"></option>
+    <option id="opckgng10" dialogue="订单到货时通知"></option>
+    <option id="opckgng11" dialogue="新订单已到！"></option>
+    <option id="opckgng12" dialogue="说明"></option>
+    <option id="opckgng13" dialogue="1.- 打开订单包装部门。
+2.- 等待订单在工作日到达，如果您希望在订单到达时收到通知，请启用通知功能。
+3.- 使用每张桌子上的纸箱进入包装模式。选择您想要在该桌子上摆放的订单。
+4.- 拿着蓝色托盘在您的商店或仓库中走动，将所有必需品运送到桌子的条纹区域。托盘中会出现一个额外的平板电脑，提醒您哪些物品需要。
+5.- 使用表格时，将产品拖到中央盒子中，并在准备就绪后使用“关闭当前盒子”按钮。同一订单可以有多个盒子。
+6.- 在商店的某个地方建立一个包裹提货点，并将订单的盒子放在那里。
+7.- 最终，顾客会到达领取订单并付款。>"></option>
+
+    <option id="dcord0" dialogue="加入我们的"></option>
+    <option id="dcord1" dialogue="为庆祝其正式上线，我们将在本月一次性赠送 200 个 DLC 钥匙。千万不要错过！"></option>
+
+  </options>
+
+</text>
