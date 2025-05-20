@@ -1,0 +1,1571 @@
+﻿<text>
+
+  <options>
+    <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
+
+    <option id="title0" dialogue="Új üzlet"></option>
+    <option id="title1" dialogue="Üzlet betöltése"></option>
+    <option id="title2" dialogue="Csatlakozz egy Áruházhoz"></option>
+    <option id="title3" dialogue="Beállítások"></option>
+    <option id="title4" dialogue="Kilépés"></option>
+
+    <option id="newstore0" dialogue="Válassz nevet az üzletednek"></option>
+    <option id="newstore1" dialogue="Privát"></option>
+    <option id="newstore2" dialogue="Csak Barátok"></option>
+    <option id="newstore3" dialogue="Nyilvános"></option>
+    <option id="newstore4" dialogue="Látrehozás"></option>
+    <option id="newstore5" dialogue="A névnek legalább 2 karakterből kell állnia és nem tartalmazhat speciális karaktereket."></option>
+    <option id="newstore6" dialogue="A nehézségi fokozatot késöbb is megtudod változtatni"></option>
+    <option id="newstore7" dialogue="Nehézség:"></option>
+
+    <option id="yes" dialogue="Igen"></option>
+    <option id="no" dialogue="Nem"></option>
+    <option id="back" dialogue="Vissza"></option>
+    <option id="save" dialogue="Mentés"></option>
+    <option id="entertext" dialogue="Írd be a szöveget"></option>
+
+    <option id="join" dialogue="Csatlakozás"></option>
+    <option id="invalidcode" dialogue="Érvénytelen kód, vagy a tulajdonos lezárta a csatlakozást"></option>
+    <option id="joinfriends" dialogue="Csatlakozz barátokhoz kóddal"></option>
+    <option id="copycode" dialogue="Kód másolása..."></option>
+
+    <option id="loading" dialogue="Betöltés"></option>
+
+    <option id="options0" dialogue="Grafika"></option>
+    <option id="options1" dialogue="Felbontás"></option>
+    <option id="options2" dialogue="Teljes képernyő"></option>
+    <option id="options3" dialogue="Vsync"></option>
+    <option id="options4" dialogue="Antialiasing"></option>
+    <option id="options5" dialogue="Fényesség"></option>
+    <option id="options6" dialogue="Minőség"></option>
+    <option id="options6a" dialogue="Teljesitmény"></option>
+    <option id="options6b" dialogue="Kiegyensúlyozott"></option>
+    <option id="options6c" dialogue="Magas minőség"></option>
+
+    <option id="options7" dialogue="Vezérlők"></option>
+    <option id="options8" dialogue="X Érzékenység"></option>
+    <option id="options9" dialogue="Y Érzékenység"></option>
+    <option id="options10" dialogue="Zoom érzékenység"></option>
+    <option id="options11" dialogue="Az X tengely megfordítása"></option>
+    <option id="options12" dialogue="Az Y tengely megfordítása"></option>
+    <option id="options12a" dialogue="Vezérlők testreszabása"></option>
+
+    <option id="options13" dialogue="Hang"></option>
+    <option id="options14" dialogue="Mester kötet"></option>
+    <option id="options15" dialogue="Zene hangereje"></option>
+    <option id="options16" dialogue="SFX hangerő"></option>
+    <option id="options17" dialogue="Interfész hangereje"></option>
+    <option id="options17a" dialogue="Hangerő"></option>
+
+    <option id="options18" dialogue="Főmenü"></option>
+    <option id="options19" dialogue="Kilépés a játékból"></option>
+
+    <option id="options20" dialogue="Vissza szeretnél lépni a főmenübe?"></option>
+    <option id="options21" dialogue="Biztosan kiszeretnél lépni a játékból?"></option>
+
+    <option id="options22" dialogue="Csatlakozás kód másolása"></option>
+    <option id="options23" dialogue="Csatlakozz barátokhoz kóddal"></option>
+    <option id="options24" dialogue="Kód másolása..."></option>
+
+    <option id="options25" dialogue="Kameraesemény FOV"></option>
+    <option id="options26" dialogue="Támadó NPC-k"></option>
+    <option id="options27" dialogue="Felbukkanó távolság"></option>
+
+    <option id="rw0" dialogue="Mozgás Előre"></option>
+    <option id="rw1" dialogue="Mozgás Előre+"></option>
+    <option id="rw2" dialogue="Mozgás Előre-"></option>
+    <option id="rw3" dialogue="Mozgatás vízszintesen"></option>
+    <option id="rw4" dialogue="Mozgatás vízszintesen+"></option>
+    <option id="rw5" dialogue="Mozgatás vízszintesen-"></option>
+    <option id="rw6" dialogue="Egér függőleges"></option>
+    <option id="rw7" dialogue="Egér függőleges+"></option>
+    <option id="rw8" dialogue="Egér függőleges-"></option>
+    <option id="rw9" dialogue="Vízszintes egér"></option>
+    <option id="rw10" dialogue="Vízszintes egér+"></option>
+    <option id="rw11" dialogue="Vízszintes egér-"></option>
+
+    <option id="rw12" dialogue="Fő akció"></option>
+    <option id="rw13" dialogue="Másodlagos művelet"></option>
+    <option id="rw14" dialogue="Építés"></option>
+    <option id="rw15" dialogue="Tárgy eldobása"></option>
+    <option id="rw16" dialogue="Ugrás"></option>
+    <option id="rw17" dialogue="Futás"></option>
+    <option id="rw18" dialogue="Builder menü megnyitása"></option>
+    <option id="rw19" dialogue="Menü Következő"></option>
+    <option id="rw20" dialogue="Menü Előző"></option>
+    <option id="rw21" dialogue="Csevegés"></option>
+    <option id="rw22" dialogue="Hangcsevegés"></option>
+    <option id="rw23" dialogue="Escape menü"></option>
+    <option id="rw24" dialogue="Gugolás"></option>
+
+    <option id="rw25" dialogue="Következő oldal"></option>
+    <option id="rw26" dialogue="Előző oldal"></option>
+    <option id="rw27" dialogue="Tánc 1"></option>
+    <option id="rw28" dialogue="Tánc 2"></option>
+    <option id="rw29" dialogue="Tánc 3"></option>
+    <option id="rw30" dialogue="Tánc 4"></option>
+    <option id="rw31" dialogue="Tánc 5"></option>
+    <option id="rw32" dialogue="Tánc 6"></option>
+    <option id="rw33" dialogue="Tánc 7"></option>
+    <option id="rw34" dialogue="Tánc 8"></option>
+    <option id="rw35" dialogue="Tánc 9"></option>
+    <option id="rw36" dialogue="Numpad 0"></option>
+    <option id="rw37" dialogue="Numpad 1"></option>
+    <option id="rw38" dialogue="Numpad 2"></option>
+    <option id="rw39" dialogue="Numpad 3"></option>
+    <option id="rw40" dialogue="Numpad 4"></option>
+    <option id="rw41" dialogue="Numpad 5"></option>
+    <option id="rw42" dialogue="Numpad 6"></option>
+    <option id="rw43" dialogue="Numpad 7"></option>
+    <option id="rw44" dialogue="Numpad 8"></option>
+    <option id="rw45" dialogue="Numpad 9"></option>
+    <option id="rw46" dialogue="Numpad Törlés"></option>
+    <option id="rw47" dialogue="Numpad Period"></option>
+    <option id="rw48" dialogue="Numpad Elfogadás"></option>
+
+    <option id="rw49" dialogue="épület csattanó"></option>
+
+    <!-- ///////////////////////////////////Text///////////////////////////////////// -->
+
+    <option id="employees" dialogue="Alkalmazottak:"></option>
+    <option id="employeesassignment" dialogue="Alkalmazottak beosztása"></option>
+    <option id="cashiers" dialogue="Pénztárosok"></option>
+    <option id="restock" dialogue="Árufeltöltő"></option>
+    <option id="storage" dialogue="Raktárfeltöltő"></option>
+    <option id="security" dialogue="Biztonsági őrök"></option>
+    <option id="mblackboard" dialogue="Menedzser tábla"></option>
+    <option id="productorder" dialogue="Termékrendelés"></option>
+    <option id="supermarket" dialogue="Szupermarket"></option>
+    <option id="cosmetics" dialogue="Kozmetikai rendelés"></option>
+    <option id="stream" dialogue="TV Video/Stream beállítása"></option>
+    <option id="pinshelves" dialogue="Termékek a polcokon"></option>
+    <option id="pinstorage" dialogue="Termékek a raktárban"></option>
+    <option id="pinboxes" dialogue="Termékek dobozban"></option>
+    <option id="shoplist" dialogue="Bevásárlólista"></option>
+    <option id="buy" dialogue="Vásárlás"></option>
+    <option id="supermarketname" dialogue="Szupermarket neve"></option>
+    <option id="supermarketcolor" dialogue="Szupermarket színe"></option>
+    <option id="changename" dialogue="Név módosítása"></option>
+    <option id="changecolor" dialogue="Szín módosítása"></option>
+    <option id="franchisepointsavailable" dialogue="Rendelkezésre álló franchise pontok"></option>
+    <option id="unlocks" dialogue="Felold"></option>
+    <option id="requires" dialogue="Megköveteli"></option>
+    <option id="connectionlost" dialogue="A gazdagép kapcsolat megszakadt"></option>
+    <option id="buyshopspace" dialogue="ÜZLETHELYET VÁSÁRLÁS"></option>
+    <option id="buystoragespace" dialogue="TÁROLÓHELY VÁSÁRLÁSA"></option>
+    <option id="addons" dialogue="Kiegészítők"></option>
+
+
+    <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
+
+    <option id="tutorial0" dialogue="Üdvözlünk a Supermarket Together-ben!"></option>
+    <option id="tutorial1" dialogue="Amíg az üzlet zárva van, az idő lassabban telik.
+
+Az első lépés néhány bútor elhelyezése. Nyomd meg a [TAB] gombot a builder menüpont megnyitásához"></option>
+    <option id="tutorial2" dialogue="Vásárolj 2 termékpolcot, egy pénztárat és egy tárolópolcot.
+
+Felhívjuk figyelmedet, hogy a tárolópolc csak a melléképület üres helyiségében helyezhető el, amely a vezetői szobához kapcsolódik."></option>
+    <option id="tutorial3" dialogue="Jó munkát!
+
+Rendelkezésre áll egy franchise pontunk: sikeres vállalkozás birtokában szerezhetsz pontokat.
+
+Menj a menedzser szobába, és szerezd meg az első jutalmat a jutalom tábláján."></option>
+    <option id="tutorial4" dialogue="Nagy. Ön most szerezte be az első termékcsomagot.
+
+Fontos megjegyezni, hogy miután megvásároltad a termék franchise-t, az ügyfelek azt várják, hogy ezek a termékek az üzletben lesznek, vagy panaszkodni fognak a hiányuk miatt.
+
+Menj a menedzser táblához majd lépj bele és kattints a Termék rendelésre."></option>
+    <option id="tutorial5" dialogue="Jó. Most kattints az Alaptermékek I-re."></option>
+    <option id="tutorial6" dialogue="Minden alaptermékből vegyünk egy dobozzal.
+
+Kattints az egyes termékek plusz szimbólumára, hogy felvegye a bevásárlólistára, ha már ott van mindegyik, kattints a vásárlás gombra."></option>
+    <option id="tutorial7" dialogue="Most menj ki, és keresd meg a megvásárolt dobozokat. Kattints az egyikre, hogy a kezedbe vedd"></option>
+    <option id="tutorial8" dialogue="Menj oda egy termékpolchoz és kattints rá [LMB] elemre az egyik sorában, hogy megtöltsd termékekkel.
+
+Az [RMB] lenyomásával vissza rakod a tárgyakat dobozba.
+
+Az [F] lenyomásával eldobhatod a tárgyakat ahová csak szeretnéd.
+
+Helyezz minden terméket az üzlet polcaira."></option>
+    <option id="tutorial9" dialogue="A termékeket elhelyezik, de kezdetben önköltségi áron címkézik, ami nem jelent előnyt.
+
+Menj a menedzser szobába, és vedd el az egyik árazóeszközt."></option>
+    <option id="tutorial10" dialogue="Célozzon meg egy polcot, és a termék árára vonatkozó információ megjelenik az eszköz képernyőjén.
+
+Ha az te ára a termék alapárának több mint kétszeresét meghaladja, a vásárlók egyre nagyobb eséllyel nem veszik meg, ezért használd ezt a szabályt mérlegként.
+
+U.i. ha egy termék 1 dollárba került, és az árat 2 dollárnál magasabbra állítod, a vásárlók nem veszik meg. Próbálj meg árat beállítani mind a hat különböző termékhez.
+
+KEZELŐSZERVEK
+[Egérkerék] Összeadás vagy kivonás 0,01-es lépésekben.
+[Egérkerék + E] Összeadás vagy kivonás 0,2-es lépésekben.
+[LMB] Ár elfogadása.
+[Numpad] is használható.
+[F] Elemek eldobása
+
+Ne feledd, hogy az árakat a számbillentyűzet segítségével is beállíthatja, vagy átrendelheti a billentyűket az Beállítások/Vezérlők testreszabása részben. A számbillentyűzet használható összegek bevitelére is, amikor az ügyfelek hitelkártyával fizetnek a pénztárnál."></option>
+
+    <option id="tutorial11" dialogue="Az üzleted készen áll a nyitásra. Az ügyfelek bejutásához nyomd meg a vezetői szobában található zöld gombot. De először olvasd el az alábbi fontos információkat:
+
+- Csütörtökönként emelkedik a piaci infláció egyes termékeknél, és át kell tekintenie az árakat.
+
+- Az üres dobozokat bedobhatja a kívül lévő konténerbe, VAGY elviheti őket az utca túloldalán lévő legtávolabbi konténerbe, és visszakereshet némi pénzt az újrahasznosítással. A pénz jutalommal növelhető.
+
+- A 8. napon a tolvajoknak és a szemeteseknek lehetőségük lesz ívásra. Mindkettőre a seprű a megoldás: üsd meg a tolvajokat, és ledobják ellopott termékeiket.
+
+- Minden pénztárnál 8 fős sor állhat, ők nem lesznek türelmetlenek, de a plusz vásárlók, akik nem észlelnek szabad pénztári sort, tolvajokká válnak és fizetés nélkül távoznak.
+
+- A Builder menü használata közben alapértelmezés szerint az X vagy a Z gomb megnyomásával ellenőrizheti a fényeket és egyéb dekorációkat.
+
+- Biztosan törölhet egy polcot a termékei közül, ha rákattint az árképzési eszközzel. Hasznos, ha nem szeretné, hogy az alkalmazottak folyamatosan töltsék fel ezt a sort.
+
+- Ügyeljen a vezetői táblán található számlák fülre. Az alkalmazottak bére, elektromos vagy bérleti számlája oda érkezik.
+
+- Az üzlet bezárásához várjon 22:30-ig, és nyomja meg a piros gombot a vezetői szobában. A játék minden új napon automatikusan mentésre kerül.
+
+- Minél több játékos, annál nehezebb. (Próbáld megütni a játékosokat a seprűvel)"></option>
+
+
+    <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
+
+    <option id="builder0" dialogue="Építés / áthelyezés / törlés"></option>
+    <option id="builder1" dialogue="Forgatás balra"></option>
+    <option id="builder2" dialogue="Forgatás jobbra"></option>
+    <option id="builder3" dialogue="Navigáljon a menüben felfelé"></option>
+    <option id="builder4" dialogue="Navigáljon le a menüben"></option>
+
+    <option id="checkout0" dialogue="[LMB] Pénz hozzáadása"></option>
+    <option id="checkout1" dialogue="[RMB] Pénz eltávolítása"></option>
+
+    <!-- ///////////////////////////////////WEEK DAYS///////////////////////////////////// -->
+
+    <option id="day" dialogue="Nap "></option>
+
+    <option id="weekday1" dialogue="H"></option>
+    <option id="weekday2" dialogue="K"></option>
+    <option id="weekday3" dialogue="SZ"></option>
+    <option id="weekday4" dialogue="CS"></option>
+    <option id="weekday5" dialogue="P"></option>
+    <option id="weekday6" dialogue="SZ"></option>
+    <option id="weekday0" dialogue="V"></option>
+
+    <!-- ///////////////////////////////////Day Statistics///////////////////////////////////// -->
+
+    <option id="endofworkingday" dialogue="Munkanap vége:"></option>
+    <option id="totalcustomers" dialogue="Összes vásárló:"></option>
+    <option id="notfoundproducts" dialogue="Nem talált termékek: "></option>
+    <option id="tooexpensiveproducts" dialogue="Túl drága termékek: "></option>
+    <option id="timesrobbed" dialogue="Ennyiszer loptak a boltbol: "></option>
+    <option id="complaintsfilth" dialogue="Panaszok a tisztaságra: "></option>
+    <option id="franchiselevel" dialogue="Franchise szint: "></option>
+    <option id="franchiseexperience" dialogue="Franchise tapasztalat: "></option>
+    <option id="income" dialogue="Jövedelem "></option>
+    <option id="moneylostbecauserobbing" dialogue="Elveszett pénz a rablók miatt: "></option>
+    <option id="boughtproductscost" dialogue="Vásárolt termékek ára: "></option>
+    <option id="rentcost" dialogue="Bérleti díj: "></option>
+    <option id="electricitycost" dialogue="Áram költség: "></option>
+    <option id="employeeswages" dialogue="Az alkalmazottak bére: "></option>
+    <option id="othercosts" dialogue="Egyéb költségek: "></option>
+    <option id="daybalance" dialogue="Napi egyenleg: "></option>
+
+    <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
+
+    <option id="messagei0" dialogue="Szupermarket megnyílt"></option>
+    <option id="messagei1" dialogue="Franchise szint feljebb: Pont jár"></option>
+    <option id="messagei2" dialogue="Perk megszerezve"></option>
+    <option id="messagei3" dialogue="Szupermarket bővítés megszerzése"></option>
+    <option id="messagei4" dialogue="Tárhelybővítés megszerzett"></option>
+    <option id="messagei5" dialogue="Osztály megszerzett"></option>
+    <option id="messagei5a" dialogue="Az áruház követelményei nem teljesülnek"></option>
+    <option id="messagei5b" dialogue="A tárolási követelmények nem teljesülnek"></option>
+
+    <option id="message0" dialogue="Helytelen polctípus ehhez a termékhez"></option>
+    <option id="message1" dialogue="Nem lehet több terméket hozzáadni ehhez a polchoz"></option>
+    <option id="message2" dialogue="A termékeket nem lehet ugyanazon a polcon keverni"></option>
+    <option id="message3" dialogue="Nincsenek franchise pontok"></option>
+    <option id="message4" dialogue="A korábbi franchise-csomópontok nem szerezhetők be"></option>
+    <option id="message5" dialogue="Nincsenek termékek a bevásárlólistán"></option>
+    <option id="message6" dialogue="Nincs elég pénz"></option>
+    <option id="message7" dialogue="Már van valami a kezedben"></option>
+    <option id="message8" dialogue="Nincs több termék a dobozban"></option>
+    <option id="message9" dialogue="Nincs több beszerezhető szupermarket"></option>
+    <option id="message9a" dialogue="Nincs több tárhely beszerzése"></option>
+    <option id="message10" dialogue="Nem lehet kevesebb pénzt visszaadni, mint amennyi a szükséges csere"></option>
+    <option id="message11" dialogue="A dobozban még vannak termékek"></option>
+    <option id="message12" dialogue="Nincs több hely a dobozban"></option>
+    <option id="message13" dialogue="A termékeket nem lehet ugyanabban a dobozban keverni"></option>
+    <option id="message14" dialogue="Ehhez seprű kell"></option>
+    <option id="message15" dialogue="Csak akkor engedélyezett, ha az üzlet zárva van"></option>
+    <option id="message16" dialogue="Csak akkor engedélyezett, ha nincs több ügyfél"></option>
+    <option id="message17" dialogue="Törlés előtt vegyél ki minden terméket a polcról"></option>
+    <option id="message17a" dialogue="A konténerben vannak termékek. Törlés közben tartsd lenyomva az [elem eldobása] gombot, ha biztos benne"></option>
+    <option id="message18" dialogue="Az üzletben legalább egy emberes pénztár szükséges"></option>
+    <option id="message19" dialogue="Ez az elem nem fér el a tálcán"></option>
+    <option id="message20" dialogue="A raklapos kijelzőkhöz ennél nagyobb termékek szükségesek"></option>
+
+    <option id="network0" dialogue="A gazdagép kapcsolat megszakadt"></option>
+
+    <!-- ///////////////////////////////////NPCMessages///////////////////////////////////// -->
+
+    <option id="NPCmessage0" dialogue="Ezt nem találtam: "></option>
+    <option id="NPCmessage1" dialogue="Ez túl drága: "></option>
+    <option id="NPCmessage2" dialogue="Nem találtam, amit kerestem"></option>
+    <option id="NPCmessage3" dialogue="Nincsenek pénztárak? Viszlát!"></option>
+    <option id="NPCmessage4" dialogue="Viszlát balekok!"></option>
+    <option id="NPCmessage5" dialogue="Ez a szupermarket nagyon koszos!"></option>
+
+    <option id="NPCemployee0" dialogue="Elmegyek ehhez a pénztárhoz."></option>
+
+    <option id="NPCmessagehit0" dialogue="Ó!"></option>
+    <option id="NPCmessagehit1" dialogue="Jesszusom"></option>
+    <option id="NPCmessagehit2" dialogue="Tedd fel a seprűt a seggedre"></option>
+    <option id="NPCmessagehit3" dialogue="Rendőrség!"></option>
+    <option id="NPCmessagehit4" dialogue="Eeeeeek!"></option>
+    <option id="NPCmessagehit5" dialogue="Aaaaaaaah!"></option>
+    <option id="NPCmessagehit6" dialogue="Ez visszaélés!"></option>
+    <option id="NPCmessagehit7" dialogue="Gaah!"></option>
+    <option id="NPCmessagehit8" dialogue="Üss meg erősebben bébi"></option>
+    <option id="NPCmessagehit9" dialogue="OwO"></option>
+
+    <option id="NPCmessagehitemployee0" dialogue="Rossz főnök"></option>
+    <option id="NPCmessagehitemployee1" dialogue="Ez visszaélés"></option>
+    <option id="NPCmessagehitemployee2" dialogue="D:"></option>
+    <option id="NPCmessagehitemployee3" dialogue="Hívjon sztrájkot!"></option>
+
+    <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
+
+    <option id="builder" dialogue="Építész"></option>
+    <option id="buildable0" dialogue="Elhelyezési mód"></option>
+    <option id="buildable1" dialogue="Termékpolc"></option>
+    <option id="buildable2" dialogue="Alap hűtő"></option>
+    <option id="buildable3" dialogue="Dupla hűtőszekrény"></option>
+    <option id="buildable4" dialogue="Mélyhűtő"></option>
+    <option id="buildable5" dialogue="Tárolópolc"></option>
+    <option id="buildable6" dialogue="Pénztár (jobbra)"></option>
+    <option id="buildable7" dialogue="Pénztár (balra)"></option>
+    <option id="buildable8" dialogue="Álló fagyasztó"></option>
+    <option id="buildable9" dialogue="Termékszámláló A"></option>
+    <option id="buildable10" dialogue="Tárolópolc (címke nélkül)"></option>
+    <option id="buildable11" dialogue="A termékpolc"></option>
+    <option id="buildable12" dialogue="Önkiszolgáló pénztár"></option>
+    <option id="buildable13" dialogue="B termékpolc"></option>
+    <option id="buildable14" dialogue="Termékpolc (fél)"></option>
+    <option id="buildable15" dialogue="Többszintes polc"></option>
+    <option id="buildable16" dialogue="Fali polc"></option>
+    <option id="buildable17" dialogue="Pegboard polc"></option>
+    <option id="buildable18" dialogue="B termékpolc (fél)"></option>
+    <option id="buildable19" dialogue="Sarokpolc (nagy)"></option>
+    <option id="buildable20" dialogue="Sarokpolc (kicsi)"></option>
+    <option id="buildable21" dialogue="Alap Raklap Kijelző"></option>
+    <option id="buildable22" dialogue="Fa Raklap Kijelző A"></option>
+    <option id="buildable23" dialogue="Fa Raklap Kijelző B"></option>
+    <option id="buildable24" dialogue="Műanyag Raklap Kijelző"></option>
+    <option id="buildable25" dialogue="Magas Raklap Kijelző"></option>
+
+    <option id="buildable0a" dialogue="Mód törlése"></option>
+    <option id="tabtitle0" dialogue="Építész"></option>
+    <option id="tabtitle1" dialogue="Dekoráció"></option>
+    <option id="tabtitle2" dialogue="Eszközök"></option>
+    <option id="tabtitle3" dialogue="Fények"></option>
+    <option id="tabtitle4" dialogue="Szezonális: Halloween"></option>
+    <option id="tabtitle5" dialogue="Személyzeti szoba"></option>
+    <option id="tabtitle6" dialogue="Szezonális: karácsony"></option>
+    <option id="tabtitle7" dialogue="Dekoráció: Növények"></option>
+    <option id="tabtitle8" dialogue="Építészet"></option>
+
+    <option id="decorat1" dialogue="Neonlámpa A"></option>
+    <option id="decorat2" dialogue="Cserepes növény A"></option>
+    <option id="decorat3" dialogue="TV"></option>
+    <option id="decorat4" dialogue="Mennyezeti jel"></option>
+    <option id="decorat5" dialogue="Tömegakadály"></option>
+    <option id="decorat6" dialogue="Lopásgátló ajtó"></option>
+    <option id="decorat7" dialogue="Faedény"></option>
+    <option id="decorat8" dialogue="Faedény széles"></option>
+    <option id="decorat9" dialogue="Mennyezeti szellőző"></option>
+    <option id="decorat10" dialogue="Központi árképzési gép"></option>
+
+    <option id="decorat11" dialogue="Sírkő A"></option>
+    <option id="decorat12" dialogue="Sírkő B"></option>
+    <option id="decorat13" dialogue="Sírkő C"></option>
+    <option id="decorat14" dialogue="Sírkő D"></option>
+    <option id="decorat15" dialogue="Sírkő E"></option>
+    <option id="decorat16" dialogue="Sírkő F"></option>
+    <option id="decorat17" dialogue="Tök A"></option>
+    <option id="decorat18" dialogue="Tök B"></option>
+    <option id="decorat19" dialogue="Tök C"></option>
+
+    <option id="decorat20" dialogue="A Tökember"></option>
+    <option id="decorat21" dialogue="Kísérteties szellem"></option>
+    <option id="decorat22" dialogue="Fényes Virág A"></option>
+    <option id="decorat23" dialogue="Fényes Virág B"></option>
+    <option id="decorat24" dialogue="Mini szállítójármű"></option>
+    <option id="decorat25" dialogue="Neon lámpa B"></option>
+    <option id="decorat26" dialogue="Neon lámpa C"></option>
+    <option id="decorat27" dialogue="Neon lámpa D"></option>
+    <option id="decorat28" dialogue="Neon lámpa E"></option>
+    <option id="decorat29" dialogue="Függő lámpa A"></option>
+
+    <option id="decorat30" dialogue="Függő lámpa B"></option>
+    <option id="decorat31" dialogue="Függő lámpa C"></option>
+    <option id="decorat32" dialogue="Függő lámpa D"></option>
+    <option id="decorat33" dialogue="Függő lámpa E"></option>
+    <option id="decorat34" dialogue="Függő lámpa F"></option>
+    <option id="decorat35" dialogue="Függő lámpa G"></option>
+    <option id="decorat36" dialogue="Függő lámpa H"></option>
+    <option id="decorat37" dialogue="Függő lámpa I"></option>
+    <option id="decorat38" dialogue="Függő lámpa J"></option>
+    <option id="decorat39" dialogue="Függő lámpa K"></option>
+
+    <option id="decorat40" dialogue="Függő lámpa L"></option>
+    <option id="decorat41" dialogue="Függő lámpa M"></option>
+    <option id="decorat42" dialogue="Speciális lámpa A"></option>
+    <option id="decorat43" dialogue="Biztonsági kamera"></option>
+    <option id="decorat44" dialogue="Biztonsági pult"></option>
+    <option id="decorat45" dialogue="Tisztítórobot"></option>
+    <option id="decorat46" dialogue="Alap asztal A"></option>
+    <option id="decorat47" dialogue="Alapszék A"></option>
+    <option id="decorat48" dialogue="Személyzeti bútor A"></option>
+    <option id="decorat49" dialogue="Privát hűtőszekrény"></option>
+    <option id="decorat50" dialogue="Kávégép"></option>
+
+    <option id="decorat51" dialogue="Snack gép"></option>
+    <option id="decorat52" dialogue="Szódagép"></option>
+    <option id="decorat53" dialogue="Dart gép"></option>
+    <option id="decorat54" dialogue="Csócsó asztal"></option>
+    <option id="decorat55" dialogue="Biliárd asztal"></option>
+    <option id="decorat56" dialogue="Biliárddákó tok"></option>
+    <option id="decorat57" dialogue="Árkád: tobot fogó"></option>
+    <option id="decorat58" dialogue="Árkád: űrháborúk"></option>
+    <option id="decorat59" dialogue="Árkád: kincses sziget"></option>
+    <option id="decorat60" dialogue="Karácsonyfa"></option>
+
+    <option id="decorat61" dialogue="Karácsonyi ív"></option>
+    <option id="decorat62" dialogue="Karácsonyi koszorú"></option>
+    <option id="decorat63" dialogue="Dobos Diótörő"></option>
+    <option id="decorat64" dialogue="Diótörő tábornok"></option>
+    <option id="decorat65" dialogue="Lovas Diótörő"></option>
+    <option id="decorat66" dialogue="Kardforgató Diótörő"></option>
+    <option id="decorat67" dialogue="Fényes Szarvas"></option>
+    <option id="decorat68" dialogue="Choo Choo vonat"></option>
+    <option id="decorat69" dialogue="Najara szimulátor"></option>
+    <option id="decorat70" dialogue="Bárszék"></option>
+
+    <option id="decorat71" dialogue="Hóember"></option>
+    <option id="decorat72" dialogue="cukornád"></option>
+    <option id="decorat73" dialogue="karácsonyi ajándék"></option>
+    <option id="decorat74" dialogue="Kerámia edény A"></option>
+    <option id="decorat75" dialogue="Kerámia edény B"></option>
+    <option id="decorat76" dialogue="Kerámia edény C"></option>
+    <option id="decorat77" dialogue="Kerámia edény D"></option>
+    <option id="decorat78" dialogue="Kerámia edény E"></option>
+    <option id="decorat79" dialogue="Kerámia edény F"></option>
+    <option id="decorat80" dialogue="Kerámia edény G"></option>
+
+    <option id="decorat81" dialogue="Növény A"></option>
+    <option id="decorat82" dialogue="Növény B"></option>
+    <option id="decorat83" dialogue="Növény C"></option>
+    <option id="decorat84" dialogue="Növény D"></option>
+    <option id="decorat85" dialogue="Növény E"></option>
+    <option id="decorat86" dialogue="Növény F"></option>
+    <option id="decorat87" dialogue="Növény G"></option>
+    <option id="decorat88" dialogue="Növény H"></option>
+    <option id="decorat89" dialogue="Növény I"></option>
+    <option id="decorat90" dialogue="Növény cserépedény A"></option>
+
+    <option id="decorat91" dialogue="Növény cserépedényk B"></option>
+    <option id="decorat92" dialogue="Növény cserépedény C"></option>
+    <option id="decorat93" dialogue="Növény J"></option>
+    <option id="decorat94" dialogue="Növény K"></option>
+    <option id="decorat95" dialogue="Növény L"></option>
+    <option id="decorat96" dialogue="Virág A"></option>
+    <option id="decorat97" dialogue="Virág B"></option>
+    <option id="decorat98" dialogue="Virág C"></option>
+    <option id="decorat99" dialogue="Virág D"></option>
+    <option id="decorat100" dialogue="Virág E"></option>
+
+    <option id="decorat101" dialogue="Virág F"></option>
+    <option id="decorat102" dialogue="Virág G"></option>
+    <option id="decorat103" dialogue="Virág H"></option>
+    <option id="decorat104" dialogue="Virág I"></option>
+    <option id="decorat105" dialogue="Virág J"></option>
+    <option id="decorat106" dialogue="Virág K"></option>
+    <option id="decorat107" dialogue="Virág L"></option>
+    <option id="decorat108" dialogue="Virág M"></option>
+    <option id="decorat109" dialogue="Virág N"></option>
+    <option id="decorat110" dialogue="Virág O"></option>
+
+    <option id="decorat111" dialogue="Virág P"></option>
+    <option id="decorat112" dialogue="Virág Q"></option>
+    <option id="decorat113" dialogue="Virág R"></option>
+    <option id="decorat114" dialogue="Virág S"></option>
+    <option id="decorat115" dialogue="Virág T"></option>
+    <option id="decorat116" dialogue="Virág U"></option>
+    <option id="decorat117" dialogue="Virág V"></option>
+    <option id="decorat118" dialogue="Virág W"></option>
+    <option id="decorat119" dialogue="Virág X"></option>
+    <option id="decorat120" dialogue="Virág Y"></option>
+
+    <option id="decorat121" dialogue="Virág Z"></option>
+    <option id="decorat122" dialogue="Virág A1"></option>
+    <option id="decorat123" dialogue="Virág B1"></option>
+    <option id="decorat124" dialogue="Szupermarket oszlop"></option>
+    <option id="decorat125" dialogue="Fém oszlop"></option>
+    <option id="decorat126" dialogue="Beton függő vetőgép A"></option>
+    <option id="decorat127" dialogue="Beton függő vetőgép B"></option>
+    <option id="decorat128" dialogue="Beton függő vetőgép A"></option>
+    <option id="decorat129" dialogue="NPC kioldott blokk"></option>
+    <option id="decorat130" dialogue="Utcai lámpa A"></option>
+
+    <option id="decorat131" dialogue="Utcai lámpa B"></option>
+    <option id="decorat132" dialogue="Utcai lámpa C"></option>
+    <option id="decorat133" dialogue="Utcai lámpa D"></option>
+    <option id="decorat134" dialogue="Utcai lámpa E"></option>
+    <option id="decorat135" dialogue="Utcai lámpa F"></option>
+    <option id="decorat136" dialogue="Utcai lámpa G"></option>
+    <option id="decorat137" dialogue="Utcai lámpa H"></option>
+    <option id="decorat138" dialogue="Utcai lámpa I"></option>
+    <option id="decorat139" dialogue="Utcai lámpa J"></option>
+    <option id="decorat140" dialogue="Utcai lámpa K"></option>
+
+    <option id="decorat141" dialogue="Utcai lámpa L"></option>
+    <option id="decorat142" dialogue="Utcai lámpa M"></option>
+    <option id="decorat143" dialogue="Utcai lámpa N"></option>
+    <option id="decorat144" dialogue="Utcai lámpa O"></option>
+    <option id="decorat145" dialogue="Utcai lámpa P"></option>
+    <option id="decorat146" dialogue="Utcai lámpa Q"></option>
+    <option id="decorat147" dialogue="A1 szökőkút"></option>
+    <option id="decorat148" dialogue="A2 szökőkút"></option>
+    <option id="decorat149" dialogue="A3 szökőkút"></option>
+    <option id="decorat150" dialogue="B1 szökőkút"></option>
+
+    <option id="decorat151" dialogue="B2 szökőkút"></option>
+    <option id="decorat152" dialogue="B3 szökőkút"></option>
+    <option id="decorat153" dialogue="C1 szökőkút"></option>
+    <option id="decorat154" dialogue="C2 szökőkút"></option>
+    <option id="decorat155" dialogue="C3 szökőkút"></option>
+    <option id="decorat156" dialogue="D1 szökőkút"></option>
+    <option id="decorat157" dialogue="D2 szökőkút"></option>
+    <option id="decorat158" dialogue="D3 szökőkút"></option>
+    <option id="decorat159" dialogue="E1 szökőkút"></option>
+    <option id="decorat160" dialogue="E2 szökőkút"></option>
+
+    <option id="decorat161" dialogue="E3 szökőkút"></option>
+    <option id="decorat162" dialogue="F1 szökőkút"></option>
+    <option id="decorat163" dialogue="F2 szökőkút"></option>
+    <option id="decorat164" dialogue="F3 szökőkút"></option>
+    <option id="decorat165" dialogue="G1 szökőkút"></option>
+    <option id="decorat166" dialogue="G2 szökőkút"></option>
+    <option id="decorat167" dialogue="G3 szökőkút"></option>
+    <option id="decorat168" dialogue="Kis festhető elválasztó"></option>
+    <option id="decorat169" dialogue="Közepes festhető elválasztó"></option>
+    <option id="decorat170" dialogue="Nagyméretű festhető elválasztó"></option>
+
+    <option id="decorat171" dialogue="Sarokelválasztó"></option>
+    <option id="decorat172" dialogue="Nagy ültetőgép A"></option>
+    <option id="decorat173" dialogue="Nagy ültetőgép B"></option>
+    <option id="decorat174" dialogue="Nagy ültetőgép C"></option>
+    <option id="decorat175" dialogue="Nagy ültetőgép D"></option>
+    <option id="decorat176" dialogue="Keresztre festhető elválasztó"></option>
+    <option id="decorat177" dialogue="T-alakú festhető elválasztó"></option>
+    <option id="decorat178" dialogue="Képkeret"></option>
+    <option id="decorat179" dialogue="Festhető ajtóelválasztó"></option>
+    <option id="decorat180" dialogue="Falültető A"></option>
+
+    <option id="decorat181" dialogue="Fali ültető A Panel"></option>
+    <option id="decorat182" dialogue="Falültető B"></option>
+    <option id="decorat183" dialogue="Fali ültető B Panel"></option>
+    <option id="decorat184" dialogue="Karton bálázó"></option>
+    <option id="decorat185" dialogue="Egyszerű gerenda"></option>
+    <option id="decorat186" dialogue="Keresztgerenda"></option>
+    <option id="decorat187" dialogue="T-gerenda"></option>
+    <option id="decorat188" dialogue="Sarokgerenda"></option>
+    <option id="decorat189" dialogue="Csomagátvételi pont"></option>
+
+    <!-- ///////////////////////////////////Skills and perks///////////////////////////////////// -->
+
+    <option id="skill01" dialogue="Munkavállaló I"></option>
+    <option id="skill02" dialogue="Munkavállaló II"></option>
+    <option id="skill03" dialogue="Munkavállaló III"></option>
+    <option id="skill04" dialogue="Munkavállaló IV"></option>
+    <option id="skill05" dialogue="Munkavállaló V"></option>
+    <option id="skill0a" dialogue="Lehetővé teszi további alkalmazott felvételét"></option>
+    <option id="skill1" dialogue="Ingyenes reggeli kávé"></option>
+    <option id="skill1a" dialogue="Az alkalmazottak +20%-kal gyorsabban mozognak"></option>
+    <option id="skill2" dialogue="Marketing tanfolyamok I"></option>
+    <option id="skill2a" dialogue="Az alkalmazottak +10% pénzt termelnek a pénztáraknál"></option>
+    <option id="skill3" dialogue="Formációs tanfolyamok"></option>
+    <option id="skill3a" dialogue="Az alkalmazottak 20%-kal gyorsabban mozognak"></option>
+    <option id="skill4" dialogue="Újrahasznosítási tanfolyamok"></option>
+    <option id="skill4a" dialogue="Az újrahasznosító dobozok négyszer ennyit díjaznak"></option>
+    <option id="skill5" dialogue="Légkondicionálás"></option>
+    <option id="skill5a" dialogue="Naponta több ügyfelet vonz"></option>
+    <option id="skill6" dialogue="Wifi kapcsolat"></option>
+
+    <option id="skill11" dialogue="Munkavállaló VI"></option>
+    <option id="skill12" dialogue="Munkavállaló VII"></option>
+    <option id="skill13" dialogue="Munkavállaló VIII"></option>
+    <option id="skill14" dialogue="Munkavállaló IX"></option>
+    <option id="skill15" dialogue="Munkavállaló X"></option>
+    <option id="skill16" dialogue="Pénztáros formáció I"></option>
+    <option id="skill16a" dialogue="Az alkalmazottak gyorsabban kezelik a pénztárban lévő termékeket"></option>
+    <option id="skill17" dialogue="Pénztáros formáció II"></option>
+    <option id="skill18" dialogue="Pénztáros formáció III"></option>
+    <option id="skill19" dialogue="Újjátelepítés I"></option>
+    <option id="skill19a" dialogue="Az alkalmazottak gyorsabban helyezik el a termékeket"></option>
+    <option id="skill20" dialogue="Újjátelepítés II"></option>
+    <option id="skill21" dialogue="Még több kávét"></option>
+    <option id="skill22" dialogue="Ingyenes energiaitalok I"></option>
+    <option id="skill23" dialogue="Ingyenes energiaitalok II"></option>
+    <option id="skill24" dialogue="Újrahasznosítási tanfolyamok II"></option>
+    <option id="skill24a" dialogue="Az alkalmazottak újrahasznosítják a dobozokat"></option>
+    <option id="skill25" dialogue="Barátságos felület"></option>
+    <option id="skill25a" dialogue="Az ügyfelek gyakrabban használják majd az önkijelentkezést"></option>
+    <option id="skill26" dialogue="Munkavállaló XI"></option>
+    <option id="skill27" dialogue="Munkavállaló XII"></option>
+    <option id="skill28" dialogue="Újrahasznosító tartály"></option>
+    <option id="skill28a" dialogue="A legközelebbi szemetes tartályt újrahasznosítóra cserélik."></option>
+    <option id="skill29" dialogue="MART OS 2.0"></option>
+    <option id="skill29a" dialogue="Az árképzési gép szoftvere továbbfejlesztett, és most beállítható az árak automatizálásának módja"></option>
+    <option id="skill30" dialogue="A tic-tac gyorsan megy"></option>
+    <option id="skill30a" dialogue="Amikor az üzlet éjszaka zárva van, a menedzser használhatja az új órát a menedzser szobájában az idő felgyorsítására"></option>
+    <option id="skill31" dialogue="Alacsony energiafogyasztású izzók"></option>
+    <option id="skill31a" dialogue="20%-kal csökkenti a teljes elektromos fogyasztást"></option>
+    <option id="skill32" dialogue="Felhasználóbarát felület"></option>
+    <option id="skill32a" dialogue="Az ügyfelek gyorsabban használják az önkijelentkezést"></option>
+    <option id="skill33" dialogue="Logisztika"></option>
+    <option id="skill33a" dialogue="A doboz elvételekor a játékosok képesek lesznek megjeleníteni a benne lévő termék pozícióját az üzletben és a raktárban egyaránt"></option>
+    <option id="skill34" dialogue="Külső könyvelő"></option>
+    <option id="skill34a" dialogue="A számlákat minden új napon kifizetjük, ha van rá pénz."></option>
+    <option id="skill35" dialogue="Különleges árak I"></option>
+    <option id="skill35a" dialogue="2-vel növeli a napi eladások maximális mennyiségét."></option>
+    <option id="skill36" dialogue="Különleges árak II"></option>
+    <option id="skill37" dialogue="Különleges árak III"></option>
+    <option id="skill38" dialogue="Raklapkijelzők"></option>
+    <option id="skill38a" dialogue="Különböző típusú raklapkijelzőket old fel a legnagyobb termékekhez"></option>
+
+    <!-- ///////////////////////////////////Products///////////////////////////////////// -->
+
+    <option id="productRelated0" dialogue="Ár egységenként"></option>
+
+    <option id="productGroup0" dialogue="Alapvető termékek"></option>
+    <option id="productGroup1" dialogue="Tejtermékek"></option>
+    <option id="productGroup2" dialogue="Szóda italok"></option>
+    <option id="productGroup3" dialogue="Fagyasztott élelmiszerek"></option>
+    <option id="productGroup4" dialogue="Higiénia"></option>
+    <option id="productGroup5" dialogue="Tisztítószerek"></option>
+    <option id="productGroup6" dialogue="Édességek és nasik"></option>
+    <option id="productGroup7" dialogue="Hús"></option>
+    <option id="productGroup8" dialogue="Tartósítószerek"></option>
+    <option id="productGroup9" dialogue="Főzetek"></option>
+    <option id="productGroup10" dialogue="Tenger gyümölcsei"></option>
+    <option id="productGroup11" dialogue="Könyvek"></option>
+    <option id="productGroup12" dialogue="Alkoholos italok"></option>
+    <option id="productGroup13" dialogue="Gyógyszerek"></option>
+    <option id="productGroup14" dialogue="Termény"></option>
+    <option id="productGroup15" dialogue="Gyermekgondozás"></option>
+    <option id="productGroup16" dialogue="Kertészkedés"></option>
+    <option id="productGroup17" dialogue="Kis elektronika"></option>
+
+    <option id="productCategory0" dialogue="Alapvető termékek I"></option>
+    <option id="productCategory1" dialogue="Alapvető termékek II"></option>
+    <option id="productCategory2" dialogue="Alapvető termékek III"></option>
+    <option id="productCategory3" dialogue="Alapvető termékek IV"></option>
+    <option id="productCategory4" dialogue="Alapvető termékek V"></option>
+    <option id="productCategory5" dialogue="Alapvető termékek VI"></option>
+    <option id="productCategory6" dialogue="Tejtermékek I"></option>
+    <option id="productCategory7" dialogue="Tejtermékek II"></option>
+    <option id="productCategory8" dialogue="Szóda italok I"></option>
+    <option id="productCategory9" dialogue="Fagyasztott élelmiszerek I"></option>
+    <option id="productCategory10" dialogue="Fagyasztott élelmiszerek II"></option>
+    <option id="productCategory11" dialogue="Higiénia I"></option>
+    <option id="productCategory12" dialogue="Higiénia II"></option>
+    <option id="productCategory13" dialogue="Higiénia III"></option>
+    <option id="productCategory14" dialogue="Tisztítószerek I"></option>
+    <option id="productCategory15" dialogue="Tisztítószerek II"></option>
+    <option id="productCategory16" dialogue="Édességek és rágcsálnivalók I"></option>
+    <option id="productCategory17" dialogue="Édességek és rágcsálnivalóks II"></option>
+    <option id="productCategory18" dialogue="Édességek és rágcsálnivalók III"></option>
+    <option id="productCategory19" dialogue="Édességek és rágcsálnivalóks IV"></option>
+    <option id="productCategory20" dialogue="Hús I"></option>
+    <option id="productCategory21" dialogue="Tartósítószerek I"></option>
+    <option id="productCategory22" dialogue="Főzetek I"></option>
+    <option id="productCategory23" dialogue="Tenger gyümölcsei I"></option>
+    <option id="productCategory24" dialogue="Könyvcsomag I"></option>
+    <option id="productCategory25" dialogue="Könyvcsomag II"></option>
+    <option id="productCategory26" dialogue="Alkoholos italok I"></option>
+    <option id="productCategory27" dialogue="Alkoholos italok II"></option>
+    <option id="productCategory28" dialogue="Alkoholos italok III"></option>
+    <option id="productCategory29" dialogue="Gyógyszertár I"></option>
+    <option id="productCategory30" dialogue="Gyógyszertár II"></option>
+    <option id="productCategory31" dialogue="Termény I"></option>
+    <option id="productCategory32" dialogue="Termény II"></option>
+    <option id="productCategory33" dialogue="Termény III"></option>
+    <option id="productCategory34" dialogue="Termény IV"></option>
+    <option id="productCategory35" dialogue="Gyermekgondozás I"></option>
+    <option id="productCategory36" dialogue="Gyermekgondozás II"></option>
+    <option id="productCategory37" dialogue="Szóda italok II"></option>
+    <option id="productCategory38" dialogue="Szóda italok III"></option>
+    <option id="productCategory39" dialogue="Édességek és rágcsálnivalók V"></option>
+    <option id="productCategory40" dialogue="Édességek és rágcsálnivalók VI"></option>
+    <option id="productCategory41" dialogue="Tartósítószerek II"></option>
+    <option id="productCategory42" dialogue="Kertészkedés I"></option>
+    <option id="productCategory43" dialogue="Kertészkedés II"></option>
+    <option id="productCategory44" dialogue="Kertészkedés III"></option>
+    <option id="productCategory45" dialogue="Kertészkedés IV"></option>
+    <option id="productCategory46" dialogue="Kis elektronika I"></option>
+    <option id="productCategory47" dialogue="Kis elektronika II"></option>
+    <option id="productCategory48" dialogue="Kis elektronika III"></option>
+
+    <option id="product0" dialogue="Penne tészta"></option>
+    <option id="product1" dialogue="Vizes palack"></option>
+    <option id="product2" dialogue="Mézes gabonapehely"></option>
+    <option id="product3" dialogue="Rizs"></option>
+    <option id="product4" dialogue="Só"></option>
+    <option id="product5" dialogue="Cukor"></option>
+    <option id="product6" dialogue="Margarin"></option>
+    <option id="product7" dialogue="Liszt"></option>
+    <option id="product8" dialogue="Almalé"></option>
+    <option id="product9" dialogue="Olívaolaj"></option>
+
+    <option id="product10" dialogue="Ketchup"></option>
+    <option id="product11" dialogue="Szeletelt kenyér"></option>
+    <option id="product12" dialogue="Bors"></option>
+    <option id="product13" dialogue="Narancslé"></option>
+    <option id="product14" dialogue="Barbecue szósz"></option>
+    <option id="product15" dialogue="Mustár"></option>
+    <option id="product16" dialogue="Spagetti doboz"></option>
+    <option id="product17" dialogue="Tonhalpástétom"></option>
+    <option id="product18" dialogue="Rostos gabonapehely"></option>
+    <option id="product19" dialogue="Kiváló liszt"></option>
+
+    <option id="product20" dialogue="Feketekávé"></option>
+    <option id="product21" dialogue="Tojásdoboz"></option>
+    <option id="product22" dialogue="Hummusz"></option>
+    <option id="product23" dialogue="Fehér liszt"></option>
+    <option id="product24" dialogue="Nádcukor"></option>
+    <option id="product25" dialogue="Cukor"></option>
+    <option id="product26" dialogue="Macarroni"></option>
+    <option id="product27" dialogue="Ökológiai cukor"></option>
+    <option id="product28" dialogue="Barna cukor"></option>
+    <option id="product29" dialogue="Napraforgó olaj"></option>
+
+    <option id="product30" dialogue="Burgonyapüré"></option>
+    <option id="product31" dialogue="Csomagolt burgonya"></option>
+    <option id="product32" dialogue="Espresso kávé"></option>
+    <option id="product33" dialogue="Basmati rizs"></option>
+    <option id="product34" dialogue="Hosszú szemű rizs"></option>
+    <option id="product35" dialogue="Kávé"></option>
+    <option id="product36" dialogue="Legfelsőbb tészta"></option>
+    <option id="product37" dialogue="Csokoládé gabonafélék"></option>
+    <option id="product38" dialogue="Prémium víz"></option>
+    <option id="product39" dialogue="Forrásvíz"></option>
+
+    <option id="product40" dialogue="Porcukor"></option>
+    <option id="product41" dialogue="Cukor - nagy doboz"></option>
+    <option id="product42" dialogue="Barna cukor - nagy doboz"></option>
+    <option id="product43" dialogue="ementáli sajt"></option>
+    <option id="product44" dialogue="Gruyere sajt"></option>
+    <option id="product45" dialogue="Sovány sajt"></option>
+    <option id="product46" dialogue="Gyümölcsjoghurt"></option>
+    <option id="product47" dialogue="Vaníliás joghurt"></option>
+    <option id="product48" dialogue="Tej"></option>
+    <option id="product49" dialogue="Vaj"></option>
+
+    <option id="product50" dialogue="Parmigiano sajt"></option>
+    <option id="product51" dialogue="Reggiano sajt"></option>
+    <option id="product52" dialogue="Mozzarella sajt"></option>
+    <option id="product53" dialogue="Sovány joghurt"></option>
+    <option id="product54" dialogue="kólás csomag"></option>
+    <option id="product55" dialogue="Szódacsomag"></option>
+    <option id="product56" dialogue="Koffeinmentes szódacsomag"></option>
+    <option id="product57" dialogue="Szódás üveg"></option>
+    <option id="product58" dialogue="Kólásüveg"></option>
+    <option id="product59" dialogue="Cukormentes üdítős üveg"></option>
+
+    <option id="product60" dialogue="Prémium szóda"></option>
+    <option id="product61" dialogue="Pizza grill"></option>
+    <option id="product62" dialogue="Fondü"></option>
+    <option id="product63" dialogue="Crocanti sonka"></option>
+    <option id="product64" dialogue="Sonkás sajtos krepp"></option>
+    <option id="product65" dialogue="Hasábburgonya"></option>
+    <option id="product66" dialogue="Ropogós burgonya pops"></option>
+    <option id="product67" dialogue="Zöldbab"></option>
+    <option id="product68" dialogue="Négy sajtos pizza"></option>
+    <option id="product69" dialogue="Négy évszak pizza"></option>
+
+    <option id="product70" dialogue="Zöldségkeverék"></option>
+    <option id="product71" dialogue="Csirke mix"></option>
+    <option id="product72" dialogue="Bolognaise lasagna"></option>
+    <option id="product73" dialogue="Növényi lasagna"></option>
+    <option id="product74" dialogue="Fogkrém"></option>
+    <option id="product75" dialogue="Vécépapír"></option>
+    <option id="product76" dialogue="Kézi szappan"></option>
+    <option id="product77" dialogue="Avokádó sampon"></option>
+    <option id="product78" dialogue="Tojás sampon"></option>
+    <option id="product79" dialogue="Fürdőzselé"></option>
+
+    <option id="product80" dialogue="Vécépapír"></option>
+    <option id="product81" dialogue="Mangó szappan"></option>
+    <option id="product82" dialogue="Extra puha sampon"></option>
+    <option id="product83" dialogue="Jojoba mézes sampon"></option>
+    <option id="product84" dialogue="Argán olajos sampon"></option>
+    <option id="product85" dialogue="Papír törölköző"></option>
+    <option id="product86" dialogue="Kétoldalas WC-papír"></option>
+    <option id="product87" dialogue="Citromszappan"></option>
+    <option id="product88" dialogue="Prémium fürdőzselé"></option>
+    <option id="product89" dialogue="Sampon babáknak"></option>
+
+    <option id="product90" dialogue="Mosószer"></option>
+    <option id="product91" dialogue="Folteltávolító"></option>
+    <option id="product92" dialogue="Üvegtisztító"></option>
+    <option id="product93" dialogue="Mosókapszula"></option>
+    <option id="product94" dialogue="Mosogatógép kapszula"></option>
+    <option id="product95" dialogue="Fehérítő"></option>
+    <option id="product96" dialogue="Fehérítő – nagy üveg"></option>
+    <option id="product97" dialogue="Lágyító"></option>
+    <option id="product98" dialogue="Prémium mosószer"></option>
+    <option id="product99" dialogue="Rovarirtó"></option>
+
+    <option id="product100" dialogue="Tisztítókendők"></option>
+    <option id="product101" dialogue="Prémium kapszula"></option>
+    <option id="product102" dialogue="Prémium fehérítő"></option>
+    <option id="product103" dialogue="Ammónia"></option>
+    <option id="product104" dialogue="Sütis tégely"></option>
+    <option id="product105" dialogue="Maxi jégkrém"></option>
+    <option id="product106" dialogue="Mogyoróvaj"></option>
+    <option id="product107" dialogue="Csokoládépor"></option>
+    <option id="product108" dialogue="Chips"></option>
+    <option id="product109" dialogue="Édes Bonbek"></option>
+
+    <option id="product110" dialogue="Barack lekvár"></option>
+    <option id="product111" dialogue="Fagylaltos doboz"></option>
+    <option id="product112" dialogue="Csokoládé doboz"></option>
+    <option id="product113" dialogue="Csokis keksz"></option>
+    <option id="product114" dialogue="Vaníliás keksz"></option>
+    <option id="product115" dialogue="Madeleine"></option>
+    <option id="product116" dialogue="Eperlekvár"></option>
+    <option id="product117" dialogue="Mogyoróvaj"></option>
+    <option id="product118" dialogue="Chipos"></option>
+    <option id="product119" dialogue="Mályvacukor"></option>
+
+    <option id="product120" dialogue="Citromos keksz"></option>
+    <option id="product121" dialogue="Mogyorós keksz"></option>
+    <option id="product122" dialogue="Prémium fagylalt"></option>
+    <option id="product123" dialogue="Méz"></option>
+    <option id="product124" dialogue="Prémium csokoládé doboz"></option>
+    <option id="product125" dialogue="Foditos"></option>
+    <option id="product126" dialogue="Prémium torta"></option>
+    <option id="product127" dialogue="Vágott marhahús"></option>
+    <option id="product128" dialogue="Tiszta marhahús"></option>
+    <option id="product129" dialogue="Borjúhús"></option>
+
+    <option id="product130" dialogue="Csirkeszárnyak"></option>
+    <option id="product131" dialogue="Csirke"></option>
+    <option id="product132" dialogue="Pármai sonka"></option>
+    <option id="product133" dialogue="Szeletelt sonka"></option>
+    <option id="product134" dialogue="Borsó - nagy"></option>
+    <option id="product135" dialogue="Tonhal - nagy"></option>
+    <option id="product136" dialogue="Vörösbab"></option>
+    <option id="product137" dialogue="Macskaeledel"></option>
+    <option id="product138" dialogue="Macskaeledel"></option>
+    <option id="product139" dialogue="Kutyaeledel"></option>
+
+    <option id="product140" dialogue="Zöld tea"></option>
+    <option id="product141" dialogue="Citrom tea"></option>
+    <option id="product142" dialogue="Fekete tea"></option>
+    <option id="product143" dialogue="Borsmenta"></option>
+    <option id="product144" dialogue="Menta"></option>
+    <option id="product145" dialogue="Macskagyökér"></option>
+    <option id="product146" dialogue="Nagy Sushi"></option>
+    <option id="product147" dialogue="Kis Sushi"></option>
+    <option id="product148" dialogue="Füstölt lazac"></option>
+    <option id="product149" dialogue="Rákbotok"></option>
+
+    <option id="product150" dialogue="Könyv - Elektromágneses"></option>
+    <option id="product151" dialogue="Könyv - Meglepetés"></option>
+    <option id="product152" dialogue="Könyv - ABC"></option>
+    <option id="product153" dialogue="Könyv - Anya és gyermeke"></option>
+    <option id="product154" dialogue="Könyv - Színek"></option>
+    <option id="product155" dialogue="Könyv - Piticha"></option>
+    <option id="product156" dialogue="Könyv - OnceUpon"></option>
+    <option id="product157" dialogue="Könyv - Krok"></option>
+    <option id="product158" dialogue="Könyv - Kalandok"></option>
+    <option id="product159" dialogue="Könyv – Donnine"></option>
+
+    <option id="product160" dialogue="Könyv - Vintage"></option>
+    <option id="product161" dialogue="Könyv – Nem szoktam megosztani"></option>
+    <option id="product162" dialogue="Sörcsomag"></option>
+    <option id="product163" dialogue="Sörcsomag"></option>
+    <option id="product164" dialogue="Sörcsomag"></option>
+    <option id="product165" dialogue="Sörös hordó"></option>
+    <option id="product166" dialogue="Sörös hordó"></option>
+    <option id="product167" dialogue="Vodka"></option>
+    <option id="product168" dialogue="Vörösbor"></option>
+    <option id="product169" dialogue="Rozé bor"></option>
+
+    <option id="product170" dialogue="Fehérbor"></option>
+    <option id="product171" dialogue="Sörös hordó"></option>
+    <option id="product172" dialogue="Prémium vodka"></option>
+    <option id="product173" dialogue="Japán whisky"></option>
+    <option id="product174" dialogue="Prémium Whisky"></option>
+    <option id="product175" dialogue="Prémium Whisky"></option>
+    <option id="product176" dialogue="Hidrogén-peroxid"></option>
+    <option id="product177" dialogue="Fertőtlenítő"></option>
+    <option id="product178" dialogue="Ibuprofen"></option>
+    <option id="product179" dialogue="Paracetamol"></option>
+
+    <option id="product180" dialogue="Ragasztó kötszerek"></option>
+    <option id="product181" dialogue="Hashajtó"></option>
+    <option id="product182" dialogue="Antihisztamin"></option>
+    <option id="product183" dialogue="Cink-kiegészítő"></option>
+    <option id="product184" dialogue="Antioxidáns"></option>
+    <option id="product185" dialogue="Halolaj"></option>
+    <option id="product186" dialogue="Alga tabletták"></option>
+    <option id="product187" dialogue="Vitaminok"></option>
+    <option id="product188" dialogue="Melatonin"></option>
+    <option id="product189" dialogue="Fényvédő krém"></option>
+
+    <option id="product190" dialogue="Stretch krém"></option>
+    <option id="product191" dialogue="Piros almás tálca"></option>
+    <option id="product192" dialogue="Zöld almás tálca"></option>
+    <option id="product193" dialogue="Clementine tálca"></option>
+    <option id="product194" dialogue="Narancsos tálca"></option>
+    <option id="product195" dialogue="Körtetálca"></option>
+    <option id="product196" dialogue="Citromos tálca"></option>
+    <option id="product197" dialogue="Mangó tálca"></option>
+    <option id="product198" dialogue="Avokádó tálca"></option>
+    <option id="product199" dialogue="Kiwi tálca"></option>
+
+    <option id="product200" dialogue="Papaya tálca"></option>
+    <option id="product201" dialogue="Epres tálca"></option>
+    <option id="product202" dialogue="Cseresznye tálca"></option>
+    <option id="product203" dialogue="Articsóka tálca"></option>
+    <option id="product204" dialogue="Cukkini tálca"></option>
+    <option id="product205" dialogue="Sárgarépa tálca"></option>
+    <option id="product206" dialogue="Paradicsomtálca"></option>
+    <option id="product207" dialogue="Burgonya tálca"></option>
+    <option id="product208" dialogue="Hagymatálca"></option>
+    <option id="product209" dialogue="Banán csomag"></option>
+
+    <option id="product210" dialogue="Dinnye"></option>
+    <option id="product211" dialogue="Ananász"></option>
+    <option id="product212" dialogue="Tök"></option>
+    <option id="product213" dialogue="Görögdinnye"></option>
+    <option id="product214" dialogue="Bébiétel: Zöldségek"></option>
+    <option id="product215" dialogue="Bébiétel: hal"></option>
+    <option id="product216" dialogue="Bébiétel: Gyümölcsök"></option>
+    <option id="product217" dialogue="Bébiétel: hús"></option>
+    <option id="product218" dialogue="Tápláló tejkeverék"></option>
+    <option id="product219" dialogue="Tápláló tejpor"></option>
+
+    <option id="product220" dialogue="Ökológiai pelenkák"></option>
+    <option id="product221" dialogue="Alap pelenkák"></option>
+    <option id="product222" dialogue="Kisgyermek pelenkák"></option>
+    <option id="product223" dialogue="Prémium pelenkák"></option>
+    <option id="product224" dialogue="Aloe Baba törlőkendők"></option>
+    <option id="product225" dialogue="Alapvető baba törlőkendők"></option>
+    <option id="product226" dialogue="Babapor"></option>
+    <option id="product227" dialogue="Narancs szóda"></option>
+    <option id="product228" dialogue="Ananász szóda"></option>
+    <option id="product229" dialogue="Trópusi szóda"></option>
+
+    <option id="product230" dialogue="Zöld tea ital"></option>
+    <option id="product231" dialogue="Vörös tea ital"></option>
+    <option id="product232" dialogue="Citromos tea ital"></option>
+    <option id="product233" dialogue="Jegeskávé"></option>
+    <option id="product234" dialogue="Áfonya energiaital"></option>
+    <option id="product235" dialogue="Guava energiaital"></option>
+    <option id="product236" dialogue="Lima energiaital"></option>
+    <option id="product237" dialogue="Puncsos energiaital"></option>
+    <option id="product238" dialogue="Mangó energiaital"></option>
+    <option id="product239" dialogue="Cola energiaital"></option>
+
+    <option id="product240" dialogue="Cukormentes energiaital"></option>
+    <option id="product241" dialogue="Alap eper fagylalt"></option>
+    <option id="product242" dialogue="Citromos fagylalt"></option>
+    <option id="product243" dialogue="Kávé fagylalt"></option>
+    <option id="product244" dialogue="Stracciatella fagylalt"></option>
+    <option id="product245" dialogue="Epres habcsók fagylalt"></option>
+    <option id="product246" dialogue="Karamell fagylalt"></option>
+    <option id="product247" dialogue="Prémium eper fagylalt"></option>
+    <option id="product248" dialogue="Epres sajttorta fagylalt"></option>
+    <option id="product249" dialogue="Prémium karamell fagylalt"></option>
+
+    <option id="product250" dialogue="Rózsaszín eper fagylalt"></option>
+    <option id="product251" dialogue="Alkoholos fagylalt"></option>
+    <option id="product252" dialogue="Csicseriborsó"></option>
+    <option id="product253" dialogue="Húsgombóc"></option>
+    <option id="product254" dialogue="Lencse"></option>
+    <option id="product255" dialogue="Paradicsomleves"></option>
+    <option id="product256" dialogue="Konzerv kukorica"></option>
+    <option id="product257" dialogue="Konzerv borsó"></option>
+    <option id="product258" dialogue="Epermag"></option>
+    <option id="product259" dialogue="Málna magok"></option>
+
+    <option id="product260" dialogue="Áfonya magvak"></option>
+    <option id="product261" dialogue="Ananász magok"></option>
+    <option id="product262" dialogue="Meyer citrommag"></option>
+    <option id="product263" dialogue="Paradicsom magvak"></option>
+    <option id="product264" dialogue="Paprika magvak"></option>
+    <option id="product265" dialogue="Uborka magvak"></option>
+    <option id="product266" dialogue="Retek magok"></option>
+    <option id="product267" dialogue="Sárgarépa Magok"></option>
+    <option id="product268" dialogue="Gyepmag"></option>
+    <option id="product269" dialogue="Mák"></option>
+
+    <option id="product270" dialogue="Tulipánmag"></option>
+    <option id="product271" dialogue="Napraforgómag"></option>
+    <option id="product272" dialogue="Petúnia magok"></option>
+    <option id="product273" dialogue="Kézi gereblye (A)"></option>
+    <option id="product274" dialogue="Kézi gereblye (B)"></option>
+    <option id="product275" dialogue="Kézi lapát"></option>
+    <option id="product276" dialogue="Kézi kultivátor"></option>
+    <option id="product277" dialogue="Virágföld"></option>
+    <option id="product278" dialogue="Trágya"></option>
+    <option id="product279" dialogue="Növényi edény"></option>
+
+    <option id="product280" dialogue="Növénycserép"></option>
+    <option id="product281" dialogue="AA elemek"></option>
+    <option id="product282" dialogue="AAA elemek"></option>
+    <option id="product283" dialogue="C elemek"></option>
+    <option id="product284" dialogue="9V elemek"></option>
+    <option id="product285" dialogue="Univerzális TV távirányító"></option>
+    <option id="product286" dialogue="Univerzális telefon töltő"></option>
+    <option id="product287" dialogue="Alap kártyás telefon"></option>
+    <option id="product288" dialogue="Alap egér"></option>
+    <option id="product289" dialogue="Vezeték nélküli USB"></option>
+    <option id="product290" dialogue="Alap fülhallgatók"></option>
+
+    <option id="product291" dialogue="Alap billentyűzet"></option>
+    <option id="product292" dialogue="Alapvető játékvezérlő"></option>
+    <option id="product293" dialogue="USB flash meghajtó (128 GB)"></option>
+    <option id="product294" dialogue="USB Flash Drive (256 GB)"></option>
+    <option id="product295" dialogue="USB flash meghajtó (512 GB)"></option>
+    <option id="product296" dialogue="USB Flash Drive (1 TB)"></option>
+    <option id="product297" dialogue="Átlagos hangszóró"></option>
+    <option id="product298" dialogue="Átlagos fejhallgatós"></option>
+    <option id="product299" dialogue="Alapszintű játékkonzol"></option>
+
+    <!-- ///////////////////////////////////Materials///////////////////////////////////// -->
+    <option id="paintmat0" dialogue="Store Csempe A"></option>
+    <option id="paintmat1" dialogue="Store Csempe B"></option>
+    <option id="paintmat2" dialogue="Tároló tégla"></option>
+    <option id="paintmat3" dialogue="Store Gipsz"></option>
+    <option id="paintmat4" dialogue="Beton tárolása"></option>
+    <option id="paintmat5" dialogue="Lakkozott fa"></option>
+    <option id="paintmat6" dialogue="Fa deszka"></option>
+    <option id="paintmat7" dialogue="Gyalult fa"></option>
+    <option id="paintmat8" dialogue="Gyalulatlan fa (csomózott)"></option>
+    <option id="paintmat9" dialogue="Gyalulatlan fa"></option>
+
+    <option id="paintmat10" dialogue="Festett fa"></option>
+    <option id="paintmat11" dialogue="Alaplapok A"></option>
+    <option id="paintmat12" dialogue="Alaplapok B"></option>
+    <option id="paintmat13" dialogue="Alaplapok C"></option>
+    <option id="paintmat14" dialogue="Alaplapok D"></option>
+    <option id="paintmat15" dialogue="Gránit csempe A"></option>
+    <option id="paintmat16" dialogue="Gránit csempe B"></option>
+    <option id="paintmat17" dialogue="Gránit csempe C"></option>
+    <option id="paintmat18" dialogue="Gránit csempe D"></option>
+    <option id="paintmat19" dialogue="Márvány csempe A"></option>
+
+    <option id="paintmat20" dialogue="Márvány csempe B"></option>
+    <option id="paintmat21" dialogue="Márvány csempe C"></option>
+    <option id="paintmat22" dialogue="Nyers márvány"></option>
+    <option id="paintmat23" dialogue="Festett fém"></option>
+    <option id="paintmat24" dialogue="Alap tégla"></option>
+    <option id="paintmat25" dialogue="Tégla minta A"></option>
+    <option id="paintmat26" dialogue="Tégla minta B"></option>
+    <option id="paintmat27" dialogue="Tégla minta C"></option>
+    <option id="paintmat28" dialogue="Alap Alumínium"></option>
+    <option id="paintmat29" dialogue="Csiszolt alumínium A"></option>
+
+    <option id="paintmat30" dialogue="Csiszolt alumínium B"></option>
+    <option id="paintmat31" dialogue="Öntött alumínium"></option>
+    <option id="paintmat32" dialogue="Matt alumínium"></option>
+    <option id="paintmat33" dialogue="Zajos alumínium"></option>
+    <option id="paintmat34" dialogue="Oxidált alumínium"></option>
+    <option id="paintmat35" dialogue="Csiszolt réz"></option>
+    <option id="paintmat36" dialogue="Arany panelek"></option>
+    <option id="paintmat37" dialogue="Réz minta A"></option>
+    <option id="paintmat38" dialogue="Réz minta B"></option>
+    <option id="paintmat39" dialogue="Réz minta C"></option>
+
+    <option id="paintmat40" dialogue="Alumínium minta A"></option>
+    <option id="paintmat41" dialogue="Alumínium minta B"></option>
+    <option id="paintmat42" dialogue="Alumínium minta C"></option>
+    <option id="paintmat43" dialogue="Alumínium minta D"></option>
+    <option id="paintmat44" dialogue="Alumínium minta E"></option>
+    <option id="paintmat45" dialogue="Alumínium minta F"></option>
+    <option id="paintmat46" dialogue="Alumínium minta G"></option>
+    <option id="paintmat47" dialogue="Alumínium minta H"></option>
+    <option id="paintmat48" dialogue="Alumínium minta I"></option>
+    <option id="paintmat49" dialogue="Alumínium minta J"></option>
+
+    <option id="paintmat50" dialogue="Sárgaréz minta A"></option>
+    <option id="paintmat51" dialogue="Sárgaréz minta B"></option>
+    <option id="paintmat52" dialogue="Sárgaréz minta C"></option>
+    <option id="paintmat53" dialogue="Sárgaréz minta D"></option>
+    <option id="paintmat54" dialogue="Sárgaréz minta E"></option>
+    <option id="paintmat55" dialogue="Sárgaréz minta F"></option>
+    <option id="paintmat56" dialogue="Sárgaréz minta G"></option>
+    <option id="paintmat57" dialogue="Réz panelek"></option>
+    <option id="paintmat58" dialogue="Egyéb Minta A"></option>
+    <option id="paintmat59" dialogue="Egyéb Minta B"></option>
+
+    <option id="paintmat60" dialogue="Egyéb Minta C"></option>
+    <option id="paintmat61" dialogue="Egyéb Minta D"></option>
+    <option id="paintmat62" dialogue="Egyéb Minta E"></option>
+    <option id="paintmat63" dialogue="Egyéb Minta F"></option>
+    <option id="paintmat64" dialogue="Egyéb Minta G"></option>
+    <option id="paintmat65" dialogue="Egyéb Minta H"></option>
+    <option id="paintmat66" dialogue="Egyéb Minta I"></option>
+    <option id="paintmat67" dialogue="Egyéb Minta J"></option>
+    <option id="paintmat68" dialogue="Egyéb Minta K"></option>
+    <option id="paintmat69" dialogue="Egyéb Minta L"></option>
+
+    <option id="paintmat70" dialogue="Organikus: fű"></option>
+    <option id="paintmat71" dialogue="Organikus: levelek"></option>
+    <option id="paintmat72" dialogue="Organikus: kő A"></option>
+    <option id="paintmat73" dialogue="Organikus: kő B"></option>
+
+    <option id="paintmat74" dialogue="Halloween: Minta A"></option>
+    <option id="paintmat75" dialogue="Halloween: Minta B"></option>
+    <option id="paintmat76" dialogue="Halloween: Minta C"></option>
+    <option id="paintmat77" dialogue="Halloween: Minta D"></option>
+    <option id="paintmat78" dialogue="Halloween: Minta E"></option>
+    <option id="paintmat79" dialogue="Halloween: Minta F"></option>
+
+    <option id="paintmat80" dialogue="Halloween: Minta G"></option>
+    <option id="paintmat81" dialogue="Halloween: Minta H"></option>
+    <option id="paintmat82" dialogue="Halloween: Minta I"></option>
+    <option id="paintmat83" dialogue="Halloween: Minta J"></option>
+    <option id="paintmat84" dialogue="Halloween: Minta K"></option>
+    <option id="paintmat85" dialogue="Halloween: Minta L"></option>
+    <option id="paintmat86" dialogue="Halloween: Minta M"></option>
+    <option id="paintmat87" dialogue="Halloween: Sütőtök"></option>
+    <option id="paintmat88" dialogue="Halloween: csontvázak"></option>
+    <option id="paintmat89" dialogue="Halloween: Pókhálók"></option>
+
+    <option id="paintmat90" dialogue="karácsonyi A"></option>
+    <option id="paintmat91" dialogue="karácsonyi B"></option>
+    <option id="paintmat92" dialogue="karácsonyi C"></option>
+    <option id="paintmat93" dialogue="karácsonyi D"></option>
+    <option id="paintmat94" dialogue="karácsonyi E"></option>
+    <option id="paintmat95" dialogue="karácsonyi F"></option>
+    <option id="paintmat96" dialogue="karácsonyi G"></option>
+    <option id="paintmat97" dialogue="karácsonyi H"></option>
+    <option id="paintmat98" dialogue="karácsonyi I"></option>
+    <option id="paintmat99" dialogue="karácsonyi J"></option>
+
+    <option id="paintmat100" dialogue="Hó"></option>
+    <option id="paintmat101" dialogue="Jég A"></option>
+    <option id="paintmat102" dialogue="Jég B"></option>
+    <option id="paintmat103" dialogue="Jég C"></option>
+    <option id="paintmat104" dialogue="Jég D"></option>
+    <option id="paintmat105" dialogue="Termékek: Basic A"></option>
+    <option id="paintmat106" dialogue="Termékek: Basic B"></option>
+    <option id="paintmat107" dialogue="Termékek: Napló A"></option>
+    <option id="paintmat108" dialogue="Termékek: Napló B"></option>
+    <option id="paintmat109" dialogue="Termékek: Szóda italok A"></option>
+
+    <option id="paintmat110" dialogue="Termékek: Szóda italok B"></option>
+    <option id="paintmat111" dialogue="Termékek: Fagyasztott"></option>
+    <option id="paintmat112" dialogue="Termékek: Higiénia A"></option>
+    <option id="paintmat113" dialogue="Termékek: Higiénia B"></option>
+    <option id="paintmat114" dialogue="Termékek: Tisztítás"></option>
+    <option id="paintmat115" dialogue="Termékek: Édesség A"></option>
+    <option id="paintmat116" dialogue="Termékek: Édesség B"></option>
+    <option id="paintmat117" dialogue="Termékek: Hús"></option>
+    <option id="paintmat118" dialogue="Termékek: Befőttek"></option>
+    <option id="paintmat119" dialogue="Termékek: Infúziók"></option>
+
+    <option id="paintmat120" dialogue="Termékek: hal A"></option>
+    <option id="paintmat121" dialogue="Termékek: hal B"></option>
+    <option id="paintmat122" dialogue="Termékek: Könyvek A"></option>
+    <option id="paintmat123" dialogue="Termékek: Könyvek B"></option>
+    <option id="paintmat124" dialogue="Termékek: Alkohol A"></option>
+    <option id="paintmat125" dialogue="Termékek: Alkohol B"></option>
+    <option id="paintmat126" dialogue="Termékek: Gyógyszertár A"></option>
+    <option id="paintmat127" dialogue="Termékek: Gyógyszertáry B"></option>
+    <option id="paintmat128" dialogue="Termékek: Gyárt A"></option>
+    <option id="paintmat129" dialogue="Termékek: Gyárt B"></option>
+
+    <option id="paintmat130" dialogue="Termékek: Gyárt C"></option>
+    <option id="paintmat131" dialogue="Termékek: Gyárt D"></option>
+    <option id="paintmat132" dialogue="Termékek: Gyermekfelügyelet A"></option>
+    <option id="paintmat133" dialogue="Termékek: Gyermekfelügyelet B"></option>
+    <option id="paintmat134" dialogue="Kísérleti TV"></option>
+    <option id="paintmat135" dialogue="Termékek: Kertészet A"></option>
+    <option id="paintmat136" dialogue="Termékek: Kertészet B"></option>
+    <option id="paintmat137" dialogue="Termékek: Electronics A"></option>
+    <option id="paintmat138" dialogue="Termékek: Electronics B"></option>
+    <option id="paintmat139" dialogue="Bambusz"></option>
+
+    <option id="paintmat140" dialogue="Szőnyeg A"></option>
+    <option id="paintmat141" dialogue="Szőnyeg B"></option>
+    <option id="paintmat142" dialogue="Szőnyeg C"></option>
+    <option id="paintmat143" dialogue="Szőnyeg D"></option>
+    <option id="paintmat144" dialogue="Szőnyeg E"></option>
+    <option id="paintmat145" dialogue="Szőnyeg F"></option>
+    <option id="paintmat146" dialogue="Szőnyeg G"></option>
+    <option id="paintmat147" dialogue="Szőnyeg H"></option>
+    <option id="paintmat148" dialogue="Szőnyeg I"></option>
+    <option id="paintmat149" dialogue="Beton A"></option>
+
+    <option id="paintmat150" dialogue="Beton B"></option>
+    <option id="paintmat151" dialogue="Beton C"></option>
+    <option id="paintmat152" dialogue="Beton D"></option>
+    <option id="paintmat153" dialogue="Beton E"></option>
+    <option id="paintmat154" dialogue="Beton F"></option>
+    <option id="paintmat155" dialogue="Beton G"></option>
+    <option id="paintmat156" dialogue="A gyémánt tábla"></option>
+    <option id="paintmat157" dialogue="B gyémánt tábla"></option>
+    <option id="paintmat158" dialogue="A fémlemez"></option>
+    <option id="paintmat159" dialogue="B fémlemez"></option>
+
+    <option id="paintmat160" dialogue="C fémlemez"></option>
+    <option id="paintmat161" dialogue="Szikla A"></option>
+    <option id="paintmat162" dialogue="Szikla B"></option>
+    <option id="paintmat163" dialogue="Szikla C"></option>
+    <option id="paintmat164" dialogue="Szikla D"></option>
+    <option id="paintmat165" dialogue="Faminta A"></option>
+    <option id="paintmat166" dialogue="Faminta B"></option>
+    <option id="paintmat167" dialogue="Faminta C"></option>
+    <option id="paintmat168" dialogue="Faminta D"></option>
+    <option id="paintmat169" dialogue="Faminta E"></option>
+
+    <option id="paintmat170" dialogue="Faminta F"></option>
+    <option id="paintmat171" dialogue="Faminta G"></option>
+    
+
+    <!-- ///////////////////////////////////Post strings///////////////////////////////////// -->
+    <option id="skinshats" dialogue="Skinek és kalapok"></option>
+    <option id="character" dialogue="Karakter"></option>
+    <option id="hat" dialogue="Kalap"></option>
+    <option id="coolpeople" dialogue="Csak menő emberek engedélyezettek"></option>
+
+    <option id="mprice" dialogue="Piaci ár"></option>
+    <option id="yprice" dialogue="A te árad"></option>
+
+    <option id="mgiven" dialogue="Adott pénz"></option>
+    <option id="mreturn" dialogue="Visszajáró"></option>
+    <option id="camount" dialogue="Aktuális összeg"></option>
+    <option id="addmoney" dialogue="[LMB] Pénz hozzáadása"></option>
+    <option id="removemoney" dialogue="[RMB] Pénz eltávolítása"></option>
+
+    <option id="coopplayerfunds" dialogue="Extra forrás hozzáadva a coop játékos számára"></option>
+
+    <option id="alreadyopen" dialogue="Az üzlet már nyitva van"></option>
+    <option id="alreadyclose" dialogue="Az üzlet már bezárt"></option>
+
+    <option id="newoptions1" dialogue="Látómező"></option>
+    <option id="newoptions2" dialogue="TV hangereje"></option>
+
+    <option id="poseskey" dialogue="Táncok Kulcskiosztás"></option>
+
+    <option id="lic12" dialogue="Ebben a terminálban csatlakoztathatja a Youtube-ot és a Twitchet a tévéjéhez, miután az engedélyt jóváhagyták."></option>
+
+    <option id="cosmetics1" dialogue="A kozmetikai DLC jóváhagyva!"></option>
+    <option id="cosmetics2" dialogue="9 új karakter, több mint 100 kalap, 35 tánc és póz, valamint egy webböngésző, amellyel lazíthat, amíg a főnöke nem keres.
+
+Fesd ki üzletedet az új táblagéppel, és élvezd az idővel hozzáadott exkluzív dekorációkat. Már elérhető az első Youtube szinkronizálási frissítés!"></option>
+
+    <option id="continue" dialogue="Folytatás"></option>
+    <option id="backups" dialogue="Biztonsági mentések"></option>
+    <option id="nobackups" dialogue="Nincs biztonsági másolat"></option>
+    <option id="backupswarning" dialogue="Figyelmeztetés: a biztonsági másolat betöltése felülírja az aktuális fájl napját."></option>
+    <option id="deleteoff" dialogue="A törlés mód kikapcsolva"></option>
+    <option id="deleteon" dialogue="Törlés mód bekapcsolva"></option>
+
+    <option id="kick" dialogue="Rúgás"></option>
+    <option id="punish" dialogue="Megbüntetni"></option>
+    <option id="permi" dialogue="Engedélyek"></option>
+
+    <option id="nplayer" dialogue="Új játékos csatlakozott"></option>
+
+    <option id="disclaimer1" dialogue="Ha csatlakozási problémái vannak, ne felejtsen el frissíteni a legújabb javításra!"></option>
+
+    <option id="tvcontrol" dialogue="TV-k vezérlése"></option>
+    <option id="tvhook0" dialogue="Le"></option>
+    <option id="tvhook1" dialogue="Helyőrző videók"></option>
+    <option id="tvhook2" dialogue="URL videó"></option>
+    <option id="tvhook3" dialogue="Böngésző"></option>
+    <option id="tvhook4" dialogue="Twitch/YT videó"></option>
+    <option id="tvdisclaimer" dialogue="A streamelési vizualizáció még függőben van.
+Köszönjük türelmét."></option>
+
+    <option id="lobby0" dialogue="Az lobbi most: "></option>
+    <option id="lobby1" dialogue="nyitott"></option>
+    <option id="lobby2" dialogue="zárt"></option>
+    <option id="lobby3" dialogue="Nyisd meg a lobbi-t"></option>
+    <option id="lobby4" dialogue="Zárd be a lobbi-t"></option>
+    <option id="lobby5" dialogue="A lobbi bezárása megakadályozza, hogy bárki csatlakozzon.
+Hasznos, ha csak bizonyos számú játékosra számítasz, és nem szeretnéd, hogy kód nélkül bárki csatlakozzon a Steam Friends szolgáltatáson keresztül."></option>
+
+    <option id="newoptions3" dialogue="Videók engedélyezése"></option>
+
+    <option id="checkoutlane" dialogue="A pénztári sáv lezárva
+Kérjük, használja a következőt"></option>
+    <option id="checkoutlane1" dialogue="Zárd be a pénztári sávot"></option>
+
+    <option id="paintablestablet0" dialogue="Válassza az Anyag lehetőséget, majd a színt, majd alkalmazza a kiválasztást"></option>
+    <option id="paintablestablet1" dialogue="Vissza az anyagválasztáshoz"></option>
+    <option id="paintablestablet2" dialogue="Előző/következő anyag vagy szín"></option>
+    <option id="paintablestablet3" dialogue="Az üzlet testreszabása végrehajtás alatt áll.
+Ez a fal lehetővé teszi a festhető tabletta előnézetét pénzköltség nélkül.
+Egyes anyagoknál választhat színeltéréseket."></option>
+
+    <option id="newoptions4" dialogue="Magas késleltetés"></option>
+    <option id="newoptions5" dialogue="Általános"></option>
+    <option id="titledisclaimer1" dialogue="Hiányoznak a termékek a játékhoz való csatlakozáskor és a készletek feltöltésekor? Aktiválja az új High Latency módot a beállításokban."></option>
+
+    <option id="managerboardnew1" dialogue="Üres doboz vásárlása"></option>
+    <option id="employeeboardnew1" dialogue="Szakítsa meg a doboz újrahasznosítását"></option>
+
+    <option id="tabletdisclaimer1" dialogue="Ez a táblagép elavult, és egyesült a fő készítőben.
+Az új lapok eléréséhez alapértelmezés szerint használja az X-et és a Z-t."></option>
+
+    <option id="pcat" dialogue="Megsimogattad a macskát. Gyere vissza később"></option>
+
+    <option id="snapping0" dialogue="Következő Snap mód"></option>
+    <option id="snapping1" dialogue="Snap mód"></option>
+    <option id="snapping2" dialogue="Egyik sem"></option>
+    <option id="snapping3" dialogue="Rács: középen"></option>
+    <option id="snapping4" dialogue="Rács: Hátoldal"></option>
+    <option id="snapping5" dialogue="Bútor"></option>
+
+    <option id="checkoutwarning" dialogue="Az üzletében legalább egy emberes pénztárra van szüksége"></option>
+
+    <option id="newoptions6" dialogue="Mindig fuss"></option>
+    <option id="newoptions7" dialogue="Böngésző"></option>
+    <option id="newoptions7a" dialogue="Egyik sem"></option>
+    <option id="newoptions7b" dialogue="Normál"></option>
+    <option id="newoptions7c" dialogue="Linux támogatott"></option>
+    <option id="newoptions8" dialogue="Kaching kötet."></option>
+    <option id="newoptions9" dialogue="Kurzor korlátozása"></option>
+    <option id="newoptions10" dialogue="Célkereszt mérete"></option>
+    <option id="newoptions11" dialogue="Célkereszt színe"></option>
+    <option id="newoptions12" dialogue="Éjszakai Dim"></option>
+
+    <option id="surveillance1" dialogue="Az ügyfél már ellenőrizte"></option>
+    <option id="surveillance2" dialogue="Kattintson többször egy ügyfélre, hogy ellenőrizze, tolvaj-e
+Minél legközelebb van a kamerához, annál hatékonyabb a kattintás."></option>
+    <option id="surveillance2a" dialogue="Tartsd lenyomva a kattintást, és mutasd az egérmutatót egy ügyfél fölé, hogy ellenőrizd, tolvaj-e
+Minél legközelebb van a kamerához, ez annál hatékonyabb."></option>
+
+    <option id="rdown" dialogue="Lefelé kerekítés"></option>
+
+    <option id="tvautosync0" dialogue="Automatikus szinkronizálás"></option>
+    <option id="tvautosync1" dialogue="Engedélyezze az összes játékosnak, hogy módosítsa az URL-t"></option>
+    <option id="tvautosync2" dialogue="Youtube videók"></option>
+
+    <option id="productsorting0" dialogue="Nincs válogatás"></option>
+    <option id="productsorting1" dialogue="Méret szerint"></option>
+    <option id="productsorting2" dialogue="A legalacsonyabb összkészlet alapján"></option>
+    <option id="productsorting3" dialogue="A legalacsonyabb tárhely alapján"></option>
+    <option id="productsorting4" dialogue="A legalacsonyabb polckészlet szerint"></option>
+
+    <option id="checkoutredbutton" dialogue="Ezt a gombot csak a menedzser tudja megnyomni"></option>
+
+    <option id="invo" dialogue="Számlák"></option>
+    <option id="invodebt" dialogue="Számlák / Tartozás"></option>
+    <option id="stats" dialogue="Statisztika"></option>
+
+    <option id="removeallperm" dialogue="Csatlakozáskor távolítson el minden engedélyt"></option>
+    <option id="permiss0" dialogue="Globális"></option>
+    <option id="permiss1" dialogue="Menedzser"></option>
+    <option id="permiss2" dialogue="Pénztáros"></option>
+    <option id="permiss3" dialogue="Raktáros"></option>
+    <option id="permiss4" dialogue="Biztonság"></option>
+    <option id="permiss5" dialogue="Csevegés"></option>
+
+    <option id="newemplo" dialogue="Alkalmazottak"></option>
+    <option id="emplohire" dialogue="Felvétel"></option>
+    <option id="emplodismiss" dialogue="Kirúgás"></option>
+    <option id="emploassignment" dialogue="Kijelölés"></option>
+    <option id="emplostats" dialogue="Alkalmazotti statisztika"></option>
+    <option id="emplorenew" dialogue=" jelentkezők minden nap változnak!"></option>
+    <option id="emplomaxemplo" dialogue="Max. Alkalmazottak"></option>
+    <option id="emplohired" dialogue="Felvett alkalmazottak"></option>
+    <option id="emploentername" dialogue="Adja meg az alkalmazott nevét..."></option>
+    <option id="emplocashexp" dialogue="Pénztáros tapasztalat"></option>
+    <option id="emplorestexp" dialogue="Újratelepítési tapasztalat"></option>
+    <option id="emplostoexp" dialogue="Tárolási tapasztalat"></option>
+    <option id="emplosecexp" dialogue="Biztonsági tapasztalat"></option>
+    <option id="canthiremore" dialogue="Nem lehet több alkalmazottat felvenni"></option>
+    <option id="hiredemployee" dialogue="Alkalmazottat vettek fel!"></option>
+    <option id="dismissedemployee" dialogue="Elbocsátottak egy alkalmazottat!"></option>
+    <option id="emploalreadyhired" dialogue="Bérelt"></option>
+    <option id="emptyposi" dialogue="Üres pozíció"></option>
+    <option id="emploassignedtask" dialogue="Hozzárendelt feladat"></option>
+    <option id="emplonewpriority" dialogue="Tárolás"></option>
+    <option id="emploNoTask" dialogue="Nincs feladat"></option>
+    <option id="emplostaffhappi" dialogue="A személyzeti boldogság"></option>
+    <option id="emploreroll" dialogue="Újraválogatás"></option>
+
+    <option id="dlcdiscounted" dialogue="Le"></option>
+    <option id="emploselect" dialogue="Válassza ki"></option>
+    <option id="emplochangeall" dialogue="Módosítsa az összes prioritást"></option>
+    <option id="emplosavelay" dialogue="Mentse a prioritásokat"></option>
+    <option id="emploloadlay" dialogue="Prioritások betöltése"></option>
+
+    <option id="bboardmoveddisclaimer" dialogue="Az alkalmazottak vezetése átkerült a menedzser táblájára"></option>
+    <option id="startkn" dialogue="Csillagjelzőt kaptam!"></option>
+    <option id="bboardchristdisclaimer" dialogue="Helyezzen el egy karácsonyi ajándék dekorációt és várja meg az éjszakát az esemény kezdetéig!
+Legyen kéznél a seprű"></option>
+
+    <option id="panykey" dialogue="Nyomja meg bármelyik gombot a folytatáshoz"></option>
+    <option id="gtunlckable" dialogue="Új feloldható tárgyat kaptam!"></option>
+    <option id="nostartkn" dialogue="Nincsenek elérhető csillagjelzők"></option>
+    <option id="managsavebckup" dialogue="Mentési mentések kezelése"></option>
+    <option id="newoptionendday" dialogue="Automatikus befejezés napja"></option>
+    <option id="sallprices" dialogue="Állítsa be az összes árat százalékos értékre"></option>
+    <option id="csettingprices" dialogue="[Jelenleg az árak beállítása]"></option>
+
+    <option id="orddevice0" dialogue="A raktárban elhelyezett mennyiség"></option>
+    <option id="orddevice1" dialogue="A bolt feltöltéséhez szükséges mennyiség"></option>
+    <option id="orddevice2" dialogue="Tárolóban és dobozokban lévő mennyiség"></option>
+    <option id="orddevice3" dialogue="Vásárolja meg a MART OS 2.0-t a speciális funkciók feloldásához"></option>
+    <option id="accfactor" dialogue="Gyorsulási tényező"></option>
+    <option id="loglog1" dialogue="A játék naplóinak másolása a vágólapra"></option>
+    <option id="loglog2" dialogue="Másolva!"></option>
+
+    <option id="stats0" dialogue="Összes keresett pénz"></option>
+    <option id="stats1" dialogue="Összes elhelyezett termék"></option>
+    <option id="stats2" dialogue="Összes újrahasznosított doboz"></option>
+    <option id="stats3" dialogue="Összes kiszolgált ügyfél"></option>
+    <option id="stats4" dialogue="Összes kivett termék"></option>
+    <option id="stats5" dialogue="Összegyűjtött szemét"></option>
+    <option id="stats6" dialogue="Egy sorban adott helyes változtatás"></option>
+    <option id="stats7" dialogue="Times tolvaj ütött"></option>
+    <option id="stats8" dialogue="Összegyűjtötték az ellopott termékeket"></option>
+    <option id="stats9" dialogue="Macskasimogató idők"></option>
+    <option id="stats10" dialogue="Elemzett ügyfelek a CCTV-ben"></option>
+    <option id="stats11" dialogue="Tolvajokat fogtak el a CCTV-ben"></option>
+    <option id="statsfoundtoo" dialogue="Előző napon nem található"></option>
+    <option id="statsnofound" dialogue="Az előző napon túl drágának találták"></option>
+
+    <option id="stats12" dialogue="Eladások a mai napig"></option>
+    <option id="stats13" dialogue="Bálázóban bemutatott dobozok"></option>
+    <option id="stats14" dialogue="Újrahasznosított kartonbálák"></option>
+
+    <option id="stats15" dialogue="Extra tételek eladása az eladásoknak köszönhetően"></option>
+    <option id="stats16" dialogue="Kifizetett számlák"></option>
+
+    <option id="stats17" dialogue="Online rendelések összeállítása"></option>
+    <option id="stats18" dialogue="Online rendelésekkel szerzett pénz"></option>
+    
+    <option id="unstckplyr" dialogue="Kioldás"></option>
+    <option id="off2disclaimer" dialogue="Van javaslata vagy problémája? A Steam fórumok egyelőre az egyetlen hivatalos média, amely kapcsolatban marad a fejlesztővel"></option>
+
+    <option id="xcessve" dialogue="Túlzott..."></option>
+
+    <option id="invoicetype0" dialogue="Banki kölcsön"></option>
+    <option id="invoicetype1" dialogue="Elektromos"></option>
+    <option id="invoicetype2" dialogue="Fizetés"></option>
+    <option id="invoicetype3" dialogue="Bérlés"></option>
+
+    <option id="invopaidannoun" dialogue="Számla kifizetve!"></option>
+    <option id="invopaidannoun2" dialogue="Először fizesd ki jelenlegi hitelt!"></option>
+    <option id="invopaidannoun3" dialogue="Kölcsön megadva!"></option>
+    <option id="invovalue0" dialogue="Kiadás dátuma"></option>
+    <option id="invovalue1" dialogue="Esedékesség"></option>
+    <option id="invovalue2" dialogue="Fizesse ki ezt a számlát"></option>
+    <option id="invovalue3" dialogue="Kért összeg"></option>
+    <option id="invovalue4" dialogue="A kölcsön futamideje"></option>
+    <option id="invovalue5" dialogue="Visszatérítendő összeg"></option>
+    <option id="invovalue6" dialogue="Napi fizetés"></option>
+    <option id="invovalue7" dialogue="A kölcsön megerősítése"></option>
+    <option id="invovalue8" dialogue="Kölcsönigénylés"></option>
+    <option id="loandisclmer" dialogue="Addig nem kérhetsz új kölcsönt, amíg a jelenlegit ki nem fizetik"></option>
+
+    <option id="payloandisclmer" dialogue="Kérjük, fizesse ki bérleti számláit."></option>
+    <option id="paynpcmessage" dialogue="Fizesd ki a kölcsöneidet!"></option>
+
+    <option id="disableinvoicesoption" dialogue="Számlák letiltása"></option>
+
+    <option id="off3disclaimer" dialogue="Ha az alkalmazottak nem jelennek meg vagy lazulnak, ne felejtse el kifizetni a bérüket, mert ennek elmulasztása következményekkel jár"></option>
+    <option id="off4disclaimer" dialogue="Az alkalmazottaknak furcsa útjaik vannak? Használja a kioldott NPC-blokkot, és jelentse az üzlet adatait a fórumokon"></option>
+
+    <option id="drawgame0" dialogue="Rajzold le a szót! Minijáték"></option>
+    <option id="drawgame1" dialogue="Elindult egy rajzoló minijáték!"></option>
+    <option id="drawgame2" dialogue="A sorsolási minijáték nyertese: "></option>
+    <option id="drawgame3" dialogue="Rajzoló minijáték: lejárt az idő!"></option>
+    <option id="drawgame4" dialogue="Az Ön szava..."></option>
+    <option id="drawgame5" dialogue="Írja be a szavát..."></option>
+    <option id="drawgame6" dialogue="Kérés"></option>
+    <option id="drawgame7" dialogue="Minijáték engedélyezése"></option>
+
+    <option id="picfram0" dialogue="Alapértelmezett kép"></option>
+    <option id="picfram1" dialogue="Képméret"></option>
+    <option id="picfram2" dialogue="Adjon meg egy érvényes URL-képet..."></option>
+    <option id="picfram3" dialogue="URL beállítására tett kísérlet"></option>
+
+    <option id="cshelfaux1" dialogue="Sarokpolcok javítása
+(Csak akkor nyomja meg, ha nem elérhető polcok vannak)"></option>
+    <option id="cshelfaux2" dialogue="Polcok áthelyezése a bejárathoz (csak házigazda)"></option>
+
+    <option id="invwarning0" dialogue="Van egy kifizetetlen banki kölcsön!"></option>
+    <option id="invwarning1" dialogue="Kikapcsolt! Az elektromos számla nincs kifizetve!"></option>
+    <option id="invwarning2" dialogue="Az alkalmazottak lázadásban vannak! Lazulnak, vagy nem jönnek dolgozni!"></option>
+    <option id="invwarning3" dialogue="A bérleti számla nincs kifizetve!"></option>
+
+    <option id="departneed0" dialogue="RÉSZLET VÁSÁRLÁSA"></option>
+    <option id="departneed0a" dialogue="FUNKCIÓ FOLYAMATBAN"></option>
+    <option id="departneed1" dialogue="# ÁRUHÁZI KÖVETELMÉNYEK"></option>
+    <option id="departneed2" dialogue="# TÁROLÁSI KÖVETELMÉNYEK"></option>
+
+    <option id="deprtmnt0" dialogue="Csomagolás rendelése"></option>
+
+    <option id="atopayinvce0" dialogue="A mai számlák kifizetve!"></option>
+    <option id="atopayinvce1" dialogue="Nincs elég pénz a mai számlák kifizetéséhez!"></option>
+
+    <option id="cpylogs0" dialogue="Elsődleges naplók másolása"></option>
+    <option id="cpylogs1" dialogue="Másodlagos naplók másolása"></option>
+    <option id="lghtnblptn" dialogue="Fénykorlát felülírása"></option>
+
+    <option id="slemssage0" dialogue="Nem lehet több értékesítést beállítani a mai napra"></option>
+    <option id="slemssage1" dialogue="Akció be van állítva ehhez a termékhez: "></option>
+    <option id="sledvce0" dialogue="Jelenlegi értékesítések"></option>
+    <option id="sledvce1" dialogue="Maximális értékesítés"></option>
+
+    <option id="lghtlmttn0" dialogue="Korlátozza a világítást"></option>
+    <option id="lghtlmttn1" dialogue="A túl sok lámpa az üzletben a múltban ritkán okozott fekete képernyő problémát egyes játékosoknál. Aktiválja ezt az opciót, ha el szeretné távolítani ezt a korlátozást."></option>
+
+    <option id="arcblderdisclaimer" dialogue="Tartsd lenyomva a [Tárgy leejtése] gombot az ütközések figyelmen kívül hagyásához. Óvatosan használd."></option>
+
+    <option id="rststtngs0" dialogue="Játékbeállítások visszaállítása"></option>
+    <option id="rststtngs1" dialogue="Beállítások törölve"></option>
+
+    <option id="opckgng0" dialogue="Elérhető rendelések"></option>
+    <option id="opckgng1" dialogue="Válasszon rendelést ehhez az asztalhoz"></option>
+    <option id="opckgng2" dialogue="A rendeléscsomagoló osztály megnyílt!"></option>
+    <option id="opckgng3" dialogue="Csomag az asztalhoz rendelve"></option>
+    <option id="opckgng4" dialogue="Jelenlegi doboz bezárása"></option>
+    <option id="opckgng5" dialogue="Helyezze a szükséges tételeket a kék tálcáról az alábbi csíkos területre, majd húzással rendezze el őket a dobozban.
+Használja a [Vízszintes mozgatás] funkciót a termékek forgatásához. Ugyanaz a rendelés több dobozt is tartalmazhat."></option>
+    <option id="opckgng6" dialogue="Rendelés teljesítve a táblázatban"></option>
+    <option id="opckgng7" dialogue="Csomagolásra váró tételek"></option>
+    <option id="opckgng8" dialogue="Szükséges termékek a következőhöz: ez a rendelés"></option>
+    <option id="opckgng9" dialogue="Asztal"></option>
+    <option id="opckgng10" dialogue="Értesítse a rendeléseket érkezéskor"></option>
+    <option id="opckgng11" dialogue="Új rendelés érkezett!"></option>
+    <option id="opckgng12" dialogue="Utasítások"></option>
+    <option id="opckgng13" dialogue="1.- Nyissa meg a rendeléscsomagoló osztályt.
+2.- Várja meg a rendelések megérkezését a munkanap folyamán, engedélyezze az értesítéseket, ha értesítést szeretne kapni érkezéskor.
+3.- Használja az egyes asztalokon található kartondobozokat a csomagolási módba lépéshez. Válassza ki a kívánt rendelést az adott asztalon.
+4.- Járja körbe az üzletét vagy raktárát a kék tálcával, és vigye az összes szükséges tételt az asztal csíkos területére. Egy további tablet jelenik meg a tálcán, amely emlékezteti Önt, hogy mely tételekre van szükség.
+5.- A táblázat használata közben húzza a termékeket a középső dobozba, és ha készen áll, használja az „Aktuális doboz bezárása” gombot. A Ugyanaz a rendelés több dobozt is tartalmazhat.
+
+6.- Építsen fel egy csomagátvételi pontot valahol az üzletében, és helyezze oda a rendelés dobozait.
+
+7.- Végül a vásárlók megérkeznek, hogy átvegyék a rendeléseiket és fizessenek."></option>
+
+    <option id="dcord0" dialogue="Csatlakozz hozzánk a"></option>
+    <option id="dcord1" dialogue="A megnyitó megünneplésére ebben a hónapban egyszeri 200 kulcsos DLC-t sorsolunk ki. Ne hagyd ki!"></option>
+
+
+  </options>
+
+</text>

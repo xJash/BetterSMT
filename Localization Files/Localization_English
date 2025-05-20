@@ -1,3 +1,5 @@
+<text>
+
   <options>
     <!-- ///////////////////////////////////Strings///////////////////////////////////// -->
 
@@ -1562,3 +1564,5 @@ Use [Horizontal Movement] to rotate products. The same order can have multiple b
     <option id="dcord1" dialogue="To celebrate its inauguration we will have a one-time 200 keys DLC giveaway during this month. Don't miss it!"></option>
 
   </options>
+
+</text>

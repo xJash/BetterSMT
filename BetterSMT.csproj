@@ -11,7 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Localization_Polish" />
+    <Compile Include="Localization Files\Localization_Polish" />
+    <Compile Include="Localization Files\Localization_Ukrainian" />
   </ItemGroup>
 
   <ItemGroup>
