@@ -172,19 +172,19 @@
 前往经理室并在特权的黑板上获得第一个特权。"></option>
     <option id="tutorial4" dialogue="太好了。您刚刚获得了第一包产品。
 
-重要的是要记住，一旦您获得了产品特许经营权，客户就会期望这些产品在商店中否则他们会抱怨存在。
+重要的是要记住，一旦您获得了产品特许经营权，客户就会期望这些产品在商店中存在，否则他们会抱怨。
 
 现在转到经理黑板，单击它，然后单击产品订单。"></option>
     <option id="tutorial5" dialogue="好。现在单击基本产品 I。"></option>
     <option id="tutorial6" dialogue="让我们购买每种基本产品一盒。
 
-单击每种产品的加号将其添加到购物清单中，一旦您拥有每种产品，请单击购买。"></option>
+单击每种产品的加号将其添加到购物清单中，当全部产品添加到购物清单时，请单击购买。"></option>
     <option id="tutorial7" dialogue="太好了。现在出去寻找购买的盒子。单击一个以持有它。"></option>
     <option id="tutorial8" dialogue="转到产品货架并单击其中一行上的 [LMB] 以用产品填充它。
 
 [RMB] 将物品从货架放回盒子。
 
-您也可以按 [F] 将物品放在您想要的位置。
+您也可以按 [F] 将手中物品放在您想要的位置。
 
 将所有产品放入商店的货架上。"></option>
     <option id="tutorial9" dialogue="产品已放置但最初标有成本价，这意味着没有任何好处。
@@ -199,7 +199,7 @@
 控制
 [鼠标滚轮] 以 0.01 为增量添加或减去。
 [鼠标滚轮 + E] 以 0.2 为增量添加或减去。
-[LMB] 接受价格。
+[LMB] 确认价格。
 [F] 放下物品
 
 请注意，您也可以使用数字键盘设置价格，或在选项/自定义控件中重新分配按键。当客户在结账时使用信用卡付款时，数字键盘还可用于输入金额"></option>
@@ -214,7 +214,7 @@
 
 - 每次结账可以有 8 个客户排队，他们不会不耐烦，但没有检测到免费结账队列的额外客户将成为小偷并离开而不付款。
 
-- 使用构建器选项卡时，您可以默认按 X 或 Z 来检查灯光和其他装饰。
+- 使用构建器选项卡时，您可以默认按 X 或 Z 来切换至灯光和其他装饰。
 
 - 您可以使用定价工具右键单击货架上的某一行，清除其中的产品。如果您不希望任何员工继续补货该行，这很有用。
 
@@ -274,7 +274,7 @@
     <option id="messagei2" dialogue="获得特权"></option>
     <option id="messagei3" dialogue="获得超市扩张"></option>
     <option id="messagei4" dialogue="获得存储扩张"></option>
-    <option id="messagei5" dialogue="部门已收购"></option>
+    <option id="messagei5" dialogue="部门已解锁"></option>
     <option id="messagei5a" dialogue="未满足存储要求"></option>
     <option id="messagei5b" dialogue="未满足存储要求"></option>
 
@@ -291,14 +291,14 @@
     <option id="message9a" dialogue="没有更多存储空间可供获取"></option>
     <option id="message10" dialogue="无法退还少于所需零钱的金额"></option>
     <option id="message11" dialogue="盒子中有产品"></option>
-    <option id="message12" dialogue="没有更多空间可供获取box"></option>
+    <option id="message12" dialogue="盒子中没有更多的空间"></option>
     <option id="message13" dialogue="不能在同一个盒子里混合产品"></option>
     <option id="message14" dialogue="需要一把扫帚"></option>
     <option id="message15" dialogue="仅在商店关闭时允许"></option>
     <option id="message16" dialogue="仅在没有更多顾客时允许"></option>
     <option id="message17" dialogue="删除前从容器中移除所有产品"></option>
     <option id="message17a" dialogue="货架上有商品。如果确定，删除时请按住 [掉落物品] 键"></option>
-    <option id="message18" dialogue="商店需要至少一次人工结账"></option>
+    <option id="message18" dialogue="商店需要至少一个人工收银台"></option>
     <option id="message19" dialogue="托盘中无法容纳此项"></option>
     <option id="message20" dialogue="托盘展示需要大于此尺寸的产品"></option>
 
@@ -366,9 +366,9 @@
     <option id="tabtitle1" dialogue="装饰"></option>
     <option id="tabtitle2" dialogue="设备"></option>
     <option id="tabtitle3" dialogue="灯光"></option>
-    <option id="tabtitle4" dialogue="季节性：万圣节"></option>
-    <option id="tabtitle5" dialogue="洗手间"></option>
-    <option id="tabtitle6" dialogue="季节性：圣诞节"></option>
+    <option id="tabtitle4" dialogue="节日：万圣节"></option>
+    <option id="tabtitle5" dialogue="员工休息室"></option>
+    <option id="tabtitle6" dialogue="节日：圣诞节"></option>
     <option id="tabtitle7" dialogue="装饰：植物"></option>
     <option id="tabtitle8" dialogue="建筑"></option>
 
@@ -408,7 +408,7 @@
     <option id="decorat31" dialogue="吊灯 C"></option>
     <option id="decorat32" dialogue="吊灯 D"></option>
     <option id="decorat33" dialogue="吊灯 E"></option>
-    <option id="decorat34" dialogue="吊灯F"></option>
+    <option id="decorat34" dialogue="吊灯 F"></option>
     <option id="decorat35" dialogue="吊灯 G"></option>
     <option id="decorat36" dialogue="吊灯 H"></option>
     <option id="decorat37" dialogue="吊灯 I"></option>
@@ -496,7 +496,7 @@
     <option id="decorat111" dialogue="花 P"></option>
     <option id="decorat112" dialogue="花 Q"></option>
     <option id="decorat113" dialogue="花 R"></option>
-    <option id="decorat114" dialogue="花S"></option>
+    <option id="decorat114" dialogue="花 S"></option>
     <option id="decorat115" dialogue="花 T"></option>
     <option id="decorat116" dialogue="花 U"></option>
     <option id="decorat117" dialogue="花 V"></option>
@@ -632,11 +632,11 @@
     <option id="skill32" dialogue="用户友好界面"></option>
     <option id="skill32a" dialogue="客户使用自助结账速度更快"></option>
     <option id="skill33" dialogue="物流"></option>
-    <option id="skill33a" dialogue="拿起箱子时，玩家将能够在商店和仓库中看到其中所含的产品"></option>
+    <option id="skill33a" dialogue="拿起箱子时，玩家可看到显示箱内商品在店铺和仓库中的位置"></option>
     <option id="skill34" dialogue="外部会计师"></option>
-    <option id="skill34a" dialogue="如果有资金，发票将每天支付。"></option>
+    <option id="skill34a" dialogue="如果资金足够，将自动支付发票。"></option>
     <option id="skill35" dialogue="特价 I"></option>
-    <option id="skill35a" dialogue="每日最高销售量增加 2。"></option>
+    <option id="skill35a" dialogue="每日最高打折次数增加 2。"></option>
     <option id="skill36" dialogue="特价 II"></option>
     <option id="skill37" dialogue="特价 III"></option>
     <option id="skill38" dialogue="托盘展示"></option>
@@ -1136,7 +1136,7 @@
     <option id="paintmat80" dialogue="万圣节：图案 G"></option>
     <option id="paintmat81" dialogue="万圣节：图案 H"></option>
     <option id="paintmat82" dialogue="万圣节：图案 I"></option>
-    <option id="paintmat83" dialogue="万圣节：图案J"></option>
+    <option id="paintmat83" dialogue="万圣节：图案 J"></option>
     <option id="paintmat84" dialogue="万圣节：图案 K"></option>
     <option id="paintmat85" dialogue="万圣节：图案 L"></option>
     <option id="paintmat86" dialogue="万圣节：图案 M"></option>
@@ -1180,7 +1180,7 @@
     <option id="paintmat120" dialogue="产品：鱼 A"></option>
     <option id="paintmat121" dialogue="产品：鱼 B"></option>
     <option id="paintmat122" dialogue="产品：书籍 A"></option>
-    <option id="paintmat123" dialogue="产品：书籍B"></option>
+    <option id="paintmat123" dialogue="产品：书籍 B"></option>
     <option id="paintmat124" dialogue="产品：酒精 A"></option>
     <option id="paintmat125" dialogue="产品：酒精 B"></option>
     <option id="paintmat126" dialogue="产品：药房 A"></option>
@@ -1271,7 +1271,7 @@
     <option id="deleteoff" dialogue="删除模式关闭"></option>
     <option id="deleteon" dialogue="删除模式开启"></option>
 
-    <option id="kick" dialogue="驱逐者"></option>
+    <option id="kick" dialogue="踢出"></option>
     <option id="punish" dialogue="惩罚"></option>
     <option id="permi" dialogue="权限"></option>
 
@@ -1364,7 +1364,7 @@
     <option id="invodebt" dialogue="发票/债务"></option>
     <option id="stats" dialogue="统计信息"></option>
 
-    <option id="removeallperm" dialogue="加入时删除所有权限"></option>
+    <option id="removeallperm" dialogue="加入时禁用所有权限"></option>
     <option id="permiss0" dialogue="全局"></option>
     <option id="permiss1" dialogue="经理"></option>
     <option id="permiss2" dialogue="收银员"></option>
@@ -1393,7 +1393,7 @@
     <option id="emploassignedtask" dialogue="分配的任务"></option>
     <option id="emplonewpriority" dialogue="存储"></option>
     <option id="emploNoTask" dialogue="无任务"></option>
-    <option id="emplostaffhappi" dialogue="教职员休息室幸福感"></option>
+    <option id="emplostaffhappi" dialogue="员工休息室幸福感"></option>
     <option id="emploreroll" dialogue="重新滚动"></option>
 
     <option id="dlcdiscounted" dialogue="折扣"></option>
@@ -1428,7 +1428,7 @@
     <option id="stats2" dialogue="总回收包装箱数"></option>
     <option id="stats3" dialogue="服务客户总数"></option>
     <option id="stats4" dialogue="总结账产品数"></option>
-    <option id="stats5" dialogue="总垃圾收集数"></option>
+    <option id="stats5" dialogue="总垃圾清理数"></option>
     <option id="stats6" dialogue="连续找零"></option>
     <option id="stats7" dialogue="小偷偷摸摸次数"></option>
     <option id="stats8" dialogue="小偷掉落产品收集数"></option>
@@ -1438,14 +1438,14 @@
     <option id="statsfoundtoo" dialogue="前一天未找到"></option>
     <option id="statsnofound" dialogue="前一天发现价格过高"></option>
 
-    <option id="stats12" dialogue="今日销售量"></option>
+    <option id="stats12" dialogue="共计打折次数"></option>
     <option id="stats13" dialogue="打包机新增纸箱"></option>
     <option id="stats14" dialogue="回收纸板捆包"></option>
 
-    <option id="stats15" dialogue="由于销售而售出的额外商品"></option>
+    <option id="stats15" dialogue="由于打折而售出的额外商品"></option>
     <option id="stats16" dialogue="已付发票"></option>
 
-    <option id="stats17" dialogue="已组装的在线订单"></option>
+    <option id="stats17" dialogue="已打包的在线订单"></option>
     <option id="stats18" dialogue="通过在线订单赚取的金额"></option>
 
     <option id="unstckplyr" dialogue="解脱"></option>
@@ -1553,7 +1553,7 @@
 7.- 最终，顾客会到达领取订单并付款。>"></option>
 
     <option id="dcord0" dialogue="加入我们的"></option>
-    <option id="dcord1" dialogue="为庆祝其正式上线，我们将在本月一次性赠送 200 个 DLC 钥匙。千万不要错过！"></option>
+    <option id="dcord1" dialogue="为庆祝其正式上线，我们将在本月一次性赠送 200 个 DLC 激活码。千万不要错过！"></option>
 
   </options>
 
