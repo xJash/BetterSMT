@@ -8,6 +8,9 @@ namespace BetterSMT.Patches {
             if (BetterSMT.CurrencyTypeToAny.Value != "$" && !string.IsNullOrEmpty(value)) {
                 value = value.Replace('$', BetterSMT.CurrencyTypeToAny.Value[0]);
             }
+            if (BetterSMT.ReplaceCommasWithPeriods.Value && !string.IsNullOrEmpty(value)) {
+                value = value.Replace(',', '.');
+            }
         }
 
         private static void Postfix(ref string value) {
