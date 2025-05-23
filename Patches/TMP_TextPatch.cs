@@ -12,11 +12,5 @@ namespace BetterSMT.Patches {
                 value = value.Replace(',', '.');
             }
         }
-
-        private static void Postfix(ref string value) {
-            if (BetterSMT.ReplaceCommasWithPeriods.Value && !string.IsNullOrEmpty(value)) {
-                value = value.Replace(',', '.');
-            }
-        }
     }
 }
