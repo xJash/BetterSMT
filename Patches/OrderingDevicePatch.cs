@@ -1,4 +1,15 @@
 ﻿using HarmonyLib;
+using System.Globalization;
+using TMPro;
+using UnityEngine;
+
+I would be down to work with them, the big thing is #faq being reworked, removing the text channel from auto-voice chats (since they can just use voice text channel), add a category for rules through linked-communities, adding a command bot (like dyno or other) to add commands like ?logs and ?saves (aswell as others).
+
+As far as mods- its obvious in logs if they are using mods since at the top of the unity log it has a log for BepInEx and which mods
+
+
+
+using HarmonyLib;
 using System.Collections;
 using System.Globalization;
 using TMPro;
