@@ -12,7 +12,7 @@
     <option id="newstore0" dialogue="Vyberte název pro svůj obchod"></option>
     <option id="newstore1" dialogue="Soukromé"></option>
     <option id="newstore2" dialogue="Pouze přátelé"></option>
-    <option id="newstore3" dialogue="Veřejnost"></option>
+    <option id="newstore3" dialogue="Veřejné"></option>
     <option id="newstore4" dialogue="Vytvořit"></option>
     <option id="newstore5" dialogue="Název obchodu musí mít více než 2 znaky a nesmí obsahovat neplatné znaky"></option>
     <option id="newstore6" dialogue="Pokud chcete, můžete obtížnost uměle zvýšit"></option>
@@ -90,7 +90,7 @@
     <option id="rw15" dialogue="Vypustit položku"></option>
     <option id="rw16" dialogue="Skok"></option>
     <option id="rw17" dialogue="Sprint"></option>
-    <option id="rw18" dialogue="Otevřete Builder"></option>
+    <option id="rw18" dialogue="Otevřete Editor"></option>
     <option id="rw19" dialogue="Menu Další"></option>
     <option id="rw20" dialogue="Předchozí nabídka"></option>
     <option id="rw21" dialogue="Povídání"></option>
@@ -98,8 +98,8 @@
     <option id="rw23" dialogue="Escape Menu"></option>
     <option id="rw24" dialogue="Přikrčte se"></option>
 
-    <option id="rw25" dialogue="Další karta Builder"></option>
-    <option id="rw26" dialogue="Předchozí karta Builder"></option>
+    <option id="rw25" dialogue="Další karta Editoru"></option>
+    <option id="rw26" dialogue="Předchozí karta Editoru"></option>
     <option id="rw27" dialogue="Tanec 1"></option>
     <option id="rw28" dialogue="Tanec 2"></option>
     <option id="rw29" dialogue="Tanec 3"></option>
@@ -128,10 +128,10 @@
     <!-- ///////////////////////////////////Text///////////////////////////////////// -->
 
     <option id="employees" dialogue="Zaměstnanci: "></option>
-    <option id="employeesassignment" dialogue="Přiřazení zaměstnanců"></option>
+    <option id="employeesassignment" dialogue="Role zaměstnanců"></option>
     <option id="cashiers" dialogue="Pokladní"></option>
-    <option id="restock" dialogue="Doplňovači"></option>
-    <option id="storage" dialogue="Skladníci"></option>
+    <option id="restock" dialogue="Skladník"></option>
+    <option id="storage" dialogue="Zásobovač"></option>
     <option id="security" dialogue="Ostraha"></option>
     <option id="mblackboard" dialogue="Tabule vedoucího"></option>
     <option id="productorder" dialogue="Objednávka zboží"></option>
@@ -158,10 +158,10 @@
 
     <!-- ///////////////////////////////////Tutorial///////////////////////////////////// -->
 
-    <option id="tutorial0" dialogue="Vítejte společně v supermarketu!"></option>
+    <option id="tutorial0" dialogue="Vítejte v Supermarket Together!"></option>
     <option id="tutorial1" dialogue="Když je obchod zavřený, čas plyne mnohem pomaleji.
 
-Prvním krokem je umístění nábytku. Stisknutím [TAB] otevřete Builder"></option>
+Prvním krokem je umístění nábytku. Stisknutím [TAB] otevřeš Editor"></option>
     <option id="tutorial2" dialogue="Kupte si 2 poličky s produkty, pokladnu a odkládací polici.
 
 Všimněte si, že odkládací polici lze umístit pouze do vedlejší prázdné místnosti spojené s místností manažera."></option>
@@ -203,27 +203,27 @@ OVLÁDÁNÍ
 [Numpad] Lze také použít.
 [F] Vypustit položky
 
-Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice nebo změnit přiřazení kláves v Options/Customize Controls. Numpad lze také použít k zadávání částek, když zákazníci platí kreditní kartou v pokladnách."></option>
+Všimni si, že můžeš také nastavit ceny pomocí numerické klávesnice nebo změnit přiřazení kláves v Options/Customize Controls. Numpad lze také použít k zadávání částek, když zákazníci platí kreditní kartou v pokladnách."></option>
 
-    <option id="tutorial11" dialogue="Váš obchod je nyní připraven k otevření. Chcete-li zákazníkům umožnit vstup, stiskněte zelené tlačítko umístěné v místnosti manažera. Nejprve si však přečtěte důležité informace níže:
+    <option id="tutorial11" dialogue="Tvůj obchod je nyní připraven k otevření. Chceš-li zákazníkům umožnit vstup, stiskni zelené tlačítko umístěné v místnosti manažera. Nejprve si však přečti důležité informace níže:
 
-- Každý čtvrtek se u některých produktů zvyšuje tržní inflace a budete muset zkontrolovat ceny.
+- Každý čtvrtek se u některých produktů zvyšuje tržní inflace a budeš muset zkontrolovat ceny.
 
-- Prázdné krabice můžete hodit do kontejneru hned vedle NEBO je odnést do nejvzdálenějšího kontejneru na druhé straně ulice a vydělat nějaké peníze zpět jejich recyklací. Peníze lze navýšit pomocí výhody.
+- Prázdné krabice můžeš hodit do kontejneru hned vedle NEBO je odnést do modrých kontejnerů na druhé straně ulice a vydělat nějaké peníze zpět jejich recyklací. Peníze lze navýšit pomocí výhody.
 
-- V den 8 budou mít zloději a odpadky šanci se rozmnožit. Řešením pro oba je koště: zasáhněte zloděje a ti za jeden zásah upustí jeden ukradený produkt.
+- V den 8 se zvýší šance výskytu zlodějů a odpadků. Řešením pro oba je koště: zasáhni zloděje a ti za jeden zásah upustí jeden ukradený produkt.
 
-- Každá pokladna může mít frontu 8 zákazníků, ti se nestanou netrpěliví, ale další zákazníci, kteří nezaznamenají frontu na bezplatnou pokladnu, se stanou zloději a odejdou bez placení.
+- Každá pokladna může mít frontu až 8 zákazníků. Zákazníkům nevadí čekat ve frontě, ale ti, kteří nenajdou volnou pokladnu, se stanou zloději a odejdou bez zaplacení.
 
-- Světla a další dekorace můžete zkontrolovat stisknutím X nebo Z ve výchozím nastavení při používání Builderu.
+- Světla a další dekorace můžeš zkontrolovat stisknutím X nebo Z ve výchozím nastavení při používání Editoru.
 
-- Řádek regálu z jeho produktů můžete určitě vymazat kliknutím pravým tlačítkem na nástroj pro stanovení cen. Užitečné, pokud nechcete, aby žádní zaměstnanci neustále doplňovali tento řádek.
+- Řadu regálu můžeš vyprázdnit od produktů tak, že na ni klikneš pravým tlačítkem myši s cenovým nástrojem. Užitečné, pokud nechceš, aby zaměstnanci tuto řadu znovu doplňovali.
 
-- Věnujte pozornost záložce faktur na manažerské tabuli. Tam vám budou přicházet mzdy vašich zaměstnanců a faktury za elektřinu nebo nájem.
+- Věnuj pozornost záložce faktur na manažerské tabuli. Tam ti budou přicházet mzdy tvých zaměstnanců a faktury za elektřinu nebo nájem.
             
-- Chcete-li zavřít obchod, počkejte, až bude 22:30 a stiskněte červené tlačítko v místnosti manažera. Hra se automaticky ukládá každý nový den.
+- Chceš-li zavřít obchod, počkejte, až bude 22:30 a stiskni červené tlačítko v místnosti manažera. Hra se automaticky ukládá každý nový den.
 
-- Čím více hráčů, tím větší obtížnost. (Zkuste hráče udeřit koštětem)"></option>
+- Čím více hráčů, tím větší obtížnost. (Zkus spoluhráče udeřit koštětem)"></option>
     
 
     <!-- ///////////////////////////////////Controls///////////////////////////////////// -->
@@ -255,7 +255,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="totalcustomers" dialogue="Celkový počet zákazníků: "></option>
     <option id="notfoundproducts" dialogue="Nenalezené produkty: "></option>
     <option id="tooexpensiveproducts" dialogue="Příliš drahé produkty: "></option>
-    <option id="timesrobbed" dialogue="Časy v šatech: "></option>
+    <option id="timesrobbed" dialogue="Počet krádeží: "></option>
     <option id="complaintsfilth" dialogue="Stížnosti na špínu: "></option>
     <option id="franchiselevel" dialogue="Úroveň franšízy: "></option>
     <option id="franchiseexperience" dialogue="Zkušenosti s franšízou:"></option>
@@ -271,71 +271,72 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <!-- ///////////////////////////////////UIMessages///////////////////////////////////// -->
 
     <option id="messagei0" dialogue="Supermarket otevřen"></option>
-    <option id="messagei1" dialogue="Úroveň franšízy: udělen bod"></option>
-    <option id="messagei2" dialogue="Perk získán"></option>
-    <option id="messagei3" dialogue="Bylo získáno rozšíření supermarketu"></option>
-    <option id="messagei4" dialogue="Bylo získáno rozšíření úložiště"></option>
+    <option id="messagei1" dialogue="Úroveň franšízy zvýšena: získán bod"></option>
+    <option id="messagei2" dialogue="Výhoda získána"></option>
+    <option id="messagei3" dialogue="Rozšíření supermarketu získáno"></option>
+    <option id="messagei4" dialogue="Rozšíření skladu získáno"></option>
     <option id="messagei5" dialogue="Oddělení získáno"></option>
-    <option id="messagei5a" dialogue="Požadavky obchodu nejsou splněny"></option>
-    <option id="messagei5b" dialogue="Nebyly splněny požadavky na úložiště"></option>
+    <option id="messagei5a" dialogue="Požadavky obchodu nesplněny"></option>
+    <option id="messagei5b" dialogue="Požadavky na sklad nesplněny"></option>
 
-    <option id="message0" dialogue="Chybný typ kontejneru pro tento produkt"></option>
-    <option id="message1" dialogue="Do této police nelze přidat další produkty"></option>
-    <option id="message2" dialogue="Nelze kombinovat produkty ve stejné poličce"></option>
-    <option id="message3" dialogue="Žádné franšízové ​​body nejsou k dispozici"></option>
-    <option id="message4" dialogue="Předchozí franšízové ​​uzly nebyly získány"></option>
-    <option id="message5" dialogue="Žádné produkty v nákupním seznamu"></option>
-    <option id="message6" dialogue="Nedostatek prostředků"></option>
-    <option id="message7" dialogue="Již něco držím"></option>
-    <option id="message8" dialogue="V balení nejsou žádné další produkty"></option>
-    <option id="message9" dialogue="Žádný další prostor v supermarketu k získání"></option>
-    <option id="message9a" dialogue="Žádný další úložný prostor k získání"></option>
-    <option id="message10" dialogue="Nelze vrátit méně peněz, než je požadovaná změna"></option>
-    <option id="message11" dialogue="Box obsahuje produkty"></option>
-    <option id="message12" dialogue="Už žádné místo v poli"></option>
-    <option id="message13" dialogue="Nelze kombinovat produkty ve stejné krabici"></option>
-    <option id="message14" dialogue="Potřebuji k tomu koště"></option>
-    <option id="message15" dialogue="Povoleno pouze při zavření obchodu"></option>
-    <option id="message16" dialogue="Povoleno pouze v případě, že již nejsou zákazníci"></option>
-    <option id="message17" dialogue="Před smazáním odeberte všechny produkty z kontejneru"></option>
-    <option id="message17a" dialogue="Polička obsahuje produkty. Pokud jste si jisti, při mazání podržte klávesu [vypustit položku]"></option>
-    <option id="message18" dialogue="Obchod potřebuje alespoň jednu pokladnu s obsluhou"></option>
-    <option id="message19" dialogue="Tato položka se do zásobníku nevejde"></option>
-    <option id="message20" dialogue="Paletové displeje vyžadují větší produkty"></option>
+    <option id="message0" dialogue="Špatný typ kontejneru pro tento produkt"></option>
+    <option id="message1" dialogue="Nelze přidat více produktů na tuto polici"></option>
+    <option id="message2" dialogue="Nelze míchat produkty na stejné polici"></option>
+    <option id="message3" dialogue="Žádné body franšízy nejsou k dispozici"></option>
+    <option id="message4" dialogue="Předchozí uzly franšízy nezískány"></option>
+    <option id="message5" dialogue="V nákupním seznamu nejsou žádné produkty"></option>
+    <option id="message6" dialogue="Nedostatek finančních prostředků"></option>
+    <option id="message7" dialogue="Již držíš něco jiného"></option>
+    <option id="message8" dialogue="V krabici už nejsou žádné produkty"></option>
+    <option id="message9" dialogue="Nelze získat další prostor v supermarketu"></option>
+    <option id="message9a" dialogue="Nelze získat další skladový prostor"></option>
+    <option id="message10" dialogue="Nelze vrátit méně peněz, než je požadovaný přeplatek"></option>
+    <option id="message11" dialogue="Krabice obsahuje produkty"></option>
+    <option id="message12" dialogue="V krabici už není žádné místo"></option>
+    <option id="message13" dialogue="Nelze míchat produkty ve stejné krabici"></option>
+    <option id="message14" dialogue="Na toto je potřeba koště"></option>
+    <option id="message15" dialogue="Povoleno pouze, když je obchod zavřený"></option>
+    <option id="message16" dialogue="Povoleno pouze, když už nejsou žádní zákazníci"></option>
+    <option id="message17" dialogue="Před smazáním vyprázdni kontejner od všech produktů"></option>
+    <option id="message17a" dialogue="Kontejner obsahuje produkty. Pokud si jsi jistý, podrž klávesu [položit předmět] při mazání"></option>
+    <option id="message18" dialogue="Obchod potřebuje alespoň jednu obsluhovanou pokladnu"></option>
+    <option id="message19" dialogue="Tento předmět se nevejde do tácyku"></option>
+    <option id="message20" dialogue="Paletové displeje vyžadují větší produkty než tento"></option>
 
-    <option id="network0" dialogue="Připojení hostitele ztraceno"></option>
+    <option id="network0" dialogue="Spojení s hostitelem ztraceno"></option>
+
 
     <!-- ///////////////////////////////////NPCMessages///////////////////////////////////// -->
 
-    <option id="NPCmessage0" dialogue="Nenašel jsem toto: "></option>
-    <option id="NPCmessage1" dialogue="Toto je příliš drahé: "></option>
-    <option id="NPCmessage2" dialogue="Nenašel jsem, co jsem hledal"></option>
-    <option id="NPCmessage3" dialogue="Žádné pokladny nejsou k dispozici? Nashledanou!"></option>
-    <option id="NPCmessage4" dialogue="Ahoj hajzlové!"></option>
-    <option id="NPCmessage5" dialogue="Tento supermarket je tak špinavý!"></option>
+    <option id="NPCmessage0" dialogue="Nenašel jsem: "></option>
+    <option id="NPCmessage1" dialogue="Tohle je příliš drahé: "></option>
+    <option id="NPCmessage2" dialogue="Nemají tu, co jsem hledal"></option>
+    <option id="NPCmessage3" dialogue="Žádné volné pokladny? Nashle!"></option>
+    <option id="NPCmessage4" dialogue="Tak nazdar, šmejdi!"></option>
+    <option id="NPCmessage5" dialogue="Tenhle obchod je tak špinavý!"></option>
 
-    <option id="NPCemployee0" dialogue="Zúčastním se této pokladny."></option>
+    <option id="NPCemployee0" dialogue="Budu pracovat u této pokladny."></option>
 
     <option id="NPCmessagehit0" dialogue="Au!"></option>
-    <option id="NPCmessagehit1" dialogue="Jeez"></option>
-    <option id="NPCmessagehit2" dialogue="Zapíchni to koště do zadku"></option>
-    <option id="NPCmessagehit3" dialogue="Policeeeeeee!"></option>
-    <option id="NPCmessagehit4" dialogue="Eeeeeek!"></option>
-    <option id="NPCmessagehit5" dialogue="Aaaaaaaah!"></option>
-    <option id="NPCmessagehit6" dialogue="Toto je zneužití!"></option>
-    <option id="NPCmessagehit7" dialogue="Gaah!"></option>
-    <option id="NPCmessagehit8" dialogue="Udeř mě víc, zlato"></option>
+    <option id="NPCmessagehit1" dialogue="Jauvajs!"></option>
+    <option id="NPCmessagehit2" dialogue="Strč si to koště do zadku!"></option>
+    <option id="NPCmessagehit3" dialogue="Policieeeeeee!"></option>
+    <option id="NPCmessagehit4" dialogue="Pomoooc!"></option>
+    <option id="NPCmessagehit5" dialogue="Aaaaaaaa!"></option>
+    <option id="NPCmessagehit6" dialogue="To je napadení!"></option>
+    <option id="NPCmessagehit7" dialogue="Nech mě bejt!"></option>
+    <option id="NPCmessagehit8" dialogue="Vidíme se u soudu!"></option>
     <option id="NPCmessagehit9" dialogue="OwO"></option>
 
-    <option id="NPCmessagehitemployee0" dialogue="Bad boss"></option>
-    <option id="NPCmessagehitemployee1" dialogue="Toto je zneužití"></option>
+    <option id="NPCmessagehitemployee0" dialogue="Nejhorší šéf!"></option>
+    <option id="NPCmessagehitemployee1" dialogue="Toto je zneužití!"></option>
     <option id="NPCmessagehitemployee2" dialogue="D:"></option>
-    <option id="NPCmessagehitemployee3" dialogue="Zavolejte do stávky!"></option>
+    <option id="NPCmessagehitemployee3" dialogue="Začneme stávku!"></option>
 
     <!-- ///////////////////////////////////Buildables///////////////////////////////////// -->
 
-    <option id="builder" dialogue="Stavitel"></option>
-    <option id="buildable0" dialogue="Režim umístění"></option>
+    <option id="builder" dialogue="Editor"></option>
+    <option id="buildable0" dialogue="Režim umisťování"></option>
     <option id="buildable1" dialogue="Regál na zboží"></option>
     <option id="buildable2" dialogue="Základní lednice"></option>
     <option id="buildable3" dialogue="Dvojitá lednice"></option>
@@ -343,19 +344,19 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="buildable5" dialogue="Skladovací regál"></option>
     <option id="buildable6" dialogue="Pokladna (vpravo)"></option>
     <option id="buildable7" dialogue="Pokladna (vlevo)"></option>
-    <option id="buildable8" dialogue="Stojící mrazák"></option>
+    <option id="buildable8" dialogue="Stojací mrazák"></option>
     <option id="buildable9" dialogue="Pult na zboží A"></option>
     <option id="buildable10" dialogue="Skladovací regál (bez štítků)"></option>
     <option id="buildable11" dialogue="Regál na ovoce a zeleninu A"></option>
     <option id="buildable12" dialogue="Samoobslužná pokladna"></option>
     <option id="buildable13" dialogue="Regál na ovoce a zeleninu B"></option>
-    <option id="buildable14" dialogue="Polička produktu (polovina)"></option>
-    <option id="buildable15" dialogue="Vrcholová police"></option>
-    <option id="buildable16" dialogue="Polička na stěně"></option>
-    <option id="buildable17" dialogue="Polička na desku"></option>
+    <option id="buildable14" dialogue="Polička na zboží (poloviční)"></option>
+    <option id="buildable15" dialogue="Stupňovitý regál"></option>
+    <option id="buildable16" dialogue="Nástěnný regál"></option>
+    <option id="buildable17" dialogue="Regál s děrovanou stěnou"></option>
     <option id="buildable18" dialogue="Regál na ovoce a zeleninu B (polovina)"></option>
-    <option id="buildable19" dialogue="Rohová police (velká)"></option>
-    <option id="buildable20" dialogue="Rohová police (malá)"></option>
+    <option id="buildable19" dialogue="Rohový regál (velký)"></option>
+    <option id="buildable20" dialogue="Rohový regál (malý)"></option>
     <option id="buildable21" dialogue="Základní paletový stojan"></option>
     <option id="buildable22" dialogue="Dřevěný paletový stojan A"></option>
     <option id="buildable23" dialogue="Dřevěný paletový stojan B"></option>
@@ -363,25 +364,25 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="buildable25" dialogue="Vysoký paletový stojan"></option>
 
     <option id="buildable0a" dialogue="Režim mazání"></option>
-    <option id="tabtitle0" dialogue="Stavitel"></option>
+    <option id="tabtitle0" dialogue="Editor"></option>
     <option id="tabtitle1" dialogue="Dekorace"></option>
     <option id="tabtitle2" dialogue="Zařízení"></option>
-    <option id="tabtitle3" dialogue="Světla"></option>
+    <option id="tabtitle3" dialogue="Osvětlení"></option>
     <option id="tabtitle4" dialogue="Sezónní: Halloween"></option>
-    <option id="tabtitle5" dialogue="Toaleta pro zaměstnance"></option>
+    <option id="tabtitle5" dialogue="Místnost pro zaměstnance"></option>
     <option id="tabtitle6" dialogue="Sezónní: Vánoce"></option>
     <option id="tabtitle7" dialogue="Dekorace: Rostliny"></option>
     <option id="tabtitle8" dialogue="Architektura"></option>
 
-    <option id="decorat1" dialogue="Neonové světlo A"></option>
+    <option id="decorat1" dialogue="Neonová lampa A"></option>
     <option id="decorat2" dialogue="Květina v květináči A"></option>
     <option id="decorat3" dialogue="Televize"></option>
-    <option id="decorat4" dialogue="Cedule na strop"></option>
+    <option id="decorat4" dialogue="Závěsná cedule"></option>
     <option id="decorat5" dialogue="Zábrana vstupu"></option>
-    <option id="decorat6" dialogue="Bezpečnostní rám"></option>
-    <option id="decorat7" dialogue="Dřevěný hrnec"></option>
-    <option id="decorat8" dialogue="Wooden Pot Wide"></option>
-    <option id="decorat9" dialogue="Stropní klimatizace"></option>
+    <option id="decorat6" dialogue="Protipožární dveře"></option>
+    <option id="decorat7" dialogue="Dřevěný květináč"></option>
+    <option id="decorat8" dialogue="Široký dřevěný květináč"></option>
+    <option id="decorat9" dialogue="Stropní ventilace"></option>
     <option id="decorat10" dialogue="Hlavní cenový automat"></option>
 
     <option id="decorat11" dialogue="Náhrobek A"></option>
@@ -428,8 +429,8 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="decorat49" dialogue="Soukromá lednička"></option>
     <option id="decorat50" dialogue="Kávovar"></option>
 
-    <option id="decorat51" dialogue="Stroj na občerstvení"></option>
-    <option id="decorat52" dialogue="Sódovka"></option>
+    <option id="decorat51" dialogue="Automat na občerstvení"></option>
+    <option id="decorat52" dialogue="Automat na nápoje"></option>
     <option id="decorat53" dialogue="Dart Machine"></option>
     <option id="decorat54" dialogue="Fotbalový stůl"></option>
     <option id="decorat55" dialogue="Kulečník"></option>
@@ -437,7 +438,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="decorat57" dialogue="Arkáda: Robot Catcher"></option>
     <option id="decorat58" dialogue="Arkáda: Space Wars"></option>
     <option id="decorat59" dialogue="Arkáda: Treasure Island"></option>
-    <option id="decorat60" dialogue="vánoční strom"></option>
+    <option id="decorat60" dialogue="Vánoční stromek"></option>
 
     <option id="decorat61" dialogue="Vánoční oblouk"></option>
     <option id="decorat62" dialogue="vánoční věnec"></option>
@@ -508,12 +509,12 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="decorat121" dialogue="Květina Z"></option>
     <option id="decorat122" dialogue="Květina A1"></option>
     <option id="decorat123" dialogue="Květina B1"></option>
-    <option id="decorat124" dialogue="pilíř supermarketu"></option>
+    <option id="decorat124" dialogue="Pilíř"></option>
     <option id="decorat125" dialogue="Kovový sloup"></option>
-    <option id="decorat126" dialogue="Závěsný květináč na beton A"></option>
-    <option id="decorat127" dialogue="Závěsný květináč na beton B"></option>
+    <option id="decorat126" dialogue="Betonový závěsný květináč A"></option>
+    <option id="decorat127" dialogue="Betonový závěsný květináč B"></option>
     <option id="decorat128" dialogue="Keramický závěsný květináč A"></option>
-    <option id="decorat129" dialogue="Odlepený blok"></option>
+    <option id="decorat129" dialogue="Blok na odzaseknutí NPC"></option>
     <option id="decorat130" dialogue="Pouliční osvětlení A"></option>
 
     <option id="decorat131" dialogue="Pouliční osvětlení B"></option>
@@ -557,23 +558,23 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="decorat166" dialogue="Fontána G2"></option>
     <option id="decorat167" dialogue="Fontána G3"></option>
     <option id="decorat168" dialogue="Malý lakovatelný dělič"></option>
-    <option id="decorat169" dialogue="Středně vybarvitelný dělič"></option>
+    <option id="decorat169" dialogue="Střední lakovatelný dělič"></option>
     <option id="decorat170" dialogue="Velký lakovatelný dělič"></option>
     
-    <option id="decorat171" dialogue="Rohový oddělovač"></option>
-    <option id="decorat172" dialogue="Velká zemní květináč A"></option>
-    <option id="decorat173" dialogue="Velká zemní květináč B"></option>
-    <option id="decorat174" dialogue="Velká zemní květináč C"></option>
-    <option id="decorat175" dialogue="Velká zemní květináč D"></option>
-    <option id="decorat176" dialogue="Křížem lakovatelný dělič"></option>
+    <option id="decorat171" dialogue="Rohový dělič"></option>
+    <option id="decorat172" dialogue="Velký květináč na zem A"></option>
+    <option id="decorat173" dialogue="Velký květináč na ze B"></option>
+    <option id="decorat174" dialogue="Velký květináč na ze C"></option>
+    <option id="decorat175" dialogue="Velký květináč na ze D"></option>
+    <option id="decorat176" dialogue="Křížový lakovatelný dělič"></option>
     <option id="decorat177" dialogue="Lakovatelná přepážka ve tvaru T"></option>
     <option id="decorat178" dialogue="Obrazový rám"></option>
-    <option id="decorat179" dialogue="Dveřní přetíratelný předěl"></option>
+    <option id="decorat179" dialogue="Dveřní lakovatelný dělič"></option>
     <option id="decorat180" dialogue="Nástěnný květináč A"></option>
 
-    <option id="decorat181" dialogue="Panel nástěnného květináče"></option>
+    <option id="decorat181" dialogue="Panel na nástěnný květináč A"></option>
     <option id="decorat182" dialogue="Nástěnný květináč B"></option>
-    <option id="decorat183" dialogue="Panel B nástěnného květináče"></option>
+    <option id="decorat183" dialogue="Panel na nástěnný květináč B"></option>
     <option id="decorat184" dialogue="Lis na lepenku"></option>
     <option id="decorat185" dialogue="Jednoduchý nosník"></option>
     <option id="decorat186" dialogue="Příčný nosník"></option>
@@ -591,12 +592,12 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="skill0a" dialogue="Umožňuje najmout dalšího zaměstnance"></option>
     <option id="skill1" dialogue="Ranní káva zdarma"></option>
     <option id="skill1a" dialogue="Zaměstnanci se pohybují o 20 % rychleji"></option>
-    <option id="skill2" dialogue="Marketingové kurzy I"></option>
+    <option id="skill2" dialogue="Kurzy marketingu I"></option>
     <option id="skill2a" dialogue="Zaměstnanci generují +10 % peněz na pokladnách"></option>
     <option id="skill3" dialogue="Kurzy formace"></option>
     <option id="skill3a" dialogue="Zaměstnanci se pohybují o 20 % rychleji"></option>
-    <option id="skill4" dialogue="Recyklační kurzy"></option>
-    <option id="skill4a" dialogue="Čtyřikrát více ocenění za recyklační krabice"></option>
+    <option id="skill4" dialogue="Kurzy recyklace"></option>
+    <option id="skill4a" dialogue="Čtyřikrát více peněz za recyklaci prázdných krabic"></option>
     <option id="skill5" dialogue="Klimatizace"></option>
     <option id="skill5a" dialogue="Přiláká více zákazníků za den"></option>
     <option id="skill6" dialogue="Wifi připojení"></option>
@@ -606,26 +607,26 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="skill13" dialogue="Zaměstnanec VIII"></option>
     <option id="skill14" dialogue="Zaměstnanec IX"></option>
     <option id="skill15" dialogue="Zaměstnanec X"></option>
-    <option id="skill16" dialogue="Pokladní formace I"></option>
+    <option id="skill16" dialogue="Kurz pro pokladní I"></option>
     <option id="skill16a" dialogue="Zaměstnanci zpracují produkty na pokladně rychleji"></option>
-    <option id="skill17" dialogue="Cashier Formation II"></option>
-    <option id="skill18" dialogue="Cashier Formation III"></option>
-    <option id="skill19" dialogue="Restock Formation I"></option>
-    <option id="skill19a" dialogue="Zaměstnanci umístí produkty rychleji"></option>
-    <option id="skill20" dialogue="Restock Formation II"></option>
+    <option id="skill17" dialogue="Kurz pro pokladní II"></option>
+    <option id="skill18" dialogue="Kurz pro pokladní III"></option>
+    <option id="skill19" dialogue="Kurz pro skladníky I"></option>
+    <option id="skill19a" dialogue="Zaměstnanci doplní produkty do regálů rychleji"></option>
+    <option id="skill20" dialogue="Kurz pro skladníky II"></option>
     <option id="skill21" dialogue="Ještě více kávy"></option>
-    <option id="skill22" dialogue="Volné energetické nápoje I"></option>
-    <option id="skill23" dialogue="Volné energetické nápoje II"></option>
-    <option id="skill24" dialogue="Recyklační kurzy II"></option>
+    <option id="skill22" dialogue="Energetické nápoje zdarma I"></option>
+    <option id="skill23" dialogue="Energetické nápoje zdarma II"></option>
+    <option id="skill24" dialogue="Kurzy recyklace II"></option>
     <option id="skill24a" dialogue="Zaměstnanci budou recyklovat krabice"></option>
-    <option id="skill25" dialogue="Friendly Interface"></option>
+    <option id="skill25" dialogue="Intuitivní rozhraní"></option>
     <option id="skill25a" dialogue="Zákazníci budou více využívat samoobslužné pokladny"></option>
     <option id="skill26" dialogue="Zaměstnanec XI"></option>
     <option id="skill27" dialogue="Zaměstnanec XII"></option>
     <option id="skill28" dialogue="Recyklační kontejner"></option>
-    <option id="skill28a" dialogue="Nejbližší odpadkový kontejner bude nahrazen recyklačním."></option>
+    <option id="skill28a" dialogue="Nejbližší odpadkový kontejner bude nahrazen recyklačním"></option>
     <option id="skill29" dialogue="MART OS 2.0"></option>
-    <option id="skill29a" dialogue="Software oceňovacího stroje je vylepšen a nyní lze nastavit způsob automatizace cen"></option>
+    <option id="skill29a" dialogue="Software naceňovacího stroje je vylepšen a nyní lze nastavit způsob automatizace cen"></option>
     <option id="skill30" dialogue="Tic-tac jde rychle"></option>
     <option id="skill30a" dialogue="Když je obchod v noci zavřený, manažer může urychlit čas"></option>
     <option id="skill31" dialogue="Nízkoenergetické žárovky"></option>
@@ -633,7 +634,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="skill32" dialogue="Uživatelsky přívětivé rozhraní"></option>
     <option id="skill32a" dialogue="Zákazníci rychleji používají samoobslužnou pokladnu"></option>
     <option id="skill33" dialogue="Logistika"></option>
-    <option id="skill33a" dialogue="Když si vezmete krabici, budou si hráči moci představit její obsažený produkt v obchodě i ve skladu"></option>
+    <option id="skill33a" dialogue="Když si vezmete krabici, budou si hráči moci představit její obsažený produkt v obchodě i ve u"></option>
     <option id="skill34" dialogue="Externí účetní"></option>
     <option id="skill34a" dialogue="Faktury budou vypláceny každý nový den, pokud na to budou prostředky."></option>
     <option id="skill35" dialogue="Speciální ceny I"></option>
@@ -649,7 +650,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
 
     <option id="productGroup0" dialogue="Základní produkty"></option>
     <option id="productGroup1" dialogue="Mléčné výrobky"></option>
-    <option id="productGroup2" dialogue="Sodovky"></option>
+    <option id="productGroup2" dialogue="Nápoje"></option>
     <option id="productGroup3" dialogue="Mražené potraviny"></option>
     <option id="productGroup4" dialogue="Hygiena"></option>
     <option id="productGroup5" dialogue="Čistící produkty"></option>
@@ -664,7 +665,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="productGroup14" dialogue="Čerstvé produkty"></option>
     <option id="productGroup15" dialogue="Péče o děti"></option>
     <option id="productGroup16" dialogue="Zahradnictví"></option>
-    <option id="productGroup17" dialogue="Malá elektronika"></option>
+    <option id="productGroup17" dialogue="Elektronika"></option>
 
     <option id="productCategory0" dialogue="Základní produkty I"></option>
     <option id="productCategory1" dialogue="Základní produkty II"></option>
@@ -674,20 +675,20 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="productCategory5" dialogue="Základní produkty VI"></option>
     <option id="productCategory6" dialogue="Mléčné výrobky I"></option>
     <option id="productCategory7" dialogue="Mléčné výrobky II"></option>
-    <option id="productCategory8" dialogue="Sodovky I"></option>
+    <option id="productCategory8" dialogue="Nápoje I"></option>
     <option id="productCategory9" dialogue="Mražené potraviny I"></option>
     <option id="productCategory10" dialogue="Mražené potraviny II"></option>
     <option id="productCategory11" dialogue="Hygiena I"></option>
     <option id="productCategory12" dialogue="Hygiena II"></option>
     <option id="productCategory13" dialogue="Hygiena III"></option>
     <option id="productCategory14" dialogue="Čisticí prostředky I"></option>
-    <option id="productCategory15" dialogue="Cleaning Products II"></option>
+    <option id="productCategory15" dialogue="Čisticí prostředky II"></option>
     <option id="productCategory16" dialogue="Sladkosti a svačiny I"></option>
     <option id="productCategory17" dialogue="Sladkosti a svačiny II"></option>
     <option id="productCategory18" dialogue="Sladkosti a svačiny III"></option>
     <option id="productCategory19" dialogue="Sladkosti a svačiny IV"></option>
     <option id="productCategory20" dialogue="Maso I"></option>
-    <option id="productCategory21" dialogue="Zachovává I"></option>
+    <option id="productCategory21" dialogue="Trvanlivé I"></option>
     <option id="productCategory22" dialogue="Infuze I"></option>
     <option id="productCategory23" dialogue="Mořské plody I"></option>
     <option id="productCategory24" dialogue="Balíček knih I"></option>
@@ -697,14 +698,14 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="productCategory28" dialogue="Alkoholické nápoje III"></option>
     <option id="productCategory29" dialogue="Lékárna I"></option>
     <option id="productCategory30" dialogue="Lékárna II"></option>
-    <option id="productCategory31" dialogue="Vyrábět I"></option>
-    <option id="productCategory32" dialogue="Vyrábět II"></option>
-    <option id="productCategory33" dialogue="Vyrábět III"></option>
-    <option id="productCategory34" dialogue="Vyrábět IV"></option>
+    <option id="productCategory31" dialogue="Produkce I"></option>
+    <option id="productCategory32" dialogue="Produkce II"></option>
+    <option id="productCategory33" dialogue="Produkce III"></option>
+    <option id="productCategory34" dialogue="Produkce IV"></option>
     <option id="productCategory35" dialogue="Péče o děti I"></option>
     <option id="productCategory36" dialogue="Péče o děti II"></option>
-    <option id="productCategory37" dialogue="Sodovky II"></option>
-    <option id="productCategory38" dialogue="Sodovky III"></option>
+    <option id="productCategory37" dialogue="Nápoje II"></option>
+    <option id="productCategory38" dialogue="Nápoje III"></option>
     <option id="productCategory39" dialogue="Sladkosti a svačiny V"></option>
     <option id="productCategory40" dialogue="Sladkosti a svačiny VI"></option>
     <option id="productCategory41" dialogue="Zakonzervuje II"></option>
@@ -712,18 +713,18 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="productCategory43" dialogue="Zahradnictví II"></option>
     <option id="productCategory44" dialogue="Zahradnictví III"></option>
     <option id="productCategory45" dialogue="Zahradnictví IV"></option>
-    <option id="productCategory46" dialogue="Malá elektronika I"></option>
-    <option id="productCategory47" dialogue="Malá elektronika II"></option>
-    <option id="productCategory48" dialogue="Malá elektronika III"></option>
+    <option id="productCategory46" dialogue="Elektronika I"></option>
+    <option id="productCategory47" dialogue="Elektronika II"></option>
+    <option id="productCategory48" dialogue="Elektronika III"></option>
 
     <option id="product0" dialogue="Těstoviny Penne"></option>
     <option id="product1" dialogue="Lahev s vodou"></option>
     <option id="product2" dialogue="Medové cereálie"></option>
     <option id="product3" dialogue="Rýže"></option>
     <option id="product4" dialogue="Sůl"></option>
-    <option id="product5" dialogue="Cukr"></option>
+    <option id="product5" dialogue="Krupicový cukr"></option>
     <option id="product6" dialogue="Margarín"></option>
-    <option id="product7" dialogue="Mouka"></option>
+    <option id="product7" dialogue="Hladká mouka"></option>
     <option id="product8" dialogue="Jablečný džus"></option>
     <option id="product9" dialogue="Olivový olej"></option>
 
@@ -731,21 +732,21 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product11" dialogue="Krájený chléb"></option>
     <option id="product12" dialogue="Pepř"></option>
     <option id="product13" dialogue="Pomerančový džus"></option>
-    <option id="product14" dialogue="Barbaque omáčka"></option>
+    <option id="product14" dialogue="BBQ omáčka"></option>
     <option id="product15" dialogue="Hořčice"></option>
     <option id="product16" dialogue="Krabice špaget"></option>
-    <option id="product17" dialogue="Tuňáková paštika"></option>
-    <option id="product18" dialogue="Mléčné cereálie"></option>
+    <option id="product17" dialogue="Tuňákové paté"></option>
+    <option id="product18" dialogue="Cereálie s vlákninou"></option>
     <option id="product19" dialogue="Prémiová mouka"></option>
 
     <option id="product20" dialogue="Černá káva"></option>
-    <option id="product21" dialogue="Vajíčka"></option>
+    <option id="product21" dialogue="Vejce"></option>
     <option id="product22" dialogue="Humus"></option>
-    <option id="product23" dialogue="Hladká mouka"></option>
+    <option id="product23" dialogue="Polohrubá mouka"></option>
     <option id="product24" dialogue="Krabice třtinového cukru"></option>
-    <option id="product25" dialogue="Cukr"></option>
+    <option id="product25" dialogue="Cukr krystal"></option>
     <option id="product26" dialogue="Makaróny"></option>
-    <option id="product27" dialogue="Ekologický cukr"></option>
+    <option id="product27" dialogue="Cukr organic"></option>
     <option id="product28" dialogue="Hnědý cukr"></option>
     <option id="product29" dialogue="Slunečnicový olej"></option>
 
@@ -755,43 +756,43 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product33" dialogue="Rýže Basmati"></option>
     <option id="product34" dialogue="Dlouhozrnná rýže"></option>
     <option id="product35" dialogue="Káva"></option>
-    <option id="product36" dialogue="Premium těstoviny"></option>
+    <option id="product36" dialogue="Prémiové těstoviny"></option>
     <option id="product37" dialogue="Čokoládové cereálie"></option>
     <option id="product38" dialogue="Prémiová voda"></option>
-    <option id="product39" dialogue="Jarní voda"></option>
+    <option id="product39" dialogue="Pramenitá voda"></option>
 
-    <option id="product40" dialogue="Cukr moučka"></option>
+    <option id="product40" dialogue="Moučkový cukr"></option>
     <option id="product41" dialogue="Cukr – Velká krabice"></option>
     <option id="product42" dialogue="Hnědý cukr – Velká krabice"></option>
     <option id="product43" dialogue="Ementál sýr"></option>
-    <option id="product44" dialogue="Gruyere sýr"></option>
+    <option id="product44" dialogue="Gruyère sýr"></option>
     <option id="product45" dialogue="Odtučněný sýr"></option>
     <option id="product46" dialogue="Ovocný jogurt"></option>
     <option id="product47" dialogue="Vanilkový jogurt"></option>
     <option id="product48" dialogue="Trvanlivé mléko"></option>
     <option id="product49" dialogue="Máslo"></option>
 
-    <option id="product50" dialogue="Parmigiano sýr"></option>
+    <option id="product50" dialogue="Sýr Parmigiano"></option>
     <option id="product51" dialogue="Sýr Reggiano"></option>
-    <option id="product52" dialogue="Mozzarella sýr"></option>
+    <option id="product52" dialogue="Sýr Mozzarella"></option>
     <option id="product53" dialogue="Odtučněný jogurt"></option>
-    <option id="product54" dialogue="Cola balíček"></option>
-    <option id="product55" dialogue="Balíček sody"></option>
-    <option id="product56" dialogue="Balíček bezkofeinové sody"></option>
-    <option id="product57" dialogue="Láhev sodovky"></option>
-    <option id="product58" dialogue="Láhev coly"></option>
-    <option id="product59" dialogue="Láhev sody bez cukru"></option>
+    <option id="product54" dialogue="Balení Coly"></option>
+    <option id="product55" dialogue="Balení Sody"></option>
+    <option id="product56" dialogue="Balení bezkofeinové sody"></option>
+    <option id="product57" dialogue="Soda láhev"></option>
+    <option id="product58" dialogue="Cola láhev"></option>
+    <option id="product59" dialogue="Soda bez cukru láhev"></option>
 
-    <option id="product60" dialogue="Láhev prémiové sody"></option>
-    <option id="product61" dialogue="Barbecue pizza"></option>
+    <option id="product60" dialogue="Prémiová soda láhev"></option>
+    <option id="product61" dialogue="Pizza - Barbeque"></option>
     <option id="product62" dialogue="Fondue"></option>
-    <option id="product63" dialogue="Crocanti šunka"></option>
+    <option id="product63" dialogue="Pražská šunka"></option>
     <option id="product64" dialogue="Slané palačinky"></option>
     <option id="product65" dialogue="Hranolky"></option>
-    <option id="product66" dialogue="Pozice křupavých brambor"></option>
+    <option id="product66" dialogue="Krokety"></option>
     <option id="product67" dialogue="Zelené fazolky"></option>
-    <option id="product68" dialogue="Pizza čtyř sýrů"></option>
-    <option id="product69" dialogue="Pizza čtyř ročních období"></option>
+    <option id="product68" dialogue="Pizza - Quattro Formaggi"></option>
+    <option id="product69" dialogue="Pizza - Quattro Stagioni"></option>
 
     <option id="product70" dialogue="Zeleninová směs"></option>
     <option id="product71" dialogue="Kuřecí směs"></option>
@@ -802,23 +803,23 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product76" dialogue="Mýdlo na ruce"></option>
     <option id="product77" dialogue="Avokádový šampón"></option>
     <option id="product78" dialogue="Vaječný šampón"></option>
-    <option id="product79" dialogue="Gel do koupele"></option>
+    <option id="product79" dialogue="Sprchový gel"></option>
 
     <option id="product80" dialogue="Toaletní papír"></option>
     <option id="product81" dialogue="Mangové mýdlo"></option>
     <option id="product82" dialogue="Extra jemný šampón"></option>
     <option id="product83" dialogue="Jojobový medový šampón"></option>
-    <option id="product84" dialogue="šampon s arganovým olejem"></option>
+    <option id="product84" dialogue="Šampon s arganovým olejem"></option>
     <option id="product85" dialogue="Papírové útěrky"></option>
     <option id="product86" dialogue="Dvouvrstvý toaletní papír"></option>
     <option id="product87" dialogue="Citrónové mýdlo"></option>
-    <option id="product88" dialogue="Prémiový gel do koupele"></option>
+    <option id="product88" dialogue="Prémiový sprchový gel"></option>
     <option id="product89" dialogue="Šampón pro miminka"></option>
 
     <option id="product90" dialogue="Čisticí prostředek"></option>
     <option id="product91" dialogue="Odstraňovač skvrn"></option>
-    <option id="product92" dialogue="Čistič skla"></option>
-    <option id="product93" dialogue="Prací kapsle"></option>
+    <option id="product92" dialogue="Čistič oken a skla"></option>
+    <option id="product93" dialogue="Prací tablety"></option>
     <option id="product94" dialogue="Tablety do myčky"></option>
     <option id="product95" dialogue="Bělidlo"></option>
     <option id="product96" dialogue="Bělidlo – velká láhev"></option>
@@ -832,18 +833,18 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product103" dialogue="Amoniak"></option>
     <option id="product104" dialogue="Sušenky"></option>
     <option id="product105" dialogue="Maxi kornouty"></option>
-    <option id="product106" dialogue="Čokoládová pomazánka"></option>
-    <option id="product107" dialogue="Čokoládový prášek"></option>
+    <option id="product106" dialogue="Lískooříškový krém"></option>
+    <option id="product107" dialogue="Kakao"></option>
     <option id="product108" dialogue="Brambůrky"></option>
-    <option id="product109" dialogue="Sladké bonbóny"></option>
+    <option id="product109" dialogue="Bonbóny"></option>
 
     <option id="product110" dialogue="Broskvový džem"></option>
-    <option id="product111" dialogue="Zmrzlinová vanička"></option>
-    <option id="product112" dialogue="Bonboniera"></option>
+    <option id="product111" dialogue="Zmrzlina vanička"></option>
+    <option id="product112" dialogue="Bonboniéra"></option>
     <option id="product113" dialogue="Čokoládové sušenky"></option>
     <option id="product114" dialogue="Vanilkové sušenky"></option>
     <option id="product115" dialogue="Madlenky"></option>
-    <option id="product116" dialogue="Jahodový džem"></option>
+    <option id="product116" dialogue="Jahodová marmeláda"></option>
     <option id="product117" dialogue="Arašídové máslo"></option>
     <option id="product118" dialogue="Chipos"></option>
     <option id="product119" dialogue="Marshmallow"></option>
@@ -852,7 +853,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product121" dialogue="Lískooříškové sušenky"></option>
     <option id="product122" dialogue="Prémiová zmrzlina"></option>
     <option id="product123" dialogue="Med"></option>
-    <option id="product124" dialogue="Prémiová bonboniera"></option>
+    <option id="product124" dialogue="Prémiová bonboniéra"></option>
     <option id="product125" dialogue="Foditos"></option>
     <option id="product126" dialogue="Prémiový dort"></option>
     <option id="product127" dialogue="Mleté hovězí maso"></option>
@@ -881,7 +882,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product148" dialogue="Uzený losos"></option>
     <option id="product149" dialogue="Krabí tyčinky"></option>
 
-    <option id="product150" dialogue="Kniha - Elektromagnetizmus"></option>
+    <option id="product150" dialogue="Kniha - Elektromagnetismus"></option>
     <option id="product151" dialogue="Kniha – Překvapení"></option>
     <option id="product152" dialogue="Kniha - ABC"></option>
     <option id="product153" dialogue="Kniha – Matka a dítě"></option>
@@ -893,7 +894,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product159" dialogue="Kniha - Donnine"></option>
 
     <option id="product160" dialogue="Kniha - Retro"></option>
-    <option id="product161" dialogue="Kniha - Nesdílím"></option>
+    <option id="product161" dialogue="Kniha - Nepovím"></option>
     <option id="product162" dialogue="Pivní balíček"></option>
     <option id="product163" dialogue="Pivní balíček"></option>
     <option id="product164" dialogue="Pivní balíček"></option>
@@ -910,7 +911,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product174" dialogue="Prémiová whisky"></option>
     <option id="product175" dialogue="Prémiová whisky"></option>
     <option id="product176" dialogue="Peroxid vodíku"></option>
-    <option id="product177" dialogue="Dezinfekční prostředek"></option>
+    <option id="product177" dialogue="Dezinfekce"></option>
     <option id="product178" dialogue="Ibuprofen"></option>
     <option id="product179" dialogue="Paracetamol"></option>
 
@@ -921,14 +922,14 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product184" dialogue="Antioxidant"></option>
     <option id="product185" dialogue="Rybí olej"></option>
     <option id="product186" dialogue="Pilulky s mořskými řasami"></option>
-    <option id="product187" dialogue="Vitaminy"></option>
+    <option id="product187" dialogue="Vitamíny"></option>
     <option id="product188" dialogue="Melatonin"></option>
     <option id="product189" dialogue="Opalovací krém"></option>
 
     <option id="product190" dialogue="Krém na strie"></option>
     <option id="product191" dialogue="Bedýnka červených jablek"></option>
     <option id="product192" dialogue="Bedýnka zelených jablek"></option>
-    <option id="product193" dialogue="Bedýnka klementinek"></option>
+    <option id="product193" dialogue="Bedýnka mandarinek"></option>
     <option id="product194" dialogue="Bedýnka pomerančů"></option>
     <option id="product195" dialogue="Bedýnka hrušek"></option>
     <option id="product196" dialogue="Bedýnka citronů"></option>
@@ -947,98 +948,98 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="product208" dialogue="Bedýnka cibule"></option>
     <option id="product209" dialogue="Trs banánů"></option>
 
-    <option id="product210" dialogue="Cantaloupe"></option>
+    <option id="product210" dialogue="Meloun žlutý"></option>
     <option id="product211" dialogue="Ananas"></option>
     <option id="product212" dialogue="Dýně"></option>
     <option id="product213" dialogue="Vodní meloun"></option>
-    <option id="product214" dialogue="Dětská výživa: Zelenina"></option>
-    <option id="product215" dialogue="Dětská výživa: Ryby"></option>
-    <option id="product216" dialogue="Dětská výživa: Ovoce"></option>
-    <option id="product217" dialogue="dětská výživa: maso"></option>
-    <option id="product218" dialogue="Nutritivní mléčná směs"></option>
-    <option id="product219" dialogue="Nutritivní sušené mléko"></option>
+    <option id="product214" dialogue="Přesnídávka zeleninová"></option>
+    <option id="product215" dialogue="Přesnídávka rybí"></option>
+    <option id="product216" dialogue="Přesnídávka ovocná"></option>
+    <option id="product217" dialogue="Přesnídávka masová"></option>
+    <option id="product218" dialogue="Nutriční mléko směs"></option>
+    <option id="product219" dialogue="Nutriční mléko sušené"></option>
 
     <option id="product220" dialogue="Ekologické plenky"></option>
-    <option id="product221" dialogue="Základní plenky"></option>
+    <option id="product221" dialogue="Klasické plenky"></option>
     <option id="product222" dialogue="Plenky pro batolata"></option>
     <option id="product223" dialogue="Prémiové plenky"></option>
     <option id="product224" dialogue="Aloe Dětské ubrousky "></option>
-    <option id="product225" dialogue="Základní dětské ubrousky"></option>
+    <option id="product225" dialogue="Klasické dětské ubrousky"></option>
     <option id="product226" dialogue="Dětský pudr"></option>
-    <option id="product227" dialogue="Oranžová soda"></option>
+    <option id="product227" dialogue="Pomerančová soda"></option>
     <option id="product228" dialogue="Ananasová soda"></option>
     <option id="product229" dialogue="Tropická soda"></option>
 
     <option id="product230" dialogue="Nápoj ze zeleného čaje"></option>
     <option id="product231" dialogue="Nápoj ze červeného čaje"></option>
     <option id="product232" dialogue="Nápoj z citronového čaje"></option>
-    <option id="product233" dialogue="Studená káva"></option>
+    <option id="product233" dialogue="Cold Brew káva"></option>
     <option id="product234" dialogue="Borůvkový energetický nápoj"></option>
-    <option id="product235" dialogue="Energetický nápoj Guava"></option>
-    <option id="product236" dialogue="Energetický nápoj Lima"></option>
+    <option id="product235" dialogue="Guava Energetický nápoj"></option>
+    <option id="product236" dialogue="Lima Energetický nápoj"></option>
     <option id="product237" dialogue="Energetický nápoj s ovocným punčem"></option>
-    <option id="product238" dialogue="Energetický nápoj Mango"></option>
-    <option id="product239" dialogue="Cola energetický nápoj"></option>
+    <option id="product238" dialogue="Mango Energetický nápoj"></option>
+    <option id="product239" dialogue="Cola Energetický nápoj"></option>
 
     <option id="product240" dialogue="Energetický nápoj bez cukru"></option>
-    <option id="product241" dialogue="Základní jahodová zmrzlina"></option>
+    <option id="product241" dialogue="Tradiční jahodová zmrzlina"></option>
     <option id="product242" dialogue="Citrónová zmrzlina"></option>
     <option id="product243" dialogue="Kávová zmrzlina"></option>
-    <option id="product244" dialogue="Zmrzlina Stracciatella"></option>
+    <option id="product244" dialogue="Stracciatella zmrzlina"></option>
     <option id="product245" dialogue="Jahodová pusinková zmrzlina"></option>
     <option id="product246" dialogue="Karamelová zmrzlina"></option>
-    <option id="product247" dialogue="Premium jahodová zmrzlina"></option>
-    <option id="product248" dialogue="Jahodová tvarohová zmrzlina"></option>
-    <option id="product249" dialogue="Premium karamelová zmrzlina"></option>
+    <option id="product247" dialogue="Jahodová zmrzlina Premium"></option>
+    <option id="product248" dialogue="Zmrzlina Strawberry cheesecake"></option>
+    <option id="product249" dialogue="Karamelová zmrzlina Premium"></option>
 
     <option id="product250" dialogue="Růžová jahodová zmrzlina"></option>
-    <option id="product251" dialogue="Alkoholická zmrzlina"></option>
+    <option id="product251" dialogue="Alkoholová zmrzlina"></option>
     <option id="product252" dialogue="Cizrna"></option>
     <option id="product253" dialogue="Masové kuličky"></option>
     <option id="product254" dialogue="Čočka"></option>
     <option id="product255" dialogue="Rajčatová polévka"></option>
     <option id="product256" dialogue="Konzervovaná kukuřice"></option>
     <option id="product257" dialogue="Konzervovaný hrášek"></option>
-    <option id="product258" dialogue="Jahodová semínka"></option>
-    <option id="product259" dialogue="Malinová semínka"></option>
+    <option id="product258" dialogue="Semena jahodníku"></option>
+    <option id="product259" dialogue="Semena maliníku"></option>
 
-    <option id="product260" dialogue="Semena borůvek"></option>
-    <option id="product261" dialogue="Semena ananasu"></option>
-    <option id="product262" dialogue="Meyer citronová semínka"></option>
+    <option id="product260" dialogue="Semena borůvky"></option>
+    <option id="product261" dialogue="Semena ananasovníku"></option>
+    <option id="product262" dialogue="Semena cintronečníku"></option>
     <option id="product263" dialogue="Semena rajčat"></option>
-    <option id="product264" dialogue="Semínka pepře"></option>
-    <option id="product265" dialogue="Okurková semena"></option>
+    <option id="product264" dialogue="Semena papriky"></option>
+    <option id="product265" dialogue="Semena okurky"></option>
     <option id="product266" dialogue="Semínka ředkve"></option>
     <option id="product267" dialogue="Semena mrkve"></option>
-    <option id="product268" dialogue="Semena trávníku"></option>
-    <option id="product269" dialogue="Maková semínka"></option>
+    <option id="product268" dialogue="Semena travní směs"></option>
+    <option id="product269" dialogue="Semena vlčího máku"></option>
 
-    <option id="product270" dialogue="Tulipánová semínka"></option>
-    <option id="product271" dialogue="Slunečnicová semínka"></option>
+    <option id="product270" dialogue="Semena tulipánu"></option>
+    <option id="product271" dialogue="Semena slunečnice"></option>
     <option id="product272" dialogue="Semena petúnie"></option>
-    <option id="product273" dialogue="Ruční hrábě (A)"></option>
-    <option id="product274" dialogue="Ruční hrábě (B)"></option>
-    <option id="product275" dialogue="Ruční lopata"></option>
-    <option id="product276" dialogue="Ruční kultivátor"></option>
-    <option id="product277" dialogue="zalévací půda"></option>
+    <option id="product273" dialogue="Hrábě (A)"></option>
+    <option id="product274" dialogue="Hrábě (B)"></option>
+    <option id="product275" dialogue="Lopata"></option>
+    <option id="product276" dialogue="Provzdušňovač trávníku"></option>
+    <option id="product277" dialogue="Květinový substrát"></option>
     <option id="product278" dialogue="Hnojivo"></option>
-    <option id="product279" dialogue="Rostlinná nádoba"></option>
+    <option id="product279" dialogue="Miska pod květináč"></option>
 
-    <option id="product280" dialogue="Rostlinný hrnec"></option>
+    <option id="product280" dialogue="Květináč"></option>
     <option id="product281" dialogue="Baterie AA"></option>
     <option id="product282" dialogue="Baterie AAA"></option>
     <option id="product283" dialogue="Baterie C"></option>
     <option id="product284" dialogue="Baterie 9V"></option>
     <option id="product285" dialogue="Univerzální TV ovladač"></option>
-    <option id="product286" dialogue="Univerzální telefonní nabíječka"></option>
+    <option id="product286" dialogue="Univerzální mobilní nabíječka"></option>
     <option id="product287" dialogue="Základní předplacený telefon"></option>
     <option id="product288" dialogue="Základní myš"></option>
-    <option id="product289" dialogue="bezdrátový konektor"></option>
+    <option id="product289" dialogue="Bezdrátový konektor"></option>
     <option id="product290" dialogue="Základní sluchátka"></option>
 
     <option id="product291" dialogue="Základní klávesnice"></option>
     <option id="product292" dialogue="Základní herní ovladač"></option>
-    <option id="product293" dialogue="Disk USB Flash (128 GB)"></option>
+    <option id="product293" dialogue="USB flash disk (128 GB)"></option>
     <option id="product294" dialogue="USB flash disk (256 GB)"></option>
     <option id="product295" dialogue="USB flash disk (512 GB)"></option>
     <option id="product296" dialogue="USB flash disk (1 TB)"></option>
@@ -1163,43 +1164,43 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="paintmat102" dialogue="Led B"></option>
     <option id="paintmat103" dialogue="Led C"></option>
     <option id="paintmat104" dialogue="Led D"></option>
-    <option id="paintmat105" dialogue="Produkty: Basic A"></option>
-    <option id="paintmat106" dialogue="Produkty: Basic B"></option>
-    <option id="paintmat107" dialogue="Produkty: Deník A"></option>
-    <option id="paintmat108" dialogue="Produkty: Deník B"></option>
-    <option id="paintmat109" dialogue="Produkty: Soda Drinks A"></option>
+    <option id="paintmat105" dialogue="Produkty: Základní A"></option>
+    <option id="paintmat106" dialogue="Produkty: Základní B"></option>
+    <option id="paintmat107" dialogue="Produkty: Mléčné výrobky A"></option>
+    <option id="paintmat108" dialogue="Produkty: Mléčné výrobky B"></option>
+    <option id="paintmat109" dialogue="Produkty: Nápoje A"></option>
 
-    <option id="paintmat110" dialogue="Produkty: Sodovky B"></option>
-    <option id="paintmat111" dialogue="Produkty: Frozen"></option>
+    <option id="paintmat110" dialogue="Produkty: Nápoje B"></option>
+    <option id="paintmat111" dialogue="Produkty: Mražené"></option>
     <option id="paintmat112" dialogue="Produkty: Hygiena A"></option>
     <option id="paintmat113" dialogue="Produkty: Hygiena B"></option>
-    <option id="paintmat114" dialogue="Produkty: Čištění"></option>
+    <option id="paintmat114" dialogue="Produkty: Uklízení"></option>
     <option id="paintmat115" dialogue="Produkty: Sladkosti A"></option>
     <option id="paintmat116" dialogue="Produkty: Sladkosti B"></option>
     <option id="paintmat117" dialogue="Produkty: Maso"></option>
-    <option id="paintmat118" dialogue="Produkty: Konzervy"></option>
+    <option id="paintmat118" dialogue="Produkty: Trvanlívé"></option>
     <option id="paintmat119" dialogue="Produkty: Infuze"></option>
 
-    <option id="paintmat120" dialogue="Produkty: Fish A"></option>
-    <option id="paintmat121" dialogue="Produkty: Fish B"></option>
+    <option id="paintmat120" dialogue="Produkty: Ryby A"></option>
+    <option id="paintmat121" dialogue="Produkty: Ryby B"></option>
     <option id="paintmat122" dialogue="Produkty: Knihy A"></option>
     <option id="paintmat123" dialogue="Produkty: Knihy B"></option>
-    <option id="paintmat124" dialogue="Produkty: Alcohol A"></option>
-    <option id="paintmat125" dialogue="Produkty: Alcohol B"></option>
+    <option id="paintmat124" dialogue="Produkty: Alkohol A"></option>
+    <option id="paintmat125" dialogue="Produkty: Alkohol B"></option>
     <option id="paintmat126" dialogue="Produkty: Lékárna A"></option>
     <option id="paintmat127" dialogue="Produkty: Lékárna B"></option>
-    <option id="paintmat128" dialogue="Produkty: Výroba A"></option>
-    <option id="paintmat129" dialogue="Produkty: Produce B"></option>
+    <option id="paintmat128" dialogue="Produkty: Produkce A"></option>
+    <option id="paintmat129" dialogue="Produkty: Produkce B"></option>
 
-    <option id="paintmat130" dialogue="Products: Produce C"></option>
-    <option id="paintmat131" dialogue="Produkty: Produce D"></option>
+    <option id="paintmat130" dialogue="Produkty: Produkce C"></option>
+    <option id="paintmat131" dialogue="Produkty: Produkce D"></option>
     <option id="paintmat132" dialogue="Produkty: Péče o děti A"></option>
     <option id="paintmat133" dialogue="Produkty: Péče o děti B"></option>
     <option id="paintmat134" dialogue="Experimentální TV"></option>
     <option id="paintmat135" dialogue="Produkty: Zahradnictví A"></option>
     <option id="paintmat136" dialogue="Produkty: Zahradnictví B"></option>
-    <option id="paintmat137" dialogue="Produkty: Electronics A"></option>
-    <option id="paintmat138" dialogue="Produkty: Electronics B"></option>
+    <option id="paintmat137" dialogue="Produkty: Electronika A"></option>
+    <option id="paintmat138" dialogue="Produkty: Electronika B"></option>
     <option id="paintmat139" dialogue="Bambus"></option>
 
     <option id="paintmat140" dialogue="Koberec A"></option>
@@ -1242,18 +1243,18 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="skinshats" dialogue="Vzhled a klobouky"></option>
     <option id="character" dialogue="Postava"></option>
     <option id="hat" dialogue="Klobouk"></option>
-    <option id="coolpeople" dialogue="Povoleni pouze cool lidé"></option>
+    <option id="coolpeople" dialogue="Vstup povolen pouze frajerům"></option>
 
     <option id="mprice" dialogue="Tržní cena"></option>
     <option id="yprice" dialogue="Vaše cena"></option>
 
-    <option id="mgiven" dialogue="Peníze poskytnuté"></option>
+    <option id="mgiven" dialogue="Peníze dané"></option>
     <option id="mreturn" dialogue="Peníze k vrácení"></option>
     <option id="camount" dialogue="Aktuální částka"></option>
     <option id="addmoney" dialogue="[LMB] Přidat peníze"></option>
     <option id="removemoney" dialogue="[RMB] Odebrat peníze"></option>
 
-    <option id="coopplayerfunds" dialogue="Další prostředky přidány pro hráče coop"></option>
+    <option id="coopplayerfunds" dialogue="Další prostředky přidány pro spoluhráče"></option>
 
     <option id="alreadyopen" dialogue="Obchod je již otevřen"></option>
     <option id="alreadyclose" dialogue="Obchod je již uzavřen"></option>
@@ -1266,7 +1267,7 @@ Všimněte si, že můžete také nastavit ceny pomocí numerické klávesnice n
     <option id="lic12" dialogue="V tomto terminálu budete moci připojit Youtube a Twitch ke svým televizorům, jakmile bude licence schválena."></option>
 
     <option id="cosmetics1" dialogue="Kosmetické DLC bylo schváleno!"></option>
-    <option id="cosmetics2" dialogue="9 nových postav, více než 100 klobouků, 35 tanců a póz a webový prohlížeč, který můžete ochabnout, zatímco se váš šéf nedívá.
+    <option id="cosmetics2" dialogue="9 nových postav, více než 100 klobouků, 35 tanců a póz a webový prohlížeč, aby bylo kde se flákat, zatímco se váš šéf nedívá.
 
 Vymalujte svůj obchod novým tabletem a užijte si exkluzivní dekorace, které budou časem přibývat. První aktualizace synchronizace YouTube je již k dispozici!"></option>
 
@@ -1283,7 +1284,7 @@ Vymalujte svůj obchod novým tabletem a užijte si exkluzivní dekorace, které
 
     <option id="nplayer" dialogue="Nový hráč připojen: "></option>
 
-    <option id="disclaimer1" dialogue="Pokud máte problémy s připojením, nezapomeňte aktualizovat na nejnovější opravu!"></option>
+    <option id="disclaimer1" dialogue="Pokud máte problémy s připojením, nezapomeňte aktualizovat na nejnovější verzi!"></option>
 
     <option id="tvcontrol" dialogue="Ovládání televizorů"></option>
     <option id="tvhook0" dialogue="Vypnuto"></option>
@@ -1374,33 +1375,33 @@ Pro přístup k novým kartám používejte standardně X a Z."></option>
     <option id="removeallperm" dialogue="Při připojování odebrat všechna oprávnění"></option>
     <option id="permiss0" dialogue="Globální"></option>
     <option id="permiss1" dialogue="Manažer"></option>
-    <option id="permiss2" dialogue="Pokladna"></option>
-    <option id="permiss3" dialogue="Doskladňovač"></option>
-    <option id="permiss4" dialogue="Zabezpečení"></option>
-    <option id="permiss5" dialogue="Povídání"></option>
+    <option id="permiss2" dialogue="Pokladní"></option>
+    <option id="permiss3" dialogue="Skladník"></option>
+    <option id="permiss4" dialogue="Ostraha"></option>
+    <option id="permiss5" dialogue="Chat"></option>
 
     <option id="newemplo" dialogue="Zaměstnanci"></option>
-    <option id="emplohire" dialogue="Hire"></option>
+    <option id="emplohire" dialogue="Najmout"></option>
     <option id="emplodismiss" dialogue="Zrušit"></option>
-    <option id="emploassignment" dialogue="Přiřazení"></option>
+    <option id="emploassignment" dialogue="Role"></option>
     <option id="emplostats" dialogue="Statistiky zaměstnance"></option>
     <option id="emplorenew" dialogue="Zaměstnanci obnovují každý den!"></option>
     <option id="emplomaxemplo" dialogue="Max. počet zaměstnanců"></option>
     <option id="emplohired" dialogue="Najatí zaměstnanci"></option>
     <option id="emploentername" dialogue="Zadejte jméno zaměstnance..."></option>
-    <option id="emplocashexp" dialogue="Pokladní zkušenost"></option>
-    <option id="emplorestexp" dialogue="Zkušenosti s Restockerem"></option>
-    <option id="emplostoexp" dialogue="Zkušenosti s úložištěm"></option>
-    <option id="emplosecexp" dialogue="Bezpečnostní zkušenosti"></option>
+    <option id="emplocashexp" dialogue="Zkušenosti - Pokladní"></option>
+    <option id="emplorestexp" dialogue="Zkušenosti - Skladník"></option>
+    <option id="emplostoexp" dialogue="Zkušenosti - Zásobovač"></option>
+    <option id="emplosecexp" dialogue="Zkušenosti - Ostraha"></option>
     <option id="canthiremore" dialogue="Nelze najmout více zaměstnanců"></option>
-    <option id="hiredemployee" dialogue="Najal zaměstnance!"></option>
-    <option id="dismissedemployee" dialogue="Propuštěn zaměstnance!"></option>
+    <option id="hiredemployee" dialogue="Zaměstnanec najat!"></option>
+    <option id="dismissedemployee" dialogue="Zaměstanec propuštěn!"></option>
     <option id="emploalreadyhired" dialogue="Najatý"></option>
     <option id="emptyposi" dialogue="Prázdná pozice"></option>
     <option id="emploassignedtask" dialogue="Přiřazený úkol"></option>
-    <option id="emplonewpriority" dialogue="Skladování"></option>
+    <option id="emplonewpriority" dialogue="Zásobování"></option>
     <option id="emploNoTask" dialogue="Žádný úkol"></option>
-    <option id="emplostaffhappi" dialogue="Štěstí ve štábu"></option>
+    <option id="emplostaffhappi" dialogue="Radost zaměstnanců"></option>
     <option id="emploreroll" dialogue="Přetočit"></option>
 
     <option id="dlcdiscounted" dialogue="Sleva"></option>
@@ -1461,8 +1462,8 @@ Mějte po ruce koště"></option>
     <option id="xcessve" dialogue="Příliš..."></option>
 
     <option id="invoicetype0" dialogue="Bankovní půjčka"></option>
-    <option id="invoicetype1" dialogue="Elektrický"></option>
-    <option id="invoicetype2" dialogue="Plat"></option>
+    <option id="invoicetype1" dialogue="Elekřina"></option>
+    <option id="invoicetype2" dialogue="Platy"></option>
     <option id="invoicetype3" dialogue="Pronájem"></option>
 
     <option id="invopaidannoun" dialogue="Faktura zaplacena!"></option>
@@ -1484,8 +1485,8 @@ Mějte po ruce koště"></option>
 
     <option id="disableinvoicesoption" dialogue="Zakázat faktury"></option>
 
-    <option id="off3disclaimer" dialogue="Pokud se zaměstnanci neobjeví nebo se ochabnou, nezapomeňte jim zaplatit mzdu, protože to má důsledky"></option>
-    <option id="off4disclaimer" dialogue="Zaměstnanci mají podivnou cestu? Použijte odlepený blok NPC a nahlaste údaje o svém obchodu ve fórech"></option>
+    <option id="off3disclaimer" dialogue="Pokud se zaměstnanci nedostaví nebo se flákají, nezapomeň jim i tak vyplatit mzdu – nevyplacení má své následky."></option>
+    <option id="off4disclaimer" dialogue="Zaměstnanci chodí špatnou cestou? Použijte Blok na odzaseknutí NPC a nahlaste údaje o svém obchodu ve fórech"></option>
 
     <option id="drawgame0" dialogue="Nakresli slovo! Minihra"></option>
     <option id="drawgame1" dialogue="Minihra kreslení byla zahájena!"></option>
