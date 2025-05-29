@@ -254,7 +254,7 @@ Notez que vous pouvez également définir les prix avec votre pavé numérique o
     <option id="notfoundproducts" dialogue="Produits non trouvés : "></option>
     <option id="tooexpensiveproducts" dialogue="Produits trop chers : "></option>
     <option id="timesrobbed" dialogue="Nombre de vols : "></option>
-    <option id="complaintsfil" dialogue="Plaintes concernant des saletés : "></option>
+    <option id="complaintsfilth" dialogue="Plaintes concernant des saletés : "></option>
     <option id="franchiselevel" dialogue="Niveau de franchise : "></option>
     <option id="franchiseexperience" dialogue="Expérience de franchise : "></option>
     <option id="income" dialogue="Revenus "></option>
