@@ -89,3 +89,4 @@ Miscellaneous QoL Features
 - Adjust in-game clock speed
 - Allows usage of the clock while store is open
 - Allows instantly stocking the whole box onto a shelf in 1 click
+- Option to disable tutorials on fresh saves

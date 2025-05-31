@@ -110,6 +110,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
 
     // === !Random QoL! ===
+    public static ConfigEntry<bool> Tutorial;
     public static ConfigEntry<bool> NumberKeys;
     public static ConfigEntry<float> SprintMoveSpeed;
     public static ConfigEntry<float> MoveSpeed;
@@ -611,6 +612,13 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random QoL! ===
+        Tutorial = Config.Bind(
+            "Random QoL",
+            "Enables or disables the tutorial",
+            false,
+            new ConfigDescription("Enables or disables the tutorial at the start of a fresh save")
+        );
+
         NumberKeys = Config.Bind(
             "Random QoL",
             "Enables normal numbers",
