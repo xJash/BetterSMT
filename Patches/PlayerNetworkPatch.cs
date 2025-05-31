@@ -16,6 +16,67 @@ public class PlayerNetworkPatch {
     private static PlayerNetwork pNetwork = null;
     private static UpgradesManager upgradesManager;
 
+    [HarmonyPatch("PriceSetFromNumpad")]
+    [HarmonyPrefix]
+    private static bool PriceSetFromNumpadPrefix(PlayerNetwork __instance, int productID) {
+        if (!BetterSMT.NumberKeys.Value) {
+            return true; // run original
+        }
+
+        // Handle backspace/delete
+        if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Delete)) {
+            if (__instance.basefloatString.Length != 0) {
+                __instance.basefloatString = __instance.basefloatString[..^1];
+                __instance.yourPriceTMP.text = "$" + __instance.basefloatString;
+            }
+            return false;
+        }
+
+        // Limit input length
+        if (__instance.basefloatString.Length >= 7) return false;
+
+        // Handle digits 0-9
+        for (int i = 0; i <= 9; i++) {
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i) || Input.GetKeyDown(KeyCode.Keypad0 + i)) {
+                if (__instance.basefloatString.Contains(",")) {
+                    string[] parts = __instance.basefloatString.Split(',');
+                    if (parts.Length > 1 && parts[1].Length >= 2) return false;
+                }
+
+                __instance.basefloatString += i.ToString();
+                __instance.yourPriceTMP.text = "$" + __instance.basefloatString;
+                return false;
+            }
+        }
+
+        // Handle decimal point
+        if (Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.Comma) || Input.GetKeyDown(KeyCode.KeypadPeriod)) {
+            if (__instance.basefloatString.Length != 0 && !__instance.basefloatString.Contains(",")) {
+                __instance.basefloatString += ",";
+                __instance.yourPriceTMP.text = "$" + __instance.basefloatString;
+            }
+            return false;
+        }
+
+        // Handle accept
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+            if (__instance.basefloatString.Length != 0 &&
+                !__instance.basefloatString.EndsWith(",") &&
+                float.TryParse(__instance.basefloatString, out float result)) {
+                result = Mathf.Round(result * 100f) / 100f;
+                if (ProductListing.Instance.productPlayerPricing[productID] != result) {
+                    __instance.CmdPlayPricingSound();
+                    __instance.pPrice = result;
+                    ProductListing.Instance.CmdUpdateProductPrice(productID, __instance.pPrice);
+                }
+            }
+            return false;
+        }
+
+        return true; // fall back to original if nothing matched
+    }
+
+
     private static void HandleAutoSave() {
         if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
             return;

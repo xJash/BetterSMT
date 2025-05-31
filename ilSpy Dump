@@ -8344,7 +8344,7 @@ public class DebtManager : NetworkBehaviour
 		case 2:
 			NPC_Manager.Instance.employeesOnRiot = true;
 			{
-				foreach (Transform item in NPC_Manager.Instance.employeeParentOBJ.transform)
+				foreach (Transform item in NPC_Manager.Instance.__instance.employeeParentOBJ.transform)
 				{
 					item.GetComponent<NavMeshAgent>().destination = employeeRiotPointOBJ.transform.position + new Vector3(Random.Range(-2.5f, 2.5f), 0f, Random.Range(-2.5f, 2.5f));
 				}
@@ -15226,8 +15226,8 @@ public class ManagerBlackboard : NetworkBehaviour
 	private int[] GetProductsExistences(int productIDToCompare)
 	{
 		int[] array = new int[3];
-		GameObject employeeParentOBJ = NPC_Manager.Instance.employeeParentOBJ;
-		int childCount = employeeParentOBJ.transform.childCount;
+		GameObject __instance.employeeParentOBJ = NPC_Manager.Instance.__instance.employeeParentOBJ;
+		int childCount = __instance.employeeParentOBJ.transform.childCount;
 		for (int i = 0; i < dummyArrayExistences.Length; i++)
 		{
 			GameObject gameObject = dummyArrayExistences[i];
@@ -15276,10 +15276,10 @@ public class ManagerBlackboard : NetworkBehaviour
 			{
 				for (int k = 0; k < childCount; k++)
 				{
-					int boxProductID = employeeParentOBJ.transform.GetChild(k).transform.GetComponent<NPC_Info>().boxProductID;
+					int boxProductID = __instance.employeeParentOBJ.transform.GetChild(k).transform.GetComponent<NPC_Info>().boxProductID;
 					if (productIDToCompare == boxProductID)
 					{
-						int boxNumberOfProducts = employeeParentOBJ.transform.GetChild(k).transform.GetComponent<NPC_Info>().boxNumberOfProducts;
+						int boxNumberOfProducts = __instance.employeeParentOBJ.transform.GetChild(k).transform.GetComponent<NPC_Info>().boxNumberOfProducts;
 						if (boxNumberOfProducts > 0)
 						{
 							array[i] += boxNumberOfProducts;
@@ -19575,7 +19575,7 @@ public class NPC_Info : NetworkBehaviour
 	{
 		if ((bool)NPC_Manager.Instance)
 		{
-			base.transform.SetParent(NPC_Manager.Instance.employeeParentOBJ.transform);
+			base.transform.SetParent(NPC_Manager.Instance.__instance.employeeParentOBJ.transform);
 		}
 		else
 		{
@@ -19588,7 +19588,7 @@ public class NPC_Info : NetworkBehaviour
 		yield return new WaitForSeconds(2f);
 		if ((bool)NPC_Manager.Instance)
 		{
-			base.transform.SetParent(NPC_Manager.Instance.employeeParentOBJ.transform);
+			base.transform.SetParent(NPC_Manager.Instance.__instance.employeeParentOBJ.transform);
 		}
 	}
 
@@ -20423,7 +20423,7 @@ public class NPC_Manager : NetworkBehaviour
 	[Space(10f)]
 	public GameObject[] NPCsEmployeesArray;
 
-	public GameObject employeeParentOBJ;
+	public GameObject __instance.employeeParentOBJ;
 
 	public GameObject restSpotOBJ;
 
@@ -20651,7 +20651,7 @@ public class NPC_Manager : NetworkBehaviour
 		{
 			return;
 		}
-		int childCount = employeeParentOBJ.transform.childCount;
+		int childCount = __instance.employeeParentOBJ.transform.childCount;
 		if (!spawnedEmployees)
 		{
 			spawnedEmployees = true;
@@ -20909,7 +20909,7 @@ public class NPC_Manager : NetworkBehaviour
 		int securityExperience = int.Parse(array[11]);
 		Vector3 position = employeeSpawnpoint.transform.position + new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 		GameObject gameObject = Object.Instantiate(npcAgentPrefab, position, Quaternion.identity);
-		gameObject.transform.SetParent(employeeParentOBJ.transform);
+		gameObject.transform.SetParent(__instance.employeeParentOBJ.transform);
 		gameObject.transform.Find("TrashTrigger").gameObject.SetActive(value: false);
 		NPC_Info component = gameObject.GetComponent<NPC_Info>();
 		component.NetworkNPCID = networkNPCID;
@@ -21115,7 +21115,7 @@ public class NPC_Manager : NetworkBehaviour
 	public void UpdateEmployeeStats()
 	{
 		int num = 0;
-		foreach (Transform item in employeeParentOBJ.transform)
+		foreach (Transform item in __instance.employeeParentOBJ.transform)
 		{
 			NPC_Info component = item.GetComponent<NPC_Info>();
 			NavMeshAgent component2 = item.GetComponent<NavMeshAgent>();
@@ -21158,12 +21158,12 @@ public class NPC_Manager : NetworkBehaviour
 
 	private void UpdateEmployeeCheckouts()
 	{
-		if (checkoutOBJ.transform.childCount == 0 || employeeParentOBJ.transform.childCount == 0)
+		if (checkoutOBJ.transform.childCount == 0 || __instance.employeeParentOBJ.transform.childCount == 0)
 		{
 			return;
 		}
 		employeesCheckoutIndexes.Clear();
-		foreach (Transform item in employeeParentOBJ.transform)
+		foreach (Transform item in __instance.employeeParentOBJ.transform)
 		{
 			employeesCheckoutIndexes.Add(item.GetComponent<NPC_Info>().employeeAssignedCheckoutIndex);
 		}
@@ -21188,11 +21188,11 @@ public class NPC_Manager : NetworkBehaviour
 
 	private void EmployeeNPCControl(int employeeIndex)
 	{
-		if (employeeIndex >= employeeParentOBJ.transform.childCount)
+		if (employeeIndex >= __instance.employeeParentOBJ.transform.childCount)
 		{
 			return;
 		}
-		GameObject gameObject = employeeParentOBJ.transform.GetChild(employeeIndex).gameObject;
+		GameObject gameObject = __instance.employeeParentOBJ.transform.GetChild(employeeIndex).gameObject;
 		NPC_Info component = gameObject.GetComponent<NPC_Info>();
 		int state = component.state;
 		NavMeshAgent component2 = gameObject.GetComponent<NavMeshAgent>();
@@ -22234,7 +22234,7 @@ public class NPC_Manager : NetworkBehaviour
 	private int GetNumberOfRestockingEmployees()
 	{
 		int num = 0;
-		foreach (Transform item in employeeParentOBJ.transform)
+		foreach (Transform item in __instance.employeeParentOBJ.transform)
 		{
 			if (item.GetComponent<NPC_Info>().taskPriority == 2)
 			{
@@ -22249,7 +22249,7 @@ public class NPC_Manager : NetworkBehaviour
 		int[] array = new int[6] { -1, -1, -1, -1, -1, -1 };
 		int num = 0;
 		int num2 = 0;
-		foreach (Transform item in employeeParentOBJ.transform)
+		foreach (Transform item in __instance.employeeParentOBJ.transform)
 		{
 			if (item.GetComponent<NPC_Info>().taskPriority == 2)
 			{
@@ -22566,7 +22566,7 @@ public class NPC_Manager : NetworkBehaviour
 	private int GetStorageManagerIndex(GameObject employeeRequesterOBJ)
 	{
 		int num = 0;
-		foreach (Transform item in employeeParentOBJ.transform)
+		foreach (Transform item in __instance.employeeParentOBJ.transform)
 		{
 			if (item.GetComponent<NPC_Info>().taskPriority == 3)
 			{
@@ -24625,8 +24625,8 @@ public class OrderingDevice : MonoBehaviour
 
 	private void UpdateProductExistences()
 	{
-		GameObject employeeParentOBJ = NPC_Manager.Instance.employeeParentOBJ;
-		int childCount = employeeParentOBJ.transform.childCount;
+		GameObject __instance.employeeParentOBJ = NPC_Manager.Instance.__instance.employeeParentOBJ;
+		int childCount = __instance.employeeParentOBJ.transform.childCount;
 		GameObject shelvesOBJ = NPC_Manager.Instance.shelvesOBJ;
 		GameObject storageOBJ = NPC_Manager.Instance.storageOBJ;
 		int num = 0;
@@ -24699,10 +24699,10 @@ public class OrderingDevice : MonoBehaviour
 		{
 			for (int m = 0; m < childCount; m++)
 			{
-				int boxProductID = employeeParentOBJ.transform.GetChild(m).transform.GetComponent<NPC_Info>().boxProductID;
+				int boxProductID = __instance.employeeParentOBJ.transform.GetChild(m).transform.GetComponent<NPC_Info>().boxProductID;
 				if (currentProductID == boxProductID)
 				{
-					int boxNumberOfProducts = employeeParentOBJ.transform.GetChild(m).transform.GetComponent<NPC_Info>().boxNumberOfProducts;
+					int boxNumberOfProducts = __instance.employeeParentOBJ.transform.GetChild(m).transform.GetComponent<NPC_Info>().boxNumberOfProducts;
 					if (boxNumberOfProducts > 0)
 					{
 						num8 += boxNumberOfProducts;
@@ -40501,12 +40501,12 @@ public class TimeAccelerationWatcher : MonoBehaviour
 
 	private bool EmployeesDoingNothing()
 	{
-		if (NPC_Manager.Instance.employeeParentOBJ.transform.childCount == 0)
+		if (NPC_Manager.Instance.__instance.employeeParentOBJ.transform.childCount == 0)
 		{
 			return true;
 		}
 		Transform transform = NPC_Manager.Instance.restSpotOBJ.transform;
-		foreach (Transform item in NPC_Manager.Instance.employeeParentOBJ.transform)
+		foreach (Transform item in NPC_Manager.Instance.__instance.employeeParentOBJ.transform)
 		{
 			NPC_Info component = item.GetComponent<NPC_Info>();
 			if ((component.taskPriority == 2 || component.taskPriority == 3) && Vector3.Distance(item.position, transform.position) > 6.5f)

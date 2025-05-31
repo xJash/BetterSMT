@@ -55,6 +55,8 @@ Random Features
 - Replace commas with periods in pricing
 - Use any currency symbol
 - Enable more products to stack on shelves
+- Remove most restrictions on placing structures
+- Allows most products in the game to stack 2 or 3 high
 
 Highlighting
 - Enable storage highlighting
@@ -74,7 +76,9 @@ Hotkey Configurations
 - Toggle and assign hotkey to space ladder into your hand
 - Toggle and assign hotkey to space clock into your hand
 
- Miscellaneous QoL Features
+Miscellaneous QoL Features
+- Changed base code to allow user of normal number row keys instead of just numpad
+- Change the amount of boxes to make a bale
 - Set self-checkout amount of product limit
 - Enable notifications for too expensive items
 - Enable missing product notifications
@@ -84,3 +88,4 @@ Hotkey Configurations
 - Automatically order enough product to fill the store when picking up OS Mart Tablet
 - Adjust in-game clock speed
 - Allows usage of the clock while store is open
+- Allows instantly stocking the whole box onto a shelf in 1 click

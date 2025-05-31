@@ -89,6 +89,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownToggle;
+    public static ConfigEntry<KeyboardShortcut> EmptyBoxHotkey;
+    public static ConfigEntry<bool> EmptyBoxToggle;
     public static ConfigEntry<KeyboardShortcut> PricingGunHotkey;
     public static ConfigEntry<bool> PricingGunToggle;
     public static ConfigEntry<KeyboardShortcut> BroomHotkey;
@@ -108,6 +110,9 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
 
     // === !Random QoL! ===
+    public static ConfigEntry<bool> NumberKeys;
+    public static ConfigEntry<float> SprintMoveSpeed;
+    public static ConfigEntry<float> MoveSpeed;
     public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<bool> TooExpensiveNotifications;
     public static ConfigEntry<bool> MissingProductNotifications;
@@ -118,6 +123,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockMorning;
     public static ConfigEntry<bool> AutoOrdering;
     public static ConfigEntry<bool> QuickStocking;
+    public static ConfigEntry<int> CardboardBalerValue;
 #endregion
 
     private void Awake() {
@@ -491,6 +497,18 @@ public class BetterSMT : BaseUnityPlugin {
             false,
             new ConfigDescription("Enables or disables the hotkey to enter and leave third person/first person")
         );
+        EmptyBoxToggle = Config.Bind(
+            "Hotkey Configurations",
+            "EmptyBox Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate EmptyBox")
+        );
+        EmptyBoxHotkey = Config.Bind(
+            "Hotkey Configurations",
+            "EmptyBox Hotkey",
+            new KeyboardShortcut(KeyCode.B),
+            new ConfigDescription("Hotkey to spawn a EmptyBox in your hands.")
+        );
         PricingGunToggle = Config.Bind(
             "Hotkey Configurations",
             "Pricing Gun Toggle",
@@ -593,6 +611,21 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random QoL! ===
+        NumberKeys = Config.Bind(
+            "Random QoL",
+            "Enables normal numbers",
+            false,
+            new ConfigDescription("Enables or disables using non-numpad numbers to set prices")
+        );
+
+        CardboardBalerValue = base.Config.Bind(
+            "Random QoL",
+            "Cardboard Baler",
+            10,
+            new ConfigDescription("Adjust the amount of boxes required for the cardboard baler to spit out a bale",
+                new AcceptableValueRange<int>(1, 50)
+            )
+        );
         QuickStocking = Config.Bind(
             "Random QoL",
             "Enables quick stocking",
