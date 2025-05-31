@@ -54,6 +54,7 @@ Random Features
 - Enable usage of pallets without the perk
 - Replace commas with periods in pricing
 - Use any currency symbol
+- Enable more products to stack on shelves
 
 Highlighting
 - Enable storage highlighting

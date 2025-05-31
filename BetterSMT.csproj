@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.StarterAssets">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Unity.StarterAssets.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ProjectExtensions>

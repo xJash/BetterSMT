@@ -6,28 +6,94 @@ using UnityEngine;
 
 namespace BetterSMT.Patches;
 
-// Overrides the default delete behavior in build mode
 [HarmonyPatch(typeof(Builder_Main))]
 public class Builder_MainPatch {
 
-    // Intercepts DeleteBehaviour so we can do our own thing instead
-    [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
-    private static bool DeleteBehaviourPatch(Builder_Main __instance) {
-        return DeleteWheneverPatch(__instance);
+    [HarmonyPatch(typeof(Builder_Main), "RetrieveInitialBehaviours")]
+    [HarmonyPriority(Priority.High)]
+    [HarmonyPostfix]
+    public static void WaitEndOfIEnumerable() {
+        if (BetterSMT.ProductStacking.Value == true) {
+
+            foreach (GameObject prodPrefab in ProductListing.Instance.productPrefabs) {
+                if (prodPrefab == null || !prodPrefab.TryGetComponent(out Data_Product dataProduct)) {
+                    continue;
+                }
+
+                dataProduct.isStackable = dataProduct.productID != 0;
+            }
+        }
     }
 
-    // Runs both handlers and always prevents the original method from firing
+    [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
     public static bool DeleteWheneverPatch(Builder_Main __instance) {
         _ = HandleMovableObjects(__instance);
         _ = HandleDecorations(__instance);
         return false;
     }
 
-    // Lets players delete "Movable" tagged objects (like furniture)
+    [HarmonyPatch(typeof(Builder_Main), "BuildableBehaviour")]
+    [HarmonyPrefix]
+    public static bool BuildableBehaviourPatch(Builder_Main __instance) {
+        bool freePlacement = BetterSMT.AllowFreePlacement.Value;
+
+        // Always check for ground contact
+        __instance.correctSector = __instance.CheckCorrectGround();
+
+        if (freePlacement) {
+            __instance.overlapping = false; // Ignore overlap
+            __instance.canPlace = __instance.correctSector;
+
+            if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out var highlight))
+                highlight.glowHQColor = __instance.canPlace ? Color.green : Color.red;
+        } else {
+            __instance.overlapping = __instance.pmakerFSM.FsmVariables.GetFsmBool("Overlapping").Value;
+
+            if (__instance.correctSector && !__instance.overlapping && !__instance.canPlace) {
+                __instance.canPlace = true;
+                if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out var highlight))
+                    highlight.glowHQColor = Color.green;
+            }
+
+            if ((!__instance.correctSector || __instance.overlapping) && __instance.canPlace) {
+                __instance.canPlace = false;
+                if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out var highlight))
+                    highlight.glowHQColor = Color.red;
+            }
+        }
+
+        if (__instance.MainPlayer.GetButtonDown("Build") && __instance.canPlace) {
+            if (__instance.currentElementIndex == 0) {
+                if ((bool)__instance.currentMovedOBJ?.GetComponent<NetworkIdentity>()) {
+                    GameData.Instance.GetComponent<NetworkSpawner>().GetMoveData(
+                        __instance.currentMovedOBJ,
+                        __instance.dummyOBJ.transform.position,
+                        __instance.dummyOBJ.transform.rotation.eulerAngles
+                    );
+                    __instance.currentMovedOBJ.GetComponent<Data_Container>().RemoveMoveEffect();
+                    __instance.currentMovedOBJ = null;
+                    __instance.recentlyMoved = true;
+                    if (__instance.dummyOBJ)
+                        Object.Destroy(__instance.dummyOBJ);
+                }
+            } else if (!freePlacement && GameData.Instance.gameFunds < __instance.buildableCost) {
+                GameCanvas.Instance.CreateCanvasNotification("message6");
+            } else {
+                GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawn(
+                    __instance.currentPropIndex,
+                    __instance.dummyOBJ.transform.position,
+                    __instance.dummyOBJ.transform.rotation.eulerAngles
+                );
+            }
+        }
+
+        __instance.SharedBehaviour();
+        return false;
+    }
+
     private static bool HandleMovableObjects(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 4f, __instance.lMask)) {
             if (hitInfo.transform.gameObject.CompareTag("Movable")) {
-                // Handles highlight logic
                 if (__instance.oldHitOBJ2 != null && hitInfo.transform.gameObject != __instance.oldHitOBJ2 && __instance.hEffect2 != null) {
                     __instance.hEffect2.highlighted = false;
                 }
@@ -103,7 +169,6 @@ public class Builder_MainPatch {
         return false;
     }
 
-    // Same as above, but for decorations
     private static bool HandleDecorations(Builder_Main __instance) {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo2, 4f, __instance.lMask)) {
             if (hitInfo2.transform.gameObject.CompareTag("Decoration")) {

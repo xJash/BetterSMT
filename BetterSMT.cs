@@ -72,6 +72,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static string notificationType;
 
     // === !Random Features! ===
+    public static ConfigEntry<bool> AllowFreePlacement;
+    public static ConfigEntry<bool> ProductStacking;
     public static ConfigEntry<bool> EnablePalletDisplaysPerk;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<string> CurrencyTypeToAny;
@@ -115,6 +117,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<float> ClockSpeed;
     public static ConfigEntry<bool> ClockMorning;
     public static ConfigEntry<bool> AutoOrdering;
+    public static ConfigEntry<bool> QuickStocking;
 #endregion
 
     private void Awake() {
@@ -236,7 +239,7 @@ public class BetterSMT : BaseUnityPlugin {
             "Employee & Customer Settings",
             "Employees Level",
             0,
-            new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 11 sets them all to max)",
+            new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 30 sets them all to max)",
                 new AcceptableValueRange<int>(0, 30)
             )
         );
@@ -366,6 +369,21 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random Features! ===
+
+        AllowFreePlacement = Config.Bind(
+            "Random Features",
+            "Disable Placement Blocking",
+            false,
+            new ConfigDescription("Enables or disables you to place structures wherever, even overlapping")
+        );
+
+        ProductStacking = Config.Bind(
+            "Random Features",
+            "Enable product stacking",
+            false,
+            new ConfigDescription("Enables or disables most products in the game to stack on shelves")
+        );
+
         EnablePalletDisplaysPerk = Config.Bind(
             "Random Features",
             "Enable pallet displays",
@@ -575,6 +593,13 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random QoL! ===
+        QuickStocking = Config.Bind(
+            "Random QoL",
+            "Enables quick stocking",
+            false,
+            new ConfigDescription("Enables or disables stocking the entire box onto shelf in one click")
+        );
+
         AutoOrdering = Config.Bind(
             "Random QoL",
             "Enables auto-ordering items",
