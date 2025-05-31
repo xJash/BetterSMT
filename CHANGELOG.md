@@ -1,3 +1,15 @@
+## v2.2.0
+- Option to disable tutorials on fresh saves
+- Added config and option to change amount of cardboard required to get a bale, aswell as adjusting the value of the bale accordingly
+- Added options to enable the use of normal number's instead of just numpad
+- Cleaned Builder_Main patch
+- Added a feature to make most products in the game stack two high (but only where it doesn't clip into other shelves)
+- Added removing collision with structures
+- Fixed some config mishaps
+- Added stocking an entire box in one click
+- Added a feature to pickup the tablet and automatically have everything you need to fill the store be added to shopping order
+- Further fixed some issues with comma's being replaced with periods
+
 ## v2.1.0
 - Added option to change comma's into period's
 - Added option to replace default currency symbol $ with anything

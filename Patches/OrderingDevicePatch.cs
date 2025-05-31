@@ -119,8 +119,7 @@ public static class OrderingDevicePatch {
         if (managerListParentOBJ.transform.childCount > 0) {
             foreach (Transform item in managerListParentOBJ.transform) {
                 string text = item.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text;
-                string cleanedText = text[2..].Trim();
-
+                string cleanedText = text[2..].Trim().Replace(",", ".");
                 if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) {
                     num += price;
                 } else {
