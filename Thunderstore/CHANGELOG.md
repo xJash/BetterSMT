@@ -1,3 +1,13 @@
+## v2.2.0
+- Removed Localization project
+- Cleaned Builder_Main patch
+- Added a feature to make <most> products in the game stack two high (but only where it doesn't clip with others)
+- Added removing collision with structures
+- Fixed some config mishaps
+- Added adjusting how much you can stock at once
+- Added a feature to pickup the tablet and automatically have everything you need to fill the store be stocked
+- Updated ilSpy dump
+
 ## v2.1.1 
 - Fixed comma's replacement
 - Fixed pallet display unlock
