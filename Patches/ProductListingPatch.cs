@@ -1,27 +1,88 @@
 ﻿using HarmonyLib;
+using Mirror;
 using UnityEngine;
 
-namespace BetterSMT.Patches;
+namespace BetterSMT.Patches {
+    [HarmonyPatch(typeof(ProductListing))]
+    public class ProductListingPatch {
+        public static KeyCode ManualSaleClearKey = KeyCode.U;
+        private static bool _hasPatched = false;
 
-[HarmonyPatch]
-public class AutoProductPatch {
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
+        public static void Postfix(ProductListing __instance) {
+            if (_hasPatched) {
+                return;
+            }
 
-    private static bool _hasPatched = false;
+            _hasPatched = true;
 
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
-    public static void Postfix(ProductListing __instance) {
-        if (_hasPatched) {
-            return;
+            foreach (GameObject prefab in __instance.productPrefabs) {
+                Data_Product data = prefab.GetComponent<Data_Product>();
+                if (data != null) {
+                    data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
+                }
+            }
         }
 
-        _hasPatched = true;
-
-        foreach (GameObject prefab in __instance.productPrefabs) {
-            Data_Product data = prefab.GetComponent<Data_Product>();
-            if (data != null) {
-                data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
+        [HarmonyPostfix]
+        [HarmonyPatch("Awake")]
+        public static void CaptureInstance(ProductListing __instance) {
+            if (__instance.isLocalPlayer) {
+                Debug.Log("[BetterSMT] Captured local ProductListing instance.");
+                ProductListing.Instance = __instance;
             }
+        }
+    }
+
+    [BepInEx.BepInPlugin("BetterSMT.ManualSaleClear", "BetterSMT Manual Sale Clear", "1.0.0")]
+    public class ManualSaleClearPlugin : BepInEx.BaseUnityPlugin {
+        private void Awake() {
+            Harmony harmony = new("BetterSMT.ManualSaleClear");
+            harmony.PatchAll();
+            Logger.LogInfo("BetterSMT Manual Sale Clear plugin loaded.");
+
+            GameObject listener = new("ManualSaleClearHotkeyListener");
+            _ = listener.AddComponent<ManualSaleClearHotkeyListener>();
+            DontDestroyOnLoad(listener);
+        }
+    }
+
+    public class ManualSaleClearHotkeyListener : MonoBehaviour {
+        private void Update() {
+            if (Input.GetKeyDown(ProductListingPatch.ManualSaleClearKey)) {
+                Debug.Log("[BetterSMT] Hotkey U pressed — attempting sale clear...");
+                SaleResetCommandPatch.TriggerManualSaleClear();
+            }
+        }
+    }
+
+    public static class SaleResetCommandPatch {
+        public static void TriggerManualSaleClear() {
+            if (!NetworkClient.active) {
+                Debug.LogWarning("[BetterSMT] Network client not active.");
+                return;
+            }
+
+            if (ProductListing.Instance == null) {
+                Debug.LogWarning("[BetterSMT] ProductListing.Instance is null.");
+                return;
+            }
+
+            Debug.Log("[BetterSMT] Sending CmdClearSalesManually...");
+            ProductListing.Instance.CmdClearSalesManually();
+        }
+    }
+
+    public static class ProductListingExtension {
+        [Command(requiresAuthority = false)]
+        public static void CmdClearSalesManually(this ProductListing self) {
+            Debug.Log("[BetterSMT] CmdClearSalesManually invoked.");
+            BetterSMT.CreateImportantNotification("Sales have been cleared.");
+            self.productsIDOnSale.Clear();
+            self.productsSaleDiscount.Clear();
+            self.ServerClearSalesSyncvar();
+            self.UpdateShelvesSaleSigns();
         }
     }
 }

@@ -145,6 +145,7 @@ public class GameDataPatch {
         );
     }
 
+#pragma warning disable IDE0060 // Remove unused parameter
     private static void NotifyAndTrack(List<int> list, int productID, bool notifyEnabled, string messageTemplate, GameData __instance) {
         if (!list.Contains(productID)) {
             list.Add(productID);
@@ -157,6 +158,7 @@ public class GameDataPatch {
             playerController?.CmdSendMessage(message);
         }
     }
+#pragma warning restore IDE0060 // Remove unused parameter
 
     [HarmonyPatch(typeof(GameData), "UserCode_CmdOpenSupermarket")]
     [HarmonyPostfix]

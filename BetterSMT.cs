@@ -716,6 +716,7 @@ public class BetterSMT : BaseUnityPlugin {
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
+
     public static void CreateImportantNotification(string text) {
         GameObject obj = UnityEngine.Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
