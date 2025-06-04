@@ -193,35 +193,4 @@ public class GameDataPatch {
             __instance.nextTimeToSpawnTrash = float.MaxValue;
         }
     }
-
-    [HarmonyPatch("WorkingDayControl"), HarmonyPostfix]
-    public static void WorkingDayLightControlPatch(GameData __instance) {
-        UpgradesManager upgrades = __instance.GetComponent<UpgradesManager>();
-        int space = upgrades?.spaceBought ?? 0;
-        int storage = upgrades?.storageBought ?? 0;
-
-        float baseCost = upgrades != null ? BetterSMT.LightCostMod.Value : 10f;
-        __instance.lightCost = baseCost + space + storage;
-    }
-
-    [HarmonyPatch("WorkingDayControl"), HarmonyPostfix]
-    public static void WorkingDayRentControlPatch(GameData __instance) {
-        UpgradesManager upgrades = __instance.GetComponent<UpgradesManager>();
-        int space = upgrades?.spaceBought ?? 0;
-        int storage = upgrades?.storageBought ?? 0;
-
-        float baseRent = upgrades != null ? BetterSMT.RentCostMod.Value : 10f;
-
-        __instance.rentCost = baseRent + (space * 5) + (storage * 10);
-    }
-
-    [HarmonyPatch("WorkingDayControl"), HarmonyPostfix]
-    public static void WorkingDayEmployeeControlPatch(GameData __instance) {
-        UpgradesManager upgrades = __instance.GetComponent<UpgradesManager>();
-        int maxEmployees = NPC_Manager.Instance?.maxEmployees ?? 0;
-
-        float baseCost = upgrades != null ? BetterSMT.EmployeeCostMod.Value : 0f;
-        __instance.employeesCost = baseCost + (maxEmployees * 60);
-    }
-
 }

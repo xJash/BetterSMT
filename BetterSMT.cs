@@ -21,6 +21,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> SalesActiveAmount;
     public static ConfigEntry<KeyboardShortcut> ClearSales;
     public static ConfigEntry<bool> ToggleClearSalesHotkey;
+    public static ConfigEntry<bool> SalesToggle;
+    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
 
     // === !Auto Save Settings! ===
     public static ConfigEntry<bool> AutoSaveEnabled;
@@ -41,11 +43,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<float> EmployeeCheckoutPerPerk2;
     public static ConfigEntry<float> EmployeeCheckoutPerPerk3;
     public static ConfigEntry<float> EmployeExtraCheckoutMoney;
-
-    // === !Cost Modifiers! ===
-    public static ConfigEntry<float> LightCostMod;
-    public static ConfigEntry<float> RentCostMod;
-    public static ConfigEntry<float> EmployeeCostMod;
 
     // === !Thieves & Crime Settings! ===
     public static ConfigEntry<bool> OneHitThief;
@@ -92,8 +89,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> StorageHighlighting;
 
     // === !Hotkey Configurations! ===
-    public static ConfigEntry<bool> SalesToggle;
-    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
     public static ConfigEntry<bool> ThirdPersonToggle;
     public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
@@ -124,8 +119,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> LoanEarly;
     public static ConfigEntry<bool> Tutorial;
     public static ConfigEntry<bool> NumberKeys;
-    public static ConfigEntry<float> SprintMoveSpeed;
-    public static ConfigEntry<float> MoveSpeed;
     public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<bool> TooExpensiveNotifications;
     public static ConfigEntry<bool> MissingProductNotifications;
@@ -150,6 +143,18 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Sales Settings! ===
+        SalesHotkey = Config.Bind(
+            "Sales Settings",
+            "Sales Tablet Hotkey",
+            new KeyboardShortcut(KeyCode.L),
+            new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands.")
+        );
+        SalesToggle = Config.Bind(
+            "Sales Settings",
+            "Sales Tablet Toggle",
+            false,
+            new ConfigDescription("Enables the hotkey to activate Sales Tablet")
+        );
         ClearSales = Config.Bind(
             "Sales Settings",
             "Clear Sales",
@@ -294,32 +299,6 @@ public class BetterSMT : BaseUnityPlugin {
             0.05f,
             new ConfigDescription("Adjust the amount of time it takes for employees to restock per perk (Lower = faster)",
                 new AcceptableValueRange<float>(0.01f, 0.15f)
-            )
-        );
-
-        // === !Cost Modifiers! ===
-        LightCostMod = base.Config.Bind(
-            "Cost Modifiers",
-            "Adjust the cost of Lights at the end of the day",
-            10f,
-            new ConfigDescription("Adjust the cost of lights at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 30f)
-            )
-        );
-        EmployeeCostMod = base.Config.Bind(
-            "Cost Modifiers",
-            "Adjust the cost of Employee at the end of the day",
-            10f,
-            new ConfigDescription("Adjust the cost of Employee at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 30f)
-            )
-        );
-        RentCostMod = base.Config.Bind(
-            "Cost Modifiers",
-            "Adjust the cost of Rent at the end of the day",
-            10f,
-            new ConfigDescription("Adjust the cost of Rent at the end of the day (Higher = more expensive)",
-                new AcceptableValueRange<float>(0.1f, 30f)
             )
         );
 
@@ -478,18 +457,6 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Hotkey Configurations! ===
-        SalesHotkey = Config.Bind(
-            "Sales Settings",
-            "Sales Tablet Hotkey",
-            new KeyboardShortcut(KeyCode.L),
-            new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands.")
-        );
-        SalesToggle = Config.Bind(
-            "Sales Settings",
-            "Sales Tablet Toggle",
-            false,
-            new ConfigDescription("Enables the hotkey to activate Sales Tablet")
-        );
         LadderHotkey = Config.Bind(
             "Hotkey Configurations",
             "Sledgehammer Hotkey",
