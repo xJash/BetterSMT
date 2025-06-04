@@ -19,6 +19,8 @@ public class BetterSMT : BaseUnityPlugin {
 
     // === !Sales Settings! ===
     public static ConfigEntry<int> SalesActiveAmount;
+    public static ConfigEntry<KeyboardShortcut> ClearSales;
+    public static ConfigEntry<bool> ToggleClearSalesHotkey;
 
     // === !Auto Save Settings! ===
     public static ConfigEntry<bool> AutoSaveEnabled;
@@ -71,7 +73,15 @@ public class BetterSMT : BaseUnityPlugin {
     public static bool notify = false;
     public static string notificationType;
 
+    // === !Mini Transport Vehicle! ===
+    public static ConfigEntry<bool> EnableMTV;
+    public static ConfigEntry<int> MaxBoxes;
+    public static ConfigEntry<float> AutoPickupRange;
+    public static ConfigEntry<KeyboardShortcut> MTVHotkey;
+    public static ConfigEntry<float> DropCooldown;
+
     // === !Random Features! ===
+    public static ConfigEntry<bool> OneClickCheckMark;
     public static ConfigEntry<bool> AllowFreePlacement;
     public static ConfigEntry<bool> ProductStacking;
     public static ConfigEntry<bool> EnablePalletDisplaysPerk;
@@ -110,6 +120,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
 
     // === !Random QoL! ===
+    public static ConfigEntry<bool> SaveGame;
+    public static ConfigEntry<bool> LoanEarly;
     public static ConfigEntry<bool> Tutorial;
     public static ConfigEntry<bool> NumberKeys;
     public static ConfigEntry<float> SprintMoveSpeed;
@@ -138,6 +150,18 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Sales Settings! ===
+        ClearSales = Config.Bind(
+            "Sales Settings",
+            "Clear Sales",
+            new KeyboardShortcut(KeyCode.L),
+            new ConfigDescription("Hotkey to clear current sales.")
+        );
+        ToggleClearSalesHotkey = base.Config.Bind(
+            "Sales Settings",
+            "Enables or disables hotkey to clear sales",
+            false,
+             new ConfigDescription("Enables or disables the hotkey to clear sales")
+        );
         SalesActiveAmount = base.Config.Bind(
             "Sales Settings",
             "Amount of sales unlocked each perk",
@@ -375,7 +399,50 @@ public class BetterSMT : BaseUnityPlugin {
             new ConfigDescription("Enables or disables highlighting of product and storage shelves when holding a box")
         );
 
+        // === !Mini Transport Vehicle! ===
+        EnableMTV = Config.Bind(
+            "Mini Transport Vehicle",
+            "Enable custom Mini Transport Vehicle features",
+            false,
+            new ConfigDescription("Enables or disables custom Mini Transport Vehicle features below.")
+        );
+        AutoPickupRange = base.Config.Bind(
+            "Mini Transport Vehicle",
+            "Change the range of auto-picking up boxes",
+            3f,
+            new ConfigDescription("Adjusts how far away a box will be automatically picked up onto the Mini Transport Vehicle.",
+                new AcceptableValueRange<float>(1f, 30f)
+            )
+        );
+        MaxBoxes = base.Config.Bind(
+            "Mini Transport Vehicle",
+            "Change the max boxes",
+            6,
+            new ConfigDescription("Adjusts the max amount of boxes the Mini Transport Vehicle will hold at one time.",
+                new AcceptableValueRange<int>(6, 16)
+            )
+        );
+        MTVHotkey = Config.Bind(
+            "Mini Transport Vehicle",
+            "Change the drop hotkey",
+            new KeyboardShortcut(KeyCode.L),
+            new ConfigDescription("Changes the hotkey used to dispense all boxes from the Mini Transport Vehicle instantly.")
+        );
+        DropCooldown = base.Config.Bind(
+            "Mini Transport Vehicle",
+            "Item Pickup Cooldown",
+            10f,
+            new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.",
+                new AcceptableValueRange<float>(1f, 30f)
+            )
+        );
         // === !Random Features! ===
+        OneClickCheckMark = Config.Bind(
+            "Random Features",
+            "Surveillance Camera One Click",
+            false,
+            new ConfigDescription("Makes all customers one click when using security console")
+        );
 
         AllowFreePlacement = Config.Bind(
             "Random Features",
@@ -612,6 +679,19 @@ public class BetterSMT : BaseUnityPlugin {
         );
 
         // === !Random QoL! ===
+        SaveGame = Config.Bind(
+            "Random QoL",
+            "Save Game Button",
+            false,
+            new ConfigDescription("Enables or disables the Save Game button in the ESC menu")
+        );
+        LoanEarly = Config.Bind(
+            "Random QoL",
+            "Payoff Loans Early",
+            false,
+            new ConfigDescription("Enables or disables a button to pay off loans early")
+        );
+
         Tutorial = Config.Bind(
             "Random QoL",
             "Enables or disables the tutorial",

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using HutongGames.PlayMaker;
 using Mirror;
 using UnityEngine;
 
@@ -50,8 +51,12 @@ namespace BetterSMT.Patches {
 
     public class ManualSaleClearHotkeyListener : MonoBehaviour {
         private void Update() {
-            if (Input.GetKeyDown(ProductListingPatch.ManualSaleClearKey)) {
-                Debug.Log("[BetterSMT] Hotkey U pressed — attempting sale clear...");
+            if (!BetterSMT.ToggleClearSalesHotkey.Value) return; 
+
+            if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) return; 
+
+            if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey)) {
+                Debug.Log("[BetterSMT] Hotkey pressed — attempting sale clear...");
                 SaleResetCommandPatch.TriggerManualSaleClear();
             }
         }

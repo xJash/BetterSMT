@@ -83,17 +83,19 @@ public static class OrderingDevicePatch {
             return Mathf.Round(raw * 100f) / 100f;
         }
     }
-
-    [HarmonyPatch("ClearProduct")]
+    [HarmonyPatch(typeof(OrderingDevice), "ClearProduct")]
     [HarmonyPrefix]
-    public static void ClearProductPatch(OrderingDevice __instance, int productID) {
+    public static bool ClearProductPatch(OrderingDevice __instance, int productID) {
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true; // Run original method
+
         if (__instance.listParentOBJ.transform.childCount == 0) {
-            return;
+            return false;
         }
+
         for (int i = 0; i < __instance.listParentOBJ.transform.childCount; i++) {
             Transform child = __instance.listParentOBJ.transform.GetChild(i);
             if (child.GetComponent<OrderingListReferences>().productID == productID) {
-                Object.Destroy(child.gameObject);
+                UnityEngine.Object.Destroy(child.gameObject);
                 __instance.stylusAnimator.SetFloat("AnimationFactor", 1f);
                 __instance.stylusAnimator.Play("StylusAnimation");
                 _ = __instance.StartCoroutine(__instance.AnimationHighlight(1));
@@ -105,8 +107,38 @@ public static class OrderingDevicePatch {
                 break;
             }
         }
+
         _ = __instance.StartCoroutine(__instance.SetInListField(productID));
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+        return false; // Skip original method
+    }
+
+    [HarmonyPatch(typeof(OrderingDevice), "CopyManagerBlackboardList")]
+    [HarmonyPrefix]
+    public static bool CopyManagerBlackboardListPatch(OrderingDevice __instance) {
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
+
+        GameObject shoppingListParent = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent;
+        for (int i = 0; i < shoppingListParent.transform.childCount; i++) {
+            int thisSkillIndex = shoppingListParent.transform.GetChild(i).GetComponent<InteractableData>().thisSkillIndex;
+            __instance.AddProductbase(thisSkillIndex);
+        }
+
+        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+        return false;
+    }
+
+    [HarmonyPatch(typeof(OrderingDevice), "AddProduct")]
+    [HarmonyPrefix]
+    public static bool AddProductPatch(OrderingDevice __instance, int productID) {
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
+
+        __instance.AddProductbase(productID);
+        float boxPrice = __instance.RetrievePricePerBox(productID);
+        GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, boxPrice);
+        _ = __instance.StartCoroutine(__instance.SetInListField(productID));
+        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+        return false;
     }
 
     public static IEnumerator CalculateShoppingListTotalOverrideOrdering(OrderingDevice __instance) {
@@ -131,26 +163,4 @@ public static class OrderingDevicePatch {
         string text2 = ProductListing.Instance.ConvertFloatToTextPrice(num);
         __instance.totalPriceField.text = text2;
     }
-
-    [HarmonyPatch("CopyManagerBlackboardList")]
-    [HarmonyPrefix]
-    public static void CopyManagerBlackboardListPatch(OrderingDevice __instance) {
-        GameObject shoppingListParent = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent;
-        for (int i = 0; i < shoppingListParent.transform.childCount; i++) {
-            int thisSkillIndex = shoppingListParent.transform.GetChild(i).GetComponent<InteractableData>().thisSkillIndex;
-            __instance.AddProductbase(thisSkillIndex);
-        }
-        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
-    }
-
-    [HarmonyPatch("AddProduct")]
-    [HarmonyPrefix]
-    public static void AddProductPatch(OrderingDevice __instance, int productID) {
-        __instance.AddProductbase(productID);
-        float boxPrice = __instance.RetrievePricePerBox(productID);
-        GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, boxPrice);
-        _ = __instance.StartCoroutine(__instance.SetInListField(productID));
-        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
-    }
-
 }

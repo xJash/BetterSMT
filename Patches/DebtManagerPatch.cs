@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using BepInEx.Configuration;
+using HarmonyLib;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,7 @@ public static class Patch_AddEarlyLoanPaymentButton {
     private static BetterSMTLoanSystem loanSystemInstance;
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
-    private static void Postfix(DebtManager __instance) {
+    private static void AutopayInvoices(DebtManager __instance) {
         if (__instance == null) {
             return;
         }
@@ -21,6 +22,9 @@ public static class Patch_AddEarlyLoanPaymentButton {
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void UpdateInvoiceMenu() {
+        if (!BetterSMT.LoanEarly.Value) {
+            return; 
+        }
         GameObject invoiceMenu = GameObject.Find("Interactables/Canvas_Manager/Tabs/Invoices_Tab/");
         if (invoiceMenu == null) {
             BetterSMT.Logger.LogWarning("Invoice Menu not found.");

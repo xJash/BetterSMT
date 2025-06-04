@@ -25,6 +25,9 @@ public class GameDataPatch {
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void UpdateEscapeMenu() {
+        if (!BetterSMT.SaveGame.Value) {
+            return;
+        }
         GameObject escapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
         if (escapeMenu == null) {
             BetterSMT.Logger.LogWarning("EscapeMenu not found.");
