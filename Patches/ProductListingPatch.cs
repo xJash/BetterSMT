@@ -12,17 +12,13 @@ namespace BetterSMT.Patches {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
         public static void Postfix(ProductListing __instance) {
-            if (_hasPatched) {
-                return;
-            }
+            if (_hasPatched) return;
 
             _hasPatched = true;
 
             foreach (GameObject prefab in __instance.productPrefabs) {
                 Data_Product data = prefab.GetComponent<Data_Product>();
-                if (data != null) {
-                    data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
-                }
+                if (data != null) data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
             }
         }
 
@@ -41,7 +37,7 @@ namespace BetterSMT.Patches {
         private void Awake() {
             Harmony harmony = new("BetterSMT.ManualSaleClear");
             harmony.PatchAll();
-            Logger.LogInfo("BetterSMT Manual Sale Clear plugin loaded.");
+            Logger.LogInfo("BetterSMT Manual Sale Clear module loaded.");
 
             GameObject listener = new("ManualSaleClearHotkeyListener");
             _ = listener.AddComponent<ManualSaleClearHotkeyListener>();
@@ -51,12 +47,11 @@ namespace BetterSMT.Patches {
 
     public class ManualSaleClearHotkeyListener : MonoBehaviour {
         private void Update() {
-            if (!BetterSMT.ToggleClearSalesHotkey.Value) return; 
+            if (!BetterSMT.ToggleClearSalesHotkey.Value) return;
 
-            if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) return; 
+            if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) return;
 
             if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey)) {
-                Debug.Log("[BetterSMT] Hotkey pressed — attempting sale clear...");
                 SaleResetCommandPatch.TriggerManualSaleClear();
             }
         }
@@ -74,7 +69,6 @@ namespace BetterSMT.Patches {
                 return;
             }
 
-            Debug.Log("[BetterSMT] Sending CmdClearSalesManually...");
             ProductListing.Instance.CmdClearSalesManually();
         }
     }
@@ -82,7 +76,6 @@ namespace BetterSMT.Patches {
     public static class ProductListingExtension {
         [Command(requiresAuthority = false)]
         public static void CmdClearSalesManually(this ProductListing self) {
-            Debug.Log("[BetterSMT] CmdClearSalesManually invoked.");
             BetterSMT.CreateImportantNotification("Sales have been cleared.");
             self.productsIDOnSale.Clear();
             self.productsSaleDiscount.Clear();

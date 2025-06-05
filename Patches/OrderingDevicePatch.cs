@@ -15,11 +15,6 @@ public static class OrderingDevicePatch {
             ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
             ProductListing listing = ProductListing.Instance;
             GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
-
-            if (manager == null || listing == null || shelves == null) {
-                return;
-            }
-
             int addedTotal = 0;
 
             for (int productId = 0; productId < listing.productPrefabs.Length; productId++) {
@@ -49,9 +44,7 @@ public static class OrderingDevicePatch {
                     TMP_Text textField = fieldInfo.GetValue(__instance) as TMP_Text;
                     if (textField != null) {
                         string rawText = textField.text.Replace("x", "").Replace(",", ".");
-                        if (float.TryParse(rawText, out float parsed)) {
-                            boxesInStore = parsed;
-                        }
+                        if (float.TryParse(rawText, out float parsed)) boxesInStore = parsed;
                     }
                 }
 
@@ -64,8 +57,6 @@ public static class OrderingDevicePatch {
                     addedTotal++;
                 }
             }
-
-            Debug.Log($"[BetterSMT] Auto-ordering complete. {addedTotal} boxes added to cart.");
         }
     }
 
@@ -86,11 +77,9 @@ public static class OrderingDevicePatch {
     [HarmonyPatch(typeof(OrderingDevice), "ClearProduct")]
     [HarmonyPrefix]
     public static bool ClearProductPatch(OrderingDevice __instance, int productID) {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true; // Run original method
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
 
-        if (__instance.listParentOBJ.transform.childCount == 0) {
-            return false;
-        }
+        if (__instance.listParentOBJ.transform.childCount == 0) return false;
 
         for (int i = 0; i < __instance.listParentOBJ.transform.childCount; i++) {
             Transform child = __instance.listParentOBJ.transform.GetChild(i);
@@ -110,7 +99,7 @@ public static class OrderingDevicePatch {
 
         _ = __instance.StartCoroutine(__instance.SetInListField(productID));
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
-        return false; // Skip original method
+        return false;
     }
 
     [HarmonyPatch(typeof(OrderingDevice), "CopyManagerBlackboardList")]
@@ -143,7 +132,8 @@ public static class OrderingDevicePatch {
 
     public static IEnumerator CalculateShoppingListTotalOverrideOrdering(OrderingDevice __instance) {
         GameObject managerListParentOBJ = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent;
-        yield return new WaitForEndOfFrame();
+        yield
+        return new WaitForEndOfFrame();
 
         __instance.totalBoxesAmount.text = "x" + __instance.listParentOBJ.transform.childCount;
         float num = 0f;
@@ -154,8 +144,6 @@ public static class OrderingDevicePatch {
                 string cleanedText = text[2..].Trim().Replace(",", ".");
                 if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) {
                     num += price;
-                } else {
-                    Debug.LogWarning($"BetterSMT: Failed to parse float from price string '{cleanedText}'");
                 }
             }
         }

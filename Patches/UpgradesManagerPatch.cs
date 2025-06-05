@@ -12,9 +12,7 @@ public class UpgradesManagerPatch {
     public class ClockSpeedPatch {
         [HarmonyPostfix]
         public static void Postfix(UpgradesManager __instance) {
-            typeof(UpgradesManager)
-                .GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance)?
-                .SetValue(__instance, BetterSMT.ClockSpeed?.Value ?? 1f);
+            typeof(UpgradesManager).GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance)?.SetValue(__instance, BetterSMT.ClockSpeed?.Value ?? 1f);
 
             if (BetterSMT.AllTrashToRecyclers?.Value == true) {
                 __instance.normalTrashContainerOBJ?.SetActive(false);
@@ -33,9 +31,9 @@ public class UpgradesManagerPatch {
             BetterSMT.Instance.StartCoroutine(__instance.AuxiliarSetUIPallets());
         }
     }
+
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
     private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
-        #region Switch- Perks
         switch (perkIndex) {
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
@@ -98,7 +96,6 @@ public class UpgradesManagerPatch {
                 break;
             default:
                 return true;
-                #endregion
         }
 
         GameObject obj = __instance.UIPerksParent.transform.GetChild(perkIndex).gameObject;

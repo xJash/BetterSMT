@@ -8,7 +8,8 @@ namespace BetterSMT.Patches;
 
 [HarmonyPatch]
 public static class VehicleBoxManagerPatch {
-    private static readonly Dictionary<GameObject, float> recentlyDropped = [];
+    private static readonly Dictionary<GameObject,
+    float> recentlyDropped = [];
     private static readonly List<GameObject> loadedBoxes = [];
 
     private static class BoxLayout {
@@ -24,28 +25,26 @@ public static class VehicleBoxManagerPatch {
     [HarmonyPostfix]
     [HarmonyPatch(typeof(MiniTransportBehaviour), nameof(MiniTransportBehaviour.Update))]
     public static void VehicleUpdatePostfix(MiniTransportBehaviour __instance) {
-        if (!BetterSMT.EnableMTV.Value) return;  // <-- Only run if enabled
+        if (!BetterSMT.EnableMTV.Value) return;
         if (!__instance.isActiveAndEnabled) return;
 
         TryPickupNearbyBoxes(__instance);
 
-        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey))  // <-- Use configured hotkey
-            _ = DropBoxesSequentially(__instance);
+        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey)) _ = DropBoxesSequentially(__instance);
     }
 
     private static void TryPickupNearbyBoxes(MiniTransportBehaviour vehicle) {
         int currentCount = loadedBoxes.Count;
-        if (currentCount >= BetterSMT.MaxBoxes.Value) return;  // <-- Use config max boxes
+        if (currentCount >= BetterSMT.MaxBoxes.Value) return;
 
-        Collider[] nearby = Physics.OverlapSphere(vehicle.transform.position, BetterSMT.AutoPickupRange.Value);  // <-- Config range
+        Collider[] nearby = Physics.OverlapSphere(vehicle.transform.position, BetterSMT.AutoPickupRange.Value);
         float currentTime = Time.time;
 
         foreach (Collider col in nearby) {
             if (!col.TryGetComponent(out BoxData box) || loadedBoxes.Contains(box.gameObject)) continue;
             if (!box.TryGetComponent(out NetworkIdentity _)) continue;
 
-            if (recentlyDropped.TryGetValue(box.gameObject, out float dropTime) &&
-                (currentTime - dropTime < BetterSMT.DropCooldown.Value)) {  // DropCooldown still hardcoded, or you can config it too
+            if (recentlyDropped.TryGetValue(box.gameObject, out float dropTime) && (currentTime - dropTime < BetterSMT.DropCooldown.Value)) {
                 continue;
             }
 
@@ -60,9 +59,7 @@ public static class VehicleBoxManagerPatch {
             if (rb != null) rb.isKinematic = true;
 
             bool isBackRow = (loadedBoxes.Count % 4) >= 2;
-            box.transform.localRotation = isBackRow
-                ? Quaternion.Euler(0f, 180f, 0f)
-                : Quaternion.identity;
+            box.transform.localRotation = isBackRow ? Quaternion.Euler(0f, 180f, 0f) : Quaternion.identity;
 
             loadedBoxes.Add(box.gameObject);
         }
@@ -98,10 +95,7 @@ public static class VehicleBoxManagerPatch {
             int row = i / boxesPerRow;
             int col = i % boxesPerRow;
 
-            Vector3 offset =
-                (vehicle.transform.right * ((col * spacing) - spacing)) +
-                (vehicle.transform.forward * (row * spacing)) +
-                (vehicle.transform.up * (row * spacing * 0.5f));
+            Vector3 offset = (vehicle.transform.right * ((col * spacing) - spacing)) + (vehicle.transform.forward * (row * spacing)) + (vehicle.transform.up * (row * spacing * 0.5f));
 
             Vector3 finalPos = dropOrigin + offset;
 

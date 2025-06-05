@@ -7,9 +7,7 @@ internal class NotificationHandler {
     [HarmonyPatch("Update")]
     [HarmonyPostfix]
     public static void NotificationHandler_Postfix(GameCanvas __instance, ref bool ___inCooldown) {
-        if (!BetterSMT.ToggleDoublePrice.Value || !BetterSMT.notify) {
-            return;
-        }
+        if (!BetterSMT.ToggleDoublePrice.Value || !BetterSMT.notify) return;
 
         ___inCooldown = false;
         BetterSMT.notify = false;
@@ -29,7 +27,7 @@ internal class NotificationHandler {
                 notification += $"Rounding has been {(BetterSMT.roundDown.Value ? "enabled" : "disabled")}";
                 break;
             default:
-                return; 
+                return;
         }
 
         __instance.CreateCanvasNotification(notification);

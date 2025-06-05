@@ -13,32 +13,26 @@ public class ManagerBlackboardPatch {
 
     [HarmonyPatch("ServerCargoSpawner", MethodType.Enumerator), HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> InstantCargoSpawner(IEnumerable<CodeInstruction> instructions) {
-        return BetterSMT.FastBoxSpawns.Value ?
-            new CodeMatcher(instructions)
-                .Start()
-                .MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)])))
-                .Repeat(matcher => {
-                    _ = matcher.Advance(-1);
-                    _ = matcher.SetOperandAndAdvance(0.01f);
-                    _ = matcher.Advance(1);
-                })
-                .InstructionEnumeration() :
+        return BetterSMT.FastBoxSpawns.Value ? new CodeMatcher(instructions).Start().MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)]))).Repeat(matcher => {
+            _ = matcher.Advance(-1);
+            _ = matcher.SetOperandAndAdvance(0.01f);
+            _ = matcher.Advance(1);
+        }).InstructionEnumeration() :
 
-            instructions;
+        instructions;
     }
 
     public static IEnumerator CalculateShoppingListTotalOverride(ManagerBlackboard __instance) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            yield return new WaitForEndOfFrame();
+            yield
+            return new WaitForEndOfFrame();
             __instance.shoppingTotalCharge = 0f;
             if (__instance.shoppingListParent.transform.childCount > 0) {
                 foreach (Transform item in __instance.shoppingListParent.transform) {
                     string text = item.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text;
 
                     string cleanedText = text[2..].Trim();
-                    if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) {
-                        __instance.shoppingTotalCharge += price;
-                    }
+                    if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) __instance.shoppingTotalCharge += price;
                 }
             }
             __instance.totalChargeOBJ.text = ProductListing.Instance.ConvertFloatToTextPrice(__instance.shoppingTotalCharge);
@@ -49,9 +43,7 @@ public class ManagerBlackboardPatch {
     [HarmonyPrefix]
     public static void RemoveShoppingListProductPatch(ManagerBlackboard __instance, int indexToRemove) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            if (__instance.shoppingListParent.transform.childCount > 0) {
-                Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
-            }
+            if (__instance.shoppingListParent.transform.childCount > 0) Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
         }
     }
@@ -60,9 +52,7 @@ public class ManagerBlackboardPatch {
     [HarmonyPrefix]
     public static void RemoveAllShoppingListPatch(ManagerBlackboard __instance) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            if (__instance.shoppingListParent.transform.childCount == 0) {
-                return;
-            }
+            if (__instance.shoppingListParent.transform.childCount == 0) return;
             foreach (Transform item in __instance.shoppingListParent.transform) {
                 Object.Destroy(item.gameObject);
             }

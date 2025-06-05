@@ -16,21 +16,15 @@ public class NPC_InfoPatch {
         [HarmonyPatch("CreateNPCCharacter")]
         [HarmonyPostfix]
         private static void MakeNPCsThieves(ref bool ___isAThief) {
-            ___isAThief = BetterSMT.AllNPCAreThieves.Value
-            || (!BetterSMT.DisableAllThieves.Value
-            && ___isAThief);
+            ___isAThief = BetterSMT.AllNPCAreThieves.Value || (!BetterSMT.DisableAllThieves.Value && ___isAThief);
         }
     }
 
     [HarmonyPatch("AuxiliarAnimationPlay"), HarmonyPrefix]
     private static bool AuxiliarAnimationPlayPatch(NPC_Info __instance, ref int animationIndex) {
-        if (!BetterSMT.OneHitThief.Value) {
-            return true;
-        }
+        if (!BetterSMT.OneHitThief.Value) return true;
 
-        if (!__instance.beingPushed) {
-            _ = __instance.StartCoroutine(__instance.StopSpeed());
-        }
+        if (!__instance.beingPushed) _ = __instance.StartCoroutine(__instance.StopSpeed());
         if (__instance.isAThief && __instance.productsIDCarrying.Count > 0) {
             int count = __instance.productsIDCarrying.Count;
             for (int i = 0; i < count; i++) {
@@ -43,9 +37,7 @@ public class NPC_InfoPatch {
                 __instance.productsCarryingPrice.RemoveAt(0);
             }
         }
-        if (__instance.isAThief && __instance.productsIDCarrying.Count == 0 && (bool)__instance.transform.Find("ThiefCanvas").gameObject && __instance.transform.Find("ThiefCanvas").gameObject.activeSelf) {
-            __instance.RpcHideThief();
-        }
+        if (__instance.isAThief && __instance.productsIDCarrying.Count == 0 && (bool)__instance.transform.Find("ThiefCanvas").gameObject && __instance.transform.Find("ThiefCanvas").gameObject.activeSelf) __instance.RpcHideThief();
         int num = Random.Range(0, 9);
         __instance.RpcAnimationPlay(animationIndex);
         __instance.RPCNotificationAboveHead("NPCmessagehit" + num, "");
