@@ -39,9 +39,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> EmployeesEnabled;
     public static ConfigEntry<float> EmployeeSpeedPerPerk;
     public static ConfigEntry<float> EmployeeRestockPerPerk;
-    public static ConfigEntry<float> EmployeeCheckoutPerPerk1;
-    public static ConfigEntry<float> EmployeeCheckoutPerPerk2;
-    public static ConfigEntry<float> EmployeeCheckoutPerPerk3;
+    public static ConfigEntry<float> EmployeeCheckoutPerPerk;
     public static ConfigEntry<float> EmployeExtraCheckoutMoney;
 
     // === !Thieves & Crime Settings! ===
@@ -148,9 +146,7 @@ public class BetterSMT : BaseUnityPlugin {
 
         // === !Employee & Customer Settings! ===
         EmployeExtraCheckoutMoney = base.Config.Bind("Employee & Customer Settings", "Employe Increased Income While Checking Customer Out Perk", 0.1f, new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more income)", new AcceptableValueRange<float>(0f, 0.3f)));
-        EmployeeCheckoutPerPerk1 = base.Config.Bind("Employee & Customer Settings", "Employee Checkout Time Reduction Perk 1", .15f, new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 1) (Lower = slower)", new AcceptableValueRange<float>(0.01f, 0.45f)));
-        EmployeeCheckoutPerPerk2 = base.Config.Bind("Employee & Customer Settings", "Employee Checkout Time Reduction Perk 2", .2f, new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 2) (Lower = slower)", new AcceptableValueRange<float>(0.01f, 0.6f)));
-        EmployeeCheckoutPerPerk3 = base.Config.Bind("Employee & Customer Settings", "Employee Checkout Time Reduction Perk 3", .15f, new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 3) (Lower = slower)", new AcceptableValueRange<float>(0.01f, 0.45f)));
+        EmployeeCheckoutPerPerk = base.Config.Bind("Employee & Customer Settings", "Employee Checkout Time Reduction Perk 1", .15f, new ConfigDescription("Adjust the amount of time employees wait to scan items in checkout (Perk 1) (Lower = slower)", new AcceptableValueRange<float>(0.01f, 0.24f)));
         MaxCustomerCart = base.Config.Bind("Employee & Customer Settings", "Maximum amount of product customers will buy", 25, new ConfigDescription("Adjust the maximum amount of product customers will buy", new AcceptableValueRange<int>(1, 75)));
         BaseCustomerCart = base.Config.Bind("Employee & Customer Settings", "Minimum amount of product customers will buy", 5, new ConfigDescription("Adjust the minimum amount of product customers will buy", new AcceptableValueRange<int>(1, 15)));
         BaseCustomerSpawns = base.Config.Bind("Employee & Customer Settings", "Minimum amount of customers that will spawn", 3, new ConfigDescription("Adjust the minimum amount of customer's that can spawn", new AcceptableValueRange<int>(1, 9)));
