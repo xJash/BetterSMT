@@ -8,7 +8,9 @@ public class NPC_ManagerPatch {
     [HarmonyPostfix]
     [HarmonyPatch("Awake")]
     public static void Awake_Postfix(NPC_Manager __instance) {
-        if (BetterSMT.EmployeeRerolls.Value) __instance.rerollTimes = 999;
+        if (BetterSMT.EmployeeRerolls.Value) {
+            __instance.rerollTimes = 999;
+        }
     }
 
 

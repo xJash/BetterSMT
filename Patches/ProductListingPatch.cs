@@ -12,13 +12,17 @@ namespace BetterSMT.Patches {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
         public static void Postfix(ProductListing __instance) {
-            if (_hasPatched) return;
+            if (_hasPatched) {
+                return;
+            }
 
             _hasPatched = true;
 
             foreach (GameObject prefab in __instance.productPrefabs) {
                 Data_Product data = prefab.GetComponent<Data_Product>();
-                if (data != null) data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
+                if (data != null) {
+                    data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
+                }
             }
         }
 
@@ -26,7 +30,6 @@ namespace BetterSMT.Patches {
         [HarmonyPatch("Awake")]
         public static void CaptureInstance(ProductListing __instance) {
             if (__instance.isLocalPlayer) {
-                Debug.Log("[BetterSMT] Captured local ProductListing instance.");
                 ProductListing.Instance = __instance;
             }
         }
@@ -60,12 +63,10 @@ namespace BetterSMT.Patches {
     public static class SaleResetCommandPatch {
         public static void TriggerManualSaleClear() {
             if (!NetworkClient.active) {
-                Debug.LogWarning("[BetterSMT] Network client not active.");
                 return;
             }
 
             if (ProductListing.Instance == null) {
-                Debug.LogWarning("[BetterSMT] ProductListing.Instance is null.");
                 return;
             }
 

@@ -25,24 +25,38 @@ public static class VehicleBoxManagerPatch {
     [HarmonyPostfix]
     [HarmonyPatch(typeof(MiniTransportBehaviour), nameof(MiniTransportBehaviour.Update))]
     public static void VehicleUpdatePostfix(MiniTransportBehaviour __instance) {
-        if (!BetterSMT.EnableMTV.Value) return;
-        if (!__instance.isActiveAndEnabled) return;
+        if (!BetterSMT.EnableMTV.Value) {
+            return;
+        }
+
+        if (!__instance.isActiveAndEnabled) {
+            return;
+        }
 
         TryPickupNearbyBoxes(__instance);
 
-        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey)) _ = DropBoxesSequentially(__instance);
+        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey)) {
+            _ = DropBoxesSequentially(__instance);
+        }
     }
 
     private static void TryPickupNearbyBoxes(MiniTransportBehaviour vehicle) {
         int currentCount = loadedBoxes.Count;
-        if (currentCount >= BetterSMT.MaxBoxes.Value) return;
+        if (currentCount >= BetterSMT.MaxBoxes.Value) {
+            return;
+        }
 
         Collider[] nearby = Physics.OverlapSphere(vehicle.transform.position, BetterSMT.AutoPickupRange.Value);
         float currentTime = Time.time;
 
         foreach (Collider col in nearby) {
-            if (!col.TryGetComponent(out BoxData box) || loadedBoxes.Contains(box.gameObject)) continue;
-            if (!box.TryGetComponent(out NetworkIdentity _)) continue;
+            if (!col.TryGetComponent(out BoxData box) || loadedBoxes.Contains(box.gameObject)) {
+                continue;
+            }
+
+            if (!box.TryGetComponent(out NetworkIdentity _)) {
+                continue;
+            }
 
             if (recentlyDropped.TryGetValue(box.gameObject, out float dropTime) && (currentTime - dropTime < BetterSMT.DropCooldown.Value)) {
                 continue;
@@ -50,13 +64,17 @@ public static class VehicleBoxManagerPatch {
 
             _ = recentlyDropped.Remove(box.gameObject);
 
-            if (loadedBoxes.Count >= BetterSMT.MaxBoxes.Value) break;
+            if (loadedBoxes.Count >= BetterSMT.MaxBoxes.Value) {
+                break;
+            }
 
             box.transform.SetParent(vehicle.transform);
             box.transform.localPosition = GetNextLoadPosition(loadedBoxes.Count);
 
-            var rb = box.GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = true;
+            Rigidbody rb = box.GetComponent<Rigidbody>();
+            if (rb != null) {
+                rb.isKinematic = true;
+            }
 
             bool isBackRow = (loadedBoxes.Count % 4) >= 2;
             box.transform.localRotation = isBackRow ? Quaternion.Euler(0f, 180f, 0f) : Quaternion.identity;
@@ -80,7 +98,9 @@ public static class VehicleBoxManagerPatch {
     }
 
     private static async Task DropBoxesSequentially(MiniTransportBehaviour vehicle) {
-        if (loadedBoxes.Count == 0) return;
+        if (loadedBoxes.Count == 0) {
+            return;
+        }
 
         const float spacing = 0.4f;
         const int boxesPerRow = 3;
@@ -90,7 +110,9 @@ public static class VehicleBoxManagerPatch {
 
         for (int i = 0; i < loadedBoxes.Count; i++) {
             GameObject box = loadedBoxes[i];
-            if (box == null) continue;
+            if (box == null) {
+                continue;
+            }
 
             int row = i / boxesPerRow;
             int col = i % boxesPerRow;
@@ -103,8 +125,10 @@ public static class VehicleBoxManagerPatch {
             box.transform.position = finalPos;
             box.transform.rotation = Quaternion.LookRotation(vehicle.transform.forward, Vector3.up);
 
-            var rb = box.GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = true;
+            Rigidbody rb = box.GetComponent<Rigidbody>();
+            if (rb != null) {
+                rb.isKinematic = true;
+            }
 
             DelayedUnfreeze(box, 0.3f);
 
@@ -119,8 +143,10 @@ public static class VehicleBoxManagerPatch {
         await Task.Delay((int)(delay * 1000));
 
         if (box != null) {
-            var rb = box.GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = false;
+            Rigidbody rb = box.GetComponent<Rigidbody>();
+            if (rb != null) {
+                rb.isKinematic = false;
+            }
 
             recentlyDropped[box] = Time.time;
         }

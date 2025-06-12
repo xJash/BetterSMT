@@ -34,7 +34,7 @@ namespace BetterSMT.Patches {
                     num6 = Random.Range(1, 11);
                     num7 = Random.Range(1, 11);
                 }
-                if (BetterSMT.EmployeesEnabled.Value == true) {
+                if (BetterSMT.EmployeesLevel.Value != 0) {
                     num4 = BetterSMT.EmployeesLevel.Value;
                     num5 = BetterSMT.EmployeesLevel.Value;
                     num6 = BetterSMT.EmployeesLevel.Value;

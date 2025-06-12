@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -11,83 +12,116 @@ public static class OrderingDevicePatch {
     [HarmonyPostfix]
     [HarmonyPatch("OnEnable")]
     public static void OnOrderingDeviceEnabled(OrderingDevice __instance) {
-        if (BetterSMT.AutoOrdering.Value == true) {
-            ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
-            ProductListing listing = ProductListing.Instance;
-            GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
-            int addedTotal = 0;
 
-            for (int productId = 0; productId < listing.productPrefabs.Length; productId++) {
-                GameObject prefab = listing.productPrefabs[productId];
-                int maxItemsPerBox = prefab.GetComponent<Data_Product>().maxItemsPerBox;
+        if (!BetterSMT.AutoOrdering.Value) {
+            return;
+        }
 
-                int missingItems = 0;
+        if (processedDevices.Contains(__instance)) {
+            return;
+        }
 
-                for (int i = 0; i < shelves.transform.childCount; i++) {
-                    Data_Container container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
-                    int[] array = container.productInfoArray;
-                    for (int j = 0; j < array.Length / 2; j++) {
-                        int id = array[j * 2];
-                        int quantity = array[(j * 2) + 1];
-                        if (id == productId && quantity >= 0) {
-                            int maxPerRow = NPC_Manager.Instance.GetMaxProductsPerRow(i, productId);
-                            missingItems += maxPerRow - quantity;
-                        }
+        _ = processedDevices.Add(__instance);
+
+        ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
+        ProductListing listing = ProductListing.Instance;
+        GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
+        GameObject storage = NPC_Manager.Instance?.storageOBJ;
+
+        if (manager == null || listing == null || shelves == null || storage == null) {
+            return;
+        }
+
+        int addedTotal = 0;
+
+        for (int productId = 0; productId < listing.productPrefabs.Length; productId++) {
+            GameObject prefab = listing.productPrefabs[productId];
+            Data_Product dataProduct = prefab.GetComponent<Data_Product>();
+            int maxItemsPerBox = dataProduct.maxItemsPerBox;
+
+            int missingItems = 0;
+
+            for (int i = 0; i < shelves.transform.childCount; i++) {
+                Data_Container container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
+
+                for (int j = 0; j < array.Length / 2; j++) {
+                    int id = array[j * 2];
+                    int quantity = array[(j * 2) + 1];
+
+                    if (id == productId && quantity >= 0) {
+                        int maxPerRow = NPC_Manager.Instance.GetMaxProductsPerRow(i, productId);
+                        missingItems += maxPerRow - quantity;
                     }
-                }
-
-                float rawBoxesNeeded = (float)missingItems / maxItemsPerBox;
-
-                float boxesInStore = 0f;
-                System.Reflection.FieldInfo fieldInfo = AccessTools.Field(typeof(OrderingDevice), "boxesInStoreField");
-                if (fieldInfo != null) {
-                    TMP_Text textField = fieldInfo.GetValue(__instance) as TMP_Text;
-                    if (textField != null) {
-                        string rawText = textField.text.Replace("x", "").Replace(",", ".");
-                        if (float.TryParse(rawText, out float parsed)) boxesInStore = parsed;
-                    }
-                }
-
-                float netBoxesNeeded = Mathf.Max(0, rawBoxesNeeded - boxesInStore);
-                int finalBoxesToOrder = Mathf.CeilToInt(netBoxesNeeded);
-                float pricePerBox = ProductPriceUtility.GetPricePerBox(productId);
-
-                for (int b = 0; b < finalBoxesToOrder; b++) {
-                    manager.AddShoppingListProduct(productId, pricePerBox);
-                    addedTotal++;
                 }
             }
+
+            int storedCount = 0;
+
+            for (int i = 0; i < storage.transform.childCount; i++) {
+                Data_Container container = storage.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
+
+                for (int j = 0; j < array.Length / 2; j++) {
+                    int id = array[j * 2];
+                    int quantity = array[(j * 2) + 1];
+
+                    if (id == productId && quantity >= 0) {
+                        storedCount += quantity;
+                    }
+                }
+            }
+
+            int finalMissingItems = Mathf.Max(missingItems - storedCount, 0);
+            int boxesToOrder = Mathf.CeilToInt((float)finalMissingItems / maxItemsPerBox);
+
+
+            float pricePerBox = GetPricePerBox(productId);
+
+            for (int b = 0; b < boxesToOrder; b++) {
+                manager.AddShoppingListProduct(productId, pricePerBox);
+                addedTotal++;
+            }
         }
+
     }
 
-    public static class ProductPriceUtility {
-        public static float GetPricePerBox(int productID) {
-            ProductListing listing = ProductListing.Instance;
-            GameObject prefab = listing.productPrefabs[productID];
-            Data_Product product = prefab.GetComponent<Data_Product>();
+    private static readonly HashSet<OrderingDevice> processedDevices = [];
 
-            float inflation = listing.tierInflation[product.productTier];
-            float unitPrice = product.basePricePerUnit;
-            int maxPerBox = product.maxItemsPerBox;
+    public static float GetPricePerBox(int productID) {
+        ProductListing listing = ProductListing.Instance;
+        GameObject prefab = listing.productPrefabs[productID];
+        Data_Product product = prefab.GetComponent<Data_Product>();
 
-            float raw = unitPrice * inflation * maxPerBox;
-            return Mathf.Round(raw * 100f) / 100f;
-        }
+        float inflation = listing.tierInflation[product.productTier];
+        float unitPrice = product.basePricePerUnit;
+        int maxPerBox = product.maxItemsPerBox;
+
+        float raw = unitPrice * inflation * maxPerBox;
+        return Mathf.Round(raw * 100f) / 100f;
     }
+
     [HarmonyPatch(typeof(OrderingDevice), "ClearProduct")]
     [HarmonyPrefix]
     public static bool ClearProductPatch(OrderingDevice __instance, int productID) {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
 
-        if (__instance.listParentOBJ.transform.childCount == 0) return false;
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) {
+            return true;
+        }
+
+        if (__instance.listParentOBJ.transform.childCount == 0) {
+            return false;
+        }
 
         for (int i = 0; i < __instance.listParentOBJ.transform.childCount; i++) {
             Transform child = __instance.listParentOBJ.transform.GetChild(i);
-            if (child.GetComponent<OrderingListReferences>().productID == productID) {
+            int childProductID = child.GetComponent<OrderingListReferences>().productID;
+            if (childProductID == productID) {
                 UnityEngine.Object.Destroy(child.gameObject);
                 __instance.stylusAnimator.SetFloat("AnimationFactor", 1f);
                 __instance.stylusAnimator.Play("StylusAnimation");
                 _ = __instance.StartCoroutine(__instance.AnimationHighlight(1));
+
                 int childCount = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent.transform.childCount;
                 if (i < childCount) {
                     int indexToRemove = childCount - 1 - i;
@@ -99,13 +133,21 @@ public static class OrderingDevicePatch {
 
         _ = __instance.StartCoroutine(__instance.SetInListField(productID));
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+
         return false;
     }
+
+    private static bool _suppressAddProduct = false;
 
     [HarmonyPatch(typeof(OrderingDevice), "CopyManagerBlackboardList")]
     [HarmonyPrefix]
     public static bool CopyManagerBlackboardListPatch(OrderingDevice __instance) {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
+
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) {
+            return true;
+        }
+
+        _suppressAddProduct = true;
 
         GameObject shoppingListParent = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent;
         for (int i = 0; i < shoppingListParent.transform.childCount; i++) {
@@ -113,42 +155,63 @@ public static class OrderingDevicePatch {
             __instance.AddProductbase(thisSkillIndex);
         }
 
+        _suppressAddProduct = false;
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+
         return false;
     }
+
+    private static readonly Dictionary<(OrderingDevice, int), float> lastAddTime = [];
 
     [HarmonyPatch(typeof(OrderingDevice), "AddProduct")]
     [HarmonyPrefix]
     public static bool AddProductPatch(OrderingDevice __instance, int productID) {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value || _suppressAddProduct) {
+            return true;
+        }
+
+        float now = Time.time;
+        (OrderingDevice __instance, int productID) key = (__instance, productID);
+
+        if (lastAddTime.TryGetValue(key, out float lastTime)) {
+            if (now - lastTime < 0.05f) {
+                return false;
+            }
+        }
+
+        lastAddTime[key] = now;
+
 
         __instance.AddProductbase(productID);
         float boxPrice = __instance.RetrievePricePerBox(productID);
         GameData.Instance.GetComponent<ManagerBlackboard>().AddShoppingListProduct(productID, boxPrice);
         _ = __instance.StartCoroutine(__instance.SetInListField(productID));
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverrideOrdering(__instance));
+
         return false;
     }
 
+
     public static IEnumerator CalculateShoppingListTotalOverrideOrdering(OrderingDevice __instance) {
         GameObject managerListParentOBJ = GameData.Instance.GetComponent<ManagerBlackboard>().shoppingListParent;
-        yield
-        return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
 
         __instance.totalBoxesAmount.text = "x" + __instance.listParentOBJ.transform.childCount;
-        float num = 0f;
+        float totalPrice = 0f;
 
         if (managerListParentOBJ.transform.childCount > 0) {
             foreach (Transform item in managerListParentOBJ.transform) {
                 string text = item.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text;
                 string cleanedText = text[2..].Trim().Replace(",", ".");
                 if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) {
-                    num += price;
+                    totalPrice += price;
+                } else {
                 }
             }
         }
 
-        string text2 = ProductListing.Instance.ConvertFloatToTextPrice(num);
-        __instance.totalPriceField.text = text2;
+        string formattedPrice = ProductListing.Instance.ConvertFloatToTextPrice(totalPrice);
+        __instance.totalPriceField.text = formattedPrice;
     }
+
 }

@@ -19,7 +19,9 @@ public class PlayerNetworkPatch {
     [HarmonyPatch("PriceSetFromNumpad")]
     [HarmonyPrefix]
     private static bool PriceSetFromNumpadPrefix(PlayerNetwork __instance, int productID) {
-        if (!BetterSMT.NumberKeys.Value) return true;
+        if (!BetterSMT.NumberKeys.Value) {
+            return true; 
+        }
 
         if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Delete)) {
             if (__instance.basefloatString.Length != 0) {
@@ -53,7 +55,9 @@ public class PlayerNetworkPatch {
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-            if (__instance.basefloatString.Length != 0 && !__instance.basefloatString.EndsWith(",") && float.TryParse(__instance.basefloatString, out float result)) {
+            if (__instance.basefloatString.Length != 0 &&
+                !__instance.basefloatString.EndsWith(",") &&
+                float.TryParse(__instance.basefloatString, out float result)) {
                 result = Mathf.Round(result * 100f) / 100f;
                 if (ProductListing.Instance.productPlayerPricing[productID] != result) {
                     __instance.CmdPlayPricingSound();
@@ -64,27 +68,48 @@ public class PlayerNetworkPatch {
             return false;
         }
 
-        return true;
+        return true; 
     }
 
+
     private static void HandleAutoSave() {
-        if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) return;
-        if (!stopwatch.IsRunning) stopwatch.Start();
-        if (stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) return;
+        if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
+            return;
+        }
+
+        if (!stopwatch.IsRunning) {
+            stopwatch.Start();
+        }
+
+        if (stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) {
+            return;
+        }
 
         stopwatch.Restart();
 
-        if (BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
+        if (BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) {
+            _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
+        }
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance, ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP) {
         HandleAutoSave();
-    if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
+        #region Hotkeys
+        if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
             return;
         } else {
             bool usedTool = false;
-            (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = [(BetterSMT.SledgeToggle?.Value, BetterSMT.SledgeHotkey?.Value, 7), (BetterSMT.OsMartToggle?.Value, BetterSMT.OsMartHotkey?.Value, 6), (BetterSMT.TrayToggle?.Value, BetterSMT.TrayHotkey?.Value, 9), (BetterSMT.SalesToggle?.Value, BetterSMT.SalesHotkey?.Value, 10), (BetterSMT.PricingGunToggle?.Value, BetterSMT.PricingGunHotkey?.Value, 2), (BetterSMT.BroomToggle?.Value, BetterSMT.BroomHotkey?.Value, 3), (BetterSMT.LadderToggle?.Value, BetterSMT.LadderHotkey?.Value, 8), (BetterSMT.DLCTabletToggle?.Value, BetterSMT.DLCTabletHotkey?.Value, 5),];
+            (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = [
+                (BetterSMT.SledgeToggle?.Value,      BetterSMT.SledgeHotkey?.Value,      7),
+                (BetterSMT.OsMartToggle?.Value,      BetterSMT.OsMartHotkey?.Value,      6),
+                (BetterSMT.TrayToggle?.Value,        BetterSMT.TrayHotkey?.Value,        9),
+                (BetterSMT.SalesToggle?.Value,       BetterSMT.SalesHotkey?.Value,       10),
+                (BetterSMT.PricingGunToggle?.Value,  BetterSMT.PricingGunHotkey?.Value,  2),
+                (BetterSMT.BroomToggle?.Value,       BetterSMT.BroomHotkey?.Value,       3),
+                (BetterSMT.LadderToggle?.Value,      BetterSMT.LadderHotkey?.Value,      8),
+                (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
+            ];
 
             foreach ((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
                 if (toggle == true && hotkey?.IsDown() == true) {
@@ -94,7 +119,9 @@ public class PlayerNetworkPatch {
                 }
             }
 
-            if (!usedTool && BetterSMT.EmptyHandsHotkey.Value.IsDown()) __instance.CmdChangeEquippedItem(0);
+            if (!usedTool && BetterSMT.EmptyHandsHotkey.Value.IsDown()) {
+                __instance.CmdChangeEquippedItem(0);
+            }
 
             if (BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true) {
                 upgradesManager ??= UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>()?.GetComponent<UpgradesManager>();
@@ -110,17 +137,24 @@ public class PlayerNetworkPatch {
 
         if (BetterSMT.ToggleDoublePrice.Value == true) {
             if (BetterSMT.doublePrice && ___marketPriceTMP != null) {
-                if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float market)) {
+                if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
+                    System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    out float market)) {
                     ___pPrice = market * 2;
 
-                    if (BetterSMT.roundDown.Value) ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
+                    if (BetterSMT.roundDown.Value) {
+                        ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
+                    }
 
                     ___yourPriceTMP.text = "$" + ___pPrice;
                 }
             }
         }
-  }
+        #endregion
+    }
 
+    #region Highlighting
     [HarmonyPatch("ChangeEquipment"), HarmonyPostfix]
     private static void ChangeEquipmentPatch(int newEquippedItem) {
         if (newEquippedItem == 0) {
@@ -150,13 +184,9 @@ public class PlayerNetworkPatch {
         }
     }
 
-    private static readonly Dictionary<int,
-    Transform> highlightObjectCache = [];
+    private static readonly Dictionary<int, Transform> highlightObjectCache = [];
 
-    public static bool IsHighlightCacheUsed {
-        get;
-        set;
-    } = true;
+    public static bool IsHighlightCacheUsed { get; set; } = true;
 
     [HarmonyPatch("Start"), HarmonyPrefix]
     private static void StartPatch(PlayerNetwork __instance) {
@@ -297,12 +327,10 @@ public class PlayerNetworkPatch {
     }
 
     public static string GetGameObjectStringPath(ShelfType shelfType) {
-        return shelfType
-        switch {
+        return shelfType switch {
             ShelfType.ProductDisplay => "Level_SupermarketProps/Shelves",
             ShelfType.Storage => "Level_SupermarketProps/StorageShelves",
-            _ =>
-        throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
         };
     }
 
@@ -365,6 +393,7 @@ public class PlayerNetworkPatch {
         }
     }
 
+
     public static void AddHighlightMarkersToStorage(Transform storage) {
         if (BetterSMT.StorageHighlighting.Value == false) {
             return;
@@ -391,3 +420,4 @@ public class PlayerNetworkPatch {
         }
     }
 }
+#endregion

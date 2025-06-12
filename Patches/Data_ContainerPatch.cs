@@ -7,11 +7,18 @@ namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(Data_Container), "AddItemToRow")]
     internal class Patch_AddItemToRow {
         private static bool Prefix(Data_Container __instance, int containerNumber, int productIDToAdd) {
-            if (!BetterSMT.QuickStocking.Value) return true;
+            if (!BetterSMT.QuickStocking.Value) {
+                return true;
+            }
 
-            if (!FirstPersonController.Instance.GetComponent<PlayerPermissions>().RequestRP()) return false;
+            if (!FirstPersonController.Instance.GetComponent<PlayerPermissions>().RequestRP()) {
+                return false;
+            }
 
-            if (!__instance.isServer && FsmVariables.GlobalVariables.FindFsmBool("HighLatencyMode").Value && __instance.highLatencyCooldown) return false;
+            bool flag = !__instance.isServer && FsmVariables.GlobalVariables.FindFsmBool("HighLatencyMode").Value;
+            if (flag && __instance.highLatencyCooldown) {
+                return false;
+            }
 
             if (!__instance.productlistComponent) {
                 __instance.productlistComponent = GameData.Instance.GetComponent<ProductListing>();
@@ -59,7 +66,7 @@ namespace BetterSMT.Patches {
 
             PlayerNetwork component = FirstPersonController.Instance.GetComponent<PlayerNetwork>();
 
-            if (!__instance.isServer && FsmVariables.GlobalVariables.FindFsmBool("HighLatencyMode").Value) {
+            if (flag) {
                 _ = __instance.StartCoroutine(__instance.HighLatencyCoroutine());
                 int shelfSpaceLeft = num - num4;
                 int itemsAvailable = component.extraParameter2;

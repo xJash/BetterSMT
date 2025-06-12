@@ -130,7 +130,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> QuickStocking;
     public static ConfigEntry<int> CardboardBalerValue;
 
-  private void Awake() {
+    private void Awake() {
 
         // === !Sales Settings! ===
         SalesHotkey = Config.Bind("Sales Settings", "Sales Tablet Hotkey", new KeyboardShortcut(KeyCode.L), new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands."));
@@ -153,7 +153,6 @@ public class BetterSMT : BaseUnityPlugin {
         MaxCustomerInStore = base.Config.Bind("Employee & Customer Settings", "Max amount of customers in store", 70, new ConfigDescription("Adjust the amount of customers that can spawn at one time", new AcceptableValueRange<int>(1, 210)));
         CustomersPerPerk = base.Config.Bind("Employee & Customer Settings", "Extra Customers per perk", 1, new ConfigDescription("Adjust the amount of customers you gain per perk (Higher number = more customers)", new AcceptableValueRange<int>(1, 5)));
         EmployeesLevel = base.Config.Bind("Employee & Customer Settings", "Employees Level", 0, new ConfigDescription("Adjust the level of employee's that spawn (1 sets all of their stats to minimum, 30 sets them all to max)", new AcceptableValueRange<int>(0, 30)));
-        EmployeesEnabled = base.Config.Bind("Employee & Customer Settings", "Employees Level Toggle", false, new ConfigDescription("Enables modifying employee levels"));
         EmployeeSpeedPerPerk = base.Config.Bind("Employee & Customer Settings", "Employee Speed Per Perk", .2f, new ConfigDescription("Adjust the amount of speed employees gain per perk (Higher = faster)", new AcceptableValueRange<float>(.01f, .6f)));
         EmployeeRestockPerPerk = base.Config.Bind("Employee & Customer Settings", "Employee Restock Time Reduction Per Perk", 0.05f, new ConfigDescription("Adjust the amount of time it takes for employees to restock per perk (Lower = faster)", new AcceptableValueRange<float>(0.01f, 0.15f)));
 

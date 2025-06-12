@@ -19,13 +19,19 @@ public class GameDataPatch {
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void AutopayInvoices(DebtManager __instance) {
-        if (__instance == null) return;
+        if (__instance == null) {
+            return;
+        }
+
         __instance.autopayInvoices = BetterSMT.AutoPayAllInvoices?.Value ?? false;
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void UpdateInvoiceMenu() {
-        if (!BetterSMT.LoanEarly.Value) return;
+        if (!BetterSMT.LoanEarly.Value) {
+            return;
+        }
+
         GameObject invoiceMenu = GameObject.Find("Interactables/Canvas_Manager/Tabs/Invoices_Tab/");
         if (invoiceMenu == null) {
             BetterSMT.Logger.LogWarning("Invoice Menu not found.");
@@ -90,20 +96,24 @@ public class GameDataPatch {
         btn.colors = originalBtn.colors;
         btn.navigation = originalBtn.navigation;
 
-        if (!GameData.Instance.isServer) newButton.SetActive(false);
+        if (!GameData.Instance.isServer) {
+            newButton.SetActive(false);
+        }
     }
 
     [HarmonyPatch("Awake"), HarmonyPostfix]
     private static void EnsureLoanSystemComponent(GameData __instance) {
         loanSystemInstance = __instance.GetComponent<BetterSMTLoanSystem>();
-        if (loanSystemInstance == null) loanSystemInstance = __instance.gameObject.AddComponent<BetterSMTLoanSystem>();
+        if (loanSystemInstance == null) {
+            loanSystemInstance = __instance.gameObject.AddComponent<BetterSMTLoanSystem>();
+        }
     }
 
     public class BetterSMTLoanSystem : NetworkBehaviour {
         [Command(requiresAuthority = false)]
         public void CmdPayLoanEarly() {
 
-            var debtManager = GameData.Instance.GetComponent<DebtManager>();
+            DebtManager debtManager = GameData.Instance.GetComponent<DebtManager>();
             int totalLoan = debtManager.NetworkloanAmount;
 
             if (totalLoan <= 0) {
@@ -124,11 +134,15 @@ public class GameDataPatch {
                 string invoice = debtManager.NetworkcurrentInvoicesData[i];
                 if (!string.IsNullOrEmpty(invoice)) {
                     debtManager.GetInvoiceDataValues(invoice, out int invoiceTypeID, out _, out _, out _, out _);
-                    if (invoiceTypeID == 0) debtManager.NetworkcurrentInvoicesData[i] = "";
+                    if (invoiceTypeID == 0) {
+                        debtManager.NetworkcurrentInvoicesData[i] = "";
+                    }
                 }
             }
 
-            if (debtManager.loanDisclaimerContainerOBJ != null && debtManager.loanDisclaimerContainerOBJ.activeSelf) debtManager.loanDisclaimerContainerOBJ.SetActive(false);
+            if (debtManager.loanDisclaimerContainerOBJ != null && debtManager.loanDisclaimerContainerOBJ.activeSelf) {
+                debtManager.loanDisclaimerContainerOBJ.SetActive(false);
+            }
 
             debtManager.GenerateExistingDebtsInUI();
             BetterSMT.CreateImportantNotification("Loan paid off early.");
@@ -149,7 +163,9 @@ public class GameDataPatch {
 
         for (int i = 0; i < products.Length; i++) {
             Data_Product product = products[i].GetComponent<Data_Product>();
-            if (product == null) continue;
+            if (product == null) {
+                continue;
+            }
 
             float basePrice = product.basePricePerUnit;
             int tier = product.productTier;
@@ -163,12 +179,20 @@ public class GameDataPatch {
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void UpdateEscapeMenu() {
-        if (!BetterSMT.SaveGame.Value) return;
         GameObject escapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
+        if (escapeMenu == null) {
+            BetterSMT.Logger.LogWarning("EscapeMenu not found.");
+            return;
+        }
 
         GameObject quitButton = escapeMenu.transform.Find("QuitButton")?.gameObject;
         GameObject mainMenuButton = escapeMenu.transform.Find("MainMenuButton")?.gameObject;
         GameObject optionsButton = escapeMenu.transform.Find("OptionsButton")?.gameObject;
+
+        if (quitButton == null || mainMenuButton == null) {
+            BetterSMT.Logger.LogWarning("Quit or MainMenu button not found.");
+            return;
+        }
 
         quitButton.transform.localPosition = new Vector3(0f, 0f, 0f);
         mainMenuButton.transform.localPosition = new Vector3(0f, 85f, 0f);
@@ -204,8 +228,7 @@ public class GameDataPatch {
         NetworkSpawner spawner = GameData.Instance.GetComponent<NetworkSpawner>();
         if (spawner.isSaving) {
             BetterSMT.CreateImportantNotification("Saving already in progress");
-            yield
-            break;
+            yield break;
         }
 
         BetterSMT.CreateImportantNotification("Saving Game");
@@ -223,16 +246,13 @@ public class GameDataPatch {
         while (isSavingVar.Value) {
             if (elapsed > timeout) {
                 BetterSMT.CreateImportantNotification("Save timed out.");
-                yield
-                break;
+                yield break;
             }
             elapsed += Time.deltaTime;
-            yield
-            return null;
+            yield return null;
         }
 
-        yield
-        return spawner.SavePropsCoroutine();
+        yield return spawner.SavePropsCoroutine();
 
         BetterSMT.CreateImportantNotification("Saving Finished");
     }
@@ -260,17 +280,29 @@ public class GameDataPatch {
     [HarmonyPatch("AddExpensiveList"), HarmonyPostfix]
     public static void AddExpensiveListPatch(GameData __instance, int productID) {
         NotifyAndTrack(
-        __instance.productsTooExpensiveList, productID, BetterSMT.TooExpensiveNotifications.Value, "{0} is too expensive.", __instance);
+            __instance.productsTooExpensiveList,
+            productID,
+            BetterSMT.TooExpensiveNotifications.Value,
+            "{0} is too expensive.",
+            __instance
+        );
     }
 
     [HarmonyPatch("AddNotFoundList"), HarmonyPostfix]
     public static void AddNotFoundListPatch(GameData __instance, int productID) {
         NotifyAndTrack(
-        __instance.productsNotFoundList, productID, BetterSMT.MissingProductNotifications.Value, "{0} is not found on the shelf.", __instance);
+            __instance.productsNotFoundList,
+            productID,
+            BetterSMT.MissingProductNotifications.Value,
+            "{0} is not found on the shelf.",
+            __instance
+        );
     }
 
     private static void NotifyAndTrack(List<int> list, int productID, bool notifyEnabled, string messageTemplate, GameData __instance) {
-        if (!list.Contains(productID)) list.Add(productID);
+        if (!list.Contains(productID)) {
+            list.Add(productID);
+        }
 
         if (notifyEnabled) {
             string productName = productNames.TryGetValue(productID, out string name) ? name : $"Product {productID}";
@@ -291,15 +323,23 @@ public class GameDataPatch {
             int maxInStore = BetterSMT.MaxCustomerInStore.Value;
 
             __instance.maxProductsCustomersToBuy = Mathf.Clamp(
-            baseCart + (__instance.gameDay / 2) + playerCount + __instance.difficulty, baseCart, maxCart + playerCount + __instance.difficulty);
+                baseCart + (__instance.gameDay / 2) + playerCount + __instance.difficulty,
+                baseCart,
+                maxCart + playerCount + __instance.difficulty
+            );
 
             __instance.maxCustomersNPCs = Mathf.Clamp(
-            baseSpawns + __instance.gameDay + ((playerCount - 1) * 4) + __instance.extraCustomersPerk + (__instance.difficulty * 2), baseSpawns, maxInStore + playerCount);
+                baseSpawns + __instance.gameDay + ((playerCount - 1) * 4) + __instance.extraCustomersPerk + (__instance.difficulty * 2),
+                baseSpawns,
+                maxInStore + playerCount
+            );
         }
     }
 
     [HarmonyPatch("TrashManager"), HarmonyPostfix]
     public static void NextTimeToSpawnTrashPatch(GameData __instance) {
-        if (BetterSMT.DisableAllTrash.Value) __instance.nextTimeToSpawnTrash = float.MaxValue;
+        if (BetterSMT.DisableAllTrash.Value) {
+            __instance.nextTimeToSpawnTrash = float.MaxValue;
+        }
     }
 }

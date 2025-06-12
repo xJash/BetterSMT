@@ -10,76 +10,104 @@ namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(ManagerBlackboard))]
 public class ManagerBlackboardPatch {
-
     [HarmonyPatch("ServerCargoSpawner", MethodType.Enumerator), HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> InstantCargoSpawner(IEnumerable<CodeInstruction> instructions) {
-        return BetterSMT.FastBoxSpawns.Value ? new CodeMatcher(instructions).Start().MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)]))).Repeat(matcher => {
-            _ = matcher.Advance(-1);
-            _ = matcher.SetOperandAndAdvance(0.01f);
-            _ = matcher.Advance(1);
-        }).InstructionEnumeration() :
+        return BetterSMT.FastBoxSpawns.Value ?
+            new CodeMatcher(instructions)
+                .Start()
+                .MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)])))
+                .Repeat(matcher => {
+                    _ = matcher.Advance(-1);
+                    _ = matcher.SetOperandAndAdvance(0.01f);
+                    _ = matcher.Advance(1);
+                })
+                .InstructionEnumeration() :
 
-        instructions;
+            instructions;
     }
 
     public static IEnumerator CalculateShoppingListTotalOverride(ManagerBlackboard __instance) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            yield
-            return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
             __instance.shoppingTotalCharge = 0f;
             if (__instance.shoppingListParent.transform.childCount > 0) {
                 foreach (Transform item in __instance.shoppingListParent.transform) {
                     string text = item.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text;
 
                     string cleanedText = text[2..].Trim();
-                    if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) __instance.shoppingTotalCharge += price;
+                    if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price)) {
+                        __instance.shoppingTotalCharge += price;
+                    }
                 }
             }
             __instance.totalChargeOBJ.text = ProductListing.Instance.ConvertFloatToTextPrice(__instance.shoppingTotalCharge);
         }
     }
 
-    [HarmonyPatch("RemoveShoppingListProduct")]
+    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.RemoveShoppingListProduct))]
     [HarmonyPrefix]
-    public static void RemoveShoppingListProductPatch(ManagerBlackboard __instance, int indexToRemove) {
+    public static bool RemoveShoppingListProductPatch(ManagerBlackboard __instance, int indexToRemove) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            if (__instance.shoppingListParent.transform.childCount > 0) Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
+            if (__instance.shoppingListParent.transform.childCount > 0) {
+                Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
+            }
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+            return false; 
         }
+
+        return true; 
     }
 
-    [HarmonyPatch("RemoveAllShoppingList")]
+    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.RemoveAllShoppingList))]
     [HarmonyPrefix]
-    public static void RemoveAllShoppingListPatch(ManagerBlackboard __instance) {
+    public static bool RemoveAllShoppingListPatch(ManagerBlackboard __instance) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            if (__instance.shoppingListParent.transform.childCount == 0) return;
+            if (__instance.shoppingListParent.transform.childCount == 0) {
+                return false; 
+            }
+
             foreach (Transform item in __instance.shoppingListParent.transform) {
                 Object.Destroy(item.gameObject);
             }
+
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+            return false;
         }
+
+        return true; 
     }
 
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance, int productID, float boxPrice) {
-        if (BetterSMT.ReplaceCommasWithPeriods.Value) {
-            ProductListing component = __instance.GetComponent<ProductListing>();
-            GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
-            string key = "product" + productID;
-            string localizationString = LocalizationManager.instance.GetLocalizationString(key);
-            gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
-            GameObject obj = component.productPrefabs[productID];
-            string productBrand = obj.GetComponent<Data_Product>().productBrand;
-            gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
-            int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
-            gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
-            gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = " $" + boxPrice.ToString("F2", CultureInfo.InvariantCulture);
-            gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
-            _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
 
-            return false;
+        foreach (Transform item in __instance.shoppingListParent.transform) {
+            InteractableData data = item.GetComponent<InteractableData>();
+            if (data != null && data.thisSkillIndex == productID) {
+                return false;
+            }
         }
-        return true;
+
+        ProductListing component = __instance.GetComponent<ProductListing>();
+        GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
+
+        string key = "product" + productID;
+        string localizationString = LocalizationManager.instance.GetLocalizationString(key);
+        gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
+
+        GameObject obj = component.productPrefabs[productID];
+        string productBrand = obj.GetComponent<Data_Product>().productBrand;
+        gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
+
+        int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
+        gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
+        gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = " $" + boxPrice.ToString("F2", CultureInfo.InvariantCulture);
+
+        gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
+
+        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+        return false; 
     }
+
 }
