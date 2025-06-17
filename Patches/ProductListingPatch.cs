@@ -35,19 +35,6 @@ namespace BetterSMT.Patches {
         }
     }
 
-    [BepInEx.BepInPlugin("BetterSMT.ManualSaleClear", "BetterSMT Manual Sale Clear", "1.0.0")]
-    public class ManualSaleClearPlugin : BepInEx.BaseUnityPlugin {
-        private void Awake() {
-            Harmony harmony = new("BetterSMT.ManualSaleClear");
-            harmony.PatchAll();
-            Logger.LogInfo("BetterSMT Manual Sale Clear module loaded.");
-
-            GameObject listener = new("ManualSaleClearHotkeyListener");
-            _ = listener.AddComponent<ManualSaleClearHotkeyListener>();
-            DontDestroyOnLoad(listener);
-        }
-    }
-
     public class ManualSaleClearHotkeyListener : MonoBehaviour {
         private void Update() {
             if (!BetterSMT.ToggleClearSalesHotkey.Value) return;

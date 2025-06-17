@@ -1,7 +1,9 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using BetterSMT.Patches;
 using HarmonyLib;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +16,9 @@ public class BetterSMT : BaseUnityPlugin {
     public static BetterSMT Instance;
     internal static new ManualLogSource Logger { get; private set; } = null!;
 
+    // === !Pillar Modification! ===
+    public static ConfigEntry<float> PillarPrice;
+    public static ConfigEntry<bool> PillarRubble;
     // === !Debt! ===
     public static ConfigEntry<bool> AutoPayAllInvoices;
 
@@ -93,8 +98,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutDoublePrice;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> KeyboardShortcutRoundDownToggle;
-    public static ConfigEntry<KeyboardShortcut> EmptyBoxHotkey;
-    public static ConfigEntry<bool> EmptyBoxToggle;
     public static ConfigEntry<KeyboardShortcut> PricingGunHotkey;
     public static ConfigEntry<bool> PricingGunToggle;
     public static ConfigEntry<KeyboardShortcut> BroomHotkey;
@@ -130,12 +133,17 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> QuickStocking;
     public static ConfigEntry<int> CardboardBalerValue;
 
+    [System.Obsolete]
     private void Awake() {
 
+        // === !Pillar Mods! ===
+        PillarRubble = Config.Bind("Pillar Mods", "Disable Rubble", false, new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
+        PillarPrice = base.Config.Bind("Pillar Mods", "Change Price", 4000f, new ConfigDescription("Changes the price of destroying a pillar.", new AcceptableValueRange<float>(0f, 50000f)));
+
         // === !Sales Settings! ===
-        SalesHotkey = Config.Bind("Sales Settings", "Sales Tablet Hotkey", new KeyboardShortcut(KeyCode.L), new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands."));
+        SalesHotkey = Config.Bind("Sales Settings", "Sales Tablet Hotkey", new KeyboardShortcut(KeyCode.Z), new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands."));
         SalesToggle = Config.Bind("Sales Settings", "Sales Tablet Toggle", false, new ConfigDescription("Enables the hotkey to activate Sales Tablet"));
-        ClearSales = Config.Bind("Sales Settings", "Clear Sales", new KeyboardShortcut(KeyCode.L), new ConfigDescription("Hotkey to clear current sales."));
+        ClearSales = Config.Bind("Sales Settings", "Clear Sales", new KeyboardShortcut(KeyCode.X), new ConfigDescription("Hotkey to clear current sales."));
         ToggleClearSalesHotkey = base.Config.Bind("Sales Settings", "Enables or disables hotkey to clear sales", false, new ConfigDescription("Enables or disables the hotkey to clear sales"));
         SalesActiveAmount = base.Config.Bind("Sales Settings", "Amount of sales unlocked each perk", 2, new ConfigDescription("Adjusts the amount of sales you unlock for each perk", new AcceptableValueRange<int>(1, 100)));
 
@@ -186,7 +194,7 @@ public class BetterSMT : BaseUnityPlugin {
         AllowFreePlacement = Config.Bind("Random Features", "Disable Placement Blocking", false, new ConfigDescription("Enables or disables you to place structures wherever, even overlapping"));
         ProductStacking = Config.Bind("Random Features", "Enable product stacking", false, new ConfigDescription("Enables or disables most products in the game to stack on shelves"));
         EnablePalletDisplaysPerk = Config.Bind("Random Features", "Enable pallet displays", false, new ConfigDescription("Enables pallet displays without unlocking the perk."));
-        ReplaceCommasWithPeriods = Config.Bind("Random Features", "Replace commass with periods", false, new ConfigDescription("Changes all commas in the game into periods."));
+        ReplaceCommasWithPeriods = Config.Bind("Random Features", "Replace commas with periods", false, new ConfigDescription("Changes all commas in the game into periods."));
         CurrencyTypeToAny = Config.Bind("Random Features", "CurrencySymbol", "$", new ConfigDescription("Sets the currency symbol used in the game. Default is $."));
 
         // === !Hotkey Configurations! ===
@@ -202,8 +210,6 @@ public class BetterSMT : BaseUnityPlugin {
         ClockHotkey = Config.Bind("Hotkey Configurations", "Toggle Clock", new KeyboardShortcut(KeyCode.O), new ConfigDescription("Hotkey to enable/disable the clock"));
         ThirdPersonHotkey = Config.Bind("Hotkey Configurations", "Third Person Hotkey", new KeyboardShortcut(KeyCode.G), new ConfigDescription("Hotkey to enter and leave third person/first person."));
         ThirdPersonToggle = Config.Bind("Hotkey Configurations", "Enable or disable third person", false, new ConfigDescription("Enables or disables the hotkey to enter and leave third person/first person"));
-        EmptyBoxToggle = Config.Bind("Hotkey Configurations", "EmptyBox Toggle", false, new ConfigDescription("Enables the hotkey to activate EmptyBox"));
-        EmptyBoxHotkey = Config.Bind("Hotkey Configurations", "EmptyBox Hotkey", new KeyboardShortcut(KeyCode.B), new ConfigDescription("Hotkey to spawn a EmptyBox in your hands."));
         PricingGunToggle = Config.Bind("Hotkey Configurations", "Pricing Gun Toggle", false, new ConfigDescription("Enables the hotkey to activate Pricing Gun"));
         PricingGunHotkey = Config.Bind("Hotkey Configurations", "Pricing Gun Hotkey", new KeyboardShortcut(KeyCode.Y), new ConfigDescription("Hotkey to spawn a Pricing Gun in your hands."));
         BroomToggle = Config.Bind("Hotkey Configurations", "Broom Toggle", false, new ConfigDescription("Enables the hotkey to activate Broom"));
@@ -224,7 +230,7 @@ public class BetterSMT : BaseUnityPlugin {
         KeyboardShortcutRoundDownToggle = Config.Bind("Double Price Gun", "Round Down Hotkey", new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl, KeyCode.LeftShift), new ConfigDescription("Hotkey to round down to setting set"));
 
         // === !Random QoL! ===
-        SaveGame = Config.Bind("Random QoL", "Save Game Button", false, new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
+        SaveGame = Config.Bind("Random QoL", "Save Game Button", true, new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
         LoanEarly = Config.Bind("Random QoL", "Payoff Loans Early", false, new ConfigDescription("Enables or disables a button to pay off loans early"));
         Tutorial = Config.Bind("Random QoL", "Enables or disables the tutorial", false, new ConfigDescription("Enables or disables the tutorial at the start of a fresh save"));
         NumberKeys = Config.Bind("Random QoL", "Enables normal numbers", false, new ConfigDescription("Enables or disables using non-numpad numbers to set prices"));
@@ -245,6 +251,13 @@ public class BetterSMT : BaseUnityPlugin {
         Logger = base.Logger;
         harmony.PatchAll();
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} is loaded!");
+        Harmony.DEBUG = true;
+
+
+        GameObject listener = new("ManualSaleClearHotkeyListener");
+        _ = listener.AddComponent<ManualSaleClearHotkeyListener>();
+        DontDestroyOnLoad(listener);
+
     }
 
     public static void CreateCanvasNotification(string text) {

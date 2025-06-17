@@ -1,3 +1,30 @@
+## v2.3.0
+- Fixed an issue where the Ordering Device would add the same product twice
+- Added a setting to allow more employee rerolls
+- Removed outdated options (e.g., modifying end-of-day rent, lighting, and employee fees)
+- Added a hotkey to cancel active sales during the day
+- You can now pay off loans early using a button on the loan screen
+- Reworked the in-game Vehicle system:
+  - Automatically picks up boxes within a configurable range while driving
+  - Added a hotkey to auto-drop boxes while driving
+  - Configurable pickup limit (up to 6 boxes)
+- Cleaned and reorganized the config file for better readability
+  - ?? Recommended: delete your current config and let it regenerate
+- Added a config option to disable the save game button (enabled by default)
+- Fixed additional logic issues related to commas being replaced improperly
+- Added an option to make all NPCs at the surveillance desk interactable with one click
+- Improved how the mod interacts with the in-game clock:
+  - Now requires the relevant perk to function
+  - Cannot be activated while the store is open
+  - Requires at least one active employee job to use
+  - Can be toggled to activate in the morning, but auto-disables once the store opens
+- Ordering Device now correctly subtracts existing inventory when generating orders
+- Ordering Device screen now displays what's being added to the shopping list
+- Adjusted default keybinds for various hotkeys
+- Further refined the config file layout
+- Updated cardboard bale value to match changes in the base game
+- Major code optimizations for improved performance and lower resource usage
+
 ## v2.2.0
 - Option to disable tutorials on fresh saves
 - Added config and option to change amount of cardboard required to get a bale, aswell as adjusting the value of the bale accordingly

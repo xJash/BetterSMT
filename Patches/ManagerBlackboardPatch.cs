@@ -52,10 +52,10 @@ public class ManagerBlackboardPatch {
                 Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
             }
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
-            return false; 
+            return false;
         }
 
-        return true; 
+        return true;
     }
 
     [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.RemoveAllShoppingList))]
@@ -63,7 +63,7 @@ public class ManagerBlackboardPatch {
     public static bool RemoveAllShoppingListPatch(ManagerBlackboard __instance) {
         if (BetterSMT.ReplaceCommasWithPeriods.Value) {
             if (__instance.shoppingListParent.transform.childCount == 0) {
-                return false; 
+                return false;
             }
 
             foreach (Transform item in __instance.shoppingListParent.transform) {
@@ -74,20 +74,14 @@ public class ManagerBlackboardPatch {
             return false;
         }
 
-        return true; 
+        return true;
     }
 
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance, int productID, float boxPrice) {
+        Debug.Log($"Trying to add productID {productID} at {Time.time}");
         if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
-
-        foreach (Transform item in __instance.shoppingListParent.transform) {
-            InteractableData data = item.GetComponent<InteractableData>();
-            if (data != null && data.thisSkillIndex == productID) {
-                return false;
-            }
-        }
 
         ProductListing component = __instance.GetComponent<ProductListing>();
         GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
@@ -107,7 +101,7 @@ public class ManagerBlackboardPatch {
         gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
 
         _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
-        return false; 
+        return false;
     }
 
 }

@@ -12,38 +12,57 @@ public static class OrderingDevicePatch {
     [HarmonyPostfix]
     [HarmonyPatch("OnEnable")]
     public static void OnOrderingDeviceEnabled(OrderingDevice __instance) {
-
-        if (!BetterSMT.AutoOrdering.Value) {
+        if (!BetterSMT.AutoOrdering.Value || processedDevices.Contains(__instance))
             return;
-        }
-
-        if (processedDevices.Contains(__instance)) {
-            return;
-        }
 
         _ = processedDevices.Add(__instance);
 
-        ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
-        ProductListing listing = ProductListing.Instance;
-        GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
-        GameObject storage = NPC_Manager.Instance?.storageOBJ;
+        // Delay both TryAddProductsToShoppingList and CopyManagerBlackboardList
+        __instance.StartCoroutine(WaitThenInit(__instance));
+    }
 
-        if (manager == null || listing == null || shelves == null || storage == null) {
+    private static IEnumerator WaitThenInit(OrderingDevice instance) {
+        // Wait until all required references are available
+        yield return new WaitUntil(() =>
+            GameData.Instance != null &&
+            GameData.Instance.GetComponent<ManagerBlackboard>()?.shoppingListParent != null &&
+            ProductListing.Instance != null &&
+            NPC_Manager.Instance?.shelvesOBJ != null &&
+            NPC_Manager.Instance?.storageOBJ != null
+        );
+
+        yield return null; // extra frame to ensure full layout/UI init
+
+        TryAddProductsToShoppingList(instance);
+        instance.CopyManagerBlackboardList();
+    }
+
+    private static void TryAddProductsToShoppingList(OrderingDevice __instance) {
+        var manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
+        var listing = ProductListing.Instance;
+        var shelves = NPC_Manager.Instance?.shelvesOBJ;
+        var storage = NPC_Manager.Instance?.storageOBJ;
+
+        if (manager == null || listing == null || shelves == null || storage == null)
             return;
-        }
-
-        int addedTotal = 0;
 
         for (int productId = 0; productId < listing.productPrefabs.Length; productId++) {
-            GameObject prefab = listing.productPrefabs[productId];
-            Data_Product dataProduct = prefab.GetComponent<Data_Product>();
+            var prefab = listing.productPrefabs[productId];
+            if (prefab == null) {
+                Debug.LogWarning($"[BetterSMT] Null prefab at productId {productId}");
+                continue;
+            }
+            var dataProduct = prefab.GetComponent<Data_Product>();
+            if (dataProduct == null) {
+                Debug.LogWarning($"[BetterSMT] Missing Data_Product on prefab for productId {productId}");
+                continue;
+            }
             int maxItemsPerBox = dataProduct.maxItemsPerBox;
 
             int missingItems = 0;
-
             for (int i = 0; i < shelves.transform.childCount; i++) {
-                Data_Container container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
-                int[] array = container.productInfoArray;
+                var container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
+                var array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++) {
                     int id = array[j * 2];
@@ -57,10 +76,9 @@ public static class OrderingDevicePatch {
             }
 
             int storedCount = 0;
-
             for (int i = 0; i < storage.transform.childCount; i++) {
-                Data_Container container = storage.transform.GetChild(i).GetComponent<Data_Container>();
-                int[] array = container.productInfoArray;
+                var container = storage.transform.GetChild(i).GetComponent<Data_Container>();
+                var array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++) {
                     int id = array[j * 2];
@@ -74,17 +92,16 @@ public static class OrderingDevicePatch {
 
             int finalMissingItems = Mathf.Max(missingItems - storedCount, 0);
             int boxesToOrder = Mathf.CeilToInt((float)finalMissingItems / maxItemsPerBox);
-
-
             float pricePerBox = GetPricePerBox(productId);
 
             for (int b = 0; b < boxesToOrder; b++) {
                 manager.AddShoppingListProduct(productId, pricePerBox);
-                addedTotal++;
             }
         }
-
     }
+
+
+
 
     private static readonly HashSet<OrderingDevice> processedDevices = [];
 

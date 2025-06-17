@@ -123,15 +123,14 @@ public class PlayerNetworkPatch {
                 __instance.CmdChangeEquippedItem(0);
             }
 
-            if (BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true) {
-                upgradesManager ??= UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>()?.GetComponent<UpgradesManager>();
 
-                if (upgradesManager != null) {
-                    bool newState = !upgradesManager.NetworkacceleratedTime;
-                    upgradesManager.NetworkacceleratedTime = newState;
-                    upgradesManager.RpcTimeAcceleration(newState);
-                }
+           if (BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true) {
+               upgradesManager ??= UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>()?.GetComponent<UpgradesManager>();
+                upgradesManager.NetworkacceleratedTime = !upgradesManager.acceleratedTime;
+                upgradesManager.GetComponent<TimeAccelerationWatcher>().enabled = upgradesManager.acceleratedTime;
+                upgradesManager.RpcTimeAcceleration(upgradesManager.acceleratedTime);
             }
+
 
         }
 

@@ -38,7 +38,7 @@ public class Builder_MainPatch {
         __instance.correctSector = __instance.CheckCorrectGround();
 
         if (BetterSMT.AllowFreePlacement.Value) {
-            __instance.overlapping = false; 
+            __instance.overlapping = false;
             __instance.canPlace = __instance.correctSector;
 
             if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
