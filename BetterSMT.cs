@@ -132,6 +132,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> AutoOrdering;
     public static ConfigEntry<bool> QuickStocking;
     public static ConfigEntry<int> CardboardBalerValue;
+    public static ConfigEntry<bool> PalletProduct;
+    public static ConfigEntry<bool> AllProduct;
 
     [System.Obsolete]
     private void Awake() {
@@ -230,6 +232,8 @@ public class BetterSMT : BaseUnityPlugin {
         KeyboardShortcutRoundDownToggle = Config.Bind("Double Price Gun", "Round Down Hotkey", new KeyboardShortcut(KeyCode.Q, KeyCode.LeftControl, KeyCode.LeftShift), new ConfigDescription("Hotkey to round down to setting set"));
 
         // === !Random QoL! ===
+        PalletProduct = Config.Bind("Random QoL", "More Product on Pallets", false, new ConfigDescription("Enables or disables allowing smaller products on pallets **Note: fully stocked pallets with smaller products can cause lag when being looked at"));
+        AllProduct = Config.Bind("Random QoL", "No Product Requirement", false, new ConfigDescription("Enables or disables the need for freezers, pegboards, fridges, etc. **Note: fully stocked pallets with smaller products can cause lag when being looked at"));
         SaveGame = Config.Bind("Random QoL", "Save Game Button", true, new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
         LoanEarly = Config.Bind("Random QoL", "Payoff Loans Early", false, new ConfigDescription("Enables or disables a button to pay off loans early"));
         Tutorial = Config.Bind("Random QoL", "Enables or disables the tutorial", false, new ConfigDescription("Enables or disables the tutorial at the start of a fresh save"));

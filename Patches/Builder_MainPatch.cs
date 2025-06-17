@@ -14,16 +14,17 @@ public class Builder_MainPatch {
     [HarmonyPostfix]
     public static void ProductStackingWaitEndOfIEnumerable() {
         if (BetterSMT.ProductStacking.Value == true) {
-
             foreach (GameObject prodPrefab in ProductListing.Instance.productPrefabs) {
                 if (prodPrefab == null || !prodPrefab.TryGetComponent(out Data_Product dataProduct)) {
                     continue;
                 }
 
-                dataProduct.isStackable = dataProduct.productID != 0;
+                dataProduct.isStackable = true;
             }
         }
     }
+
+
 
     [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
     public static bool DeleteWheneverPatch(Builder_Main __instance) {

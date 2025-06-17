@@ -80,7 +80,6 @@ public class ManagerBlackboardPatch {
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance, int productID, float boxPrice) {
-        Debug.Log($"Trying to add productID {productID} at {Time.time}");
         if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
 
         ProductListing component = __instance.GetComponent<ProductListing>();

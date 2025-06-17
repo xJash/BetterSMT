@@ -30,22 +30,15 @@ public class UpgradesManagerPatch {
     [HarmonyPrefix]
     public static bool UserCode_CmdTimeAccelerationPatch(UpgradesManager __instance) {
         if (BetterSMT.ClockMorning.Value) {
-            Debug.Log("clock morning value true");
             if (__instance.acceleratedTime || ((__instance.GetComponent<GameData>().timeOfDay > 8.01f || __instance.GetComponent<GameData>().timeOfDay < 22.4f) && !__instance.GetComponent<GameData>().isSupermarketOpen && NPC_Manager.Instance.numberOfHiredEmployees != 0 && NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount <= 0)) {
 
 
-                Debug.Log("agreeable 1");
-                Debug.Log("__instance.acceleratedTime" + __instance.acceleratedTime);
                 __instance.NetworkacceleratedTime = !__instance.acceleratedTime;
-                Debug.Log("NetworkacceleratedTime" + __instance.NetworkacceleratedTime);
                 __instance.GetComponent<TimeAccelerationWatcher>().enabled = __instance.acceleratedTime;
-                Debug.Log("__instance.acceleratedTime" + __instance.acceleratedTime);
                 __instance.RpcTimeAcceleration(__instance.acceleratedTime);
-                Debug.Log("");
                 return false;
             }
         }
-        Debug.Log("running original code2");
         return true;
     }
 

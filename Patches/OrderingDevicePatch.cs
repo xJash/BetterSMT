@@ -48,15 +48,7 @@ public static class OrderingDevicePatch {
 
         for (int productId = 0; productId < listing.productPrefabs.Length; productId++) {
             var prefab = listing.productPrefabs[productId];
-            if (prefab == null) {
-                Debug.LogWarning($"[BetterSMT] Null prefab at productId {productId}");
-                continue;
-            }
             var dataProduct = prefab.GetComponent<Data_Product>();
-            if (dataProduct == null) {
-                Debug.LogWarning($"[BetterSMT] Missing Data_Product on prefab for productId {productId}");
-                continue;
-            }
             int maxItemsPerBox = dataProduct.maxItemsPerBox;
 
             int missingItems = 0;
