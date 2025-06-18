@@ -88,6 +88,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<string> CurrencyTypeToAny;
     public static ConfigEntry<bool> EmployeeRerolls;
+    public static ConfigEntry<bool> CardboardBalerBreak;
+    public static ConfigEntry<bool> SelfCheckoutBreak;
 
     // === !Highlighting! ===
     public static ConfigEntry<bool> StorageHighlighting;
@@ -190,6 +192,7 @@ public class BetterSMT : BaseUnityPlugin {
         MaxBoxes = base.Config.Bind("Mini Transport Vehicle", "Change the max boxes", 6, new ConfigDescription("Adjusts the max amount of boxes the Mini Transport Vehicle will hold at one time.", new AcceptableValueRange<int>(6, 16)));
         MTVHotkey = Config.Bind("Mini Transport Vehicle", "Change the drop hotkey", new KeyboardShortcut(KeyCode.L), new ConfigDescription("Changes the hotkey used to dispense all boxes from the Mini Transport Vehicle instantly."));
         DropCooldown = base.Config.Bind("Mini Transport Vehicle", "Item Pickup Cooldown", 10f, new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.", new AcceptableValueRange<float>(1f, 30f)));
+
         // === !Random Features! ===
         EmployeeRerolls = Config.Bind("Random Features", "Employee Rerolls", false, new ConfigDescription("Gives you unlimited rerolls to change your employees"));
         OneClickCheckMark = Config.Bind("Random Features", "Surveillance Camera One Click", false, new ConfigDescription("Makes all customers one click when using security console"));
@@ -198,6 +201,8 @@ public class BetterSMT : BaseUnityPlugin {
         EnablePalletDisplaysPerk = Config.Bind("Random Features", "Enable pallet displays", false, new ConfigDescription("Enables pallet displays without unlocking the perk."));
         ReplaceCommasWithPeriods = Config.Bind("Random Features", "Replace commas with periods", false, new ConfigDescription("Changes all commas in the game into periods."));
         CurrencyTypeToAny = Config.Bind("Random Features", "CurrencySymbol", "$", new ConfigDescription("Sets the currency symbol used in the game. Default is $."));
+        CardboardBalerBreak = Config.Bind("Random Features", "Enable or disable cardboard baler breaking", false, new ConfigDescription("Enables or disables the cardboard baler needing to be repaired."));
+        SelfCheckoutBreak = Config.Bind("Random Features", "Enable or disable Self Checkout breaking", false, new ConfigDescription("Enables or disables the self checkout needing to be repaired."));
 
         // === !Hotkey Configurations! ===
         LadderHotkey = Config.Bind("Hotkey Configurations", "Sledgehammer Hotkey", new KeyboardShortcut(KeyCode.M), new ConfigDescription("Hotkey to spawn a Sledgehammer in your hands."));

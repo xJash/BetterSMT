@@ -5,7 +5,12 @@ using UnityEngine;
 
 namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(Data_Container))]
-public class Patch_AddItemToRow {
+public class Patch_Data_Container {
+
+    [HarmonyPatch("BreakingEvent"), HarmonyPostfix]
+    public static void BreakingEvent(Data_Container __instance) {
+        if (BetterSMT.SelfCheckoutBreak.Value) __instance.isBroken = false;
+    }
 
     [HarmonyPatch("AddItemToRow"), HarmonyPrefix]
     private static bool AddItemToRowPatch(Data_Container __instance, int containerNumber, int productIDToAdd) {

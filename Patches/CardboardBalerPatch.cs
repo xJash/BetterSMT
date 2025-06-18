@@ -15,6 +15,12 @@ public static class CardboardBalerPatch {
         return BetterSMT.CardboardBalerValue.Value != 10;
     }
 
+
+    [HarmonyPatch("BreakingEvent"), HarmonyPostfix]
+    public static void BreakingEvent(CardboardBaler __instance) {
+        if(BetterSMT.CardboardBalerBreak.Value) __instance.isBroken = false;
+    }
+
     [HarmonyPostfix]
     [HarmonyPatch(MethodType.Constructor)]
     public static void SetBoxLimitPostfix(CardboardBaler __instance) {
