@@ -255,7 +255,7 @@ public class BetterSMT : BaseUnityPlugin {
         MissingProductNotifications = Config.Bind("Random QoL", "Enable or disable notification Missing Product", false, new ConfigDescription("Enables or disables the notification for missing products"));
         TooExpensiveNotifications = Config.Bind("Random QoL", "Enable or disable notification Too Expensive", false, new ConfigDescription("Enables or disables the notification for too expensive products"));
         SelfCheckoutLimit = base.Config.Bind("Random QoL", "Product limit on self checkout", 4, new ConfigDescription("Limits the amount of item's a customer can have before using the self checkout", new AcceptableValueRange<int>(0, 100)));
-        MaxBoxSize = base.Config.Bind("Random QoL", "Modify amount of products in boxes", 1, new ConfigDescription("** WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER ** Multiples the amount of product in a box, aswell as it's cost. Higher = more products in box and higher cost https://imgur.com/a/QT5l2Ky", new AcceptableValueRange<int>(1, 25)));
+        MaxBoxSize = base.Config.Bind("Random QoL", "Modify amount of products in boxes", 1, new ConfigDescription("** WARNING THIS IS EXTREMELY BUGGY IN MULTIPLAYER ** Multiples the amount of product in a box, aswell as it's cost. Higher = more products in box and higher cost https://imgur.com/a/QT5l2Ky", new AcceptableValueRange<int>(1, 50)));
         AutoPayAllInvoices = base.Config.Bind("Debt", "Enables or disables automatic invoice payment", false, new ConfigDescription("Enables or disables paying for invoices automatically"));
 
         Instance = this;
