@@ -19,6 +19,7 @@ public class BetterSMT : BaseUnityPlugin {
     // === !Pillar Modification! ===
     public static ConfigEntry<float> PillarPrice;
     public static ConfigEntry<bool> PillarRubble;
+
     // === !Debt! ===
     public static ConfigEntry<bool> AutoPayAllInvoices;
 
@@ -90,7 +91,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> EmployeeRerolls;
     public static ConfigEntry<bool> CardboardBalerBreak;
     public static ConfigEntry<bool> SelfCheckoutBreak;
-
+    public static ConfigEntry<bool> CloserBoxSpawning;
     // === !Highlighting! ===
     public static ConfigEntry<bool> StorageHighlighting;
 
@@ -194,6 +195,7 @@ public class BetterSMT : BaseUnityPlugin {
         DropCooldown = base.Config.Bind("Mini Transport Vehicle", "Item Pickup Cooldown", 10f, new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.", new AcceptableValueRange<float>(1f, 30f)));
 
         // === !Random Features! ===
+        CloserBoxSpawning = Config.Bind("Random Features", "Closer Box Spawning", false, new ConfigDescription("Causes boxes to spawn closer to the storage area"));
         EmployeeRerolls = Config.Bind("Random Features", "Employee Rerolls", false, new ConfigDescription("Gives you unlimited rerolls to change your employees"));
         OneClickCheckMark = Config.Bind("Random Features", "Surveillance Camera One Click", false, new ConfigDescription("Makes all customers one click when using security console"));
         AllowFreePlacement = Config.Bind("Random Features", "Disable Placement Blocking", false, new ConfigDescription("Enables or disables you to place structures wherever, even overlapping"));

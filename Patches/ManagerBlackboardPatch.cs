@@ -1,29 +1,80 @@
 ﻿using HarmonyLib;
+using Mirror;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection.Emit;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(ManagerBlackboard))]
 public class ManagerBlackboardPatch {
-    [HarmonyPatch("ServerCargoSpawner", MethodType.Enumerator), HarmonyTranspiler]
-    private static IEnumerable<CodeInstruction> InstantCargoSpawner(IEnumerable<CodeInstruction> instructions) {
-        return BetterSMT.FastBoxSpawns.Value ?
-            new CodeMatcher(instructions)
-                .Start()
-                .MatchForward(false, new CodeMatch(OpCodes.Newobj, AccessTools.Constructor(typeof(WaitForSeconds), [typeof(float)])))
-                .Repeat(matcher => {
-                    _ = matcher.Advance(-1);
-                    _ = matcher.SetOperandAndAdvance(0.01f);
-                    _ = matcher.Advance(1);
-                })
-                .InstructionEnumeration() :
 
-            instructions;
+
+    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.ServerCargoSpawner))]
+    [HarmonyPrefix]
+    private static bool ServerCargoSpawner(ManagerBlackboard __instance, ref IEnumerator __result) {
+        __result = CustomCargoSpawner(__instance);
+        return false; 
+    }
+
+    private static IEnumerator CustomCargoSpawner(ManagerBlackboard __instance) {
+        __instance.isSpawning = true;
+        Vector3 halfExtents = new(0.3f, 0.3f, 0.45f);
+        WaitForSeconds waitTime1;
+        WaitForSeconds waitTime2;
+
+        if (BetterSMT.FastBoxSpawns.Value) {
+            waitTime1 = new WaitForSeconds(0.01f);
+            waitTime2 = new WaitForSeconds(0.01f);
+        } else {
+            waitTime1 = new WaitForSeconds(0.5f);
+            waitTime2 = new WaitForSeconds(0.2f);
+        }
+
+        while (__instance.idsToSpawn.Count > 0) {
+            Vector3 spawnPosition;
+
+            if (BetterSMT.CloserBoxSpawning.Value) {
+                spawnPosition = new Vector3(
+                    20f + Random.Range(-2.5f, 2.5f),
+                    1f,
+                    7f + Random.Range(-2.5f, 2.5f)
+                );
+            } else {
+                spawnPosition = __instance.merchandiseSpawnpoint.transform.position + new Vector3(
+                    Random.Range(-2f, 2f),
+                    0f,
+                    Random.Range(-2f, 2f)
+                );
+            }
+
+            if (Physics.BoxCast(spawnPosition + new Vector3(0f, 5f, 0f), halfExtents, -Vector3.up, Quaternion.identity, 7.5f, __instance.boxSpawnLayerMask)) {
+                yield return waitTime1;
+            }
+            yield return waitTime1;
+
+            int num = __instance.idsToSpawn[0];
+            GameObject gameObject = Object.Instantiate(__instance.boxPrefab, spawnPosition, Quaternion.identity);
+            gameObject.GetComponent<BoxData>().NetworkproductID = num;
+
+            int maxItemsPerBox = __instance.GetComponent<ProductListing>().productPrefabs[num].GetComponent<Data_Product>().maxItemsPerBox;
+            gameObject.GetComponent<BoxData>().NetworknumberOfProducts = maxItemsPerBox;
+
+            Sprite sprite = __instance.GetComponent<ProductListing>().productSprites[num];
+            gameObject.transform.Find("Canvas/Image1").GetComponent<Image>().sprite = sprite;
+            gameObject.transform.Find("Canvas/Image2").GetComponent<Image>().sprite = sprite;
+
+            gameObject.transform.SetParent(__instance.boxParent);
+            NetworkServer.Spawn(gameObject);
+            __instance.RpcParentBoxOnClient(gameObject);
+            __instance.idsToSpawn.RemoveAt(0);
+        }
+
+
+        yield return waitTime2;
+        __instance.isSpawning = false;
     }
 
     public static IEnumerator CalculateShoppingListTotalOverride(ManagerBlackboard __instance) {
@@ -80,7 +131,9 @@ public class ManagerBlackboardPatch {
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance, int productID, float boxPrice) {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value) return true;
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) {
+            return true;
+        }
 
         ProductListing component = __instance.GetComponent<ProductListing>();
         GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
