@@ -28,7 +28,7 @@
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Cinemachine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Mirror" Private="False" Publicize="true">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\Mirror.dll</HintPath>
@@ -44,7 +44,6 @@
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\UnityEngine.dll</HintPath>
-      <!-- Edit this to the actual location -->
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\Supermarket Together_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
@@ -64,6 +63,6 @@
   </ProjectExtensions>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Discord\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Nexus\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Github\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitch\Desktop\BetterSMT\Thunderstore\BepInEx\plugins&quot;&#xD;&#xA;" />
+    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Supermarket Together\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitche\Desktop\BetterSMT\Discord\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitche\Desktop\BetterSMT\Nexus\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitche\Desktop\BetterSMT\Github\BepInEx\plugins&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\Mitche\Desktop\BetterSMT\Thunderstore\BepInEx\plugins&quot;&#xD;&#xA;" />
   </Target>
 </Project>

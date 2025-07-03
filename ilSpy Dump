@@ -55,6 +55,8 @@ public class AchievementsManager : NetworkBehaviour
 
 	public bool hiddenCatFound;
 
+	public bool repairedADevice;
+
 	[TextArea(10, 1000)]
 	public string Comment = "Information Here.";
 
@@ -393,6 +395,18 @@ public class AchievementsManager : NetworkBehaviour
 				break;
 			case 39:
 				if (bufferValues[20] >= 25000)
+				{
+					SetSteamAchievement(currentIndex);
+				}
+				break;
+			case 40:
+				if (repairedADevice)
+				{
+					SetSteamAchievement(currentIndex);
+				}
+				break;
+			case 41:
+				if (bufferValues[21] >= 30)
 				{
 					SetSteamAchievement(currentIndex);
 				}
@@ -3754,6 +3768,8 @@ public class CardboardBaler : NetworkBehaviour
 
 	public bool isBroken;
 
+	public int brokenDay;
+
 	public GameObject associatedBrokenDisclaimerOBJ;
 
 	public GameObject associatedBrokenPanelFixOBJ;
@@ -3819,6 +3835,7 @@ public class CardboardBaler : NetworkBehaviour
 
 	public void BreakingEvent()
 	{
+		brokenDay = GameData.Instance.gameDay;
 		isBroken = true;
 		boxesLimitToCreateACardboardBale = 15;
 		RpcBreakingEvent();
@@ -3919,6 +3936,7 @@ public class CardboardBaler : NetworkBehaviour
 			{
 				NetworkServer.Destroy(associatedBrokenDisclaimerOBJ);
 			}
+			NPC_Manager.Instance.RemoveFurnitureOBJFromList(base.gameObject);
 			boxesLimitToCreateACardboardBale = 10;
 			RpcFixBreakingEvent();
 		}
@@ -3938,6 +3956,7 @@ public class CardboardBaler : NetworkBehaviour
 
 	protected void UserCode_RpcFixBreakingEvent()
 	{
+		AchievementsManager.Instance.AddLocalAchievementPoint(21);
 		if ((bool)associatedBrokenPanelFixOBJ)
 		{
 			Object.Destroy(associatedBrokenPanelFixOBJ);
@@ -5566,15 +5585,21 @@ public class Data_Container : NetworkBehaviour
 	[Space(10f)]
 	public bool isBroken;
 
+	public int brokenDay;
+
 	public GameObject associatedBrokenDisclaimerOBJ;
 
 	public GameObject associatedBrokenPanelFixOBJ;
 
 	public GameObject fixPrefabOBJ;
 
+	public GameObject puddlePrefabOBJ;
+
 	public Vector3 localBrokenPosition;
 
 	public Vector3 localBrokenRotation;
+
+	private GameObject associatedPuddleOBJ;
 
 	[Space(10f)]
 	public GameObject dummyPrefab;
@@ -6517,6 +6542,7 @@ public class Data_Container : NetworkBehaviour
 
 	public void BreakingEvent()
 	{
+		brokenDay = GameData.Instance.gameDay;
 		isBroken = true;
 		RpcBreakingEvent();
 	}
@@ -6981,6 +7007,16 @@ public class Data_Container : NetworkBehaviour
 		associatedBrokenPanelFixOBJ.transform.localRotation = Quaternion.Euler(localBrokenRotation);
 		associatedBrokenPanelFixOBJ.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("ReferenceOBJ").Value = base.gameObject;
 		associatedBrokenPanelFixOBJ.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("ReferenceIndex").Value = 0;
+		if ((bool)puddlePrefabOBJ)
+		{
+			associatedPuddleOBJ = Object.Instantiate(puddlePrefabOBJ);
+			associatedPuddleOBJ.transform.position = base.transform.Find("Standspot").position;
+			associatedPuddleOBJ.transform.rotation = base.transform.Find("Standspot").rotation;
+			if (base.isServer)
+			{
+				associatedPuddleOBJ.GetComponent<PlayMakerFSM>().enabled = true;
+			}
+		}
 	}
 
 	protected static void InvokeUserCode_RpcBreakingEvent(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
@@ -7004,6 +7040,7 @@ public class Data_Container : NetworkBehaviour
 			{
 				NetworkServer.Destroy(associatedBrokenDisclaimerOBJ);
 			}
+			NPC_Manager.Instance.RemoveFurnitureOBJFromList(base.gameObject);
 			RpcFixBreakingEvent();
 		}
 	}
@@ -7022,9 +7059,14 @@ public class Data_Container : NetworkBehaviour
 
 	protected void UserCode_RpcFixBreakingEvent()
 	{
+		AchievementsManager.Instance.AddLocalAchievementPoint(21);
 		if ((bool)associatedBrokenPanelFixOBJ)
 		{
 			Object.Destroy(associatedBrokenPanelFixOBJ);
+		}
+		if ((bool)associatedPuddleOBJ)
+		{
+			Object.Destroy(associatedPuddleOBJ);
 		}
 	}
 
@@ -11143,12 +11185,18 @@ public class EmployeesDataGeneration : MonoBehaviour
 			int num5;
 			int num6;
 			int num7;
+			int num8;
+			int num9;
+			int num10;
 			if (i == num)
 			{
 				num4 = Random.Range(6, 11);
 				num5 = Random.Range(7, 11);
 				num6 = Random.Range(6, 11);
 				num7 = Random.Range(7, 11);
+				num8 = Random.Range(6, 11);
+				num9 = Random.Range(7, 11);
+				num10 = Random.Range(6, 11);
 			}
 			else if (i == num2)
 			{
@@ -11156,6 +11204,9 @@ public class EmployeesDataGeneration : MonoBehaviour
 				num5 = Random.Range(4, 11);
 				num6 = Random.Range(5, 11);
 				num7 = Random.Range(4, 11);
+				num8 = Random.Range(5, 11);
+				num9 = Random.Range(4, 11);
+				num10 = Random.Range(5, 11);
 			}
 			else
 			{
@@ -11163,10 +11214,13 @@ public class EmployeesDataGeneration : MonoBehaviour
 				num5 = Random.Range(1, 11);
 				num6 = Random.Range(1, 11);
 				num7 = Random.Range(1, 11);
+				num8 = Random.Range(1, 11);
+				num9 = Random.Range(1, 11);
+				num10 = Random.Range(1, 11);
 			}
 			int value = (num4 + num5 + num6 + num7) * Random.Range(3, 6) + Random.Range(-2, 3) * 10;
 			value = Mathf.Clamp(value, 30, 1000);
-			string text = num3 + "|" + value + "|" + num4 + "|" + num5 + "|" + num6 + "|" + num7;
+			string text = num3 + "|" + value + "|" + num4 + "|" + num5 + "|" + num6 + "|" + num7 + "|" + num8 + "|" + num9 + "|" + num10;
 			managerComponent.todaysEmployeesData[i] = text;
 			managerComponent.UpdateTodayEmployeesOnClients(i, text);
 		}
@@ -11227,10 +11281,13 @@ public class EmployeesDataGeneration : MonoBehaviour
 			int num4 = int.Parse(array[3]);
 			int num5 = int.Parse(array[4]);
 			int num6 = int.Parse(array[5]);
-			int num7 = Mathf.FloorToInt((num3 + num4 + num5 + num6) / 4);
+			int num7 = int.Parse(array[6]);
+			int num8 = int.Parse(array[7]);
+			int num9 = int.Parse(array[8]);
+			int num10 = Mathf.FloorToInt((num3 + num4 + num5 + num6 + num7 + num8 + num9) / 7);
 			gameObject.transform.Find("EmployeeImageBCK/EmployeeImage").GetComponent<Image>().sprite = employeesSprites[num];
 			gameObject.transform.Find("SalaryBCK/Salary_Text").GetComponent<TextMeshProUGUI>().text = "$" + num2;
-			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num7.ToString();
+			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num10.ToString();
 			gameObject.transform.Find("Button_SelectCV").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 		}
 	}
@@ -11249,20 +11306,23 @@ public class EmployeesDataGeneration : MonoBehaviour
 		int num4 = int.Parse(array[3]);
 		int num5 = int.Parse(array[4]);
 		int num6 = int.Parse(array[5]);
-		int num7 = Mathf.FloorToInt((num3 + num4 + num5 + num6) / 4);
+		int num7 = int.Parse(array[6]);
+		int num8 = int.Parse(array[7]);
+		int num9 = int.Parse(array[8]);
+		int num10 = Mathf.FloorToInt((num3 + num4 + num5 + num6 + num7 + num8 + num9) / 7);
 		CVsDataPanel.transform.Find("EmployeeImageBCK/EmployeeImage").GetComponent<Image>().sprite = employeesSprites[num];
 		CVsDataPanel.transform.Find("DataBCK/Salary_Text").GetComponent<TextMeshProUGUI>().text = "$" + num2;
-		CVsDataPanel.transform.Find("DataBCK/ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num7.ToString();
+		CVsDataPanel.transform.Find("DataBCK/ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num10.ToString();
 		CVsDataPanel.transform.Find("Button_Hire").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("CurrentCVIndex").Value = index;
-		int[] array2 = new int[4] { num3, num4, num5, num6 };
+		int[] array2 = new int[7] { num3, num4, num5, num6, num7, num8, num9 };
 		for (int i = 0; i < experienceOBJsArray.Length; i++)
 		{
 			GameObject gameObject = experienceOBJsArray[i];
-			int num8 = array2[i];
+			int num11 = array2[i];
 			for (int j = 0; j < 10; j++)
 			{
 				Transform child = gameObject.transform.GetChild(j);
-				if (j >= num8)
+				if (j >= num11)
 				{
 					child.GetComponent<Image>().color = colorOff;
 				}
@@ -11309,18 +11369,24 @@ public class EmployeesDataGeneration : MonoBehaviour
 			int num4 = int.Parse(array[3]);
 			int num5 = int.Parse(array[4]);
 			int num6 = int.Parse(array[5]);
-			int num7 = Mathf.FloorToInt((num3 + num4 + num5 + num6) / 4);
-			string text2 = array[6];
-			int num8 = Mathf.FloorToInt(int.Parse(array[8]) / 5000);
-			int num9 = Mathf.FloorToInt(int.Parse(array[9]) / 1000);
-			int num10 = Mathf.FloorToInt(int.Parse(array[10]) / 1000);
-			int num11 = Mathf.FloorToInt(int.Parse(array[11]) / 1000);
-			int num12 = Mathf.FloorToInt((num8 + num9 + num10 + num11) / 4);
+			int num7 = int.Parse(array[6]);
+			int num8 = int.Parse(array[7]);
+			int num9 = int.Parse(array[8]);
+			int num10 = Mathf.FloorToInt((num3 + num4 + num5 + num6 + num7 + num8 + num9) / 7);
+			string text2 = array[9];
+			int num11 = Mathf.FloorToInt(int.Parse(array[11]) / 5000);
+			int num12 = Mathf.FloorToInt(int.Parse(array[12]) / 1000);
+			int num13 = Mathf.FloorToInt(int.Parse(array[13]) / 1000);
+			int num14 = Mathf.FloorToInt(int.Parse(array[14]) / 1000);
+			int num15 = Mathf.FloorToInt(int.Parse(array[15]) / 1000);
+			int num16 = Mathf.FloorToInt(int.Parse(array[16]) / 1000);
+			int num17 = Mathf.FloorToInt(int.Parse(array[17]) / 1000);
+			int num18 = Mathf.FloorToInt((num11 + num12 + num13 + num14 + num15 + num16 + num17) / 7);
 			gameObject.transform.Find("EmployeeImageBCK/EmployeeImage").GetComponent<Image>().sprite = employeesSprites[num];
 			gameObject.transform.Find("SalaryBCK/Salary_Text").GetComponent<TextMeshProUGUI>().text = "$" + num2;
-			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num7.ToString();
+			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num10.ToString();
 			gameObject.transform.Find("EmployeeName").GetComponent<TextMeshProUGUI>().text = text2;
-			gameObject.transform.Find("LevelsBCK/Levels_Text").GetComponent<TextMeshProUGUI>().text = num12.ToString();
+			gameObject.transform.Find("LevelsBCK/Levels_Text").GetComponent<TextMeshProUGUI>().text = num18.ToString();
 			gameObject.transform.Find("Button_SelectDismiss").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 		}
 	}
@@ -11339,32 +11405,41 @@ public class EmployeesDataGeneration : MonoBehaviour
 		int num4 = int.Parse(array[3]);
 		int num5 = int.Parse(array[4]);
 		int num6 = int.Parse(array[5]);
-		int num7 = Mathf.FloorToInt((num3 + num4 + num5 + num6) / 4);
-		string text2 = array[6];
-		int num8 = Mathf.FloorToInt(int.Parse(array[8]) / 5000);
-		int num9 = Mathf.FloorToInt(int.Parse(array[9]) / 1000);
-		int num10 = Mathf.FloorToInt(int.Parse(array[10]) / 1000);
-		int num11 = Mathf.FloorToInt(int.Parse(array[11]) / 1000);
-		int num12 = Mathf.FloorToInt((num8 + num9 + num10 + num11) / 4);
+		int num7 = int.Parse(array[6]);
+		int num8 = int.Parse(array[7]);
+		int num9 = int.Parse(array[8]);
+		int num10 = Mathf.FloorToInt((num3 + num4 + num5 + num6 + num7 + num8 + num9) / 7);
+		string text2 = array[9];
+		int num11 = Mathf.FloorToInt(int.Parse(array[11]) / 5000);
+		int num12 = Mathf.FloorToInt(int.Parse(array[12]) / 1000);
+		int num13 = Mathf.FloorToInt(int.Parse(array[13]) / 1000);
+		int num14 = Mathf.FloorToInt(int.Parse(array[14]) / 1000);
+		int num15 = Mathf.FloorToInt(int.Parse(array[15]) / 1000);
+		int num16 = Mathf.FloorToInt(int.Parse(array[16]) / 1000);
+		int num17 = Mathf.FloorToInt(int.Parse(array[17]) / 1000);
+		int num18 = Mathf.FloorToInt((num11 + num12 + num13 + num14 + num15 + num16 + num17) / 7);
 		dismissDataPanel.transform.Find("EmployeeImageBCK/EmployeeImage").GetComponent<Image>().sprite = employeesSprites[num];
 		dismissDataPanel.transform.Find("DataBCK/Salary_Text").GetComponent<TextMeshProUGUI>().text = "$" + num2;
-		dismissDataPanel.transform.Find("DataBCK/ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num7.ToString();
+		dismissDataPanel.transform.Find("DataBCK/ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num10.ToString();
 		dismissDataPanel.transform.Find("Button_Dismiss").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("CurrentCVIndex").Value = index;
-		dismissDataPanel.transform.Find("DataBCK/LevelBCK/Level_Text").GetComponent<TextMeshProUGUI>().text = num12.ToString();
+		dismissDataPanel.transform.Find("DataBCK/LevelBCK/Level_Text").GetComponent<TextMeshProUGUI>().text = num18.ToString();
 		dismissDataPanel.transform.Find("EmployeeName").GetComponent<TextMeshProUGUI>().text = text2;
-		dismissDataPanel.transform.Find("CashierLevelBCK/CashierLevel").GetComponent<TextMeshProUGUI>().text = num8.ToString();
-		dismissDataPanel.transform.Find("RestockerLevelBCK/RestockerLevel").GetComponent<TextMeshProUGUI>().text = num9.ToString();
-		dismissDataPanel.transform.Find("StorageLevelBCK/StorageLevel").GetComponent<TextMeshProUGUI>().text = num10.ToString();
-		dismissDataPanel.transform.Find("SecurityLevelBCK/SecurityLevel").GetComponent<TextMeshProUGUI>().text = num12.ToString();
-		int[] array2 = new int[4] { num3, num4, num5, num6 };
+		dismissDataPanel.transform.Find("CashierLevelBCK/CashierLevel").GetComponent<TextMeshProUGUI>().text = num11.ToString();
+		dismissDataPanel.transform.Find("RestockerLevelBCK/RestockerLevel").GetComponent<TextMeshProUGUI>().text = num12.ToString();
+		dismissDataPanel.transform.Find("StorageLevelBCK/StorageLevel").GetComponent<TextMeshProUGUI>().text = num13.ToString();
+		dismissDataPanel.transform.Find("SecurityLevelBCK/SecurityLevel").GetComponent<TextMeshProUGUI>().text = num14.ToString();
+		dismissDataPanel.transform.Find("TechnicianLevelBCK/TechnicianLevel").GetComponent<TextMeshProUGUI>().text = num15.ToString();
+		dismissDataPanel.transform.Find("OrderingLevelBCK/OrderingLevel").GetComponent<TextMeshProUGUI>().text = num16.ToString();
+		dismissDataPanel.transform.Find("ManufacturingLevelBCK/ManufacturingLevel").GetComponent<TextMeshProUGUI>().text = num17.ToString();
+		int[] array2 = new int[7] { num3, num4, num5, num6, num7, num8, num9 };
 		for (int i = 0; i < dismissExperienceOBJsArray.Length; i++)
 		{
 			GameObject gameObject = dismissExperienceOBJsArray[i];
-			int num13 = array2[i];
+			int num19 = array2[i];
 			for (int j = 0; j < 10; j++)
 			{
 				Transform child = gameObject.transform.GetChild(j);
-				if (j >= num13)
+				if (j >= num19)
 				{
 					child.GetComponent<Image>().color = colorOff;
 				}
@@ -11453,36 +11528,48 @@ public class EmployeesDataGeneration : MonoBehaviour
 			int num5 = int.Parse(array[3]);
 			int num6 = int.Parse(array[4]);
 			int num7 = int.Parse(array[5]);
-			int num8 = Mathf.FloorToInt((num4 + num5 + num6 + num7) / 4);
-			string text2 = array[6];
-			int num9 = Mathf.FloorToInt(int.Parse(array[8]) / 5000);
-			int num10 = Mathf.FloorToInt(int.Parse(array[9]) / 1000);
-			int num11 = Mathf.FloorToInt(int.Parse(array[10]) / 1000);
-			int num12 = Mathf.FloorToInt(int.Parse(array[11]) / 1000);
-			int num13 = Mathf.FloorToInt((num9 + num10 + num11 + num12) / 4);
+			int num8 = int.Parse(array[6]);
+			int num9 = int.Parse(array[7]);
+			int num10 = int.Parse(array[8]);
+			int num11 = Mathf.FloorToInt((num4 + num5 + num6 + num7 + num8 + num9 + num10) / 7);
+			string text2 = array[9];
+			int num12 = Mathf.FloorToInt(int.Parse(array[11]) / 5000);
+			int num13 = Mathf.FloorToInt(int.Parse(array[12]) / 1000);
+			int num14 = Mathf.FloorToInt(int.Parse(array[13]) / 1000);
+			int num15 = Mathf.FloorToInt(int.Parse(array[14]) / 1000);
+			int num16 = Mathf.FloorToInt(int.Parse(array[15]) / 1000);
+			int num17 = Mathf.FloorToInt(int.Parse(array[16]) / 1000);
+			int num18 = Mathf.FloorToInt(int.Parse(array[17]) / 1000);
+			int num19 = Mathf.FloorToInt((num12 + num13 + num14 + num15 + num16 + num17 + num18) / 7);
 			gameObject.transform.Find("EmployeeImageBCK/EmployeeImage").GetComponent<Image>().sprite = employeesSprites[num2];
 			gameObject.transform.Find("SalaryBCK/Salary_Text").GetComponent<TextMeshProUGUI>().text = "$" + num3;
-			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num8.ToString();
+			gameObject.transform.Find("ScoreBCK/Score_Text").GetComponent<TextMeshProUGUI>().text = num11.ToString();
 			gameObject.transform.Find("EmployeeNameField/TextArea/Placeholder").GetComponent<TextMeshProUGUI>().text = text2;
-			gameObject.transform.Find("LevelsBCK/Levels_Text").GetComponent<TextMeshProUGUI>().text = num13.ToString();
-			gameObject.transform.Find("CashierBCK/Level").GetComponent<TextMeshProUGUI>().text = num9.ToString();
-			gameObject.transform.Find("RestockerBCK/Level").GetComponent<TextMeshProUGUI>().text = num10.ToString();
-			gameObject.transform.Find("StorageBCK/Level").GetComponent<TextMeshProUGUI>().text = num11.ToString();
-			gameObject.transform.Find("SecurityBCK/Level").GetComponent<TextMeshProUGUI>().text = num12.ToString();
+			gameObject.transform.Find("LevelsBCK/Levels_Text").GetComponent<TextMeshProUGUI>().text = num19.ToString();
+			gameObject.transform.Find("CashierBCK/Level").GetComponent<TextMeshProUGUI>().text = num12.ToString();
+			gameObject.transform.Find("RestockerBCK/Level").GetComponent<TextMeshProUGUI>().text = num13.ToString();
+			gameObject.transform.Find("StorageBCK/Level").GetComponent<TextMeshProUGUI>().text = num14.ToString();
+			gameObject.transform.Find("SecurityBCK/Level").GetComponent<TextMeshProUGUI>().text = num15.ToString();
+			gameObject.transform.Find("TechnicianBCK/Level").GetComponent<TextMeshProUGUI>().text = num16.ToString();
+			gameObject.transform.Find("OrderingBCK/Level").GetComponent<TextMeshProUGUI>().text = num17.ToString();
+			gameObject.transform.Find("ManufacturingBCK/Level").GetComponent<TextMeshProUGUI>().text = num18.ToString();
 			Transform transform = gameObject.transform.Find("CashierBCK/Stars").transform;
 			Transform transform2 = gameObject.transform.Find("RestockerBCK/Stars").transform;
 			Transform transform3 = gameObject.transform.Find("StorageBCK/Stars").transform;
 			Transform transform4 = gameObject.transform.Find("SecurityBCK/Stars").transform;
-			int[] array2 = new int[4] { num4, num5, num6, num7 };
-			Transform[] array3 = new Transform[4] { transform, transform2, transform3, transform4 };
+			Transform transform5 = gameObject.transform.Find("TechnicianBCK/Stars").transform;
+			Transform transform6 = gameObject.transform.Find("OrderingBCK/Stars").transform;
+			Transform transform7 = gameObject.transform.Find("ManufacturingBCK/Stars").transform;
+			int[] array2 = new int[7] { num4, num5, num6, num7, num8, num9, num10 };
+			Transform[] array3 = new Transform[7] { transform, transform2, transform3, transform4, transform5, transform6, transform7 };
 			for (int k = 0; k < array3.Length; k++)
 			{
-				Transform transform5 = array3[k];
-				int num14 = array2[k];
+				Transform transform8 = array3[k];
+				int num20 = array2[k];
 				for (int l = 0; l < 10; l++)
 				{
-					Transform child = transform5.transform.GetChild(l);
-					if (l >= num14)
+					Transform child = transform8.transform.GetChild(l);
+					if (l >= num20)
 					{
 						child.GetComponent<Image>().color = colorOff;
 					}
@@ -11500,15 +11587,18 @@ public class EmployeesDataGeneration : MonoBehaviour
 			{
 				gameObject.transform.Find("HappinessBad").gameObject.SetActive(value: true);
 			}
-			int num15 = NPC_Manager.Instance.priorityArray[j];
-			string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[num15]);
+			int num21 = NPC_Manager.Instance.priorityArray[j];
+			string localizationString = LocalizationManager.instance.GetLocalizationString(priorityHashes[num21]);
 			gameObject.transform.Find("PriorityBCK/ShowPrioritiesButton/CurrentPriorityText").GetComponent<TextMeshProUGUI>().text = localizationString;
-			gameObject.transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[num15];
+			gameObject.transform.Find("PriorityBCK/ShowPrioritiesButton").GetComponent<Image>().color = priorityColors[num21];
 			gameObject.transform.Find("PriorityButtons/NoTask_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Cashier_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Restocker_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Storage_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			gameObject.transform.Find("PriorityButtons/Security_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
+			gameObject.transform.Find("PriorityButtons/Technician_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
+			gameObject.transform.Find("PriorityButtons/Ordering_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
+			gameObject.transform.Find("PriorityButtons/Manufacturing_Button").GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("NPCManagerOBJ").Value = base.gameObject;
 			if (GameCanvas.Instance.isCool)
 			{
 				gameObject.transform.Find("HatImage").gameObject.SetActive(value: true);
@@ -11555,7 +11645,7 @@ public class EmployeesDataGeneration : MonoBehaviour
 			if (ES3.KeyExists(key, filePath))
 			{
 				int[] array = ES3.Load<int[]>(key, filePath);
-				int[] array2 = new int[5];
+				int[] array2 = new int[8];
 				for (int k = 0; k < array.Length; k++)
 				{
 					if (!(managerComponent.hiredEmployeesData[k] == ""))
@@ -11567,7 +11657,7 @@ public class EmployeesDataGeneration : MonoBehaviour
 						}
 					}
 				}
-				text = "<color=" + hexaColors[0] + ">" + array2[0] + "</color>-<color=" + hexaColors[1] + ">" + array2[1] + "</color>-<color=" + hexaColors[2] + ">" + array2[2] + "</color>-<color=" + hexaColors[3] + ">" + array2[3] + "</color>-<color=" + hexaColors[4] + ">" + array2[4] + "</color>";
+				text = "<color=" + hexaColors[0] + ">" + array2[0] + "</color>-<color=" + hexaColors[1] + ">" + array2[1] + "</color>-<color=" + hexaColors[2] + ">" + array2[2] + "</color>-<color=" + hexaColors[3] + ">" + array2[3] + "</color>-<color=" + hexaColors[4] + ">" + array2[4] + "</color>-<color=" + hexaColors[5] + ">" + array2[5] + "</color>-<color=" + hexaColors[6] + ">" + array2[6] + "</color>-<color=" + hexaColors[7] + ">" + array2[7] + "</color>";
 			}
 			savePLayoutsParent.transform.GetChild(j).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
 			loadPLayoutsParent.transform.GetChild(j).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
@@ -12629,7 +12719,7 @@ public class GameCanvas : MonoBehaviour
 						obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = LocalizationManager.instance.GetLocalizationString(key);
 					}
 				}
-				if (unlockStrings.Length == 1)
+				if (requireStrings.Length == 1)
 				{
 					bigRequireInfoOBJ.SetActive(value: true);
 					bigRequireInfoOBJ.GetComponent<TextMeshProUGUI>().text = LocalizationManager.instance.GetLocalizationString(requireStrings[0]);
@@ -13346,7 +13436,7 @@ public class GameData : NetworkBehaviour
 
 	private void BreakingManager()
 	{
-		if (difficulty == 0 || gameDay < 21 || !isSupermarketOpen || timeOfDay > 22f)
+		if (gameDay < 21 || !isSupermarketOpen || timeOfDay > 22f)
 		{
 			return;
 		}
@@ -13361,9 +13451,9 @@ public class GameData : NetworkBehaviour
 				return;
 			}
 			nextTimeToGetABreakEvent += GetNextTimeAdd();
-			int num = UnityEngine.Random.Range(0, 2);
+			int num = UnityEngine.Random.Range(0, 4);
 			GameObject gameObject = null;
-			GameObject gameObject2 = UnityEngine.Object.Instantiate(breakingPrefabOBJ);
+			GameObject gameObject2 = null;
 			switch (num)
 			{
 			case 0:
@@ -13371,12 +13461,12 @@ public class GameData : NetworkBehaviour
 				{
 					int index = UnityEngine.Random.Range(0, NPC_Manager.Instance.selfCheckoutOBJ.transform.childCount);
 					gameObject = NPC_Manager.Instance.selfCheckoutOBJ.transform.GetChild(index).gameObject;
-					if (gameObject.GetComponent<Data_Container>().isBroken)
+					if (gameObject.GetComponent<Data_Container>().isBroken || gameObject.GetComponent<Data_Container>().brokenDay == gameDay)
 					{
-						gameObject2.SetActive(value: false);
 						return;
 					}
 					gameObject.GetComponent<Data_Container>().BreakingEvent();
+					gameObject2 = UnityEngine.Object.Instantiate(breakingPrefabOBJ);
 					gameObject.GetComponent<Data_Container>().associatedBrokenDisclaimerOBJ = gameObject2;
 				}
 				break;
@@ -13385,20 +13475,40 @@ public class GameData : NetworkBehaviour
 				{
 					int index = UnityEngine.Random.Range(0, NPC_Manager.Instance.cardboardBalerList.Count);
 					gameObject = NPC_Manager.Instance.cardboardBalerList[index];
-					if (gameObject.GetComponent<CardboardBaler>().isBroken)
+					if (gameObject.GetComponent<CardboardBaler>().isBroken || gameObject.GetComponent<CardboardBaler>().brokenDay == gameDay)
 					{
-						gameObject2.SetActive(value: false);
 						return;
 					}
 					gameObject.GetComponent<CardboardBaler>().BreakingEvent();
+					gameObject2 = UnityEngine.Object.Instantiate(breakingPrefabOBJ);
 					gameObject.GetComponent<CardboardBaler>().associatedBrokenDisclaimerOBJ = gameObject2;
 				}
 				break;
-			}
-			if (gameObject != null && (bool)gameObject.GetComponent<BoxCollider>())
+			case 2:
+			case 3:
 			{
-				gameObject2.transform.position = gameObject.transform.position + new Vector3(0f, 1f + gameObject.GetComponent<BoxCollider>().size.y, 0f);
+				List<GameObject> list = CoolFurnitureList();
+				if (list.Count > 0)
+				{
+					int index = UnityEngine.Random.Range(0, list.Count);
+					gameObject = list[index];
+					if (gameObject.GetComponent<Data_Container>().isBroken || gameObject.GetComponent<Data_Container>().brokenDay == gameDay)
+					{
+						return;
+					}
+					gameObject.GetComponent<Data_Container>().BreakingEvent();
+					gameObject2 = UnityEngine.Object.Instantiate(breakingPrefabOBJ);
+					gameObject.GetComponent<Data_Container>().associatedBrokenDisclaimerOBJ = gameObject2;
+				}
+				break;
+			}
+			}
+			if (gameObject2 != null && gameObject != null && (bool)gameObject.GetComponent<BoxCollider>())
+			{
+				float num2 = ((!(gameObject.GetComponent<BoxCollider>().size.y < 0.65f)) ? gameObject.GetComponent<BoxCollider>().size.y : 2f);
+				gameObject2.transform.position = gameObject.transform.position + new Vector3(0f, 1f + num2, 0f);
 				gameObject2.transform.rotation = Quaternion.Euler(new Vector3(0f, gameObject.transform.rotation.y + 90f, 0f));
+				NPC_Manager.Instance.brokenFurnitureList.Add(gameObject);
 				NetworkServer.Spawn(gameObject2);
 			}
 		}
@@ -13406,7 +13516,24 @@ public class GameData : NetworkBehaviour
 
 	private float GetNextTimeAdd()
 	{
-		return Mathf.Clamp(UnityEngine.Random.Range(10, 15) / (difficulty + NetworkServer.connections.Count), 1.5f, float.PositiveInfinity);
+		float value = difficulty + NetworkServer.connections.Count;
+		value = Mathf.Clamp(value, 2f, 10f);
+		return Mathf.Clamp((float)UnityEngine.Random.Range(9, 14) / value, 1.5f, float.PositiveInfinity);
+	}
+
+	private List<GameObject> CoolFurnitureList()
+	{
+		List<GameObject> list = new List<GameObject>();
+		Transform child = GetComponent<NetworkSpawner>().levelPropsOBJ.transform.GetChild(0);
+		for (int i = 0; i < child.transform.childCount; i++)
+		{
+			int containerID = child.transform.GetChild(i).GetComponent<Data_Container>().containerID;
+			if (containerID == 2 || containerID == 3 || containerID == 4 || containerID == 8)
+			{
+				list.Add(child.transform.GetChild(i).gameObject);
+			}
+		}
+		return list;
 	}
 
 	private void WorkingDayControl()
@@ -19640,6 +19767,8 @@ public class NPC_Info : NetworkBehaviour
 
 	public bool hasComplainedAboutFilth;
 
+	public bool hasSlipped;
+
 	public int shelfThatHasTheItem;
 
 	public GameObject halloweenHeadPrefabOBJ;
@@ -19659,11 +19788,15 @@ public class NPC_Info : NetworkBehaviour
 
 	public GameObject dummyCardboardBale;
 
+	public GameObject dummyOrderBox;
+
 	public GameObject randomBox;
 
 	public GameObject currentCardboardBale;
 
 	public GameObject closestCardboardBaler;
+
+	public GameObject currentFurnitureToFix;
 
 	public bool playingCoroutine;
 
@@ -19703,6 +19836,8 @@ public class NPC_Info : NetworkBehaviour
 	public GameObject stolenProductPrefab;
 
 	public GameObject productCheckoutPrefab;
+
+	public GameObject slipSoundPrefabOBJ;
 
 	[Space(10f)]
 	public int currentCheckoutIndex;
@@ -19744,6 +19879,12 @@ public class NPC_Info : NetworkBehaviour
 
 	public int securityValue;
 
+	public int technicianValue;
+
+	public int orderingValue;
+
+	public int manufacturingValue;
+
 	public int cashierExperience;
 
 	public int restockerExperience;
@@ -19751,6 +19892,12 @@ public class NPC_Info : NetworkBehaviour
 	public int storageExperience;
 
 	public int securityExperience;
+
+	public int technicianExperience;
+
+	public int orderingExperience;
+
+	public int manufacturingExperience;
 
 	public int cashierLevel;
 
@@ -19760,7 +19907,24 @@ public class NPC_Info : NetworkBehaviour
 
 	public int securityLevel;
 
+	public int technicianLevel;
+
+	public int orderingLevel;
+
+	public int manufacturingLevel;
+
 	public bool employeeDismissed;
+
+	[Space(10f)]
+	public int packagingAssignedOrderIndex = -1;
+
+	public string packagingAssignedOrderData;
+
+	public List<int> packagingAssignedOrderProducts;
+
+	public List<int> packagingPackedOrderProducts;
+
+	public int[] orderProductLocationInfoArray;
 
 	private GameObject characterOBJ;
 
@@ -20317,6 +20481,26 @@ public class NPC_Info : NetworkBehaviour
 		}
 	}
 
+	public void SlipEvent()
+	{
+		hasSlipped = true;
+		RPCNotificationAboveHead("NPCmessagehit5", "");
+		RpcSlipEvent();
+		RpcAnimationPlay(0);
+		if (!beingPushed)
+		{
+			StartCoroutine(StopSpeed());
+		}
+	}
+
+	[ClientRpc]
+	private void RpcSlipEvent()
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		SendRPCInternal("System.Void NPC_Info::RpcSlipEvent()", 1584305596, writer, 0, includeOwner: true);
+		NetworkWriterPool.Return(writer);
+	}
+
 	[ClientRpc]
 	public void RPCNotificationAboveHead(string message1, string messageAddon)
 	{
@@ -20600,10 +20784,25 @@ public class NPC_Info : NetworkBehaviour
 			instantiatedOBJ.transform.localPosition = Vector3.zero;
 			instantiatedOBJ.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
 			instantiatedOBJ.transform.Find("Canvas").gameObject.SetActive(value: false);
-			GameObject obj = UnityEngine.Object.Instantiate(dummyCardboardBale, instantiatedOBJ.transform);
+			GameObject obj2 = UnityEngine.Object.Instantiate(dummyCardboardBale, instantiatedOBJ.transform);
+			obj2.transform.localPosition = new Vector3(-0.03f, 0.09f, 0f);
+			obj2.transform.localRotation = Quaternion.Euler(0f, 270f, 0f);
+			obj2.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			obj2.name = "Bale";
+			break;
+		}
+		case 3:
+		{
+			instantiatedOBJ = UnityEngine.Object.Instantiate(dummyBoxPrefab);
+			instantiatedOBJ.transform.parent = base.transform.Find("EquippedItem").transform;
+			instantiatedOBJ.transform.localPosition = Vector3.zero;
+			instantiatedOBJ.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+			instantiatedOBJ.transform.Find("Canvas").gameObject.SetActive(value: false);
+			GameObject obj = UnityEngine.Object.Instantiate(dummyOrderBox, instantiatedOBJ.transform);
 			obj.transform.localPosition = new Vector3(-0.03f, 0.09f, 0f);
-			obj.transform.localRotation = Quaternion.Euler(0f, 270f, 0f);
-			obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			obj.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+			obj.transform.localScale = new Vector3(2f, 1.5f, 1.6f);
+			obj.name = "OrderBox";
 			break;
 		}
 		}
@@ -20618,6 +20817,23 @@ public class NPC_Info : NetworkBehaviour
 		else
 		{
 			((NPC_Info)obj).UserCode_RpcEquipNPCItem__Int32__Int32(reader.ReadInt(), reader.ReadInt());
+		}
+	}
+
+	protected void UserCode_RpcSlipEvent()
+	{
+		UnityEngine.Object.Instantiate(slipSoundPrefabOBJ, base.transform.position, Quaternion.identity);
+	}
+
+	protected static void InvokeUserCode_RpcSlipEvent(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkClient.active)
+		{
+			Debug.LogError("RPC RpcSlipEvent called on server.");
+		}
+		else
+		{
+			((NPC_Info)obj).UserCode_RpcSlipEvent();
 		}
 	}
 
@@ -20707,6 +20923,7 @@ public class NPC_Info : NetworkBehaviour
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RpcAnimationPlay(System.Int32)", InvokeUserCode_RpcAnimationPlay__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RpcShowBroom(System.Boolean,System.Int32)", InvokeUserCode_RpcShowBroom__Boolean__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RpcEquipNPCItem(System.Int32,System.Int32)", InvokeUserCode_RpcEquipNPCItem__Int32__Int32);
+		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RpcSlipEvent()", InvokeUserCode_RpcSlipEvent);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RPCNotificationAboveHead(System.String,System.String)", InvokeUserCode_RPCNotificationAboveHead__String__String);
 		RemoteProcedureCalls.RegisterRpc(typeof(NPC_Info), "System.Void NPC_Info::RpcSurveillanceSet(System.Boolean)", InvokeUserCode_RpcSurveillanceSet__Boolean);
 	}
@@ -20808,6 +21025,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using Mirror;
 using Mirror.RemoteCalls;
 using StarterAssets;
@@ -20879,6 +21097,8 @@ public class NPC_Manager : NetworkBehaviour
 	public GameObject droppedProductsParentOBJ;
 
 	public GameObject interruptRecyclingButtonOBJ;
+
+	public GameObject orderingDepartmentSpotOBJ;
 
 	public int maxEmployees;
 
@@ -20964,6 +21184,8 @@ public class NPC_Manager : NetworkBehaviour
 	public List<GameObject> cardboardBalerList = new List<GameObject>();
 
 	public List<GameObject> orderPickupPointsList = new List<GameObject>();
+
+	public List<GameObject> brokenFurnitureList = new List<GameObject>();
 
 	public List<string> NPCsOrdersList = new List<string>();
 
@@ -21332,18 +21554,28 @@ public class NPC_Manager : NetworkBehaviour
 	private void SpawnEmployeeByIndex(int index)
 	{
 		string[] array = hiredEmployeesData[index].Split("|");
+		if (array.Length < 14)
+		{
+			array = AdaptOldEmployeeDataToNewData(index);
+		}
 		int networkNPCID = int.Parse(array[0]);
 		int salary = int.Parse(array[1]);
 		int cashierValue = int.Parse(array[2]);
 		int restockerValue = int.Parse(array[3]);
 		int storageValue = int.Parse(array[4]);
 		int securityValue = int.Parse(array[5]);
-		string networkNPCName = array[6];
-		int networkhatID = int.Parse(array[7]);
-		int cashierExperience = int.Parse(array[8]);
-		int restockerExperience = int.Parse(array[9]);
-		int storageExperience = int.Parse(array[10]);
-		int securityExperience = int.Parse(array[11]);
+		int technicianValue = int.Parse(array[6]);
+		int orderingValue = int.Parse(array[7]);
+		int manufacturingValue = int.Parse(array[8]);
+		string networkNPCName = array[9];
+		int networkhatID = int.Parse(array[10]);
+		int cashierExperience = int.Parse(array[11]);
+		int restockerExperience = int.Parse(array[12]);
+		int storageExperience = int.Parse(array[13]);
+		int securityExperience = int.Parse(array[14]);
+		int technicianExperience = int.Parse(array[15]);
+		int orderingExperience = int.Parse(array[16]);
+		int manufacturingExperience = int.Parse(array[17]);
 		Vector3 position = employeeSpawnpoint.transform.position + new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 		GameObject gameObject = Object.Instantiate(npcAgentPrefab, position, Quaternion.identity);
 		gameObject.transform.SetParent(employeeParentOBJ.transform);
@@ -21356,12 +21588,18 @@ public class NPC_Manager : NetworkBehaviour
 		component.restockerValue = restockerValue;
 		component.storageValue = storageValue;
 		component.securityValue = securityValue;
+		component.technicianValue = technicianValue;
+		component.orderingValue = orderingValue;
+		component.manufacturingValue = manufacturingValue;
 		component.NetworkNPCName = networkNPCName;
 		component.NetworkhatID = networkhatID;
 		component.cashierExperience = cashierExperience;
 		component.restockerExperience = restockerExperience;
 		component.storageExperience = storageExperience;
 		component.securityExperience = securityExperience;
+		component.technicianExperience = technicianExperience;
+		component.orderingExperience = orderingExperience;
+		component.manufacturingExperience = manufacturingExperience;
 		employeesArray[index] = gameObject;
 		NetworkServer.Spawn(gameObject);
 		NavMeshAgent component2 = gameObject.GetComponent<NavMeshAgent>();
@@ -21372,6 +21610,15 @@ public class NPC_Manager : NetworkBehaviour
 		component2.acceleration = 8f + 16f * extraEmployeeSpeedFactor;
 		component2.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
 		SetEmployeesLevels(component);
+	}
+
+	private string[] AdaptOldEmployeeDataToNewData(int index)
+	{
+		string[] array = hiredEmployeesData[index].Split("|");
+		int num = (int.Parse(array[2]) + int.Parse(array[3]) + int.Parse(array[4]) + int.Parse(array[5])) / 4;
+		string text = array[0] + "|" + array[1] + "|" + array[2] + "|" + array[3] + "|" + array[4] + "|" + array[5] + "|" + num + "|" + num + "|" + num + "|" + array[6] + "|" + array[7] + "|" + array[8] + "|" + array[9] + "|" + array[10] + "|" + array[11] + "|1000|1000|1000";
+		hiredEmployeesData[index] = text;
+		return text.Split("|");
 	}
 
 	public void EndDaySaveEmployeesValues()
@@ -21389,13 +21636,19 @@ public class NPC_Manager : NetworkBehaviour
 				int restockerValue = component.restockerValue;
 				int storageValue = component.storageValue;
 				int securityValue = component.securityValue;
+				int technicianValue = component.technicianValue;
+				int orderingValue = component.orderingValue;
+				int manufacturingValue = component.manufacturingValue;
 				string nPCName = component.NPCName;
 				int hatID = component.hatID;
 				int cashierExperience = component.cashierExperience;
 				int restockerExperience = component.restockerExperience;
 				int storageExperience = component.storageExperience;
 				int securityExperience = component.securityExperience;
-				hiredEmployeesData[i] = nPCID + "|" + salary + "|" + cashierValue + "|" + restockerValue + "|" + storageValue + "|" + securityValue + "|" + nPCName + "|" + hatID + "|" + cashierExperience + "|" + restockerExperience + "|" + storageExperience + "|" + securityExperience + "|";
+				int technicianExperience = component.technicianExperience;
+				int orderingExperience = component.orderingExperience;
+				int manufacturingExperience = component.manufacturingExperience;
+				hiredEmployeesData[i] = nPCID + "|" + salary + "|" + cashierValue + "|" + restockerValue + "|" + storageValue + "|" + securityValue + "|" + technicianValue + "|" + orderingValue + "|" + manufacturingValue + "|" + nPCName + "|" + hatID + "|" + cashierExperience + "|" + restockerExperience + "|" + storageExperience + "|" + securityExperience + "|" + technicianExperience + "|" + orderingExperience + "|" + manufacturingExperience;
 				SetEmployeesLevels(component);
 			}
 		}
@@ -21407,6 +21660,9 @@ public class NPC_Manager : NetworkBehaviour
 		npcinfoComponent.restockerLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.restockerExperience / 1000), 1, 100);
 		npcinfoComponent.storageLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.storageExperience / 1000), 1, 100);
 		npcinfoComponent.securityLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.securityExperience / 1000), 1, 100);
+		npcinfoComponent.technicianLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.technicianExperience / 1000), 1, 100);
+		npcinfoComponent.orderingLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.orderingExperience / 1000), 1, 100);
+		npcinfoComponent.manufacturingLevel = Mathf.Clamp(Mathf.FloorToInt(npcinfoComponent.manufacturingExperience / 1000), 1, 100);
 	}
 
 	[Command(requiresAuthority = false)]
@@ -21569,6 +21825,12 @@ public class NPC_Manager : NetworkBehaviour
 				break;
 			case 4:
 				component2.speed += component2.speed * 0.8f + 0.05f * (float)component.securityLevel;
+				break;
+			case 5:
+				component2.speed += 0.05f * (float)component.technicianLevel;
+				break;
+			case 6:
+				component2.speed += 0.05f * (float)component.orderingLevel;
 				break;
 			}
 			component2.speed = Mathf.Clamp(component2.speed, 1f, 12f);
@@ -21740,12 +22002,12 @@ public class NPC_Manager : NetworkBehaviour
 						UnequipBox(component);
 						break;
 					}
-					int num12 = CashierGetAvailableCheckout();
-					if (num12 != -1)
+					int num = CashierGetAvailableCheckout();
+					if (num != -1)
 					{
-						component.employeeAssignedCheckoutIndex = num12;
+						component.employeeAssignedCheckoutIndex = num;
 						UpdateEmployeeCheckouts();
-						component2.destination = checkoutOBJ.transform.GetChild(num12).transform.Find("EmployeePosition").transform.position;
+						component2.destination = checkoutOBJ.transform.GetChild(num).transform.Find("EmployeePosition").transform.position;
 						component.state = 2;
 					}
 					else
@@ -21808,23 +22070,33 @@ public class NPC_Manager : NetworkBehaviour
 						component.state = 7;
 						break;
 					}
-					float timeToWait3 = Mathf.Clamp(productCheckoutWait - (float)component.cashierLevel * 0.01f, 0.05f, 1f);
-					component.StartWaitState(timeToWait3, 6);
+					float timeToWait2 = Mathf.Clamp(productCheckoutWait - (float)component.cashierLevel * 0.01f, 0.05f, 1f);
+					component.StartWaitState(timeToWait2, 6);
 					component.state = -1;
 					break;
 				}
 				case 6:
 				{
-					foreach (GameObject internalProductListForEmployee in checkoutOBJ.transform.GetChild(component.employeeAssignedCheckoutIndex).GetComponent<Data_Container>().internalProductListForEmployees)
+					List<GameObject> internalProductListForEmployees = checkoutOBJ.transform.GetChild(component.employeeAssignedCheckoutIndex).GetComponent<Data_Container>().internalProductListForEmployees;
+					int value = component.cashierLevel / 10;
+					value = Mathf.Clamp(value, 1, 10);
+					int num2 = Mathf.Clamp(component.cashierValue - value - 1, 2, 10);
+					int num3 = 0;
+					for (int i = 0; i < internalProductListForEmployees.Count; i++)
 					{
-						if (internalProductListForEmployee != null)
+						GameObject gameObject2 = internalProductListForEmployees[i];
+						if (gameObject2 != null)
 						{
-							component.cashierExperience += component.cashierValue;
-							internalProductListForEmployee.GetComponent<ProductCheckoutSpawn>().AddProductFromNPCEmployee();
-							break;
+							component.cashierExperience += num2;
+							gameObject2.GetComponent<ProductCheckoutSpawn>().AddProductFromNPCEmployee();
+							num3++;
+							if (num3 >= value)
+							{
+								break;
+							}
 						}
-						component.state = 5;
 					}
+					component.state = 5;
 					break;
 				}
 				case 7:
@@ -21841,8 +22113,8 @@ public class NPC_Manager : NetworkBehaviour
 					}
 					else
 					{
-						float timeToWait2 = Mathf.Clamp(productCheckoutWait - (float)component.cashierLevel * 0.01f, 0.05f, 1f);
-						component.StartWaitState(timeToWait2, 7);
+						float timeToWait = Mathf.Clamp(productCheckoutWait - (float)component.cashierLevel * 0.01f, 0.05f, 1f);
+						component.StartWaitState(timeToWait, 7);
 						component.state = -1;
 					}
 					break;
@@ -21887,13 +22159,13 @@ public class NPC_Manager : NetworkBehaviour
 					break;
 				case 2:
 				{
-					Data_Container component5 = storageOBJ.transform.GetChild(component.productAvailableArray[2]).GetComponent<Data_Container>();
-					int[] productInfoArray = component5.productInfoArray;
-					int num8 = productInfoArray[component.productAvailableArray[3]];
-					if (num8 == component.productAvailableArray[5])
+					Data_Container component6 = storageOBJ.transform.GetChild(component.productAvailableArray[2]).GetComponent<Data_Container>();
+					int[] productInfoArray2 = component6.productInfoArray;
+					int num13 = productInfoArray2[component.productAvailableArray[3]];
+					if (num13 == component.productAvailableArray[5])
 					{
-						int num9 = productInfoArray[component.productAvailableArray[3] + 1];
-						if (num9 <= 0)
+						int num14 = productInfoArray2[component.productAvailableArray[3] + 1];
+						if (num14 <= 0)
 						{
 							component.StartWaitState(2f, 0);
 							component.state = -1;
@@ -21901,14 +22173,14 @@ public class NPC_Manager : NetworkBehaviour
 						}
 						if ((bool)storageOBJ.transform.GetChild(component.productAvailableArray[2]).transform.Find("CanvasSigns"))
 						{
-							component5.EmployeeUpdateArrayValuesStorage(component.productAvailableArray[3], num8, -1);
+							component6.EmployeeUpdateArrayValuesStorage(component.productAvailableArray[3], num13, -1);
 						}
 						else
 						{
-							component5.EmployeeUpdateArrayValuesStorage(component.productAvailableArray[3], -1, -1);
+							component6.EmployeeUpdateArrayValuesStorage(component.productAvailableArray[3], -1, -1);
 						}
-						component.NetworkboxProductID = num8;
-						component.NetworkboxNumberOfProducts = num9;
+						component.NetworkboxProductID = num13;
+						component.NetworkboxNumberOfProducts = num14;
 						component.EquipNPCItem(1);
 						component2.destination = shelvesOBJ.transform.GetChild(component.productAvailableArray[0]).transform.Find("Standspot").transform.position;
 						component.state = 3;
@@ -21932,22 +22204,22 @@ public class NPC_Manager : NetworkBehaviour
 					break;
 				case 4:
 				{
-					Data_Container component4 = shelvesOBJ.transform.GetChild(component.productAvailableArray[0]).GetComponent<Data_Container>();
-					int num6 = component4.productInfoArray[component.productAvailableArray[1] + 1];
+					Data_Container component5 = shelvesOBJ.transform.GetChild(component.productAvailableArray[0]).GetComponent<Data_Container>();
+					int num11 = component5.productInfoArray[component.productAvailableArray[1] + 1];
 					int maxProductsPerRow = GetMaxProductsPerRow(component.productAvailableArray[0], component.productAvailableArray[4]);
-					if (component.boxNumberOfProducts > 0 && num6 < maxProductsPerRow)
+					if (component.boxNumberOfProducts > 0 && num11 < maxProductsPerRow)
 					{
-						int value = maxProductsPerRow - num6;
-						value = Mathf.Clamp(value, 1, component.restockerLevel);
+						int value4 = maxProductsPerRow - num11;
+						value4 = Mathf.Clamp(value4, 1, component.restockerLevel);
 						int boxNumberOfProducts = component.boxNumberOfProducts;
 						boxNumberOfProducts = Mathf.Clamp(boxNumberOfProducts, 1, component.restockerLevel);
-						int num7 = boxNumberOfProducts;
-						if (value < boxNumberOfProducts)
+						int num12 = boxNumberOfProducts;
+						if (value4 < boxNumberOfProducts)
 						{
-							num7 = value;
+							num12 = value4;
 						}
-						component4.EmployeeAddsItemToRow(component.productAvailableArray[1], num7);
-						component.NetworkboxNumberOfProducts = component.boxNumberOfProducts - num7;
+						component5.EmployeeAddsItemToRow(component.productAvailableArray[1], num12);
+						component.NetworkboxNumberOfProducts = component.boxNumberOfProducts - num12;
 						component.StartWaitState(employeeItemPlaceWait, 4);
 						component.state = -1;
 						component.restockerExperience += component.restockerValue;
@@ -21981,9 +22253,9 @@ public class NPC_Manager : NetworkBehaviour
 						}
 						else if (employeeRecycleBoxes && !interruptBoxRecycling)
 						{
-							float num10 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
-							float num11 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
-							if (num10 < num11)
+							float num15 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
+							float num16 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
+							if (num15 < num16)
 							{
 								component2.destination = recycleSpot1OBJ.transform.position;
 								component.state = 9;
@@ -22146,41 +22418,27 @@ public class NPC_Manager : NetworkBehaviour
 					}
 					break;
 				case 10:
-				{
-					GameObject closestBale = GetClosestBale(gameObject);
-					if ((bool)closestBale)
-					{
-						if (NavMesh.SamplePosition(new Vector3(closestBale.transform.position.x, 0f, closestBale.transform.position.z), out var hit, 1f, -1))
-						{
-							component.currentCardboardBale = closestBale;
-							component2.destination = hit.position;
-							component.state = 30;
-						}
-					}
-					else if (Vector3.Distance(component.transform.position, restSpotOBJ.transform.position) > 6.5f)
+					if (Vector3.Distance(component.transform.position, restSpotOBJ.transform.position) > 6.5f)
 					{
 						component2.destination = AttemptToGetRestPosition();
+						break;
 					}
-					else
-					{
-						component.StartWaitState(2f, 0);
-						component.state = -1;
-					}
+					component.StartWaitState(2f, 0);
+					component.state = -1;
 					break;
-				}
 				case 1:
 					if ((bool)component.randomBox)
 					{
-						Vector3 a = new Vector3(component.randomBox.transform.position.x, 0f, component.randomBox.transform.position.z);
-						Vector3 b = new Vector3(component.transform.position.x, 0f, component.transform.position.z);
-						if (Vector3.Distance(a, b) < 2f)
+						Vector3 a2 = new Vector3(component.randomBox.transform.position.x, 0f, component.randomBox.transform.position.z);
+						Vector3 b2 = new Vector3(component.transform.position.x, 0f, component.transform.position.z);
+						if (Vector3.Distance(a2, b2) < 2f)
 						{
-							BoxData component3 = component.randomBox.GetComponent<BoxData>();
-							component.NetworkboxProductID = component3.productID;
-							component.NetworkboxNumberOfProducts = component3.numberOfProducts;
+							BoxData component4 = component.randomBox.GetComponent<BoxData>();
+							component.NetworkboxProductID = component4.productID;
+							component.NetworkboxNumberOfProducts = component4.numberOfProducts;
 							component.EquipNPCItem(1);
 							GameData.Instance.GetComponent<NetworkSpawner>().EmployeeDestroyBox(component.randomBox);
-							if (component3.numberOfProducts > 0)
+							if (component4.numberOfProducts > 0)
 							{
 								component.state = 18;
 							}
@@ -22262,9 +22520,9 @@ public class NPC_Manager : NetworkBehaviour
 					}
 					else if (employeeRecycleBoxes && !interruptBoxRecycling)
 					{
-						float num2 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
-						float num3 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
-						if (num2 < num3)
+						float num9 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
+						float num10 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
+						if (num9 < num10)
 						{
 							component2.destination = recycleSpot1OBJ.transform.position;
 							component.state = 7;
@@ -22336,57 +22594,6 @@ public class NPC_Manager : NetworkBehaviour
 					}
 					break;
 				}
-				case 30:
-					if ((bool)component.currentCardboardBale)
-					{
-						Vector3 a2 = new Vector3(component.currentCardboardBale.transform.position.x, 0f, component.currentCardboardBale.transform.position.z);
-						Vector3 b2 = new Vector3(component.transform.position.x, 0f, component.transform.position.z);
-						if (Vector3.Distance(a2, b2) < 2f)
-						{
-							component.EquipNPCItem(2);
-							GameData.Instance.GetComponent<NetworkSpawner>().EmployeeDestroyBox(component.currentCardboardBale);
-							component.state = 31;
-							break;
-						}
-					}
-					component.StartWaitState(1f, 0);
-					component.state = -1;
-					break;
-				case 31:
-					if (closestRecyclePerk)
-					{
-						component2.destination = trashSpotOBJ.transform.position;
-						component.state = 32;
-					}
-					else if (employeeRecycleBoxes && !interruptBoxRecycling)
-					{
-						float num4 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
-						float num5 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
-						if (num4 < num5)
-						{
-							component2.destination = recycleSpot1OBJ.transform.position;
-							component.state = 32;
-						}
-						else
-						{
-							component2.destination = recycleSpot2OBJ.transform.position;
-							component.state = 32;
-						}
-					}
-					else
-					{
-						component2.destination = trashSpotOBJ.transform.position;
-						component.state = 5;
-					}
-					break;
-				case 32:
-				{
-					float fundsToAdd = 18f * (float)GameData.Instance.GetComponent<UpgradesManager>().boxRecycleFactor;
-					AchievementsManager.Instance.CmdAddAchievementPoint(16, 1);
-					GameData.Instance.CmdAlterFunds(fundsToAdd);
-					component.state = 5;
-					break;
-				}
 				case 33:
 					if ((bool)component.closestCardboardBaler)
 					{
@@ -22443,8 +22650,8 @@ public class NPC_Manager : NetworkBehaviour
 				}
 				case 1:
 				{
-					int num = RetrieveCorrectPatrolPoint(gameObject);
-					Transform transform = ((num >= patrolPositionOBJ.transform.childCount) ? patrolPositionOBJ.transform.GetChild(0) : patrolPositionOBJ.transform.GetChild(num));
+					int num8 = RetrieveCorrectPatrolPoint(gameObject);
+					Transform transform = ((num8 >= patrolPositionOBJ.transform.childCount) ? patrolPositionOBJ.transform.GetChild(0) : patrolPositionOBJ.transform.GetChild(num8));
 					if (Vector3.Distance(component.transform.position, transform.position) > 3f)
 					{
 						component2.destination = transform.position;
@@ -22459,8 +22666,8 @@ public class NPC_Manager : NetworkBehaviour
 					{
 						component.currentChasedThiefOBJ.GetComponent<NPC_Info>().AuxiliarAnimationPlay(0);
 						component.RpcEmployeeHitThief();
-						float timeToWait = Mathf.Clamp(1.45f - (float)component.securityLevel * 0.01f, 0.5f, 2f);
-						component.StartWaitState(timeToWait, 2);
+						float timeToWait3 = Mathf.Clamp(1.45f - (float)component.securityLevel * 0.01f, 0.5f, 2f);
+						component.StartWaitState(timeToWait3, 2);
 						component.state = -1;
 						component.securityExperience += 5 * component.securityValue;
 					}
@@ -22490,6 +22697,331 @@ public class NPC_Manager : NetworkBehaviour
 					break;
 				}
 				break;
+			case 5:
+				switch (state)
+				{
+				case 0:
+				{
+					if (component.equippedItem > 0)
+					{
+						DropBoxOnGround(component);
+						UnequipBox(component);
+						break;
+					}
+					GameObject furnitureToFix = GetFurnitureToFix(gameObject);
+					if ((bool)furnitureToFix)
+					{
+						component.currentFurnitureToFix = furnitureToFix;
+						component2.destination = furnitureToFix.transform.Find("Standspot").position;
+						component.state = 1;
+					}
+					else
+					{
+						component.state = 10;
+					}
+					break;
+				}
+				case 10:
+				{
+					GameObject closestBale = GetClosestBale(gameObject);
+					if ((bool)closestBale)
+					{
+						if (NavMesh.SamplePosition(new Vector3(closestBale.transform.position.x, 0f, closestBale.transform.position.z), out var hit, 1f, -1))
+						{
+							component.currentCardboardBale = closestBale;
+							component2.destination = hit.position;
+							component.state = 30;
+						}
+					}
+					else if (Vector3.Distance(component.transform.position, restSpotOBJ.transform.position) > 6.5f)
+					{
+						component2.destination = AttemptToGetRestPosition();
+					}
+					else
+					{
+						component.StartWaitState(2f, 0);
+						component.state = -1;
+					}
+					break;
+				}
+				case 1:
+					if ((bool)component.currentFurnitureToFix && RetrieveFurnitureRepairState(component.currentFurnitureToFix))
+					{
+						float value3 = 8f - (float)component.technicianLevel * 0.1f;
+						value3 = Mathf.Clamp(value3, 2f, 8f);
+						component.StartWaitState(value3, 2);
+						component.state = -1;
+					}
+					break;
+				case 2:
+					if ((bool)component.currentFurnitureToFix && RetrieveFurnitureRepairState(component.currentFurnitureToFix))
+					{
+						if ((bool)component.currentFurnitureToFix.GetComponent<Data_Container>())
+						{
+							component.currentFurnitureToFix.GetComponent<Data_Container>().CmdFixBreakingEvent();
+						}
+						else if ((bool)component.currentFurnitureToFix.GetComponent<CardboardBaler>())
+						{
+							component.currentFurnitureToFix.GetComponent<CardboardBaler>().CmdFixBreakingEvent();
+						}
+						component.technicianExperience += component.technicianLevel * 10;
+					}
+					component.StartWaitState(2f, 0);
+					component.state = -1;
+					break;
+				case 3:
+					UnequipBox(component);
+					break;
+				case 30:
+					if ((bool)component.currentCardboardBale)
+					{
+						Vector3 a = new Vector3(component.currentCardboardBale.transform.position.x, 0f, component.currentCardboardBale.transform.position.z);
+						Vector3 b = new Vector3(component.transform.position.x, 0f, component.transform.position.z);
+						if (Vector3.Distance(a, b) < 2f)
+						{
+							component.EquipNPCItem(2);
+							GameData.Instance.GetComponent<NetworkSpawner>().EmployeeDestroyBox(component.currentCardboardBale);
+							component.state = 31;
+							break;
+						}
+					}
+					component.StartWaitState(1f, 0);
+					component.state = -1;
+					break;
+				case 31:
+					if (closestRecyclePerk)
+					{
+						component2.destination = trashSpotOBJ.transform.position;
+						component.state = 32;
+					}
+					else if (employeeRecycleBoxes && !interruptBoxRecycling)
+					{
+						float num6 = Vector3.Distance(gameObject.transform.position, recycleSpot1OBJ.transform.position);
+						float num7 = Vector3.Distance(gameObject.transform.position, recycleSpot2OBJ.transform.position);
+						if (num6 < num7)
+						{
+							component2.destination = recycleSpot1OBJ.transform.position;
+							component.state = 32;
+						}
+						else
+						{
+							component2.destination = recycleSpot2OBJ.transform.position;
+							component.state = 32;
+						}
+					}
+					else
+					{
+						component2.destination = trashSpotOBJ.transform.position;
+						component.state = 3;
+					}
+					break;
+				case 32:
+				{
+					float fundsToAdd = 18f * (float)GameData.Instance.GetComponent<UpgradesManager>().boxRecycleFactor;
+					AchievementsManager.Instance.CmdAddAchievementPoint(16, 1);
+					GameData.Instance.CmdAlterFunds(fundsToAdd);
+					component.technicianExperience += component.technicianLevel;
+					component.state = 3;
+					break;
+				}
+				default:
+					component.state = 0;
+					break;
+				}
+				break;
+			case 6:
+				switch (state)
+				{
+				case 0:
+					if (component.equippedItem > 0)
+					{
+						DropBoxOnGround(component);
+						UnequipBox(component);
+						break;
+					}
+					if (GameData.Instance.GetComponent<UpgradesManager>().addonsBought[0] && OrderPackaging.Instance.isOrderDepartmentActivated && RetrieveAnOrderPickupPoint(checkIfFull: false) != null)
+					{
+						int num5 = RetrievePackagingFreeOrderIndex();
+						if (num5 >= 0)
+						{
+							component.packagingAssignedOrderIndex = num5;
+							component2.destination = AttemptToGetOrderingDepartmentPosition();
+							component.state = 1;
+							break;
+						}
+					}
+					component.state = 10;
+					break;
+				case 10:
+					if (Vector3.Distance(component.transform.position, restSpotOBJ.transform.position) > 6.5f)
+					{
+						component2.destination = AttemptToGetRestPosition();
+						break;
+					}
+					component.StartWaitState(2f, 0);
+					component.state = -1;
+					break;
+				case 1:
+					if (OrderPackaging.Instance.ordersData[component.packagingAssignedOrderIndex] != "")
+					{
+						component.packagingAssignedOrderData = OrderPackaging.Instance.ordersData[component.packagingAssignedOrderIndex];
+						OrderPackaging.Instance.RemoveOrderFromEmployee(component.packagingAssignedOrderIndex);
+						string[] array2 = component.packagingAssignedOrderData.Split("|");
+						if (array2[3] == "")
+						{
+							component.StartWaitState(2f, 0);
+							component.state = -1;
+							break;
+						}
+						string[] array3 = array2[3].Split("_");
+						for (int l = 0; l < array3.Length; l++)
+						{
+							component.packagingAssignedOrderProducts.Add(int.Parse(array3[l]));
+						}
+						int value2 = component.orderingLevel / 2;
+						value2 = Mathf.Clamp(value2, 1, 25);
+						for (int m = 0; m < value2; m++)
+						{
+							int item2 = ProductListing.Instance.availableProducts[Random.Range(0, ProductListing.Instance.availableProducts.Count)];
+							component.packagingAssignedOrderProducts.Add(item2);
+						}
+						if (component.packagingPackedOrderProducts.Count > 0)
+						{
+							component.packagingPackedOrderProducts.Clear();
+						}
+						component.EquipNPCItem(3);
+						component.StartWaitState(1.5f, 2);
+						component.state = -1;
+					}
+					else
+					{
+						component.StartWaitState(2f, 0);
+						component.state = -1;
+					}
+					break;
+				case 2:
+					if (component.packagingAssignedOrderProducts.Count > 0)
+					{
+						int iDProduct = component.packagingAssignedOrderProducts[0];
+						int[] storageShelfWithProduct = GetStorageShelfWithProduct(iDProduct);
+						if (storageShelfWithProduct[0] > -1)
+						{
+							component.orderProductLocationInfoArray = storageShelfWithProduct;
+							GameObject gameObject6 = ((storageShelfWithProduct[0] != 0) ? shelvesOBJ : storageOBJ);
+							component2.destination = gameObject6.transform.GetChild(storageShelfWithProduct[1]).transform.Find("Standspot").position;
+							component.state = 3;
+						}
+						else
+						{
+							component.packagingAssignedOrderProducts.RemoveAt(0);
+							component.StartWaitState(1.5f, 2);
+							component.state = -1;
+						}
+					}
+					else if (component.packagingPackedOrderProducts.Count > 0)
+					{
+						component.StartWaitState(1f, 4);
+						component.state = -1;
+					}
+					else
+					{
+						component.StartWaitState(2f, 0);
+						component.state = -1;
+					}
+					break;
+				case 3:
+				{
+					GameObject gameObject5 = ((component.orderProductLocationInfoArray[0] != 0) ? shelvesOBJ : storageOBJ);
+					Data_Container component3 = gameObject5.transform.GetChild(component.orderProductLocationInfoArray[1]).GetComponent<Data_Container>();
+					int[] productInfoArray = component3.productInfoArray;
+					int num4 = productInfoArray[component.orderProductLocationInfoArray[2] + 1];
+					if (component.packagingAssignedOrderProducts[0] == productInfoArray[component.orderProductLocationInfoArray[2]] && num4 > 0)
+					{
+						if (component.orderProductLocationInfoArray[0] == 0)
+						{
+							component3.EmployeeUpdateArrayValuesStorage(component.orderProductLocationInfoArray[2], component.packagingAssignedOrderProducts[0], num4 - 1);
+						}
+						else
+						{
+							component3.NPCGetsItemFromRow(component.packagingAssignedOrderProducts[0]);
+						}
+						component.packagingPackedOrderProducts.Add(component.packagingAssignedOrderProducts[0]);
+						component.packagingAssignedOrderProducts.RemoveAt(0);
+					}
+					component.StartWaitState(1.5f, 2);
+					component.state = -1;
+					break;
+				}
+				case 4:
+				{
+					GameObject gameObject4 = RetrieveAnOrderPickupPoint(checkIfFull: true);
+					if (gameObject4 != null)
+					{
+						component2.destination = gameObject4.transform.Find("Standspot").position;
+						component.state = 5;
+					}
+					else
+					{
+						component.RPCNotificationAboveHead("emplomsgnopckp", "");
+						component.StartWaitState(8f, 4);
+						component.state = -1;
+					}
+					break;
+				}
+				case 5:
+				{
+					GameObject gameObject3 = RetrieveAnOrderPickupPoint(checkIfFull: true);
+					if (Vector3.Distance(gameObject3.transform.position, gameObject.transform.position) < 4f)
+					{
+						StringBuilder stringBuilder = new StringBuilder();
+						for (int j = 0; j < component.packagingPackedOrderProducts.Count; j++)
+						{
+							stringBuilder.Append(component.packagingPackedOrderProducts[j].ToString());
+							if (j != component.packagingPackedOrderProducts.Count - 1)
+							{
+								stringBuilder.Append("_");
+							}
+						}
+						string[] array = component.packagingAssignedOrderData.Split("|");
+						string item = array[0] + "|" + array[1] + "|" + array[2] + "|" + stringBuilder.ToString();
+						NPCsOrdersList.Add(item);
+						string boxData = array[0] + "|" + stringBuilder.ToString();
+						string[] pickupsData = gameObject3.GetComponent<OrderPickupPoint>().pickupsData;
+						for (int k = 0; k < pickupsData.Length; k++)
+						{
+							if (pickupsData[k] == "")
+							{
+								gameObject3.GetComponent<OrderPickupPoint>().AddOrderBox(k, boxData);
+								break;
+							}
+						}
+						AchievementsManager.Instance.CmdAddAchievementPoint(19, 1);
+						component.restockerExperience += component.restockerValue * 25;
+						UnequipBox(component);
+						component.StartWaitState(1.5f, 0);
+						component.state = -1;
+					}
+					else
+					{
+						component.StartWaitState(1.5f, 4);
+						component.state = -1;
+					}
+					break;
+				}
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					break;
+				}
+				break;
+			case 7:
+				if (state == 0 && component.equippedItem > 0)
+				{
+					DropBoxOnGround(component);
+					UnequipBox(component);
+				}
+				break;
 			default:
 				Debug.Log("Impossible employee current task case. Check logs.");
 				break;
@@ -22507,14 +23039,24 @@ public class NPC_Manager : NetworkBehaviour
 		return vector;
 	}
 
+	private Vector3 AttemptToGetOrderingDepartmentPosition()
+	{
+		Vector3 vector = orderingDepartmentSpotOBJ.transform.position + new Vector3(Random.Range(-1.5f, 1.5f), 0f, Random.Range(-1.5f, 1.5f));
+		if (NavMesh.SamplePosition(vector, out var hit, 1f, -1) && hit.distance > 0.02f)
+		{
+			vector = hit.position;
+		}
+		return vector;
+	}
+
 	private void DropBoxOnGround(NPC_Info npcInfo)
 	{
 		Vector3 spawnpoint = npcInfo.transform.position + npcInfo.transform.forward * 0.5f + new Vector3(0f, 1f, 0f);
-		if ((bool)npcInfo.instantiatedOBJ && !npcInfo.instantiatedOBJ.transform.Find("BoxMesh").gameObject.activeSelf)
+		if ((bool)npcInfo.instantiatedOBJ && (bool)npcInfo.instantiatedOBJ.transform.Find("Bale"))
 		{
 			GameData.Instance.GetComponent<NetworkSpawner>().EmployeeSpawnBale(spawnpoint);
 		}
-		else
+		else if (!npcInfo.instantiatedOBJ || !npcInfo.instantiatedOBJ.transform.Find("OrderBox"))
 		{
 			GameData.Instance.GetComponent<ManagerBlackboard>().SpawnBoxFromEmployee(spawnpoint, npcInfo.boxProductID, npcInfo.boxNumberOfProducts);
 		}
@@ -23000,11 +23542,11 @@ public class NPC_Manager : NetworkBehaviour
 		{
 			return null;
 		}
-		int storageManagerIndex = GetStorageManagerIndex(employeeRequesterOBJ);
+		int priorityIndex = GetPriorityIndex(employeeRequesterOBJ, 3);
 		List<GameObject> list = new List<GameObject>();
 		foreach (Transform item in boxesOBJ.transform)
 		{
-			if (list.Count > storageManagerIndex)
+			if (list.Count > priorityIndex)
 			{
 				break;
 			}
@@ -23015,21 +23557,21 @@ public class NPC_Manager : NetworkBehaviour
 		}
 		if (list.Count > 0)
 		{
-			if (storageManagerIndex < list.Count)
+			if (priorityIndex < list.Count)
 			{
-				return list[storageManagerIndex];
+				return list[priorityIndex];
 			}
 			return list[Random.Range(0, list.Count)];
 		}
 		return null;
 	}
 
-	private int GetStorageManagerIndex(GameObject employeeRequesterOBJ)
+	private int GetPriorityIndex(GameObject employeeRequesterOBJ, int taskPriorityIndex)
 	{
 		int num = 0;
 		foreach (Transform item in employeeParentOBJ.transform)
 		{
-			if (item.GetComponent<NPC_Info>().taskPriority == 3)
+			if (item.GetComponent<NPC_Info>().taskPriority == taskPriorityIndex)
 			{
 				if (item.gameObject == employeeRequesterOBJ)
 				{
@@ -23043,7 +23585,7 @@ public class NPC_Manager : NetworkBehaviour
 
 	private GameObject GetRandomGroundBoxAllowedInStorage(GameObject employeeRequesterOBJ)
 	{
-		int storageManagerIndex = GetStorageManagerIndex(employeeRequesterOBJ);
+		int priorityIndex = GetPriorityIndex(employeeRequesterOBJ, 3);
 		if (storageOBJ.transform.childCount == 0 || boxesOBJ.transform.childCount == 0)
 		{
 			return null;
@@ -23074,9 +23616,9 @@ public class NPC_Manager : NetworkBehaviour
 		}
 		if (indexedBoxesList.Count > 0)
 		{
-			if (storageManagerIndex < indexedBoxesList.Count)
+			if (priorityIndex < indexedBoxesList.Count)
 			{
-				return indexedBoxesList[storageManagerIndex];
+				return indexedBoxesList[priorityIndex];
 			}
 			return indexedBoxesList[Random.Range(0, indexedBoxesList.Count)];
 		}
@@ -23245,12 +23787,128 @@ public class NPC_Manager : NetworkBehaviour
 		{
 			return null;
 		}
-		int storageManagerIndex = GetStorageManagerIndex(currentEmployeeOBJ);
-		if (storageManagerIndex < child.transform.childCount)
+		int priorityIndex = GetPriorityIndex(currentEmployeeOBJ, 5);
+		if (priorityIndex < child.transform.childCount)
 		{
-			return child.transform.GetChild(storageManagerIndex).gameObject;
+			return child.transform.GetChild(priorityIndex).gameObject;
 		}
 		return null;
+	}
+
+	private GameObject GetFurnitureToFix(GameObject currentEmployeeOBJ)
+	{
+		int priorityIndex = GetPriorityIndex(currentEmployeeOBJ, 5);
+		if (brokenFurnitureList.Count > 0 && priorityIndex < brokenFurnitureList.Count)
+		{
+			return brokenFurnitureList[priorityIndex];
+		}
+		return null;
+	}
+
+	public void RemoveFurnitureOBJFromList(GameObject OBJToRemove)
+	{
+		if (brokenFurnitureList.Count <= 0)
+		{
+			return;
+		}
+		for (int i = 0; i < brokenFurnitureList.Count; i++)
+		{
+			if (brokenFurnitureList[i] == OBJToRemove)
+			{
+				brokenFurnitureList.RemoveAt(i);
+				break;
+			}
+		}
+	}
+
+	private bool RetrieveFurnitureRepairState(GameObject furnitureOBJ)
+	{
+		if ((bool)furnitureOBJ)
+		{
+			if ((bool)furnitureOBJ.GetComponent<Data_Container>())
+			{
+				return furnitureOBJ.GetComponent<Data_Container>().isBroken;
+			}
+			if ((bool)furnitureOBJ.GetComponent<CardboardBaler>())
+			{
+				return furnitureOBJ.GetComponent<CardboardBaler>().isBroken;
+			}
+		}
+		return false;
+	}
+
+	private int RetrievePackagingFreeOrderIndex()
+	{
+		string[] ordersData = OrderPackaging.Instance.ordersData;
+		for (int i = 0; i < ordersData.Length; i++)
+		{
+			if (ordersData[i] != "")
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	private GameObject RetrieveAnOrderPickupPoint(bool checkIfFull)
+	{
+		if (orderPickupPointsList.Count > 0)
+		{
+			for (int i = 0; i < orderPickupPointsList.Count; i++)
+			{
+				if (!(orderPickupPointsList[i] != null))
+				{
+					continue;
+				}
+				if (checkIfFull)
+				{
+					string[] pickupsData = orderPickupPointsList[i].GetComponent<OrderPickupPoint>().pickupsData;
+					for (int j = 0; j < pickupsData.Length; j++)
+					{
+						if (pickupsData[j] == "")
+						{
+							return orderPickupPointsList[i];
+						}
+					}
+					continue;
+				}
+				return orderPickupPointsList[i];
+			}
+		}
+		return null;
+	}
+
+	private int[] GetStorageShelfWithProduct(int IDProduct)
+	{
+		int[] array = new int[3] { -1, -1, -1 };
+		GameObject[] array2 = new GameObject[2] { storageOBJ, shelvesOBJ };
+		for (int i = 0; i < array2.Length; i++)
+		{
+			GameObject gameObject = array2[i];
+			array[0] = i;
+			if (gameObject.transform.childCount == 0)
+			{
+				continue;
+			}
+			for (int j = 0; j < gameObject.transform.childCount; j++)
+			{
+				int[] productInfoArray = gameObject.transform.GetChild(j).GetComponent<Data_Container>().productInfoArray;
+				int num = productInfoArray.Length / 2;
+				for (int k = 0; k < num; k++)
+				{
+					int num2 = productInfoArray[k * 2];
+					int num3 = productInfoArray[k * 2 + 1];
+					if (num2 == IDProduct && num3 > 0)
+					{
+						array[1] = j;
+						array[2] = k * 2;
+						return array;
+					}
+				}
+			}
+		}
+		array[0] = -1;
+		return array;
 	}
 
 	public void RemoveCustomers()
@@ -24195,8 +24853,8 @@ public class NPC_Manager : NetworkBehaviour
 			{
 				string text = todaysEmployeesData[employeeIndex];
 				todaysEmployeesData[employeeIndex] = "";
-				hiredEmployeesData[i] = text + "|" + employeeName + "|0|5000|1000|1000|1000";
-				RpcClientHire(employeeIndex, i, text + "|" + employeeName + "|0|5000|1000|1000|1000");
+				hiredEmployeesData[i] = text + "|" + employeeName + "|0|5000|1000|1000|1000|1000|1000|1000";
+				RpcClientHire(employeeIndex, i, text + "|" + employeeName + "|0|5000|1000|1000|1000|1000|1000|1000");
 				SpawnEmployeeByIndex(i);
 				break;
 			}
@@ -24348,12 +25006,19 @@ public class NPC_Manager : NetworkBehaviour
 			int num4 = int.Parse(array[3]);
 			int num5 = int.Parse(array[4]);
 			int num6 = int.Parse(array[5]);
-			int num7 = int.Parse(array[7]);
-			int num8 = int.Parse(array[8]);
-			int num9 = int.Parse(array[9]);
+			int num7 = int.Parse(array[6]);
+			int num8 = int.Parse(array[7]);
+			int num9 = int.Parse(array[8]);
+			string text = array[9];
 			int num10 = int.Parse(array[10]);
 			int num11 = int.Parse(array[11]);
-			hiredEmployeesData[index] = num + "|" + num2 + "|" + num3 + "|" + num4 + "|" + num5 + "|" + num6 + "|" + newName + "|" + num7 + "|" + num8 + "|" + num9 + "|" + num10 + "|" + num11 + "|";
+			int num12 = int.Parse(array[12]);
+			int num13 = int.Parse(array[13]);
+			int num14 = int.Parse(array[14]);
+			int num15 = int.Parse(array[15]);
+			int num16 = int.Parse(array[16]);
+			int num17 = int.Parse(array[17]);
+			hiredEmployeesData[index] = num + "|" + num2 + "|" + num3 + "|" + num4 + "|" + num5 + "|" + num6 + "|" + num7 + "|" + num8 + "|" + num9 + "|" + text + "|" + num10 + "|" + num11 + "|" + num12 + "|" + num13 + "|" + num14 + "|" + num15 + "|" + num16 + "|" + num17;
 			RpcChangeEmployeeName(gameObject, newName);
 		}
 	}
@@ -25750,19 +26415,24 @@ public class OrderingTray : MonoBehaviour
 		string text = OrderPackaging.Instance.currentOrderIn[currentOrderIndex];
 		tableNumberField.text = LocalizationManager.instance.GetLocalizationString("opckgng9") + " #" + (currentOrderIndex + 1);
 		string text2 = "";
+		List<int> list = new List<int>();
 		switch (currentOrderIndex)
 		{
 		case 0:
 			text2 = OrderPackaging.Instance.itemsData0;
+			list = OrderPackaging.Instance.itemsInCurrentBox0;
 			break;
 		case 1:
 			text2 = OrderPackaging.Instance.itemsData1;
+			list = OrderPackaging.Instance.itemsInCurrentBox1;
 			break;
 		case 2:
 			text2 = OrderPackaging.Instance.itemsData2;
+			list = OrderPackaging.Instance.itemsInCurrentBox2;
 			break;
 		case 3:
 			text2 = OrderPackaging.Instance.itemsData3;
+			list = OrderPackaging.Instance.itemsInCurrentBox3;
 			break;
 		}
 		if (text == "")
@@ -25786,10 +26456,10 @@ public class OrderingTray : MonoBehaviour
 			{
 				itemsLeftInList.Add(int.Parse(array2[j]));
 			}
-			List<int> list = itemsInTray;
-			for (int k = 0; k < list.Count; k++)
+			List<int> list2 = itemsInTray;
+			for (int k = 0; k < list2.Count; k++)
 			{
-				int num = list[k];
+				int num = list2[k];
 				for (int l = 0; l < itemsLeftInList.Count; l++)
 				{
 					if (num == itemsLeftInList[l])
@@ -25815,6 +26485,21 @@ public class OrderingTray : MonoBehaviour
 					}
 				}
 			}
+			if (list.Count > 0)
+			{
+				for (int num3 = 0; num3 < list.Count; num3++)
+				{
+					int num4 = list[num3];
+					for (int num5 = 0; num5 < itemsLeftInList.Count; num5++)
+					{
+						if (num4 == itemsLeftInList[num5])
+						{
+							itemsLeftInList.RemoveAt(num5);
+							break;
+						}
+					}
+				}
+			}
 		}
 		initialListGenerated = true;
 		if (itemsLeftInList.Count > 0)
@@ -25825,13 +26510,13 @@ public class OrderingTray : MonoBehaviour
 		{
 			pinpointComponent.DeactivatePinpointers();
 		}
-		for (int num3 = 0; num3 < itemsLeftInList.Count; num3++)
+		for (int num6 = 0; num6 < itemsLeftInList.Count; num6++)
 		{
-			int num4 = itemsLeftInList[num3];
+			int num7 = itemsLeftInList[num6];
 			GameObject obj = Object.Instantiate(UIextraOrderingItemPrefab, extraOrderingItemsParent.transform);
-			obj.transform.Find("ProductBrand").GetComponent<TextMeshProUGUI>().text = ProductListing.Instance.productPrefabs[num4].GetComponent<Data_Product>().productBrand;
-			obj.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = LocalizationManager.instance.GetLocalizationString("product" + num4);
-			obj.transform.Find("ProductImage").GetComponent<Image>().sprite = ProductListing.Instance.productSprites[num4];
+			obj.transform.Find("ProductBrand").GetComponent<TextMeshProUGUI>().text = ProductListing.Instance.productPrefabs[num7].GetComponent<Data_Product>().productBrand;
+			obj.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = LocalizationManager.instance.GetLocalizationString("product" + num7);
+			obj.transform.Find("ProductImage").GetComponent<Image>().sprite = ProductListing.Instance.productSprites[num7];
 		}
 	}
 }
@@ -26643,6 +27328,21 @@ public class OrderPackaging : NetworkBehaviour
 		}
 	}
 
+	public void RemoveOrderFromEmployee(int whichOrderIndex)
+	{
+		ordersData[whichOrderIndex] = "";
+		RpcUpdateOrderFromEmployee(whichOrderIndex);
+	}
+
+	[ClientRpc]
+	private void RpcUpdateOrderFromEmployee(int whichOrderIndex)
+	{
+		NetworkWriterPooled writer = NetworkWriterPool.Get();
+		writer.WriteInt(whichOrderIndex);
+		SendRPCInternal("System.Void OrderPackaging::RpcUpdateOrderFromEmployee(System.Int32)", -2077537993, writer, 0, includeOwner: true);
+		NetworkWriterPool.Return(writer);
+	}
+
 	public void AssignOrderToTable(int whichOrderIndex)
 	{
 		if (whichOrderIndex >= 0 && whichOrderIndex < ordersData.Length && currentTableIndex >= 0 && currentTableIndex < boxContainersParentOBJ.transform.childCount && !(ordersData[whichOrderIndex] == ""))
@@ -27348,6 +28048,24 @@ public class OrderPackaging : NetworkBehaviour
 		}
 	}
 
+	protected void UserCode_RpcUpdateOrderFromEmployee__Int32(int whichOrderIndex)
+	{
+		InitialUIOrderCreation();
+		ordersData[whichOrderIndex] = "";
+	}
+
+	protected static void InvokeUserCode_RpcUpdateOrderFromEmployee__Int32(NetworkBehaviour obj, NetworkReader reader, NetworkConnectionToClient senderConnection)
+	{
+		if (!NetworkClient.active)
+		{
+			Debug.LogError("RPC RpcUpdateOrderFromEmployee called on server.");
+		}
+		else
+		{
+			((OrderPackaging)obj).UserCode_RpcUpdateOrderFromEmployee__Int32(reader.ReadInt());
+		}
+	}
+
 	protected void UserCode_CmdAssignOrderToTable__Int32__Int32(int whichTableIndex, int whichOrderIndex)
 	{
 		if (whichOrderIndex >= 0 && whichOrderIndex < ordersData.Length && whichTableIndex >= 0 && whichTableIndex < boxContainersParentOBJ.transform.childCount && !(ordersData[whichOrderIndex] == ""))
@@ -27723,6 +28441,7 @@ public class OrderPackaging : NetworkBehaviour
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcUpdateOrderOnClient(System.Int32,System.String)", InvokeUserCode_RpcUpdateOrderOnClient__Int32__String);
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcEnableOrderNotifications(System.Boolean)", InvokeUserCode_RpcEnableOrderNotifications__Boolean);
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcNotifyOrder()", InvokeUserCode_RpcNotifyOrder);
+		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcUpdateOrderFromEmployee(System.Int32)", InvokeUserCode_RpcUpdateOrderFromEmployee__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcAssignOrderToTable(System.Int32,System.String,System.Int32)", InvokeUserCode_RpcAssignOrderToTable__Int32__String__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcOrderCompletedMessage(System.Int32)", InvokeUserCode_RpcOrderCompletedMessage__Int32);
 		RemoteProcedureCalls.RegisterRpc(typeof(OrderPackaging), "System.Void OrderPackaging::RpcCreateBoxOrder(System.Int32,System.String)", InvokeUserCode_RpcCreateBoxOrder__Int32__String);
@@ -31313,6 +32032,10 @@ public class PlayerNetwork : NetworkBehaviour
 			instantiatedOBJ = UnityEngine.Object.Instantiate(original, equippedParentOBJ.transform);
 			instantiatedOBJ.transform.localPosition = new Vector3(0.384f, -0.457f, -0.378f);
 			instantiatedOBJ.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+			if (base.isLocalPlayer)
+			{
+				instantiatedOBJ.GetComponent<ToolboxBehaviour>().enabled = true;
+			}
 			break;
 		case 13:
 			instantiatedOBJ = UnityEngine.Object.Instantiate(original, equippedParentOBJ.transform);
@@ -40263,7 +40986,6 @@ public class SurveillanceDesk : MonoBehaviour
 		float t = (float)GameData.Instance.difficulty / 10f;
 		fillMaxAmountPerClick = Mathf.Lerp(1f, 0.6f, t);
 		fillMinAmountPerClick = Mathf.Lerp(0.45f, 0.2f, t);
-		Debug.Log(fillMinAmountPerClick + "----" + fillMaxAmountPerClick);
 	}
 
 	private void Update()
@@ -41029,6 +41751,18 @@ public class ToolboxBehaviour : MonoBehaviour
 {
 	public LayerMask lMask;
 
+	public GameObject wrenchPrefabOBJ;
+
+	public Transform boxWrenchPosition;
+
+	private GameObject instantiatedWrenchOBJ;
+
+	private Animator wrenchAnimator;
+
+	private bool animatorPlaying;
+
+	private GameObject currentFixingOBJ;
+
 	private GameObject fillingContainer;
 
 	private Image fillingImage;
@@ -41049,11 +41783,37 @@ public class ToolboxBehaviour : MonoBehaviour
 
 	private void Update()
 	{
+		if (!instantiatedWrenchOBJ)
+		{
+			instantiatedWrenchOBJ = Object.Instantiate(wrenchPrefabOBJ);
+			wrenchAnimator = instantiatedWrenchOBJ.transform.Find("PivotAnimator").GetComponent<Animator>();
+		}
+		else if (filling && (bool)currentFixingOBJ)
+		{
+			if (!animatorPlaying)
+			{
+				animatorPlaying = true;
+				wrenchAnimator.Play("ToolboxWrench_Fixing");
+				wrenchAnimator.SetBool("Fixing", animatorPlaying);
+			}
+			instantiatedWrenchOBJ.transform.position = currentFixingOBJ.transform.TransformPoint(new Vector3(0f, 0f, 0.2f));
+			instantiatedWrenchOBJ.transform.rotation = Quaternion.Euler(currentFixingOBJ.transform.rotation.eulerAngles + new Vector3(0f, 0f, 90f));
+		}
+		else
+		{
+			if (animatorPlaying)
+			{
+				animatorPlaying = false;
+				wrenchAnimator.SetBool("Fixing", animatorPlaying);
+			}
+			instantiatedWrenchOBJ.transform.position = boxWrenchPosition.position;
+			instantiatedWrenchOBJ.transform.rotation = boxWrenchPosition.rotation;
+		}
 		if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hitInfo, 4f, lMask))
 		{
+			bool button = MainPlayer.GetButton("Main Action");
 			if (hitInfo.transform.childCount > 0 && hitInfo.transform.GetChild(0).CompareTag("Fixable"))
 			{
-				bool button = MainPlayer.GetButton("Main Action");
 				if (button && !filling)
 				{
 					StartCoroutine(FillingProgress(hitInfo.transform));
@@ -41064,7 +41824,7 @@ public class ToolboxBehaviour : MonoBehaviour
 					ClearValues();
 				}
 			}
-			else if (filling)
+			else if (filling && (!button || !hitInfo.transform.GetComponent<CapsuleCollider>()))
 			{
 				StopAllCoroutines();
 				ClearValues();
@@ -41083,6 +41843,7 @@ public class ToolboxBehaviour : MonoBehaviour
 		fillingImage.fillAmount = 0f;
 		fillingContainer.SetActive(value: true);
 		fixSource.Play();
+		currentFixingOBJ = other.gameObject;
 		float fillProgress = 0f;
 		float fillingTime = 9f;
 		while (fillProgress < fillingTime)
@@ -41102,6 +41863,7 @@ public class ToolboxBehaviour : MonoBehaviour
 	{
 		int value = other.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("ReferenceIndex").Value;
 		GameObject value2 = other.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("ReferenceOBJ").Value;
+		AchievementsManager.Instance.repairedADevice = true;
 		switch (value)
 		{
 		case 0:
@@ -41109,6 +41871,10 @@ public class ToolboxBehaviour : MonoBehaviour
 			break;
 		case 1:
 			value2.GetComponent<CardboardBaler>().CmdFixBreakingEvent();
+			break;
+		case 2:
+		case 3:
+			value2.GetComponent<Data_Container>().CmdFixBreakingEvent();
 			break;
 		}
 		other.gameObject.SetActive(value: false);
@@ -41120,6 +41886,10 @@ public class ToolboxBehaviour : MonoBehaviour
 		{
 			ClearValues();
 		}
+		if ((bool)instantiatedWrenchOBJ)
+		{
+			Object.Destroy(instantiatedWrenchOBJ);
+		}
 	}
 
 	private void ClearValues()
@@ -41128,6 +41898,7 @@ public class ToolboxBehaviour : MonoBehaviour
 		fillingContainer.SetActive(value: false);
 		fixSource.Stop();
 		StopAllCoroutines();
+		currentFixingOBJ = null;
 	}
 }
 

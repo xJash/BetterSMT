@@ -151,8 +151,14 @@ public class GameDataPatch {
 
     [HarmonyPatch(typeof(GameData), nameof(GameData.ServerCalculateNewInflation))]
     [HarmonyPostfix]
-    public static void OptimizeProductPrices() {
-        if (!BetterSMT.AutoAdjustPriceDaily.Value) {
+    public static void OptimizeProductPrices()
+    {
+        if (!BetterSMT.AutoAdjustPriceDaily.Value)
+            return;
+
+        if (ProductListing.Instance == null)
+        {
+            BetterSMT.Logger.LogWarning("ProductListing.Instance was null during price optimization.");
             return;
         }
 
@@ -161,11 +167,11 @@ public class GameDataPatch {
         float[] inflationMultipliers = productListing.tierInflation;
         float priceMultiplier = BetterSMT.AutoAdjustPriceDailyValue.Value;
 
-        for (int i = 0; i < products.Length; i++) {
-            Data_Product product = products[i].GetComponent<Data_Product>();
-            if (product == null) {
+        for (int i = 0; i < products.Length; i++)
+        {
+            Data_Product product = products[i]?.GetComponent<Data_Product>();
+            if (product == null)
                 continue;
-            }
 
             float basePrice = product.basePricePerUnit;
             int tier = product.productTier;
@@ -176,6 +182,7 @@ public class GameDataPatch {
             productListing.CmdUpdateProductPrice(i, finalPrice);
         }
     }
+
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]
     private static void UpdateEscapeMenu() {

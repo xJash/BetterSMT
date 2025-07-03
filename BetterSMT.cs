@@ -55,6 +55,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> AllNPCAreThieves;
 
     // === !Gameplay Settings! ===
+    public static ConfigEntry<bool> InstantSelfCheckout;
     public static ConfigEntry<bool> FasterCheckout;
     public static ConfigEntry<bool> ShowFPS;
     public static ConfigEntry<bool> ShowPing;
@@ -176,6 +177,7 @@ public class BetterSMT : BaseUnityPlugin {
         OneHitThief = base.Config.Bind("Thieves & Crime Settings", "Thiefs Drop Everything On Hit", false, new ConfigDescription("Thiefs Drop Everything On Hit"));
 
         // === !Gameplay Settings! ===
+        InstantSelfCheckout = base.Config.Bind("Gameplay Setting", "Faster Self-Checkout", false, new ConfigDescription("Customers place all items instantly on to the self-checkout"));
         FasterCheckout = base.Config.Bind("Gameplay Settings", "Faster Checkout", false, new ConfigDescription("Customers place all items instantly on to the checkout"));
         ShowFPS = base.Config.Bind("Gameplay Settings", "Show FPS Counter", false);
         ShowPing = base.Config.Bind("Gameplay Settings", "Show Ping Counter", false);
