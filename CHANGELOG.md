@@ -1,4 +1,14 @@
-﻿## v2.3.0
+﻿## 2.4.0
+- Added option to allow all products to be stock-able on all shelves
+- Added option to allow all normal products to be stocked on pallets (removing the size check)
+- Added option to modifiy pillar removal price
+- Added option to stop rubble from spawning 
+- Added option to disable self checkout breaking
+- Added option to disable cardboard baler breaking
+- Added option to move the location of boxes spawning from manager blackboard to be closer to the storage area
+- Fixed an issue with employe level generation from 7/2/2025 game update
+
+## v2.3.0
 - Fixed an issue where the Ordering Device would add the same product twice
 - Added a setting to allow more employee rerolls
 - Removed outdated options (e.g., modifying end-of-day rent, lighting, and employee fees)
