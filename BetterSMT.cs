@@ -30,6 +30,12 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> SalesToggle;
     public static ConfigEntry<KeyboardShortcut> SalesHotkey;
 
+    // === !Product Settings!===
+    public static ConfigEntry<bool> LowStockAlertEnabled;
+    public static ConfigEntry<int> LowStockThreshold;
+    public static ConfigEntry<bool> AutoOrderEnabled;
+    public static ConfigEntry<int> AutoOrderCheckInterval;
+
     // === !Auto Save Settings! ===
     public static ConfigEntry<bool> AutoSaveEnabled;
     public static ConfigEntry<int> AutoSaveTimer;
@@ -153,8 +159,16 @@ public class BetterSMT : BaseUnityPlugin {
         ToggleClearSalesHotkey = base.Config.Bind("Sales Settings", "Enables or disables hotkey to clear sales", false, new ConfigDescription("Enables or disables the hotkey to clear sales"));
         SalesActiveAmount = base.Config.Bind("Sales Settings", "Amount of sales unlocked each perk", 2, new ConfigDescription("Adjusts the amount of sales you unlock for each perk", new AcceptableValueRange<int>(1, 100)));
 
+        // === !Auto Ordering Settings! ===
+        AutoOrderEnabled = base.Config.Bind("Auto Ordering", "Enable Auto Ordering", false, new ConfigDescription("Automatically orders products when stock is low"));
+        AutoOrderCheckInterval = base.Config.Bind("Auto Ordering", "Auto Order Check Interval", 30, new ConfigDescription("Time interval (in seconds) for checking product stock", new AcceptableValueRange<int>(10, 600)));
+
+        // === !Low Stock Alerts! ===
+        LowStockAlertEnabled = base.Config.Bind("Low Stock Alerts", "Enable Low Stock Alerts", false, new ConfigDescription("Show alerts when products drop below the threshold"));
+        LowStockThreshold = base.Config.Bind("Low Stock Alerts", "Low Stock Threshold", 2, new ConfigDescription("The stock count at which alerts are triggered", new AcceptableValueRange<int>(1, 1000)));
+
         // === !Auto Save Settings! ===
-        AutoSaveEnabled = base.Config.Bind("Auto Save Settings", "Enables Auto Saving", false, new ConfigDescription("Enables or disables automatic saving"));
+        AutoSaveEnabled = base.Config.Bind("Auto Saving Settings", "Enables Auto Saving", false, new ConfigDescription("Enables or disables automatic saving"));
         AutoSaveTimer = base.Config.Bind("Auto Saving Settings", "Amount of time between saves", 120, new ConfigDescription("Adjusts the amount of time between auto saves in seconds, default is 120seconds or 2minutes", new AcceptableValueRange<int>(30, 900)));
         AutoSaveDuringDay = base.Config.Bind("Auto Saving Settings", "Enables Auto Saving during the day", false, new ConfigDescription("Enables or disables saving while the store is open, default only autosaves while closed"));
 

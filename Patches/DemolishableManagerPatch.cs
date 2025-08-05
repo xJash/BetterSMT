@@ -1,45 +1,60 @@
 ﻿using HarmonyLib;
-using System.Collections;
 using UnityEngine;
+using System.Collections;
+using System.Configuration;
+using System.Reflection;
 
-namespace BetterSMT.Patches;
-
-[HarmonyPatch(typeof(DemolishableManager))]
-public class Patch_DemolishableManager {
-
-    [HarmonyPrefix]
-    [HarmonyPatch("UserCode_CmdDemolishItem__Int32__Int32")]
-    static bool Prefix_CmdDemolishItem(DemolishableManager __instance, int parentIndex, int whichObjectToDemolish) {
-        if (parentIndex >= __instance.demolishableParentRootOBJ.transform.childCount ||
-            parentIndex >= __instance.demolishableValues.Length ||
-            whichObjectToDemolish >= __instance.demolishableParentRootOBJ.transform.GetChild(parentIndex).childCount) {
-            return false;
+namespace BetterSMT.Patches
+{
+    [HarmonyPatch]
+    public class Patch_DemolishableManager
+    {
+        static MethodBase TargetMethod()
+        {
+            return AccessTools.Method(typeof(DemolishableManager), "UserCode_CmdDemolishItem__Int32__Int32", new[] { typeof(int), typeof(int) });
         }
 
-        float defaultCost = __instance.demolishingCosts[parentIndex];
-        float cost = BetterSMT.PillarPrice.Value != defaultCost ? BetterSMT.PillarPrice.Value : defaultCost;
+        static bool Prefix(DemolishableManager __instance, int parentIndex, int whichObjectToDemolish)
+        {
+            Debug.Log("BetterSMT Prefix: Running custom demolish logic");
 
+            if (parentIndex >= __instance.demolishableParentRootOBJ.transform.childCount || parentIndex >= __instance.demolishableValues.Length)
+                return false;
 
+            GameObject gameObject = __instance.demolishableParentRootOBJ.transform.GetChild(parentIndex).gameObject;
+            if (whichObjectToDemolish >= gameObject.transform.childCount || parentIndex >= __instance.demolishingCosts.Length)
+                return false;
 
-        if (cost > GameData.Instance.gameFunds)
+            // Use custom price if applicable
+            float defaultCost = __instance.demolishingCosts[parentIndex];
+            Debug.Log("defaultCost" + defaultCost);
+            float num = BetterSMT.PillarPrice.Value != defaultCost ? BetterSMT.PillarPrice.Value : defaultCost;
+            Debug.Log("num"+num);
+            if (num > GameData.Instance.gameFunds) return false;
+
+            __instance.GetComponent<GameData>().AlterFundsFromEmployee(0f - num);
+            __instance.GetComponent<GameData>().otherCosts += num;
+
+            string text = __instance.demolishableValues[parentIndex];
+            if (text != "")
+            {
+                char num2 = text[whichObjectToDemolish];
+                Debug.Log("num2" + num2);
+                char c = __instance.nullValue[0];
+                Debug.Log("c" + c);
+                if (num2 != c)
+                    return false;
+            }
+
+            __instance.demolishableValues[parentIndex] = __instance.AssembleValue(parentIndex, whichObjectToDemolish);
+            Debug.Log("__instance.demolishableValues[parentIndex]" + __instance.demolishableValues[parentIndex]);
+            if (!BetterSMT.PillarRubble.Value) {
+                __instance.StartCoroutine((IEnumerator)AccessTools.Method(__instance.GetType(), "DelayedDemolishEffectInstantiation")
+                    .Invoke(__instance, new object[] { parentIndex, whichObjectToDemolish }));
+            }
+            __instance.RpcDemolishItem(parentIndex, whichObjectToDemolish);
+
             return false;
-
-        __instance.GetComponent<GameData>().AlterFundsFromEmployee(-cost);
-        __instance.GetComponent<GameData>().otherCosts += cost;
-
-        string value = __instance.demolishableValues[parentIndex];
-        if (!string.IsNullOrEmpty(value) && value[whichObjectToDemolish] != '0')
-            return false;
-
-        __instance.demolishableValues[parentIndex] =
-            Traverse.Create(__instance).Method("AssembleValue", parentIndex, whichObjectToDemolish).GetValue<string>();
-
-        if (!BetterSMT.PillarRubble.Value) {
-            __instance.StartCoroutine((IEnumerator)AccessTools.Method(__instance.GetType(), "DelayedDemolishEffectInstantiation")
-                .Invoke(__instance, new object[] { parentIndex, whichObjectToDemolish }));
         }
-
-        __instance.RpcDemolishItem(parentIndex, whichObjectToDemolish);
-        return false; 
     }
 }
