@@ -1,14 +1,17 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(TimeAccelerationWatcher), nameof(TimeAccelerationWatcher.Update))]
-public static class TimeAccelerationWatcherPatch {
+public static class TimeAccelerationWatcherPatch
+{
     [HarmonyPrefix]
-    public static bool UpdatePatch(TimeAccelerationWatcher __instance) {
-        if (BetterSMT.ClockMorning.Value) {
-            if (__instance.EmployeesDoingNothing()) {
+    public static bool UpdatePatch(TimeAccelerationWatcher __instance)
+    {
+        if (BetterSMT.ClockMorning.Value)
+        {
+            if (__instance.EmployeesDoingNothing())
+            {
                 __instance.RestoreTimeSettings();
             }
             return false;

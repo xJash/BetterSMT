@@ -62,7 +62,7 @@ public static class OrderingDevicePatch
 
         for (int productId = 0; productId < listing.productPrefabs.Length; productId++)
         {
-            if(!availableProducts.Contains(productId))
+            if (!availableProducts.Contains(productId))
                 continue;
 
             var prefab = listing.productPrefabs[productId];

@@ -7,12 +7,14 @@ using UnityEngine;
 namespace BetterSMT.Patches;
 
 [HarmonyPatch]
-public static class VehicleBoxManagerPatch {
+public static class VehicleBoxManagerPatch
+{
     private static readonly Dictionary<GameObject,
     float> recentlyDropped = [];
     private static readonly List<GameObject> loadedBoxes = [];
 
-    private static class BoxLayout {
+    private static class BoxLayout
+    {
         public const int Columns = 2;
         public const int Rows = 2;
         public const float XSpacing = 0.6f;
@@ -24,47 +26,58 @@ public static class VehicleBoxManagerPatch {
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(MiniTransportBehaviour), nameof(MiniTransportBehaviour.Update))]
-    public static void VehicleUpdatePostfix(MiniTransportBehaviour __instance) {
-        if (!BetterSMT.EnableMTV.Value) {
+    public static void VehicleUpdatePostfix(MiniTransportBehaviour __instance)
+    {
+        if (!BetterSMT.EnableMTV.Value)
+        {
             return;
         }
 
-        if (!__instance.isActiveAndEnabled) {
+        if (!__instance.isActiveAndEnabled)
+        {
             return;
         }
 
         TryPickupNearbyBoxes(__instance);
 
-        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey)) {
+        if (Input.GetKeyDown(BetterSMT.MTVHotkey.Value.MainKey))
+        {
             _ = DropBoxesSequentially(__instance);
         }
     }
 
-    private static void TryPickupNearbyBoxes(MiniTransportBehaviour vehicle) {
+    private static void TryPickupNearbyBoxes(MiniTransportBehaviour vehicle)
+    {
         int currentCount = loadedBoxes.Count;
-        if (currentCount >= BetterSMT.MaxBoxes.Value) {
+        if (currentCount >= BetterSMT.MaxBoxes.Value)
+        {
             return;
         }
 
         Collider[] nearby = Physics.OverlapSphere(vehicle.transform.position, BetterSMT.AutoPickupRange.Value);
         float currentTime = Time.time;
 
-        foreach (Collider col in nearby) {
-            if (!col.TryGetComponent(out BoxData box) || loadedBoxes.Contains(box.gameObject)) {
+        foreach (Collider col in nearby)
+        {
+            if (!col.TryGetComponent(out BoxData box) || loadedBoxes.Contains(box.gameObject))
+            {
                 continue;
             }
 
-            if (!box.TryGetComponent(out NetworkIdentity _)) {
+            if (!box.TryGetComponent(out NetworkIdentity _))
+            {
                 continue;
             }
 
-            if (recentlyDropped.TryGetValue(box.gameObject, out float dropTime) && (currentTime - dropTime < BetterSMT.DropCooldown.Value)) {
+            if (recentlyDropped.TryGetValue(box.gameObject, out float dropTime) && (currentTime - dropTime < BetterSMT.DropCooldown.Value))
+            {
                 continue;
             }
 
             _ = recentlyDropped.Remove(box.gameObject);
 
-            if (loadedBoxes.Count >= BetterSMT.MaxBoxes.Value) {
+            if (loadedBoxes.Count >= BetterSMT.MaxBoxes.Value)
+            {
                 break;
             }
 
@@ -72,7 +85,8 @@ public static class VehicleBoxManagerPatch {
             box.transform.localPosition = GetNextLoadPosition(loadedBoxes.Count);
 
             Rigidbody rb = box.GetComponent<Rigidbody>();
-            if (rb != null) {
+            if (rb != null)
+            {
                 rb.isKinematic = true;
             }
 
@@ -83,7 +97,8 @@ public static class VehicleBoxManagerPatch {
         }
     }
 
-    private static Vector3 GetNextLoadPosition(int index) {
+    private static Vector3 GetNextLoadPosition(int index)
+    {
         int layer = index / (BoxLayout.Columns * BoxLayout.Rows);
         int layerIndex = index % (BoxLayout.Columns * BoxLayout.Rows);
 
@@ -97,8 +112,10 @@ public static class VehicleBoxManagerPatch {
         return new Vector3(x, y, z);
     }
 
-    private static async Task DropBoxesSequentially(MiniTransportBehaviour vehicle) {
-        if (loadedBoxes.Count == 0) {
+    private static async Task DropBoxesSequentially(MiniTransportBehaviour vehicle)
+    {
+        if (loadedBoxes.Count == 0)
+        {
             return;
         }
 
@@ -108,9 +125,11 @@ public static class VehicleBoxManagerPatch {
 
         Vector3 dropOrigin = vehicle.transform.position + (vehicle.transform.up * 1.0f);
 
-        for (int i = 0; i < loadedBoxes.Count; i++) {
+        for (int i = 0; i < loadedBoxes.Count; i++)
+        {
             GameObject box = loadedBoxes[i];
-            if (box == null) {
+            if (box == null)
+            {
                 continue;
             }
 
@@ -126,7 +145,8 @@ public static class VehicleBoxManagerPatch {
             box.transform.rotation = Quaternion.LookRotation(vehicle.transform.forward, Vector3.up);
 
             Rigidbody rb = box.GetComponent<Rigidbody>();
-            if (rb != null) {
+            if (rb != null)
+            {
                 rb.isKinematic = true;
             }
 
@@ -139,12 +159,15 @@ public static class VehicleBoxManagerPatch {
         BetterSMT.CreateImportantNotification("Boxes emptied from vehicle.");
     }
 
-    private static async void DelayedUnfreeze(GameObject box, float delay) {
+    private static async void DelayedUnfreeze(GameObject box, float delay)
+    {
         await Task.Delay((int)(delay * 1000));
 
-        if (box != null) {
+        if (box != null)
+        {
             Rigidbody rb = box.GetComponent<Rigidbody>();
-            if (rb != null) {
+            if (rb != null)
+            {
                 rb.isKinematic = false;
             }
 

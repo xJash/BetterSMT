@@ -1,8 +1,7 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 using System.Collections;
-using System.Configuration;
 using System.Reflection;
+using UnityEngine;
 
 namespace BetterSMT.Patches
 {
@@ -16,8 +15,6 @@ namespace BetterSMT.Patches
 
         static bool Prefix(DemolishableManager __instance, int parentIndex, int whichObjectToDemolish)
         {
-            Debug.Log("BetterSMT Prefix: Running custom demolish logic");
-
             if (parentIndex >= __instance.demolishableParentRootOBJ.transform.childCount || parentIndex >= __instance.demolishableValues.Length)
                 return false;
 
@@ -25,11 +22,8 @@ namespace BetterSMT.Patches
             if (whichObjectToDemolish >= gameObject.transform.childCount || parentIndex >= __instance.demolishingCosts.Length)
                 return false;
 
-            // Use custom price if applicable
             float defaultCost = __instance.demolishingCosts[parentIndex];
-            Debug.Log("defaultCost" + defaultCost);
             float num = BetterSMT.PillarPrice.Value != defaultCost ? BetterSMT.PillarPrice.Value : defaultCost;
-            Debug.Log("num"+num);
             if (num > GameData.Instance.gameFunds) return false;
 
             __instance.GetComponent<GameData>().AlterFundsFromEmployee(0f - num);
@@ -39,16 +33,15 @@ namespace BetterSMT.Patches
             if (text != "")
             {
                 char num2 = text[whichObjectToDemolish];
-                Debug.Log("num2" + num2);
                 char c = __instance.nullValue[0];
-                Debug.Log("c" + c);
                 if (num2 != c)
                     return false;
             }
 
             __instance.demolishableValues[parentIndex] = __instance.AssembleValue(parentIndex, whichObjectToDemolish);
             Debug.Log("__instance.demolishableValues[parentIndex]" + __instance.demolishableValues[parentIndex]);
-            if (!BetterSMT.PillarRubble.Value) {
+            if (!BetterSMT.PillarRubble.Value)
+            {
                 __instance.StartCoroutine((IEnumerator)AccessTools.Method(__instance.GetType(), "DelayedDemolishEffectInstantiation")
                     .Invoke(__instance, new object[] { parentIndex, whichObjectToDemolish }));
             }

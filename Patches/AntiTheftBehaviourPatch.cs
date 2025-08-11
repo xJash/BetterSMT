@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 namespace BetterSMT.Patches
 {
@@ -12,7 +12,7 @@ namespace BetterSMT.Patches
         public static bool AlarmBehaviourPrefix(AntiTheftBehaviour __instance, ref IEnumerator __result)
         {
             __result = CustomAlarmBehaviour(__instance);
-            return false; 
+            return false;
         }
 
         private static IEnumerator CustomAlarmBehaviour(AntiTheftBehaviour __instance)
@@ -37,7 +37,7 @@ namespace BetterSMT.Patches
                 yield return new WaitForSeconds(0.25f);
                 iterations++;
                 set = !set;
-                if(BetterSMT.ShoplifterDetectionNotif.Value) BetterSMT.CreateImportantNotification("Shoplifted Detected!");
+                if (BetterSMT.ShoplifterDetectionNotif.Value) BetterSMT.CreateImportantNotification("Shoplifted Detected!");
             }
 
             yield return null;

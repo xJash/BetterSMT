@@ -1,7 +1,8 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace BetterSMT.Patches {
+namespace BetterSMT.Patches
+{
     [HarmonyPatch(typeof(EmployeesDataGeneration))]
     public class EmployeesDataGenerationPatch
     {

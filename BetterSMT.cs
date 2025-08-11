@@ -3,14 +3,14 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using BetterSMT.Patches;
 using HarmonyLib;
-using System.Reflection;
 using TMPro;
 using UnityEngine;
 
 namespace BetterSMT;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-public class BetterSMT : BaseUnityPlugin {
+public class BetterSMT : BaseUnityPlugin
+{
     private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
 
     public static BetterSMT Instance;
@@ -92,6 +92,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ShoplifterDetectionNotif;
     public static ConfigEntry<bool> OneClickCheckMark;
     public static ConfigEntry<bool> AllowFreePlacement;
+    public static ConfigEntry<bool> CheatPlacement;
     public static ConfigEntry<bool> ProductStacking;
     public static ConfigEntry<bool> EnablePalletDisplaysPerk;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
@@ -131,7 +132,6 @@ public class BetterSMT : BaseUnityPlugin {
     // === !Random QoL! ===
     public static ConfigEntry<bool> SaveGame;
     public static ConfigEntry<bool> LoanEarly;
-    public static ConfigEntry<bool> Tutorial;
     public static ConfigEntry<bool> NumberKeys;
     public static ConfigEntry<int> SelfCheckoutLimit;
     public static ConfigEntry<bool> TooExpensiveNotifications;
@@ -148,7 +148,8 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> AllProduct;
 
     [System.Obsolete]
-    private void Awake() {
+    private void Awake()
+    {
 
         // === !Pillar Mods! ===
         PillarRubble = Config.Bind("Pillar Mods", "Disable Rubble", false, new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
@@ -217,7 +218,8 @@ public class BetterSMT : BaseUnityPlugin {
         CloserBoxSpawning = Config.Bind("Random Features", "Closer Box Spawning", false, new ConfigDescription("Causes boxes to spawn closer to the storage area"));
         EmployeeRerolls = Config.Bind("Random Features", "Employee Rerolls", false, new ConfigDescription("Gives you unlimited rerolls to change your employees"));
         OneClickCheckMark = Config.Bind("Random Features", "Surveillance Camera One Click", false, new ConfigDescription("Makes all customers one click when using security console"));
-        AllowFreePlacement = Config.Bind("Random Features", "Disable Placement Blocking", false, new ConfigDescription("Enables or disables you to place structures wherever, even overlapping"));
+        AllowFreePlacement = Config.Bind("Random Features", "Disable Placement Blocking", false, new ConfigDescription("Enables or disables you to place structures wherever in the main area, even overlapping"));
+        CheatPlacement = Config.Bind("Random Features", "Disable PLacement Checks", false, new ConfigDescription("Similar to Free Placement, but allows building anywhere and everywhere"));
         ProductStacking = Config.Bind("Random Features", "Enable product stacking", false, new ConfigDescription("Enables or disables most products in the game to stack on shelves"));
         EnablePalletDisplaysPerk = Config.Bind("Random Features", "Enable pallet displays", false, new ConfigDescription("Enables pallet displays without unlocking the perk."));
         ReplaceCommasWithPeriods = Config.Bind("Random Features", "Replace commas with periods", false, new ConfigDescription("Changes all commas in the game into periods."));
@@ -262,7 +264,6 @@ public class BetterSMT : BaseUnityPlugin {
         AllProduct = Config.Bind("Random QoL", "No Product Requirement", false, new ConfigDescription("Enables or disables the need for freezers, pegboards, fridges, etc. **Note: fully stocked pallets with smaller products can cause lag when being looked at"));
         SaveGame = Config.Bind("Random QoL", "Save Game Button", true, new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
         LoanEarly = Config.Bind("Random QoL", "Payoff Loans Early", false, new ConfigDescription("Enables or disables a button to pay off loans early"));
-        Tutorial = Config.Bind("Random QoL", "Enables or disables the tutorial", false, new ConfigDescription("Enables or disables the tutorial at the start of a fresh save"));
         NumberKeys = Config.Bind("Random QoL", "Enables normal numbers", false, new ConfigDescription("Enables or disables using non-numpad numbers to set prices"));
         CardboardBalerValue = base.Config.Bind("Random QoL", "Cardboard Baler", 10, new ConfigDescription("Adjust the amount of boxes required for the cardboard baler to spit out a bale", new AcceptableValueRange<int>(1, 50)));
         QuickStocking = Config.Bind("Random QoL", "Enables quick stocking", false, new ConfigDescription("Enables or disables stocking the entire box onto shelf in one click"));
@@ -290,35 +291,47 @@ public class BetterSMT : BaseUnityPlugin {
 
     }
 
-    public static void CreateCanvasNotification(string text) {
+    public static void CreateCanvasNotification(string text)
+    {
         GameObject obj = UnityEngine.Object.Instantiate(GameCanvas.Instance.notificationPrefab, GameCanvas.Instance.notificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
 
-    public static void CreateImportantNotification(string text) {
+    public static void CreateImportantNotification(string text)
+    {
         GameObject obj = UnityEngine.Object.Instantiate(GameCanvas.Instance.importantNotificationPrefab, GameCanvas.Instance.importantNotificationParentTransform);
         obj.GetComponent<TextMeshProUGUI>().text = text;
         obj.SetActive(value: true);
     }
 
-    private void Update() {
-        if (ToggleDoublePrice.Value == true) {
-            if (KeyboardShortcutDoublePrice.Value.IsDown()) {
+    private void Update()
+    {
+        if (ToggleDoublePrice.Value == true)
+        {
+            if (KeyboardShortcutDoublePrice.Value.IsDown())
+            {
                 doublePrice = !doublePrice;
                 notificationType = "priceToggle";
                 notify = true;
-            } else if (KeyboardShortcutRoundDownSwitch.Value.IsDown()) {
-                if (NearestTen.Value) {
+            }
+            else if (KeyboardShortcutRoundDownSwitch.Value.IsDown())
+            {
+                if (NearestTen.Value)
+                {
                     NearestTen.Value = false;
                     NearestFive.Value = true;
-                } else {
+                }
+                else
+                {
                     NearestTen.Value = true;
                     NearestFive.Value = false;
                 }
                 notificationType = "roundDownSwitch";
                 notify = true;
-            } else if (KeyboardShortcutRoundDownToggle.Value.IsDown()) {
+            }
+            else if (KeyboardShortcutRoundDownToggle.Value.IsDown())
+            {
                 roundDown.Value = !roundDown.Value;
                 notificationType = "roundDownToggle";
                 notify = true;
@@ -326,9 +339,12 @@ public class BetterSMT : BaseUnityPlugin {
         }
     }
 
-    private void ConfigSettingChanged(object sender, System.EventArgs e) {
-        if (NearestFive.Value) {
-            if (NearestTen.Value && NearestFive.Value) {
+    private void ConfigSettingChanged(object sender, System.EventArgs e)
+    {
+        if (NearestFive.Value)
+        {
+            if (NearestTen.Value && NearestFive.Value)
+            {
                 NearestTen.Value = false;
             }
         }

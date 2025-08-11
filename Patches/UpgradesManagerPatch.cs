@@ -1,24 +1,30 @@
 ﻿using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
+using System.Collections;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(UpgradesManager))]
-public class UpgradesManagerPatch {
+public class UpgradesManagerPatch
+{
     [HarmonyPatch(typeof(UpgradesManager))]
     [HarmonyPatch("OnStartClient")]
-    public class ClockSpeedPatch {
+    public class ClockSpeedPatch
+    {
         [HarmonyPostfix]
-        public static void Postfix(UpgradesManager __instance) {
+        public static void Postfix(UpgradesManager __instance)
+        {
             typeof(UpgradesManager)
                 .GetField("acceleratedTimeFactor", BindingFlags.NonPublic | BindingFlags.Instance)?
                 .SetValue(__instance, BetterSMT.ClockSpeed?.Value ?? 1f);
 
-            if (BetterSMT.AllTrashToRecyclers?.Value == true) {
+            if (BetterSMT.AllTrashToRecyclers?.Value == true)
+            {
                 __instance.normalTrashContainerOBJ?.SetActive(false);
                 __instance.recycleContainerOBJ?.SetActive(true);
-                if (NPC_Manager.Instance != null) {
+                if (NPC_Manager.Instance != null)
+                {
                     NPC_Manager.Instance.closestRecyclePerk = true;
                 }
             }
@@ -28,9 +34,12 @@ public class UpgradesManagerPatch {
 
     [HarmonyPatch(typeof(UpgradesManager), nameof(UpgradesManager.UserCode_CmdTimeAcceleration))]
     [HarmonyPrefix]
-    public static bool UserCode_CmdTimeAccelerationPatch(UpgradesManager __instance) {
-        if (BetterSMT.ClockMorning.Value) {
-            if (__instance.acceleratedTime || ((__instance.GetComponent<GameData>().timeOfDay > 8.01f || __instance.GetComponent<GameData>().timeOfDay < 22.4f) && !__instance.GetComponent<GameData>().isSupermarketOpen && NPC_Manager.Instance.numberOfHiredEmployees != 0 && NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount <= 0)) {
+    public static bool UserCode_CmdTimeAccelerationPatch(UpgradesManager __instance)
+    {
+        if (BetterSMT.ClockMorning.Value)
+        {
+            if (__instance.acceleratedTime || ((__instance.GetComponent<GameData>().timeOfDay > 8.01f || __instance.GetComponent<GameData>().timeOfDay < 22.4f) && !__instance.GetComponent<GameData>().isSupermarketOpen && NPC_Manager.Instance.numberOfHiredEmployees != 0 && NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount <= 0))
+            {
 
 
                 __instance.NetworkacceleratedTime = !__instance.acceleratedTime;
@@ -42,17 +51,28 @@ public class UpgradesManagerPatch {
         return true;
     }
 
-    [HarmonyPatch("GameStartSetPerks"), HarmonyPrefix]
-    private static void GameStartSetPerksPatch(UpgradesManager __instance) {
-        if (BetterSMT.EnablePalletDisplaysPerk?.Value == true) {
-            _ = BetterSMT.Instance.StartCoroutine(__instance.AuxiliarSetUIPallets());
+    [HarmonyPatch("GameStartSetPerks"), HarmonyPostfix]
+    private static void GameStartSetPerksPatch(UpgradesManager __instance)
+    {
+        if (BetterSMT.EnablePalletDisplaysPerk?.Value == true)
+        {
+            BetterSMT.Instance.StartCoroutine(DelayedUIPalletSetup(__instance));
         }
     }
 
+    private static IEnumerator DelayedUIPalletSetup(UpgradesManager instance)
+    {
+        yield return null;
+        yield return instance.AuxiliarSetUIPallets();
+    }
+
+
     [HarmonyPatch("ManageExtraPerks"), HarmonyPrefix]
-    private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex) {
+    private static bool ManageExtraPerksPatch(UpgradesManager __instance, int perkIndex)
+    {
         #region Switch- Perks
-        switch (perkIndex) {
+        switch (perkIndex)
+        {
             case 5:
                 NPC_Manager.Instance.extraEmployeeSpeedFactor += BetterSMT.EmployeeSpeedPerPerk.Value;
                 NPC_Manager.Instance.UpdateEmployeeStats();
