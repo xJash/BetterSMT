@@ -204,7 +204,7 @@ public class BetterSMT : BaseUnityPlugin
         AllTrashToRecyclers = Config.Bind("Gameplay Settings", "All Recyclers", false, new ConfigDescription("Turns the nearest trash can into a recycler without the perk."));
 
         // === !Highlighting! ===
-        StorageHighlighting = Config.Bind("Highlighting", "Enable or disable highlighting", false, new ConfigDescription("Enables or disables highlighting of product and storage shelves when holding a box"));
+        StorageHighlighting = Config.Bind("Highlighting", "This feature has been deprecated from BetterSMT and moved to SuperQoLity.", false, new ConfigDescription("This feature has been deprecated from BetterSMT and moved to SuperQoLity."));
 
         // === !Mini Transport Vehicle! ===
         EnableMTV = Config.Bind("Mini Transport Vehicle", "Enable custom Mini Transport Vehicle features", false, new ConfigDescription("Enables or disables custom Mini Transport Vehicle features below."));

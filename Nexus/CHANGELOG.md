@@ -1,4 +1,13 @@
-﻿## 2.4.0
+﻿## 2.4.1
+- Fixed one click checkmarks on customers through the security terminal
+- Removed skip tutorial feature since it has been taken into the base game
+- Added visual que feature for when thieves walk through the anti-theft door
+- Fixed cost reduction on sledgehammer demolishables
+- Added new products to notifications
+- Added some future proofing into product lists to track future products and crashes
+- Reimplemented a secondary free-placement option to truly place whatever structure wherever (even floating in the air)
+
+## 2.4.0
 - Added option to allow all products to be stock-able on all shelves
 - Added option to allow all normal products to be stocked on pallets (removing the size check)
 - Added option to modifiy pillar removal price

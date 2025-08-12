@@ -173,7 +173,7 @@ public class ManagerBlackboardPatch
 
         int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
         gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
-        gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = " $" + boxPrice.ToString("F2", CultureInfo.InvariantCulture);
+        gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2", CultureInfo.InvariantCulture)}";
 
         gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
 
