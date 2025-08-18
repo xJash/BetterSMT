@@ -9,7 +9,6 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(Builder_Main))]
 public class Builder_MainPatch
 {
-
     [HarmonyPatch(typeof(Builder_Main), "RetrieveInitialBehaviours")]
     [HarmonyPriority(Priority.High)]
     [HarmonyPostfix]
@@ -29,8 +28,6 @@ public class Builder_MainPatch
         }
     }
 
-
-
     [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
     public static bool DeleteWheneverPatch(Builder_Main __instance)
     {
@@ -39,16 +36,17 @@ public class Builder_MainPatch
         return false;
     }
 
-    [HarmonyPatch(typeof(Builder_Main), "BuildableBehaviour")]
+    [HarmonyPatch(typeof(Builder_Main), "DecorationBehaviour")]
     [HarmonyPrefix]
-    public static bool BuildableBehaviourPatch(Builder_Main __instance)
+    public static bool DecorationBehaviourPatch(Builder_Main __instance)
     {
-        __instance.correctSector = __instance.CheckCorrectGround();
-
         if (BetterSMT.CheatPlacement.Value)
         {
-            __instance.overlapping = false;
-            __instance.canPlace = true;
+            // Full bypass mode
+            __instance.inCorrectBounds = true;   // Ignore bounds restrictions
+            __instance.overlapping = false;      // Ignore overlap restrictions
+            __instance.raycastIsCorrect = true;  // Ignore raycast restrictions
+            __instance.canPlace = true;          // Always allow placement
 
             if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight))
             {
@@ -57,6 +55,130 @@ public class Builder_MainPatch
         }
         else if (BetterSMT.AllowFreePlacement.Value)
         {
+            // Ignore overlap but still require bounds + raycast checks
+            __instance.inCorrectBounds = __instance.InCorrectBounds();
+            __instance.overlapping = false;
+            __instance.raycastIsCorrect = __instance.RaycastCheck();
+            __instance.canPlace = __instance.inCorrectBounds && __instance.raycastIsCorrect;
+
+            if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight))
+            {
+                highlight.glowHQColor = __instance.canPlace ? Color.green : Color.red;
+            }
+        }
+        else
+        {
+            // Normal placement rules
+            __instance.inCorrectBounds = __instance.InCorrectBounds();
+            __instance.overlapping = __instance.pmakerFSM.FsmVariables.GetFsmBool("Overlapping").Value;
+            __instance.raycastIsCorrect = __instance.RaycastCheck();
+
+            if (__instance.MainPlayer.GetButton("Drop Item") && __instance.currentTabIndex == 8)
+            {
+                __instance.overlapping = false;
+            }
+
+            if (__instance.inCorrectBounds && !__instance.overlapping && __instance.raycastIsCorrect && !__instance.canPlace)
+            {
+                __instance.canPlace = true;
+                if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight))
+                {
+                    highlight.glowHQColor = Color.green;
+                }
+            }
+
+            if ((!__instance.inCorrectBounds || __instance.overlapping || !__instance.raycastIsCorrect) && __instance.canPlace)
+            {
+                __instance.canPlace = false;
+                if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight))
+                {
+                    highlight.glowHQColor = Color.red;
+                }
+            }
+        }
+
+        // Build button handling
+        if (__instance.MainPlayer.GetButtonDown("Build") && __instance.canPlace)
+        {
+            if (__instance.currentElementIndex == 0)
+            {
+                if (!__instance.currentMovedOBJ.GetComponent<MiniTransportBehaviour>())
+                {
+                    GameData.Instance.GetComponent<NetworkSpawner>().GetMoveData(
+                        __instance.currentMovedOBJ,
+                        __instance.dummyOBJ.transform.position,
+                        __instance.dummyOBJ.transform.rotation.eulerAngles
+                    );
+                }
+                __instance.currentMovedOBJ = null;
+                __instance.recentlyMoved = true;
+                if (__instance.dummyOBJ)
+                {
+                    Object.Destroy(__instance.dummyOBJ);
+                }
+            }
+            else
+            {
+                if (__instance.currentTabIndex == 4 && !GameData.Instance.removeLightsLimit && __instance.GetLightsCounter() >= 240)
+                {
+                    GameCanvas.Instance.CreateCanvasNotification("lghtlimit00");
+                    return false;
+                }
+
+                if (!BetterSMT.CheatPlacement.Value && GameData.Instance.gameFunds < __instance.decorationCost)
+                {
+                    GameCanvas.Instance.CreateCanvasNotification("message6");
+                }
+                else
+                {
+                    if (!BetterSMT.CheatPlacement.Value)
+                    {
+                        GameData.Instance.CmdAlterFunds(0f - __instance.decorationCost);
+                    }
+
+                    GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawnDecoration(
+                        __instance.currentPropIndex,
+                        __instance.dummyOBJ.transform.position,
+                        __instance.dummyOBJ.transform.rotation.eulerAngles
+                    );
+
+                    if (__instance.currentTabIndex == 4 && !GameData.Instance.removeLightsLimit)
+                    {
+                        __instance.StartCoroutine(__instance.DelayedSetLightsInfo());
+                    }
+                }
+            }
+        }
+
+        __instance.SharedBehaviour();
+        return false;
+    }
+
+    [HarmonyPatch(typeof(Builder_Main), "BuildableBehaviour")]
+    [HarmonyPrefix]
+    public static bool BuildableBehaviourPatch(Builder_Main __instance)
+    {
+        if (BetterSMT.CheatPlacement.Value)
+        {
+            // Default correctSector check (only matters if not cheating)
+            __instance.correctSector = __instance.CheckCorrectGround();
+            // Full bypass mode
+            __instance.correctSector = true;   // Ignore category ground restrictions
+            __instance.overlapping = false;    // Ignore overlap restrictions
+            __instance.canPlace = true;        // Always allow placement
+
+            if (__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight))
+            {
+                highlight.glowHQColor = Color.green;
+            }
+        }
+        else if (BetterSMT.AllowFreePlacement.Value)
+        {
+
+            // Default correctSector check (only matters if not cheating)
+            __instance.correctSector = __instance.CheckCorrectGround();
+
+            // Ignore overlap but still require correct sector
             __instance.overlapping = false;
             __instance.canPlace = __instance.correctSector;
 
@@ -67,6 +189,7 @@ public class Builder_MainPatch
         }
         else
         {
+            // Normal placement rules
             __instance.overlapping = __instance.pmakerFSM.FsmVariables.GetFsmBool("Overlapping").Value;
 
             if (__instance.correctSector && !__instance.overlapping && !__instance.canPlace)
@@ -88,10 +211,12 @@ public class Builder_MainPatch
             }
         }
 
+        // Build button handling
         if (__instance.MainPlayer.GetButtonDown("Build") && __instance.canPlace)
         {
             if (__instance.currentElementIndex == 0)
             {
+                // Moving an object
                 if ((bool)__instance.currentMovedOBJ?.GetComponent<NetworkIdentity>())
                 {
                     GameData.Instance.GetComponent<NetworkSpawner>().GetMoveData(
@@ -111,11 +236,11 @@ public class Builder_MainPatch
             else if (!BetterSMT.CheatPlacement.Value && !BetterSMT.AllowFreePlacement.Value &&
                      GameData.Instance.gameFunds < __instance.buildableCost)
             {
-                // Only show insufficient funds if not cheating and not free placement
                 GameCanvas.Instance.CreateCanvasNotification("message6");
             }
             else
             {
+                // Spawn new object
                 GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawn(
                     __instance.currentPropIndex,
                     __instance.dummyOBJ.transform.position,
@@ -188,7 +313,7 @@ public class Builder_MainPatch
 
                     if (hitInfo.transform.GetComponent<NetworkIdentity>() != null)
                     {
-                        float num = hitInfo.transform.GetComponent<Data_Container>().cost * 0.9f;
+                        float num = hitInfo.transform.GetComponent<Data_Container>().cost * (BetterSMT.FullDeletionRefund.Value ? 1f : 0.9f);
 
                         if (__instance.MainPlayer.GetButton("Drop Item"))
                         {
@@ -254,7 +379,7 @@ public class Builder_MainPatch
 
                 if ((__instance.MainPlayer.GetButtonDown("Build") || __instance.MainPlayer.GetButtonDown("Main Action") || __instance.MainPlayer.GetButtonDown("Secondary Action")) && hitInfo2.transform.GetComponent<NetworkIdentity>() != null)
                 {
-                    float fundsToAdd = hitInfo2.transform.GetComponent<BuildableInfo>().cost * 0.9f;
+                    float fundsToAdd = hitInfo2.transform.GetComponent<BuildableInfo>().cost * (BetterSMT.FullDeletionRefund.Value ? 1f : 0.9f);
                     GameData.Instance.CmdAlterFundsWithoutExperience(fundsToAdd);
                     GameData.Instance.GetComponent<NetworkSpawner>().CmdDestroyBox(hitInfo2.transform.gameObject);
                 }

@@ -5,7 +5,6 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(NPC_Manager))]
 public class NPC_ManagerPatch
 {
-
     [HarmonyPostfix]
     [HarmonyPatch("Awake")]
     public static void Awake_Postfix(NPC_Manager __instance)

@@ -1,5 +1,9 @@
 ﻿using HarmonyLib;
 using Mirror;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
@@ -43,8 +47,8 @@ public class NPC_InfoPatch
             int count = __instance.productsIDCarrying.Count;
             for (int i = 0; i < count; i++)
             {
-                GameObject obj = Object.Instantiate(__instance.stolenProductPrefab, NPC_Manager.Instance.droppedProductsParentOBJ.transform);
-                obj.transform.position = __instance.transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0f, Random.Range(-0.4f, 0.4f));
+                GameObject obj = UnityEngine.Object.Instantiate(__instance.stolenProductPrefab, NPC_Manager.Instance.droppedProductsParentOBJ.transform);
+                obj.transform.position = __instance.transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 0f, UnityEngine.Random.Range(-0.4f, 0.4f));
                 obj.GetComponent<StolenProductSpawn>().NetworkproductID = __instance.productsIDCarrying[0];
                 obj.GetComponent<StolenProductSpawn>().NetworkproductCarryingPrice = __instance.productsCarryingPrice[0] * 0.8f;
                 NetworkServer.Spawn(obj);
@@ -56,7 +60,7 @@ public class NPC_InfoPatch
         {
             __instance.RpcHideThief();
         }
-        int num = Random.Range(0, 9);
+        int num = UnityEngine.Random.Range(0, 9);
         __instance.RpcAnimationPlay(animationIndex);
         __instance.RPCNotificationAboveHead("NPCmessagehit" + num, "");
 

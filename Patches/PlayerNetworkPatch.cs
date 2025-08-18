@@ -14,7 +14,6 @@ public class PlayerNetworkPatch
 {
 
     private static readonly Stopwatch stopwatch = new();
-    private static PlayerNetwork pNetwork = null;
     private static UpgradesManager upgradesManager;
 
     [HarmonyPatch("PriceSetFromNumpad")]
@@ -183,60 +182,15 @@ public class PlayerNetworkPatch
         #endregion
     }
 
-    [HarmonyPatch("Start"), HarmonyPrefix]
-    private static void StartPatch(PlayerNetwork __instance)
-    {
-        if (BetterSMT.StorageHighlighting.Value == false)
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-            return;
-        }
-        else
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-        }
-    }
-
     [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
     private static void UpdateBoxContentsPatch(int productIndex)
     {
-        if (BetterSMT.StorageHighlighting.Value == false)
+        int notificationHolder = 0;
+        if (BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0)
         {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
+            notificationHolder = 1;
+            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity. Disable this message by disabling highlighting.");
             return;
-        }
-        else
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-        }
-    }
-
-    [HarmonyPatch(typeof(Data_Container), "BoxSpawner")]
-    [HarmonyPostfix]
-    private static void BoxSpawnerPatch(Data_Container __instance)
-    {
-        if (BetterSMT.StorageHighlighting.Value == false)
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-            return;
-        }
-        else
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-        }
-    }
-    [HarmonyPatch(typeof(NetworkSpawner), "UserCode_CmdSpawn__Int32__Vector3__Vector3")]
-    [HarmonyPostfix]
-    private static void NewBuildableConstructed(NetworkSpawner __instance, int prefabID)
-    {
-        if (BetterSMT.StorageHighlighting.Value == false)
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
-            return;
-        }
-        else
-        {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity.");
         }
     }
 }

@@ -239,13 +239,13 @@ public class GameDataPatch
 
         Object.Destroy(saveButton.GetComponent<EventTrigger>());
 
-        saveButton.transform.localPosition = new Vector3(0f, -85f, 0f);
+        saveButton.transform.localPosition = new Vector3(0f, -125f, 0f);
         saveButton.transform.localScale = quitButton.transform.localScale;
 
         TextMeshProUGUI textComponent = saveButton.GetComponentInChildren<TextMeshProUGUI>();
         if (textComponent != null)
         {
-            textComponent.text = "Save Game";
+            textComponent.text = "Save (Mine works)";
         }
 
         Button buttonComp = saveButton.GetComponent<Button>();

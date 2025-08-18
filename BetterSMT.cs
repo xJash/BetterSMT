@@ -68,8 +68,12 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> DisableAllTrash;
     public static ConfigEntry<bool> AlwaysAbleToDeleteMode;
     public static ConfigEntry<bool> DeleteAllCheckouts;
+    public static ConfigEntry<bool> FullDeletionRefund;
     public static ConfigEntry<bool> AllTrashToRecyclers;
 
+    // === !Logging! ===
+    public static ConfigEntry<bool> CustomerLogging;
+    public static ConfigEntry<bool> InflationLogging;
     // === !Pricing Assistance! ===
     public static ConfigEntry<bool> roundDown;
     public static ConfigEntry<bool> NearestFive;
@@ -201,7 +205,12 @@ public class BetterSMT : BaseUnityPlugin
         DisableAllTrash = base.Config.Bind("Gameplay Settings", "Despawns trash", false, new ConfigDescription("Despawns all trash at the end of the day"));
         AlwaysAbleToDeleteMode = base.Config.Bind("Gameplay Settings", "Always access to delete", false, new ConfigDescription("Delete shelves and others while customers are in store and store is open"));
         DeleteAllCheckouts = Config.Bind("Gameplay Settings", "Enable or disable deleting all checkout lanes", false, new ConfigDescription("Adds the ability to delete every checkout lane"));
+        FullDeletionRefund = Config.Bind("Gameplay Settings", "Full refund on buildings", false, new ConfigDescription("Provides 100% of the cost of buildings when being deleted"));
         AllTrashToRecyclers = Config.Bind("Gameplay Settings", "All Recyclers", false, new ConfigDescription("Turns the nearest trash can into a recycler without the perk."));
+
+        //// === !Logging! ===
+        //CustomerLogging = Config.Bind("Logging", "Customer Shopping Cart Logging", false, new ConfigDescription("The log file can be found at: %userprofile%\\appdata\\locallow\\DDTNL\\Supermarket Together"));
+        //InflationLogging = Config.Bind("Logging", "Inflated Products Log", false, new ConfigDescription("The log file can be found at: %userprofile%\\appdata\\locallow\\DDTNL\\Supermarket Together"));
 
         // === !Highlighting! ===
         StorageHighlighting = Config.Bind("Highlighting", "This feature has been deprecated from BetterSMT and moved to SuperQoLity.", false, new ConfigDescription("This feature has been deprecated from BetterSMT and moved to SuperQoLity."));
