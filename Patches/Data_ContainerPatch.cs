@@ -11,7 +11,10 @@ public class Patch_Data_Container
     [HarmonyPatch("BreakingEvent"), HarmonyPostfix]
     public static void BreakingEvent(Data_Container __instance)
     {
-        if (BetterSMT.SelfCheckoutBreak.Value) __instance.isBroken = false;
+        if (BetterSMT.SelfCheckoutBreak.Value)
+        {
+            __instance.isBroken = false;
+        }
     }
 
     [HarmonyPatch("AddItemToRow"), HarmonyPrefix]

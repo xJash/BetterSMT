@@ -16,15 +16,19 @@ public static class OrderingDevicePatch
     {
         HandleProductFeatures();
     }
-    private static readonly Stopwatch productCheckStopwatch = new Stopwatch();
+    private static readonly Stopwatch productCheckStopwatch = new();
 
     private static void HandleProductFeatures()
     {
         if (!GameData.Instance.isServer)
+        {
             return;
+        }
 
         if (BetterSMT.AutoOrderEnabled?.Value != true && BetterSMT.LowStockAlertEnabled?.Value != true)
+        {
             return;
+        }
 
         if (!productCheckStopwatch.IsRunning)
         {
@@ -33,7 +37,9 @@ public static class OrderingDevicePatch
         }
 
         if (productCheckStopwatch.Elapsed.TotalSeconds < BetterSMT.AutoOrderCheckInterval?.Value)
+        {
             return;
+        }
 
         productCheckStopwatch.Restart();
 
@@ -42,26 +48,30 @@ public static class OrderingDevicePatch
 
     private static void CheckProductsAndHandle()
     {
-        var manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
-        var listing = ProductListing.Instance;
-        var shelves = NPC_Manager.Instance?.shelvesOBJ;
-        var storage = NPC_Manager.Instance?.storageOBJ;
+        ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
+        ProductListing listing = ProductListing.Instance;
+        GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
+        GameObject storage = NPC_Manager.Instance?.storageOBJ;
 
         if (manager == null || listing == null || shelves == null || storage == null)
+        {
             return;
+        }
 
-        List<string> lowStockMessages = new List<string>();
-        List<string> autoOrderMessages = new List<string>();
+        List<string> lowStockMessages = [];
+        List<string> autoOrderMessages = [];
 
-        var availableProducts = listing.availableProducts;
+        List<int> availableProducts = listing.availableProducts;
 
         for (int productId = 0; productId < listing.productPrefabs.Length; productId++)
         {
             if (!availableProducts.Contains(productId))
+            {
                 continue;
+            }
 
-            var prefab = listing.productPrefabs[productId];
-            var dataProduct = prefab.GetComponent<Data_Product>();
+            GameObject prefab = listing.productPrefabs[productId];
+            Data_Product dataProduct = prefab.GetComponent<Data_Product>();
             int maxItemsPerBox = dataProduct.maxItemsPerBox;
 
             int totalStock = 0;
@@ -69,8 +79,8 @@ public static class OrderingDevicePatch
 
             for (int i = 0; i < shelves.transform.childCount; i++)
             {
-                var container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
-                var array = container.productInfoArray;
+                Data_Container container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++)
                 {
@@ -88,8 +98,8 @@ public static class OrderingDevicePatch
 
             for (int i = 0; i < storage.transform.childCount; i++)
             {
-                var container = storage.transform.GetChild(i).GetComponent<Data_Container>();
-                var array = container.productInfoArray;
+                Data_Container container = storage.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++)
                 {
@@ -146,11 +156,13 @@ public static class OrderingDevicePatch
     public static void OnOrderingDeviceEnabled(OrderingDevice __instance)
     {
         if (!BetterSMT.AutoOrdering.Value || processedDevices.Contains(__instance))
+        {
             return;
+        }
 
         _ = processedDevices.Add(__instance);
 
-        __instance.StartCoroutine(WaitThenInit(__instance));
+        _ = __instance.StartCoroutine(WaitThenInit(__instance));
     }
     private static IEnumerator WaitThenInit(OrderingDevice instance)
     {
@@ -169,25 +181,27 @@ public static class OrderingDevicePatch
     }
     private static void TryAddProductsToShoppingList(OrderingDevice __instance)
     {
-        var manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
-        var listing = ProductListing.Instance;
-        var shelves = NPC_Manager.Instance?.shelvesOBJ;
-        var storage = NPC_Manager.Instance?.storageOBJ;
+        ManagerBlackboard manager = GameData.Instance?.GetComponent<ManagerBlackboard>();
+        ProductListing listing = ProductListing.Instance;
+        GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
+        GameObject storage = NPC_Manager.Instance?.storageOBJ;
 
         if (manager == null || listing == null || shelves == null || storage == null)
+        {
             return;
+        }
 
         for (int productId = 0; productId < listing.productPrefabs.Length; productId++)
         {
-            var prefab = listing.productPrefabs[productId];
-            var dataProduct = prefab.GetComponent<Data_Product>();
+            GameObject prefab = listing.productPrefabs[productId];
+            Data_Product dataProduct = prefab.GetComponent<Data_Product>();
             int maxItemsPerBox = dataProduct.maxItemsPerBox;
 
             int missingItems = 0;
             for (int i = 0; i < shelves.transform.childCount; i++)
             {
-                var container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
-                var array = container.productInfoArray;
+                Data_Container container = shelves.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++)
                 {
@@ -205,8 +219,8 @@ public static class OrderingDevicePatch
             int storedCount = 0;
             for (int i = 0; i < storage.transform.childCount; i++)
             {
-                var container = storage.transform.GetChild(i).GetComponent<Data_Container>();
-                var array = container.productInfoArray;
+                Data_Container container = storage.transform.GetChild(i).GetComponent<Data_Container>();
+                int[] array = container.productInfoArray;
 
                 for (int j = 0; j < array.Length / 2; j++)
                 {

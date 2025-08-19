@@ -37,7 +37,10 @@ namespace BetterSMT.Patches
                 yield return new WaitForSeconds(0.25f);
                 iterations++;
                 set = !set;
-                if (BetterSMT.ShoplifterDetectionNotif.Value) BetterSMT.CreateImportantNotification("Shoplifted Detected!");
+                if (BetterSMT.ShoplifterDetectionNotif.Value)
+                {
+                    BetterSMT.CreateImportantNotification("Shoplifted Detected!");
+                }
             }
 
             yield return null;

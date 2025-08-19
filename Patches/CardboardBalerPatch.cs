@@ -21,7 +21,10 @@ public static class CardboardBalerPatch
     [HarmonyPatch("BreakingEvent"), HarmonyPostfix]
     public static void BreakingEvent(CardboardBaler __instance)
     {
-        if (BetterSMT.CardboardBalerBreak.Value) __instance.isBroken = false;
+        if (BetterSMT.CardboardBalerBreak.Value)
+        {
+            __instance.isBroken = false;
+        }
     }
 
     [HarmonyPostfix]

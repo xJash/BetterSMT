@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
-using System.Collections;
 
 namespace BetterSMT.Patches;
 
@@ -56,7 +56,7 @@ public class UpgradesManagerPatch
     {
         if (BetterSMT.EnablePalletDisplaysPerk?.Value == true)
         {
-            BetterSMT.Instance.StartCoroutine(DelayedUIPalletSetup(__instance));
+            _ = BetterSMT.Instance.StartCoroutine(DelayedUIPalletSetup(__instance));
         }
     }
 

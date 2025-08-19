@@ -66,7 +66,7 @@ namespace BetterSMT.Patches
                     num9 = BetterSMT.EmployeesLevel.Value;
                     num10 = BetterSMT.EmployeesLevel.Value;
                 }
-                int value = (num4 + num5 + num6 + num7) * Random.Range(3, 6) + Random.Range(-2, 3) * 10;
+                int value = ((num4 + num5 + num6 + num7) * Random.Range(3, 6)) + (Random.Range(-2, 3) * 10);
                 value = Mathf.Clamp(value, 30, 1000);
                 string text = num3 + "|" + value + "|" + num4 + "|" + num5 + "|" + num6 + "|" + num7 + "|" + num8 + "|" + num9 + "|" + num10;
                 __instance.managerComponent.todaysEmployeesData[i] = text;

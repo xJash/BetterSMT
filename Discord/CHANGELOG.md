@@ -1,4 +1,13 @@
-﻿## 2.4.1
+﻿## 2.5.0
+- Added new products to existing dicts
+- Fixed "free placement"
+- Added a "more cheaty" version of Free Placement called Cheat Placement (place anything anywhere)
+- Fixed esc menu placement of save button
+- Added new feature to get 100% refund on selling placed structures
+- Remove highlighting and added notification to get it from SuperQoLity
+- Centralized product dict for (hopefully) smoother notifications
+
+## 2.4.1
 - Fixed one click checkmarks on customers through the security terminal
 - Removed skip tutorial feature since it has been taken into the base game
 - Added visual que feature for when thieves walk through the anti-theft door

@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
-using HighlightPlus;
 using HutongGames.PlayMaker;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
@@ -35,7 +33,10 @@ public class PlayerNetworkPatch
             return false;
         }
 
-        if (__instance.basefloatString.Length >= 7) return false;
+        if (__instance.basefloatString.Length >= 7)
+        {
+            return false;
+        }
 
         for (int i = 0; i <= 9; i++)
         {
@@ -44,7 +45,10 @@ public class PlayerNetworkPatch
                 if (__instance.basefloatString.Contains(","))
                 {
                     string[] parts = __instance.basefloatString.Split(',');
-                    if (parts.Length > 1 && parts[1].Length >= 2) return false;
+                    if (parts.Length > 1 && parts[1].Length >= 2)
+                    {
+                        return false;
+                    }
                 }
 
                 __instance.basefloatString += i.ToString();
@@ -188,7 +192,6 @@ public class PlayerNetworkPatch
         int notificationHolder = 0;
         if (BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0)
         {
-            notificationHolder = 1;
             BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity. Disable this message by disabling highlighting.");
             return;
         }

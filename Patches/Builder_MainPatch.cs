@@ -144,7 +144,7 @@ public class Builder_MainPatch
 
                     if (__instance.currentTabIndex == 4 && !GameData.Instance.removeLightsLimit)
                     {
-                        __instance.StartCoroutine(__instance.DelayedSetLightsInfo());
+                        _ = __instance.StartCoroutine(__instance.DelayedSetLightsInfo());
                     }
                 }
             }

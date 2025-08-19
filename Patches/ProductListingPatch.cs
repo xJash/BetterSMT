@@ -81,9 +81,15 @@ namespace BetterSMT.Patches
         {
             try
             {
-                if (!BetterSMT.ToggleClearSalesHotkey.Value) return;
+                if (!BetterSMT.ToggleClearSalesHotkey.Value)
+                {
+                    return;
+                }
 
-                if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) return;
+                if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value)
+                {
+                    return;
+                }
 
                 if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey))
                 {
@@ -103,7 +109,10 @@ namespace BetterSMT.Patches
         {
             try
             {
-                if (!NetworkClient.active) return;
+                if (!NetworkClient.active)
+                {
+                    return;
+                }
 
                 if (ProductListing.Instance == null)
                 {

@@ -13,7 +13,9 @@ namespace BetterSMT.Patches
             if (BetterSMT.OneClickCheckMark.Value)
             {
                 if (!__instance.nSpawner || !__instance.inASecurityCamera)
+                {
                     return false;
+                }
 
                 if (__instance.MainPlayer.GetButtonDown("Build"))
                 {
@@ -45,7 +47,7 @@ namespace BetterSMT.Patches
                     __instance.viewpointOBJ.transform.localRotation = Quaternion.Euler(__instance.y, __instance.x, 0f);
                 }
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hitInfo, 100f, __instance.lMask)
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo, 100f, __instance.lMask)
                     && hitInfo.transform.gameObject.CompareTag("Interactable")
                     && hitInfo.transform.parent
                     && hitInfo.transform.parent.GetComponent<NPC_Info>()
