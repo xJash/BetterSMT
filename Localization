@@ -1,0 +1,1701 @@
+title0- New Store
+title1- Load Store
+title2- Join Store
+title3- Options
+title4- Exit
+
+newstore0- Choose a name for your store
+newstore1- Private
+newstore2- Only Friends
+newstore3- Public
+newstore4- Create
+newstore5- Store name must have more than 2 characters and do not have invalid characters
+newstore6- You can inflate difficulty artificially if desired
+newstore7- Difficulty: 
+    
+yes- Yes
+no- No
+back- Back
+save- Apply
+entertext- Enter text...
+    
+join- Join
+invalidcode- Invalid code or host has locked the lobby
+joinfriends- Join friends with code
+copycode- Copy code...
+
+loading- Loading  
+
+options0- Graphics
+options1- Resolution
+options2- Fullscreen
+options3- Vsync
+options4- Antialiasing
+options5- Brightness
+options6- Quality
+options6a- Performant
+options6b- Balanced
+options6c- High Fidelity
+
+options7- Controls
+options8- X Sensitivity
+options9- Y Sensitivity
+options10- Zoom Sensitivity
+options11- Invert X Axis
+options12- Invert Y Axis
+options12a- Customize Controls
+
+options13- Audio
+options14- Master Vol.
+options15- Music Vol.
+options16- SFX Vol.
+options17- UI Vol.
+options17a- Voice Vol.
+
+options18- Main Menu
+options19- Quit Game
+
+options20- Return to main menu?
+options21- Quit game?
+
+options22- Copy join code to clipboard
+options23- Join friends with code
+options24- Copy code...
+
+options25- Camera Event FOV
+options26- Offensive NPCs
+options27- Popping Distance
+
+rw0- Move Forward
+rw1- Move Forward+
+rw2- Move Forward-
+rw3- Move Horizontal
+rw4- Move Horizontal+
+rw5- Move Horizontal-
+rw6- Mouse Vertical
+rw7- Mouse Vertical+
+rw8- Mouse Vertical-
+rw9- Mouse Horizontal
+rw10- Mouse Horizontal+
+rw11- Mouse Horizontal-
+
+rw12- Main Action
+rw13- Secondary Action
+rw14- Build
+rw15- Drop ItemSelect a store to continue
+rw16- Jump
+rw17- Sprint
+rw18- Open Builder
+rw19- Menu Next
+rw20- Menu Previous
+rw21- Chat
+rw22- Voice Chat
+rw23- Escape Menu
+rw24- Crouch
+
+rw25- Builder Tab Next
+rw26- Builder Tab Prev
+rw27- Dance 1
+rw28- Dance 2
+rw29- Dance 3
+rw30- Dance 4
+rw31- Dance 5
+rw32- Dance 6
+rw33- Dance 7
+rw34- Dance 8
+rw35- Dance 9
+rw36- Numpad 0
+rw37- Numpad 1
+rw38- Numpad 2
+rw39- Numpad 3
+rw40- Numpad 4
+rw41- Numpad 5
+rw42- Numpad 6
+rw43- Numpad 7
+rw44- Numpad 8
+rw45- Numpad 9
+rw46- Numpad Delete
+rw47- Numpad Period
+rw48- Numpad Accept
+
+rw49- Build Snapping
+
+
+employees- Employees: 
+employeesassignment- Employees Assignment
+cashiers- Cashiers
+restock- Restock
+storage- Storage
+security- Security
+mblackboard- Manager Blackboard
+productorder- Product Order
+supermarket- Supermarket
+cosmetics- Cosmetics Order
+stream- Set TV Video/Stream
+pinshelves- Products in shelves
+pinstorage- Products in storages
+pinboxes- Products in boxes
+shoplist- Shopping List
+buy- Buy
+supermarketname- Supermarket Name
+supermarketcolor- Supermarket Color
+changename- Change Name
+changecolor- Change Color
+franchisepointsavailable- Franchise Points Available
+unlocks- Unlocks
+requires- Requires
+connectionlost- Host connection lost
+buyshopspace- BUY SHOP SPACE
+buystoragespace- BUY STORAGE SPACE
+addons- Addons
+    
+
+
+tutorial0- Welcome to Supermarket Together!
+
+If you wish to skip this tutorial press the assigned Drop Item key [F by default] for five seconds.
+tutorial1- While the store is closed time passes way more slowly.
+            
+The first step is to place some furniture. Press [TAB] to open the builder
+tutorial2- Buy 2 product shelves, a checkout and a storage shelf.
+
+Note the storage shelf can only be placed in the annex empty room connected to the manager room.
+tutorial3- Good job!
+            
+We have a franchise point available: points are earned by owning a successful business.
+
+Go to the manager room and acquire the first perk in the perk's blackboard.
+tutorial4- Great. You have just acquired the first pack of products.
+
+It's important to remember that once you've acquired a product franchise, customers will expect those products to be in the store or they will complain about existences.
+
+Now go to the manager blackboard, click in it and then click in products order.
+tutorial5- Good. Now click in Basic Products I.
+tutorial6- Let's buy a box of each basic product.
+
+Click on the plus symbol of each product to add it to the shopping list, once you have one of each there, click buy.
+tutorial7- Great. Now go outside and look for the purchased boxes. Click on one to hold it.
+tutorial8- Go to a product shelf and click [LMB] on one of its rows to fill it with products.
+
+[RMB] will return items from the shelf to the box.
+
+You can also press [F] to drop items where you want to.
+
+Place all products in the store's shelves.
+tutorial9- Products are placed but initially labeled at cost price which means no benefit.
+
+Go to the manager room and take one of the pricing devices.
+tutorial10- Aim at a shelf and the product pricing information will appear on the device' screen.
+
+If your prices surpasses more than double of the product's base price customers will have an increasing chance of not buying it so use this rule as a scale.
+
+P.e. if a product has cost 1 dollar and you set your price higher than 2 dollars customers may not buy it. Try to set a price to all six different products.
+
+CONTROLS
+[Mouse Wheel] Add or subtract in increments of 0.01.
+[Mouse Wheel + E] Add or subtract in increments of 0.2.
+[LMB] Accept price.
+[Numpad] Can also be used.
+[F] Drop items
+
+Note you can also set prices with your numpad or reassign keys in Options/Customize Controls to do so. Numpad can be also used to input amounts when customers pay with credit card in checkouts.
+    
+tutorial11- Your store is now ready to open. To allow customers in press the green button located in the manager's room. But first read the important info below:
+
+- Every Thursday market inflation increases on some products and you will have to review prices.
+
+- You can drop empty boxes in the container just outside OR carry them to the farthest container across the street and earn some money back by recycling it. Money can be increased with a perk.
+
+- At day 8, thieves and trash will have a chance to spawn. The solution to both is the broom: hit the thieves and they will drop their stolen products.
+
+- Each checkout can have a queue of 8 customers, they won't become impatient but extra customers that do not detect a free checkout queue, will become thieves and leave without paying.
+
+- You can check lights and other decoration by pressing X or Z by default while using the Builder.
+
+- You can definitely clear a shelf row from its products by right clicking it with the pricing tool. Useful if you don't want any employees to keep restocking that row.
+
+- Pay attention to the invoices tab in the manager's blackboard. Your employees wages and electrical or rent invoices will arrive there.
+
+- To close the store wait until it's 22:30 PM and press the red button in the manager's room. Game is saved automatically every new day.
+
+- The more players, the more difficulty. (Try hitting players with the broom)
+    
+
+
+builder0- Build / Move / Delete
+builder1- Rotate Left
+builder2- Rotate Right
+builder3- Navigate Menu Up
+builder4- Navigate Menu Down
+
+checkout0- [LMB] Add money
+checkout1- [RMB] Remove money
+    
+
+day- Day 
+    
+weekday1- MON
+weekday2- TUE
+weekday3- WED
+weekday4- THU
+weekday5- FRI
+weekday6- SAT
+weekday0- SUN
+
+
+endofworkingday- End of working day: 
+totalcustomers- Total Customers: 
+notfoundproducts- Not found products: 
+tooexpensiveproducts- Too expensive products: 
+timesrobbed- Times robbed: 
+complaintsfilth- Complaints about filth:     
+franchiselevel- Franchise Level: 
+franchiseexperience- Franchise experience: 
+income- Income 
+moneylostbecauserobbing- Money lost because robbers: 
+boughtproductscost- Bought products cost: 
+rentcost- Rent cost: 
+electricitycost- Electricity cost: 
+employeeswages- Employees wages: 
+othercosts- Other costs: 
+daybalance- Day Balance: 
+
+
+messagei0- Supermarket Opened
+messagei1- Franchise Level Up: Point Awarded
+messagei2- Perk Acquired
+messagei3- Supermarket Expansion Acquired
+messagei4- Storage Expansion Acquired
+messagei5- Department Acquired
+messagei5a- Store requirements not met
+messagei5b- Storage requirements not met
+    
+message0- Wrong container type for this product
+message1- Can't add more products to this shelf
+message2- Can't mix products in the same shelf
+message3- No franchise points available
+message4- Previous franchise nodes not acquired
+message5- No products in shopping list
+message6- Not enough funds
+message7- Already holding something
+message8- No more products in the box
+message9- No more supermarket space to acquire
+message9a- No more storage space to acquire
+message10- Can't return less money than the required change
+message11- Box has products inside
+message12- No more space in box
+message13- Can't mix products in the same box
+message14- Need a broom for this
+message15- Only allowed when store is closed
+message16- Only allowed when no more customers
+message17- Remove all products from container before deleting
+message17a- Container has products. Hold [drop item] key while deleting if you are sure
+message18- Store needs at least one manned checkout
+message19- Can't fit this item in the tray
+message20- Pallet displays require products bigger than this
+
+network0- Host connection lost
+
+
+NPCmessage0- I haven't found this: 
+NPCmessage1- This is too expensive: 
+NPCmessage2- Haven't found what I was looking for
+NPCmessage3- No checkouts available? Bye!
+NPCmessage4- Bye suckers!
+NPCmessage5- This supermarket is so filthy!
+    
+NPCemployee0- I'll attend this cashier.
+
+NPCmessagehit0- Ow!
+NPCmessagehit1- Jeez
+NPCmessagehit2- Stick that broom up your arse
+NPCmessagehit3- Policeeeeeee!
+NPCmessagehit4- Eeeeeek!
+NPCmessagehit5- Aaaaaaaah!
+NPCmessagehit6- This is abuse!
+NPCmessagehit7- Gaah!
+NPCmessagehit8- Hit me harder baby
+NPCmessagehit9- OwO
+
+NPCmessagehitemployee0- Bad boss
+NPCmessagehitemployee1- This is abuse
+NPCmessagehitemployee2- D:
+NPCmessagehitemployee3- Call the strike!
+
+
+builder- Builder
+buildable0- Placement Mode
+buildable1- Product Shelf
+buildable2- Basic Fridge
+buildable3- Double Fridge
+buildable4- Freezer
+buildable5- Storage Shelf
+buildable6- Checkout (Right)
+buildable7- Checkout (Left)
+buildable8- Standing Freezer
+buildable9- Product Counter A
+buildable10- Storage Shelf (Unlabeled)
+buildable11- Produce Shelf A
+buildable12- Self-checkout
+buildable13- Produce Shelf B
+buildable14- Product Shelf (Half)
+buildable15- Tiered Shelf
+buildable16- Wall Shelf
+buildable17- Pegboard Shelf
+buildable18- Produce Shelf B (Half)
+buildable19- Corner Shelf (Big)
+buildable20- Corner Shelf (Small)
+buildable21- Basic Pallet Display
+buildable22- Wooden Pallet Display A
+buildable23- Wooden Pallet Display B
+buildable24- Plastic Pallet Display
+buildable25- Tall Pallet Display
+buildable26- Basic Pallet Display (Half)
+buildable27- Wooden Pallet Display A (Half)
+buildable28- Wooden Pallet Display B (Half)
+buildable29- Plastic Pallet Display (Half)
+buildable30- Tall Pallet Display (Half)
+    
+
+buildable0a- Delete Mode
+tabtitle0- Builder
+tabtitle1- Decoration
+tabtitle2- Devices
+tabtitle3- Lights
+tabtitle4- Seasonal: Halloween
+tabtitle5- Staff Room
+tabtitle6- Seasonal: Christmas
+tabtitle7- Decoration: Plants
+tabtitle8- Architecture
+    
+decorat1- Neon Lamp A
+decorat2- Potted Plant A
+decorat3- TV
+decorat4- Ceiling Sign
+decorat5- Crowd Barrier
+decorat6- Anti-theft Door
+decorat7- Wooden Pot
+decorat8- Wooden Pot Wide
+decorat9- Ceiling Vent
+decorat10- Central Pricing Machine
+
+decorat11- Tombstone A
+decorat12- Tombstone B
+decorat13- Tombstone C
+decorat14- Tombstone D
+decorat15- Tombstone E
+decorat16- Tombstone F
+decorat17- Pumpkin A
+decorat18- Pumpkin B
+decorat19- Pumpkin C
+
+decorat20- The Pumpkinman
+decorat21- Spooky Ghost
+decorat22- Shiny Flower A
+decorat23- Shiny Flower B
+decorat24- Mini Transport Vehicle
+decorat25- Neon Lamp B
+decorat26- Neon Lamp C
+decorat27- Neon Lamp D
+decorat28- Neon Lamp E
+decorat29- Hanging Lamp A
+
+decorat30- Hanging Lamp B
+decorat31- Hanging Lamp C
+decorat32- Hanging Lamp D
+decorat33- Hanging Lamp E
+decorat34- Hanging Lamp F
+decorat35- Hanging Lamp G
+decorat36- Hanging Lamp H
+decorat37- Hanging Lamp I
+decorat38- Hanging Lamp J
+decorat39- Hanging Lamp K
+
+decorat40- Hanging Lamp L
+decorat41- Hanging Lamp M
+decorat42- Special Lamp A
+decorat43- Security Camera
+decorat44- Security Desk
+decorat45- Cleaner Robot
+decorat46- Basic Table A
+decorat47- Basic Chair A
+decorat48- Staff Furniture A
+decorat49- Private Fridge
+decorat50- Coffee Machine
+
+decorat51- Snacks Machine
+decorat52- Soda Machine
+decorat53- Dart Machine
+decorat54- Soccer Table
+decorat55- Billiard Table
+decorat56- Billiard Cue Case
+decorat57- Arcade: Robot Catcher
+decorat58- Arcade: Space Wars
+decorat59- Arcade: Treasure Island
+decorat60- Christmas Tree
+
+decorat61- Christmas Arc
+decorat62- Christmas Wreath
+decorat63- Drummer Nutcracker
+decorat64- General Nutcracker
+decorat65- Horseman Nutcracker
+decorat66- Swordsman Nutcracker
+decorat67- Shiny Deer
+decorat68- Choo Choo Train
+decorat69- Najara Simulator
+decorat70- Stool
+
+decorat71- Snowman
+decorat72- Candy Cane
+decorat73- Christmas Gift
+decorat74- Ceramic Pot A
+decorat75- Ceramic Pot B
+decorat76- Ceramic Pot C
+decorat77- Ceramic Pot D
+decorat78- Ceramic Pot E
+decorat79- Ceramic Pot F
+decorat80- Ceramic Pot G
+    
+decorat81- Plant A
+decorat82- Plant B
+decorat83- Plant C
+decorat84- Plant D
+decorat85- Plant E
+decorat86- Plant F
+decorat87- Plant G
+decorat88- Plant H
+decorat89- Plant I
+decorat90- Plant crock A
+    
+decorat91- Plant crock B
+decorat92- Plant crock C
+decorat93- Plant J
+decorat94- Plant K
+decorat95- Plant L
+decorat96- Flower A
+decorat97- Flower B
+decorat98- Flower C
+decorat99- Flower D
+decorat100- Flower E
+
+decorat101- Flower F
+decorat102- Flower G
+decorat103- Flower H
+decorat104- Flower I
+decorat105- Flower J
+decorat106- Flower K
+decorat107- Flower L
+decorat108- Flower M
+decorat109- Flower N
+decorat110- Flower O
+
+decorat111- Flower P
+decorat112- Flower Q
+decorat113- Flower R
+decorat114- Flower S
+decorat115- Flower T
+decorat116- Flower U
+decorat117- Flower V
+decorat118- Flower W
+decorat119- Flower X
+decorat120- Flower Y
+
+decorat121- Flower Z
+decorat122- Flower A1
+decorat123- Flower B1
+decorat124- Supermarket Pillar
+decorat125- Metallic Pillar
+decorat126- Concrete Hanging Planter A
+decorat127- Concrete Hanging Planter B
+decorat128- Ceramic Hanging Planter A
+decorat129- NPC Unstuck Block
+decorat130- Street Light A
+
+decorat131- Street Light B
+decorat132- Street Light C
+decorat133- Street Light D
+decorat134- Street Light E
+decorat135- Street Light F
+decorat136- Street Light G
+decorat137- Street Light H
+decorat138- Street Light I
+decorat139- Street Light J
+decorat140- Street Light K
+
+decorat141- Street Light L
+decorat142- Street Light M
+decorat143- Street Light N
+decorat144- Street Light O
+decorat145- Street Light P
+decorat146- Street Light Q
+decorat147- Fountain A1
+decorat148- Fountain A2
+decorat149- Fountain A3
+decorat150- Fountain B1
+
+decorat151- Fountain B2
+decorat152- Fountain B3
+decorat153- Fountain C1
+decorat154- Fountain C2
+decorat155- Fountain C3
+decorat156- Fountain D1
+decorat157- Fountain D2
+decorat158- Fountain D3
+decorat159- Fountain E1
+decorat160- Fountain E2
+
+decorat161- Fountain E3
+decorat162- Fountain F1
+decorat163- Fountain F2
+decorat164- Fountain F3
+decorat165- Fountain G1
+decorat166- Fountain G2
+decorat167- Fountain G3
+decorat168- Small Paintable Divider
+decorat169- Medium Paintable Divider
+decorat170- Large Paintable Divider
+    
+decorat171- Corner Divider
+decorat172- Large Ground Planter A
+decorat173- Large Ground Planter B
+decorat174- Large Ground Planter C
+decorat175- Large Ground Planter D
+decorat176- Cross Paintable Divider
+decorat177- T-Shaped Paintable Divider
+decorat178- Picture Frame
+decorat179- Door Paintable Divider
+decorat180- Wall Planter A
+    
+decorat181- Wall Planter A Panel
+decorat182- Wall Planter B
+decorat183- Wall Planter B Panel
+decorat184- Cardboard Baler
+decorat185- Simple Beam
+decorat186- Cross Beam
+decorat187- T Beam
+decorat188- Corner Beam
+decorat189- Parcel Pickup Point
+decorat190- Event Cage
+
+decorat191- Advertisement Frame A
+decorat192- Advertisement Frame B
+decorat193- Advertisement Frame C
+decorat194- Advertisement Frame D
+decorat195- Advertisement Frame E
+decorat196- Advertisement Frame F
+decorat197- Advertisement Frame G
+decorat198- Organizer: Price Scanners
+decorat199- Organizer: Brooms
+decorat200- Organizer: Sledgehammers
+
+decorat201- Organizer: Ordering Tablets
+decorat202- Organizer: Sales Tablets
+decorat203- Organizer: Trays
+decorat204- Organizer: Toolboxes
+decorat205- Oriental Lantern A
+decorat206- Oriental Lantern B
+decorat207- Oriental Lantern C
+decorat208- Oriental Lantern D
+decorat209- Oriental Lantern E
+decorat210- Oriental Lantern F
+
+decorat211- Oriental Lantern G
+decorat212- Oriental Lantern H
+decorat213- Oriental Lantern I
+decorat214- Oriental Lantern J
+decorat215- Announcements Desk
+decorat216- Wall Speaker
+decorat217- Bench A
+decorat218- Bench B
+decorat219- Bench C
+decorat220- Bench D
+
+decorat221- Bench E
+decorat222- Bench F
+decorat223- Bench G
+decorat224- Bench H
+decorat225- Bench I
+decorat226- Bench J
+decorat227- Bench K
+decorat228- Bench L
+decorat229- Bench M
+decorat230- Bench N
+
+decorat231- Bench O
+decorat232- Bench P
+decorat233- Bench Q
+decorat234- Bench R
+decorat235- Bench S
+decorat236- Bench T
+decorat237- Suspicious Looking Antenna
+    
+
+
+skill01- Employee I
+skill02- Employee II
+skill03- Employee III
+skill04- Employee IV
+skill05- Employee V
+skill0a- Allows hiring an extra employee
+skill1- Free morning coffee
+skill1a- Employees move +20% faster
+skill2- Marketing courses I
+skill2a- Employees generate +10% money in checkouts
+skill3- Formation courses
+skill3a- Employees move 20% faster
+skill4- Recycling courses
+skill4a- Recycling boxes award four times as much
+skill5- Air Conditioning
+skill5a- Attracts more customers per day
+skill6- Wifi connection
+    
+skill11- Employee VI
+skill12- Employee VII
+skill13- Employee VIII
+skill14- Employee IX
+skill15- Employee X
+skill16- Cashier Formation I
+skill16a- Employees will handle products in checkout faster
+skill17- Cashier Formation II
+skill18- Cashier Formation III
+skill19- Restock Formation I
+skill19a- Employees will place products faster
+skill20- Restock Formation II
+skill21- Even more coffee
+skill22- Free Energy Drinks I
+skill23- Free Energy Drinks II
+skill24- Recycling courses II
+skill24a- Employees will recycle boxes
+skill25- Friendly Interface
+skill25a- Customers will use self-checkouts more
+skill26- Employee XI
+skill27- Employee XII
+skill28- Recycling container
+skill28a- The closest trash container will be replaced with a recycling one.
+skill29- MART OS 2.0
+skill29a- The pricing machine software is improved and a way to automate prices can now be set
+skill30- Tic-tac goes fast
+skill30a- When store is closed during nights, the manager can use the new clock in the manager's room to accelerate time
+skill31- Low energy light bulbs
+skill31a- Reduces overall electrical consumption by a 20%
+skill32- User-friendly Interface
+skill32a- Customers use self-checkout faster
+skill33- Logistics
+skill33a- When taking a box, players will be able to visualize its contained product's position both in store and storage
+skill34- External Accountant
+skill34a- Invoices will be paid every new day if there are funds to do so.
+skill35- Special Prices I
+skill35a- Increases maximum amount of daily sales by 2.
+skill36- Special Prices II
+skill37- Special Prices III
+skill38- Pallet Displays
+skill38a- Unlocks different types of pallet displays for the biggest products
+skill39- Human Resources
+skill39a- Unlocks six more employees
+
+
+productRelated0- Price per unit
+
+productGroup0- Basic Products
+productGroup1- Dairy Products
+productGroup2- Soda Drinks
+productGroup3- Frozen Foods
+productGroup4- Hygiene
+productGroup5- Cleaning Products
+productGroup6- Sweets and Snacks
+productGroup7- Meat
+productGroup8- Preserves
+productGroup9- Infusions
+productGroup10- Seafood
+productGroup11- Books
+productGroup12- Alcoholic Drinks
+productGroup13- Pharmacy
+productGroup14- Produce
+productGroup15- Child Care
+productGroup16- Gardening
+productGroup17- Small Electronics
+    
+productCategory0- Basic Products I
+productCategory1- Basic Products II
+productCategory2- Basic Products III
+productCategory3- Basic Products IV
+productCategory4- Basic Products V
+productCategory5- Basic Products VI
+productCategory6- Dairy Products I
+productCategory7- Dairy Products II
+productCategory8- Soda Drinks I
+productCategory9- Frozen Foods I
+productCategory10- Frozen Foods II
+productCategory11- Hygiene I
+productCategory12- Hygiene II
+productCategory13- Hygiene III
+productCategory14- Cleaning Products I
+productCategory15- Cleaning Products II
+productCategory16- Sweets And Snacks I
+productCategory17- Sweets And Snacks II
+productCategory18- Sweets And Snacks III
+productCategory19- Sweets And Snacks IV
+productCategory20- Meat I
+productCategory21- Preserves I
+productCategory22- Infusions I
+productCategory23- Seafood I
+productCategory24- Books Pack I
+productCategory25- Books Pack II
+productCategory26- Alcoholic Drinks I
+productCategory27- Alcoholic Drinks II
+productCategory28- Alcoholic Drinks III
+productCategory29- Pharmacy I
+productCategory30- Pharmacy II
+productCategory31- Produce I
+productCategory32- Produce II
+productCategory33- Produce III
+productCategory34- Produce IV
+productCategory35- Child Care I
+productCategory36- Child Care II
+productCategory37- Soda Drinks II
+productCategory38- Soda Drinks III
+productCategory39- Sweets And Snacks V
+productCategory40- Sweets And Snacks VI
+productCategory41- Preserves II
+productCategory42- Gardening I
+productCategory43- Gardening II
+productCategory44- Gardening III
+productCategory45- Gardening IV
+productCategory46- Small Electronics I
+productCategory47- Small Electronics II
+productCategory48- Small Electronics III
+productCategory49- Produce V
+productCategory50- Sweets And Snacks VII
+productCategory51- Basic Products VII
+    
+
+product0- Pasta Penne
+product1- Water Bottle
+product2- Honey Cereals
+product3- Rice
+product4- Salt
+product5- Sugar
+product6- Margarine
+product7- Flour
+product8- Apple Juice
+product9- Olive Oil
+
+product10- Ketchup
+product11- Sliced Bread
+product12- Pepper
+product13- Orange Juice
+product14- Barbacue Sauce
+product15- Mustard Sauce
+product16- Spaghetti Box
+product17- Tuna Pate
+product18- Fiber Cereals
+product19- Supreme Flour
+
+product20- Black Coffee
+product21- Egg Box
+product22- Houmous
+product23- White Flour
+product24- Cane Sugar Box
+product25- Sugar
+product26- Macarroni
+product27- Ecologic Sugar
+product28- Brown Sugar
+product29- Sunflower Oil
+
+product30- Mash Potatoes
+product31- Potato Bag
+product32- Espresso Coffee
+product33- Basmati Rice
+product34- Long Grain Rice
+product35- Coffee
+product36- Supreme Pasta
+product37- Chocolate Cereals
+product38- Premium Water
+product39- Spring Water
+
+product40- Powdered Sugar
+product41- Sugar - Big Box
+product42- Brown Sugar - Big Box
+product43- Emmental Cheese
+product44- Gruyere Cheese
+product45- Skimmed Cheese
+product46- Fruit Yoghurt
+product47- Vanilla Yoghurt
+product48- Milk Brick
+product49- Butter
+
+product50- Parmigiano Cheese
+product51- Reggiano Cheese
+product52- Mozzarella Cheese
+product53- Skimmed Yoghurt
+product54- Cola Pack
+product55- Soda Pack
+product56- Decaf Soda Pack
+product57- Soda Bottle
+product58- Cola Bottle
+product59- Sugar Free Soda Bottle
+
+product60- Premium Soda
+product61- Pizza Barbaque
+product62- Fondue
+product63- Crocanti Ham
+product64- Ham Cheese Crepe
+product65- French Fries
+product66- Crispy Potato Pops
+product67- Green Beans
+product68- Four Cheese Pizza
+product69- Four Seasons Pizza
+
+product70- Vegetable Mix
+product71- Chicken Mix
+product72- Bolognaise Lasagna
+product73- Vegetable Lasagna
+product74- Toothpaste
+product75- Toilet Paper
+product76- Hand Soap
+product77- Avocado Shampoo
+product78- Egg Shampoo
+product79- Bath Gel
+
+product80- Toilet Paper
+product81- Mango Soap
+product82- Extra Soft Shampoo
+product83- Jojoba Honey Shampoo
+product84- Argan Oil Shampoo
+product85- Paper Towel
+product86- Double Side Toilet Paper
+product87- Lemon Soap
+product88- Premium Bath Gel
+product89- Shampoo For Babies
+
+product90- Detergent
+product91- Stain Remover
+product92- Glass Cleaner
+product93- Detergent Tablets
+product94- Dishwasher
+product95- Bleach
+product96- Bleach - Big Bottle
+product97- Softener
+product98- Premium Detergent
+product99- Insecticide
+
+product100- Cleaning Cloths
+product101- Premium Capsules
+product102- Premium Bleach
+product103- Ammonia
+product104- Cookie Jar
+product105- Maxi Cone
+product106- Chocolate Spread
+product107- Chocolate Powder
+product108- Chips
+product109- Sweet Bonbek
+
+product110- Peach Jam
+product111- Ice Cream Box
+product112- Chocolate Box
+product113- Chocolate Biscuit
+product114- Vanilate Biscuit
+product115- Madeleine
+product116- Strawberry Jam
+product117- Peanut Butter
+product118- Chipos
+product119- Marshmallow
+
+product120- Lemon Biscuit
+product121- Hazelnut Biscuit
+product122- Premium Ice Cream
+product123- Honey
+product124- Premium Chocolate Box
+product125- Foditos
+product126- Premium Cake
+product127- Chopped Beef
+product128- Pure Beef
+product129- Veal
+
+product130- Chicken Wings
+product131- Chicken
+product132- Parma Ham
+product133- Sliced Ham
+product134- Peas - Big
+product135- Tuna - Big
+product136- Red Beans
+product137- Cat Food
+product138- Cat Food
+product139- Dog Food
+
+product140- Green Tea
+product141- Lemon Tea
+product142- Black Tea
+product143- Peppermint
+product144- Mint
+product145- Valerian
+product146- Big Sushi
+product147- Small Sushi
+product148- Smoked Salmon
+product149- Crab Sticks
+
+product150- Book - Electromagnetic
+product151- Book - Surprise
+product152- Book - ABC
+product153- Book - Mother And Child
+product154- Book - Colors
+product155- Book - Piticha
+product156- Book - OnceUpon
+product157- Book - Krok
+product158- Book - Adventures
+product159- Book - Donnine
+
+product160- Book - Vintage
+product161- Book - I Wont Share
+product162- Beer Pack
+product163- Beer Pack
+product164- Beer Pack
+product165- Beer Barrel
+product166- Beer Barrel
+product167- Vodka
+product168- Red Wine
+product169- Rose Wine
+
+product170- White Wine
+product171- Beer Barrel
+product172- Premium Vodka
+product173- Japanese Whisky
+product174- Premium Whisky
+product175- Premium Whisky
+product176- Hydrogen Peroxide
+product177- Disinfectant
+product178- Ibuprofen
+product179- Paracetamol
+    
+product180- Adhesive Bandages
+product181- Laxative
+product182- Antihistamine
+product183- Zinc Supplement
+product184- Antioxidant
+product185- Fish Oil
+product186- Algae Pills
+product187- Vitamins
+product188- Melatonin
+product189- Sunscreen
+    
+product190- Stretch Cream
+product191- Red Apple Tray
+product192- Green Apple Tray
+product193- Clementine Tray
+product194- Orange Tray
+product195- Pear Tray
+product196- Lemon Tray
+product197- Mango Tray
+product198- Avocado Tray
+product199- Kiwi Tray
+
+product200- Papaya Tray
+product201- Strawberry Tray
+product202- Cherry Tray
+product203- Artichoke Tray
+product204- Zucchini Tray
+product205- Carrot Tray
+product206- Tomato Tray
+product207- Potato Tray
+product208- Onion Tray
+product209- Banana Pack
+
+product210- Melon
+product211- Pineapple
+product212- Pumpkin
+product213- Watermelon
+product214- Baby Food: Vegetables
+product215- Baby Food: Fish
+product216- Baby Food: Fruits
+product217- Baby Food: Meat
+product218- Nutritive Milk Mix
+product219- Nutritive Milk Powder
+
+product220- Ecologic Diapers
+product221- Basic Diapers
+product222- Toddler Diapers
+product223- Premium Diapers
+product224- Aloe Baby Wipes 
+product225- Basic Baby Wipes
+product226- Baby Powder
+product227- Orange Soda
+product228- Pineapple Soda
+product229- Tropical Soda
+
+product230- Green Tea Drink
+product231- Red Tea Drink
+product232- Lemon Tea Drink
+product233- Cold Brew Coffee
+product234- Blueberry Energy Drink
+product235- Guava Energy Drink
+product236- Lima Energy Drink
+product237- Fruit Punch Energy Drink
+product238- Mango Energy Drink
+product239- Cola Energy Drink
+
+product240- Sugar Free Energy Drink
+product241- Basic Strawberry Ice Cream
+product242- Lemon Ice Cream
+product243- Coffee Ice Cream
+product244- Stracciatella Ice Cream
+product245- Strawberry Meringue Ice Cream
+product246- Caramel Ice Cream
+product247- Premium Strawberry Ice Cream
+product248- Strawberry Cheesecake Ice Cream
+product249- Premium Caramel Ice Cream
+
+product250- Pink Strawberry Ice Cream
+product251- Alcoholic Ice Cream
+product252- Chickpeas
+product253- Meatballs
+product254- Lentils
+product255- Tomato Soup
+product256- Canned Corn
+product257- Canned Peas
+product258- Strawberry Seeds
+product259- Raspberry Seeds
+
+product260- Blueberry Seeds
+product261- Pineapple Seeds
+product262- Meyer Lemon Seeds
+product263- Tomato Seeds
+product264- Pepper Seeds
+product265- Cucumber Seeds
+product266- Radish Seeds
+product267- Carrots Seeds
+product268- Lawn Seeds
+product269- Poppy Seeds
+
+product270- Tulip Seeds
+product271- Sunflower Seeds
+product272- Petunia Seeds
+product273- Hand Rake (A)
+product274- Hand Rake (B)
+product275- Hand Shovel
+product276- Hand Cultivator
+product277- Potting Soil
+product278- Fertilizer
+product279- Plant Pot Dish
+
+product280- Plant Pot
+product281- AA Batteries
+product282- AAA Batteries
+product283- C Batteries
+product284- 9V Batteries
+product285- Universal TV Remote
+product286- Universal Phone Charger
+product287- Basic Prepaid Phone
+product288- Basic Mouse
+product289- Wifi Dongle
+product290- Basic Earbuds
+
+product291- Basic Keyboard
+product292- Basic Gamepad
+product293- USB Flash Drive (128GB)
+product294- USB Flash Drive (256GB)
+product295- USB Flash Drive (512GB)
+product296- USB Flash Drive (1TB)
+product297- Basic Speaker
+product298- Basic Headphones
+product299- Basic Gaming Console
+product300- Garlic Tray
+
+product301- Mushroom Tray
+product302- Bell Pepper Tray
+product303- Lettuce Tray
+product304- Coconut
+product305- Cauliflower
+product306- Peanuts
+product307- Almonds
+product308- Hazelnuts
+product309- Pistachios
+product310- Raisins
+
+product311- Cashew Nuts
+product312- Shelled Walnuts
+product313- Coconut Chips
+product314- Baking Powder
+product315- Baking Soda
+product316- Cake Mix
+product317- Cocoa Powder
+product318- Cornstarch
+product319- Icing Tube
+product320- Candy Sprinkles
+product321- Vanilla Extract
+
+paintmat0- Store Tiles A
+paintmat1- Store Tiles B
+paintmat2- Store Bricks
+paintmat3- Store Plaster
+paintmat4- Store Concrete
+paintmat5- Lacquered Wood
+paintmat6- Wood Planks
+paintmat7- Planed Wood
+paintmat8- Unplaned Wood (knotted)
+paintmat9- Unplaned Wood
+
+paintmat10- Painted Wood
+paintmat11- Basic Tiles A
+paintmat12- Basic Tiles B
+paintmat13- Basic Tiles C
+paintmat14- Basic Tiles D
+paintmat15- Granite Tiles A
+paintmat16- Granite Tiles B
+paintmat17- Granite Tiles C
+paintmat18- Granite Tiles D
+paintmat19- Marble Tiles A
+
+paintmat20- Marble Tiles B
+paintmat21- Marble Tiles C
+paintmat22- Raw Marble
+paintmat23- Painted Metal
+paintmat24- Basic Brick
+paintmat25- Brick Pattern A
+paintmat26- Brick Pattern B
+paintmat27- Brick Pattern C
+paintmat28- Basic Aluminum
+paintmat29- Brushed Aluminum A
+
+paintmat30- Brushed Aluminum B
+paintmat31- Casted Aluminum
+paintmat32- Matt Aluminum
+paintmat33- Noisy Aluminum
+paintmat34- Oxidized Aluminum
+paintmat35- Brushed Copper
+paintmat36- Gold Panels
+paintmat37- Copper Pattern A
+paintmat38- Copper Pattern B
+paintmat39- Copper Pattern C
+
+paintmat40- Aluminum Pattern A
+paintmat41- Aluminum Pattern B
+paintmat42- Aluminum Pattern C
+paintmat43- Aluminum Pattern D
+paintmat44- Aluminum Pattern E
+paintmat45- Aluminum Pattern F
+paintmat46- Aluminum Pattern G
+paintmat47- Aluminum Pattern H
+paintmat48- Aluminum Pattern I
+paintmat49- Aluminum Pattern J
+
+paintmat50- Brass Pattern A
+paintmat51- Brass Pattern B
+paintmat52- Brass Pattern C
+paintmat53- Brass Pattern D
+paintmat54- Brass Pattern E
+paintmat55- Brass Pattern F
+paintmat56- Brass Pattern G
+paintmat57- Copper Panels
+paintmat58- Misc. Pattern A
+paintmat59- Misc. Pattern B
+
+paintmat60- Misc. Pattern C
+paintmat61- Misc. Pattern D
+paintmat62- Misc. Pattern E
+paintmat63- Misc. Pattern F
+paintmat64- Misc. Pattern G
+paintmat65- Misc. Pattern H
+paintmat66- Misc. Pattern I
+paintmat67- Misc. Pattern J
+paintmat68- Misc. Pattern K
+paintmat69- Misc. Pattern L
+
+paintmat70- Organic: Grass
+paintmat71- Organic: Leaves
+paintmat72- Organic: Stone A
+paintmat73- Organic: Stone B
+
+paintmat74- Halloween: Pattern A
+paintmat75- Halloween: Pattern B
+paintmat76- Halloween: Pattern C
+paintmat77- Halloween: Pattern D
+paintmat78- Halloween: Pattern E
+paintmat79- Halloween: Pattern F
+
+paintmat80- Halloween: Pattern G
+paintmat81- Halloween: Pattern H
+paintmat82- Halloween: Pattern I
+paintmat83- Halloween: Pattern J
+paintmat84- Halloween: Pattern K
+paintmat85- Halloween: Pattern L
+paintmat86- Halloween: Pattern M
+paintmat87- Halloween: Pumpkins
+paintmat88- Halloween: Skeletons
+paintmat89- Halloween: Cobwebs
+
+paintmat90- Christmas A
+paintmat91- Christmas B
+paintmat92- Christmas C
+paintmat93- Christmas D
+paintmat94- Christmas E
+paintmat95- Christmas F
+paintmat96- Christmas G
+paintmat97- Christmas H
+paintmat98- Christmas I
+paintmat99- Christmas J
+    
+paintmat100- Snow   
+paintmat101- Ice A
+paintmat102- Ice B
+paintmat103- Ice C
+paintmat104- Ice D
+paintmat105- Products: Basic A
+paintmat106- Products: Basic B
+paintmat107- Products: Dairy A
+paintmat108- Products: Dairy B
+paintmat109- Products: Soda Drinks A
+    
+paintmat110- Products: Soda Drinks B
+paintmat111- Products: Frozen
+paintmat112- Products: Hygiene A
+paintmat113- Products: Hygiene B
+paintmat114- Products: Cleaning
+paintmat115- Products: Sweets A
+paintmat116- Products: Sweets B
+paintmat117- Products: Meat
+paintmat118- Products: Preserves
+paintmat119- Products: Infusions
+
+paintmat120- Products: Fish A
+paintmat121- Products: Fish B
+paintmat122- Products: Books A
+paintmat123- Products: Books B
+paintmat124- Products: Alcohol A
+paintmat125- Products: Alcohol B
+paintmat126- Products: Pharmacy A
+paintmat127- Products: Pharmacy B
+paintmat128- Products: Produce A
+paintmat129- Products: Produce B
+
+paintmat130- Products: Produce C
+paintmat131- Products: Produce D
+paintmat132- Products: Childcare A
+paintmat133- Products: Childcare B
+paintmat134- Experimental TV
+paintmat135- Products: Gardening A
+paintmat136- Products: Gardening B
+paintmat137- Products: Electronics A
+paintmat138- Products: Electronics B
+paintmat139- Bamboo
+
+paintmat140- Carpet A
+paintmat141- Carpet B
+paintmat142- Carpet C
+paintmat143- Carpet D
+paintmat144- Carpet E
+paintmat145- Carpet F
+paintmat146- Carpet G
+paintmat147- Carpet H
+paintmat148- Carpet I
+paintmat149- Concrete A
+
+paintmat150- Concrete B
+paintmat151- Concrete C
+paintmat152- Concrete D
+paintmat153- Concrete E
+paintmat154- Concrete F
+paintmat155- Concrete G
+paintmat156- Diamond Plate A
+paintmat157- Diamond Plate B
+paintmat158- Metal Plate A
+paintmat159- Metal Plate B
+
+paintmat160- Metal Plate C
+paintmat161- Rock A
+paintmat162- Rock B
+paintmat163- Rock C
+paintmat164- Rock D
+paintmat165- Wooden Pattern A
+paintmat166- Wooden Pattern B
+paintmat167- Wooden Pattern C
+paintmat168- Wooden Pattern D
+paintmat169- Wooden Pattern E
+
+paintmat170- Wooden Pattern F
+paintmat171- Wooden Pattern G
+paintmat172- Exotic Tiles A
+paintmat173- Exotic Tiles B
+paintmat174- Exotic Tiles C
+paintmat175- Exotic Tiles D
+paintmat176- Exotic Tiles E
+paintmat177- Exotic Tiles F
+paintmat178- Exotic Tiles G
+paintmat179- Exotic Tiles H
+
+paintmat180- Exotic Tiles I
+paintmat181- Exotic Tiles J
+paintmat182- Exotic Tiles K
+paintmat183- Exotic Tiles L
+paintmat184- Exotic Tiles M
+paintmat185- Exotic Tiles N
+paintmat186- Exotic Tiles O
+
+skinshats- Skins and Hats
+character- Character
+hat- Hat
+coolpeople- Only cool people allowed
+
+mprice- Market Price
+yprice- Your Price
+
+mgiven- Money given
+mreturn- Money to return
+camount- Current amount
+addmoney- [LMB] Add money
+removemoney- [RMB] Remove money
+
+coopplayerfunds- Extra funds added for coop player
+
+alreadyopen- Store is already opened
+alreadyclose- Store is already closed
+
+newoptions1- FOV
+newoptions2- TV Vol.
+
+poseskey- Dances Key Assignment
+    
+lic12- In this terminal you will be able to hook Youtube and Twitch to your TVs once the license is approved.
+
+cosmetics1- The cosmetics DLC has been approved!
+cosmetics2- 9 new characters, over 100 hats, 35 dances and poses and a web browser to slack while your boss isn't looking.
+
+Paint your store with the new tablet and enjoy exclusive decorations being added over time. First Youtube sync update is already available!
+
+continue- Continue
+backups- Backups
+nobackups- No Backups
+backupswarning- Warning: loading a backup will override the current file's day.
+deleteoff- Delete Mode Off
+deleteon- Delete Mode On
+
+kick- Kick
+punish- Punish
+permi- Permissions
+
+nplayer- New player connected: 
+
+disclaimer1- If you are having joining problems remember to update to latest patch!
+
+tvcontrol- TVs Control
+tvhook0- Off
+tvhook1- Placeholder Videos
+tvhook2- URL Video
+tvhook3- Browser
+tvhook4- Twitch/YT Video
+tvdisclaimer- Streaming visualization still pending. 
+Thank you for your patience.
+
+lobby0- Lobby is now: 
+lobby1- open
+lobby2- closed
+lobby3- Open Lobby
+lobby4- Close Lobby
+lobby5- Closing a lobby will prevent anyone from joining.
+Useful if you only expect a certain number of players and don't want anyone without code to join via Steam Friends.
+
+newoptions3- Allow Videos
+
+checkoutlane- Checkout lane closed
+Please use next
+checkoutlane1- Close checkout lane
+
+paintablestablet0- Select Material, then color, then apply selection
+paintablestablet1- Return to material selection
+paintablestablet2- Previous/next material or color
+paintablestablet3- Store customization being implemented. 
+This wall allows to preview the paintables tablet without money cost.
+In some materials you can select color variances.
+
+newoptions4- High Latency
+newoptions5- General
+titledisclaimer1- Missing products when joining a game and restocking? Activate the new High Latency mode in options
+
+managerboardnew1- Buy Empty Box
+employeeboardnew1- Interrupt box recycling
+
+tabletdisclaimer1- This tablet has been deprecated and merged in the main builder.
+Use X and Z by default to access the new tabs.
+
+pcat- You petted the cat. Come back later
+
+snapping0- Next Snap Mode
+snapping1- Snap Mode
+snapping2- None
+snapping3- Grid: Center
+snapping4- Grid: Backside
+snapping5- Furniture
+
+checkoutwarning- Your store needs at least a manned checkout
+
+newoptions6- Always Run
+newoptions7- Browser
+newoptions7a- None
+newoptions7b- Normal
+newoptions7c- Linux Supported
+newoptions8- Kaching Vol.
+newoptions9- Confine Cursor
+newoptions10- Crosshair Size
+newoptions11- Crosshair Color
+newoptions12- Night Dim
+
+surveillance1- Customer already checked
+surveillance2- Click on a customer repeatedly to check if it's a thief
+The closest to the camera, the more effective clicking is.
+surveillance2a- Hold click and hover over a customer to check if it's a thief
+The closest to the camera, the more effective this is.
+
+rdown- Round Down
+
+tvautosync0- Autosync
+tvautosync1- Allow all players to change URLs
+tvautosync2- Youtube videos
+
+productsorting0- No sorting
+productsorting1- By size
+productsorting2- By lowest total stock
+productsorting3- By lowest storage
+productsorting4- By lowest shelf stock
+
+checkoutredbutton- Only the manager can press this button
+
+invo- Invoices
+invodebt- Invoices / Debt
+stats- Statistics
+
+removeallperm- Remove all permissions when joining
+permiss0- Global
+permiss1- Manager
+permiss2- Cashier
+permiss3- Restocker
+permiss4- Security
+permiss5- Chat
+
+newemplo- Employees
+emplohire- Hire
+emplodismiss- Dismiss
+emploassignment- Assignment
+emplostats- Employee's stats
+emplorenew- Employees renew every day!
+emplomaxemplo- Max. Employees
+emplohired- Hired Employees
+emploentername- Enter employee name...
+emplocashexp- Cashier experience
+emplorestexp- Restocker experience
+emplostoexp- Storage experience
+emplosecexp- Security experience
+canthiremore- Can't hire more employees
+hiredemployee- Hired an employee!
+dismissedemployee- Dismissed an employee!
+emploalreadyhired- Hired
+emptyposi- Empty position
+emploassignedtask- Assigned Task
+emplonewpriority- Storage
+emploNoTask- No task
+emplostaffhappi- Staffroom happiness
+emploreroll- Reroll
+
+dlcdiscounted- Off
+emploselect- Select
+emplochangeall- Change all priorities
+emplosavelay- Save Priorities
+emploloadlay- Load Priorities
+
+bboardmoveddisclaimer- Employee's management has been moved to the Manager's blackboard
+startkn- Got a star token!
+bboardchristdisclaimer- Place a Christmas Gift decoration and wait for the night for the event to start!
+Have the broom at hand
+
+panykey- Press any key to continue
+gtunlckable- Got a new unlockable item!
+nostartkn- No available star tokens
+managsavebckup- Managing save backups
+newoptionendday- Auto End Day
+sallprices- Set all prices to percentage
+csettingprices- [Currently setting prices]
+
+orddevice0- Amount placed in store
+orddevice1- Amount required to fill the store
+orddevice2- Amount in storage and boxes
+orddevice3- Acquire the MART OS 2.0 to unlock advanced features
+accfactor- Acceleration Factor
+loglog1- Copy game's logs to clipboard
+loglog2- Copied!
+
+stats0- Total Money Earned
+stats1- Total Products Placed
+stats2- Total Boxes Recycled
+stats3- Total Customers Served
+stats4- Total Products Checked Out
+stats5- Total Trash Collected
+stats6- Correct Change Given In A Row
+stats7- Times Thief Hit
+stats8- Stolen Products Collected
+stats9- Cat Petted Times
+stats10- Analyzed Customers In CCTV
+stats11- Thieves Caught In CCTV
+statsfoundtoo- Not found the previous day
+statsnofound- Found too expensive the previous day
+
+stats12- Sales Done To This Day
+stats13- Boxes Introduced In Baler
+stats14- Cardboard Bales Recycled
+
+stats15- Extra Items Sold Thanks To Sales
+stats16- Invoices paid
+
+stats17- Online Orders Assembled
+stats18- Money Earned With Online Orders
+
+stats19- Devices And Furniture Repaired
+
+unstckplyr- Unstuck
+off2disclaimer- Have a suggestion or problem? Steam forums are for now the only official media to stay in contact with the developer
+
+xcessve- Excessive...
+
+invoicetype0- Bank Loan
+invoicetype1- Electrical
+invoicetype2- Salary
+invoicetype3- Rent
+
+invopaidannoun- Invoice paid!
+invopaidannoun2- Pay off your current loan first!
+invopaidannoun3- Loan granted!
+invovalue0- Issue date
+invovalue1- Due date
+invovalue2- Pay this invoice
+invovalue3- Amount requested
+invovalue4- Loan duration
+invovalue5- Amount to return
+invovalue6- Daily payment
+invovalue7- Confirm loan
+invovalue8- Loan request
+loandisclmer- You cannot request a new loan until the current one is paid off
+
+payloandisclmer- Please, pay your rent invoices.
+paynpcmessage- Pay your loans!
+
+disableinvoicesoption- Disable Invoices
+
+off3disclaimer- If employees don't appear or they slack, remember to pay their wages as not doing so has consequences
+off4disclaimer- Employees having weird pathing? Use the Unstuck NPC Block and report your store data in forums
+off5disclaimer- When using Save and Quit, remember that you must continue your game from the right tab in the Load Store menu
+
+drawgame0- Draw the word! Minigame
+drawgame1- A drawing minigame has started!
+drawgame2- Winner of the drawing minigame: 
+drawgame3- Drawing minigame: time ran out!
+drawgame4- Your word is...
+drawgame5- Enter your word...
+drawgame6- Request
+drawgame7- Enable minigame
+
+picfram0- Default Picture
+picfram1- Picture Size
+picfram2- Enter a valid URL image...
+picfram3- Attempt to set URL
+
+cshelfaux1- Corner Shelves Fix
+(Only press in case of out of reach shelves)
+cshelfaux2- Move shelves to entrance (Only Host)
+
+invwarning0- There's an unpaid bank loan!
+invwarning1- Lights off! An electrical invoice is unpaid!
+invwarning2- Employees are on riot! They will slack or not come to work!
+invwarning3- A rent invoice is unpaid!
+
+departneed0- BUY DEPARTMENT
+departneed0a- FEATURE IN PROGRESS
+departneed1- # STORE REQUIREMENTS
+departneed2- # STORAGE REQUIREMENTS
+
+deprtmnt0- Order Packaging
+
+atopayinvce0- Today's invoices have been paid!
+atopayinvce1- Not enough money to pay today's invoices!
+
+cpylogs0- Copy primary logs
+cpylogs1- Copy secondary logs
+lghtnblptn- Override lights limit
+
+slemssage0- Cannot set more sales for today
+slemssage1- A sale has been set for this product: 
+sledvce0- Current sales
+sledvce1- Maximum sales
+
+lghtlmttn0- Limit Lighting
+lghtlmttn1- Having too many lights in the store has rarely caused a black screen problem in the past for some players. Set this option to 'No' if you want to try removing this limitation.
+
+arcblderdisclaimer- Hold [Drop Item] to ignore collisions. Use this with caution.
+
+rststtngs0- Reset Game Settings
+rststtngs1- Settings cleared
+
+opckgng0- Available Orders
+opckgng1- Choose an order for this table
+opckgng2- Order packaging department is now opened!
+opckgng3- Package assigned to table
+opckgng4- Close current box
+opckgng5- Deposit required items from blue tray in the striped area below, then organize them inside the box by dragging them.
+Use [Horizontal Movement] to rotate products. The same order can have multiple boxes.
+opckgng6- Order completed in table
+opckgng7- Items left to be packed
+opckgng8- Products required for this order
+opckgng9- Table
+opckgng10- Notify orders on arrival
+opckgng11- A new order has arrived!
+opckgng12- Instructions
+opckgng13- 1.- Open the order packaging department.
+2.- Wait for orders to arrive during the working day, enable notifications if you wish to be warned when one arrives.
+3.- Use the cardboard boxes on each table to enter packaging mode. Select the order you wish to arrange in that table.
+4.- Go around your store or storage with the blue tray and carry all necessary items to the table's striped area. An additional tablet will appear in the tray reminding you which items are needed.
+5.- While using a table, drag products into the central box and use the 'Close current box' button when ready. The same order can have multiple boxes.
+6.- Build a parcel pickup point somewhere in your store and place there the order's boxes.
+7.- Eventually customers will arrive to claim their orders and pay.
+
+dcord0- Join us on
+dcord1- To celebrate its inauguration we will have a one-time 200 keys DLC giveaway during this month. Don't miss it!
+
+atpaynvocdsbl0- Autopaying is: on
+atpaynvocdsbl1- Autopaying is: off
+lghtlimit00- Limiting lights option is on. Remove it in the Load Store menu.
+
+moontkn- Got a moon token!
+nomoontkn- No available moon tokens
+anmlevent0- Need a net catcher for this!
+anmlevent1- Already have an animal in the net catcher! Deposit it inside a cage!
+anmlevent2- There's nothing in the net catcher...
+
+mrktlyt0- Layout
+mrktlyt1- Classic
+mrktlyt2- Optimized
+mrktlyt3- Garden
+mrktlyt4- Plaza
+
+tlsognzer0- No more items in the organizer
+tlsognzer1- Cannot place this kind of item here
+tlsognzer2- Organizer is full
+tlsognzer3- Empty your tray in a trash container before leaving it
+
+mplyrl0- Technician
+mplyrl1- Packaging
+deprtmnt1- Manufacturing
+
+emplotechexp- Technician experience
+emploordexp- Packaging experience
+emplomanufexp- Manufacturing experience
+emplomsgnopckp- There's no valid order pickup point placed!
+
+tsv0- Latest Autosave
+tsv1- Working day time: 
+tsv2- Autosaving...
+tsv3- minutes
+tsv4- Save and quit
+tsv5- Save and quit the game?
+tsv6- Autosave
+
+slctstrcntn- Select a store to continue
+skpttrl- Skipping tutorial
+
+alientkn- Got an alien token!
+noalientkn- No available alien tokens

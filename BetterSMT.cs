@@ -148,9 +148,18 @@ public class BetterSMT : BaseUnityPlugin
     public static ConfigEntry<bool> PalletProduct;
     public static ConfigEntry<bool> AllProduct;
 
+    // === !Ordering! ===
+    public static ConfigEntry<bool> OrderPackaging;
+    public static ConfigEntry<float> OrderSpeedUp;
+    public static ConfigEntry<float> OrderIncreasedMax;
+
     [System.Obsolete]
     private void Awake()
     {
+        // === !Ordering! ===
+        OrderPackaging = Config.Bind("Order Packaging", "Enables custom order packaging", false, new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
+        OrderSpeedUp = base.Config.Bind("Order Packaging", "Speeds up how often orders come", 0f, new ConfigDescription("Works as a percent multiplier. 1.1 = 10% faster. 2.3 = 130% faster.", new AcceptableValueRange<float>(0f, 500f)));
+        OrderIncreasedMax = base.Config.Bind("Order Packaging", "Increases max amount of orders per day", 0f, new ConfigDescription("Flat number to increase the max amount of orders you get per day. Default was random value of 2 through 40.", new AcceptableValueRange<float>(0f, 240)));
 
         // === !Pillar Mods! ===
         PillarRubble = Config.Bind("Pillar Mods", "Disable Rubble", false, new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
