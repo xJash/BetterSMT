@@ -3,19 +3,15 @@ using HutongGames.PlayMaker;
 using Mirror;
 using UnityEngine;
 
-namespace BetterSMT.Patches
-{
+namespace BetterSMT.Patches {
     [HarmonyPatch(typeof(ProductListing))]
-    public class ProductListingPatch
-    {
+    public class ProductListingPatch {
         public static KeyCode ManualSaleClearKey = KeyCode.U;
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(ProductListing), "OnStartClient")]
-        public static void Postfix(ProductListing __instance)
-        {
-            foreach (GameObject prefab in __instance.productPrefabs)
-            {
+        [HarmonyPatch(typeof(ProductListing),"OnStartClient")]
+        public static void Postfix(ProductListing __instance) {
+            foreach(GameObject prefab in __instance.productPrefabs) {
                 Data_Product data = prefab.GetComponent<Data_Product>();
 
                 data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
@@ -24,37 +20,29 @@ namespace BetterSMT.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch("Awake")]
-        public static void CaptureInstance(ProductListing __instance)
-        {
+        public static void CaptureInstance(ProductListing __instance) {
 
             ProductListing.Instance = __instance;
         }
     }
 
-    public class ManualSaleClearHotkeyListener : MonoBehaviour
-    {
-        private void Update()
-        {
-            if (!BetterSMT.ToggleClearSalesHotkey.Value || FsmVariables.GlobalVariables.GetFsmBool("InChat").Value)
-            {
+    public class ManualSaleClearHotkeyListener : MonoBehaviour {
+        private void Update() {
+            if(!BetterSMT.ToggleClearSalesHotkey.Value || FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) {
                 return;
             }
 
-            if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey))
-            {
+            if(Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey)) {
                 SaleResetCommandPatch.TriggerManualSaleClear();
             }
 
         }
     }
 
-    public static class SaleResetCommandPatch
-    {
-        public static void TriggerManualSaleClear()
-        {
+    public static class SaleResetCommandPatch {
+        public static void TriggerManualSaleClear() {
 
-            if (!NetworkClient.active)
-            {
+            if(!NetworkClient.active) {
                 return;
             }
             ProductListing.Instance.CmdClearSalesManually();
@@ -62,11 +50,9 @@ namespace BetterSMT.Patches
         }
     }
 
-    public static class ProductListingExtension
-    {
+    public static class ProductListingExtension {
         [Command(requiresAuthority = false)]
-        public static void CmdClearSalesManually(this ProductListing self)
-        {
+        public static void CmdClearSalesManually(this ProductListing self) {
             BetterSMT.CreateImportantNotification("Sales have been cleared.");
             self.productsIDOnSale.Clear();
             self.productsSaleDiscount.Clear();

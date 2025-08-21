@@ -9,71 +9,53 @@ using UnityEngine.UI;
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(ManagerBlackboard))]
-public class ManagerBlackboardPatch
-{
+public class ManagerBlackboardPatch {
 
 
     [HarmonyPatch(nameof(ServerCargoSpawner))]
     [HarmonyPrefix]
-    private static bool ServerCargoSpawner(ManagerBlackboard __instance, ref IEnumerator __result)
-    {
-        if (BetterSMT.FastBoxSpawns.Value)
-        {
+    private static bool ServerCargoSpawner(ManagerBlackboard __instance,ref IEnumerator __result) {
+        if(BetterSMT.FastBoxSpawns.Value) {
             __result = CustomCargoSpawner(__instance);
             return false;
-        } else
-        {
+        } else {
             return true;
         }
     }
 
-    private static IEnumerator CustomCargoSpawner(ManagerBlackboard __instance)
-    {
+    private static IEnumerator CustomCargoSpawner(ManagerBlackboard __instance) {
         __instance.isSpawning = true;
-        Vector3 halfExtents = new(0.3f, 0.3f, 0.45f);
+        Vector3 halfExtents = new(0.3f,0.3f,0.45f);
         WaitForSeconds waitTime1;
         WaitForSeconds waitTime2;
 
-        if (BetterSMT.FastBoxSpawns.Value)
-        {
+        if(BetterSMT.FastBoxSpawns.Value) {
             waitTime1 = new WaitForSeconds(0.01f);
             waitTime2 = new WaitForSeconds(0.01f);
-        }
-        else
-        {
+        } else {
             waitTime1 = new WaitForSeconds(0.5f);
             waitTime2 = new WaitForSeconds(0.2f);
         }
 
-        while (__instance.idsToSpawn.Count > 0)
-        {
-            Vector3 spawnPosition;
-
-            if (BetterSMT.CloserBoxSpawning.Value)
-            {
-                spawnPosition = new Vector3(
-                    20f + Random.Range(-2.5f, 2.5f),
+        while(__instance.idsToSpawn.Count > 0) {
+            Vector3 spawnPosition = BetterSMT.CloserBoxSpawning.Value
+                ? new Vector3(
+                    20f + Random.Range(-2.5f,2.5f),
                     1f,
-                    7f + Random.Range(-2.5f, 2.5f)
-                );
-            }
-            else
-            {
-                spawnPosition = __instance.merchandiseSpawnpoint.transform.position + new Vector3(
-                    Random.Range(-2f, 2f),
+                    7f + Random.Range(-2.5f,2.5f)
+                )
+                : __instance.merchandiseSpawnpoint.transform.position + new Vector3(
+                    Random.Range(-2f,2f),
                     0f,
-                    Random.Range(-2f, 2f)
+                    Random.Range(-2f,2f)
                 );
-            }
-
-            if (Physics.BoxCast(spawnPosition + new Vector3(0f, 5f, 0f), halfExtents, -Vector3.up, Quaternion.identity, 7.5f, __instance.boxSpawnLayerMask))
-            {
+            if(Physics.BoxCast(spawnPosition + new Vector3(0f,5f,0f),halfExtents,-Vector3.up,Quaternion.identity,7.5f,__instance.boxSpawnLayerMask)) {
                 yield return waitTime1;
             }
             yield return waitTime1;
 
             int num = __instance.idsToSpawn[0];
-            GameObject gameObject = Object.Instantiate(__instance.boxPrefab, spawnPosition, Quaternion.identity);
+            GameObject gameObject = Object.Instantiate(__instance.boxPrefab,spawnPosition,Quaternion.identity);
             gameObject.GetComponent<BoxData>().NetworkproductID = num;
 
             int maxItemsPerBox = __instance.GetComponent<ProductListing>().productPrefabs[num].GetComponent<Data_Product>().maxItemsPerBox;
@@ -94,21 +76,16 @@ public class ManagerBlackboardPatch
         __instance.isSpawning = false;
     }
 
-    public static IEnumerator CalculateShoppingListTotalOverride(ManagerBlackboard __instance)
-    {
-        if (BetterSMT.ReplaceCommasWithPeriods.Value)
-        {
+    public static IEnumerator CalculateShoppingListTotalOverride(ManagerBlackboard __instance) {
+        if(BetterSMT.ReplaceCommasWithPeriods.Value) {
             yield return new WaitForEndOfFrame();
             __instance.shoppingTotalCharge = 0f;
-            if (__instance.shoppingListParent.transform.childCount > 0)
-            {
-                foreach (Transform item in __instance.shoppingListParent.transform)
-                {
+            if(__instance.shoppingListParent.transform.childCount > 0) {
+                foreach(Transform item in __instance.shoppingListParent.transform) {
                     string text = item.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text;
 
                     string cleanedText = text[2..].Trim();
-                    if (float.TryParse(cleanedText, NumberStyles.Float, CultureInfo.InvariantCulture, out float price))
-                    {
+                    if(float.TryParse(cleanedText,NumberStyles.Float,CultureInfo.InvariantCulture,out float price)) {
                         __instance.shoppingTotalCharge += price;
                     }
                 }
@@ -117,14 +94,11 @@ public class ManagerBlackboardPatch
         }
     }
 
-    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.RemoveShoppingListProduct))]
+    [HarmonyPatch(typeof(ManagerBlackboard),nameof(ManagerBlackboard.RemoveShoppingListProduct))]
     [HarmonyPrefix]
-    public static bool RemoveShoppingListProductPatch(ManagerBlackboard __instance, int indexToRemove)
-    {
-        if (BetterSMT.ReplaceCommasWithPeriods.Value)
-        {
-            if (__instance.shoppingListParent.transform.childCount > 0)
-            {
+    public static bool RemoveShoppingListProductPatch(ManagerBlackboard __instance,int indexToRemove) {
+        if(BetterSMT.ReplaceCommasWithPeriods.Value) {
+            if(__instance.shoppingListParent.transform.childCount > 0) {
                 Object.Destroy(__instance.shoppingListParent.transform.GetChild(indexToRemove).gameObject);
             }
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
@@ -136,37 +110,30 @@ public class ManagerBlackboardPatch
 
     [HarmonyPatch(nameof(ManagerBlackboard.RemoveAllShoppingList))]
     [HarmonyPrefix]
-    public static bool RemoveAllShoppingListPatch(ManagerBlackboard __instance)
-    {
-        if (BetterSMT.ReplaceCommasWithPeriods.Value)
-        {
-            if (__instance.shoppingListParent.transform.childCount == 0)
-            {
+    public static bool RemoveAllShoppingListPatch(ManagerBlackboard __instance) {
+        if(BetterSMT.ReplaceCommasWithPeriods.Value) {
+            if(__instance.shoppingListParent.transform.childCount == 0) {
                 return false;
             }
 
-            foreach (Transform item in __instance.shoppingListParent.transform)
-            {
+            foreach(Transform item in __instance.shoppingListParent.transform) {
                 Object.Destroy(item.gameObject);
             }
 
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
             return false;
-        } else
-        {
+        } else {
             return true;
         }
     }
 
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
-    public static bool AddShoppingListProductPatch(ManagerBlackboard __instance, int productID, float boxPrice)
-    {
-        if (!BetterSMT.ReplaceCommasWithPeriods.Value)
-        {
+    public static bool AddShoppingListProductPatch(ManagerBlackboard __instance,int productID,float boxPrice) {
+        if(!BetterSMT.ReplaceCommasWithPeriods.Value) {
 
             ProductListing component = __instance.GetComponent<ProductListing>();
-            GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
+            GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab,__instance.shoppingListParent.transform);
 
             string key = "product" + productID;
             string localizationString = LocalizationManager.instance.GetLocalizationString(key);
@@ -177,16 +144,14 @@ public class ManagerBlackboardPatch
             gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
 
             int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
-            gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
-            gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2", CultureInfo.InvariantCulture)}";
+            gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2",CultureInfo.InvariantCulture);
+            gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2",CultureInfo.InvariantCulture)}";
 
             gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
 
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
     }

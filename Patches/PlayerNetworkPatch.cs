@@ -8,45 +8,35 @@ using UnityEngine;
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(PlayerNetwork))]
-public class PlayerNetworkPatch
-{
+public class PlayerNetworkPatch {
 
     private static readonly Stopwatch stopwatch = new();
     private static UpgradesManager upgradesManager;
 
     [HarmonyPatch("PriceSetFromNumpad")]
     [HarmonyPrefix]
-    private static bool PriceSetFromNumpadPrefix(PlayerNetwork __instance, int productID)
-    {
-        if (!BetterSMT.NumberKeys.Value)
-        {
+    private static bool PriceSetFromNumpadPrefix(PlayerNetwork __instance,int productID) {
+        if(!BetterSMT.NumberKeys.Value) {
             return true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Delete))
-        {
-            if (__instance.basefloatString.Length != 0)
-            {
+        if(Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Delete)) {
+            if(__instance.basefloatString.Length != 0) {
                 __instance.basefloatString = __instance.basefloatString[..^1];
                 __instance.yourPriceTMP.text = "$" + __instance.basefloatString;
             }
             return false;
         }
 
-        if (__instance.basefloatString.Length >= 7)
-        {
+        if(__instance.basefloatString.Length >= 7) {
             return false;
         }
 
-        for (int i = 0; i <= 9; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha0 + i) || Input.GetKeyDown(KeyCode.Keypad0 + i))
-            {
-                if (__instance.basefloatString.Contains(","))
-                {
+        for(int i = 0; i <= 9; i++) {
+            if(Input.GetKeyDown(KeyCode.Alpha0 + i) || Input.GetKeyDown(KeyCode.Keypad0 + i)) {
+                if(__instance.basefloatString.Contains(",")) {
                     string[] parts = __instance.basefloatString.Split(',');
-                    if (parts.Length > 1 && parts[1].Length >= 2)
-                    {
+                    if(parts.Length > 1 && parts[1].Length >= 2) {
                         return false;
                     }
                 }
@@ -57,28 +47,23 @@ public class PlayerNetworkPatch
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.Comma) || Input.GetKeyDown(KeyCode.KeypadPeriod))
-        {
-            if (__instance.basefloatString.Length != 0 && !__instance.basefloatString.Contains(","))
-            {
+        if(Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.Comma) || Input.GetKeyDown(KeyCode.KeypadPeriod)) {
+            if(__instance.basefloatString.Length != 0 && !__instance.basefloatString.Contains(",")) {
                 __instance.basefloatString += ",";
                 __instance.yourPriceTMP.text = "$" + __instance.basefloatString;
             }
             return false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            if (__instance.basefloatString.Length != 0 &&
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+            if(__instance.basefloatString.Length != 0 &&
                 !__instance.basefloatString.EndsWith(",") &&
-                float.TryParse(__instance.basefloatString, out float result))
-            {
+                float.TryParse(__instance.basefloatString,out float result)) {
                 result = Mathf.Round(result * 100f) / 100f;
-                if (ProductListing.Instance.productPlayerPricing[productID] != result)
-                {
+                if(ProductListing.Instance.productPlayerPricing[productID] != result) {
                     __instance.CmdPlayPricingSound();
                     __instance.pPrice = result;
-                    ProductListing.Instance.CmdUpdateProductPrice(productID, __instance.pPrice);
+                    ProductListing.Instance.CmdUpdateProductPrice(productID,__instance.pPrice);
                 }
             }
             return false;
@@ -88,42 +73,33 @@ public class PlayerNetworkPatch
     }
 
 
-    private static void HandleAutoSave()
-    {
-        if (BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer)
-        {
+    private static void HandleAutoSave() {
+        if(BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
             return;
         }
 
-        if (!stopwatch.IsRunning)
-        {
+        if(!stopwatch.IsRunning) {
             stopwatch.Start();
         }
 
-        if (stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value)
-        {
+        if(stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) {
             return;
         }
 
         stopwatch.Restart();
 
-        if (BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen)
-        {
+        if(BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) {
             _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
         }
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
-    private static void UpdatePatch(PlayerNetwork __instance, ref float ___pPrice, TextMeshProUGUI ___marketPriceTMP, ref TextMeshProUGUI ___yourPriceTMP)
-    {
+    private static void UpdatePatch(PlayerNetwork __instance,ref float ___pPrice,TextMeshProUGUI ___marketPriceTMP,ref TextMeshProUGUI ___yourPriceTMP) {
         HandleAutoSave();
         #region Hotkeys
-        if (!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false)
-        {
+        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
             return;
-        }
-        else
-        {
+        } else {
             bool usedTool = false;
             (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = [
                 (BetterSMT.SledgeToggle?.Value,      BetterSMT.SledgeHotkey?.Value,      7),
@@ -136,24 +112,20 @@ public class PlayerNetworkPatch
                 (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
             ];
 
-            foreach ((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys)
-            {
-                if (toggle == true && hotkey?.IsDown() == true)
-                {
+            foreach((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
+                if(toggle == true && hotkey?.IsDown() == true) {
                     __instance.CmdChangeEquippedItem(itemId);
                     usedTool = true;
                     break;
                 }
             }
 
-            if (!usedTool && BetterSMT.EmptyHandsHotkey.Value.IsDown())
-            {
+            if(!usedTool && BetterSMT.EmptyHandsHotkey.Value.IsDown()) {
                 __instance.CmdChangeEquippedItem(0);
             }
 
 
-            if (BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true)
-            {
+            if(BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true) {
                 upgradesManager ??= UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>()?.GetComponent<UpgradesManager>();
                 upgradesManager.NetworkacceleratedTime = !upgradesManager.acceleratedTime;
                 upgradesManager.GetComponent<TimeAccelerationWatcher>().enabled = upgradesManager.acceleratedTime;
@@ -163,19 +135,15 @@ public class PlayerNetworkPatch
 
         }
 
-        if (BetterSMT.ToggleDoublePrice.Value == true)
-        {
-            if (BetterSMT.doublePrice && ___marketPriceTMP != null)
-            {
-                if (float.TryParse(___marketPriceTMP.text[1..].Replace(',', '.'),
+        if(BetterSMT.ToggleDoublePrice.Value == true) {
+            if(BetterSMT.doublePrice && ___marketPriceTMP != null) {
+                if(float.TryParse(___marketPriceTMP.text[1..].Replace(',','.'),
                     System.Globalization.NumberStyles.Float,
                     System.Globalization.CultureInfo.InvariantCulture,
-                    out float market))
-                {
+                    out float market)) {
                     ___pPrice = market * 2;
 
-                    if (BetterSMT.roundDown.Value)
-                    {
+                    if(BetterSMT.roundDown.Value) {
                         ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
                     }
 
@@ -187,11 +155,9 @@ public class PlayerNetworkPatch
     }
 
     [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
-    private static void UpdateBoxContentsPatch(int productIndex)
-    {
+    private static void UpdateBoxContentsPatch(int productIndex) {
         int notificationHolder = 0;
-        if (BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0)
-        {
+        if(BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0) {
             BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity. Disable this message by disabling highlighting.");
             return;
         }
