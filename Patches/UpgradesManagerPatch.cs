@@ -40,8 +40,6 @@ public class UpgradesManagerPatch
         {
             if (__instance.acceleratedTime || ((__instance.GetComponent<GameData>().timeOfDay > 8.01f || __instance.GetComponent<GameData>().timeOfDay < 22.4f) && !__instance.GetComponent<GameData>().isSupermarketOpen && NPC_Manager.Instance.numberOfHiredEmployees != 0 && NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount <= 0))
             {
-
-
                 __instance.NetworkacceleratedTime = !__instance.acceleratedTime;
                 __instance.GetComponent<TimeAccelerationWatcher>().enabled = __instance.acceleratedTime;
                 __instance.RpcTimeAcceleration(__instance.acceleratedTime);
@@ -54,7 +52,7 @@ public class UpgradesManagerPatch
     [HarmonyPatch("GameStartSetPerks"), HarmonyPostfix]
     private static void GameStartSetPerksPatch(UpgradesManager __instance)
     {
-        if (BetterSMT.EnablePalletDisplaysPerk?.Value == true)
+        if (BetterSMT.EnablePalletDisplaysPerk.Value)
         {
             _ = BetterSMT.Instance.StartCoroutine(DelayedUIPalletSetup(__instance));
         }

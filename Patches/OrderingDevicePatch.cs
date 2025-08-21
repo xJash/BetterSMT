@@ -53,11 +53,6 @@ public static class OrderingDevicePatch
         GameObject shelves = NPC_Manager.Instance?.shelvesOBJ;
         GameObject storage = NPC_Manager.Instance?.storageOBJ;
 
-        if (manager == null || listing == null || shelves == null || storage == null)
-        {
-            return;
-        }
-
         List<string> lowStockMessages = [];
         List<string> autoOrderMessages = [];
 

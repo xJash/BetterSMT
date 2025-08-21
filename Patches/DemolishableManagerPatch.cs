@@ -48,7 +48,6 @@ namespace BetterSMT.Patches
             }
 
             __instance.demolishableValues[parentIndex] = __instance.AssembleValue(parentIndex, whichObjectToDemolish);
-            Debug.Log("__instance.demolishableValues[parentIndex]" + __instance.demolishableValues[parentIndex]);
             if (!BetterSMT.PillarRubble.Value)
             {
                 _ = __instance.StartCoroutine((IEnumerator)AccessTools.Method(__instance.GetType(), "DelayedDemolishEffectInstantiation")

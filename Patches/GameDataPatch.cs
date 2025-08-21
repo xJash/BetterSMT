@@ -38,19 +38,7 @@ public class GameDataPatch
         }
 
         GameObject invoiceMenu = GameObject.Find("Interactables/Canvas_Manager/Tabs/Invoices_Tab/");
-        if (invoiceMenu == null)
-        {
-            BetterSMT.Logger.LogWarning("Invoice Menu not found.");
-            return;
-        }
-
         GameObject original = invoiceMenu.transform.Find("PayThisInvoiceButton")?.gameObject;
-        if (original == null)
-        {
-            BetterSMT.Logger.LogWarning("PayThisInvoiceButton not found.");
-            return;
-        }
-
         GameObject newButton = new("PayInvoiceEarlyButton", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
         newButton.transform.SetParent(invoiceMenu.transform, false);
         RectTransform newRect = newButton.GetComponent<RectTransform>();
@@ -60,22 +48,18 @@ public class GameDataPatch
         newRect.pivot = originalRect.pivot;
         newRect.sizeDelta = originalRect.sizeDelta;
         newRect.anchoredPosition = new Vector2(431f, -109f);
-
         Image newImage = newButton.GetComponent<Image>();
         Image originalImage = original.GetComponent<Image>();
         newImage.sprite = originalImage.sprite;
         newImage.type = originalImage.type;
         newImage.color = originalImage.color;
-
         GameObject textGO = new("PayInvoiceEarly_Text", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
         textGO.transform.SetParent(newButton.transform, false);
-
         RectTransform textRect = textGO.GetComponent<RectTransform>();
         textRect.anchorMin = Vector2.zero;
         textRect.anchorMax = Vector2.one;
         textRect.offsetMin = Vector2.zero;
         textRect.offsetMax = Vector2.zero;
-
         TextMeshProUGUI tmp = textGO.GetComponent<TextMeshProUGUI>();
         tmp.text = "Pay Loan Early";
         tmp.alignment = TextAlignmentOptions.Center;
@@ -83,11 +67,10 @@ public class GameDataPatch
         tmp.color = Color.black;
 
         TextMeshProUGUI originalTMP = original.GetComponentInChildren<TextMeshProUGUI>();
-        if (originalTMP != null)
-        {
-            tmp.font = originalTMP.font;
-            tmp.material = originalTMP.material;
-        }
+
+        tmp.font = originalTMP.font;
+        tmp.material = originalTMP.material;
+
 
         Button btn = newButton.GetComponent<Button>();
         btn.onClick.AddListener(() =>
@@ -95,10 +78,6 @@ public class GameDataPatch
             if (loanSystemInstance != null && NetworkClient.active)
             {
                 loanSystemInstance.CmdPayLoanEarly();
-            }
-            else
-            {
-                BetterSMT.CreateImportantNotification("Loan system not initialized.");
             }
         });
 
@@ -180,12 +159,6 @@ public class GameDataPatch
             return;
         }
 
-        if (ProductListing.Instance == null)
-        {
-            BetterSMT.Logger.LogWarning("ProductListing.Instance was null during price optimization.");
-            return;
-        }
-
         ProductListing productListing = ProductListing.Instance;
         GameObject[] products = productListing.productPrefabs;
         float[] inflationMultipliers = productListing.tierInflation;
@@ -214,25 +187,11 @@ public class GameDataPatch
     private static void UpdateEscapeMenu()
     {
         GameObject escapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
-        if (escapeMenu == null)
-        {
-            BetterSMT.Logger.LogWarning("EscapeMenu not found.");
-            return;
-        }
-
         GameObject quitButton = escapeMenu.transform.Find("QuitButton")?.gameObject;
         GameObject mainMenuButton = escapeMenu.transform.Find("MainMenuButton")?.gameObject;
         GameObject optionsButton = escapeMenu.transform.Find("OptionsButton")?.gameObject;
-
-        if (quitButton == null || mainMenuButton == null)
-        {
-            BetterSMT.Logger.LogWarning("Quit or MainMenu button not found.");
-            return;
-        }
-
         quitButton.transform.localPosition = new Vector3(0f, 0f, 0f);
         mainMenuButton.transform.localPosition = new Vector3(0f, 85f, 0f);
-
         GameObject saveButton = Object.Instantiate(quitButton, escapeMenu.transform);
         saveButton.name = "SaveButton";
 
@@ -242,14 +201,13 @@ public class GameDataPatch
         }
 
         Object.Destroy(saveButton.GetComponent<EventTrigger>());
-
         saveButton.transform.localPosition = new Vector3(0f, -125f, 0f);
         saveButton.transform.localScale = quitButton.transform.localScale;
 
         TextMeshProUGUI textComponent = saveButton.GetComponentInChildren<TextMeshProUGUI>();
         if (textComponent != null)
         {
-            textComponent.text = "Save (This one works)";
+            textComponent.text = "Save Game (BSMT)";
         }
 
         Button buttonComp = saveButton.GetComponent<Button>();
@@ -392,12 +350,9 @@ public class GameDataPatch
         }
     }
 
-    [HarmonyPatch("TrashManager"), HarmonyPostfix]
-    public static void NextTimeToSpawnTrashPatch(GameData __instance)
+    [HarmonyPatch("TrashManager"), HarmonyPrefix]
+    public static bool NextTimeToSpawnTrashPatch(GameData __instance)
     {
-        if (BetterSMT.DisableAllTrash.Value)
-        {
-            __instance.nextTimeToSpawnTrash = float.MaxValue;
-        }
+        return BetterSMT.DisableAllTrash.Value;
     }
 }

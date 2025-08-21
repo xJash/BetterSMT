@@ -20,7 +20,7 @@ public class Patch_Data_Container
     [HarmonyPatch("AddItemToRow"), HarmonyPrefix]
     private static bool AddItemToRowPatch(Data_Container __instance, int containerNumber, int productIDToAdd)
     {
-        if (!BetterSMT.QuickStocking.Value)
+        if (!BetterSMT.QuickStocking.Value || !BetterSMT.PalletProduct.Value || !BetterSMT.AllProduct.Value)
         {
             return true;
         }

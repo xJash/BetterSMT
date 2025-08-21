@@ -11,8 +11,15 @@ namespace BetterSMT.Patches
         [HarmonyPatch(nameof(AntiTheftBehaviour.AlarmBehaviour))]
         public static bool AlarmBehaviourPrefix(AntiTheftBehaviour __instance, ref IEnumerator __result)
         {
-            __result = CustomAlarmBehaviour(__instance);
-            return false;
+            if (BetterSMT.ShoplifterDetectionNotif.Value)
+            {
+                __result = CustomAlarmBehaviour(__instance);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private static IEnumerator CustomAlarmBehaviour(AntiTheftBehaviour __instance)
@@ -37,10 +44,7 @@ namespace BetterSMT.Patches
                 yield return new WaitForSeconds(0.25f);
                 iterations++;
                 set = !set;
-                if (BetterSMT.ShoplifterDetectionNotif.Value)
-                {
-                    BetterSMT.CreateImportantNotification("Shoplifted Detected!");
-                }
+                BetterSMT.CreateImportantNotification("Shoplifted Detected!");
             }
 
             yield return null;

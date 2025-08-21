@@ -17,10 +17,8 @@ namespace BetterSMT.Patches
             foreach (GameObject prefab in __instance.productPrefabs)
             {
                 Data_Product data = prefab.GetComponent<Data_Product>();
-                if (data != null)
-                {
-                    data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
-                }
+
+                data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
             }
         }
 
@@ -28,10 +26,8 @@ namespace BetterSMT.Patches
         [HarmonyPatch("Awake")]
         public static void CaptureInstance(ProductListing __instance)
         {
-                if (__instance != null && __instance.isLocalPlayer)
-                {
-                    ProductListing.Instance = __instance;
-                }
+
+            ProductListing.Instance = __instance;
         }
     }
 
@@ -39,20 +35,15 @@ namespace BetterSMT.Patches
     {
         private void Update()
         {
-                if (!BetterSMT.ToggleClearSalesHotkey.Value)
-                {
-                    return;
-                }
+            if (!BetterSMT.ToggleClearSalesHotkey.Value || FsmVariables.GlobalVariables.GetFsmBool("InChat").Value)
+            {
+                return;
+            }
 
-                if (FsmVariables.GlobalVariables.GetFsmBool("InChat").Value)
-                {
-                    return;
-                }
-
-                if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey))
-                {
-                    SaleResetCommandPatch.TriggerManualSaleClear();
-                }
+            if (Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey))
+            {
+                SaleResetCommandPatch.TriggerManualSaleClear();
+            }
 
         }
     }
@@ -62,18 +53,11 @@ namespace BetterSMT.Patches
         public static void TriggerManualSaleClear()
         {
 
-                if (!NetworkClient.active)
-                {
-                    return;
-                }
-
-                if (ProductListing.Instance == null)
-                {
-                    BetterSMT.Logger?.LogWarning("[SaleResetCommandPatch] ProductListing.Instance is null.");
-                    return;
-                }
-
-                ProductListing.Instance.CmdClearSalesManually();
+            if (!NetworkClient.active)
+            {
+                return;
+            }
+            ProductListing.Instance.CmdClearSalesManually();
 
         }
     }
@@ -83,11 +67,11 @@ namespace BetterSMT.Patches
         [Command(requiresAuthority = false)]
         public static void CmdClearSalesManually(this ProductListing self)
         {
-                BetterSMT.CreateImportantNotification("Sales have been cleared.");
-                self.productsIDOnSale.Clear();
-                self.productsSaleDiscount.Clear();
-                self.ServerClearSalesSyncvar();
-                self.UpdateShelvesSaleSigns();
+            BetterSMT.CreateImportantNotification("Sales have been cleared.");
+            self.productsIDOnSale.Clear();
+            self.productsSaleDiscount.Clear();
+            self.ServerClearSalesSyncvar();
+            self.UpdateShelvesSaleSigns();
         }
     }
 }

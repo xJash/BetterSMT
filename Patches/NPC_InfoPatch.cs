@@ -20,9 +20,7 @@ public class NPC_InfoPatch
         [HarmonyPostfix]
         private static void MakeNPCsThieves(ref bool ___isAThief)
         {
-            ___isAThief = BetterSMT.AllNPCAreThieves.Value
-            || (!BetterSMT.DisableAllThieves.Value
-            && ___isAThief);
+            ___isAThief = BetterSMT.AllNPCAreThieves.Value || (!BetterSMT.DisableAllThieves.Value && ___isAThief);
         }
     }
 

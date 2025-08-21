@@ -13,12 +13,18 @@ public class ManagerBlackboardPatch
 {
 
 
-    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.ServerCargoSpawner))]
+    [HarmonyPatch(nameof(ServerCargoSpawner))]
     [HarmonyPrefix]
     private static bool ServerCargoSpawner(ManagerBlackboard __instance, ref IEnumerator __result)
     {
-        __result = CustomCargoSpawner(__instance);
-        return false;
+        if (BetterSMT.FastBoxSpawns.Value)
+        {
+            __result = CustomCargoSpawner(__instance);
+            return false;
+        } else
+        {
+            return true;
+        }
     }
 
     private static IEnumerator CustomCargoSpawner(ManagerBlackboard __instance)
@@ -128,7 +134,7 @@ public class ManagerBlackboardPatch
         return true;
     }
 
-    [HarmonyPatch(typeof(ManagerBlackboard), nameof(ManagerBlackboard.RemoveAllShoppingList))]
+    [HarmonyPatch(nameof(ManagerBlackboard.RemoveAllShoppingList))]
     [HarmonyPrefix]
     public static bool RemoveAllShoppingListPatch(ManagerBlackboard __instance)
     {
@@ -146,9 +152,10 @@ public class ManagerBlackboardPatch
 
             _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
             return false;
+        } else
+        {
+            return true;
         }
-
-        return true;
     }
 
     [HarmonyPatch("AddShoppingListProduct")]
@@ -157,28 +164,30 @@ public class ManagerBlackboardPatch
     {
         if (!BetterSMT.ReplaceCommasWithPeriods.Value)
         {
+
+            ProductListing component = __instance.GetComponent<ProductListing>();
+            GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
+
+            string key = "product" + productID;
+            string localizationString = LocalizationManager.instance.GetLocalizationString(key);
+            gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
+
+            GameObject obj = component.productPrefabs[productID];
+            string productBrand = obj.GetComponent<Data_Product>().productBrand;
+            gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
+
+            int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
+            gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
+            gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2", CultureInfo.InvariantCulture)}";
+
+            gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
+
+            _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+            return false;
+        }
+        else
+        {
             return true;
         }
-
-        ProductListing component = __instance.GetComponent<ProductListing>();
-        GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab, __instance.shoppingListParent.transform);
-
-        string key = "product" + productID;
-        string localizationString = LocalizationManager.instance.GetLocalizationString(key);
-        gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
-
-        GameObject obj = component.productPrefabs[productID];
-        string productBrand = obj.GetComponent<Data_Product>().productBrand;
-        gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
-
-        int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
-        gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2", CultureInfo.InvariantCulture);
-        gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2", CultureInfo.InvariantCulture)}";
-
-        gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
-
-        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
-        return false;
     }
-
 }
