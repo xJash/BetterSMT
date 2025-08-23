@@ -132,7 +132,7 @@ public class GameDataPatch {
         }
     }
 
-    [HarmonyPatch(typeof(GameData),nameof(GameData.ServerCalculateNewInflation))]
+    [HarmonyPatch(nameof(GameData.ServerCalculateNewInflation))]
     [HarmonyPostfix]
     public static void OptimizeProductPrices() {
         if(!BetterSMT.AutoAdjustPriceDaily.Value) {
@@ -158,74 +158,6 @@ public class GameDataPatch {
 
             productListing.CmdUpdateProductPrice(i,finalPrice);
         }
-    }
-
-
-    [HarmonyPatch("OnStartClient"), HarmonyPostfix]
-    private static void UpdateEscapeMenu() {
-        GameObject escapeMenu = GameObject.Find("MasterOBJ/MasterCanvas/Menus/EscapeMenu/");
-        GameObject quitButton = escapeMenu.transform.Find("QuitButton")?.gameObject;
-        GameObject mainMenuButton = escapeMenu.transform.Find("MainMenuButton")?.gameObject;
-        GameObject optionsButton = escapeMenu.transform.Find("OptionsButton")?.gameObject;
-        quitButton.transform.localPosition = new Vector3(0f,0f,0f);
-        mainMenuButton.transform.localPosition = new Vector3(0f,85f,0f);
-        GameObject saveButton = Object.Instantiate(quitButton,escapeMenu.transform);
-        saveButton.name = "SaveButton";
-
-        foreach(PlayMakerFSM fsm in saveButton.GetComponents<PlayMakerFSM>()) {
-            Object.Destroy(fsm);
-        }
-
-        Object.Destroy(saveButton.GetComponent<EventTrigger>());
-        saveButton.transform.localPosition = new Vector3(0f,-125f,0f);
-        saveButton.transform.localScale = quitButton.transform.localScale;
-
-        TextMeshProUGUI textComponent = saveButton.GetComponentInChildren<TextMeshProUGUI>();
-        if(textComponent != null) {
-            textComponent.text = "Save Game (BSMT)";
-        }
-
-        Button buttonComp = saveButton.GetComponent<Button>();
-        buttonComp.onClick.AddListener(() => {
-            _ = GameData.Instance.StartCoroutine(SaveGame());
-        });
-
-        if(!GameData.Instance.isServer) {
-            saveButton.SetActive(false);
-        }
-    }
-
-    public static IEnumerator SaveGame() {
-        NetworkSpawner spawner = GameData.Instance.GetComponent<NetworkSpawner>();
-        if(spawner.isSaving) {
-            BetterSMT.CreateImportantNotification("Saving already in progress");
-            yield break;
-        }
-
-        BetterSMT.CreateImportantNotification("Saving Game");
-
-        GameData.Instance.DoDaySaveBackup();
-
-        PlayMakerFSM fsm = GameData.Instance.SaveOBJ.GetComponent<PlayMakerFSM>();
-        HutongGames.PlayMaker.FsmBool isSavingVar = fsm.FsmVariables.GetFsmBool("IsSaving");
-        isSavingVar.Value = true;
-        fsm.SendEvent("Send_Data");
-
-        float timeout = 10f;
-        float elapsed = 0f;
-
-        while(isSavingVar.Value) {
-            if(elapsed > timeout) {
-                BetterSMT.CreateImportantNotification("Save timed out.");
-                yield break;
-            }
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        yield return spawner.SavePropsCoroutine();
-
-        BetterSMT.CreateImportantNotification("Saving Finished");
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]

@@ -34,11 +34,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> AutoOrderEnabled;
     public static ConfigEntry<int> AutoOrderCheckInterval;
 
-    // === !Auto Save Settings! ===
-    public static ConfigEntry<bool> AutoSaveEnabled;
-    public static ConfigEntry<int> AutoSaveTimer;
-    public static ConfigEntry<bool> AutoSaveDuringDay;
-
     // === !Employee & Customer Settings! ===
     public static ConfigEntry<int> CustomersPerPerk;
     public static ConfigEntry<int> MaxCustomerInStore;
@@ -129,7 +124,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockToggle;
 
     // === !Random QoL! ===
-    public static ConfigEntry<bool> SaveGame;
     public static ConfigEntry<bool> LoanEarly;
     public static ConfigEntry<bool> NumberKeys;
     public static ConfigEntry<int> SelfCheckoutLimit;
@@ -176,11 +170,6 @@ public class BetterSMT : BaseUnityPlugin {
         // === !Low Stock Alerts! ===
         LowStockAlertEnabled = base.Config.Bind("Low Stock Alerts","Enable Low Stock Alerts",false,new ConfigDescription("Show alerts when products drop below the threshold"));
         LowStockThreshold = base.Config.Bind("Low Stock Alerts","Low Stock Threshold",2,new ConfigDescription("The stock count at which alerts are triggered",new AcceptableValueRange<int>(1,1000)));
-
-        // === !Auto Save Settings! ===
-        AutoSaveEnabled = base.Config.Bind("Auto Saving Settings","Enables Auto Saving",false,new ConfigDescription("Enables or disables automatic saving"));
-        AutoSaveTimer = base.Config.Bind("Auto Saving Settings","Amount of time between saves",120,new ConfigDescription("Adjusts the amount of time between auto saves in seconds, default is 120seconds or 2minutes",new AcceptableValueRange<int>(30,900)));
-        AutoSaveDuringDay = base.Config.Bind("Auto Saving Settings","Enables Auto Saving during the day",false,new ConfigDescription("Enables or disables saving while the store is open, default only autosaves while closed"));
 
         // === !Employee & Customer Settings! ===
         EmployeExtraCheckoutMoney = base.Config.Bind("Employee & Customer Settings","Employe Increased Income While Checking Customer Out Perk",0.1f,new ConfigDescription("Adjust the amount of extra income you receive when an employee checks out a customer (Higher = more income)",new AcceptableValueRange<float>(0f,0.3f)));
@@ -270,7 +259,6 @@ public class BetterSMT : BaseUnityPlugin {
         // === !Random QoL! ===
         PalletProduct = Config.Bind("Random QoL","More Product on Pallets",false,new ConfigDescription("Enables or disables allowing smaller products on pallets **Note: fully stocked pallets with smaller products can cause lag when being looked at"));
         AllProduct = Config.Bind("Random QoL","No Product Requirement",false,new ConfigDescription("Enables or disables the need for freezers, pegboards, fridges, etc. **Note: fully stocked pallets with smaller products can cause lag when being looked at"));
-        SaveGame = Config.Bind("Random QoL","Save Game Button",true,new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
         LoanEarly = Config.Bind("Random QoL","Payoff Loans Early",false,new ConfigDescription("Enables or disables a button to pay off loans early"));
         NumberKeys = Config.Bind("Random QoL","Enables normal numbers",false,new ConfigDescription("Enables or disables using non-numpad numbers to set prices"));
         CardboardBalerValue = base.Config.Bind("Random QoL","Cardboard Baler",10,new ConfigDescription("Adjust the amount of boxes required for the cardboard baler to spit out a bale",new AcceptableValueRange<int>(1,50)));

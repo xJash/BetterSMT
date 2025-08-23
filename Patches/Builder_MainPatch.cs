@@ -36,10 +36,10 @@ public class Builder_MainPatch {
                             GameCanvas.Instance.CreateCanvasNotification("message15");
                             return false;
                         }
-                    }
-                    if(NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount > 0) {
-                        GameCanvas.Instance.CreateCanvasNotification("message16");
-                        return false;
+                        if(NPC_Manager.Instance.customersnpcParentOBJ.transform.childCount > 0) {
+                            GameCanvas.Instance.CreateCanvasNotification("message16");
+                            return false;
+                        }
                     }
                     if(__instance.FurnitureContainsProduct(hitInfo.transform) && !__instance.MainPlayer.GetButton("Drop Item")) {
                         GameCanvas.Instance.CreateCanvasNotification("message17a");

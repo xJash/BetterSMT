@@ -72,30 +72,8 @@ public class PlayerNetworkPatch {
         return true;
     }
 
-
-    private static void HandleAutoSave() {
-        if(BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
-            return;
-        }
-
-        if(!stopwatch.IsRunning) {
-            stopwatch.Start();
-        }
-
-        if(stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) {
-            return;
-        }
-
-        stopwatch.Restart();
-
-        if(BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) {
-            _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
-        }
-    }
-
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance,ref float ___pPrice,TextMeshProUGUI ___marketPriceTMP,ref TextMeshProUGUI ___yourPriceTMP) {
-        HandleAutoSave();
         #region Hotkeys
         if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
             return;
