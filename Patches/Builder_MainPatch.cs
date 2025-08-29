@@ -1,6 +1,9 @@
 ﻿using HarmonyLib;
 using HighlightPlus;
 using Mirror;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Emit;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
@@ -95,52 +98,30 @@ public class Builder_MainPatch {
         return false;
     }
 
-    [HarmonyPatch(typeof(Builder_Main),"DecorationBehaviour")]
+    [HarmonyPatch(typeof(Builder_Main), nameof(Builder_Main.DecorationBehaviour))]
     [HarmonyPrefix]
     public static bool DecorationBehaviourPatch(Builder_Main __instance) {
-        if(BetterSMT.CheatPlacement.Value) {
-            // Full bypass mode
-            __instance.inCorrectBounds = true;   // Ignore bounds restrictions
+        if (BetterSMT.CheatPlacement.Value || BetterSMT.AllowFreePlacement.Value) {
             __instance.overlapping = false;      // Ignore overlap restrictions
-            __instance.raycastIsCorrect = true;  // Ignore raycast restrictions
-            __instance.canPlace = true;          // Always allow placement
 
-            if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                highlight.glowHQColor = Color.green;
+            if (BetterSMT.CheatPlacement.Value) {
+                // Full bypass mode
+                __instance.inCorrectBounds = true;   // Ignore bounds restrictions
+                __instance.raycastIsCorrect = true;  // Ignore raycast restrictions
+                __instance.canPlace = true;          // Always allow placement
+            } else if (BetterSMT.AllowFreePlacement.Value) {
+                // Ignore overlap but still require bounds + raycast checks
+                __instance.inCorrectBounds = __instance.InCorrectBounds();
+                __instance.raycastIsCorrect = __instance.RaycastCheck();
+                __instance.canPlace = __instance.inCorrectBounds && __instance.raycastIsCorrect;    
             }
-        } else if(BetterSMT.AllowFreePlacement.Value) {
-            // Ignore overlap but still require bounds + raycast checks
-            __instance.inCorrectBounds = __instance.InCorrectBounds();
-            __instance.overlapping = false;
-            __instance.raycastIsCorrect = __instance.RaycastCheck();
-            __instance.canPlace = __instance.inCorrectBounds && __instance.raycastIsCorrect;
 
-            if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
+            if (__instance.dummyOBJ.TryGetComponent(out HighlightEffect highlight)) {
                 highlight.glowHQColor = __instance.canPlace ? Color.green : Color.red;
             }
         } else {
-            // Normal placement rules
-            __instance.inCorrectBounds = __instance.InCorrectBounds();
-            __instance.overlapping = __instance.pmakerFSM.FsmVariables.GetFsmBool("Overlapping").Value;
-            __instance.raycastIsCorrect = __instance.RaycastCheck();
-
-            if(__instance.MainPlayer.GetButton("Drop Item") && __instance.currentTabIndex == 8) {
-                __instance.overlapping = false;
-            }
-
-            if(__instance.inCorrectBounds && !__instance.overlapping && __instance.raycastIsCorrect && !__instance.canPlace) {
-                __instance.canPlace = true;
-                if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                    highlight.glowHQColor = Color.green;
-                }
-            }
-
-            if((!__instance.inCorrectBounds || __instance.overlapping || !__instance.raycastIsCorrect) && __instance.canPlace) {
-                __instance.canPlace = false;
-                if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                    highlight.glowHQColor = Color.red;
-                }
-            }
+            // Let the original method handle it.
+            return true;
         }
 
         // Build button handling
@@ -188,48 +169,31 @@ public class Builder_MainPatch {
         return false;
     }
 
-    [HarmonyPatch(typeof(Builder_Main),"BuildableBehaviour")]
+    [HarmonyPatch(typeof(Builder_Main), nameof(Builder_Main.BuildableBehaviour))]
     [HarmonyPrefix]
     public static bool BuildableBehaviourPatch(Builder_Main __instance) {
-        if(BetterSMT.CheatPlacement.Value) {
-            __instance.correctSector = __instance.CheckCorrectGround();
-            __instance.correctSector = true;
+        if (BetterSMT.CheatPlacement.Value || BetterSMT.AllowFreePlacement.Value) {
             __instance.overlapping = false;
-            __instance.canPlace = true;
 
-            if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                highlight.glowHQColor = Color.green;
+            if (BetterSMT.CheatPlacement.Value) {
+                __instance.correctSector = true;
+                __instance.canPlace = true;
+            } else if (BetterSMT.AllowFreePlacement.Value) {
+                __instance.correctSector = __instance.CheckCorrectGround();
+                __instance.canPlace = __instance.correctSector;
             }
-        } else if(BetterSMT.AllowFreePlacement.Value) {
-            __instance.correctSector = __instance.CheckCorrectGround();
 
-            __instance.overlapping = false;
-            __instance.canPlace = __instance.correctSector;
-
-            if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
+            if (__instance.dummyOBJ.TryGetComponent(out HighlightEffect highlight)) {
                 highlight.glowHQColor = __instance.canPlace ? Color.green : Color.red;
             }
         } else {
-            __instance.overlapping = __instance.pmakerFSM.FsmVariables.GetFsmBool("Overlapping").Value;
-
-            if(__instance.correctSector && !__instance.overlapping && !__instance.canPlace) {
-                __instance.canPlace = true;
-                if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                    highlight.glowHQColor = Color.green;
-                }
-            }
-
-            if((!__instance.correctSector || __instance.overlapping) && __instance.canPlace) {
-                __instance.canPlace = false;
-                if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
-                    highlight.glowHQColor = Color.red;
-                }
-            }
+            // Let the original method handle it.
+            return true;
         }
 
-        if(__instance.MainPlayer.GetButtonDown("Build") && __instance.canPlace) {
-            if(__instance.currentElementIndex == 0) {
-                if((bool)__instance.currentMovedOBJ?.GetComponent<NetworkIdentity>()) {
+        if (__instance.MainPlayer.GetButtonDown("Build") && __instance.canPlace) {
+            if (__instance.currentElementIndex == 0) {
+                if ((bool)__instance.currentMovedOBJ?.GetComponent<NetworkIdentity>()) {
                     GameData.Instance.GetComponent<NetworkSpawner>().GetMoveData(
                         __instance.currentMovedOBJ,
                         __instance.dummyOBJ.transform.position,
@@ -238,12 +202,12 @@ public class Builder_MainPatch {
                     __instance.currentMovedOBJ.GetComponent<Data_Container>().RemoveMoveEffect();
                     __instance.currentMovedOBJ = null;
                     __instance.recentlyMoved = true;
-                    if(__instance.dummyOBJ) {
+                    if (__instance.dummyOBJ) {
                         Object.Destroy(__instance.dummyOBJ);
                     }
                 }
-            } else if(!BetterSMT.CheatPlacement.Value && !BetterSMT.AllowFreePlacement.Value &&
-                       GameData.Instance.gameFunds < __instance.buildableCost) {
+            } else if (!BetterSMT.CheatPlacement.Value &&
+                        GameData.Instance.gameFunds < __instance.buildableCost) {
                 GameCanvas.Instance.CreateCanvasNotification("message6");
             } else {
                 GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawn(
@@ -251,10 +215,58 @@ public class Builder_MainPatch {
                     __instance.dummyOBJ.transform.position,
                     __instance.dummyOBJ.transform.rotation.eulerAngles
                 );
+
             }
         }
 
         __instance.SharedBehaviour();
         return false;
     }
+
+    [HarmonyPatch(typeof(NetworkSpawner), nameof(NetworkSpawner.UserCode_CmdSpawn__Int32__Vector3__Vector3))]
+    [HarmonyTranspiler]
+    [HarmonyDebug]
+    public static IEnumerable<CodeInstruction> CmdSpawnRemoveCostPatch(
+            IEnumerable<CodeInstruction> instructions, ILGenerator generator) {
+
+        ///Removes the cost deduction when placing something when CheatPlacement is enabled. 
+        ///Old C# 
+        ///     this.GetComponent<GameData>().CmdAlterFunds(-cost);
+        ///New C# 
+        ///     DeductCostBuilding(-cost, this.GetComponent<GameData>());
+
+        //Search for the call to method "UserCode_CmdSpawn__Int32__Vector3__Vector3".
+        MethodInfo cmdSpawnUserMethod = typeof(GameData)
+            .GetMethod(nameof(GameData.CmdAlterFunds), AccessTools.all);
+
+        if (cmdSpawnUserMethod == null) {
+            BetterSMT.Logger.LogError($"Transpiler failed. Method not found: " +
+                $"\"{nameof(GameData)}.{nameof(GameData.CmdAlterFunds)}\".");
+            return instructions;
+        }
+
+        CodeMatcher codeMatcher = new (instructions);
+        codeMatcher.MatchForward(true,
+            new CodeMatch(inst => CodeInstructionExtensions.Calls(inst, cmdSpawnUserMethod))
+        );
+
+        if (codeMatcher.IsInvalid) {
+            BetterSMT.Logger.LogError($"Transpiler failed. A call to the method " +
+                $"\"{nameof(GameData)}.{nameof(GameData.CmdAlterFunds)}\" couldnt be found in" +
+                $"\"{nameof(NetworkSpawner)}.{nameof(NetworkSpawner.UserCode_CmdSpawn__Int32__Vector3__Vector3)}\".");
+            return instructions;
+        }
+
+        //Replace existing call with ours.
+        codeMatcher.SetInstruction(Transpilers.EmitDelegate(DeductCostBuilding));
+
+        return codeMatcher.InstructionEnumeration();
+    }
+
+    private static void DeductCostBuilding(GameData __instance, float cost) {
+        if (!BetterSMT.CheatPlacement.Value) {
+            __instance.CmdAlterFunds(cost);
+        }
+    }
+
 }

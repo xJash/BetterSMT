@@ -130,29 +130,28 @@ public class ManagerBlackboardPatch {
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance,int productID,float boxPrice) {
-        if(!BetterSMT.ReplaceCommasWithPeriods.Value) {
-
-            ProductListing component = __instance.GetComponent<ProductListing>();
-            GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab,__instance.shoppingListParent.transform);
-
-            string key = "product" + productID;
-            string localizationString = LocalizationManager.instance.GetLocalizationString(key);
-            gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
-
-            GameObject obj = component.productPrefabs[productID];
-            string productBrand = obj.GetComponent<Data_Product>().productBrand;
-            gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
-
-            int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
-            gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2",CultureInfo.InvariantCulture);
-            gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2",CultureInfo.InvariantCulture)}";
-
-            gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
-
-            _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
-            return false;
-        } else {
+        if (!BetterSMT.ReplaceCommasWithPeriods.Value) {
             return true;
         }
+
+        ProductListing component = __instance.GetComponent<ProductListing>();
+        GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab,__instance.shoppingListParent.transform);
+
+        string key = "product" + productID;
+        string localizationString = LocalizationManager.instance.GetLocalizationString(key);
+        gameObject.transform.Find("ProductName").GetComponent<TextMeshProUGUI>().text = localizationString;
+
+        GameObject obj = component.productPrefabs[productID];
+        string productBrand = obj.GetComponent<Data_Product>().productBrand;
+        gameObject.transform.Find("BrandName").GetComponent<TextMeshProUGUI>().text = productBrand;
+
+        int maxItemsPerBox = obj.GetComponent<Data_Product>().maxItemsPerBox;
+        gameObject.transform.Find("BoxQuantity").GetComponent<TextMeshProUGUI>().text = "x" + maxItemsPerBox.ToString("F2",CultureInfo.InvariantCulture);
+        gameObject.transform.Find("BoxPrice").GetComponent<TextMeshProUGUI>().text = $" ${boxPrice.ToString("F2",CultureInfo.InvariantCulture)}";
+
+        gameObject.GetComponent<InteractableData>().thisSkillIndex = productID;
+
+        _ = __instance.StartCoroutine(CalculateShoppingListTotalOverride(__instance));
+        return false;
     }
 }

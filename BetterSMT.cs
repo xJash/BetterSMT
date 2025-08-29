@@ -216,7 +216,7 @@ public class BetterSMT : BaseUnityPlugin {
         EmployeeRerolls = Config.Bind("Random Features","Employee Rerolls",false,new ConfigDescription("Gives you unlimited rerolls to change your employees"));
         OneClickCheckMark = Config.Bind("Random Features","Surveillance Camera One Click",false,new ConfigDescription("Makes all customers one click when using security console"));
         AllowFreePlacement = Config.Bind("Random Features","Disable Placement Blocking",false,new ConfigDescription("Enables or disables you to place structures wherever in the main area, even overlapping"));
-        CheatPlacement = Config.Bind("Random Features","Disable PLacement Checks",false,new ConfigDescription("Similar to Free Placement, but allows building anywhere and everywhere"));
+        CheatPlacement = Config.Bind("Random Features","Disable Placement Checks",false,new ConfigDescription("Similar to Free Placement, but allows building anywhere and everywhere, for free"));
         ProductStacking = Config.Bind("Random Features","Enable product stacking",false,new ConfigDescription("Enables or disables most products in the game to stack on shelves"));
         EnablePalletDisplaysPerk = Config.Bind("Random Features","Enable pallet displays",false,new ConfigDescription("Enables pallet displays without unlocking the perk."));
         ReplaceCommasWithPeriods = Config.Bind("Random Features","Replace commas with periods",false,new ConfigDescription("Changes all commas in the game into periods."));
