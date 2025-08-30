@@ -164,7 +164,7 @@ public class BetterSMT : BaseUnityPlugin {
         SalesActiveAmount = base.Config.Bind("Sales Settings","Amount of sales unlocked each perk",2,new ConfigDescription("Adjusts the amount of sales you unlock for each perk",new AcceptableValueRange<int>(1,100)));
 
         // === !Auto Ordering Settings! ===
-        AutoOrderEnabled = base.Config.Bind("Auto Ordering","Enable Auto Ordering",false,new ConfigDescription("Automatically orders products when stock is low"));
+        AutoOrderEnabled = base.Config.Bind("Auto Ordering","Enable Auto Ordering",false,new ConfigDescription("Automatically orders products when stock is low. Only works when Ordering Tablet is in your hands."));
         AutoOrderCheckInterval = base.Config.Bind("Auto Ordering","Auto Order Check Interval",30,new ConfigDescription("Time interval (in seconds) for checking product stock",new AcceptableValueRange<int>(10,600)));
 
         // === !Low Stock Alerts! ===

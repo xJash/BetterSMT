@@ -12,8 +12,12 @@ public class LateUpdateRaycastPatch {
             return;
         }
 
-        bool inChat = FsmVariables.GlobalVariables.GetFsmBool("InChat").Value;
-        if(inChat || __instance.inVehicle || __instance.isInCameraEvent || !BetterSMT.ThirdPersonToggle.Value) {
+        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false || !BetterSMT.ThirdPersonToggle.Value) {
             return;
         }
 

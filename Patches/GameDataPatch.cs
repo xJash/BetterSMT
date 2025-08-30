@@ -23,7 +23,7 @@ public class GameDataPatch {
             return;
         }
 
-        __instance.autopayInvoices = BetterSMT.AutoPayAllInvoices?.Value ?? false;
+        __instance.GetComponent<DebtManager>().autopayInvoices = BetterSMT.AutoPayAllInvoices?.Value ?? false;
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]

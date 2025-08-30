@@ -130,7 +130,7 @@ public class ManagerBlackboardPatch {
     [HarmonyPatch("AddShoppingListProduct")]
     [HarmonyPrefix]
     public static bool AddShoppingListProductPatch(ManagerBlackboard __instance,int productID,float boxPrice) {
-        if(!BetterSMT.ReplaceCommasWithPeriods.Value) {
+        if(BetterSMT.ReplaceCommasWithPeriods.Value) {
 
             ProductListing component = __instance.GetComponent<ProductListing>();
             GameObject gameObject = Object.Instantiate(__instance.UIShoppingListPrefab,__instance.shoppingListParent.transform);

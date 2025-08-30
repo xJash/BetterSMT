@@ -75,7 +75,12 @@ public class PlayerNetworkPatch {
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance,ref float ___pPrice,TextMeshProUGUI ___marketPriceTMP,ref TextMeshProUGUI ___yourPriceTMP) {
         #region Hotkeys
-        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false) {
+        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false) {
             return;
         } else {
             bool usedTool = false;

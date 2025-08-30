@@ -28,8 +28,13 @@ namespace BetterSMT.Patches {
 
     public class ManualSaleClearHotkeyListener : MonoBehaviour {
         private void Update() {
-            if(!BetterSMT.ToggleClearSalesHotkey.Value || FsmVariables.GlobalVariables.GetFsmBool("InChat").Value) {
-                return;
+            if(!BetterSMT.ToggleClearSalesHotkey.Value || !FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
+            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false) {
+                    return;
             }
 
             if(Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey)) {
