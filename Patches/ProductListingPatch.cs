@@ -11,16 +11,9 @@ namespace BetterSMT.Patches {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ProductListing),"OnStartClient")]
         public static void Postfix(ProductListing __instance) {
-            if (BetterSMT.MaxBoxSize.Value == (int)BetterSMT.MaxBoxSize.DefaultValue){
-                return;
-            }
-
-            foreach (GameObject prefab in __instance.productPrefabs) {
-                if (prefab == null) {
-                    //Compatibility with Custom Products mod leaving null spaces in the array.
-                    continue;
-                }
+            foreach(GameObject prefab in __instance.productPrefabs) {
                 Data_Product data = prefab.GetComponent<Data_Product>();
+
                 data.maxItemsPerBox *= BetterSMT.MaxBoxSize.Value;
             }
         }
