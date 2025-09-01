@@ -4,15 +4,6 @@ using UnityEngine;
 namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(NPC_Manager))]
 public class NPC_ManagerPatch {
-    [HarmonyPostfix]
-    [HarmonyPatch("Awake")]
-    public static void Awake_Postfix(NPC_Manager __instance) {
-        if(BetterSMT.EmployeeRerolls.Value) {
-            __instance.rerollTimes = 999;
-        }
-    }
-
-
     [HarmonyPatch("GetAvailableSelfCheckout"), HarmonyPostfix]
     private static void GetAvailableSelfCheckoutPatch(NPC_Info npcInfo,NPC_Manager __instance) {
         _ = SelfCheckoutPatch(npcInfo,__instance);

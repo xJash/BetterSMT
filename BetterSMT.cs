@@ -91,7 +91,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> EnablePalletDisplaysPerk;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<string> CurrencyTypeToAny;
-    public static ConfigEntry<bool> EmployeeRerolls;
     public static ConfigEntry<bool> CardboardBalerBreak;
     public static ConfigEntry<bool> SelfCheckoutBreak;
     public static ConfigEntry<bool> CloserBoxSpawning;
@@ -209,11 +208,10 @@ public class BetterSMT : BaseUnityPlugin {
         MaxBoxes = base.Config.Bind("Mini Transport Vehicle","Change the max boxes",6,new ConfigDescription("Adjusts the max amount of boxes the Mini Transport Vehicle will hold at one time.",new AcceptableValueRange<int>(6,16)));
         MTVHotkey = Config.Bind("Mini Transport Vehicle","Change the drop hotkey",new KeyboardShortcut(KeyCode.L),new ConfigDescription("Changes the hotkey used to dispense all boxes from the Mini Transport Vehicle instantly."));
         DropCooldown = base.Config.Bind("Mini Transport Vehicle","Item Pickup Cooldown",10f,new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.",new AcceptableValueRange<float>(1f,30f)));
-
+        
         // === !Random Features! ===
         ShoplifterDetectionNotif = Config.Bind("Random Features","Shoplifter Notification",false,new ConfigDescription("Adds a visual que to notify you when a shoplifter runs through anti-theft doors."));
         CloserBoxSpawning = Config.Bind("Random Features","Closer Box Spawning",false,new ConfigDescription("Causes boxes to spawn closer to the storage area"));
-        EmployeeRerolls = Config.Bind("Random Features","Employee Rerolls",false,new ConfigDescription("Gives you unlimited rerolls to change your employees"));
         OneClickCheckMark = Config.Bind("Random Features","Surveillance Camera One Click",false,new ConfigDescription("Makes all customers one click when using security console"));
         AllowFreePlacement = Config.Bind("Random Features","Disable Placement Blocking",false,new ConfigDescription("Enables or disables you to place structures wherever in the main area, even overlapping"));
         CheatPlacement = Config.Bind("Random Features","Disable PLacement Checks",false,new ConfigDescription("Similar to Free Placement, but allows building anywhere and everywhere"));

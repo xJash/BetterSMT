@@ -17,7 +17,6 @@ namespace BetterSMT.Patches {
 
             foreach (GameObject prefab in __instance.productPrefabs) {
                 if (prefab == null) {
-                    //Compatibility with Custom Products mod leaving null spaces in the array.
                     continue;
                 }
                 Data_Product data = prefab.GetComponent<Data_Product>();
