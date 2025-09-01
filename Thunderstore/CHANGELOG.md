@@ -1,3 +1,18 @@
+## 3.0.0
+- Removed rerolls config due to implementation into the base game through perk
+- Merged a PR from Damntry fixing some Custom Products fuckery
+- Fixed a ton of issues I accidentally implementied with building structures
+- Changed checks for hotkeys to be much more harsh, less likely for them to activate in non-intended ways
+- Fixed auto-paying invoices
+- Touched up some replace comma with period functions since it is a nightmare, should be fully functional again
+- Fixed some issues with selling structures during the day while customers are in-store
+- Removed the save button & autosaving due to the implementation of it into the base game has finally been done correctly (and technically stolen idea from my mod, like how many other features, like seriously does this game dev just watch my pr? watch the mod on nexus? what you doin c276, give some credit sheeesh, like you even took my fix for autosaves and published it like you figured out what was wrong and all when I did lmao)
+- Redid the entirety of the base games employe data generation since it was actually terrible
+- Added a new feature to have a text notification appear on-screen when a thief walks through anti-theft alarms
+- Added some further checks preventing modification to abse game without configs being fully enabled for future-proofing
+- Added new feature to adjust how fast order packaging orders come
+- Added new feature to adjust max amount of orders received through order packaging per day
+
 ## 2.5.0
 - Added new products to existing dicts
 - Fixed "free placement"

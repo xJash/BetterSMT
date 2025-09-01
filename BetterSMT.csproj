@@ -5,7 +5,7 @@
     <AssemblyName>BetterSMT</AssemblyName>
     <Product>BetterSMT</Product>
     <Description>BetterSMT</Description>
-    <Version>2.5.0</Version>
+    <Version>3.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
