@@ -1,25 +1,24 @@
 ﻿using HarmonyLib;
 using HighlightPlus;
 using Mirror;
+using System.Linq;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(Builder_Main))]
 public class Builder_MainPatch {
-    [HarmonyPatch(typeof(Builder_Main),"RetrieveInitialBehaviours")]
-    [HarmonyPostfix]
+    [HarmonyPatch(typeof(Builder_Main),"RetrieveInitialBehaviours"), HarmonyPostfix]
     public static void ProductStackingWaitEndOfIEnumerable() {
-        if(BetterSMT.ProductStacking.Value == true) {
-            foreach(GameObject prodPrefab in ProductListing.Instance.productPrefabs) {
-                if(prodPrefab == null || !prodPrefab.TryGetComponent(out Data_Product dataProduct)) {
-                    continue;
-                }
+        if(BetterSMT.ProductStacking?.Value != true)
+            return;
 
+        foreach(var prefab in ProductListing.Instance.productPrefabs.Where(p => p != null)) {
+            if(prefab.TryGetComponent(out Data_Product dataProduct))
                 dataProduct.isStackable = true;
-            }
         }
     }
+
 
     [HarmonyPatch("DeleteBehaviour"), HarmonyPrefix]
     public static bool DeleteWheneverPatch(Builder_Main __instance) {

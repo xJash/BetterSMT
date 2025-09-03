@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace BetterSMT.Patches {

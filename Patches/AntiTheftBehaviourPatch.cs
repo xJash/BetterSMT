@@ -8,35 +8,31 @@ namespace BetterSMT.Patches {
         [HarmonyPrefix]
         [HarmonyPatch(nameof(AntiTheftBehaviour.AlarmBehaviour))]
         public static bool AlarmBehaviourPrefix(AntiTheftBehaviour __instance,ref IEnumerator __result) {
-            if(BetterSMT.ShoplifterDetectionNotif.Value) {
+            if(BetterSMT.ShoplifterDetectionNotif?.Value == true) {
                 __result = CustomAlarmBehaviour(__instance);
-                return false;
-            } else {
-                return true;
+                return false; 
             }
+            return true; 
         }
 
         private static IEnumerator CustomAlarmBehaviour(AntiTheftBehaviour __instance) {
             __instance.alarmIsPlaying = true;
-            int iterations = 0;
+
+            var rend1 = __instance.lightOBJ1.GetComponent<MeshRenderer>();
+            var rend2 = __instance.lightOBJ2.GetComponent<MeshRenderer>();
+
             bool set = true;
 
-            while(iterations < 20) {
-                if(set) {
-                    __instance.lightOBJ1.GetComponent<MeshRenderer>().material = __instance.lightOn;
-                    __instance.lightOBJ2.GetComponent<MeshRenderer>().material = __instance.lightOn;
-                } else {
-                    __instance.lightOBJ1.GetComponent<MeshRenderer>().material = __instance.lightOff;
-                    __instance.lightOBJ2.GetComponent<MeshRenderer>().material = __instance.lightOff;
-                }
+            BetterSMT.CreateImportantNotification("Shoplifter Detected!");
+
+            for(int i = 0; i < 20; i++) {
+                rend1.material = set ? __instance.lightOn : __instance.lightOff;
+                rend2.material = set ? __instance.lightOn : __instance.lightOff;
 
                 yield return new WaitForSeconds(0.25f);
-                iterations++;
                 set = !set;
-                BetterSMT.CreateImportantNotification("Shoplifter Detected!");
             }
 
-            yield return null;
             __instance.alarmIsPlaying = false;
         }
     }

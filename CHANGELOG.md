@@ -1,4 +1,10 @@
-﻿## 3.0.0
+﻿## 3.0.1
+- Reimplemented saving button in ESC menu due to finding out base game's save button still does not work
+- Reimplemented auto saving feature due to finding out base game's save button still does not work
+- Added in modifiable exp rates
+- Fixed stupid locale error in anti theft door text notification
+
+## 3.0.0
 - Removed rerolls config due to implementation into the base game through perk
 - Merged a PR from Damntry fixing some Custom Products fuckery
 - Fixed a ton of issues I accidentally implementied with building structures

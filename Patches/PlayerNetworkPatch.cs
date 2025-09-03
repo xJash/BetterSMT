@@ -93,15 +93,17 @@ public class PlayerNetworkPatch {
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
-    private static void UpdatePatch(PlayerNetwork __instance,ref float ___pPrice,TextMeshProUGUI ___marketPriceTMP,ref TextMeshProUGUI ___yourPriceTMP) {
+    private static void UpdatePatch(PlayerNetwork __instance) {
         HandleAutoSave();
         #region Hotkeys
-        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false) {
+
+        var globals = FsmVariables.GlobalVariables;
+        if(globals.GetFsmBool("InChat").Value
+            || globals.GetFsmBool("inEvent").Value
+            || globals.GetFsmBool("inOptions").Value
+            || globals.GetFsmBool("isBeingPushed").Value
+            || globals.GetFsmBool("inCameraEvent").Value
+            || globals.GetFsmBool("inVehicle").Value) {
             return;
         } else {
             bool usedTool = false;
@@ -139,27 +141,11 @@ public class PlayerNetworkPatch {
 
         }
 
-        if(BetterSMT.ToggleDoublePrice.Value == true) {
-            if(BetterSMT.doublePrice && ___marketPriceTMP != null) {
-                if(float.TryParse(___marketPriceTMP.text[1..].Replace(',','.'),
-                    System.Globalization.NumberStyles.Float,
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    out float market)) {
-                    ___pPrice = market * 2;
-
-                    if(BetterSMT.roundDown.Value) {
-                        ___pPrice = BetterSMT.NearestTen.Value ? (float)(Math.Floor(___pPrice * 10) / 10) : (float)(Math.Floor(___pPrice * 20) / 20);
-                    }
-
-                    ___yourPriceTMP.text = "$" + ___pPrice;
-                }
-            }
-        }
         #endregion
     }
 
     [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
-    private static void UpdateBoxContentsPatch(int productIndex) {
+    private static void UpdateBoxContentsPatch() {
         int notificationHolder = 0;
         if(BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0) {
             BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity. Disable this message by disabling highlighting.");

@@ -1,36 +1,38 @@
 ﻿using HarmonyLib;
 using HutongGames.PlayMaker;
+using Cinemachine;
 
 namespace BetterSMT.Patches;
 
 [HarmonyPatch(typeof(CustomCameraController),"LateUpdate")]
 public class LateUpdateRaycastPatch {
-    private static bool isThirdPersonEnabled = false;
+    private static bool isThirdPersonEnabled;
 
     private static void Postfix(CustomCameraController __instance) {
-        if(__instance == null) {
+        if(__instance == null)
+            return;
+
+        var globals = FsmVariables.GlobalVariables;
+        if(globals.GetFsmBool("InChat").Value
+            || globals.GetFsmBool("inEvent").Value
+            || globals.GetFsmBool("inOptions").Value
+            || globals.GetFsmBool("isBeingPushed").Value
+            || globals.GetFsmBool("inCameraEvent").Value
+            || globals.GetFsmBool("inVehicle").Value
+            || !BetterSMT.ThirdPersonToggle.Value) {
             return;
         }
 
-        if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false || !BetterSMT.ThirdPersonToggle.Value) {
-            return;
-        }
-
-        if(BetterSMT.ThirdPersonHotkey.Value.IsDown()) {
+        if(BetterSMT.ThirdPersonHotkey.Value.IsDown())
             isThirdPersonEnabled = !isThirdPersonEnabled;
-        }
 
         __instance.inEmoteEvent = isThirdPersonEnabled;
 
-        Cinemachine.Cinemachine3rdPersonFollow follow = __instance.thirdPersonFollow;
-        if(follow != null) {
+        if(__instance.thirdPersonFollow is Cinemachine3rdPersonFollow follow) {
             follow.CameraDistance = isThirdPersonEnabled ? 2f : 0f;
-            follow.CameraCollisionFilter = isThirdPersonEnabled ? __instance.thirdPersonDefaultLayerMask : 0;
+            follow.CameraCollisionFilter = isThirdPersonEnabled
+                ? __instance.thirdPersonDefaultLayerMask
+                : 0;
         }
 
         __instance.ShowCharacter(isThirdPersonEnabled);
