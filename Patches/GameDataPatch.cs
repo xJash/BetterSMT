@@ -1,10 +1,8 @@
 ﻿using HarmonyLib;
 using Mirror;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace BetterSMT.Patches;
@@ -24,6 +22,39 @@ public class GameDataPatch {
         }
 
         __instance.GetComponent<DebtManager>().autopayInvoices = BetterSMT.AutoPayAllInvoices?.Value ?? false;
+    }
+
+    [HarmonyPatch("UserCode_CmdAlterFunds__Single"), HarmonyPrefix]
+    private static bool UserCode_CmdAlterFunds__SinglePatch(float fundsToAdd,GameData __instance) {
+        if(BetterSMT.ExpRate.Value != 1) {
+            float value = __instance.gameFunds + fundsToAdd;
+            value = Mathf.Clamp(value,0f,2.14E+09f);
+            __instance.NetworkgameFunds = Mathf.Round(value * 100f) / 100f;
+            if(fundsToAdd > 0f) {
+                float value2 = 0.5f - (__instance.gameFranchiseLevel * 0.004f);
+                value2 = Mathf.Clamp(value2,0.05f,1f);
+                __instance.NetworkgameFranchiseExperience = (__instance.gameFranchiseExperience + (int)(fundsToAdd * value2)) * BetterSMT.ExpRate.Value;
+                __instance.todaysFranchiseExperience += (int)(fundsToAdd * value2) * BetterSMT.ExpRate.Value;
+                __instance.dayBenefits += (int)fundsToAdd;
+            } else {
+                __instance.otherCosts += fundsToAdd;
+            }
+            __instance.RpcAlterFunds(fundsToAdd);
+            int num = 0;
+            for(int i = 1; i < float.PositiveInfinity; i++) {
+                num += i * 100;
+                if(num > __instance.gameFranchiseExperience) {
+                    if(i > __instance.lastAwardedFranchiseLevel) {
+                        __instance.NetworkgameFranchisePoints = __instance.gameFranchisePoints + 1;
+                        __instance.lastAwardedFranchiseLevel = i;
+                    }
+                    break;
+                }
+            }
+            return false;
+        } else {
+            return true;
+        }
     }
 
     [HarmonyPatch("OnStartClient"), HarmonyPostfix]

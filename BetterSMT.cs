@@ -83,6 +83,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<float> DropCooldown;
 
     // === !Random Features! ===
+    public static ConfigEntry<int> ExpRate;
     public static ConfigEntry<bool> ShoplifterDetectionNotif;
     public static ConfigEntry<bool> OneClickCheckMark;
     public static ConfigEntry<bool> AllowFreePlacement;
@@ -208,8 +209,9 @@ public class BetterSMT : BaseUnityPlugin {
         MaxBoxes = base.Config.Bind("Mini Transport Vehicle","Change the max boxes",6,new ConfigDescription("Adjusts the max amount of boxes the Mini Transport Vehicle will hold at one time.",new AcceptableValueRange<int>(6,16)));
         MTVHotkey = Config.Bind("Mini Transport Vehicle","Change the drop hotkey",new KeyboardShortcut(KeyCode.L),new ConfigDescription("Changes the hotkey used to dispense all boxes from the Mini Transport Vehicle instantly."));
         DropCooldown = base.Config.Bind("Mini Transport Vehicle","Item Pickup Cooldown",10f,new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.",new AcceptableValueRange<float>(1f,30f)));
-        
+
         // === !Random Features! ===
+        ExpRate = base.Config.Bind("Random Features","EXP Rate",1,new ConfigDescription("Adjusts how much EXP you earn per transaction.",new AcceptableValueRange<int>(1,10)));
         ShoplifterDetectionNotif = Config.Bind("Random Features","Shoplifter Notification",false,new ConfigDescription("Adds a visual que to notify you when a shoplifter runs through anti-theft doors."));
         CloserBoxSpawning = Config.Bind("Random Features","Closer Box Spawning",false,new ConfigDescription("Causes boxes to spawn closer to the storage area"));
         OneClickCheckMark = Config.Bind("Random Features","Surveillance Camera One Click",false,new ConfigDescription("Makes all customers one click when using security console"));
