@@ -145,8 +145,20 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<float> OrderSpeedUp;
     public static ConfigEntry<float> OrderIncreasedMax;
 
+    // === ! Save Settings! ===
+    public static ConfigEntry<bool> AutoSaveEnabled;
+    public static ConfigEntry<int> AutoSaveTimer;
+    public static ConfigEntry<bool> AutoSaveDuringDay;
+    public static ConfigEntry<bool> SaveGame;
+
     [System.Obsolete]
     private void Awake() {
+        // === !Auto Save Settings! ===
+        AutoSaveEnabled = base.Config.Bind("Save Settings","Enables Auto Saving",false,new ConfigDescription("Enables or disables automatic saving"));
+        AutoSaveTimer = base.Config.Bind("Save Settings","Amount of time between saves",120,new ConfigDescription("Adjusts the amount of time between auto saves in seconds, default is 120seconds or 2minutes",new AcceptableValueRange<int>(30,900)));
+        AutoSaveDuringDay = base.Config.Bind("Save Settings","Enables Auto Saving during the day",false,new ConfigDescription("Enables or disables saving while the store is open, default only autosaves while closed"));
+        SaveGame = Config.Bind("Save Settings","Save Game Button",true,new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
+
         // === !Ordering! ===
         OrderPackaging = Config.Bind("Order Packaging","Enables custom order packaging",false,new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
         OrderSpeedUp = base.Config.Bind("Order Packaging","Speeds up how often orders come",0f,new ConfigDescription("Works as a percent multiplier. 1.1 = 10% faster. 2.3 = 130% faster.",new AcceptableValueRange<float>(0f,500f)));
@@ -209,6 +221,7 @@ public class BetterSMT : BaseUnityPlugin {
         MaxBoxes = base.Config.Bind("Mini Transport Vehicle","Change the max boxes",6,new ConfigDescription("Adjusts the max amount of boxes the Mini Transport Vehicle will hold at one time.",new AcceptableValueRange<int>(6,16)));
         MTVHotkey = Config.Bind("Mini Transport Vehicle","Change the drop hotkey",new KeyboardShortcut(KeyCode.L),new ConfigDescription("Changes the hotkey used to dispense all boxes from the Mini Transport Vehicle instantly."));
         DropCooldown = base.Config.Bind("Mini Transport Vehicle","Item Pickup Cooldown",10f,new ConfigDescription("Changes how long it will wait to pickup boxes again after the drop hotkey has been pressed.",new AcceptableValueRange<float>(1f,30f)));
+
 
         // === !Random Features! ===
         ExpRate = base.Config.Bind("Random Features","EXP Rate",1,new ConfigDescription("Adjusts how much EXP you earn per transaction.",new AcceptableValueRange<int>(1,10)));

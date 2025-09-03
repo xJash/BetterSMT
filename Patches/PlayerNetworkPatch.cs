@@ -13,10 +13,30 @@ public class PlayerNetworkPatch {
     private static readonly Stopwatch stopwatch = new();
     private static UpgradesManager upgradesManager;
 
+    private static void HandleAutoSave() {
+        if(BetterSMT.AutoSaveEnabled?.Value != true || !GameData.Instance.isServer) {
+            return;
+        }
+
+        if(!stopwatch.IsRunning) {
+            stopwatch.Start();
+        }
+
+        if(stopwatch.Elapsed.TotalSeconds <= BetterSMT.AutoSaveTimer?.Value) {
+            return;
+        }
+
+        stopwatch.Restart();
+
+        if(BetterSMT.AutoSaveDuringDay?.Value == true || !GameData.Instance.NetworkisSupermarketOpen) {
+            _ = GameData.Instance.StartCoroutine(GameDataPatch.SaveGame());
+        }
+    }
+
     [HarmonyPatch("PriceSetFromNumpad")]
     [HarmonyPrefix]
     private static bool PriceSetFromNumpadPrefix(PlayerNetwork __instance,int productID) {
-        if(!BetterSMT.NumberKeys.Value) {
+        if(!BetterSMT.NumberKeys.Value && GameData.Instance.isServer) {
             return true;
         }
 
@@ -74,6 +94,7 @@ public class PlayerNetworkPatch {
 
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch(PlayerNetwork __instance,ref float ___pPrice,TextMeshProUGUI ___marketPriceTMP,ref TextMeshProUGUI ___yourPriceTMP) {
+        HandleAutoSave();
         #region Hotkeys
         if(!FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
             || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
