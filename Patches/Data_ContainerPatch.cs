@@ -1,6 +1,8 @@
-﻿using HarmonyLib;
+﻿using BepInEx.Bootstrap;
+using HarmonyLib;
 using HutongGames.PlayMaker;
 using StarterAssets;
+using System.Linq;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
@@ -15,9 +17,36 @@ public class Patch_Data_Container {
         }
     }
 
+
+    public static bool GetExternalConfigValue(string modGUID,string configKey,out object value) {
+        value = null;
+
+        if(Chainloader.PluginInfos.TryGetValue(modGUID,out BepInEx.PluginInfo modPluginInfo)) {
+            BepInEx.Configuration.ConfigFile configEntries = modPluginInfo.Instance.Config;
+
+            BepInEx.Configuration.ConfigEntryBase configEntry = configEntries
+                    .Where(c => c.Key.Key == configKey)
+                    .Select(c => c.Value)
+                    .FirstOrDefault();
+
+            if(configEntry != null) {
+                value = configEntry.BoxedValue;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     [HarmonyPatch("AddItemToRow"), HarmonyPrefix]
     private static bool AddItemToRowPatch(Data_Container __instance,int containerNumber,int productIDToAdd) {
-        // Only skip if all three are disabled
+        if(GetExternalConfigValue("es.damntry.SuperQoLity", "*Enable ·Item Transfer Speed Module· (**)", out object value)) {
+            if(value is bool otherValue && otherValue) {
+                BetterSMT.QuickStocking.Value = true;
+            }
+        }
+
         if(!BetterSMT.QuickStocking.Value && !BetterSMT.PalletProduct.Value && !BetterSMT.AllProduct.Value) {
             return true;
         }
@@ -40,13 +69,11 @@ public class Patch_Data_Container {
         BoxCollider box = prefab.GetComponent<BoxCollider>();
         Vector3 size = box.size;
 
-        // Pallet check
         if(!BetterSMT.PalletProduct.Value && __instance.isVolumeRestricted && size.x * size.y * size.z < __instance.productVolumeLimit) {
             GameCanvas.Instance.CreateCanvasNotification("message20");
             return false;
         }
 
-        // Shelf type check
         if(!BetterSMT.AllProduct.Value && dataProduct.productContainerClass != __instance.containerClass) {
             GameCanvas.Instance.CreateCanvasNotification("message0");
             return false;

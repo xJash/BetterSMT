@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using HighlightPlus; // if HighlightEffect is from Highlight Plus
+using HighlightPlus; 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,6 @@ namespace BetterSMT.Patches {
         [HarmonyPrefix]
         public static bool UpdatePrefix(OrderPackaging __instance) {
             if(!BetterSMT.OrderPackaging.Value) {
-                // run vanilla Update()
                 return true;
             }
             float newMaxNumberofDailyOrders = BetterSMT.OrderIncreasedMax.Value != 0 ? BetterSMT.OrderIncreasedMax.Value : __instance.maxNumberOfDailyOrders;
