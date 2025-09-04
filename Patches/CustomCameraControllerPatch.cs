@@ -1,6 +1,6 @@
-﻿using HarmonyLib;
+﻿using Cinemachine;
+using HarmonyLib;
 using HutongGames.PlayMaker;
-using Cinemachine;
 
 namespace BetterSMT.Patches;
 
@@ -9,10 +9,11 @@ public class LateUpdateRaycastPatch {
     private static bool isThirdPersonEnabled;
 
     private static void Postfix(CustomCameraController __instance) {
-        if(__instance == null)
+        if(__instance == null) {
             return;
+        }
 
-        var globals = FsmVariables.GlobalVariables;
+        FsmVariables globals = FsmVariables.GlobalVariables;
         if(globals.GetFsmBool("InChat").Value
             || globals.GetFsmBool("inEvent").Value
             || globals.GetFsmBool("inOptions").Value
@@ -23,8 +24,9 @@ public class LateUpdateRaycastPatch {
             return;
         }
 
-        if(BetterSMT.ThirdPersonHotkey.Value.IsDown())
+        if(BetterSMT.ThirdPersonHotkey.Value.IsDown()) {
             isThirdPersonEnabled = !isThirdPersonEnabled;
+        }
 
         __instance.inEmoteEvent = isThirdPersonEnabled;
 

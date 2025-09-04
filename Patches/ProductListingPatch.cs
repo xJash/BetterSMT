@@ -11,12 +11,12 @@ namespace BetterSMT.Patches {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(ProductListing),"OnStartClient")]
         public static void Postfix(ProductListing __instance) {
-            if (BetterSMT.MaxBoxSize.Value == (int)BetterSMT.MaxBoxSize.DefaultValue){
+            if(BetterSMT.MaxBoxSize.Value == (int)BetterSMT.MaxBoxSize.DefaultValue) {
                 return;
             }
 
-            foreach (GameObject prefab in __instance.productPrefabs) {
-                if (prefab == null) {
+            foreach(GameObject prefab in __instance.productPrefabs) {
+                if(prefab == null) {
                     continue;
                 }
                 Data_Product data = prefab.GetComponent<Data_Product>();
@@ -34,13 +34,15 @@ namespace BetterSMT.Patches {
 
     public class ManualSaleClearHotkeyListener : MonoBehaviour {
         private void Update() {
-            if(!BetterSMT.ToggleClearSalesHotkey.Value || !FsmVariables.GlobalVariables.GetFsmBool("InChat").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inOptions").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("isBeingPushed").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inCameraEvent").Value == false
-            || !FsmVariables.GlobalVariables.GetFsmBool("inVehicle").Value == false) {
-                    return;
+            FsmVariables globals = FsmVariables.GlobalVariables;
+            if(globals.GetFsmBool("InChat").Value
+                || globals.GetFsmBool("inEvent").Value
+                || globals.GetFsmBool("inOptions").Value
+                || globals.GetFsmBool("isBeingPushed").Value
+                || globals.GetFsmBool("inCameraEvent").Value
+                || globals.GetFsmBool("inVehicle").Value
+                || !BetterSMT.ToggleClearSalesHotkey.Value) {
+                return;
             }
 
             if(Input.GetKeyDown(BetterSMT.ClearSales.Value.MainKey)) {

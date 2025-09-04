@@ -10,16 +10,16 @@ namespace BetterSMT.Patches {
         public static bool AlarmBehaviourPrefix(AntiTheftBehaviour __instance,ref IEnumerator __result) {
             if(BetterSMT.ShoplifterDetectionNotif?.Value == true) {
                 __result = CustomAlarmBehaviour(__instance);
-                return false; 
+                return false;
             }
-            return true; 
+            return true;
         }
 
         private static IEnumerator CustomAlarmBehaviour(AntiTheftBehaviour __instance) {
             __instance.alarmIsPlaying = true;
 
-            var rend1 = __instance.lightOBJ1.GetComponent<MeshRenderer>();
-            var rend2 = __instance.lightOBJ2.GetComponent<MeshRenderer>();
+            MeshRenderer rend1 = __instance.lightOBJ1.GetComponent<MeshRenderer>();
+            MeshRenderer rend2 = __instance.lightOBJ2.GetComponent<MeshRenderer>();
 
             bool set = true;
 

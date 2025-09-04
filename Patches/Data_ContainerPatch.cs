@@ -17,7 +17,6 @@ public class Patch_Data_Container {
         }
     }
 
-
     public static bool GetExternalConfigValue(string modGUID,string configKey,out object value) {
         value = null;
 
@@ -41,7 +40,7 @@ public class Patch_Data_Container {
 
     [HarmonyPatch("AddItemToRow"), HarmonyPrefix]
     private static bool AddItemToRowPatch(Data_Container __instance,int containerNumber,int productIDToAdd) {
-        if(GetExternalConfigValue("es.damntry.SuperQoLity", "*Enable ·Item Transfer Speed Module· (**)", out object value)) {
+        if(GetExternalConfigValue("es.damntry.SuperQoLity","*Enable ·Item Transfer Speed Module· (**)",out object value)) {
             if(value is bool otherValue && otherValue) {
                 BetterSMT.QuickStocking.Value = true;
             }
@@ -139,23 +138,31 @@ public class Patch_Data_Container {
         return false;
     }
 
-
     [HarmonyPatch("RemoveItemFromRow"), HarmonyPrefix]
     public static bool QuickRemovePrefix(Data_Container __instance,int containerNumber) {
-        if(!BetterSMT.QuickRemoving.Value) return true;
+        if(!BetterSMT.QuickRemoving.Value) {
+            return true;
+        }
 
-        var player = FirstPersonController.Instance;
-        var permissions = player.GetComponent<PlayerPermissions>();
-        var component = player.GetComponent<PlayerNetwork>();
+        FirstPersonController player = FirstPersonController.Instance;
+        PlayerPermissions permissions = player.GetComponent<PlayerPermissions>();
+        PlayerNetwork component = player.GetComponent<PlayerNetwork>();
 
-        if(!permissions.RequestRP()) return false;
+        if(!permissions.RequestRP()) {
+            return false;
+        }
 
         int index = containerNumber * 2;
         int productID = __instance.productInfoArray[index];
         int remainingInRow = __instance.productInfoArray[index + 1];
 
-        if(productID == -1 || remainingInRow <= 0) return false;
-        if(component.equippedItem != 1) return false;
+        if(productID == -1 || remainingInRow <= 0) {
+            return false;
+        }
+
+        if(component.equippedItem != 1) {
+            return false;
+        }
 
         if(component.extraParameter1 != productID && component.extraParameter2 > 0) {
             GameCanvas.Instance.CreateCanvasNotification("message13");
@@ -187,6 +194,4 @@ public class Patch_Data_Container {
 
         return false;
     }
-
-
 }

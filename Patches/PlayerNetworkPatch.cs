@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
 using HutongGames.PlayMaker;
-using System;
 using System.Diagnostics;
-using TMPro;
 using UnityEngine;
 
 namespace BetterSMT.Patches;
@@ -97,7 +95,7 @@ public class PlayerNetworkPatch {
         HandleAutoSave();
         #region Hotkeys
 
-        var globals = FsmVariables.GlobalVariables;
+        FsmVariables globals = FsmVariables.GlobalVariables;
         if(globals.GetFsmBool("InChat").Value
             || globals.GetFsmBool("inEvent").Value
             || globals.GetFsmBool("inOptions").Value

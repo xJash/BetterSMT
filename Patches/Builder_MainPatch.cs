@@ -10,12 +10,14 @@ namespace BetterSMT.Patches;
 public class Builder_MainPatch {
     [HarmonyPatch(typeof(Builder_Main),"RetrieveInitialBehaviours"), HarmonyPostfix]
     public static void ProductStackingWaitEndOfIEnumerable() {
-        if(BetterSMT.ProductStacking?.Value != true)
+        if(BetterSMT.ProductStacking?.Value != true) {
             return;
+        }
 
-        foreach(var prefab in ProductListing.Instance.productPrefabs.Where(p => p != null)) {
-            if(prefab.TryGetComponent(out Data_Product dataProduct))
+        foreach(GameObject prefab in ProductListing.Instance.productPrefabs.Where(p => p != null)) {
+            if(prefab.TryGetComponent(out Data_Product dataProduct)) {
                 dataProduct.isStackable = true;
+            }
         }
     }
 
@@ -154,11 +156,11 @@ public class Builder_MainPatch {
                             __instance.dummyOBJ.transform.rotation.eulerAngles
                         );
 
-                        if(__instance.currentTabIndex == 4 && !GameData.Instance.removeLightsLimit) {
-                            _ = __instance.StartCoroutine(__instance.DelayedSetLightsInfo());
-                        }
+                    if(__instance.currentTabIndex == 4 && !GameData.Instance.removeLightsLimit) {
+                        _ = __instance.StartCoroutine(__instance.DelayedSetLightsInfo());
                     }
                 }
+            }
             __instance.SharedBehaviour();
             return false;
         } else {

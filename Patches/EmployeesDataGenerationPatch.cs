@@ -6,7 +6,7 @@ namespace BetterSMT.Patches {
     public class EmployeesDataGenerationPatch {
         [HarmonyPatch("GenerateTodayEmployeesData"), HarmonyPrefix]
         private static bool GenerateTodayEmployeesDataPatch(EmployeesDataGeneration __instance) {
-            if(BetterSMT.EmployeesLevel.Value!=0) {
+            if(BetterSMT.EmployeesLevel.Value != 0) {
                 EmployeeLevelPatch(__instance);
                 return false;
             } else {
@@ -21,22 +21,26 @@ namespace BetterSMT.Patches {
             for(int i = 0; i < 10; i++) {
                 int num3 = Random.Range(0,7);
 
-                int[] stats = new int[7]; 
+                int[] stats = new int[7];
 
                 if(i == num) {
-                    for(int j = 0; j < stats.Length; j++)
+                    for(int j = 0; j < stats.Length; j++) {
                         stats[j] = Random.Range(j % 2 == 0 ? 6 : 7,11);
+                    }
                 } else if(i == num2) {
-                    for(int j = 0; j < stats.Length; j++)
+                    for(int j = 0; j < stats.Length; j++) {
                         stats[j] = Random.Range(j % 2 == 0 ? 5 : 4,11);
+                    }
                 } else {
-                    for(int j = 0; j < stats.Length; j++)
+                    for(int j = 0; j < stats.Length; j++) {
                         stats[j] = Random.Range(1,11);
+                    }
                 }
 
                 if(BetterSMT.EmployeesLevel.Value != 0) {
-                    for(int j = 0; j < stats.Length; j++)
+                    for(int j = 0; j < stats.Length; j++) {
                         stats[j] = BetterSMT.EmployeesLevel.Value;
+                    }
                 }
 
                 int value = ((stats[0] + stats[1] + stats[2] + stats[3]) * Random.Range(3,6))

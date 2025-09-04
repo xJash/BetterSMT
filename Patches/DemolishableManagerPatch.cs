@@ -15,45 +15,49 @@ namespace BetterSMT.Patches {
         }
 
         private static bool Prefix(DemolishableManager __instance,int parentIndex,int whichObjectToDemolish) {
-            var root = __instance.demolishableParentRootOBJ.transform;
+            Transform root = __instance.demolishableParentRootOBJ.transform;
 
-            if(parentIndex >= root.childCount || parentIndex >= __instance.demolishableValues.Length || parentIndex >= __instance.demolishingCosts.Length)
+            if(parentIndex >= root.childCount || parentIndex >= __instance.demolishableValues.Length || parentIndex >= __instance.demolishingCosts.Length) {
                 return false;
+            }
 
-            var parentObj = root.GetChild(parentIndex).gameObject;
-            if(whichObjectToDemolish >= parentObj.transform.childCount)
+            GameObject parentObj = root.GetChild(parentIndex).gameObject;
+            if(whichObjectToDemolish >= parentObj.transform.childCount) {
                 return false;
+            }
 
             float defaultCost = __instance.demolishingCosts[parentIndex];
             float cost = !Mathf.Approximately(BetterSMT.PillarPrice.Value,defaultCost)
                 ? BetterSMT.PillarPrice.Value
                 : defaultCost;
 
-            if(cost > GameData.Instance.gameFunds)
+            if(cost > GameData.Instance.gameFunds) {
                 return false;
+            }
 
-            var gameData = __instance.GetComponent<GameData>();
+            GameData gameData = __instance.GetComponent<GameData>();
             gameData.AlterFundsFromEmployee(-cost);
             gameData.otherCosts += cost;
 
             string demolishValue = __instance.demolishableValues[parentIndex];
             if(!string.IsNullOrEmpty(demolishValue)) {
                 char slot = demolishValue[whichObjectToDemolish];
-                if(slot != __instance.nullValue[0])
+                if(slot != __instance.nullValue[0]) {
                     return false;
+                }
             }
 
             __instance.demolishableValues[parentIndex] = __instance.AssembleValue(parentIndex,whichObjectToDemolish);
 
             if(!BetterSMT.PillarRubble.Value) {
-                var delayedMethod = AccessTools.Method(__instance.GetType(),"DelayedDemolishEffectInstantiation");
-                var enumerator = (IEnumerator)delayedMethod.Invoke(__instance,[parentIndex,whichObjectToDemolish]);
+                MethodInfo delayedMethod = AccessTools.Method(__instance.GetType(),"DelayedDemolishEffectInstantiation");
+                IEnumerator enumerator = (IEnumerator)delayedMethod.Invoke(__instance,[parentIndex,whichObjectToDemolish]);
                 _ = __instance.StartCoroutine(enumerator);
             }
 
             __instance.RpcDemolishItem(parentIndex,whichObjectToDemolish);
 
-            return false; 
+            return false;
         }
     }
 }
