@@ -133,6 +133,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> ClockMorning;
     public static ConfigEntry<bool> AutoOrdering;
     public static ConfigEntry<bool> QuickStocking;
+    public static ConfigEntry<bool> QuickRemoving;
     public static ConfigEntry<int> CardboardBalerValue;
     public static ConfigEntry<bool> PalletProduct;
     public static ConfigEntry<bool> AllProduct;
@@ -273,6 +274,7 @@ public class BetterSMT : BaseUnityPlugin {
         NumberKeys = Config.Bind("Random QoL","Enables normal numbers",false,new ConfigDescription("Enables or disables using non-numpad numbers to set prices"));
         CardboardBalerValue = Config.Bind("Random QoL","Cardboard Baler",10,new ConfigDescription("Adjust the amount of boxes required for the cardboard baler to spit out a bale",new AcceptableValueRange<int>(1,50)));
         QuickStocking = Config.Bind("Random QoL","Enables quick stocking",false,new ConfigDescription("Enables or disables stocking the entire box onto shelf in one click"));
+        QuickRemoving = Config.Bind("Random QoL","Enables quick removing",false,new ConfigDescription("Enables or disables removing as much stock as possible from a shelf in 1 click"));
         AutoOrdering = Config.Bind("Random QoL","Enables auto-ordering items",false,new ConfigDescription("Enables or disables automatically adding enough stock to the shopping order when picking up the OS Mart device"));
         ClockMorning = Config.Bind("Random QoL","Enables clock usage in morning",false,new ConfigDescription("Enables or disables using the clock in the morning"));
         ClockSpeed = Config.Bind("Random QoL","Clock Speed",5f,new ConfigDescription("Adjust the amount of speed enabling the clock gives",new AcceptableValueRange<float>(1f,15f)));

@@ -139,4 +139,54 @@ public class Patch_Data_Container {
         return false;
     }
 
+
+    [HarmonyPatch("RemoveItemFromRow"), HarmonyPrefix]
+    public static bool QuickRemovePrefix(Data_Container __instance,int containerNumber) {
+        if(!BetterSMT.QuickRemoving.Value) return true;
+
+        var player = FirstPersonController.Instance;
+        var permissions = player.GetComponent<PlayerPermissions>();
+        var component = player.GetComponent<PlayerNetwork>();
+
+        if(!permissions.RequestRP()) return false;
+
+        int index = containerNumber * 2;
+        int productID = __instance.productInfoArray[index];
+        int remainingInRow = __instance.productInfoArray[index + 1];
+
+        if(productID == -1 || remainingInRow <= 0) return false;
+        if(component.equippedItem != 1) return false;
+
+        if(component.extraParameter1 != productID && component.extraParameter2 > 0) {
+            GameCanvas.Instance.CreateCanvasNotification("message13");
+            return false;
+        }
+
+        int maxItemsPerBox = ProductListing.Instance.productPrefabs[productID]
+            .GetComponent<Data_Product>().maxItemsPerBox;
+
+        if(component.extraParameter2 >= maxItemsPerBox) {
+            GameCanvas.Instance.CreateCanvasNotification("message12");
+            return false;
+        }
+
+        if(component.extraParameter2 == 0 && component.instantiatedOBJ) {
+            component.extraParameter1 = productID;
+            component.UpdateBoxContents(productID);
+        }
+
+        int spaceLeft = maxItemsPerBox - component.extraParameter2;
+        int itemsToTake = Mathf.Min(spaceLeft,remainingInRow);
+
+        component.extraParameter2 += itemsToTake;
+        remainingInRow -= itemsToTake;
+
+        GameData.Instance.PlayPop2Sound();
+        __instance.productInfoArray[index + 1] = remainingInRow;
+        __instance.CmdUpdateArrayValues(index,productID,remainingInRow);
+
+        return false;
+    }
+
+
 }
