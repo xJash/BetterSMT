@@ -158,7 +158,7 @@ public class BetterSMT : BaseUnityPlugin {
         SaveGame = Config.Bind("Save Settings","Save Game Button",true,new ConfigDescription("Enables or disables the Save Game button in the ESC menu"));
 
         // === !Ordering! ===
-        OrderPackaging = Config.Bind("Order Packaging","Enables custom order packaging",false,new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
+        OrderPackaging = Config.Bind("Order Packaging","Enables custom order packaging",false,new ConfigDescription("Enables the other Order Packaging options. This must be enabled for them to work."));
         OrderSpeedUp = Config.Bind("Order Packaging","Speeds up how often orders come",0f,new ConfigDescription("Works as a percent multiplier. 1.1 = 10% faster. 2.3 = 130% faster.",new AcceptableValueRange<float>(0f,500f)));
         OrderIncreasedMax = Config.Bind("Order Packaging","Increases max amount of orders per day",0f,new ConfigDescription("Flat number to increase the max amount of orders you get per day. Default was random value of 2 through 40.",new AcceptableValueRange<float>(0f,240)));
 
@@ -174,7 +174,7 @@ public class BetterSMT : BaseUnityPlugin {
         SalesActiveAmount = Config.Bind("Sales Settings","Amount of sales unlocked each perk",2,new ConfigDescription("Adjusts the amount of sales you unlock for each perk",new AcceptableValueRange<int>(1,100)));
 
         // === !Auto Ordering Settings! ===
-        AutoOrderEnabled = Config.Bind("Auto Ordering","Enable Auto Ordering",false,new ConfigDescription("Automatically orders products when stock is low. Only works when Ordering Tablet is in your hands."));
+        AutoOrderEnabled = Config.Bind("Auto Ordering","Enable Auto Ordering",false,new ConfigDescription("Automatically orders products on interval below, ordering enough to fill the store. Only works when Ordering Tablet is in your hands."));
         AutoOrderCheckInterval = Config.Bind("Auto Ordering","Auto Order Check Interval",30,new ConfigDescription("Time interval (in seconds) for checking product stock",new AcceptableValueRange<int>(10,600)));
 
         // === !Low Stock Alerts! ===

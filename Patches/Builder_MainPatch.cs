@@ -105,17 +105,15 @@ public class Builder_MainPatch {
     public static bool DecorationBehaviourPatch(Builder_Main __instance) {
         if(BetterSMT.CheatPlacement.Value || BetterSMT.AllowFreePlacement.Value) {
             if(BetterSMT.CheatPlacement.Value) {
-                // Full bypass mode
-                __instance.inCorrectBounds = true;   // Ignore bounds restrictions
-                __instance.overlapping = false;      // Ignore overlap restrictions
-                __instance.raycastIsCorrect = true;  // Ignore raycast restrictions
-                __instance.canPlace = true;          // Always allow placement
+                __instance.inCorrectBounds = true;
+                __instance.overlapping = false;
+                __instance.raycastIsCorrect = true;
+                __instance.canPlace = true;
 
                 if(__instance.dummyOBJ.TryGetComponent<HighlightEffect>(out HighlightEffect highlight)) {
                     highlight.glowHQColor = Color.green;
                 }
             } else if(BetterSMT.AllowFreePlacement.Value) {
-                // Ignore overlap but still require bounds + raycast checks
                 __instance.inCorrectBounds = __instance.InCorrectBounds();
                 __instance.overlapping = false;
                 __instance.raycastIsCorrect = __instance.RaycastCheck();
@@ -148,8 +146,11 @@ public class Builder_MainPatch {
 
                     if(GameData.Instance.gameFunds < __instance.decorationCost) {
                         GameCanvas.Instance.CreateCanvasNotification("message6");
+                        return false; 
                     }
+
                     GameData.Instance.CmdAlterFunds(0f - __instance.decorationCost);
+
                     GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawnDecoration(
                             __instance.currentPropIndex,
                             __instance.dummyOBJ.transform.position,
@@ -167,6 +168,7 @@ public class Builder_MainPatch {
             return true;
         }
     }
+
 
     [HarmonyPatch(typeof(Builder_Main),"BuildableBehaviour")]
     [HarmonyPrefix]
@@ -223,9 +225,14 @@ public class Builder_MainPatch {
                             Object.Destroy(__instance.dummyOBJ);
                         }
                     }
-                } else if(GameData.Instance.gameFunds < __instance.buildableCost) {
-                    GameCanvas.Instance.CreateCanvasNotification("message6");
                 } else {
+                    if(GameData.Instance.gameFunds < __instance.buildableCost) {
+                        GameCanvas.Instance.CreateCanvasNotification("message6");
+                        return false;
+                    }
+
+                    GameData.Instance.CmdAlterFunds(0f - __instance.buildableCost);
+
                     GameData.Instance.GetComponent<NetworkSpawner>().CmdSpawn(
                         __instance.currentPropIndex,
                         __instance.dummyOBJ.transform.position,
@@ -240,4 +247,5 @@ public class Builder_MainPatch {
             return true;
         }
     }
+
 }
