@@ -15,7 +15,7 @@ public class ManagerBlackboardPatch {
     [HarmonyPatch(nameof(ServerCargoSpawner))]
     [HarmonyPrefix]
     private static bool ServerCargoSpawner(ManagerBlackboard __instance,ref IEnumerator __result) {
-        if(BetterSMT.FastBoxSpawns.Value) {
+        if(BetterSMT.FastBoxSpawns.Value || BetterSMT.CloserBoxSpawning.Value) {
             __result = CustomCargoSpawner(__instance);
             return false;
         } else {

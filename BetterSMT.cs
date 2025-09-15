@@ -25,8 +25,6 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<int> SalesActiveAmount;
     public static ConfigEntry<KeyboardShortcut> ClearSales;
     public static ConfigEntry<bool> ToggleClearSalesHotkey;
-    public static ConfigEntry<bool> SalesToggle;
-    public static ConfigEntry<KeyboardShortcut> SalesHotkey;
 
     // === !Product Settings!===
     public static ConfigEntry<bool> LowStockAlertEnabled;
@@ -97,26 +95,9 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> StorageHighlighting;
 
     // === !Hotkey Configurations! ===
-    public static ConfigEntry<bool> ThirdPersonToggle;
-    public static ConfigEntry<KeyboardShortcut> ThirdPersonHotkey;
     public static ConfigEntry<KeyboardShortcut> DoublePrice;
     public static ConfigEntry<KeyboardShortcut> RoundDownSwitch;
     public static ConfigEntry<KeyboardShortcut> RoundDownToggle;
-    public static ConfigEntry<KeyboardShortcut> PricingGunHotkey;
-    public static ConfigEntry<bool> PricingGunToggle;
-    public static ConfigEntry<KeyboardShortcut> BroomHotkey;
-    public static ConfigEntry<bool> BroomToggle;
-    public static ConfigEntry<KeyboardShortcut> DLCTabletHotkey;
-    public static ConfigEntry<bool> DLCTabletToggle;
-    public static ConfigEntry<KeyboardShortcut> EmptyHandsHotkey;
-    public static ConfigEntry<bool> SledgeToggle;
-    public static ConfigEntry<KeyboardShortcut> SledgeHotkey;
-    public static ConfigEntry<bool> OsMartToggle;
-    public static ConfigEntry<KeyboardShortcut> OsMartHotkey;
-    public static ConfigEntry<bool> TrayToggle;
-    public static ConfigEntry<KeyboardShortcut> TrayHotkey;
-    public static ConfigEntry<KeyboardShortcut> LadderHotkey;
-    public static ConfigEntry<bool> LadderToggle;
     public static ConfigEntry<KeyboardShortcut> ClockHotkey;
     public static ConfigEntry<bool> ClockToggle;
 
@@ -168,8 +149,6 @@ public class BetterSMT : BaseUnityPlugin {
         PillarPrice = Config.Bind("Pillar Mods","Change Price",4000f,new ConfigDescription("Changes the price of destroying a pillar.",new AcceptableValueRange<float>(0f,50000f)));
 
         // === !Sales Settings! ===
-        SalesHotkey = Config.Bind("Sales Settings","Sales Tablet Hotkey",new KeyboardShortcut(KeyCode.Z),new ConfigDescription("Hotkey to spawn a Sales Tablet in your hands."));
-        SalesToggle = Config.Bind("Sales Settings","Sales Tablet Toggle",false,new ConfigDescription("Enables the hotkey to activate Sales Tablet"));
         ClearSales = Config.Bind("Sales Settings","Clear Sales",new KeyboardShortcut(KeyCode.X),new ConfigDescription("Hotkey to clear current sales."));
         ToggleClearSalesHotkey = Config.Bind("Sales Settings","Enables or disables hotkey to clear sales",false,new ConfigDescription("Enables or disables the hotkey to clear sales"));
         SalesActiveAmount = Config.Bind("Sales Settings","Amount of sales unlocked each perk",2,new ConfigDescription("Adjusts the amount of sales you unlock for each perk",new AcceptableValueRange<int>(1,100)));
@@ -237,25 +216,8 @@ public class BetterSMT : BaseUnityPlugin {
         SelfCheckoutBreak = Config.Bind("Random Features","Enable or disable Self Checkout breaking",false,new ConfigDescription("Enables or disables the self checkout needing to be repaired."));
 
         // === !Hotkey Configurations! ===
-        LadderHotkey = Config.Bind("Hotkey Configurations","Sledgehammer Hotkey",new KeyboardShortcut(KeyCode.M),new ConfigDescription("Hotkey to spawn a Sledgehammer in your hands."));
-        LadderToggle = Config.Bind("Hotkey Configurations","Sledgehammer Toggle",false,new ConfigDescription("Enables the hotkey to activate Sledgehammer"));
-        SledgeHotkey = Config.Bind("Hotkey Configurations","Sledgehammer Hotkey",new KeyboardShortcut(KeyCode.J),new ConfigDescription("Hotkey to spawn a Sledgehammer in your hands."));
-        SledgeToggle = Config.Bind("Hotkey Configurations","Sledgehammer Toggle",false,new ConfigDescription("Enables the hotkey to activate Sledgehammer"));
-        OsMartHotkey = Config.Bind("Hotkey Configurations","Os Mart 2.0 Tablet Hotkey",new KeyboardShortcut(KeyCode.H),new ConfigDescription("Hotkey to spawn a Os Mart 2.0 Tablet in your hands."));
-        OsMartToggle = Config.Bind("Hotkey Configurations","Os Mart 2.0 Toggle",false,new ConfigDescription("Enables the hotkey to activate Os Mart 2.0"));
-        TrayHotkey = Config.Bind("Hotkey Configurations","Tray Hotkey",new KeyboardShortcut(KeyCode.K),new ConfigDescription("Hotkey to spawn a Tray in your hands."));
-        TrayToggle = Config.Bind("Hotkey Configurations","Tray Toggle",false,new ConfigDescription("Enables the hotkey to activate Tray"));
         ClockToggle = Config.Bind("Hotkey Configurations","Enable hotkey for clock",false,new ConfigDescription("Enables or disabled hotkey activating clock."));
         ClockHotkey = Config.Bind("Hotkey Configurations","Toggle Clock",new KeyboardShortcut(KeyCode.O),new ConfigDescription("Hotkey to enable/disable the clock"));
-        ThirdPersonHotkey = Config.Bind("Hotkey Configurations","Third Person Hotkey",new KeyboardShortcut(KeyCode.G),new ConfigDescription("Hotkey to enter and leave third person/first person."));
-        ThirdPersonToggle = Config.Bind("Hotkey Configurations","Enable or disable third person",false,new ConfigDescription("Enables or disables the hotkey to enter and leave third person/first person"));
-        PricingGunToggle = Config.Bind("Hotkey Configurations","Pricing Gun Toggle",false,new ConfigDescription("Enables the hotkey to activate Pricing Gun"));
-        PricingGunHotkey = Config.Bind("Hotkey Configurations","Pricing Gun Hotkey",new KeyboardShortcut(KeyCode.Y),new ConfigDescription("Hotkey to spawn a Pricing Gun in your hands."));
-        BroomToggle = Config.Bind("Hotkey Configurations","Broom Toggle",false,new ConfigDescription("Enables the hotkey to activate Broom"));
-        BroomHotkey = Config.Bind("Hotkey Configurations","Broom Hotkey",new KeyboardShortcut(KeyCode.U),new ConfigDescription("Hotkey to spawn a Broom in your hands."));
-        DLCTabletToggle = Config.Bind("Hotkey Configurations","DLC Tablet Toggle",false,new ConfigDescription("Enables the hotkey to activate DLC Tablet"));
-        DLCTabletHotkey = Config.Bind("Hotkey Configurations","DLC Tablet Hotkey",new KeyboardShortcut(KeyCode.I),new ConfigDescription("Hotkey to spawn a DLC Tablet in your hands."));
-        EmptyHandsHotkey = Config.Bind("Hotkey Configurations","Empty Hands Hotkey",new KeyboardShortcut(KeyCode.R),new ConfigDescription("Hotkey to remove active item in your hand."));
 
         // === !Pricing Assistance! ===
         AutoAdjustPriceDaily = Config.Bind("Pricing Assistance","Auto Adjust Prices Daily",false,new ConfigDescription("Enables or disables automatically doubling the price of products daily"));

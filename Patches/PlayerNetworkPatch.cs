@@ -91,7 +91,7 @@ public class PlayerNetworkPatch {
     }
 
     [HarmonyPatch("Update"), HarmonyPostfix]
-    private static void UpdatePatch(PlayerNetwork __instance) {
+    private static void UpdatePatch() {
         HandleAutoSave();
         #region Hotkeys
 
@@ -104,31 +104,6 @@ public class PlayerNetworkPatch {
             || globals.GetFsmBool("inVehicle").Value) {
             return;
         } else {
-            bool usedTool = false;
-            (bool?, BepInEx.Configuration.KeyboardShortcut?, int)[] toolHotkeys = [
-                (BetterSMT.SledgeToggle?.Value,      BetterSMT.SledgeHotkey?.Value,      7),
-                (BetterSMT.OsMartToggle?.Value,      BetterSMT.OsMartHotkey?.Value,      6),
-                (BetterSMT.TrayToggle?.Value,        BetterSMT.TrayHotkey?.Value,        9),
-                (BetterSMT.SalesToggle?.Value,       BetterSMT.SalesHotkey?.Value,       10),
-                (BetterSMT.PricingGunToggle?.Value,  BetterSMT.PricingGunHotkey?.Value,  2),
-                (BetterSMT.BroomToggle?.Value,       BetterSMT.BroomHotkey?.Value,       3),
-                (BetterSMT.LadderToggle?.Value,      BetterSMT.LadderHotkey?.Value,      8),
-                (BetterSMT.DLCTabletToggle?.Value,   BetterSMT.DLCTabletHotkey?.Value,   5),
-            ];
-
-            foreach((bool? toggle, BepInEx.Configuration.KeyboardShortcut? hotkey, int itemId) in toolHotkeys) {
-                if(toggle == true && hotkey?.IsDown() == true) {
-                    __instance.CmdChangeEquippedItem(itemId);
-                    usedTool = true;
-                    break;
-                }
-            }
-
-            if(!usedTool && BetterSMT.EmptyHandsHotkey.Value.IsDown()) {
-                __instance.CmdChangeEquippedItem(0);
-            }
-
-
             if(BetterSMT.ClockToggle?.Value == true && BetterSMT.ClockHotkey?.Value.IsDown() == true) {
                 upgradesManager ??= UnityEngine.Object.FindObjectOfType<TimeAccelerationWatcher>()?.GetComponent<UpgradesManager>();
                 upgradesManager.NetworkacceleratedTime = !upgradesManager.acceleratedTime;
@@ -140,14 +115,5 @@ public class PlayerNetworkPatch {
         }
 
         #endregion
-    }
-
-    [HarmonyPatch("UpdateBoxContents"), HarmonyPostfix]
-    private static void UpdateBoxContentsPatch() {
-        int notificationHolder = 0;
-        if(BetterSMT.StorageHighlighting.Value == true && notificationHolder == 0) {
-            BetterSMT.CreateImportantNotification("Highlighting feature has been moved to SuperQoLity. Disable this message by disabling highlighting.");
-            return;
-        }
     }
 }
