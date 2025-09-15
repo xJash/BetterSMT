@@ -15,6 +15,9 @@ namespace BetterSMT.Patches {
         }
 
         private static bool Prefix(DemolishableManager __instance,int parentIndex,int whichObjectToDemolish) {
+            if(BetterSMT.PillarPrice.Value == 4000f) 
+                return true;
+
             Transform root = __instance.demolishableParentRootOBJ.transform;
 
             if(parentIndex >= root.childCount || parentIndex >= __instance.demolishableValues.Length || parentIndex >= __instance.demolishingCosts.Length) {

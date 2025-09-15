@@ -341,6 +341,6 @@ public class GameDataPatch {
 
     [HarmonyPatch("TrashManager"), HarmonyPrefix]
     public static bool NextTimeToSpawnTrashPatch() {
-        return BetterSMT.DisableAllTrash.Value;
+        return !BetterSMT.DisableAllTrash.Value;
     }
 }
