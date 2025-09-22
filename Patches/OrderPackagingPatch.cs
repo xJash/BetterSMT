@@ -4,6 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace BetterSMT.Patches {
+
+    [HarmonyPatch(typeof(OrderPackaging))]
+    public static class OrderPackaging_ActivatedPatch {
+        [HarmonyPrefix]
+        [HarmonyPatch("Update")]
+        public static void ForceField(ref bool ___isOrderDepartmentActivated) {
+            if(BetterSMT.OrderPackaging.Value) {
+                ___isOrderDepartmentActivated = true;
+            }
+        }
+    }
+
+
+
     [HarmonyPatch(typeof(OrderPackaging))]
     public static class OrderPackagingPatch {
         [HarmonyPatch("Update")]

@@ -87,8 +87,7 @@ public class BetterSMT : BaseUnityPlugin {
     public static ConfigEntry<bool> EnablePalletDisplaysPerk;
     public static ConfigEntry<bool> ReplaceCommasWithPeriods;
     public static ConfigEntry<string> CurrencyTypeToAny;
-    public static ConfigEntry<bool> CardboardBalerBreak;
-    public static ConfigEntry<bool> SelfCheckoutBreak;
+    public static ConfigEntry<bool> StructuresBreaking;
     public static ConfigEntry<bool> CloserBoxSpawning;
 
     // === !Highlighting! ===
@@ -143,6 +142,7 @@ public class BetterSMT : BaseUnityPlugin {
         OrderPackaging = Config.Bind("Order Packaging","Enables custom order packaging",false,new ConfigDescription("Enables the other Order Packaging options. This must be enabled for them to work."));
         OrderSpeedUp = Config.Bind("Order Packaging","Speeds up how often orders come",0f,new ConfigDescription("Works as a percent multiplier. 1.1 = 10% faster. 2.3 = 130% faster.",new AcceptableValueRange<float>(0f,500f)));
         OrderIncreasedMax = Config.Bind("Order Packaging","Increases max amount of orders per day",0f,new ConfigDescription("Flat number to increase the max amount of orders you get per day. Default was random value of 2 through 40.",new AcceptableValueRange<float>(0f,240)));
+        OrderPackaging = Config.Bind("Random Features","Enables Order Packaging everyday",false,new ConfigDescription("Automatically enables order packaging everyday so you can't forget."));
 
         // === !Pillar Mods! ===
         PillarRubble = Config.Bind("Pillar Mods","Disable Rubble",false,new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));
@@ -212,8 +212,8 @@ public class BetterSMT : BaseUnityPlugin {
         EnablePalletDisplaysPerk = Config.Bind("Random Features","Enable pallet displays",false,new ConfigDescription("Enables pallet displays without unlocking the perk."));
         ReplaceCommasWithPeriods = Config.Bind("Random Features","Replace commas with periods",false,new ConfigDescription("Changes all commas in the game into periods."));
         CurrencyTypeToAny = Config.Bind("Random Features","CurrencySymbol","$",new ConfigDescription("Sets the currency symbol used in the game. Default is $."));
-        CardboardBalerBreak = Config.Bind("Random Features","Enable or disable cardboard baler breaking",false,new ConfigDescription("Enables or disables the cardboard baler needing to be repaired."));
-        SelfCheckoutBreak = Config.Bind("Random Features","Enable or disable Self Checkout breaking",false,new ConfigDescription("Enables or disables the self checkout needing to be repaired."));
+        StructuresBreaking = Config.Bind("Random Features","Enable or disable structures breaking",false,new ConfigDescription("Enables or disables structures breaking requiring them to be repaired."));
+        
 
         // === !Hotkey Configurations! ===
         ClockToggle = Config.Bind("Hotkey Configurations","Enable hotkey for clock",false,new ConfigDescription("Enables or disabled hotkey activating clock."));

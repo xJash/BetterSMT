@@ -10,13 +10,6 @@ namespace BetterSMT.Patches;
 [HarmonyPatch(typeof(Data_Container))]
 public class Patch_Data_Container {
 
-    [HarmonyPatch("BreakingEvent"), HarmonyPostfix]
-    public static void BreakingEvent(Data_Container __instance) {
-        if(BetterSMT.SelfCheckoutBreak?.Value == true) {
-            __instance.isBroken = false;
-        }
-    }
-
     public static bool GetExternalConfigValue(string modGUID,string configKey,out object value) {
         value = null;
 
