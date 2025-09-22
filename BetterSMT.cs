@@ -121,6 +121,7 @@ public class BetterSMT : BaseUnityPlugin {
 
     // === !Ordering! ===
     public static ConfigEntry<bool> OrderPackaging;
+    public static ConfigEntry<bool> OrderPackagingAlways;
     public static ConfigEntry<float> OrderSpeedUp;
     public static ConfigEntry<float> OrderIncreasedMax;
 
@@ -142,7 +143,7 @@ public class BetterSMT : BaseUnityPlugin {
         OrderPackaging = Config.Bind("Order Packaging","Enables custom order packaging",false,new ConfigDescription("Enables the other Order Packaging options. This must be enabled for them to work."));
         OrderSpeedUp = Config.Bind("Order Packaging","Speeds up how often orders come",0f,new ConfigDescription("Works as a percent multiplier. 1.1 = 10% faster. 2.3 = 130% faster.",new AcceptableValueRange<float>(0f,500f)));
         OrderIncreasedMax = Config.Bind("Order Packaging","Increases max amount of orders per day",0f,new ConfigDescription("Flat number to increase the max amount of orders you get per day. Default was random value of 2 through 40.",new AcceptableValueRange<float>(0f,240)));
-        OrderPackaging = Config.Bind("Random Features","Enables Order Packaging everyday",false,new ConfigDescription("Automatically enables order packaging everyday so you can't forget."));
+        OrderPackagingAlways = Config.Bind("Random Features","Enables Order Packaging everyday",false,new ConfigDescription("Automatically enables order packaging everyday so you can't forget."));
 
         // === !Pillar Mods! ===
         PillarRubble = Config.Bind("Pillar Mods","Disable Rubble",false,new ConfigDescription("Optionally does not spawn rubble when destroying a pillar"));

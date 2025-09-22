@@ -10,7 +10,7 @@ namespace BetterSMT.Patches {
         [HarmonyPrefix]
         [HarmonyPatch("Update")]
         public static void ForceField(ref bool ___isOrderDepartmentActivated) {
-            if(BetterSMT.OrderPackaging.Value) {
+            if(BetterSMT.OrderPackagingAlways.Value) {
                 ___isOrderDepartmentActivated = true;
             }
         }
