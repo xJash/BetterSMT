@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using HutongGames.PlayMaker;
+using Mirror;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -93,7 +94,6 @@ public class PlayerNetworkPatch {
     [HarmonyPatch("Update"), HarmonyPostfix]
     private static void UpdatePatch() {
         HandleAutoSave();
-        #region Hotkeys
 
         FsmVariables globals = FsmVariables.GlobalVariables;
         if(globals.GetFsmBool("InChat").Value
@@ -110,10 +110,6 @@ public class PlayerNetworkPatch {
                 upgradesManager.GetComponent<TimeAccelerationWatcher>().enabled = upgradesManager.acceleratedTime;
                 upgradesManager.RpcTimeAcceleration(upgradesManager.acceleratedTime);
             }
-
-
         }
-
-        #endregion
     }
 }
