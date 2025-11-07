@@ -1,4 +1,33 @@
-﻿## 3.0.0
+﻿## 3.1.0
+- fully reimplemented saving button w/ some improvements
+- fully reimplemented auto saving w/ some improvements
+- fixed stupid locale error in anti theft door text notification
+- added modifiable exp rates
+- cleaned up code for antitheft text notification
+- cleaned up code for product stacking
+- cleaned up code for cardboard baler
+- cleaned up code for 3rd person
+- heavily cleaned code for add items to row
+- cleaned up code for pillar/rubble price and spawning
+- centralized bad code for double price module with price gun and entirely recoded it
+- cleaned up code checks for hotkeys being disabled during certain interactions
+- fixed checks for quickstocking/pallet products/no product requirements
+- fixed check for quickstocking to be able to be disabled
+- vs code cleanup
+- applied new checks for hotkey press in productlisting
+- added new feature to remove all stock from shelf in 1 click (or until the box fills up) + recoded the function since it was extra dogshit from gamedev
+- added config check for quick stocking from SuperQoLity to make damntry's ego hurt less
+- added new feature for order packaging to be defaulted to turned on every day
+- redid how disabling all trash is enabled/disabled
+- redid how disabling broken structures is enabled/disabled
+- removed hotkeys preemptively for superqolity's implementation of it
+- added a check i missed in servercargospawner
+- removed 3rd person since it was ass
+- removed notice that highlighting had been moved to superqolity
+- missed a check on builder_main
+- some typos in config
+
+## 3.0.0
 - Removed rerolls config due to implementation into the base game through perk
 - Merged a PR from Damntry fixing some Custom Products fuckery
 - Fixed a ton of issues I accidentally implementied with building structures
